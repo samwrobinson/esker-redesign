@@ -203,3 +203,428 @@
         }
     }
 }
+
+/*-- -------------------------- -->
+<---          Contact           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #contact-1388 {
+        padding: var(--sectionPadding);
+        background-color: #f7f7f7;
+        position: relative;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at tablet */
+            max-width: (584/16rem);
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-direction: column;
+            column-gap: auto;
+            /* 48px - 64px */
+            gap: clamp(2rem, 3vw, 3rem);
+            position: relative;
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+        }
+
+        .cs-title {
+            max-width: 23ch;
+        }
+
+        .cs-text {
+            margin-bottom: (16/16rem);
+            &:last-of-type {
+                margin-bottom: (32/16rem);
+            }
+        }
+
+        .cs-ul {
+            text-align: left;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: (24/16rem);
+            position: relative;
+        }
+
+        .cs-li {
+            list-style: none;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: (20/16rem);
+
+            &:hover {
+                .cs-icon-wrapper {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .cs-header {
+            font-size: (20/16rem);
+            font-weight: 700;
+            line-height: 1.2em;
+            margin-bottom: (12/16rem);
+            color: var(--headerColor);
+            display: block;
+        }
+
+        .cs-link {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            text-decoration: none;
+            color: #767676;
+            display: block;
+            position: relative;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .cs-icon-wrapper {
+            width: (60/16rem);
+            height: (60/16rem);
+            margin: 0;
+            border-radius: 50%;
+            border: 1px solid #bababa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* prevents flexbox from squishing it */
+            flex: none;
+            transition: transform 0.3s;
+        }
+
+        .cs-icon {
+            width: (24/16rem);
+            height: auto;
+            display: block;
+        }
+
+        .cs-form {
+            width: 100%;
+            max-width: (630/16rem);
+            /* 24px - 48px top and bottom */
+            /* 16px - 48px left and right */
+            padding: clamp(1.5rem, 5.18vw, 3rem) clamp(1rem, 4vw, 3rem);
+            /* prevents flexbox from affecting height and width */
+            box-sizing: border-box;
+            background-color: #fff;
+            border-radius: (16/16rem);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: (12/16rem);
+        }
+
+        .cs-h3 {
+            /* 20px - 39px */
+            font-size: clamp(1.25rem, 3vw, 2.4375rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0 0 (4/16rem) 0;
+            color: var(--headerColor);
+        }
+
+        .cs-label {
+            /* 14px - 16px */
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            width: 100%;
+            color: var(--headerColor);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: (4/16rem);
+        }
+
+        .cs-input {
+            font-size: (16/16rem);
+            width: 100%;
+            height: (56/16rem);
+            padding: 0;
+            padding-left: (24/16rem);
+            color: var(--headerColor);
+            background-color: #f7f7f7;
+            border-radius: (8/16rem);
+            border: none;
+            /* prevents padding from adding to height and width */
+            box-sizing: border-box;
+            &::placeholder {
+                color: #7d799c;
+                opacity: 0.6;
+            }
+        }
+
+        .cs-textarea {
+            min-height: (120/16rem);
+            padding-top: (24/16rem);
+            margin-bottom: (12/16rem);
+            font-family: inherit;
+        }
+
+        .cs-button-solid {
+            font-size: (16/16rem);
+            line-height: (56/16rem);
+            text-decoration: none;
+            font-weight: 700;
+            overflow: hidden;
+            margin: 0;
+            color: #fff;
+            padding: 0 (48/16rem);
+            border-radius: (30/16rem);
+            background-color: var(--primary);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s;
+
+            &:before {
+                content: "";
+                position: absolute;
+                display: block;
+                height: 100%;
+                width: 0%;
+                background: #1a1a1a;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                color: var(--primary);
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+
+        .cs-submit {
+            width: 100%;
+            min-width: (200/16rem);
+            border: none;
+
+            &:hover {
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #contact-1388 {
+        .cs-container {
+            max-width: (1280/16rem);
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .cs-content {
+            width: 47%;
+            /* prevents flexbox from squishing it */
+            flex: none;
+        }
+
+        .cs-submit {
+            width: auto;
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #contact-1388 {
+        .cs-form {
+            width: 46%;
+            max-width: (578/16rem);
+        }
+
+        .cs-submit {
+            width: auto;
+        }
+    }
+}
+
+/* Large Desktop - 1500px */
+@media only screen and (min-width: 93.75rem) {
+    #contact-1388 {
+        .cs-graphic {
+            display: block;
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---           Steps            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #steps-1209 {
+        padding: var(--sectionPadding);
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+
+        .cs-container {
+            /* changes to 1280px at tablet */
+            max-width: (704/16rem);
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-text {
+            font-size: var(--bodyFontSize);
+            line-height: 1.5em;
+            text-align: inherit;
+            max-width: (650/16rem);
+            width: 100%;
+            margin: 0;
+            color: var(--bodyTextColor);
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: (20/16rem);
+        }
+
+        .cs-item {
+            text-align: center;
+            list-style: none;
+            /* 8px - 48px */
+            padding: 0 clamp(0.5rem, 5vw, 3rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            grid-column: span 12;
+
+            &:last-of-type {
+                &:after {
+                    display: none;
+                }
+            }
+
+            &:after {
+                /* content property isn't set until 768px, to hide the line on mobile */
+                /* 120px - 200px */
+                content: "";
+                width: clamp(7.5rem, 14vw, 12.5rem);
+                height: (90/16rem);
+                background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/orange-dotted-line.svg");
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                opacity: 1;
+                display: none;
+                position: absolute;
+                top: 0;
+                left: clamp(11.5rem, 24vw, 20rem);
+            }
+        }
+
+        .cs-number {
+            font-size: (20/16rem);
+            font-weight: bold;
+            width: (88/16rem);
+            height: (88/16rem);
+            /* 16px - 32px */
+            margin-bottom: clamp(1rem, 4vw, 2rem);
+            color: var(--primary);
+            background-color: var(--primaryLight);
+            border: 1px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cs-icon {
+            width: (40/16rem);
+            height: auto;
+            display: block;
+        }
+
+        .cs-h3 {
+            font-size: (20/16rem);
+            line-height: 1.2em;
+            text-align: inherit;
+            margin: 0 0 (12/16rem) 0;
+            color: var(--headerColor);
+        }
+
+        .cs-item-text {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            text-align: inherit;
+            max-width: (413/16rem);
+            margin: 0;
+            color: var(--bodyTextColor);
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #steps-1209 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-item {
+            grid-column: span 4;
+
+            &:after {
+                display: block;
+            }
+        }
+    }
+}
+
+                                
+
+                                

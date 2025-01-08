@@ -46,3 +46,25 @@ const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropd
     item.addEventListener('click', onClick)
     }
                             
+// Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Only run on mobile devices (screen width less than 768px)
+    if (window.innerWidth < 768) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('scroll-visible');
+                } else {
+                    entry.target.classList.remove('scroll-visible');
+                }
+            });
+        }, {
+            threshold: 0.9 // Triggers when 20% of the element is visible
+        });
+
+        // Observe all project items
+        document.querySelectorAll('#projects-604 .cs-item').forEach((item) => {
+            observer.observe(item);
+        });
+    }
+});
