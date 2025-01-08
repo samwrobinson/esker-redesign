@@ -46,25 +46,45 @@ const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropd
     item.addEventListener('click', onClick)
     }
                             
-// Wait for the DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Only run on mobile devices (screen width less than 768px)
-    if (window.innerWidth < 768) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('scroll-visible');
-                } else {
-                    entry.target.classList.remove('scroll-visible');
-                }
-            });
-        }, {
-            threshold: 0.9 // Triggers when 20% of the element is visible
-        });
+// Only apply the scroll animation on mobile
+let observer;
 
-        // Observe all project items
-        document.querySelectorAll('#projects-604 .cs-item').forEach((item) => {
-            observer.observe(item);
-        });
+function handleResize() {
+    if (window.innerWidth < 768) {
+        // Initialize observer if we're on mobile and it doesn't exist yet
+        if (!observer) {
+            observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('scroll-visible');
+                    } else {
+                        entry.target.classList.remove('scroll-visible');
+                    }
+                });
+            }, {
+                threshold: 0.9
+            });
+
+            // Observe all project items
+            document.querySelectorAll('#projects-604 .cs-item').forEach((item) => {
+                observer.observe(item);
+            });
+        }
+    } else {
+        // If we're on desktop, disconnect the observer if it exists
+        if (observer) {
+            observer.disconnect();
+            observer = null;
+            // Remove the scroll-visible class from all items
+            document.querySelectorAll('#projects-604 .cs-item').forEach((item) => {
+                item.classList.remove('scroll-visible');
+            });
+        }
     }
-});
+}
+
+// Run on page load
+document.addEventListener('DOMContentLoaded', handleResize);
+
+// Run on window resize
+window.addEventListener('resize', handleResize);
