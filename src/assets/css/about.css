@@ -68,6 +68,7 @@
   #sbs .cs-title {
     max-width: 50rem;
     text-align: left;
+    color: var(--primary);
   }
   #sbs .cs-text {
     margin-bottom: 1rem;
@@ -174,7 +175,7 @@
 @media only screen and (min-width: 0rem) {
   #contact-1388 {
     padding: var(--sectionPadding);
-    background-color: #f7f7f7;
+    background-color: #fff;
     position: relative;
     z-index: 1;
   }
@@ -237,7 +238,7 @@
     font-weight: 700;
     line-height: 1.2em;
     margin-bottom: 0.75rem;
-    color: var(--headerColor);
+    color: var(--primary);
     display: block;
   }
   #contact-1388 .cs-link {
@@ -285,13 +286,16 @@
     align-items: center;
     gap: 0.75rem;
   }
+  #contact-1388 .cs-title {
+    color: var(--primary);
+  }
   #contact-1388 .cs-h3 {
     /* 20px - 39px */
     font-size: clamp(1.25rem, 3vw, 2.4375rem);
     line-height: 1.2em;
     font-weight: 700;
     margin: 0 0 0.25rem 0;
-    color: var(--headerColor);
+    color: var(--primary);
   }
   #contact-1388 .cs-label {
     /* 14px - 16px */
@@ -404,6 +408,45 @@
     display: block;
   }
 }
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #contact-1388 {
+    background-color: var(--dark);
+  }
+  body.dark-mode #contact-1388 .cs-title,
+  body.dark-mode #contact-1388 .cs-text,
+  body.dark-mode #contact-1388 .cs-header,
+  body.dark-mode #contact-1388 .cs-link,
+  body.dark-mode #contact-1388 .cs-label,
+  body.dark-mode #contact-1388 .cs-h3 {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #contact-1388 .cs-contact-text,
+  body.dark-mode #contact-1388 .cs-link {
+    opacity: 0.8;
+  }
+  body.dark-mode #contact-1388 .cs-icon-wrapper {
+    border-color: #fff;
+  }
+  body.dark-mode #contact-1388 .cs-icon {
+    /* makes it white */
+    filter: grayscale(1) brightness(1000%);
+  }
+  body.dark-mode #contact-1388 .cs-form {
+    background-color: var(--medium);
+  }
+  body.dark-mode #contact-1388 .cs-input {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+  body.dark-mode #contact-1388 .cs-input::placeholder {
+    color: #fff;
+    opacity: 0.8;
+  }
+  body.dark-mode #contact-1388 .cs-graphic {
+    opacity: 0.4;
+  }
+}
 /*-- -------------------------- -->
 <---           Steps            -->
 <--- -------------------------- -*/
@@ -443,6 +486,9 @@
     width: 100%;
     margin: 0;
     color: var(--bodyTextColor);
+  }
+  #steps-1209 .cs-title {
+    color: var(--primary);
   }
   #steps-1209 .cs-card-group {
     width: 100%;

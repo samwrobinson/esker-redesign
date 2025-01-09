@@ -81,7 +81,7 @@
     font-size: var(--headerFontSize);
     line-height: 1.2em;
     font-weight: 900;
-    color: var(--headerColor);
+    color: var(--primary);
     text-align: inherit;
   }
   .emphasis {
@@ -95,6 +95,19 @@
     line-height: 1.5em;
     color: var(--bodyTextColor);
     text-align: inherit;
+  }
+  #int-hero .cs-wave {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    z-index: 1;
+  }
+  #int-hero .cs-wave path {
+    width: 100%;
+    height: auto;
   }
   .cs-button-solid {
     z-index: 1;
@@ -966,6 +979,8 @@
     align-items: center;
     min-height: 30vh;
     padding-top: 3.125rem;
+    background-color: var(--primary);
+    /* Hide dark wave by default */
   }
   #int-hero picture {
     z-index: -2;
@@ -991,8 +1006,11 @@
     max-width: 31.25rem;
     width: 96%;
     font-size: 2.13333333rem;
-    color: #fff;
+    color: var(--bodyTextColorWhite);
     text-align: center;
+  }
+  #int-hero .cs-title {
+    color: var(--primary);
   }
   #int-hero p {
     display: block;
@@ -1003,17 +1021,11 @@
     color: #fff;
     text-align: center;
   }
-  #int-hero:before {
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: "";
-    opacity: 0.7;
-    display: block;
-    background: #000;
-    height: 100%;
-    width: 100%;
+  #int-hero .cs-dark {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
   }
 }
 /* Tablet */
@@ -1034,6 +1046,32 @@
     padding-top: 11.25rem;
     font-size: inherit;
     padding-block-end: 6.25rem;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #int-hero {
+    /* Optional: Add dark mode background if desired */
+    background-color: var(--primary);
+    /* Hide regular wave in dark mode */
+    /* Show dark wave in dark mode */
+    /* Optional: Change wave fill color in dark mode */
+  }
+  body.dark-mode #int-hero .cs-wave:not(.cs-dark) {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+  body.dark-mode #int-hero .cs-dark {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+  body.dark-mode #int-hero .cs-wave path {
+    fill: var(--dark);
+  }
+  body.dark-mode #int-hero .cs-title {
+    color: var(--bodyTextColorWhite);
   }
 }
 /*-- -------------------------- -->
@@ -1074,6 +1112,7 @@
     /* 31px - 49px */
     font-size: clamp(1.9375rem, 3.3vw, 3.0625rem);
     max-width: 30ch;
+    color: var(--bodyTextColorWhite);
   }
   #subscribe-2143 .cs-text {
     margin-bottom: 1rem;

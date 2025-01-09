@@ -34,17 +34,22 @@
 {% endblock %}
 
 {% block body %}
-    <!-- ============================================ -->
-    <!--                    LANDING                   -->
-    <!-- ============================================ -->
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
 
-    <section id="int-hero">
-        <picture>
-            <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
-        </picture>
-    </section>
+<div id="int-hero">
+    <div class="cs-container">
+        <h1 class="home-h"></h1>
+    </div>
+    <!--Background Image-->
+    <svg class="cs-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#ffffff" fill-opacity="1" d="M0,96L48,117.3C96,139,192,181,288,218.7C384,256,480,288,576,304C672,320,768,320,864,304C960,288,1056,256,1152,208C1248,160,1344,96,1392,64L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
+    <svg class="cs-wave cs-dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#061521" fill-opacity="1" d="M0,96L48,117.3C96,139,192,181,288,218.7C384,256,480,288,576,304C672,320,768,320,864,304C960,288,1056,256,1152,208C1248,160,1344,96,1392,64L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
+</div>
 
     <!-- ============================================ -->
     <!--              Main Blog Content               -->

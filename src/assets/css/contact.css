@@ -12,10 +12,11 @@
     --bodyFontSize: 1rem;
     /* 60px - 100px top and bottom */
     --sectionPadding: clamp(3.75em, 7.82vw, 6.25em) 1rem;
+    font-family: 'Montserrat', sans-serif;
   }
   #cs-contact {
     padding: var(--sectionPadding);
-    font-family: "Roboto", "Arial", sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
   #cs-contact .cs-container {
     margin: auto;
@@ -34,6 +35,7 @@
   #cs-contact .cs-title {
     max-width: 50rem;
     text-align: left;
+    color: var(--primary);
   }
   #cs-contact .cs-text {
     margin: 0 auto 0 0;
@@ -225,6 +227,9 @@
 }
 /* Small Desktop - 1300px */
 @media only screen and (min-width: 81.25em) {
+  #cs-contact {
+    margin-bottom: 8rem;
+  }
   #cs-contact #cs-form {
     column-gap: 0rem;
   }

@@ -1,7 +1,7 @@
 ---
-title: 'Contact | Code Stitch Web Designs'
-description: 'Meta description for the page'
-preloadImg: '/assets/images/cabinets2.jpg'
+title: 'Contact Us | Web Design in Vermont | Esker Designs'
+description: "Contact Esker Designs for all your web design needs in Vermont. We're happy to discuss your project and explore custom solutions, even if you decide not to work with us. Get in touch today!"
+preloadImg: '/assets/images/logo.png'
 permalink: 'contact/'
 eleventyNavigation:
     key: Contact Us
@@ -12,10 +12,13 @@ eleventyNavigation:
 {% extends "layouts/base.html" %}
 
 {% block head %}
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="ad4f603c-adc2-4df0-8440-601f99120b46"></script>
     <link rel="stylesheet" href="/assets/css/contact.css">
 {% endblock %}
 
 {% block body %}
+
+
 
     <!-- ============================================ -->
     <!--                    LANDING                   -->
@@ -23,11 +26,12 @@ eleventyNavigation:
 
     <section id="int-hero">
         <h1 id="home-h">Contact Us</h1>
-        <picture>
-            <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
-        </picture>
+        <svg class="cs-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#ffffff" fill-opacity="1" d="M0,96L48,117.3C96,139,192,181,288,218.7C384,256,480,288,576,304C672,320,768,320,864,304C960,288,1056,256,1152,208C1248,160,1344,96,1392,64L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+        <svg class="cs-wave cs-dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#061521" fill-opacity="1" d="M0,96L48,117.3C96,139,192,181,288,218.7C384,256,480,288,576,304C672,320,768,320,864,304C960,288,1056,256,1152,208C1248,160,1344,96,1392,64L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
     </section>
 
     <!-- ============================================ -->
@@ -36,12 +40,15 @@ eleventyNavigation:
 
     <section id="cs-contact">
         <div class="cs-container">
-            <form id="cs-form" name="Contact Form" method="post">
+            <form id="cs-form" name="Contact Form" method="post" netlify>
                 <div class="cs-content">
                     <span class="cs-topper">Contact</span>
                     <h2 class="cs-title">Get in Touch</h2>
                     <p class="cs-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus elementum ullamcorper ipsum porttitor aliquam. Id magna urna ultrices odio pulvinar. Sed ut.
+                        Consider Esker Designs for your next project. We specialize in Vermont website design, creating custom, responsive, and engaging solutions tailored to your unique needs and goals.
+                        <br>
+                        <br>
+                        Reach out Today!
                     </p>
                 </div>
                 <label>
@@ -61,7 +68,7 @@ eleventyNavigation:
                     <input type="text" id="find" name="find-us" placeholder="How did you find us?">
                 </label>
                 <label class="cs-label-message">
-                    Message
+                    Project Details
                     <textarea required name="Message" id="message" placeholder="Write message..."></textarea>
                 </label>
                 <button class="cs-button-solid" type="submit">Submit Message</button>
@@ -78,8 +85,6 @@ eleventyNavigation:
                 <a class="cs-link" href="{{client.address.mapLink}}">
                     {{client.address.lineOne}},
                     <br/>
-                    {{client.address.lineTwo}},
-                    <br/>
                     <span class="cs-block">
                         {{client.address.city}}
                         {{client.address.state}}
@@ -89,8 +94,8 @@ eleventyNavigation:
 
                 <!-- Background Image-->
                 <picture class="cs-bg-picture">
-                    <source media="(min-width: 601px)" srcset="/assets/images/skyscraper.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/skyscraper.jpg" alt="building" loading="lazy" width="2500" height="1667">
+                    <source media="(min-width: 601px)" srcset="/assets/images/contact.jpg">
+                    <img aria-hidden="true" decoding="async" src="/assets/images/contact.jpg" alt="building" loading="lazy" width="2500" height="1667">
                 </picture>
 
             </div>

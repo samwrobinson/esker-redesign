@@ -1,14 +1,13 @@
 module.exports = {
-    "name": "Code Stitch Web Designs",
-    "email": "help@codestitch.app",
-    "phoneForTel": "555-779-4407",
-    "phoneFormatted": "(555) 779-4407",
+    "name": "Esker Designs",
+    "email": "sam@eskerdesigns.com",
+    "phoneForTel": "828-989-1290-779-4407",
+    "phoneFormatted": "(828) 989-1290",
     "address": {
-        "lineOne": "First Address Line",
-        "lineTwo": "Second Address Line",
-        "city": "Denver",
-        "state": "CO",
-        "zip": "80206",
+        "lineOne": "70 Lenord Lane",
+        "city": "Warren",
+        "state": "VT",
+        "zip": "05674",
         "country": "US",
         "mapLink": "https://maps.app.goo.gl/TEdS5KoLC9ZcULuQ6"
     },

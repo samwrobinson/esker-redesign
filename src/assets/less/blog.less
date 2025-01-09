@@ -81,39 +81,6 @@
             color: #fff;
             text-align: left;
         }
-
-        .blog-bg {
-            z-index: -1;
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: block;
-            height: 100%;
-            width: 100%;
-
-            img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-            }
-
-            &:before {
-                z-index: 1;
-                position: absolute;
-                top: 0;
-                left: 0;
-                /* color overlay */
-                content: "";
-                opacity: 0.6;
-                display: block;
-                background: #000;
-                height: 100%;
-                width: 100%;
-            }
-        }
     }
 }
 
@@ -171,19 +138,6 @@
             width: 96%;
             color: #fff;
             text-align: center;
-        }
-
-        &:before {
-            z-index: -1;
-            position: absolute;
-            top: 0;
-            left: 0;
-            content: "";
-            opacity: 0.7;
-            display: block;
-            background: #000;
-            height: 100%;
-            width: 100%;
         }
     }
 }
@@ -245,6 +199,7 @@
         flex-direction: row;
         align-items: flex-start;
         column-gap: (20/16em);
+        margin-bottom: 8rem;
     }
 }
 
@@ -659,7 +614,7 @@
                 font-size: (28/16rem);
                 line-height: 1.5em;
                 font-weight: 700;
-                color: var(--headerColor);
+                color: var(--primary);
             }
 
             h3 {
@@ -667,7 +622,7 @@
                 font-size: (24/16rem);
                 line-height: 1.5em;
                 font-weight: 700;
-                color: var(--headerColor);
+                color: var(--primary);
             }
 
             h4,
@@ -677,7 +632,7 @@
                 font-size: (20/16rem);
                 line-height: 1.5em;
                 font-weight: 700;
-                color: var(--headerColor);
+                color: var(--primary);
             }
 
             p {
