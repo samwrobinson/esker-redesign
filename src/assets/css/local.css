@@ -816,6 +816,7 @@
   }
   #sbs-1640 .cs-title-2 {
     display: block;
+    color: var(--bodyTextColorWhite);
   }
   #sbs-1640 .cs-title {
     display: none;
