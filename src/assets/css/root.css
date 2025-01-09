@@ -1052,7 +1052,7 @@
 @media only screen and (min-width: 0rem) {
   body.dark-mode #int-hero {
     /* Optional: Add dark mode background if desired */
-    background-color: var(--primary);
+    background-image: url(/assets/images/northern-lights.jpg);
     /* Hide regular wave in dark mode */
     /* Show dark wave in dark mode */
     /* Optional: Change wave fill color in dark mode */
