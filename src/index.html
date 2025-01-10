@@ -106,12 +106,10 @@ eleventyNavigation:
         <!--Hero Image-->
         <picture class="cs-picture">
             <!--Mobile-->
-            <source media="(max-width: 600px)" srcset="/assets/images/hero-mockup-v3.webp">
+            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/hero-mockup-v3.webp' | resize({width: 900, height: 562}) | webp %}">
             <!--Tablet-->
-            <source media="(min-width: 601px)" srcset="/assets/images/hero-mockup-v3.webp">
-            <!--Desktop-->
-            <source media="(min-width: 1024px)" srcset="/assets/images/hero-mockup-v3.webp">
-            <img aria-hidden="true" decoding="async" src="/assets/images/hero-mockup-v3.webp" alt="therapy" width="936" height="493">
+            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/hero-mockup-v3.webp' | resize({width: 1656, height: 968}) | webp %}">
+            <img aria-hidden="true" decoding="async" src="{% getUrl '/assets/images/hero-mockup-v3.webp' | resize({width: 1656, height: 968}) | webp %}" alt="therapy" width="900" height="562">
             </picture>
     </div>
     <!--Change the svg path fill color to whatever color the section below is so you can match it and create the illusion it is all one piece-->
@@ -129,7 +127,7 @@ eleventyNavigation:
             </clipPath>
         </defs>
     </svg>
-    <img alt="treeline" decoding="async" height="370" src="/assets/images/hero-dark-v2.png" width="1199" aria-hidden="true" id="trees" class="cs-wave cs-dark desktop" loading="lazy">
+    <img alt="treeline" decoding="async" height="370" src="{% getUrl "/assets/images/hero-dark-v2.png" | resize({width: 1177, height: 366}) | webp %}" width="1199" aria-hidden="true" id="trees" class="cs-wave cs-dark desktop" loading="lazy">
     
 </section>
 
@@ -161,7 +159,7 @@ eleventyNavigation:
                 <a href="/service/" class="cs-link">Read More</a>
                 <!--Background Image-->
                 <picture class="cs-background">
-                    <img loading="lazy" decoding="async" src="/assets/images/hero-dark-v2.png" alt="hair cut" width="480" height="425">
+                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/hero-dark-v2.png" | resize({width: 1177, height: 366}) | webp %}" alt="hair cut" width="480" height="425">
                 </picture>
             </li>
             <li class="cs-item">
@@ -176,7 +174,7 @@ eleventyNavigation:
                 <a href="/service/" class="cs-link">Read More</a>
                 <!--Background Image-->
                 <picture class="cs-background">
-                    <img loading="lazy" decoding="async" src="/assets/images/hero-dark-v2.png" alt="hair cut" width="480" height="425">
+                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/hero-dark-v2.png" | resize({width: 1177, height: 366}) | webp %}" alt="hair cut" width="480" height="425">
                 </picture>
             </li>
             <li class="cs-item">
@@ -192,7 +190,7 @@ eleventyNavigation:
                 <a href="/service/" class="cs-link">Read More</a>
                 <!--Background Image-->
                 <picture class="cs-background">
-                    <img loading="lazy" decoding="async" src="/assets/images/hero-dark-v2.png" alt="hair cut" width="480" height="425">
+                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/hero-dark-v2.png" | resize({width: 1177, height: 366}) | webp %}" alt="hair cut" width="480" height="425">
                 </picture>
             </li>
         </ul>
@@ -210,7 +208,7 @@ eleventyNavigation:
                 <a href="/service/" class="cs-link">Read More</a>
                 <!--Background Image-->
                 <picture class="cs-background">
-                    <img loading="lazy" decoding="async" src="/assets/images/hero-dark-v2.png" alt="hair cut" width="480" height="425">
+                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/hero-dark-v2.png" | resize({width: 1177, height: 366}) | webp %}" alt="hair cut" width="480" height="425">
                 </picture>
             </li>
             <li class="cs-item">
@@ -226,7 +224,7 @@ eleventyNavigation:
                 <a href="/service/" class="cs-link">Read More</a>
                 <!--Background Image-->
                 <picture class="cs-background">
-                    <img loading="lazy" decoding="async" src="/assets/images/hero-dark-v2.png" alt="hair cut" width="480" height="425">
+                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/hero-dark-v2.png" | resize({width: 1177, height: 366}) | webp %}" alt="hair cut" width="480" height="425">
                 </picture>
             </li>
             <li class="cs-item">
@@ -240,7 +238,7 @@ eleventyNavigation:
                 <a href="/service/" class="cs-link">Read More</a>
                 <!--Background Image-->
                 <picture class="cs-background">
-                    <img loading="lazy" decoding="async" src="/assets/images/hero-dark-v2.png" alt="hair cut" width="480" height="425">
+                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/hero-dark-v2.png" | resize({width: 1177, height: 366}) | webp %}" alt="hair cut" width="480" height="425">
                 </picture>
             </li>
         </ul>
@@ -256,10 +254,10 @@ eleventyNavigation:
         <div class="cs-image-group">
             <picture class="cs-background">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/sam-portrait.jpg' | resize({width: 686, height: 1040, position: 'bottom' }) | webp %}">
+                <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/sam-portrait.jpg' | resize({width: 343, height: 520, position: 'bottom' }) | webp %}">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/sam-portrait.jpg' | resize({width: 800, height: 900, position: 'bottom' }) | webp %}">
-                <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/sam-portrait.jpg' | resize({width: 800, height: 900, position: 'bottom' }) | webp %}" alt="people" width="605" height="690">
+                <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/sam-portrait.jpg' | resize({width: 396, height: 841, position: 'bottom' }) | webp %}">
+                <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/sam-portrait.jpg' | resize({width: 396, height: 841, position: 'bottom' }) | webp %}" alt="people" width="605" height="690">
             </picture>
             <div class="cs-box">
                 <img class="cs-box-icon" loading="lazy" decoding="async" src="/assets/images/logo.webp" alt="people" width="60" height="60">

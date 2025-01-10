@@ -4,12 +4,13 @@
 
 <footer id="cs-footer-842">
     <!--Wave grpahic - On the section above the footer, add padding-bottom: 14vw to the section container ID so it pushes down enough for the wave to not overlap its content and the vw unit will make the padding value grow with the screen width to account for the wave getting taller as it gets wider. Change the path fill color to whatever background color the footer is so it matches-->
-    <img class="cs-wave" src="/assets/images/footer-trees.png" alt="Forest">
+    <img class="cs-wave" src="{% getUrl '/assets/images/footer-trees.png' | webp %}" alt="Forest" loading="lazy">
+    
     <div class="cs-container">
         <!-- Logo Group -->
         <div class="cs-logo-group">
             <a aria-label="go back to home" class="cs-logo" href="">
-                <img class="cs-logo-img" aria-hidden="true" loading="lazy" decoding="async" src="{% getUrl "/assets/images/logo-white.png" | webp %}" alt="logo" alt="logo" width="240" height="32">
+                <img class="cs-logo-img" aria-hidden="true" loading="lazy" decoding="async" src="{% getUrl "/assets/images/logo-white.png" | resize({width: 100, height: 100}) | webp %}" alt="logo" alt="logo" width="240" height="32">
             </a>
         </div>
         <!-- Links -->
