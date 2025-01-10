@@ -415,31 +415,6 @@
     /* sends it to the right in the 3rd position */
     order: 3;
   }
-  #cs-navigation .cs-contact-group {
-    display: none;
-    position: relative;
-    z-index: 10;
-  }
-  #cs-navigation .cs-phone {
-    font-size: 1rem;
-    line-height: 1.5em;
-    text-decoration: none;
-    margin: 0;
-    color: var(--headerColor);
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0.5rem;
-    transition: opacity 0.3s, color 0.3s;
-  }
-  #cs-navigation .cs-phone-icon {
-    width: 1.5rem;
-    height: auto;
-    display: block;
-  }
-  #cs-navigation .cs-social {
-    display: none;
-  }
   #cs-navigation .cs-active .cs-line1 {
     top: 50%;
     transform: translate(-50%, -50%) rotate(225deg);
@@ -567,6 +542,10 @@
   #cs-navigation .cs-li:nth-of-type(13) {
     transition-delay: 0.65s;
   }
+  #cs-navigation .cs-li .cs-li-link {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+  }
   #cs-navigation .cs-li-link {
     /* 16px - 24px */
     font-size: clamp(1rem, 2.5vw, 1.5rem);
@@ -578,7 +557,7 @@
     position: relative;
   }
   #cs-navigation .cs-li-link.cs-active {
-    color: var(--primary);
+    color: var(--primaryLight);
   }
   #cs-navigation .cs-li-link:hover {
     color: var(--primaryLight);
@@ -675,6 +654,10 @@
     width: 0.9375rem;
     height: auto;
     display: inline-block;
+  }
+  #cs-navigation .cs-li .cs-li-link {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
   }
   #cs-navigation .cs-drop-ul {
     min-width: 12.5rem;
@@ -921,10 +904,10 @@
     transition: color 0.3s;
   }
   #cs-navigation .cs-li-link:hover {
-    color: var(--primary);
+    color: var(--primaryLight);
   }
   #cs-navigation .cs-li-link.cs-active {
-    color: var(--primary);
+    color: var(--primaryLight);
   }
 }
 /* Large Desktop - 1300px */
@@ -1191,7 +1174,7 @@
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
   body.dark-mode #subscribe-2143 {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--dark);
   }
   body.dark-mode #subscribe-2143 .cs-title,
   body.dark-mode #subscribe-2143 .cs-text {

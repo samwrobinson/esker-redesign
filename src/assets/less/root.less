@@ -485,35 +485,6 @@
             order: 3;
         }
 
-        .cs-contact-group {
-            display: none;
-            position: relative;
-            z-index: 10;
-        }
-
-        .cs-phone {
-            font-size: (16/16rem);
-            line-height: 1.5em;
-            text-decoration: none;
-            margin: 0;
-            color: var(--headerColor);
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: (8/16rem);
-            transition: opacity 0.3s, color 0.3s;
-        }
-
-        .cs-phone-icon {
-            width: (24/16rem);
-            height: auto;
-            display: block;
-        }
-
-        .cs-social {
-            display: none;
-        }
-
         .cs-active {
             .cs-line1 {
                 top: 50%;
@@ -655,6 +626,11 @@
             }
         }
 
+        .cs-li .cs-li-link {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+        }
+
         .cs-li-link {
             /* 16px - 24px */
             font-size: clamp(1rem, 2.5vw, 1.5rem);
@@ -666,7 +642,7 @@
             position: relative;
 
             &.cs-active {
-                color: var(--primary);
+                color: var(--primaryLight);
             }
 
             &:hover {
@@ -790,6 +766,11 @@
             width: (15/16rem);
             height: auto;
             display: inline-block;
+        }
+
+        .cs-li .cs-li-link {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
         }
 
         .cs-drop-ul {
@@ -1067,11 +1048,11 @@
             transition: color 0.3s;
 
             &:hover {
-                color: var(--primary);
+                color: var(--primaryLight);
             }
 
             &.cs-active {
-                color: var(--primary);
+                color: var(--primaryLight);
             }
         }
     }
@@ -1387,7 +1368,7 @@
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
         #subscribe-2143 {
-            background-color: rgba(0, 0, 0, .2);
+            background-color: var(--dark);
 
             .cs-title,
             .cs-text {

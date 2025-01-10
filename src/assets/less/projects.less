@@ -556,6 +556,7 @@
             flex-direction: row;
             align-items: flex-start;
             justify-content: space-between;
+            margin-bottom: 7rem;
         }
 
         .cs-content {
@@ -948,7 +949,7 @@
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
         #pricing-1384 {
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: var(--dark);
 
             .cs-title,
             .cs-text {
@@ -1019,4 +1020,233 @@
     }
 }
 
+
+/*-- -------------------------- -->
+<---          Services          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #services-1331 {
+        padding: var(--sectionPadding);
+        background-color: var(--primary);
+        position: relative;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at tablet */
+            max-width: (550/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+        }
+
+        .cs-flex-group {
+            /* prevents flexbox from squishing it */
+            flex: none;
+        }
+
+        .cs-title, .cs-text {
+            color: #fff;
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            row-gap: (16/16rem);
+        }
+
+        .cs-item {
+            list-style: none;
+            width: 100%;
+            box-sizing: border-box;
+            /* 40px - 60px top & bottom,  20px - 48px left & right, */
+            padding: clamp(2.5rem, 4.1vw, 3.75rem) clamp(1.25rem, 3.4vw, 3rem);
+            background-color: #fff;
+            grid-column: span 12;
+            border-radius: 15px;
+        }
+
+        .cs-link {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* set text align to center if content needs to be centrally aligned */
+            text-align: left;
+        }
+
+        .cs-step {
+            font-size: var(--topperFontSize);
+            line-height: 1.2em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            /* 48px - 100px */
+            margin-bottom: clamp(3rem, 7.8vw, 6.25rem);
+            color: var(--primary);
+            display: block;
+            text-align: inherit;
+        }
+
+        .cs-h3 {
+            font-size: (20/16rem);
+            line-height: 1.2em;
+            font-weight: 900;
+            margin: 0;
+            margin-bottom: (12/16rem);
+            color: var(--headerColor);
+            transition: color 0.3s;
+            text-align: inherit;
+        }
+
+        .cs-item-text {
+            /* 14px - 16px */
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            line-height: 1.5em;
+            margin: 0;
+            color: var(--bodyTextColor);
+            transition: color 0.3s;
+            text-align: inherit;
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -2;
+
+            img {
+                width: 100%;
+                height: 100%;
+                opacity: 0.06;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #services-1331 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-content {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            /* 48px - 80px */
+            gap: clamp(3rem, 6vw, 5rem);
+            text-align: left;
+        }
+
+        .cs-title {
+            margin: 0;
+        }
+
+        .cs-flex-group {
+            width: 50%;
+        }
+
+        .cs-card-group {
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            column-gap: (16/16rem);
+        }
+
+        .cs-item {
+            grid-column: span 4;
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #services-1331 {
+            background-color: var(--dark);
+
+            .cs-title,
+            .cs-text, .cs-item-text {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-text {
+                opacity: 0.8;
+            }
+
+            .cs-step {
+                color: var(--primaryLight);
+            }
+
+            .cs-item {
+                background-color: var(--medium);
+
+                &.cs-popular {
+                    .cs-button-transparent {
+                        background-color: #fff;
+                        color: var(--primary);
+
+                        &:hover {
+                            background-color: #1a1a1a;
+                        }
+                    }
+                }
+            }
+
+            .cs-package {
+                color: var(--primaryLight);
+            }
+
+            .cs-price,
+            .cs-duration,
+            .cs-li {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-duration,
+            .cs-li {
+                opacity: 0.8;
+            }
+
+            .cs-button-transparent {
+                background-color: var(--primary);
+                color: #fff;
+                border: none;
+                transition:
+                    color 0.3s,
+                    background-color 0.3s;
+
+                &:hover {
+                    background-color: #1a1a1a;
+                }
+            }
+        }
+    }
+}
                                 
