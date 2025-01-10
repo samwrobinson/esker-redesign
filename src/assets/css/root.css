@@ -46,9 +46,8 @@
   }
   :root {
     --primary: #243010;
-    --primaryHeaders: #0c1426;
-    --primaryLight: #A1C349;
-    --secondary: #fca311;
+    --primaryLight: #96bf30;
+    --secondary: #f19d16;
     --secondaryLight: #f8b548;
     --headerColor: #ffffff;
     --bodyTextColor: #434343;
@@ -84,6 +83,11 @@
     color: var(--primary);
     text-align: inherit;
   }
+  label,
+  input,
+  .cs-link {
+    font-family: 'Poppins', sans-serif;
+  }
   .emphasis {
     color: var(--secondary);
   }
@@ -95,6 +99,7 @@
     line-height: 1.5em;
     color: var(--bodyTextColor);
     text-align: inherit;
+    font-family: 'Poppins', sans-serif;
   }
   #int-hero .cs-wave {
     width: 100%;
@@ -1080,12 +1085,12 @@
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #subscribe-2143 {
+    padding: var(--sectionPadding);
     padding-bottom: 4rem;
     background-color: var(--primary);
     /* clips anything overflowing */
     overflow: hidden;
     position: relative;
-    z-index: 10;
   }
   #subscribe-2143 .cs-container {
     width: 80%;
@@ -1119,6 +1124,9 @@
   }
   #subscribe-2143 .cs-text:last-of-type {
     margin-bottom: 2rem;
+  }
+  #subscribe-2143 #debris {
+    z-index: -1;
   }
   #subscribe-2143 .cs-image-group {
     /* scales the whole section down and ties the font size to the vw and stops at 75% of the vale of 1em, changes at desktop */
@@ -1176,10 +1184,8 @@
 }
 /* Large Desktop - 1440px */
 @media only screen and (min-width: 90rem) {
-  #subscribe-2143 .cs-flower {
-    display: block;
-    top: 1rem;
-    left: 0;
+  #subscribe-2143 .cs-content {
+    margin-bottom: 8rem;
   }
 }
 /* Dark Mode */
@@ -1204,7 +1210,7 @@
     padding: var(--sectionPadding);
     /* 30px - 50px */
     padding-bottom: clamp(1.875rem, 5vw, 3.125rem);
-    background-color: #1a1a1a;
+    background-color: #000;
     position: relative;
     z-index: 2;
   }
@@ -1214,6 +1220,7 @@
     position: absolute;
     left: 0;
     bottom: 99%;
+    z-index: 5;
   }
   #cs-footer-842 .cs-container {
     width: 100%;
@@ -1233,7 +1240,7 @@
     position: relative;
   }
   #cs-footer-842 .cs-logo {
-    width: 13.125rem;
+    width: 6.25rem;
     height: auto;
     margin: 0 0 1.5rem 0;
     display: block;

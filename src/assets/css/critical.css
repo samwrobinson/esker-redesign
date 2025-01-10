@@ -5,6 +5,13 @@
     overflow: hidden;
     position: relative;
   }
+  #hero-855 #trees {
+    width: 100%;
+    aspect-ratio: 3.22;
+    /* Maintain the actual aspect ratio */
+    object-fit: cover;
+    /* Ensures no distortion */
+  }
   #hero-855 .cs-container {
     width: 100%;
     max-width: 80rem;

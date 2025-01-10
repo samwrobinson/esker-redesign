@@ -250,7 +250,7 @@
     font-size: clamp(20px, 5vw, 32px);
     line-height: 1.4em;
     font-weight: 700;
-    color: var(--headerColor);
+    color: var(--primary);
   }
   .recent-articles .blog-desc {
     margin: 1rem 0 2rem;
@@ -264,7 +264,7 @@
     display: inline-block;
     border-radius: 0.25rem;
     margin: auto;
-    background-color: var(--headerColor);
+    background-color: var(--primary);
     min-width: 9.375rem;
     /* prevents padding from adding to the width */
     box-sizing: border-box;
@@ -274,7 +274,7 @@
     /* 46px - 56px */
     line-height: clamp(2.875em, 5.5vw, 3.5em);
     font-weight: 700;
-    color: #fff;
+    color: var(--bodyTextColorWhite);
     transition: color 0.3s;
     text-align: center;
   }
@@ -294,7 +294,7 @@
     transition: opacity 0.3s;
   }
   .recent-articles .blog-link:hover {
-    color: var(--headerColor);
+    color: var(--primary);
   }
   .recent-articles .blog-link:hover:before {
     opacity: 1;

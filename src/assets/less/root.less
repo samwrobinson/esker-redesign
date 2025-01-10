@@ -44,9 +44,8 @@
     // Website colors
     :root {
         --primary: #243010;
-        --primaryHeaders: #0c1426;
-        --primaryLight: #A1C349;
-        --secondary: #fca311;
+        --primaryLight: #96bf30;
+        --secondary: #f19d16;
         --secondaryLight: #f8b548;
         --headerColor: #ffffff;
         --bodyTextColor: #434343;
@@ -86,6 +85,10 @@
         text-align: inherit;
     }
 
+    label, input, .cs-link {
+        font-family: 'Poppins', sans-serif;
+    }
+
     .emphasis {
         color: var(--secondary);
     }
@@ -98,6 +101,7 @@
         line-height: 1.5em;
         color: var(--bodyTextColor);
         text-align: inherit;
+        font-family: 'Poppins', sans-serif;
     }
 
     #int-hero .cs-wave {
@@ -1256,12 +1260,12 @@
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
     #subscribe-2143 {
+        padding: var(--sectionPadding);
         padding-bottom: 4rem;
         background-color: var(--primary);
         /* clips anything overflowing */
         overflow: hidden;
         position: relative;
-        z-index: 10;
         
         .cs-container {
             width: 80%;
@@ -1299,6 +1303,10 @@
             &:last-of-type {
                 margin-bottom: (32/16rem);
             }
+        }
+
+        #debris {
+            z-index: -1;
         }
 
         .cs-image-group {
@@ -1369,10 +1377,8 @@
 /* Large Desktop - 1440px */
 @media only screen and (min-width: 90rem) {
     #subscribe-2143 {
-        .cs-flower {
-            display: block;
-            top: (16/16rem);
-            left: 0;
+        .cs-content {
+            margin-bottom: 8rem;
         }
     }
 }
@@ -1405,7 +1411,7 @@
         padding: var(--sectionPadding);
         /* 30px - 50px */
         padding-bottom: clamp(1.875rem, 5vw, 3.125rem);
-        background-color: #1a1a1a;
+        background-color: #000;
         position: relative;
         z-index: 2;
 
@@ -1415,6 +1421,7 @@
             position: absolute;
             left: 0;
             bottom: 99%;
+            z-index: 5;
         }
         
 
@@ -1438,7 +1445,7 @@
         }
 
         .cs-logo {
-            width: (210/16rem);
+            width: (100/16rem);
             height: auto;
             margin: 0 0 (24/16rem) 0;
             display: block;

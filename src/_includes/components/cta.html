@@ -8,18 +8,24 @@
             <!--Main Image-->
             <picture class="cs-picture">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/alpenglow.webp">
+                <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/alpenglow.webp' | resize({width: 500, height: 570}) | avif %}">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/alpenglow.webp">
-                <img loading="lazy" decoding="async" src="/assets/images/alpenglow.webp" alt="wedding bride" width="396" height="570">
+                <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/alpenglow.webp' | resize({width: 500, height: 570}) | avif %}">
+                <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/alpenglow.webp' | resize({width: 500, height: 570}) | avif %}" alt="wedding bride" width="396" height="570">
             </picture>
             <!--Color Wheel-->
-            <img class="cs-wheel" loading="lazy" decoding="async" src="/assets/images/debris.png" alt="color wheel" width="542" height="542" aria-hidden="true">
+            <picture id="debris" class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/debris.webp' | resize({width: 342, height: 342}) | avif %}">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/debris.webp' | resize({width: 542, height: 542}) | avif %}">
+                <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/debris.webp' | resize({width: 542, height: 542}) | avif %}" alt="wedding bride" width="396" height="570">
+            </picture>
         </div>
         <div class="cs-content">
             <span class="cs-topper">Reach Out Today</span>
             <h2 class="cs-title">Let's Create the Website Your Business Deserves.</h2>
-            <a href="" class="cs-button-solid">Give Us a Call</a>
+            <a href="/contact/" class="cs-button-solid">Give Us a Call</a>
         </div>
     </div>
 </section>

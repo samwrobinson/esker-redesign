@@ -12,8 +12,12 @@ eleventyNavigation:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="stylesheet" href="/assets/css/local.css"/>
+
     <link rel="stylesheet" href="/assets/css/critical.css"/>
+    <link rel="stylesheet" href="/assets/css/local.css" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript>
+        <link rel="stylesheet" href="/assets/css/local.css" />
+    </noscript>
 
     <!-- Script for Netlify Identity -->
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -146,7 +150,7 @@ eleventyNavigation:
                     from scratch. We work closely with you to design a site that perfectly captures
                     what makes your business unique.
                 </p>
-                <a href="" class="cs-link">Read More</a>
+                <a href="/service/" class="cs-link">Read More</a>
                 <!--Background Image-->
                 <picture class="cs-background">
                     <img loading="lazy" decoding="async" src="/assets/images/hero-dark-v2.png" alt="hair cut" width="480" height="425">
@@ -161,7 +165,7 @@ eleventyNavigation:
                     We have professional copywriters create your content to make sure your website is easy for search engines to find. That way, more people
                     can discover your business.
                 </p>
-                <a href="" class="cs-link">Read More</a>
+                <a href="/service/" class="cs-link">Read More</a>
                 <!--Background Image-->
                 <picture class="cs-background">
                     <img loading="lazy" decoding="async" src="/assets/images/hero-dark-v2.png" alt="hair cut" width="480" height="425">
@@ -177,7 +181,7 @@ eleventyNavigation:
                     keeping things quick and clean. No extra code weighing things down – 
                     just a smooth experience, no matter your device.
                 </p>
-                <a href="" class="cs-link">Read More</a>
+                <a href="/service/" class="cs-link">Read More</a>
                 <!--Background Image-->
                 <picture class="cs-background">
                     <img loading="lazy" decoding="async" src="/assets/images/hero-dark-v2.png" alt="hair cut" width="480" height="425">
@@ -195,7 +199,7 @@ eleventyNavigation:
                     engines, loads quickly, and meets modern web design standards — all
                     without having to manage it yourself.
                 </p>
-                <a href="" class="cs-link">Read More</a>
+                <a href="/service/" class="cs-link">Read More</a>
                 <!--Background Image-->
                 <picture class="cs-background">
                     <img loading="lazy" decoding="async" src="/assets/images/hero-dark-v2.png" alt="hair cut" width="480" height="425">
@@ -211,7 +215,7 @@ eleventyNavigation:
                     can discover your business. Plus, your site will look great and work smoothly
                     on all devices — phone, tablet, or computer.
                 </p>
-                <a href="" class="cs-link">Read More</a>
+                <a href="/service/" class="cs-link">Read More</a>
                 <!--Background Image-->
                 <picture class="cs-background">
                     <img loading="lazy" decoding="async" src="/assets/images/hero-dark-v2.png" alt="hair cut" width="480" height="425">
@@ -219,13 +223,13 @@ eleventyNavigation:
             </li>
             <li class="cs-item">
                 <picture class="cs-icon-wrapper">
-                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/design.svg" alt="hair cut" width="40" height="40">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/vermont.svg" alt="hair cut" width="40" height="40">
                 </picture>
                 <h3 class="cs-h3">Vermont Born & Built</h3>
                 <p class="cs-item-text">
                     Our development team works right here in Vermont – not outsourced overseas or scattered across time zones. When you need us, we're just down the road. Supporting local matters, especially when it comes to who builds your website.
                 </p>
-                <a href="" class="cs-link">Read More</a>
+                <a href="/service/" class="cs-link">Read More</a>
                 <!--Background Image-->
                 <picture class="cs-background">
                     <img loading="lazy" decoding="async" src="/assets/images/hero-dark-v2.png" alt="hair cut" width="480" height="425">
@@ -324,7 +328,7 @@ eleventyNavigation:
                     </p>
                 </li>
             </ul>
-            <a href="" class="cs-button-solid">Discover More</a>
+            <a href="" class="cs-button-solid">Get Started</a>
         </div>
     </div>
     <div class="cs-bubbles" aria-hidden="true"></div>
@@ -368,7 +372,7 @@ eleventyNavigation:
             <p class="cs-text">
                 Speed isn't just a technical metric - it's money in your pocket. Studies show that even a 1-second delay can reduce conversions by 7%. By building your site with clean, efficient code, we ensure you never lose a customer to slow loading times. From instant-load images to blazing-fast checkouts, every millisecond is optimized to keep your visitors engaged and your business growing.
             </p>
-            <a href="" class="cs-button-solid">Schedule a Call</a>
+            <a href="/contact/" class="cs-button-solid">Schedule a Call</a>
         </div>
         <div class="cs-content">
             <span class="cs-topper-2">Vermont Website Design</span>
@@ -401,7 +405,7 @@ eleventyNavigation:
         </div>
         <ul class="cs-card-group">
             <li class="cs-item">
-                <a class="cs-link" href="">
+                <a class="cs-link" href="https://peak-pressurewash.com/">
                     <div class="cs-info">
                         <picture class="cs-background">
                             <!--Mobile Image-->
@@ -420,7 +424,7 @@ eleventyNavigation:
                 </a>
             </li>
             <li class="cs-item">
-                <a class="cs-link" href="">
+                <a class="cs-link" href="https://peakpainting.netlify.app/">
                     <div class="cs-info">
                         <picture class="cs-background">
                             <!--Mobile Image-->
@@ -439,7 +443,7 @@ eleventyNavigation:
                 </a>
             </li>
             <li class="cs-item">
-                <a class="cs-link" href="">
+                <a class="cs-link" href="https://barerootscounseling.org/">
                     <div class="cs-info">
                         <picture class="cs-background">
                             <!--Mobile Image-->
