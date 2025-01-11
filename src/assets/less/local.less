@@ -848,7 +848,7 @@
             line-height: 1.2em;
             font-weight: 900;
             text-align: left;
-            color: var(--bodyTextColorWhite);
+            color: var(--secondary);
             display: block;
             margin: 0 0 (4/16rem) 0;
         }
@@ -1570,7 +1570,7 @@
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
         #pricing-1384 {
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: var(--dark);
 
             .cs-title,
             .cs-text {
@@ -1812,6 +1812,19 @@
             width: clamp(31.5%, 30vw, 32.3%);
             max-width: (413/16rem);
             align-content: space-between;
+        }
+
+
+        .cs-item-img {
+            transition: box-shadow 300ms ease, transform 250ms ease;
+        }
+
+        .cs-item:hover {
+            .cs-item-img {
+                box-shadow: rgba(95, 250, 178, 0.2) 0px 8px 24px;
+                transform: translateY(-10px);
+                transition: box-shadow 300ms ease-in-out, transform 250ms ease-in-out;
+            }
         }
 
         .cs-flex-group {
