@@ -243,17 +243,7 @@
 /*-- -------------------------- -->
 <---      Dark Mode Toggle      -->
 <--- -------------------------- -*/
-/* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  body.dark-mode #dark-mode-toggle .cs-sun {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
-  body.dark-mode #dark-mode-toggle .cs-moon {
-    opacity: 0;
-    transform: translate(-50%, -150%);
-    fill: #fff;
-  }
   #dark-mode-toggle {
     order: 2;
     z-index: 1000;
@@ -262,34 +252,61 @@
     border: none;
     margin: 0;
     background: transparent;
-    height: 3rem;
-    width: 3rem;
-    overflow: hidden;
+    height: 2rem;
+    width: 3.75rem;
     padding: 0;
     flex: none;
+  }
+  #dark-mode-toggle .toggle-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    border-radius: 1rem;
+    padding: 0.125rem;
+    transition: background-color 0.3s;
+  }
+  #dark-mode-toggle .toggle-slider {
+    position: absolute;
+    left: 0.125rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.75rem;
+    height: 1.75rem;
+    background: #ffffff;
+    border-radius: 50%;
+    transition: left 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   #dark-mode-toggle img,
   #dark-mode-toggle svg {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 1.25rem;
-    width: 1.25rem;
-    pointer-events: none;
+    height: 1.125rem;
+    width: 1.125rem;
+    transition: opacity 0.3s, transform 0.3s;
   }
   #dark-mode-toggle .cs-moon {
-    z-index: 2;
-    transition: transform 0.3s, opacity 0.3s;
-  }
-  #dark-mode-toggle .cs-button-solid {
-    display: none;
+    opacity: 1;
+    fill: var(--primary);
   }
   #dark-mode-toggle .cs-sun {
-    z-index: 1;
     opacity: 0;
-    transform: translate(-50%, 100%);
-    transition: transform 0.3s, opacity 0.3s;
+  }
+  /* Dark Mode Styles */
+  body.dark-mode #dark-mode-toggle .toggle-wrapper {
+    background: #2c3e50;
+  }
+  body.dark-mode #dark-mode-toggle .toggle-slider {
+    left: calc(100% - 1.875rem);
+    background: #34495e;
+  }
+  body.dark-mode #dark-mode-toggle .cs-moon {
+    opacity: 0;
+  }
+  body.dark-mode #dark-mode-toggle .cs-sun {
+    opacity: 1;
   }
 }
 /* Desktop - 1024px */
@@ -303,6 +320,9 @@
   }
   #dark-mode-toggle:hover {
     cursor: pointer;
+  }
+  #dark-mode-toggle:hover .toggle-wrapper {
+    opacity: 0.9;
   }
 }
 /*-- -------------------------- -->
