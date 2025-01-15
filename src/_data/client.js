@@ -9,7 +9,7 @@ module.exports = {
         "state": "VT",
         "zip": "05674",
         "country": "US",
-        "mapLink": "https://maps.app.goo.gl/TEdS5KoLC9ZcULuQ6"
+        "mapLink": "https://maps.app.goo.gl/ukxTw4EjbeD8yRtp7"
     },
     "socials": {
         "facebook": "https://www.facebook.com/",

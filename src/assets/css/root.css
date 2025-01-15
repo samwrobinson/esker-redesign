@@ -101,6 +101,9 @@
     text-align: inherit;
     font-family: 'Poppins', sans-serif;
   }
+  .cs-color {
+    color: var(--primaryLight);
+  }
   #int-hero .cs-wave {
     width: 100%;
     height: auto;

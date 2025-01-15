@@ -47,10 +47,10 @@ eleventyNavigation:
             <div class="cs-flex">
                 <picture class="cs-background">
                     <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="/assets/images/june-bug.webp">
+                    <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/essex.webp' | resize({width: 542, height: 728}) | webp %}">
                     <!--Tablet and above Image-->
-                    <source media="(min-width: 601px)" srcset="/assets/images/june-bug.webp">
-                    <img loading="lazy" decoding="async" src="/assets/images/june-bug.webp" alt="Sam holding his dog in Burlington" width="542" height="728">
+                    <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/essex.webp' | resize({width: 542, height: 728}) | webp %}">
+                    <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/essex.webp' | resize({width: 542, height: 728}) | webp %}" alt="The Essex Experience hot air balloon, operated by Above Reality Hot Air Ballooning of Jericho, casts a shadow over a cornfield in North Williston, Vermont." width="542" height="728">
                 </picture>
             </div>
         </div>
