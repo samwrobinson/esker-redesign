@@ -762,6 +762,111 @@
   }
 }
 /*-- -------------------------- -->
+<---    Tertiary Navigation     -->
+<--- -------------------------- -*/
+/* Mobile - 1023px */
+@media only screen and (max-width: 1023px) {
+  #cs-navigation .cs-dropdown.cs-active .cs-drop-ul {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    margin: 0.75rem auto 0 auto;
+    height: auto;
+    padding: 1.5rem;
+  }
+  #cs-navigation .cs-dropdown.cs-active .cs-drop-link {
+    opacity: 1;
+  }
+  #cs-navigation .cs-dropdown.cs-active .cs-dropdown-toggle {
+    pointer-events: none;
+  }
+  #cs-navigation .cs-dropdown-toggle {
+    pointer-events: none;
+  }
+  #cs-navigation .cs-drop-ul {
+    width: 67%;
+    box-sizing: border-box;
+  }
+  #cs-navigation .cs-drop3 {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    transition: padding 0.3s, margin 0.3s, height 0.3s, opacity 0.3s, transform 0.3s, visibility 0.3s;
+    gap: 0.5rem;
+    transform-origin: top;
+  }
+  #cs-navigation .cs-drop-li {
+    width: 100%;
+  }
+  #cs-navigation .cs-drop-li.drop3-active .cs-drop3 {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    height: auto;
+    padding: 1.25rem 1rem 1.25rem 1.25rem;
+  }
+  #cs-navigation .cs-drop-li.drop3-active .cs-drop3-main {
+    margin-bottom: 0.75rem;
+  }
+  #cs-navigation .cs-drop3-main {
+    font-weight: bold;
+    transition: margin 0.3s;
+  }
+  #cs-navigation .cs-drop3-main .cs-drop-icon {
+    filter: grayscale(1) brightness(1000%);
+  }
+  #cs-navigation .cs-drop-li3 {
+    list-style: none;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 1024px) {
+  #cs-navigation .cs-drop-ul {
+    overflow: visible;
+  }
+  #cs-navigation .cs-drop-li {
+    z-index: 1;
+    position: relative;
+  }
+  #cs-navigation .cs-drop-li:hover .cs-drop3 {
+    display: block;
+  }
+  #cs-navigation .cs-drop3 {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    display: none;
+    background-color: #fff;
+    min-width: 12.5rem;
+    padding: 0;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  #cs-navigation .cs-drop3-main:hover .cs-drop-icon {
+    transform: rotate(-90deg);
+  }
+  #cs-navigation .cs-drop-icon {
+    transition: transform 0.3s;
+  }
+  #cs-navigation .cs-drop-li3 {
+    list-style: none;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 1024px) {
+  body.dark-mode #cs-navigation .cs-drop3 {
+    background-color: var(--dark);
+  }
+}
+/*-- -------------------------- -->
 <---     Desktop Navigation     -->
 <--- -------------------------- -*/
 /* Small Desktop - 1024px */
@@ -974,6 +1079,107 @@
   }
   #cs-navigation .cs-button-solid:hover:before {
     width: 100%;
+  }
+}
+/* Dark Mode Styles for Mobile Navigation */
+@media only screen and (max-width: 63.9375rem) {
+  body.dark-mode #cs-navigation:before {
+    background-color: var(--dark);
+  }
+  body.dark-mode #cs-navigation .cs-toggle {
+    background-color: var(--primaryLight);
+  }
+  body.dark-mode #cs-navigation .cs-logo {
+    filter: brightness(0) invert(1);
+  }
+  body.dark-mode #cs-navigation .cs-line {
+    background-color: #fff;
+  }
+  body.dark-mode #cs-navigation .cs-ul-wrapper {
+    background-color: var(--dark);
+  }
+  body.dark-mode #cs-navigation .cs-li-link {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #cs-navigation .cs-li-link:hover {
+    color: var(--primaryLight);
+  }
+  body.dark-mode #cs-navigation .cs-li-link.cs-active {
+    color: var(--primaryLight);
+  }
+  body.dark-mode #cs-navigation .cs-drop-ul {
+    background-color: var(--primaryDark);
+  }
+  body.dark-mode #cs-navigation .cs-drop3 {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  body.dark-mode #cs-navigation .cs-drop-link {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #cs-navigation .cs-drop-link:hover {
+    color: var(--primaryLight);
+  }
+}
+/* Dark Mode Styles for Desktop Navigation */
+@media only screen and (min-width: 64rem) {
+  body.dark-mode #cs-navigation {
+    background-color: var(--dark);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+  }
+  body.dark-mode #cs-navigation .cs-logo {
+    filter: brightness(0) invert(1);
+  }
+  body.dark-mode #cs-navigation .cs-li-link {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #cs-navigation .cs-li-link:hover {
+    color: var(--primaryLight);
+  }
+  body.dark-mode #cs-navigation .cs-li-link.cs-active {
+    color: var(--primaryLight);
+  }
+  body.dark-mode #cs-navigation .cs-drop-ul {
+    background-color: var(--dark);
+    border-bottom-color: var(--primaryLight);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+  }
+  body.dark-mode #cs-navigation .cs-drop3 {
+    background-color: var(--dark);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+  }
+  body.dark-mode #cs-navigation .cs-drop-link {
+    color: var(--bodyTextColorWhite);
+    border-radius: 0 0 15px 15px;
+  }
+  body.dark-mode #cs-navigation .cs-drop-link:hover {
+    color: var(--bodyTextColorWhite);
+    background-color: var(--primaryLight);
+    border-radius: 0 0 15px 15px;
+  }
+  body.dark-mode #cs-navigation .cs-social-link {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  body.dark-mode #cs-navigation .cs-social-link:hover {
+    background-color: var(--primaryLight);
+  }
+  body.dark-mode #cs-navigation .cs-social-icon {
+    filter: brightness(0) invert(1);
+  }
+  body.dark-mode #cs-navigation .cs-phone {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #cs-navigation .cs-phone-icon {
+    filter: brightness(0) invert(1);
+  }
+  body.dark-mode #cs-navigation .cs-button-solid {
+    background-color: var(--primaryLight);
+    color: var(--dark);
+  }
+  body.dark-mode #cs-navigation .cs-button-solid:hover {
+    color: var(--dark);
+  }
+  body.dark-mode #cs-navigation .cs-button-solid:hover:before {
+    background-color: #fff;
   }
 }
 /*-- -------------------------- -->

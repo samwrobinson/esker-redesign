@@ -760,7 +760,6 @@
         }
     }
 }
-
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
     #cs-navigation {
@@ -880,6 +879,152 @@
         }
     }
 }
+/*-- -------------------------- -->
+<---    Tertiary Navigation     -->
+<--- -------------------------- -*/
+
+/* Mobile - 1023px */
+@media only screen and (max-width: 1023px) {
+    #cs-navigation {
+        .cs-dropdown {
+            &.cs-active {
+                .cs-drop-ul {
+                    visibility: visible;
+                    opacity: 1;
+                    transform: scale(1);
+                    margin: (12/16rem) auto 0 auto;
+                    height: auto;
+                    padding: (24/16rem);
+                }
+
+                .cs-drop-link {
+                    opacity: 1;
+                }
+
+                .cs-dropdown-toggle {
+                    pointer-events: none;
+                }
+            }
+        }
+
+        .cs-dropdown-toggle {
+            pointer-events: none;
+        }
+
+        .cs-drop-ul {
+            width: 67%;
+            box-sizing: border-box;
+        }
+
+        .cs-drop3 {
+            visibility: hidden;
+            opacity: 0;
+            transform: scale(0);
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(255, 255, 255, 0.2);
+            box-sizing: border-box;
+            height: 0;
+            width: 100%;
+            overflow: hidden;
+            padding: 0;
+            transition: padding 0.3s, margin 0.3s, height 0.3s, opacity 0.3s, transform 0.3s, visibility 0.3s;
+            gap: (8/16rem);
+            transform-origin: top;
+        }
+
+        .cs-drop-li {
+            width: 100%;
+
+            &.drop3-active {
+                .cs-drop3 {
+                    visibility: visible;
+                    opacity: 1;
+                    transform: scale(1);
+                    height: auto;
+                    padding: (20/16rem) (16/16rem) (20/16rem) (20/16rem);
+                }
+
+                .cs-drop3-main {
+                    margin-bottom: (12/16rem);
+                }
+            }
+        }
+
+        .cs-drop3-main {
+            font-weight: bold;
+            transition: margin 0.3s;
+
+            .cs-drop-icon {
+                filter: grayscale(1) brightness(1000%);
+            }
+        }
+
+        .cs-drop-li3 {
+            list-style: none;
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 1024px) {
+    #cs-navigation {
+        .cs-drop-ul {
+            overflow: visible;
+        }
+
+        .cs-drop-li {
+            z-index: 1;
+            position: relative;
+
+            &:hover {
+                .cs-drop3 {
+                    display: block;
+                }
+            }
+        }
+
+        .cs-drop3 {
+            z-index: 10;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            display: none;
+            background-color: #fff;
+            min-width: (200/16rem);
+            padding: 0;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+
+        .cs-drop3-main {
+            &:hover {
+                .cs-drop-icon {
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+
+        .cs-drop-icon {
+            transition: transform 0.3s;
+        }
+
+        .cs-drop-li3 {
+            list-style: none;
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 1024px) {
+    body.dark-mode {
+        #cs-navigation {
+            .cs-drop3 {
+                background-color: var(--dark);
+            }
+        }
+    }
+}
+                                                          
 
 /*-- -------------------------- -->
 <---     Desktop Navigation     -->
@@ -1120,6 +1265,142 @@
                 color: #1a1a1a;
                 &:before {
                     width: 100%;
+                }
+            }
+        }
+    }
+}
+
+/* Dark Mode Styles for Mobile Navigation */
+@media only screen and (max-width: 63.9375rem) {
+    body.dark-mode {
+        #cs-navigation {
+            &:before {
+                background-color: var(--dark);
+            }
+
+            .cs-toggle {
+                background-color: var(--primaryLight);
+            }
+
+            .cs-logo {
+                filter: brightness(0) invert(1);
+            }
+
+            .cs-line {
+                background-color: #fff;
+            }
+
+            .cs-ul-wrapper {
+                background-color: var(--dark);
+            }
+
+            .cs-li-link {
+                color: var(--bodyTextColorWhite);
+
+                &:hover {
+                    color: var(--primaryLight);
+                }
+
+                &.cs-active {
+                    color: var(--primaryLight);
+                }
+            }
+
+            .cs-drop-ul {
+                background-color: var(--primaryDark);
+            }
+
+            .cs-drop3 {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+
+            .cs-drop-link {
+                color: var(--bodyTextColorWhite);
+                
+                &:hover {
+                    color: var(--primaryLight);
+                }
+            }
+        }
+    }
+}
+
+/* Dark Mode Styles for Desktop Navigation */
+@media only screen and (min-width: 64rem) {
+    body.dark-mode {
+        #cs-navigation {
+            background-color: var(--dark);
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+
+            .cs-logo {
+                filter: brightness(0) invert(1);
+            }
+
+            .cs-li-link {
+                color: var(--bodyTextColorWhite);
+
+                &:hover {
+                    color: var(--primaryLight);
+                }
+
+                &.cs-active {
+                    color: var(--primaryLight);
+                }
+            }
+
+            .cs-drop-ul {
+                background-color: var(--dark);
+                border-bottom-color: var(--primaryLight);
+                box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+            }
+
+            .cs-drop3 {
+                background-color: var(--dark);
+                box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+            }
+
+            .cs-drop-link {
+                color: var(--bodyTextColorWhite);
+                border-radius: 0 0 15px 15px;
+
+                &:hover {
+                    color: var(--bodyTextColorWhite);
+                    background-color: var(--primaryLight);
+                    border-radius: 0 0 15px 15px;
+                }
+            }
+
+            .cs-social-link {
+                background-color: rgba(255, 255, 255, 0.1);
+
+                &:hover {
+                    background-color: var(--primaryLight);
+                }
+            }
+
+            .cs-social-icon {
+                filter: brightness(0) invert(1);
+            }
+
+            .cs-phone {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-phone-icon {
+                filter: brightness(0) invert(1);
+            }
+
+            .cs-button-solid {
+                background-color: var(--primaryLight);
+                color: var(--dark);
+
+                &:hover {
+                    color: var(--dark);
+                    
+                    &:before {
+                        background-color: #fff;
+                    }
                 }
             }
         }

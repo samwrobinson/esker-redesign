@@ -3,6 +3,16 @@ var CSbody = document.querySelector("body");
 const CSnavbarMenu = document.querySelector("#cs-navigation");
 const CShamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
 
+// tertiary nav toggle code
+const tertiaryDrop = Array.from(document.querySelectorAll('#cs-navigation .cs-drop3-main'));
+
+for (const item of tertiaryDrop) {
+    item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        item.classList.toggle('drop3-active');
+    });
+}                               
+
 CShamburgerMenu.addEventListener('click', function() {
     CShamburgerMenu.classList.toggle("cs-active");
     CSnavbarMenu.classList.toggle("cs-active");

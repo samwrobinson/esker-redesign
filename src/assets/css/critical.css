@@ -4,6 +4,7 @@
     background-color: var(--primary);
     overflow: hidden;
     position: relative;
+    z-index: 1;
   }
   #hero-855 #trees {
     width: 100%;
@@ -115,7 +116,6 @@
   #hero-855 {
     text-align: left;
     padding-bottom: 17vw;
-    z-index: 5;
   }
   #hero-855 .cs-container {
     flex-direction: row;

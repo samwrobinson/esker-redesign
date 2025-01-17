@@ -517,8 +517,7 @@
   body.dark-mode #content-page-1402 p {
     color: var(--bodyTextColorWhite);
   }
-  body.dark-mode #content-page-1402 .cs-color,
-  body.dark-mode #content-page-1402 a {
+  body.dark-mode #content-page-1402 .cs-color {
     color: var(--primaryLight);
   }
   body.dark-mode #content-page-1402 p,
