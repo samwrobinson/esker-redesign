@@ -15,7 +15,10 @@ eleventyNavigation:
 
 {% block head %}
     <script defer src="https://cloud.umami.is/script.js" data-website-id="ad4f603c-adc2-4df0-8440-601f99120b46"></script>
-    <link rel="stylesheet" href="/assets/css/projects.css">
+    <link rel="stylesheet" href="/assets/css/projects.css" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript>
+        <link rel="stylesheet" href="/assets/css/projects.css" />
+    </noscript>
     <link rel="preload" as="image" href="{% getUrl '/assets/images/colchester.webp' | resize({width: 542, height: 728}) | webp %}" fetchpriority="high">
 {% endblock %}
 

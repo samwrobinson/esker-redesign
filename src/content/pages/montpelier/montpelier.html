@@ -1,7 +1,7 @@
 ---
 title: 'Website Design in Montpelier VT | Esker Designs'
 description: 'Esker Designs specializes in Montpelier website design and development, offering fast-loading, custom-coded websites tailored for small businesses. Get started today.'
-preloadImg: '/assets/images/summit-m.webp'
+preloadImg: '/assets/images/june-bug.webp'
 permalink: '/montpelier/small-business-web-design/'
 eleventyNavigation:
     key: Montpelier
@@ -15,7 +15,10 @@ eleventyNavigation:
 
 {% block head %}
     <script defer src="https://cloud.umami.is/script.js" data-website-id="ad4f603c-adc2-4df0-8440-601f99120b46"></script>
-    <link rel="stylesheet" href="/assets/css/projects.css">
+    <link rel="stylesheet" href="/assets/css/projects.css" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript>
+        <link rel="stylesheet" href="/assets/css/projects.css" />
+    </noscript>
 {% endblock %}
 
 {% block body %}

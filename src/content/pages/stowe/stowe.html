@@ -1,7 +1,7 @@
 ---
 title: 'Custom Web Development in Stowe, VT | Esker Designs, Vermont Web Design'
 description: 'Esker Designs offers custom web design services for Stowe, VT businesses. From mobile-first designs to SEO, we help your business grow online with no upfront costs and ongoing support.'
-preloadImg: '/assets/images/june-bug.webp'
+preloadImg: '/assets/images/stowe.webp'
 permalink: '/stowe/small-business-web-design/'
 eleventyNavigation:
     key: Stowe
@@ -15,7 +15,10 @@ eleventyNavigation:
 
 {% block head %}
     <script defer src="https://cloud.umami.is/script.js" data-website-id="ad4f603c-adc2-4df0-8440-601f99120b46"></script>
-    <link rel="stylesheet" href="/assets/css/projects.css">
+    <link rel="stylesheet" href="/assets/css/projects.css" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript>
+        <link rel="stylesheet" href="/assets/css/projects.css" />
+    </noscript>
     <link rel="preload" as="image" href="{% getUrl '/assets/images/colchester.webp' | resize({width: 542, height: 728}) | webp %}" fetchpriority="high">
 {% endblock %}
 
