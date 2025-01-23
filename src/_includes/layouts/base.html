@@ -57,5 +57,25 @@
         </main>
         {% include "components/footer.html" %}
 
+        <!-- Google Analytics load on scroll -->
+        <script>
+            function analyticsOnScroll() {
+                var head = document.getElementsByTagName('head')[0]
+                var script = document.createElement('script')
+                script.type = 'text/javascript';
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-PL4NL9XE9Y'
+                head.appendChild(script);
+                document.removeEventListener('scroll', analyticsOnScroll);
+            };
+            document.addEventListener('scroll', analyticsOnScroll);
+        </script>
+        
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+    
+            gtag('config', 'G-PL4NL9XE9Y');
+        </script>
     </body>
 </html>
