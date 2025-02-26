@@ -931,7 +931,7 @@
     font-weight: 900;
     margin: 0;
     margin-bottom: 0.75rem;
-    color: var(--headerColor);
+    color: var(--primary);
     transition: color 0.3s;
     text-align: inherit;
   }
@@ -1006,6 +1006,9 @@
   }
   body.dark-mode #services-1331 .cs-step {
     color: var(--primaryLight);
+  }
+  body.dark-mode #services-1331 .cs-h3 {
+    color: var(--headerColor);
   }
   body.dark-mode #services-1331 .cs-item {
     background-color: var(--medium);

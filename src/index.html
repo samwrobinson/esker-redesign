@@ -1,6 +1,6 @@
 ---
 title: 'Vermont Website Design for Small Businesses | Esker Designs, Warren, Vermont'
-description: 'We are a full-service Vermont website design company offering 100% hand-coded websites starting at $175/mo. We specialize in custom designs for small businesses, nonprofits, and institutions in Vermont and beyond.'
+description: 'We are a full-service Vermont website design company offering 100% hand-coded websites starting at $150/mo. We specialize in custom designs for small businesses, nonprofits, and institutions in Vermont and beyond.'
 preloadImg: '/assets/images/logo.webp'
 permalink: '/'
 tags: 'sitemap' # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
@@ -99,7 +99,7 @@ eleventyNavigation:
             </h2>
             <p class="cs-text">
                 Get a website designed to attract customers, drive business, and impress —
-                all without the burden of upfront costs. We offer 100% hand-coded websites, starting at just $175/month.
+                all without the burden of upfront costs. We offer 100% hand-coded websites, starting at just $150/month.
             </p>
             <a href="/contact/" class="cs-button-solid" data-umami-event="Hero Contact">Get a Quote</a>
         </div>
@@ -271,7 +271,7 @@ eleventyNavigation:
         </div>
         <div class="cs-content">
             <span class="cs-topper">What we Provide</span>
-            <h2 class="cs-title">Custom Website Design - <span class="emphasis">$0</span> Down, <span class="emphasis">$175</span> Per Month</h2>
+            <h2 class="cs-title">Custom Website Design - <span class="emphasis">$0</span> Down, <span class="emphasis">$150</span> Per Month</h2>
             <p class="cs-text">
                 Launch a professional 5-page website for your business with no upfront costs. Need more? We can always tailor a custom plan to fit your needs. Esker Designs offers affordable web design for small businesses with no hidden fees.
             </p>
@@ -349,7 +349,7 @@ eleventyNavigation:
         <div class="cs-stats-group">
             <ul class="cs-stats">
                 <li class="cs-stat">
-                    <span class="cs-number">500K</span>
+                    <span class="cs-number">600K</span>
                     <span class="cs-desc">Lines of Code Written</span>
                 </li>
                 <li class="cs-stat">
@@ -529,7 +529,7 @@ eleventyNavigation:
                     </picture>
                     <span class="cs-package">Small Business - Starter</span>
                     <span class="cs-price">
-                        $175
+                        $150
                         <span class="cs-duration">/month</span>
                     </span>
                     <p class="cs-item-text">
@@ -661,7 +661,7 @@ eleventyNavigation:
                     </picture>
                     <span class="cs-package">Small Business - Starter</span>
                     <span class="cs-price">
-                        $3500
+                        $2000
                         <span class="cs-duration">Lump Sum</span>
                     </span>
                     <p class="cs-item-text">
@@ -726,7 +726,7 @@ eleventyNavigation:
                     </picture>
                     <span class="cs-package">Small Business - Growth</span>
                     <span class="cs-price">
-                        $4500
+                        $3500
                         <span class="cs-duration">Lump Sum</span>
                     </span>
                     <p class="cs-item-text">
@@ -852,8 +852,70 @@ eleventyNavigation:
         </ul>
     </div>
 </section>
-                                
-                                
+
+<!-- ============================================ -->
+<!--                    Blog                      -->
+<!-- ============================================ -->
+
+<section id="blog-2199">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-text-wrapper">
+                <span class="cs-topper">Blog & News</span>
+                <h2 class="cs-title">Our Latest News & Blogs</h2>
+            </div>
+            <p class="cs-text">
+                Explore insights, resources, and practical tips for mental wellness. I share thoughts on therapy, personal growth, and navigating life's challenges as a teen or young adult.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            {% if collections.post | length == 0 %}
+                <h1>No Recent Posts</h1>
+            {% elif collections.post | length == 1 %}
+                {%- for post in collections.post | reverse -%}
+                <li class="cs-item">
+                    <span class="cs-date">{{ post.date | postDate }}</span>
+                    <picture class="cs-picture">
+                        <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}" width="795" height="400" decoding="async">
+                    </picture>
+                    <div class="cs-flex">
+                        <div class="cs-link">
+                            <h3 class="cs-h3">{{ post.data.title }}</h3>
+                            <p class="cs-item-text">{{ post.data.description.substring(0, 150) }}{% if post.data.description.length > 150 %}...{% endif %}</p>
+                        </div>
+                        <a href="{{ post.url }}" class="cs-button-5"><span class="cs-button-text">Read More</span></a>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-placeholder">
+                        <h3 class="cs-h3">More Posts Coming Soon!</h3>
+                        <p class="cs-item-text">Stay tuned for more exciting content and updates.</p>
+                    </div>
+                </li>
+                {% endfor %}
+            {% else %}
+                {% set counter = 0 %}
+                {%- for post in collections.post | reverse -%}
+                    {% if counter < 3 %}
+                    <li class="cs-item">
+                        <span class="cs-date">{{ post.date | postDate }}</span>
+                        <picture class="cs-picture">
+                            <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}" width="795" height="400" decoding="async">
+                        </picture>
+                        <a href="{{ post.url }}" class="cs-flex">
+                            <div class="cs-link">
+                                <h3 class="cs-h3">{{ post.data.title }}</h3>
+                                <p class="cs-item-text">{{ post.data.description.substring(0, 150) }}{% if post.data.description.length > 150 %}...{% endif %}</p>
+                            </div>
+                        </a>
+                    </li>
+                    {% set counter = counter + 1 %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+</section>                
                                 
 
     {% include 'components/cta.html' %}
