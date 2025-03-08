@@ -31,6 +31,24 @@
                             Home
                         </a>
                     </li>
+                    <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
+                    <li class="cs-li cs-dropdown {% if page.url == '/about/' %} cs-active {% endif %}">
+                        <span class="cs-li-link">
+                            About
+                            <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/down-gold.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                        </span>
+                        <ul class="cs-drop-ul">
+                            <li class="cs-drop-li">
+                                <a href="/about/" class="cs-li-link cs-drop-link">Meet Sam</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/faq/" class="cs-li-link cs-drop-link">FAQ</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/reviews/" class="cs-li-link cs-drop-link">Reviews</a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="cs-li">
                         <a href="/service/" class="cs-li-link {% if page.url == '/service/' %} cs-active {% endif %}">
                             Service
@@ -39,11 +57,6 @@
                     <li class="cs-li">
                         <a href="/pricing/" class="cs-li-link {% if page.url == '/pricing/' %} cs-active {% endif %}">
                             Pricing
-                        </a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="/about/" class="cs-li-link {% if page.url == '/about/' %} cs-active {% endif %}">
-                            About
                         </a>
                     </li>
                     <li class="cs-li">

@@ -124,4 +124,3 @@ const leftOption = document.querySelector("#pricing-1262 #cs-option1-1262");
             }
             toggle.classList.add("active");
         });
-                                

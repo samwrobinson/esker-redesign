@@ -1,0 +1,671 @@
+/*-- -------------------------- -->
+<---            FAQ             -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #faq-2066 {
+    padding: var(--sectionPadding);
+    overflow: hidden;
+    position: relative;
+    margin-bottom: clamp(5rem, 6rem, 8rem);
+  }
+  #faq-2066 .cs-container {
+    width: 100%;
+    max-width: 44rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+    position: relative;
+    z-index: 1;
+  }
+  #faq-2066 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #faq-2066 .cs-flex-group {
+    width: 100%;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+  }
+  #faq-2066 .cs-button-group {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-self: stretch;
+  }
+  #faq-2066 .cs-option {
+    /* 16px - 20px */
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 700;
+    /* 50px - 72px */
+    line-height: 1.2em;
+    /* prevents border from affecting height and width */
+    box-sizing: border-box;
+    padding: 0.75rem;
+    background-color: #fff;
+    color: var(--bodyTextColor);
+    border: 1px solid #bababa;
+    border-radius: 0.5rem;
+    position: relative;
+    z-index: 1;
+    transition: border-color 0.3s;
+  }
+  #faq-2066 .cs-option:before {
+    /* background color */
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    opacity: 0;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: opacity 0.3s;
+  }
+  #faq-2066 .cs-option:hover:hover {
+    cursor: pointer;
+    border-color: var(--primary);
+  }
+  #faq-2066 .cs-option:hover:hover:before {
+    opacity: 0.1;
+  }
+  #faq-2066 .cs-option.cs-active {
+    color: var(--primary);
+    border-color: var(--primary);
+  }
+  #faq-2066 .cs-option.cs-active:before {
+    opacity: 0.1;
+  }
+  #faq-2066 .cs-wrapper {
+    position: relative;
+  }
+  #faq-2066 .cs-faq-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    transform-style: preserve-3d;
+    perspective: 900px;
+    transition: transform 0.7s, opacity 0.3s, visibility 0.5s, top 0.3s, left 0.3s;
+    transform-origin: top;
+  }
+  #faq-2066 .cs-faq-group.cs-hidden {
+    /* prevents the mouse from interacting with it */
+    pointer-events: none;
+    /* hidden galleries have a 0 opacity, and we animate the opacity to 1 when they become active */
+    opacity: 0;
+    /* by using visibility:hidden instead of display:none, we can see the animations from the opacity and transforms, display:none won't render animations. */
+    visibility: hidden;
+    position: absolute;
+    /* this top and left value help control the animation, by setting it to position absolute and left 0, the FAQ won't fly off screen to the left, it will stop its position to be at the left edge of the .cs-flex-group (left: 0). Same for the bottom:0 value, the FAQ won't go past that position when it animates */
+    top: 0;
+    left: 0;
+    /* prevents the hidden galleries from overflowing the section, and makes a nice animations to transition to and from */
+    transform: scaleY(0);
+  }
+  #faq-2066 .cs-faq-group.cs-hidden .cs-faq-item {
+    opacity: 0;
+    transform: rotateX(270deg);
+  }
+  #faq-2066 .cs-faq-item {
+    list-style: none;
+    width: 100%;
+    padding: clamp(1rem, 4vw, 1.5rem);
+    box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 16px;
+    box-sizing: border-box;
+    opacity: 1;
+    border-radius: 1rem;
+    background-color: #fff;
+    top: 0;
+    transform: rotateX(0deg);
+    transition: transform 0.6s, opacity 0.3s;
+  }
+  #faq-2066 .cs-faq-item:nth-of-type(2) {
+    transition-delay: 0.1s;
+  }
+  #faq-2066 .cs-faq-item:nth-of-type(3) {
+    transition-delay: 0.2s;
+  }
+  #faq-2066 .cs-faq-item:nth-of-type(4) {
+    transition-delay: 0.3s;
+  }
+  #faq-2066 .cs-faq-item:nth-of-type(5) {
+    transition-delay: 0.4s;
+  }
+  #faq-2066 .cs-faq-item:nth-of-type(6) {
+    transition-delay: 0.5s;
+  }
+  #faq-2066 .cs-faq-item:nth-of-type(7) {
+    transition-delay: 0.6s;
+  }
+  #faq-2066 .cs-faq-item:nth-of-type(8) {
+    transition-delay: 0.7s;
+  }
+  #faq-2066 .cs-faq-item:nth-of-type(9) {
+    transition-delay: 0.8s;
+  }
+  #faq-2066 .cs-faq-item:nth-of-type(10) {
+    transition-delay: 0.9s;
+  }
+  #faq-2066 .cs-faq-item:last-of-type {
+    border-bottom: none;
+  }
+  #faq-2066 .cs-faq-item.active .cs-button {
+    color: var(--primary);
+    padding-bottom: 1.5rem;
+  }
+  #faq-2066 .cs-faq-item.active .cs-button:before {
+    background-color: var(--primary);
+    transform: rotate(315deg);
+  }
+  #faq-2066 .cs-faq-item.active .cs-button:after {
+    background-color: var(--primary);
+    transform: rotate(-315deg);
+  }
+  #faq-2066 .cs-faq-item.active .cs-item-p {
+    height: auto;
+    /* 20px - 24px bottom */
+    /* 16px - 24px left & right */
+    padding: 0 0 1.5rem 0;
+    opacity: 1;
+  }
+  #faq-2066 .cs-button {
+    /* 16px - 20px */
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: bold;
+    line-height: 1.2em;
+    text-align: left;
+    width: 100%;
+    background-color: #fff;
+    color: var(--primary);
+    border: none;
+    display: block;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  #faq-2066 .cs-button:hover {
+    cursor: pointer;
+  }
+  #faq-2066 .cs-button:before {
+    /* left line */
+    content: "";
+    width: 0.5rem;
+    height: 0.125rem;
+    background-color: var(--primary);
+    opacity: 1;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: rotate(45deg);
+    transition: transform 0.5s;
+    /* animate the transform from the left side of the x axis, and the center of the y */
+    transform-origin: left center;
+  }
+  #faq-2066 .cs-button:after {
+    /* right line */
+    content: "";
+    width: 0.5rem;
+    height: 0.125rem;
+    background-color: var(--primary);
+    opacity: 1;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 1.3125rem;
+    transform: rotate(-45deg);
+    transition: transform 0.5s;
+    /* animate the transform from the right side of the x axis, and the center of the y */
+    transform-origin: right center;
+  }
+  #faq-2066 .cs-button-text {
+    width: 80%;
+    display: block;
+  }
+  #faq-2066 .cs-item-p {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    width: 90%;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    /* clips the text so it doesn't show up */
+    overflow: hidden;
+    color: var(--bodyTextColor);
+    opacity: 0;
+    transition: opacity 0.3s, padding-bottom 0.3s;
+  }
+  #faq-2066 .cs-cta {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    /* 32px - 40px */
+    padding: clamp(2rem, 4vw, 2.5rem);
+    border: 1px solid var(--primary);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  #faq-2066 .cs-cta:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    opacity: 0.1;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: opacity 0.3s;
+  }
+  #faq-2066 .cs-flex {
+    display: flex;
+    flex-direction: column;
+  }
+  #faq-2066 .cs-cta-title {
+    font-size: 1.9375rem;
+    font-weight: 900;
+    line-height: 1.2em;
+    margin: 0 0 1rem 0;
+    color: var(--headerColor);
+  }
+  #faq-2066 .cs-cta-text {
+    font-size: 1rem;
+    line-height: 1.5em;
+    margin: 0 0 2rem 0;
+    color: var(--bodyTextColor);
+  }
+  #faq-2066 .cs-button-solid {
+    font-size: 1rem;
+    font-weight: 700;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-align: center;
+    text-decoration: none;
+    min-width: 13rem;
+    margin: 0;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    padding: 0 2rem;
+    background-color: var(--primary);
+    color: #fff;
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+  #faq-2066 .cs-button-solid:before {
+    content: '';
+    width: 0%;
+    height: 100%;
+    background: #000;
+    opacity: 1;
+    border-radius: 0.25rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+  #faq-2066 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #faq-2066 .cs-graphic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%);
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #faq-2066 {
+    margin-bottom: clamp(10rem, 15rem, 23rem);
+  }
+  #faq-2066 .cs-container {
+    max-width: 80rem;
+  }
+  #faq-2066 .cs-button-group {
+    flex-direction: row;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #faq-2066 .cs-option {
+    padding: 0.75rem 1.5rem;
+  }
+  #faq-2066 .cs-cta {
+    text-align: left;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+  }
+  #faq-2066 .cs-cta-text {
+    margin: 0;
+  }
+  #faq-2066 .cs-button-solid {
+    flex-shrink: 0;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #faq-2066 {
+    background-color: var(--dark);
+  }
+  body.dark-mode #faq-2066 .cs-title,
+  body.dark-mode #faq-2066 .cs-item-p,
+  body.dark-mode #faq-2066 .cs-text {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #faq-2066 .cs-text,
+  body.dark-mode #faq-2066 .cs-cta-text {
+    opacity: 0.8;
+  }
+  body.dark-mode #faq-2066 .cs-option {
+    background-color: transparent;
+    color: var(--bodyTextColorWhite);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  body.dark-mode #faq-2066 .cs-option.cs-active,
+  body.dark-mode #faq-2066 .cs-option:hover {
+    color: var(--secondaryLight);
+    border-color: var(--secondaryLight);
+  }
+  body.dark-mode #faq-2066 .cs-item {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  body.dark-mode #faq-2066 .cs-faq-item {
+    transition: border-color 0.3s, transform 0.6s;
+    border-color: rgba(255, 255, 255, 0.593);
+    background-color: transparent;
+  }
+  body.dark-mode #faq-2066 .cs-faq-item.active .cs-button {
+    color: var(--secondaryLight);
+  }
+  body.dark-mode #faq-2066 .cs-faq-item.active .cs-button:before,
+  body.dark-mode #faq-2066 .cs-faq-item.active .cs-button:after {
+    background-color: #fff;
+  }
+  body.dark-mode #faq-2066 .cs-faq-item.active .cs-item-p {
+    /* 20px - 24px */
+    padding-top: clamp(1.25rem, 1.3vw, 1.5rem);
+  }
+  body.dark-mode #faq-2066 .cs-faq-item:nth-of-type(2) {
+    transition-delay: 0.1s;
+  }
+  body.dark-mode #faq-2066 .cs-faq-item:nth-of-type(3) {
+    transition-delay: 0.2s;
+  }
+  body.dark-mode #faq-2066 .cs-faq-item:nth-of-type(4) {
+    transition-delay: 0.3s;
+  }
+  body.dark-mode #faq-2066 .cs-faq-item:nth-of-type(5) {
+    transition-delay: 0.4s;
+  }
+  body.dark-mode #faq-2066 .cs-faq-item:nth-of-type(6) {
+    transition-delay: 0.5s;
+  }
+  body.dark-mode #faq-2066 .cs-faq-item:nth-of-type(7) {
+    transition-delay: 0.6s;
+  }
+  body.dark-mode #faq-2066 .cs-faq-item:nth-of-type(8) {
+    transition-delay: 0.7s;
+  }
+  body.dark-mode #faq-2066 .cs-faq-item:nth-of-type(9) {
+    transition-delay: 0.8s;
+  }
+  body.dark-mode #faq-2066 .cs-faq-item:nth-of-type(10) {
+    transition-delay: 0.9s;
+  }
+  body.dark-mode #faq-2066 .cs-faq-item:hover {
+    transition: border-color 0.3s;
+  }
+  body.dark-mode #faq-2066 .cs-button {
+    background-color: var(--dark);
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #faq-2066 .cs-button:before,
+  body.dark-mode #faq-2066 .cs-button:after {
+    background-color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #faq-2066 .cs-cta-title,
+  body.dark-mode #faq-2066 .cs-cta-text {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #faq-2066 .cs-graphic {
+    display: none;
+  }
+}
+/*-- -------------------------- -->
+<---          Reviews           -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #reviews-245 {
+    padding: var(--sectionPadding);
+    background: var(--headerColor);
+    margin-bottom: clamp(1rem, 4vw, 3rem);
+  }
+  #reviews-245 .cs-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #reviews-245 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    max-width: 32.625rem;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+  #reviews-245 .cs-card-group {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+  #reviews-245 .cs-title {
+    color: var(--primary);
+  }
+  #reviews-245 .cs-item {
+    text-align: left;
+    list-style: none;
+    width: 100%;
+    /* max-width set at tablet */
+    /* pushes up by the same amount the cs-item-img overlaps the card */
+    margin: 3rem 0 0 0;
+    /* 16px - 36px left and right */
+    /* 24px - 36px on the bottom */
+    padding: 3.75rem clamp(1rem, 2.7vw, 2.25rem) clamp(1.25rem, 2.7vw, 2.25rem);
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
+    box-shadow: 0px 20px 39px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 0.25rem;
+    background: #fff;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  #reviews-245 .cs-text {
+    color: var(--bodyTextColor);
+  }
+  #reviews-245 .cs-item-img {
+    width: 4.5rem;
+    height: 4.5rem;
+    position: absolute;
+    top: -3rem;
+    border-radius: 50%;
+  }
+  #reviews-245 .cs-item-text {
+    font-size: 1rem;
+    line-height: 1.5em;
+    margin: 0 0 1.5rem;
+    color: var(--bodyTextColor);
+  }
+  #reviews-245 .cs-flex-group {
+    width: 100%;
+    padding-top: 1.5rem;
+    border-top: 1px solid #dad9e3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+  #reviews-245 .cs-reviewer {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.4vw, 1rem);
+    line-height: 1.5em;
+    font-weight: 700;
+    width: 40%;
+    margin: 0 auto 0 0;
+    display: block;
+    color: var(--primary);
+  }
+  #reviews-245 .cs-desc,
+  #reviews-245 .cs-rating {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.4vw, 1rem);
+    font-weight: 400;
+    line-height: 1.5em;
+    color: #7d799c;
+    display: block;
+  }
+  #reviews-245 .cs-rating {
+    margin-right: 0.5rem;
+  }
+  #reviews-245 .cs-item-stars {
+    width: 6em;
+    height: 1em;
+    /* centers it with the rating to the left */
+    margin-bottom: 0.1875rem;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #reviews-245 .cs-container {
+    max-width: 80rem;
+  }
+  #reviews-245 .cs-content {
+    text-align: center;
+    margin-right: 0;
+    align-items: center;
+    max-width: 36rem;
+  }
+  #reviews-245 .cs-topper {
+    text-align: center;
+  }
+  #reviews-245 .cs-card-group {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    /* 16px - 20px */
+    column-gap: clamp(1rem, 1.5vw, 1.25rem);
+    row-gap: 4rem;
+  }
+  #reviews-245 .cs-item {
+    /* we do this so it's stackable. You can add new any number of reviews you want and they will stack and center in the middle. We dont use grid because if you have an odd number of reviews, they don't stay centered.  They align with their grid lines. If you want 4 reviews in a row, lower the width under 22.5vw to get the desired sizes fit 4 in a row and then stack when you add more*/
+    width: clamp(31.5%, 30vw, 32.3%);
+    max-width: 25.8125rem;
+    align-content: space-between;
+  }
+  #reviews-245 .cs-item-img {
+    transition: box-shadow 300ms ease, transform 250ms ease;
+  }
+  #reviews-245 .cs-item:hover .cs-item-img {
+    box-shadow: rgba(95, 250, 178, 0.2) 0px 8px 24px;
+    transform: translateY(-10px);
+    transition: box-shadow 300ms ease-in-out, transform 250ms ease-in-out;
+  }
+  #reviews-245 .cs-flex-group {
+    /* push contents to the left */
+    justify-content: flex-start;
+  }
+  #reviews-245 .cs-reviewer {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #reviews-245 {
+    margin-bottom: clamp(5rem, 12vw, 15rem);
+  }
+  #reviews-245 .cs-flex-group {
+    flex-wrap: nowrap;
+  }
+  #reviews-245 .cs-reviewer {
+    margin: 0;
+  }
+  #reviews-245 .cs-item-stars {
+    margin-bottom: 0.3125rem;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #reviews-245 {
+    background: var(--dark);
+  }
+  body.dark-mode #reviews-245 .cs-title {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #reviews-245 .cs-text,
+  body.dark-mode #reviews-245 .cs-item-text,
+  body.dark-mode #reviews-245 .cs-rating,
+  body.dark-mode #reviews-245 .cs-reviewer {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #reviews-245 .cs-item {
+    background: var(--medium);
+  }
+  body.dark-mode #reviews-245 .cs-desc {
+    color: var(--primaryLight);
+  }
+}
