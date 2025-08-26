@@ -49,10 +49,19 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="cs-li">
-                        <a href="/service/" class="cs-li-link {% if page.url == '/service/' %} cs-active {% endif %}">
-                            Service
-                        </a>
+                    <li class="cs-li cs-dropdown {% if page.url == '/about/' %} cs-active {% endif %}">
+                        <span class="cs-li-link">
+                            Services
+                            <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/down-gold.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                        </span>
+                        <ul class="cs-drop-ul">
+                            <li class="cs-drop-li">
+                                <a href="/service/" class="cs-li-link cs-drop-link">Web Design</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/google-business-profile-management/" class="cs-li-link cs-drop-link">Google Business Profile</a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="cs-li">
                         <a href="/pricing/" class="cs-li-link {% if page.url == '/pricing/' %} cs-active {% endif %}">
