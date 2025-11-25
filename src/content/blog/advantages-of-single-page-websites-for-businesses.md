@@ -39,7 +39,7 @@ Single page sites are also easier to make fully responsive. With one layout to o
 
 ## **A Cost-Effective Option**
 
-Let's talk budget. Creating a single page website is generally more affordable than building a multi-page site—there's simply less to design, develop, and maintain. For startups, small businesses, or anyone launching a focused campaign, this approach lets you establish a professional online presence without a significant investment.
+Let's talk budget. Creating a single page website is generally [more affordable](https://eskerdesigns.com/blog/affordable-web-design-for-small-businesses/) than building a multi-page site—there's simply less to design, develop, and maintain. For startups, small businesses, or anyone launching a focused campaign, this approach lets you establish a professional online presence without a significant investment.
 
 Ongoing maintenance is simpler too. With one page to update and monitor, you'll spend less time and money keeping things current.
 
