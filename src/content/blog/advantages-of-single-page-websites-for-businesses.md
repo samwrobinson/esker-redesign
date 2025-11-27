@@ -39,11 +39,11 @@ Single page sites are also easier to make fully responsive. With one layout to o
 
 ## **A Cost-Effective Option**
 
-Let's talk budget. Creating a single page website is generally [more affordable](https://eskerdesigns.com/blog/affordable-web-design-for-small-businesses/) than building a multi-page site—there's simply less to design, develop, and maintain. For startups, small businesses, or anyone launching a focused campaign, this approach lets you establish a professional online presence without a significant investment.
+Let's talk budget. Creating a single page website is generally [more affordable](/blog/affordable-web-design-for-small-businesses/) than building a multi-page site—there's simply less to design, develop, and maintain. For startups, small businesses, or anyone launching a focused campaign, this approach lets you establish a professional online presence without a significant investment.
 
 Ongoing maintenance is simpler too. With one page to update and monitor, you'll spend less time and money keeping things current.
 
-There are important trade-offs to consider, however, such as how many services/products you offer, and whether or not it would be beneficial to have individual pages for each product and/or service. This is really something that would be best discussed with an SEO expert or web developer, so I highly suggest you [contact us](https://eskerdesigns.com/contact/) to discuss your particular situation and business needs.
+There are important trade-offs to consider, however, such as how many services/products you offer, and whether or not it would be beneficial to have individual pages for each product and/or service. This is really something that would be best discussed with an SEO expert or web developer, so I highly suggest you [contact us](/contact/) to discuss your particular situation and business needs.
 
 ## **How to Create a Single Page Website**
 
@@ -101,8 +101,8 @@ When you're running a focused campaign around a single product, service, or of
 
 Single page websites offer real advantages: simplicity, speed, mobile-friendliness, and cost savings. They're excellent for focused messages, specific campaigns, and situations where you want to control the narrative flow.
 
-That said, they're not ideal for every situation. If you have extensive content, need robust SEO across multiple topics, or require complex functionality, a traditional multi-page site will serve you better. The good news is that we handle multi-page sites as well, and honestly, think that they are a better use case for most businesses anyway. If you are interested in exploring those options, feel free to check out [our offerings](https://eskerdesigns.com/web-design-service/).
+That said, they're not ideal for every situation. If you have extensive content, need robust SEO across multiple topics, or require complex functionality, a traditional multi-page site will serve you better. The good news is that we handle multi-page sites as well, and honestly, think that they are a better use case for most businesses anyway. If you are interested in exploring those options, feel free to check out [our offerings](/web-design-service/).
 
 But if your goals are focused and your message is clear, a well-crafted single page website can be remarkably effective. The key is knowing when this approach fits—and executing it well when it does.
 
-As always, if you are a small business owner looking to establish your brands online presence and need a little help, reach out to use today to chat. Even if we don't end up working together, we would love to help support your business with whatever advice we can provide. Contact us [here](https://eskerdesigns.com/contact/).
+As always, if you are a small business owner looking to establish your brands online presence and need a little help, reach out to use today to chat. Even if we don't end up working together, we would love to help support your business with whatever advice we can provide. Contact us [here](/contact/).

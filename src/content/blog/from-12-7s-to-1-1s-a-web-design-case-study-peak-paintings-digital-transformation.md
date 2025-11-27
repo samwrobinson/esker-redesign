@@ -24,7 +24,7 @@ imageAlt: Vermont Web Design case study analytics for Peak Painting, Woodstock, 
 
 As a local Vermont web developer, I love showing how thoughtful web design can transform a business's online presence. Today, I want to share the story of how I helped Peak Painting dramatically improve their website's performance and user experience.
 
-Peak Painting's website showed a dramatic shift in performance metrics following its work with Esker Designs. Initially, the website's performance score stood at a concerning 55 out of 100, which indicated significant room for improvement. The website took a staggering 12.7 seconds to load, leading to high bounce rates and a poor [user experience](https://eskerdesigns.com/blog/website-speed/). After the redesign, the results were remarkable. The performance score soared to a perfect 100 out of 100, showcasing the effectiveness of the new design and technical enhancements. Load time dropped to an impressive 0.4 seconds, providing users with a seamless browsing experience. This transformation not only improved user satisfaction but also positively impacted SEO rankings, driving more traffic to the site.
+Peak Painting's website showed a dramatic shift in performance metrics following its work with Esker Designs. Initially, the website's performance score stood at a concerning 55 out of 100, which indicated significant room for improvement. The website took a staggering 12.7 seconds to load, leading to high bounce rates and a poor [user experience](/blog/website-speed/). After the redesign, the results were remarkable. The performance score soared to a perfect 100 out of 100, showcasing the effectiveness of the new design and technical enhancements. Load time dropped to an impressive 0.4 seconds, providing users with a seamless browsing experience. This transformation not only improved user satisfaction but also positively impacted SEO rankings, driving more traffic to the site.
 
 **Initial Load Time:** 12.7 Seconds
 
@@ -122,7 +122,7 @@ Timely feedback from the client also played a critical role in maintaining our t
 
 ## **Get Started Today!**
 
-If you’re looking to **[enhance your online presence](https://eskerdesigns.com/blog/conversions/)** like Peak Painting did, now is the perfect time to act. Esker Designs specializes in **transforming websites** to not only look great but also perform exceptionally well. Imagine reducing your load time from over 12 seconds to just 1.1 seconds, significantly improving user experience and engagement. Whether you’re a small business or a large corporation, we tailor our approach to meet your unique needs. Reach out today to discuss how we can help you achieve similar results. Let’s set up a consultation to explore your goals and start your **digital transformation journey**!
+If you’re looking to **[enhance your online presence](/blog/conversions/)** like Peak Painting did, now is the perfect time to act. Esker Designs specializes in **transforming websites** to not only look great but also perform exceptionally well. Imagine reducing your load time from over 12 seconds to just 1.1 seconds, significantly improving user experience and engagement. Whether you’re a small business or a large corporation, we tailor our approach to meet your unique needs. Reach out today to discuss how we can help you achieve similar results. Let’s set up a consultation to explore your goals and start your **digital transformation journey**!
 
 ## Frequently Asked Questions
 
