@@ -13,7 +13,7 @@ imageAlt: Local Search on an Iphone
 ---
 # Maximizing Local SEO for Small Businesses
 
-Making sure your customers can find you business online is crucial, especially if you're a small business with a limited marketing budget. In this article, I show you my top [SEO](/small-business-seo-services/) tips for small businesses and offer a few quick videos that will help walk you through some of these concepts. Local search engine optimization (SEO) is a powerful and budget-friendly strategy to help your business stand out in your community and reach more potential customers, but only if it is used and implemented correctly. So - the ***million*** dollar question - how do you navigate the world of SEO without getting lost in technical jargon? Today, we are going to break down exactly that into simple, actionable, steps that you can implement 100% by yourself to boost your local visibility.
+Making sure your customers can find your business online is crucial, especially if you're a small business with a limited marketing budget. In this article, I show you my top [SEO](/small-business-seo-services/) tips for small businesses and offer a few quick videos that will help walk you through some of these concepts. Local search engine optimization (SEO) is a powerful and budget-friendly strategy to help your business stand out in your community and reach more potential customers, but only if it is used and implemented correctly. So - the ***million*** dollar question - how do you navigate the world of SEO without getting lost in technical jargon? Today, we are going to break down exactly that into simple, actionable, steps that you can implement 100% by yourself to boost your local visibility.
 
 ## Importance of Local SEO
 
