@@ -104,19 +104,15 @@ Don't even start with a keyword tool. Start with the questions your customers as
 
 Before you pay for any tool, use what Google gives you for free. This is data straight from Google, and is debatably some of the most valuable insight you can get:
 
-* **Autocomplete:**
+**Autocomplete:** Start typing a phrase and see what Google suggests
 
-   Start typing a phrase and see what Google suggests
-* **People Also Ask:**
+**People Also Ask:** The dropdown questions that appear in search results. These are 100% worth including in your content.
 
-   The dropdown questions that appear in search results. These are 100% worth including in your content.
+![Example of Google's "People Also Ask" section.](/assets/images/blog/people-also-ask.png "Example of Google's \"People Also Ask\" section.")
 
+**Related Searches:** The suggestions at the bottom of the results page. These show you exactly what people are searching for in Google's own words; straight from the horses mouth.
 
-* **Related Searches:**
-
-   The suggestions at the bottom of the results page
-
-These show you exactly what people are searching for in Google's own words; straight from the horses mouth.
+![Example of Google's "People Also Search" section.](/assets/images/blog/people-also-search.png "Example of Google's \"People Also Search\" section.")
 
 ### Use Tools to Validate and Expand
 
