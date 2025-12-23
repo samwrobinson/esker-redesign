@@ -14,18 +14,21 @@
     
     if (!overlay) return;
 
+    // Ensure GA4 is loaded
+    function ensureGA4Loaded() {
+        if (!document.getElementById('ga4-script')) {
+            var script = document.createElement('script');
+            script.id = 'ga4-script';
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-PL4NL9XE9Y';
+            document.head.appendChild(script);
+        }
+    }
+
     // Show popup after delay (e.g., 3 seconds)
     setTimeout(() => {
+        ensureGA4Loaded();
         overlay.classList.add('active');
         document.body.style.overflow = 'hidden'; // Prevent background scroll
-
-        // Track popup view
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'newsletter_popup_view', {
-                'event_category': 'engagement',
-                'event_label': 'blog_popup_shown'
-            });
-        }
     }, 3000);
 
     // Close popup function
