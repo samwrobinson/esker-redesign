@@ -146,7 +146,7 @@ eleventyNavigation:
         </div>
         <div class="cs-video-wrapper">
             <div class="cs-video-glow" aria-hidden="true"></div>
-            <div class="cs-video-container" data-video-id="280sn8hNj0c">
+            <div class="cs-video-container" id="yt-player-container" data-video-id="280sn8hNj0c">
                 <!--YouTube Thumbnail-->
                 <img class="cs-thumbnail" decoding="async" src="https://img.youtube.com/vi/280sn8hNj0c/sddefault.jpg" alt="Video thumbnail - Watch how we build websites" width="640" height="480">
                 <!--Play Button-->
@@ -171,29 +171,122 @@ eleventyNavigation:
         </form>
     </div>
     <script>
-        // Lite YouTube Embed - loads iframe only when clicked
-        document.addEventListener('DOMContentLoaded', function() {
-            const videoContainer = document.querySelector('.cs-video-container');
-            if (videoContainer) {
-                videoContainer.addEventListener('click', function() {
-                    const videoId = this.dataset.videoId;
-                    const iframe = document.createElement('iframe');
-                    iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0');
-                    iframe.setAttribute('frameborder', '0');
-                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-                    iframe.setAttribute('allowfullscreen', '');
-                    iframe.style.width = '100%';
-                    iframe.style.height = '100%';
-                    iframe.style.position = 'absolute';
-                    iframe.style.top = '0';
-                    iframe.style.left = '0';
-                    iframe.style.borderRadius = '1rem';
-                    this.innerHTML = '';
-                    this.appendChild(iframe);
-                    this.classList.add('cs-playing');
+        // YouTube Player API with GA4 Tracking
+        (function() {
+            var player;
+            var videoStarted = false;
+            var progressMilestones = { 10: false, 25: false, 50: false, 75: false, 90: false };
+            var videoTitle = 'Homepage Promo Video';
+            var checkInterval;
+
+            // Load YouTube API when user clicks
+            var container = document.getElementById('yt-player-container');
+            if (container) {
+                container.addEventListener('click', function initPlayer() {
+                    container.removeEventListener('click', initPlayer);
+                    container.classList.add('cs-playing');
+
+                    // Load YouTube iframe API
+                    var tag = document.createElement('script');
+                    tag.src = 'https://www.youtube.com/iframe_api';
+                    var firstScript = document.getElementsByTagName('script')[0];
+                    firstScript.parentNode.insertBefore(tag, firstScript);
                 });
             }
-        });
+
+            // YouTube API callback
+            window.onYouTubeIframeAPIReady = function() {
+                var videoId = container.dataset.videoId;
+                container.innerHTML = '<div id="yt-player"></div>';
+
+                player = new YT.Player('yt-player', {
+                    videoId: videoId,
+                    width: '100%',
+                    height: '100%',
+                    playerVars: {
+                        autoplay: 1,
+                        rel: 0,
+                        modestbranding: 1
+                    },
+                    events: {
+                        onReady: onPlayerReady,
+                        onStateChange: onPlayerStateChange
+                    }
+                });
+            };
+
+            function onPlayerReady(event) {
+                event.target.playVideo();
+            }
+
+            function onPlayerStateChange(event) {
+                // Playing
+                if (event.data === YT.PlayerState.PLAYING) {
+                    if (!videoStarted) {
+                        videoStarted = true;
+                        console.log('🎬 GA4 Event: video_start');
+                        gtag('event', 'video_start', {
+                            video_title: videoTitle,
+                            video_provider: 'youtube'
+                        });
+                    }
+                    // Start progress tracking
+                    startProgressTracking();
+                }
+
+                // Paused
+                if (event.data === YT.PlayerState.PAUSED) {
+                    stopProgressTracking();
+                    var currentTime = player.getCurrentTime();
+                    var duration = player.getDuration();
+                    gtag('event', 'video_pause', {
+                        video_title: videoTitle,
+                        video_provider: 'youtube',
+                        video_percent: Math.round((currentTime / duration) * 100),
+                        video_current_time: Math.round(currentTime)
+                    });
+                }
+
+                // Ended
+                if (event.data === YT.PlayerState.ENDED) {
+                    stopProgressTracking();
+                    gtag('event', 'video_complete', {
+                        video_title: videoTitle,
+                        video_provider: 'youtube',
+                        video_duration: Math.round(player.getDuration())
+                    });
+                }
+            }
+
+            function startProgressTracking() {
+                if (checkInterval) return;
+                checkInterval = setInterval(function() {
+                    if (!player || !player.getCurrentTime) return;
+                    var currentTime = player.getCurrentTime();
+                    var duration = player.getDuration();
+                    var percent = (currentTime / duration) * 100;
+
+                    for (var milestone in progressMilestones) {
+                        if (!progressMilestones[milestone] && percent >= milestone) {
+                            progressMilestones[milestone] = true;
+                            var eventName = 'video_' + milestone + '_percent';
+                            console.log('🎬 GA4 Event: ' + eventName);
+                            gtag('event', eventName, {
+                                video_title: videoTitle,
+                                video_provider: 'youtube'
+                            });
+                        }
+                    }
+                }, 1000);
+            }
+
+            function stopProgressTracking() {
+                if (checkInterval) {
+                    clearInterval(checkInterval);
+                    checkInterval = null;
+                }
+            }
+        })();
     </script>
 </section>
 

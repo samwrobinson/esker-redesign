@@ -373,6 +373,14 @@
   #video-548 .cs-video-container.cs-playing:hover {
     transform: none;
   }
+  #video-548 .cs-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
   #video-548 .cs-thumbnail {
     width: 100%;
     height: 100%;
