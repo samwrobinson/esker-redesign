@@ -298,6 +298,218 @@
   }
 }
 /*-- -------------------------- -->
+<---           Video            -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #video-548 {
+    padding: var(--sectionPadding);
+    overflow: hidden;
+  }
+  #video-548 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #video-548 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #video-548 .cs-video-wrapper {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Add padding to give space for the glow to show */
+    padding: clamp(3rem, 6vw, 5rem);
+  }
+  #video-548 .cs-video-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(ellipse at center, rgba(95, 250, 178, 0.7) 0%, rgba(95, 250, 178, 0.5) 25%, rgba(95, 250, 178, 0.25) 45%, rgba(95, 250, 178, 0) 70%);
+    z-index: 0;
+    pointer-events: none;
+  }
+  #video-548 .cs-video-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+    background: #000;
+  }
+  #video-548 .cs-video-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3);
+  }
+  #video-548 .cs-video-container:hover .cs-play-button {
+    transform: translate(-50%, -50%) scale(1.1);
+    background-color: var(--primary);
+  }
+  #video-548 .cs-video-container:hover .cs-thumbnail {
+    transform: scale(1.05);
+  }
+  #video-548 .cs-video-container.cs-playing {
+    cursor: default;
+  }
+  #video-548 .cs-video-container.cs-playing:hover {
+    transform: none;
+  }
+  #video-548 .cs-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease;
+  }
+  #video-548 .cs-play-button {
+    /* 64px - 96px */
+    width: clamp(4rem, 8vw, 6rem);
+    height: clamp(4rem, 8vw, 6rem);
+    border: none;
+    border-radius: 50%;
+    background-color: var(--primaryLight);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  }
+  #video-548 .cs-play-button:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+  }
+  #video-548 .cs-play-icon {
+    /* 24px - 36px */
+    width: clamp(1.5rem, 3vw, 2.25rem);
+    height: clamp(1.5rem, 3vw, 2.25rem);
+    color: var(--primary);
+    /* Nudge the play icon slightly right to center it visually */
+    margin-left: 4px;
+  }
+  #video-548 .cs-inline-form {
+    width: 100%;
+    max-width: 56.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  #video-548 .cs-form-row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  #video-548 .cs-input,
+  #video-548 .cs-message {
+    flex: 1;
+    min-width: 0;
+    padding: 0.875rem 1.25rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: #fff;
+    color: var(--headerColor);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+  }
+  #video-548 .cs-input::placeholder,
+  #video-548 .cs-message::placeholder {
+    color: #999;
+  }
+  #video-548 .cs-input:focus,
+  #video-548 .cs-message:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(95, 250, 178, 0.2);
+  }
+  #video-548 .cs-message {
+    resize: none;
+    line-height: 1.5;
+  }
+  #video-548 .cs-submit {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: inherit;
+    color: #000;
+    background-color: var(--primaryLight);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  #video-548 .cs-submit:hover {
+    background-color: var(--primary);
+    color: var(--bodyTextColorWhite);
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #video-548 .cs-form-row {
+    flex-direction: row;
+    align-items: center;
+  }
+  #video-548 .cs-submit {
+    border-radius: 1.875rem;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #video-548 .cs-title,
+  body.dark-mode #video-548 .cs-text {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #video-548 .cs-text {
+    opacity: 0.8;
+  }
+  body.dark-mode #video-548 .cs-video-glow {
+    background: radial-gradient(ellipse at center, rgba(95, 250, 178, 0.6) 0%, rgba(95, 250, 178, 0.4) 25%, rgba(95, 250, 178, 0.2) 45%, rgba(95, 250, 178, 0) 70%);
+  }
+  body.dark-mode #video-548 .cs-input,
+  body.dark-mode #video-548 .cs-message {
+    background-color: var(--medium);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #video-548 .cs-input::placeholder,
+  body.dark-mode #video-548 .cs-message::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  body.dark-mode #video-548 .cs-input:focus,
+  body.dark-mode #video-548 .cs-message:focus {
+    border-color: var(--primaryLight);
+  }
+}
+/*-- -------------------------- -->
 <---       Side By Side         -->
 <--- -------------------------- -*/
 /* Mobile - 360px */

@@ -132,6 +132,73 @@ eleventyNavigation:
 </section>
 
 <!-- ============================================ -->
+<!--                   Video                      -->
+<!-- ============================================ -->
+
+<section id="video-548">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">See It In Action</span>
+            <h2 class="cs-title">Watch How We Build Websites That Work</h2>
+            <p class="cs-text">
+                See the difference a hand-coded website can make for your business. No page builders, no templates – just clean, efficient code built to convert.
+            </p>
+        </div>
+        <div class="cs-video-wrapper">
+            <div class="cs-video-glow" aria-hidden="true"></div>
+            <div class="cs-video-container" data-video-id="280sn8hNj0c">
+                <!--YouTube Thumbnail-->
+                <img class="cs-thumbnail" decoding="async" src="https://img.youtube.com/vi/280sn8hNj0c/sddefault.jpg" alt="Video thumbnail - Watch how we build websites" width="640" height="480">
+                <!--Play Button-->
+                <button class="cs-play-button" aria-label="Play video">
+                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!--Inline Contact Form-->
+        <form class="cs-inline-form" name="Homepage Contact" method="post" netlify>
+            <div class="cs-form-row">
+                <input class="cs-input" type="text" name="name" placeholder="Name" required>
+                <input class="cs-input" type="email" name="email" placeholder="Email" required>
+                <input class="cs-input" type="tel" name="phone" placeholder="Phone">
+            </div>
+            <div class="cs-form-row">
+                <textarea class="cs-message" name="message" placeholder="What can we help you with?" rows="2"></textarea>
+                <button class="cs-submit" type="submit">Start Today</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        // Lite YouTube Embed - loads iframe only when clicked
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoContainer = document.querySelector('.cs-video-container');
+            if (videoContainer) {
+                videoContainer.addEventListener('click', function() {
+                    const videoId = this.dataset.videoId;
+                    const iframe = document.createElement('iframe');
+                    iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0');
+                    iframe.setAttribute('frameborder', '0');
+                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                    iframe.setAttribute('allowfullscreen', '');
+                    iframe.style.width = '100%';
+                    iframe.style.height = '100%';
+                    iframe.style.position = 'absolute';
+                    iframe.style.top = '0';
+                    iframe.style.left = '0';
+                    iframe.style.borderRadius = '1rem';
+                    this.innerHTML = '';
+                    this.appendChild(iframe);
+                    this.classList.add('cs-playing');
+                });
+            }
+        });
+    </script>
+</section>
+
+
+<!-- ============================================ -->
 <!--                  Services                    -->
 <!-- ============================================ -->
 
