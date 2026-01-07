@@ -314,7 +314,7 @@
     flex-direction: column;
     align-items: center;
     /* 48px - 64px */
-    gap: clamp(3rem, 6vw, 4rem);
+    gap: clamp(1rem, 2vw, 1.5rem);
   }
   #video-548 .cs-content {
     /* set text align to left if content needs to be left aligned */
@@ -332,7 +332,7 @@
     justify-content: center;
     align-items: center;
     /* Add padding to give space for the glow to show */
-    padding: clamp(3rem, 6vw, 5rem);
+    padding: clamp(3rem, 4vw, 4rem);
   }
   #video-548 .cs-video-glow {
     position: absolute;

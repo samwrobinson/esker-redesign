@@ -103,6 +103,59 @@
                 border: none;
                 width: 100%;
             }
+
+            .cs-checkbox-group {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                margin-bottom: (12/16rem);
+            }
+
+            .cs-checkbox-label {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: (8/16rem);
+                cursor: pointer;
+                /* 11px - 12px */
+                font-size: clamp(0.6875rem, 1.2vw, 0.75rem);
+                line-height: 1.4em;
+                font-weight: 400;
+                color: var(--bodyTextColor);
+                margin-bottom: 0;
+
+                input[type="checkbox"] {
+                    flex-shrink: 0;
+                    width: (16/16rem);
+                    height: (16/16rem);
+                    cursor: pointer;
+                    accent-color: var(--primary);
+                }
+            }
+
+            .cs-checkbox-text {
+                flex: 1;
+            }
+
+            .cs-required {
+                color: #dc3545;
+                font-weight: 700;
+            }
+
+            .cs-privacy-link {
+                display: inline-block;
+                margin-bottom: (20/16rem);
+                /* 11px - 12px */
+                font-size: clamp(0.6875rem, 1.2vw, 0.75rem);
+                color: var(--primary);
+                text-decoration: underline;
+                transition: color 0.3s;
+
+                &:hover {
+                    color: var(--primaryLight);
+                }
+            }
         }
 
         .cs-right-section {
@@ -223,6 +276,16 @@
             .cs-label-message {
                 width: 100%;
             }
+
+            .cs-checkbox-label {
+                flex-direction: row;
+                align-items: flex-start;
+                min-width: 100%;
+
+                input[type="checkbox"] {
+                    margin-top: (2/16rem);
+                }
+            }
         }
     }
 }
@@ -308,6 +371,18 @@
                     &::placeholder {
                         /* lighten up the color of the text by 40%*/
                         filter: brightness(1.4);
+                    }
+                }
+
+                .cs-checkbox-label {
+                    color: var(--bodyTextColorWhite);
+                }
+
+                .cs-privacy-link {
+                    color: var(--primaryLight);
+
+                    &:hover {
+                        color: #fff;
                     }
                 }
             }

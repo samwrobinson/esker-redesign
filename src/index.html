@@ -166,8 +166,15 @@ eleventyNavigation:
             </div>
             <div class="cs-form-row">
                 <textarea class="cs-message" name="message" placeholder="What can we help you with?" rows="2"></textarea>
-                <button class="cs-submit" type="submit">Start Today</button>
             </div>
+            <div class="cs-checkbox-group">
+                <label class="cs-checkbox-label">
+                    <input type="checkbox" name="sms-consent" id="home-sms-consent" value="yes" required>
+                    <span class="cs-checkbox-text">I consent to receive transactional text messages from Esker Designs at the phone number provided (appointment confirmations, follow-ups, and service updates). Message frequency may vary. Message & data rates may apply. Reply HELP for help or STOP to opt-out. <span class="cs-required">*</span></span>
+                </label>
+            </div>
+            <a href="/privacy-policy/" class="cs-privacy-link" target="_blank">Privacy Policy</a>
+            <button class="cs-submit" type="submit">Start Today</button>
         </form>
     </div>
     <script>

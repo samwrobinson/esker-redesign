@@ -71,6 +71,25 @@ eleventyNavigation:
                     Project Details
                     <textarea required name="Message" id="message" placeholder="Write message..."></textarea>
                 </label>
+
+                <!-- SMS Consent Checkbox (Required) -->
+                <div class="cs-checkbox-group">
+                    <label class="cs-checkbox-label">
+                        <input type="checkbox" name="sms-consent" id="sms-consent" value="yes" required>
+                        <span class="cs-checkbox-text">I consent to receive transactional text messages from Esker Designs at the phone number provided (appointment confirmations, follow-ups, and service updates). Message frequency may vary. Message & data rates may apply. Reply HELP for help or STOP to opt-out. <span class="cs-required">*</span></span>
+                    </label>
+                </div>
+
+                <!-- Marketing Consent Checkbox (Optional) -->
+                <div class="cs-checkbox-group">
+                    <label class="cs-checkbox-label">
+                        <input type="checkbox" name="marketing-consent" id="marketing-consent" value="yes">
+                        <span class="cs-checkbox-text">I consent to receive marketing and promotional messages from Esker Designs at the phone number provided. Message frequency may vary. Message & data rates may apply. Reply HELP for help or STOP to opt-out.</span>
+                    </label>
+                </div>
+
+                <a href="/privacy-policy/" class="cs-privacy-link" target="_blank">Privacy Policy</a>
+
                 <button class="cs-button-solid" type="submit">Submit Message</button>
             </form>
             <div class="cs-right-section">

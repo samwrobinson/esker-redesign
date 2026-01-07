@@ -237,6 +237,12 @@
             align-items: flex-start;
         }
 
+        .cs-content-full {
+            /* full width content without sidebar image */
+            max-width: (900/16rem);
+            margin: 0 auto;
+        }
+
         h2,
         h3,
         h4,
@@ -557,6 +563,11 @@
             align-items: flex-start;
             justify-content: space-between;
             margin-bottom: 7rem;
+
+            &:has(.cs-content-full) {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         .cs-content {
@@ -564,6 +575,11 @@
             max-width: (674/16rem);
             /* prevents flexbox from squishing it */
             flex: none;
+        }
+
+        .cs-content-full {
+            width: 100%;
+            max-width: (900/16rem);
         }
 
         .cs-image-group {
