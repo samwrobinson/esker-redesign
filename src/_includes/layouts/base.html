@@ -102,11 +102,15 @@
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 document.querySelectorAll('form[netlify], form[data-netlify="true"]').forEach(function(form) {
-                    form.addEventListener('submit', function() {
+                    form.addEventListener('submit', function(e) {
                         if (typeof fbq === 'function') {
+                            e.preventDefault();
                             fbq('track', 'Lead', {
                                 content_name: form.getAttribute('name') || 'Form Submission'
                             });
+                            setTimeout(function() {
+                                form.submit();
+                            }, 300);
                         }
                     });
                 });
