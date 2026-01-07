@@ -94,8 +94,23 @@
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-    
+
             gtag('config', 'G-PL4NL9XE9Y');
+        </script>
+
+        <!-- Facebook Pixel Form Tracking -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('form[netlify], form[data-netlify="true"]').forEach(function(form) {
+                    form.addEventListener('submit', function() {
+                        if (typeof fbq === 'function') {
+                            fbq('track', 'Lead', {
+                                content_name: form.getAttribute('name') || 'Form Submission'
+                            });
+                        }
+                    });
+                });
+            });
         </script>
 
     </body>

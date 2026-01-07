@@ -444,7 +444,7 @@
     font-size: 1rem;
     font-family: inherit;
     background-color: #fff;
-    color: var(--headerColor);
+    color: #1a1a1a;
     transition: border-color 0.3s, box-shadow 0.3s;
     box-sizing: border-box;
   }
