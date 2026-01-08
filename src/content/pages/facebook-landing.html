@@ -146,7 +146,6 @@ eleventyNavigation:
         </div>
         <div class="cs-gallery-wrapper">
             <div class="cs-gallery-track">
-                <!-- First set -->
                 <div class="cs-gallery-item">
                     <img src="/assets/images/speed-1.png" alt="Speed test result" loading="lazy" decoding="async">
                 </div>
@@ -168,7 +167,7 @@ eleventyNavigation:
                 <div class="cs-gallery-item">
                     <img src="/assets/images/speed-7.png" alt="Speed test result" loading="lazy" decoding="async">
                 </div>
-                <!-- Duplicate set for seamless loop (desktop only) -->
+                <!-- Duplicate set for seamless loop -->
                 <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
                     <img src="/assets/images/speed-1.png" alt="" loading="lazy" decoding="async">
                 </div>
@@ -211,59 +210,86 @@ eleventyNavigation:
             <p class="cs-text">We threw in a few other sites' proof too, just for fun.</p>
         </div>
         </div>
-        <div class="cs-featured-carousel">
-            <div class="cs-carousel-progress">
-                <div class="cs-progress-bar"></div>
-            </div>
-            <picture class="cs-picture-featured active">
-                <img src="/assets/images/150-form-subs.png" alt="150+ form submissions generated" decoding="async">
-            </picture>
-            <picture class="cs-picture-featured">
-                <img src="/assets/images/form-submissions-1.png" alt="Form submissions proof" decoding="async">
-            </picture>
-            <picture class="cs-picture-featured">
-                <img src="/assets/images/form-submissions-2.png" alt="Form submissions proof" decoding="async">
-            </picture>
-            <picture class="cs-picture-featured">
-                <img src="/assets/images/form-submission-dashboard.png" alt="Form submission dashboard" decoding="async">
-            </picture>
-            <picture class="cs-picture-featured">
-                <img src="/assets/images/subs-1-blurred.png" alt="Form submissions proof" decoding="async">
-            </picture>
-            <picture class="cs-picture-featured">
-                <img src="/assets/images/subs-2-blurred.png" alt="Form submissions proof" decoding="async">
-            </picture>
-            <div class="cs-carousel-dots">
-                <button class="cs-dot active" data-index="0" aria-label="Show image 1"></button>
-                <button class="cs-dot" data-index="1" aria-label="Show image 2"></button>
-                <button class="cs-dot" data-index="2" aria-label="Show image 3"></button>
-                <button class="cs-dot" data-index="3" aria-label="Show image 4"></button>
-                <button class="cs-dot" data-index="4" aria-label="Show image 5"></button>
-                <button class="cs-dot" data-index="5" aria-label="Show image 6"></button>
+        <div class="cs-gallery-wrapper">
+            <div class="cs-gallery-track">
+                <div class="cs-gallery-item">
+                    <img src="/assets/images/150-form-subs.png" alt="150+ form submissions generated" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item">
+                    <img src="/assets/images/form-submissions-1.png" alt="Form submissions proof" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item">
+                    <img src="/assets/images/form-submissions-2.png" alt="Form submissions proof" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item">
+                    <img src="/assets/images/form-submission-dashboard.png" alt="Form submission dashboard" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item">
+                    <img src="/assets/images/subs-1-blurred.png" alt="Form submissions proof" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item">
+                    <img src="/assets/images/subs-2-blurred.png" alt="Form submissions proof" loading="lazy" decoding="async">
+                </div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
+                    <img src="/assets/images/150-form-subs.png" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
+                    <img src="/assets/images/form-submissions-1.png" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
+                    <img src="/assets/images/form-submissions-2.png" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
+                    <img src="/assets/images/form-submission-dashboard.png" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
+                    <img src="/assets/images/subs-1-blurred.png" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
+                    <img src="/assets/images/subs-2-blurred.png" alt="" loading="lazy" decoding="async">
+                </div>
             </div>
         </div>
-        <div class="cs-proof-grid">
-            <div class="cs-column">
-                <picture class="cs-picture">
-                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-1.png' | resize({width: 600}) | webp %}" alt="Website project example" loading="lazy" decoding="async">
-                </picture>
-                <picture class="cs-picture">
-                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-3.png' | resize({width: 600}) | webp %}" alt="Website project example" loading="lazy" decoding="async">
-                </picture>
-                <picture class="cs-picture">
-                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-5.png' | resize({width: 600}) | webp %}" alt="Website project example" loading="lazy" decoding="async">
-                </picture>
-            </div>
-            <div class="cs-column">
-                <picture class="cs-picture">
-                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-2.png' | resize({width: 600}) | webp %}" alt="Website project example" loading="lazy" decoding="async">
-                </picture>
-                <picture class="cs-picture">
-                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-4.png' | resize({width: 600}) | webp %}" alt="Website project example" loading="lazy" decoding="async">
-                </picture>
-                <picture class="cs-picture">
-                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-6.png' | resize({width: 600}) | webp %}" alt="Website project example" loading="lazy" decoding="async">
-                </picture>
+        <div class="cs-gallery-wrapper-secondary">
+            <div class="cs-gallery-track-secondary">
+                <div class="cs-gallery-item">
+                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-1.png' | resize({width: 800}) | webp %}" alt="Website project example" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item">
+                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-2.png' | resize({width: 800}) | webp %}" alt="Website project example" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item">
+                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-3.png' | resize({width: 800}) | webp %}" alt="Website project example" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item">
+                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-4.png' | resize({width: 800}) | webp %}" alt="Website project example" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item">
+                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-5.png' | resize({width: 800}) | webp %}" alt="Website project example" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item">
+                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-6.png' | resize({width: 800}) | webp %}" alt="Website project example" loading="lazy" decoding="async">
+                </div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
+                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-1.png' | resize({width: 800}) | webp %}" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
+                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-2.png' | resize({width: 800}) | webp %}" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
+                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-3.png' | resize({width: 800}) | webp %}" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
+                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-4.png' | resize({width: 800}) | webp %}" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
+                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-5.png' | resize({width: 800}) | webp %}" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
+                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-6.png' | resize({width: 800}) | webp %}" alt="" loading="lazy" decoding="async">
+                </div>
             </div>
         </div>
         <!-- Lightbox for tap-to-zoom -->
@@ -619,158 +645,65 @@ eleventyNavigation:
 </script>
 
 <script>
-// Proof Carousel - Desktop: Scroll Triggered, Mobile: Touch Swipe
+// Proof Galleries - Mobile stagger animation, Desktop CSS marquee
 (function() {
-    gsap.registerPlugin(ScrollTrigger);
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
 
-    const carousel = document.querySelector('#fb-proof .cs-featured-carousel');
-    if (!carousel) return;
+    const isMobile = () => window.innerWidth < 768;
 
-    const slides = Array.from(carousel.querySelectorAll('.cs-picture-featured'));
-    const dots = Array.from(carousel.querySelectorAll('.cs-dot'));
-    const progressBar = carousel.querySelector('.cs-progress-bar');
+    // Get all gallery items from both galleries
+    const allItems = document.querySelectorAll('#fb-proof .cs-gallery-item:not(.cs-duplicate)');
+    if (allItems.length === 0) return;
 
-    if (slides.length <= 1) return;
-
-    const isDesktop = () => window.innerWidth >= 768;
-    let currentIndex = 0;
-    let scrollTriggerInstance = null;
-    let timeline = null;
-
-    // Set initial state
-    function setInitialState() {
-        slides.forEach((slide, i) => {
-            gsap.set(slide, {
-                opacity: i === 0 ? 1 : 0,
-                zIndex: slides.length - i,
-                x: 0
+    function initMobileAnimation() {
+        if (!isMobile()) {
+            // On desktop, make sure items are visible (CSS handles marquee animation)
+            allItems.forEach(item => {
+                item.classList.remove('is-visible');
+                gsap.set(item, { clearProps: 'all' });
             });
-        });
-        currentIndex = 0;
-        updateDots(0);
-    }
+            return;
+        }
 
-    function updateDots(index) {
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === index);
-        });
-    }
-
-    // Mobile: Scroll-triggered transitions (no pinning, natural scroll)
-    function initMobile() {
-        setInitialState();
-
-        // As you scroll past the carousel, images transition
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: carousel,
-                start: 'top 80%',
-                end: 'bottom 20%',
-                scrub: 0.5,
-                onUpdate: (self) => {
-                    const index = Math.round(self.progress * (slides.length - 1));
-                    updateDots(index);
-                    // Update progress bar on mobile too
-                    if (progressBar) {
-                        progressBar.style.width = `${self.progress * 100}%`;
-                    }
+        // Mobile: Staggered reveal on scroll
+        allItems.forEach((item, i) => {
+            gsap.fromTo(item,
+                {
+                    opacity: 0,
+                    y: 40,
+                    scale: 0.95
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.6,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: item,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none'
+                    },
+                    delay: i * 0.03
                 }
-            }
-        });
-
-        // Animate through all slides as you scroll past
-        slides.forEach((slide, i) => {
-            if (i < slides.length - 1) {
-                tl.to(slide, { opacity: 0, duration: 1 });
-                tl.to(slides[i + 1], { opacity: 1, duration: 1 }, '<');
-            }
+            );
         });
     }
 
-    // Desktop: Scroll-triggered pinning
-    function initDesktop() {
-        setInitialState();
+    initMobileAnimation();
 
-        timeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: carousel,
-                start: 'top 15%',
-                end: () => `+=${slides.length * 120}%`,
-                pin: true,
-                pinSpacing: true,
-                scrub: 0.5,
-                snap: 1 / (slides.length - 1),
-                onUpdate: (self) => {
-                    const index = Math.round(self.progress * (slides.length - 1));
-                    updateDots(index);
-                    // Update progress bar
-                    if (progressBar) {
-                        progressBar.style.width = `${self.progress * 100}%`;
-                    }
-                }
-            }
-        });
-
-        scrollTriggerInstance = timeline.scrollTrigger;
-
-        // Animate each slide transition
-        slides.forEach((slide, i) => {
-            if (i < slides.length - 1) {
-                timeline.to(slide, { opacity: 0, duration: 1 });
-                timeline.to(slides[i + 1], { opacity: 1, duration: 1 }, '<');
-            }
-        });
-
-        // Dot click handlers
-        dots.forEach((dot, i) => {
-            dot.onclick = () => {
-                const progress = i / (slides.length - 1);
-                const scrollTo = scrollTriggerInstance.start +
-                    (scrollTriggerInstance.end - scrollTriggerInstance.start) * progress;
-                gsap.to(window, {
-                    scrollTo: scrollTo,
-                    duration: 0.8,
-                    ease: 'power2.inOut'
-                });
-            };
-        });
-    }
-
-    // Initialize based on screen size
-    function init() {
-        // Kill existing ScrollTrigger if any
-        if (scrollTriggerInstance) {
-            scrollTriggerInstance.kill();
-            scrollTriggerInstance = null;
-        }
-        if (timeline) {
-            timeline.kill();
-            timeline = null;
-        }
-
-        // Clear inline styles
-        slides.forEach(slide => {
-            gsap.set(slide, { clearProps: 'all' });
-        });
-        gsap.set(carousel, { clearProps: 'all' });
-
-        if (isDesktop()) {
-            initDesktop();
-        } else {
-            initMobile();
-        }
-
-        ScrollTrigger.refresh();
-    }
-
-    // Initialize
-    init();
-
-    // Reinitialize on resize (debounced)
-    let resizeTimeout;
+    // Reinit on resize
+    let resizeTimer;
     window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(init, 300);
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            ScrollTrigger.getAll().forEach(st => {
+                if (st.vars.trigger && st.vars.trigger.closest && st.vars.trigger.closest('#fb-proof')) {
+                    st.kill();
+                }
+            });
+            initMobileAnimation();
+        }, 300);
     });
 })();
 </script>
@@ -784,8 +717,8 @@ eleventyNavigation:
     const lightboxImg = lightbox.querySelector('.cs-lightbox-img');
     const closeBtn = lightbox.querySelector('.cs-lightbox-close');
 
-    // Get all proof images (carousel + grid)
-    const proofImages = document.querySelectorAll('#fb-proof .cs-picture-featured img, #fb-proof .cs-picture img');
+    // Get all proof images (both galleries)
+    const proofImages = document.querySelectorAll('#fb-proof .cs-gallery-item:not(.cs-duplicate) img');
 
     // Open lightbox on image tap
     proofImages.forEach(img => {
@@ -821,7 +754,7 @@ eleventyNavigation:
 </script>
 
 <script>
-// Speed Gallery - Mobile stagger animation
+// Speed Gallery - Mobile stagger animation, Desktop CSS marquee
 (function() {
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
 
@@ -834,7 +767,7 @@ eleventyNavigation:
 
     function initMobileAnimation() {
         if (!isMobile()) {
-            // On desktop, make sure items are visible (CSS handles animation)
+            // On desktop, make sure items are visible (CSS handles marquee animation)
             items.forEach(item => {
                 item.classList.remove('is-visible');
                 gsap.set(item, { clearProps: 'all' });
@@ -861,7 +794,7 @@ eleventyNavigation:
                         start: 'top 85%',
                         toggleActions: 'play none none none'
                     },
-                    delay: i * 0.05 // Slight stagger
+                    delay: i * 0.05
                 }
             );
         });
@@ -875,7 +808,7 @@ eleventyNavigation:
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
             ScrollTrigger.getAll().forEach(st => {
-                if (st.vars.trigger && st.vars.trigger.closest('#speed-gallery')) {
+                if (st.vars.trigger && st.vars.trigger.closest && st.vars.trigger.closest('#speed-gallery')) {
                     st.kill();
                 }
             });

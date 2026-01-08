@@ -669,90 +669,49 @@
   #fb-proof .cs-text {
     color: var(--bodyTextColor);
   }
-  #fb-proof .cs-featured-carousel {
+  #fb-proof .cs-gallery-wrapper {
     position: relative;
     width: 100%;
+    overflow: hidden;
     margin-bottom: 2rem;
+  }
+  #fb-proof .cs-gallery-track {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  #fb-proof .cs-gallery-item {
+    width: 100%;
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    z-index: 1;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: none;
   }
-  #fb-proof .cs-picture-featured {
+  #fb-proof .cs-gallery-item img {
     width: 100%;
-    border-radius: 0;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
+    height: auto;
+    display: block;
   }
-  #fb-proof .cs-picture-featured:first-of-type {
+  #fb-proof .cs-gallery-item.cs-duplicate {
+    display: none;
+  }
+  #fb-proof .cs-gallery-item.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  #fb-proof .cs-gallery-wrapper-secondary {
     position: relative;
-    display: block;
-    height: auto;
-  }
-  #fb-proof .cs-picture-featured img {
     width: 100%;
-    height: auto;
-    display: block;
+    overflow: hidden;
   }
-  #fb-proof .cs-carousel-progress {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.2);
-    z-index: 10;
-  }
-  #fb-proof .cs-progress-bar {
-    height: 100%;
-    width: 0%;
-    background: var(--primaryLight);
-    transition: width 0.1s ease-out;
-  }
-  #fb-proof .cs-carousel-dots {
+  #fb-proof .cs-gallery-track-secondary {
     display: flex;
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    gap: 0.5rem;
-    z-index: 10;
-  }
-  #fb-proof .cs-dot {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 0;
-    min-width: 44px;
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background: none;
-  }
-  #fb-proof .cs-dot::before {
-    content: '';
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    background: transparent;
-    transition: all 0.3s ease;
-  }
-  #fb-proof .cs-dot:hover::before {
-    background: rgba(255, 255, 255, 0.5);
-  }
-  #fb-proof .cs-dot.active::before {
-    background: #fff;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 1rem;
   }
   #fb-proof .cs-lightbox {
     display: none;
@@ -800,36 +759,8 @@
     object-fit: contain;
     border-radius: 0.5rem;
   }
-  #fb-proof .cs-picture-featured,
-  #fb-proof .cs-picture {
+  #fb-proof .cs-gallery-item {
     cursor: zoom-in;
-  }
-  #fb-proof .cs-proof-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  #fb-proof .cs-column {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-  }
-  #fb-proof .cs-picture {
-    display: block;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    transition: box-shadow 0.3s ease;
-  }
-  #fb-proof .cs-picture:hover {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  }
-  #fb-proof .cs-picture img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
   }
   /*-- -------------------------- -->
     <---         Benefits             -->
@@ -1022,23 +953,63 @@
     flex: 1 1 calc(50% - 1rem);
     max-width: 24rem;
   }
-  #fb-proof .cs-dot {
-    min-width: 12px;
-    min-height: 12px;
+  #fb-proof .cs-gallery-wrapper {
+    padding: 1rem 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+    mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
   }
-  #fb-proof .cs-proof-grid {
+  #fb-proof .cs-gallery-track {
     flex-direction: row;
-    justify-content: center;
+    gap: 2.5rem;
+    padding: 0;
+    width: max-content;
+    animation: proof-marquee-right 50s linear infinite;
   }
-  #fb-proof .cs-column {
-    flex: 1;
-    max-width: 28rem;
+  #fb-proof .cs-gallery-item {
+    flex-shrink: 0;
+    width: 800px;
+    opacity: 1;
+    transform: none;
   }
-  #fb-proof .cs-column:nth-child(2) {
-    margin-top: 4rem;
+  #fb-proof .cs-gallery-item.cs-duplicate {
+    display: block;
+  }
+  #fb-proof .cs-gallery-wrapper-secondary {
+    padding: 1rem 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+    mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+  }
+  #fb-proof .cs-gallery-track-secondary {
+    flex-direction: row;
+    gap: 2.5rem;
+    padding: 0;
+    width: max-content;
+    animation: proof-marquee-left 40s linear infinite;
+  }
+  #fb-proof .cs-gallery-track-secondary .cs-gallery-item {
+    width: 800px;
+  }
+  @keyframes proof-marquee-right {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes proof-marquee-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
   #fb-benefits .cs-card-group {
     grid-template-columns: repeat(2, 1fr);
+  }
+  #fb-cta {
+    padding-bottom: 20rem;
   }
   #fb-cta .cs-form-group {
     flex-direction: row;
@@ -1345,7 +1316,6 @@
     width: 100%;
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transform: translateY(30px) scale(0.95);
     transition: none;
@@ -1380,7 +1350,7 @@
   }
   #speed-gallery .cs-gallery-item {
     flex-shrink: 0;
-    width: 600px;
+    width: 800px;
     opacity: 1;
     transform: none;
   }

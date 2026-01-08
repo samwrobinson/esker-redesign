@@ -27,8 +27,8 @@
                 ease: 'power2.out',
                 scrollTrigger: {
                     trigger: card,
-                    start: 'top 60%',
-                    toggleActions: 'play none none none'
+                    start: 'top 85%',
+                    toggleActions: 'play none none reverse'
                 }
             });
         });

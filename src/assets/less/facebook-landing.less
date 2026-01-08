@@ -535,110 +535,61 @@
             color: var(--bodyTextColor);
         }
 
-        // Carousel - works on all screen sizes
-        .cs-featured-carousel {
+        // Gallery wrapper - horizontal marquee like speed gallery
+        .cs-gallery-wrapper {
             position: relative;
             width: 100%;
-            margin-bottom: 2rem;
-            border-radius: 1rem;
             overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-            z-index: 1;
+            margin-bottom: 2rem;
         }
 
-        .cs-picture-featured {
-            width: 100%;
-            border-radius: 0;
-            overflow: hidden;
-            // All slides absolute by default
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
+        .cs-gallery-track {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 0 1rem;
+        }
 
-            // First picture provides height (use first-of-type to skip progress bar)
-            &:first-of-type {
-                position: relative;
-                display: block;
-                height: auto;
-            }
+        .cs-gallery-item {
+            width: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            transition: none;
 
             img {
                 width: 100%;
                 height: auto;
                 display: block;
             }
+
+            // Hide duplicates on mobile
+            &.cs-duplicate {
+                display: none;
+            }
+
+            // Animated state
+            &.is-visible {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
         }
 
-        // Progress bar - visible on all sizes now
-        .cs-carousel-progress {
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.2);
-            z-index: 10;
+        // Second gallery (proof grid converted to carousel) - scrolls LEFT
+        .cs-gallery-wrapper-secondary {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
         }
 
-        .cs-progress-bar {
-            height: 100%;
-            width: 0%;
-            background: var(--primaryLight);
-            transition: width 0.1s ease-out;
-        }
-
-        // Show dots on all sizes
-        .cs-carousel-dots {
+        .cs-gallery-track-secondary {
             display: flex;
-            position: absolute;
-            bottom: 1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            gap: 0.5rem;
-            z-index: 10;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 0 1rem;
         }
-
-        .cs-dot {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            background: transparent;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            padding: 0;
-            // Larger touch target on mobile
-            min-width: 44px;
-            min-height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            &::before {
-                content: '';
-                width: 14px;
-                height: 14px;
-                border-radius: 50%;
-                border: 2px solid #fff;
-                background: transparent;
-                transition: all 0.3s ease;
-            }
-
-            // Reset the outer element styles
-            border: none;
-            background: none;
-
-            &:hover::before {
-                background: rgba(255, 255, 255, 0.5);
-            }
-
-            &.active::before {
-                background: #fff;
-            }
-        }
-
 
         // Lightbox for tap-to-zoom
         .cs-lightbox {
@@ -693,42 +644,8 @@
         }
 
         // Make images tappable on mobile
-        .cs-picture-featured,
-        .cs-picture {
+        .cs-gallery-item {
             cursor: zoom-in;
-        }
-
-        // Mobile: Single column for proof grid
-        .cs-proof-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .cs-column {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            width: 100%;
-        }
-
-        .cs-picture {
-            display: block;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-            transition: box-shadow 0.3s ease;
-
-            &:hover {
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            }
-
-            img {
-                width: 100%;
-                height: auto;
-                display: block;
-                object-fit: contain;
-            }
         }
 
     }
@@ -973,25 +890,70 @@
     }
 
     #fb-proof {
-        // Smaller dot touch targets on desktop (mouse is precise)
-        .cs-dot {
-            min-width: 12px;
-            min-height: 12px;
+        // Desktop: Horizontal marquee animation - scrolls RIGHT
+        .cs-gallery-wrapper {
+            padding: 1rem 0;
+            -webkit-mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+            mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
         }
 
-        // Desktop: Two column proof grid
-        .cs-proof-grid {
+        .cs-gallery-track {
             flex-direction: row;
-            justify-content: center;
+            gap: 2.5rem;
+            padding: 0;
+            width: max-content;
+            animation: proof-marquee-right 50s linear infinite;
         }
 
-        .cs-column {
-            flex: 1;
-            max-width: 28rem;
+        .cs-gallery-item {
+            flex-shrink: 0;
+            width: 800px;
+            opacity: 1;
+            transform: none;
 
-            &:nth-child(2) {
-                margin-top: 4rem;
+            // Show duplicates on desktop for seamless loop
+            &.cs-duplicate {
+                display: block;
             }
+        }
+
+        // Secondary gallery - scrolls LEFT
+        .cs-gallery-wrapper-secondary {
+            padding: 1rem 0;
+            -webkit-mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+            mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+        }
+
+        .cs-gallery-track-secondary {
+            flex-direction: row;
+            gap: 2.5rem;
+            padding: 0;
+            width: max-content;
+            animation: proof-marquee-left 40s linear infinite;
+
+            .cs-gallery-item {
+                width: 800px;
+            }
+        }
+    }
+
+    // Scroll RIGHT (starts offset, moves to 0)
+    @keyframes proof-marquee-right {
+        0% {
+            transform: translateX(-50%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    // Scroll LEFT (starts at 0, moves offset)
+    @keyframes proof-marquee-left {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
         }
     }
 
@@ -1002,6 +964,8 @@
     }
 
     #fb-cta {
+        padding-bottom: 20rem;
+
         .cs-form-group {
             flex-direction: row;
             flex-wrap: wrap;
@@ -1404,7 +1368,6 @@
             width: 100%;
             border-radius: 1rem;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
             opacity: 0;
             transform: translateY(30px) scale(0.95);
             transition: none;
@@ -1449,7 +1412,7 @@
 
         .cs-gallery-item {
             flex-shrink: 0;
-            width: 600px;
+            width: 800px;
             opacity: 1;
             transform: none;
 
