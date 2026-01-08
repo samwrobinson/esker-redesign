@@ -1,0 +1,1611 @@
+/*-- -------------------------- -->
+<---     Facebook Landing Page    -->
+<--- -------------------------- -*/
+/* Mobile - 0px */
+@media only screen and (min-width: 0rem) {
+  #fb-hero,
+  #fb-trust,
+  #sbs-1640,
+  #speed-gallery,
+  #fb-proof,
+  #fb-benefits,
+  #reviews-355,
+  #fb-reviews,
+  #fb-pricing,
+  #fb-faq,
+  #fb-cta {
+    font-family: 'Inter', sans-serif;
+  }
+  #fb-hero h1,
+  #fb-trust h1,
+  #sbs-1640 h1,
+  #speed-gallery h1,
+  #fb-proof h1,
+  #fb-benefits h1,
+  #reviews-355 h1,
+  #fb-reviews h1,
+  #fb-pricing h1,
+  #fb-faq h1,
+  #fb-cta h1,
+  #fb-hero h2,
+  #fb-trust h2,
+  #sbs-1640 h2,
+  #speed-gallery h2,
+  #fb-proof h2,
+  #fb-benefits h2,
+  #reviews-355 h2,
+  #fb-reviews h2,
+  #fb-pricing h2,
+  #fb-faq h2,
+  #fb-cta h2,
+  #fb-hero h3,
+  #fb-trust h3,
+  #sbs-1640 h3,
+  #speed-gallery h3,
+  #fb-proof h3,
+  #fb-benefits h3,
+  #reviews-355 h3,
+  #fb-reviews h3,
+  #fb-pricing h3,
+  #fb-faq h3,
+  #fb-cta h3,
+  #fb-hero .cs-title,
+  #fb-trust .cs-title,
+  #sbs-1640 .cs-title,
+  #speed-gallery .cs-title,
+  #fb-proof .cs-title,
+  #fb-benefits .cs-title,
+  #reviews-355 .cs-title,
+  #fb-reviews .cs-title,
+  #fb-pricing .cs-title,
+  #fb-faq .cs-title,
+  #fb-cta .cs-title,
+  #fb-hero .cs-title-2,
+  #fb-trust .cs-title-2,
+  #sbs-1640 .cs-title-2,
+  #speed-gallery .cs-title-2,
+  #fb-proof .cs-title-2,
+  #fb-benefits .cs-title-2,
+  #reviews-355 .cs-title-2,
+  #fb-reviews .cs-title-2,
+  #fb-pricing .cs-title-2,
+  #fb-faq .cs-title-2,
+  #fb-cta .cs-title-2,
+  #fb-hero .cs-topper,
+  #fb-trust .cs-topper,
+  #sbs-1640 .cs-topper,
+  #speed-gallery .cs-topper,
+  #fb-proof .cs-topper,
+  #fb-benefits .cs-topper,
+  #reviews-355 .cs-topper,
+  #fb-reviews .cs-topper,
+  #fb-pricing .cs-topper,
+  #fb-faq .cs-topper,
+  #fb-cta .cs-topper,
+  #fb-hero .cs-topper-2,
+  #fb-trust .cs-topper-2,
+  #sbs-1640 .cs-topper-2,
+  #speed-gallery .cs-topper-2,
+  #fb-proof .cs-topper-2,
+  #fb-benefits .cs-topper-2,
+  #reviews-355 .cs-topper-2,
+  #fb-reviews .cs-topper-2,
+  #fb-pricing .cs-topper-2,
+  #fb-faq .cs-topper-2,
+  #fb-cta .cs-topper-2,
+  #fb-hero .cs-h3,
+  #fb-trust .cs-h3,
+  #sbs-1640 .cs-h3,
+  #speed-gallery .cs-h3,
+  #fb-proof .cs-h3,
+  #fb-benefits .cs-h3,
+  #reviews-355 .cs-h3,
+  #fb-reviews .cs-h3,
+  #fb-pricing .cs-h3,
+  #fb-faq .cs-h3,
+  #fb-cta .cs-h3 {
+    font-family: 'Noto Sans Mono', sans-serif;
+  }
+  #fb-hero p,
+  #fb-trust p,
+  #sbs-1640 p,
+  #speed-gallery p,
+  #fb-proof p,
+  #fb-benefits p,
+  #reviews-355 p,
+  #fb-reviews p,
+  #fb-pricing p,
+  #fb-faq p,
+  #fb-cta p,
+  #fb-hero .cs-text,
+  #fb-trust .cs-text,
+  #sbs-1640 .cs-text,
+  #speed-gallery .cs-text,
+  #fb-proof .cs-text,
+  #fb-benefits .cs-text,
+  #reviews-355 .cs-text,
+  #fb-reviews .cs-text,
+  #fb-pricing .cs-text,
+  #fb-faq .cs-text,
+  #fb-cta .cs-text,
+  #fb-hero .cs-desc,
+  #fb-trust .cs-desc,
+  #sbs-1640 .cs-desc,
+  #speed-gallery .cs-desc,
+  #fb-proof .cs-desc,
+  #fb-benefits .cs-desc,
+  #reviews-355 .cs-desc,
+  #fb-reviews .cs-desc,
+  #fb-pricing .cs-desc,
+  #fb-faq .cs-desc,
+  #fb-cta .cs-desc,
+  #fb-hero .cs-review,
+  #fb-trust .cs-review,
+  #sbs-1640 .cs-review,
+  #speed-gallery .cs-review,
+  #fb-proof .cs-review,
+  #fb-benefits .cs-review,
+  #reviews-355 .cs-review,
+  #fb-reviews .cs-review,
+  #fb-pricing .cs-review,
+  #fb-faq .cs-review,
+  #fb-cta .cs-review,
+  #fb-hero .cs-item-text,
+  #fb-trust .cs-item-text,
+  #sbs-1640 .cs-item-text,
+  #speed-gallery .cs-item-text,
+  #fb-proof .cs-item-text,
+  #fb-benefits .cs-item-text,
+  #reviews-355 .cs-item-text,
+  #fb-reviews .cs-item-text,
+  #fb-pricing .cs-item-text,
+  #fb-faq .cs-item-text,
+  #fb-cta .cs-item-text,
+  #fb-hero .cs-form-title,
+  #fb-trust .cs-form-title,
+  #sbs-1640 .cs-form-title,
+  #speed-gallery .cs-form-title,
+  #fb-proof .cs-form-title,
+  #fb-benefits .cs-form-title,
+  #reviews-355 .cs-form-title,
+  #fb-reviews .cs-form-title,
+  #fb-pricing .cs-form-title,
+  #fb-faq .cs-form-title,
+  #fb-cta .cs-form-title,
+  #fb-hero .cs-checkbox-text,
+  #fb-trust .cs-checkbox-text,
+  #sbs-1640 .cs-checkbox-text,
+  #speed-gallery .cs-checkbox-text,
+  #fb-proof .cs-checkbox-text,
+  #fb-benefits .cs-checkbox-text,
+  #reviews-355 .cs-checkbox-text,
+  #fb-reviews .cs-checkbox-text,
+  #fb-pricing .cs-checkbox-text,
+  #fb-faq .cs-checkbox-text,
+  #fb-cta .cs-checkbox-text,
+  #fb-hero .cs-form-note,
+  #fb-trust .cs-form-note,
+  #sbs-1640 .cs-form-note,
+  #speed-gallery .cs-form-note,
+  #fb-proof .cs-form-note,
+  #fb-benefits .cs-form-note,
+  #reviews-355 .cs-form-note,
+  #fb-reviews .cs-form-note,
+  #fb-pricing .cs-form-note,
+  #fb-faq .cs-form-note,
+  #fb-cta .cs-form-note,
+  #fb-hero .cs-name,
+  #fb-trust .cs-name,
+  #sbs-1640 .cs-name,
+  #speed-gallery .cs-name,
+  #fb-proof .cs-name,
+  #fb-benefits .cs-name,
+  #reviews-355 .cs-name,
+  #fb-reviews .cs-name,
+  #fb-pricing .cs-name,
+  #fb-faq .cs-name,
+  #fb-cta .cs-name,
+  #fb-hero .cs-job,
+  #fb-trust .cs-job,
+  #sbs-1640 .cs-job,
+  #speed-gallery .cs-job,
+  #fb-proof .cs-job,
+  #fb-benefits .cs-job,
+  #reviews-355 .cs-job,
+  #fb-reviews .cs-job,
+  #fb-pricing .cs-job,
+  #fb-faq .cs-job,
+  #fb-cta .cs-job,
+  #fb-hero label,
+  #fb-trust label,
+  #sbs-1640 label,
+  #speed-gallery label,
+  #fb-proof label,
+  #fb-benefits label,
+  #reviews-355 label,
+  #fb-reviews label,
+  #fb-pricing label,
+  #fb-faq label,
+  #fb-cta label,
+  #fb-hero input,
+  #fb-trust input,
+  #sbs-1640 input,
+  #speed-gallery input,
+  #fb-proof input,
+  #fb-benefits input,
+  #reviews-355 input,
+  #fb-reviews input,
+  #fb-pricing input,
+  #fb-faq input,
+  #fb-cta input,
+  #fb-hero button,
+  #fb-trust button,
+  #sbs-1640 button,
+  #speed-gallery button,
+  #fb-proof button,
+  #fb-benefits button,
+  #reviews-355 button,
+  #fb-reviews button,
+  #fb-pricing button,
+  #fb-faq button,
+  #fb-cta button {
+    font-family: 'Inter', sans-serif;
+  }
+  #fb-hero .cs-number,
+  #fb-trust .cs-number,
+  #sbs-1640 .cs-number,
+  #speed-gallery .cs-number,
+  #fb-proof .cs-number,
+  #fb-benefits .cs-number,
+  #reviews-355 .cs-number,
+  #fb-reviews .cs-number,
+  #fb-pricing .cs-number,
+  #fb-faq .cs-number,
+  #fb-cta .cs-number {
+    font-family: 'Noto Sans Mono', sans-serif;
+  }
+  /*-- -------------------------- -->
+    <---          Hero Video          -->
+    <--- -------------------------- -*/
+  #fb-hero {
+    padding: clamp(9rem, 20vw, 12rem) 1rem clamp(3.75rem, 7.82vw, 6.25rem);
+    background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(150, 191, 48, 0.15) 0%, transparent 50%), radial-gradient(ellipse 60% 30% at 50% 35%, rgba(150, 191, 48, 0.08) 0%, transparent 60%), linear-gradient(180deg, #0a0f05 0%, #0d1408 20%, #111a0c 40%, #0d1408 70%, #0a0f05 100%);
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+  }
+  #fb-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 15%;
+    background: radial-gradient(ellipse 70% 60% at 50% 55%, rgba(150, 191, 48, 0.2) 0%, transparent 60%), radial-gradient(ellipse 90% 50% at 50% 50%, rgba(150, 191, 48, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  #fb-hero > * {
+    position: relative;
+    z-index: 1;
+  }
+  #fb-hero .cs-container {
+    width: 100%;
+    max-width: 50rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  #fb-hero .cs-content {
+    text-align: center;
+    max-width: 45rem;
+  }
+  #fb-hero .cs-topper {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--secondary);
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #000;
+    margin-bottom: 1rem;
+  }
+  #fb-hero .cs-title {
+    font-size: clamp(1.75rem, 5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.2;
+    color: #fff;
+    margin: 0 0 1rem;
+  }
+  #fb-hero .cs-text {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+  }
+  #fb-hero h2 {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 1rem;
+  }
+  #fb-hero .cs-accent {
+    color: var(--primaryLight);
+  }
+  #fb-hero .cs-squiggle {
+    position: relative;
+    display: inline-block;
+  }
+  #fb-hero .cs-squiggle::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.1em;
+    width: 100%;
+    height: 0.35em;
+    background: url('/assets/images/squiggle.png') no-repeat center;
+    background-size: 100% 100%;
+  }
+  #fb-hero .cs-video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 50rem;
+  }
+  #fb-hero .cs-video-glow {
+    display: none;
+  }
+  #fb-hero .cs-video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #000;
+    cursor: pointer;
+    z-index: 1;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+  #fb-hero .cs-video-container.cs-playing .cs-thumbnail,
+  #fb-hero .cs-video-container.cs-playing .cs-play-button {
+    display: none;
+  }
+  #fb-hero .cs-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  #fb-hero .cs-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #fb-hero .cs-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5rem;
+    height: 5rem;
+    background: var(--primaryLight);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, background 0.3s;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  #fb-hero .cs-play-button::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--primaryLight);
+    animation: pulse-ring 2s ease-out infinite;
+    z-index: -1;
+  }
+  #fb-hero .cs-play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: var(--secondary);
+    animation: none;
+  }
+  #fb-hero .cs-play-button:hover::before {
+    animation: none;
+  }
+  @keyframes pulse {
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+  }
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+  #fb-hero .cs-play-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 0.25rem;
+    color: #000;
+  }
+  #fb-hero .cs-form {
+    width: 100%;
+    max-width: 35rem;
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  #fb-hero .cs-form-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+    margin: 0 0 1.5rem;
+  }
+  #fb-hero .cs-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  #fb-hero .cs-input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s;
+  }
+  #fb-hero .cs-input:focus {
+    outline: none;
+    border-color: var(--primaryLight);
+  }
+  #fb-hero .cs-input::placeholder {
+    color: #999;
+  }
+  #fb-hero .cs-checkbox-group {
+    margin-bottom: 1.5rem;
+  }
+  #fb-hero .cs-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+  }
+  #fb-hero .cs-checkbox-label input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 0.125rem;
+    flex-shrink: 0;
+    accent-color: var(--primaryLight);
+  }
+  #fb-hero .cs-checkbox-text {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: #666;
+  }
+  #fb-hero .cs-required {
+    color: #e53935;
+  }
+  #fb-hero .cs-submit {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: var(--primaryLight);
+    border: none;
+    border-radius: 3rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  #fb-hero .cs-submit:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+  }
+  #fb-hero .cs-form-note {
+    font-size: 0.75rem;
+    color: #999;
+    text-align: center;
+    margin: 1rem 0 0;
+  }
+  /*-- -------------------------- -->
+    <---        Trust Badges          -->
+    <--- -------------------------- -*/
+  #fb-trust {
+    padding: 2.5rem 1rem;
+    background: radial-gradient(ellipse 80% 80% at 50% 0%, rgba(150, 191, 48, 0.08) 0%, transparent 50%), linear-gradient(180deg, #0a0f05 0%, #0c1307 100%);
+    position: relative;
+    z-index: 4;
+  }
+  #fb-trust .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+  #fb-trust .cs-stat-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  #fb-trust .cs-stat {
+    text-align: center;
+    padding: 1rem;
+  }
+  #fb-trust .cs-number {
+    display: block;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 900;
+    font-family: 'Inter', sans-serif;
+    color: var(--secondary);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  #fb-trust .cs-desc {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  /*-- -------------------------- -->
+    <---          Reviews             -->
+    <--- -------------------------- -*/
+  #fb-reviews {
+    padding: var(--sectionPadding);
+    background: #f8f9fa;
+  }
+  #fb-reviews .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+  #fb-reviews .cs-content {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  #fb-reviews .cs-topper {
+    color: var(--primaryLight);
+  }
+  #fb-reviews .cs-title {
+    color: var(--primary);
+  }
+  #fb-reviews .cs-card-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  #fb-reviews .cs-item {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+  #fb-reviews .cs-profile {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  #fb-reviews .cs-stars {
+    margin-bottom: 1rem;
+  }
+  #fb-reviews .cs-stars img {
+    height: 1rem;
+    width: auto;
+  }
+  #fb-reviews .cs-review {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    margin: 0 0 1rem;
+    font-style: italic;
+  }
+  #fb-reviews .cs-name {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+  #fb-reviews .cs-job {
+    display: block;
+    font-size: 0.875rem;
+    color: #666;
+  }
+  /*-- -------------------------- -->
+    <---           Proof              -->
+    <--- -------------------------- -*/
+  #fb-proof {
+    padding: var(--sectionPadding);
+    background: #fff;
+    position: relative;
+    z-index: 1;
+  }
+  #fb-proof .cs-container {
+    width: 100%;
+    max-width: 60rem;
+    margin: 0 auto;
+    position: relative;
+  }
+  #fb-proof .cs-content {
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #fb-proof .cs-topper {
+    color: var(--primaryLight);
+  }
+  #fb-proof .cs-title {
+    color: var(--primary);
+  }
+  #fb-proof .cs-text {
+    color: var(--bodyTextColor);
+  }
+  #fb-proof .cs-featured-carousel {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    z-index: 1;
+  }
+  #fb-proof .cs-picture-featured {
+    width: 100%;
+    border-radius: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+  #fb-proof .cs-picture-featured:first-of-type {
+    position: relative;
+    display: block;
+    height: auto;
+  }
+  #fb-proof .cs-picture-featured img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  #fb-proof .cs-carousel-progress {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 10;
+  }
+  #fb-proof .cs-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--primaryLight);
+    transition: width 0.1s ease-out;
+  }
+  #fb-proof .cs-carousel-dots {
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 0.5rem;
+    z-index: 10;
+  }
+  #fb-proof .cs-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+  }
+  #fb-proof .cs-dot::before {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+  #fb-proof .cs-dot:hover::before {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  #fb-proof .cs-dot.active::before {
+    background: #fff;
+  }
+  #fb-proof .cs-lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  #fb-proof .cs-lightbox.active {
+    display: flex;
+    opacity: 1;
+  }
+  #fb-proof .cs-lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    z-index: 10;
+  }
+  #fb-proof .cs-lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  #fb-proof .cs-lightbox-img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 0.5rem;
+  }
+  #fb-proof .cs-picture-featured,
+  #fb-proof .cs-picture {
+    cursor: zoom-in;
+  }
+  #fb-proof .cs-proof-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  #fb-proof .cs-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+  #fb-proof .cs-picture {
+    display: block;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 0.3s ease;
+  }
+  #fb-proof .cs-picture:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+  #fb-proof .cs-picture img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+  /*-- -------------------------- -->
+    <---         Benefits             -->
+    <--- -------------------------- -*/
+  #fb-benefits {
+    padding: var(--sectionPadding);
+    background: var(--primary);
+  }
+  #fb-benefits .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+  #fb-benefits .cs-content {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  #fb-benefits .cs-topper {
+    color: var(--primaryLight);
+  }
+  #fb-benefits .cs-title {
+    color: #fff;
+  }
+  #fb-benefits .cs-card-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  #fb-benefits .cs-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+  }
+  #fb-benefits .cs-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+  }
+  #fb-benefits .cs-icon {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+    filter: brightness(0) invert(1);
+  }
+  #fb-benefits .cs-h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 0.75rem;
+  }
+  #fb-benefits .cs-item-text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+  }
+  /*-- -------------------------- -->
+    <---         Final CTA            -->
+    <--- -------------------------- -*/
+  #fb-cta {
+    padding: var(--sectionPadding);
+    background: linear-gradient(180deg, #f8f9fa 0%, #fff 100%);
+  }
+  #fb-cta .cs-container {
+    width: 100%;
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+  #fb-cta .cs-content {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  #fb-cta .cs-topper {
+    color: var(--primaryLight);
+  }
+  #fb-cta .cs-title {
+    color: var(--primary);
+  }
+  #fb-cta .cs-text {
+    color: var(--bodyTextColor);
+  }
+  #fb-cta .cs-form {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  }
+  #fb-cta .cs-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  #fb-cta .cs-input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s;
+  }
+  #fb-cta .cs-input:focus {
+    outline: none;
+    border-color: var(--primaryLight);
+  }
+  #fb-cta .cs-input::placeholder {
+    color: #999;
+  }
+  #fb-cta .cs-checkbox-group {
+    margin-bottom: 1.5rem;
+  }
+  #fb-cta .cs-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+  }
+  #fb-cta .cs-checkbox-label input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 0.125rem;
+    flex-shrink: 0;
+    accent-color: var(--primaryLight);
+  }
+  #fb-cta .cs-checkbox-text {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: #666;
+  }
+  #fb-cta .cs-required {
+    color: #e53935;
+  }
+  #fb-cta .cs-submit {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: var(--primaryLight);
+    border: none;
+    border-radius: 3rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  #fb-cta .cs-submit:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #fb-hero .cs-content,
+  #fb-trust .cs-content,
+  #fb-reviews .cs-content,
+  #fb-proof .cs-content,
+  #fb-benefits .cs-content,
+  #fb-cta .cs-content,
+  #speed-gallery .cs-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #fb-hero .cs-form-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  #fb-hero .cs-form-group .cs-input {
+    flex: 1 1 calc(50% - 0.5rem);
+    min-width: 10rem;
+  }
+  #fb-hero .cs-form-group .cs-input:last-child {
+    flex: 1 1 100%;
+  }
+  #fb-trust .cs-stat-group {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  #fb-reviews .cs-card-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #fb-reviews .cs-item {
+    flex: 1 1 calc(50% - 1rem);
+    max-width: 24rem;
+  }
+  #fb-proof .cs-dot {
+    min-width: 12px;
+    min-height: 12px;
+  }
+  #fb-proof .cs-proof-grid {
+    flex-direction: row;
+    justify-content: center;
+  }
+  #fb-proof .cs-column {
+    flex: 1;
+    max-width: 28rem;
+  }
+  #fb-proof .cs-column:nth-child(2) {
+    margin-top: 4rem;
+  }
+  #fb-benefits .cs-card-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #fb-cta .cs-form-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  #fb-cta .cs-form-group .cs-input {
+    flex: 1 1 calc(33.333% - 0.667rem);
+    min-width: 10rem;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #fb-hero {
+    padding: clamp(10rem, 15vw, 14rem) 1rem clamp(5rem, 10vw, 8rem);
+  }
+  #fb-hero .cs-container {
+    max-width: 60rem;
+  }
+  #fb-hero .cs-video-wrapper {
+    max-width: 55rem;
+  }
+  #fb-hero .cs-form {
+    max-width: 40rem;
+  }
+  #fb-hero .cs-form-group .cs-input {
+    flex: 1 1 calc(33.333% - 0.667rem);
+  }
+  #fb-hero .cs-form-group .cs-input:last-child {
+    flex: 1 1 calc(33.333% - 0.667rem);
+  }
+  #fb-reviews .cs-card-group {
+    flex-wrap: nowrap;
+  }
+  #fb-reviews .cs-item {
+    flex: 1;
+    max-width: none;
+  }
+  #fb-proof .cs-container {
+    max-width: 70rem;
+  }
+  #fb-proof .cs-column:nth-child(2) {
+    margin-top: 5rem;
+  }
+  #fb-benefits .cs-card-group {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #fb-hero .cs-container {
+    max-width: 70rem;
+  }
+  #fb-hero .cs-video-wrapper {
+    max-width: 60rem;
+  }
+  #fb-hero .cs-form {
+    max-width: 45rem;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #fb-hero {
+    background: linear-gradient(180deg, var(--dark) 0%, #0a1929 100%);
+  }
+  body.dark-mode #fb-trust {
+    background: var(--dark);
+  }
+  body.dark-mode #fb-trust .cs-number {
+    color: var(--primaryLight);
+  }
+  body.dark-mode #fb-trust .cs-desc {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  body.dark-mode #fb-reviews {
+    background: var(--medium);
+  }
+  body.dark-mode #fb-reviews .cs-item {
+    background: var(--dark);
+  }
+  body.dark-mode #fb-reviews .cs-review {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  body.dark-mode #fb-reviews .cs-name {
+    color: var(--primaryLight);
+  }
+  body.dark-mode #fb-reviews .cs-job {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  body.dark-mode #fb-proof {
+    background: var(--dark);
+  }
+  body.dark-mode #fb-proof .cs-title {
+    color: #fff;
+  }
+  body.dark-mode #fb-proof .cs-text {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  body.dark-mode #fb-benefits {
+    background: var(--medium);
+  }
+  body.dark-mode #fb-cta {
+    background: linear-gradient(180deg, var(--medium) 0%, var(--dark) 100%);
+  }
+  body.dark-mode #fb-cta .cs-title {
+    color: #fff;
+  }
+  body.dark-mode #fb-cta .cs-text {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  body.dark-mode #fb-cta .cs-form {
+    background: var(--dark);
+  }
+  body.dark-mode #fb-cta .cs-input {
+    background: var(--medium);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  body.dark-mode #fb-cta .cs-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  body.dark-mode #fb-cta .cs-checkbox-text {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+/* -- -------------------------- -->
+<---       Reviews Section       -->
+<--- -------------------------- -*/
+.cs-highlight {
+  color: var(--primary);
+}
+#reviews-355 {
+  background-color: #fff;
+  padding: clamp(4rem, 10vw, 8rem) 1rem;
+  overflow: visible;
+}
+#reviews-355 .cs-container {
+  width: 100%;
+  max-width: 87.5rem;
+  margin: 0 auto;
+  overflow: visible;
+}
+#reviews-355 .cs-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: clamp(3rem, 6vw, 4rem);
+}
+#reviews-355 .cs-topper {
+  color: var(--primaryLight);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 1rem;
+}
+#reviews-355 .cs-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin: 0 0 1.5rem;
+}
+#reviews-355 .cs-text {
+  color: var(--bodyTextColor);
+  max-width: 43.75rem;
+  margin: 0 auto;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.6;
+}
+#reviews-355 .cs-columns {
+  display: block;
+  overflow: visible;
+}
+#reviews-355 .cs-column {
+  display: block;
+  overflow: visible;
+}
+#reviews-355 .cs-item {
+  background: var(--primary);
+  border-radius: 0;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 1.5rem;
+  transition: box-shadow 0.3s ease;
+  will-change: transform, opacity;
+  transform-origin: center top;
+  position: relative;
+}
+#reviews-355 .cs-item:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+#reviews-355 .cs-stars {
+  margin-bottom: 1.25rem;
+  display: flex;
+  gap: 0.25rem;
+}
+#reviews-355 .cs-star {
+  color: var(--primaryLight);
+  font-size: 1.25rem;
+}
+#reviews-355 .cs-review {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  line-height: 1.7;
+  margin: 0 0 1.25rem 0;
+}
+#reviews-355 .cs-review strong {
+  color: #fff;
+  font-weight: 600;
+}
+#reviews-355 .cs-name {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+#reviews-355 .cs-job {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  display: block;
+}
+@media only screen and (min-width: 48rem) {
+  #reviews-355 .cs-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 2rem;
+  }
+  #reviews-355 .cs-column {
+    position: relative;
+  }
+  #reviews-355 .cs-column-right {
+    margin-top: 7.5rem;
+  }
+  #reviews-355 .cs-item {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (min-width: 64rem) {
+  #reviews-355 .cs-columns {
+    gap: 3rem;
+  }
+  #reviews-355 .cs-column-right {
+    margin-top: 11.25rem;
+  }
+  #reviews-355 .cs-item {
+    margin-bottom: 2.5rem;
+  }
+}
+/*-- -------------------------- -->
+<---       Speed Gallery        -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #speed-gallery {
+    padding: var(--sectionPadding);
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+  }
+  #speed-gallery .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+  #speed-gallery .cs-content {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  #speed-gallery .cs-topper {
+    color: var(--primaryLight);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  #speed-gallery .cs-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0;
+  }
+  #speed-gallery .cs-gallery-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  #speed-gallery .cs-gallery-track {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  #speed-gallery .cs-gallery-item {
+    width: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: none;
+  }
+  #speed-gallery .cs-gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  #speed-gallery .cs-gallery-item.cs-duplicate {
+    display: none;
+  }
+  #speed-gallery .cs-gallery-item.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+}
+/* Tablet/Desktop - 768px */
+@media only screen and (min-width: 48rem) {
+  #speed-gallery .cs-gallery-wrapper {
+    padding: 1rem 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+    mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+  }
+  #speed-gallery .cs-gallery-track {
+    flex-direction: row;
+    gap: 2.5rem;
+    padding: 0;
+    width: max-content;
+    animation: marquee 45s linear infinite;
+  }
+  #speed-gallery .cs-gallery-item {
+    flex-shrink: 0;
+    width: 600px;
+    opacity: 1;
+    transform: none;
+  }
+  #speed-gallery .cs-gallery-item.cs-duplicate {
+    display: block;
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #speed-gallery {
+    background: var(--dark);
+  }
+  body.dark-mode #speed-gallery .cs-title {
+    color: #fff;
+  }
+}
+/*-- -------------------------- -->
+<---        Side By Side        -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #sbs-1640 {
+    padding: var(--sectionPadding);
+    background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(150, 191, 48, 0.08) 0%, transparent 60%), linear-gradient(180deg, #0c1307 0%, #0d1408 20%, #111a0c 40%, #0f160a 70%, #0a0f05 100%);
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+  }
+  #sbs-1640 .cs-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 36.5rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #sbs-1640 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    max-width: 39.375rem;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+    position: relative;
+    z-index: 10;
+  }
+  #sbs-1640 .cs-title {
+    color: var(--bodyTextColorWhite);
+    margin: 1rem 0 0 0;
+  }
+  #sbs-1640 .cs-title-2 {
+    display: none;
+  }
+  #sbs-1640 .cs-topper-2 {
+    display: none;
+  }
+  #sbs-1640 .cs-text {
+    margin: 0;
+    color: var(--bodyTextColorWhite);
+    opacity: 0.8;
+  }
+  #sbs-1640 .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+  #sbs-1640 .cs-button-solid {
+    max-width: 15rem;
+    margin: auto;
+  }
+  #sbs-1640 .cs-picture-2 {
+    width: 100%;
+    height: auto;
+    min-height: 26.25rem;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  #sbs-1640 .cs-picture-2 img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #sbs-1640 .cs-picture {
+    display: none;
+  }
+  #sbs-1640 .cs-stats-group {
+    width: 100%;
+    max-width: 35.625rem;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  #sbs-1640 .cs-stats {
+    width: 100%;
+    max-width: 39.375rem;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 1.5rem;
+    column-gap: 1.125rem;
+  }
+  #sbs-1640 .cs-stat {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    grid-column: span 4;
+    flex-direction: column;
+    align-self: stretch;
+    align-content: space-between;
+  }
+  #sbs-1640 .cs-number {
+    /* 39px - 61px */
+    font-size: clamp(2.4375rem, 5vw, 3.8125rem);
+    line-height: 1.2em;
+    font-weight: 900;
+    text-align: left;
+    color: var(--secondary);
+    display: block;
+    margin: 0 0 0.25rem 0;
+  }
+  #sbs-1640 .cs-desc {
+    font-size: 1rem;
+    line-height: 1.5em;
+    font-weight: 700;
+    text-align: left;
+    /* auto margin top will push text to bottom if there's only one line */
+    margin: 0;
+    color: var(--bodyTextColorWhite);
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #sbs-1640 .cs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  #sbs-1640 .content {
+    order: 1;
+  }
+  #sbs-1640 .cs-stats-group {
+    /* 52px - 90px */
+    margin-bottom: clamp(3.25rem, 7vw, 5.625rem);
+    /* 60px - 80px */
+    padding-bottom: clamp(3.75rem, 8vw, 5rem);
+    gap: clamp(1.2rem, 2vw, 1.4rem);
+    position: relative;
+    z-index: 1;
+    order: 2;
+  }
+  #sbs-1640 .cs-stats-group:before {
+    content: '';
+    width: 200vw;
+    height: 100%;
+    background: #fff;
+    opacity: 1;
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: -100%;
+    z-index: -1;
+    transform: translateX(-50%);
+  }
+  #sbs-1640 .cs-stats {
+    margin-bottom: 0;
+  }
+  #sbs-1640 .cs-picture {
+    width: 100%;
+    height: 100%;
+    min-height: 26.25rem;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  #sbs-1640 .cs-picture img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #sbs-1640 .cs-picture-2 {
+    display: none;
+  }
+  #sbs-1640 .cs-title-2 {
+    display: block;
+    color: var(--bodyTextColorWhite);
+  }
+  #sbs-1640 .cs-title {
+    display: block;
+  }
+  #sbs-1640 .cs-topper {
+    display: block;
+  }
+  #sbs-1640 .cs-topper-2 {
+    display: block;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #sbs-1640 {
+    background-color: #061521;
+  }
+  body.dark-mode #sbs-1640 .cs-stats-group:before {
+    background-color: var(--dark);
+  }
+}

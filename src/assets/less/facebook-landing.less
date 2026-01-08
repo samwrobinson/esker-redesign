@@ -1,0 +1,1735 @@
+/*-- -------------------------- -->
+<---     Facebook Landing Page    -->
+<--- -------------------------- -*/
+
+
+/* Mobile - 0px */
+@media only screen and (min-width: 0rem) {
+
+    // Base font styles for this landing page
+    #fb-hero,
+    #fb-trust,
+    #sbs-1640,
+    #speed-gallery,
+    #fb-proof,
+    #fb-benefits,
+    #reviews-355,
+    #fb-reviews,
+    #fb-pricing,
+    #fb-faq,
+    #fb-cta {
+        font-family: 'Inter', sans-serif;
+
+        // Headers use mono font
+        h1, h2, h3, .cs-title, .cs-title-2, .cs-topper, .cs-topper-2, .cs-h3 {
+            font-family: 'Noto Sans Mono', sans-serif;
+        }
+
+        // Body text uses Inter
+        p, .cs-text, .cs-desc, .cs-review, .cs-item-text, .cs-form-title,
+        .cs-checkbox-text, .cs-form-note, .cs-name, .cs-job, label, input, button {
+            font-family: 'Inter', sans-serif;
+        }
+
+        // Stats numbers use Inter (bold)
+        .cs-number {
+            font-family: 'Noto Sans Mono', sans-serif;
+        }
+    }
+
+    /*-- -------------------------- -->
+    <---          Hero Video          -->
+    <--- -------------------------- -*/
+
+    #fb-hero {
+        padding: clamp(9rem, 20vw, 12rem) 1rem clamp(3.75rem, 7.82vw, 6.25rem);
+        background:
+            // Subtle top glow
+            radial-gradient(ellipse 80% 50% at 50% 0%, rgba(150, 191, 48, 0.15) 0%, transparent 50%),
+            // Center accent glow - positioned higher to avoid bottom edge
+            radial-gradient(ellipse 60% 30% at 50% 35%, rgba(150, 191, 48, 0.08) 0%, transparent 60%),
+            // Base gradient - ends at same color stats bar starts
+            linear-gradient(180deg,
+                #0a0f05 0%,
+                #0d1408 20%,
+                #111a0c 40%,
+                #0d1408 70%,
+                #0a0f05 100%
+            );
+        position: relative;
+        overflow: hidden;
+        z-index: 5;
+
+        // Ambient glow centered around video area
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 15%; // Stop before bottom to avoid edge line
+            background:
+                // Main glow behind video area
+                radial-gradient(ellipse 70% 60% at 50% 55%, rgba(150, 191, 48, 0.2) 0%, transparent 60%),
+                // Softer wider glow
+                radial-gradient(ellipse 90% 50% at 50% 50%, rgba(150, 191, 48, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        // Ensure content is above the overlay
+        > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cs-container {
+            width: 100%;
+            max-width: 50rem;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .cs-content {
+            text-align: center;
+            max-width: 45rem;
+        }
+
+        .cs-topper {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--secondary);
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #000;
+            margin-bottom: 1rem;
+        }
+
+        .cs-title {
+            font-size: clamp(1.75rem, 5vw, 3rem);
+            font-weight: 900;
+            line-height: 1.2;
+            color: #fff;
+            margin: 0 0 1rem;
+        }
+
+        .cs-text {
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+        }
+
+        h2 {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 1rem;
+        }
+
+        .cs-accent {
+            color: var(--primaryLight);
+        }
+
+        .cs-squiggle {
+            position: relative;
+            display: inline-block;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -0.1em;
+                width: 100%;
+                height: 0.35em;
+                background: url('/assets/images/squiggle.png') no-repeat center;
+                background-size: 100% 100%;
+            }
+        }
+
+        .cs-video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 50rem;
+        }
+
+        .cs-video-glow {
+            display: none; // Glow now handled by hero ::before
+        }
+
+        .cs-video-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 1rem;
+            overflow: hidden;
+            background: #000;
+            cursor: pointer;
+            z-index: 1;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+            &.cs-playing {
+                .cs-thumbnail,
+                .cs-play-button {
+                    display: none;
+                }
+            }
+
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+        }
+
+        .cs-thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cs-play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 5rem;
+            height: 5rem;
+            background: var(--primaryLight);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s, background 0.3s;
+            animation: pulse 2s ease-in-out infinite;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: var(--primaryLight);
+                animation: pulse-ring 2s ease-out infinite;
+                z-index: -1;
+            }
+
+            &:hover {
+                transform: translate(-50%, -50%) scale(1.1);
+                background: var(--secondary);
+                animation: none;
+
+                &::before {
+                    animation: none;
+                }
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .cs-play-icon {
+            width: 2rem;
+            height: 2rem;
+            margin-left: 0.25rem;
+            color: #000;
+        }
+
+        .cs-form {
+            width: 100%;
+            max-width: 35rem;
+            background: #fff;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .cs-form-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            margin: 0 0 1.5rem;
+        }
+
+        .cs-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .cs-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e5e5e5;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s;
+
+            &:focus {
+                outline: none;
+                border-color: var(--primaryLight);
+            }
+
+            &::placeholder {
+                color: #999;
+            }
+        }
+
+        .cs-checkbox-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .cs-checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            cursor: pointer;
+
+            input[type="checkbox"] {
+                width: 1.25rem;
+                height: 1.25rem;
+                margin-top: 0.125rem;
+                flex-shrink: 0;
+                accent-color: var(--primaryLight);
+            }
+        }
+
+        .cs-checkbox-text {
+            font-size: 0.75rem;
+            line-height: 1.4;
+            color: #666;
+        }
+
+        .cs-required {
+            color: #e53935;
+        }
+
+        .cs-submit {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--primaryLight);
+            border: none;
+            border-radius: 3rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #000;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+
+            &:hover {
+                background: var(--secondary);
+                transform: translateY(-2px);
+            }
+        }
+
+        .cs-form-note {
+            font-size: 0.75rem;
+            color: #999;
+            text-align: center;
+            margin: 1rem 0 0;
+        }
+    }
+
+    /*-- -------------------------- -->
+    <---        Trust Badges          -->
+    <--- -------------------------- -*/
+
+    #fb-trust {
+        padding: 2.5rem 1rem;
+        background:
+            // Subtle glow at top only
+            radial-gradient(ellipse 80% 80% at 50% 0%, rgba(150, 191, 48, 0.08) 0%, transparent 50%),
+            // Base gradient - seamless with adjacent sections
+            linear-gradient(180deg,
+                #0a0f05 0%,
+                #0c1307 100%
+            );
+        position: relative;
+        z-index: 4;
+
+        .cs-container {
+            width: 100%;
+            max-width: 80rem;
+            margin: 0 auto;
+        }
+
+        .cs-stat-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cs-stat {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .cs-number {
+            display: block;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 900;
+            font-family: 'Inter', sans-serif;
+            color: var(--secondary);
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .cs-desc {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+    }
+
+    /*-- -------------------------- -->
+    <---          Reviews             -->
+    <--- -------------------------- -*/
+
+    #fb-reviews {
+        padding: var(--sectionPadding);
+        background: #f8f9fa;
+
+        .cs-container {
+            width: 100%;
+            max-width: 80rem;
+            margin: 0 auto;
+        }
+
+        .cs-content {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .cs-topper {
+            color: var(--primaryLight);
+        }
+
+        .cs-title {
+            color: var(--primary);
+        }
+
+        .cs-card-group {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cs-item {
+            background: #fff;
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .cs-profile {
+            width: 4.5rem;
+            height: 4.5rem;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .cs-stars {
+            margin-bottom: 1rem;
+
+            img {
+                height: 1rem;
+                width: auto;
+            }
+        }
+
+        .cs-review {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+            margin: 0 0 1rem;
+            font-style: italic;
+        }
+
+        .cs-name {
+            display: block;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .cs-job {
+            display: block;
+            font-size: 0.875rem;
+            color: #666;
+        }
+    }
+
+    /*-- -------------------------- -->
+    <---           Proof              -->
+    <--- -------------------------- -*/
+
+    #fb-proof {
+        padding: var(--sectionPadding);
+        background: #fff;
+        position: relative;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            max-width: 60rem;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .cs-content {
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 40rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cs-topper {
+            color: var(--primaryLight);
+        }
+
+        .cs-title {
+            color: var(--primary);
+        }
+
+        .cs-text {
+            color: var(--bodyTextColor);
+        }
+
+        // Carousel - works on all screen sizes
+        .cs-featured-carousel {
+            position: relative;
+            width: 100%;
+            margin-bottom: 2rem;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            z-index: 1;
+        }
+
+        .cs-picture-featured {
+            width: 100%;
+            border-radius: 0;
+            overflow: hidden;
+            // All slides absolute by default
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+
+            // First picture provides height (use first-of-type to skip progress bar)
+            &:first-of-type {
+                position: relative;
+                display: block;
+                height: auto;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+
+        // Progress bar - visible on all sizes now
+        .cs-carousel-progress {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 10;
+        }
+
+        .cs-progress-bar {
+            height: 100%;
+            width: 0%;
+            background: var(--primaryLight);
+            transition: width 0.1s ease-out;
+        }
+
+        // Show dots on all sizes
+        .cs-carousel-dots {
+            display: flex;
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            gap: 0.5rem;
+            z-index: 10;
+        }
+
+        .cs-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0;
+            // Larger touch target on mobile
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &::before {
+                content: '';
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                border: 2px solid #fff;
+                background: transparent;
+                transition: all 0.3s ease;
+            }
+
+            // Reset the outer element styles
+            border: none;
+            background: none;
+
+            &:hover::before {
+                background: rgba(255, 255, 255, 0.5);
+            }
+
+            &.active::before {
+                background: #fff;
+            }
+        }
+
+
+        // Lightbox for tap-to-zoom
+        .cs-lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+
+            &.active {
+                display: flex;
+                opacity: 1;
+            }
+        }
+
+        .cs-lightbox-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            z-index: 10;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        .cs-lightbox-img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 0.5rem;
+        }
+
+        // Make images tappable on mobile
+        .cs-picture-featured,
+        .cs-picture {
+            cursor: zoom-in;
+        }
+
+        // Mobile: Single column for proof grid
+        .cs-proof-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .cs-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .cs-picture {
+            display: block;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            transition: box-shadow 0.3s ease;
+
+            &:hover {
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+                object-fit: contain;
+            }
+        }
+
+    }
+
+    /*-- -------------------------- -->
+    <---         Benefits             -->
+    <--- -------------------------- -*/
+
+    #fb-benefits {
+        padding: var(--sectionPadding);
+        background: var(--primary);
+
+        .cs-container {
+            width: 100%;
+            max-width: 80rem;
+            margin: 0 auto;
+        }
+
+        .cs-content {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .cs-topper {
+            color: var(--primaryLight);
+        }
+
+        .cs-title {
+            color: #fff;
+        }
+
+        .cs-card-group {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cs-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+
+            &:hover {
+                transform: translateY(-5px);
+                background: rgba(255, 255, 255, 0.15);
+            }
+        }
+
+        .cs-icon {
+            width: 3rem;
+            height: 3rem;
+            margin-bottom: 1rem;
+            filter: brightness(0) invert(1);
+        }
+
+        .cs-h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 0.75rem;
+        }
+
+        .cs-item-text {
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+        }
+    }
+
+    /*-- -------------------------- -->
+    <---         Final CTA            -->
+    <--- -------------------------- -*/
+
+    #fb-cta {
+        padding: var(--sectionPadding);
+        background: linear-gradient(180deg, #f8f9fa 0%, #fff 100%);
+
+        .cs-container {
+            width: 100%;
+            max-width: 40rem;
+            margin: 0 auto;
+        }
+
+        .cs-content {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .cs-topper {
+            color: var(--primaryLight);
+        }
+
+        .cs-title {
+            color: var(--primary);
+        }
+
+        .cs-text {
+            color: var(--bodyTextColor);
+        }
+
+        .cs-form {
+            background: #fff;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .cs-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .cs-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e5e5e5;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s;
+
+            &:focus {
+                outline: none;
+                border-color: var(--primaryLight);
+            }
+
+            &::placeholder {
+                color: #999;
+            }
+        }
+
+        .cs-checkbox-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .cs-checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            cursor: pointer;
+
+            input[type="checkbox"] {
+                width: 1.25rem;
+                height: 1.25rem;
+                margin-top: 0.125rem;
+                flex-shrink: 0;
+                accent-color: var(--primaryLight);
+            }
+        }
+
+        .cs-checkbox-text {
+            font-size: 0.75rem;
+            line-height: 1.4;
+            color: #666;
+        }
+
+        .cs-required {
+            color: #e53935;
+        }
+
+        .cs-submit {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--primaryLight);
+            border: none;
+            border-radius: 3rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #000;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+
+            &:hover {
+                background: var(--secondary);
+                transform: translateY(-2px);
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+
+    // Global cs-content centering for desktop
+    #fb-hero,
+    #fb-trust,
+    #fb-reviews,
+    #fb-proof,
+    #fb-benefits,
+    #fb-cta,
+    #speed-gallery {
+        .cs-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    #fb-hero {
+        .cs-form-group {
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .cs-input {
+                flex: 1 1 calc(50% - 0.5rem);
+                min-width: 10rem;
+
+                &:last-child {
+                    flex: 1 1 100%;
+                }
+            }
+        }
+    }
+
+    #fb-trust {
+        .cs-stat-group {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    #fb-reviews {
+        .cs-card-group {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cs-item {
+            flex: 1 1 calc(50% - 1rem);
+            max-width: 24rem;
+        }
+    }
+
+    #fb-proof {
+        // Smaller dot touch targets on desktop (mouse is precise)
+        .cs-dot {
+            min-width: 12px;
+            min-height: 12px;
+        }
+
+        // Desktop: Two column proof grid
+        .cs-proof-grid {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .cs-column {
+            flex: 1;
+            max-width: 28rem;
+
+            &:nth-child(2) {
+                margin-top: 4rem;
+            }
+        }
+    }
+
+    #fb-benefits {
+        .cs-card-group {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    #fb-cta {
+        .cs-form-group {
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .cs-input {
+                flex: 1 1 calc(33.333% - 0.667rem);
+                min-width: 10rem;
+            }
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+
+    #fb-hero {
+        padding: clamp(10rem, 15vw, 14rem) 1rem clamp(5rem, 10vw, 8rem);
+
+        .cs-container {
+            max-width: 60rem;
+        }
+
+        .cs-video-wrapper {
+            max-width: 55rem;
+        }
+
+        .cs-form {
+            max-width: 40rem;
+        }
+
+        .cs-form-group {
+            .cs-input {
+                flex: 1 1 calc(33.333% - 0.667rem);
+
+                &:last-child {
+                    flex: 1 1 calc(33.333% - 0.667rem);
+                }
+            }
+        }
+    }
+
+    #fb-reviews {
+        .cs-card-group {
+            flex-wrap: nowrap;
+        }
+
+        .cs-item {
+            flex: 1;
+            max-width: none;
+        }
+    }
+
+    #fb-proof {
+        .cs-container {
+            max-width: 70rem;
+        }
+
+        .cs-column {
+            &:nth-child(2) {
+                margin-top: 5rem;
+            }
+        }
+    }
+
+    #fb-benefits {
+        .cs-card-group {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+
+    #fb-hero {
+        .cs-container {
+            max-width: 70rem;
+        }
+
+        .cs-video-wrapper {
+            max-width: 60rem;
+        }
+
+        .cs-form {
+            max-width: 45rem;
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #fb-hero {
+            background: linear-gradient(180deg, var(--dark) 0%, #0a1929 100%);
+        }
+
+        #fb-trust {
+            background: var(--dark);
+
+            .cs-number {
+                color: var(--primaryLight);
+            }
+
+            .cs-desc {
+                color: rgba(255, 255, 255, 0.7);
+            }
+        }
+
+        #fb-reviews {
+            background: var(--medium);
+
+            .cs-item {
+                background: var(--dark);
+            }
+
+            .cs-review {
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            .cs-name {
+                color: var(--primaryLight);
+            }
+
+            .cs-job {
+                color: rgba(255, 255, 255, 0.7);
+            }
+        }
+
+        #fb-proof {
+            background: var(--dark);
+
+            .cs-title {
+                color: #fff;
+            }
+
+            .cs-text {
+                color: rgba(255, 255, 255, 0.8);
+            }
+        }
+
+        #fb-benefits {
+            background: var(--medium);
+        }
+
+        #fb-cta {
+            background: linear-gradient(180deg, var(--medium) 0%, var(--dark) 100%);
+
+            .cs-title {
+                color: #fff;
+            }
+
+            .cs-text {
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            .cs-form {
+                background: var(--dark);
+            }
+
+            .cs-input {
+                background: var(--medium);
+                border-color: var(--accent);
+                color: #fff;
+
+                &::placeholder {
+                    color: rgba(255, 255, 255, 0.5);
+                }
+            }
+
+            .cs-checkbox-text {
+                color: rgba(255, 255, 255, 0.7);
+            }
+        }
+    }
+}
+
+/* -- -------------------------- -->
+<---       Reviews Section       -->
+<--- -------------------------- -*/
+
+// Breakpoints
+@tablet: 48rem;
+@desktop: 64rem;
+
+// Spacing
+@section-padding: clamp(4rem, 10vw, 8rem);
+@content-margin: clamp(3rem, 6vw, 4rem);
+
+.cs-highlight {
+    color: var(--primary);
+}
+
+#reviews-355 {
+    background-color: #fff;
+    padding: @section-padding 1rem;
+    overflow: visible;
+
+    .cs-container {
+        width: 100%;
+        max-width: 87.5rem;
+        margin: 0 auto;
+        overflow: visible;
+    }
+
+    .cs-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: @content-margin;
+    }
+
+    .cs-topper {
+        color: var(--primaryLight);
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .cs-title {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--primary);
+        margin: 0 0 1.5rem;
+    }
+
+    .cs-text {
+        color: var(--bodyTextColor);
+        max-width: 43.75rem;
+        margin: 0 auto;
+        font-size: clamp(1rem, 2vw, 1.125rem);
+        line-height: 1.6;
+    }
+
+    // Two column staggered layout
+    .cs-columns {
+        display: block;
+        overflow: visible;
+    }
+
+    .cs-column {
+        display: block;
+        overflow: visible;
+    }
+
+    .cs-item {
+        background: var(--primary);
+        border-radius: 0;
+        padding: clamp(1.5rem, 4vw, 2.5rem);
+        margin-bottom: 1.5rem;
+        transition: box-shadow 0.3s ease;
+        will-change: transform, opacity;
+        transform-origin: center top;
+        position: relative;
+
+        &:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    .cs-stars {
+        margin-bottom: 1.25rem;
+        display: flex;
+        gap: 0.25rem;
+    }
+
+    .cs-star {
+        color: var(--primaryLight);
+        font-size: 1.25rem;
+    }
+
+    .cs-review {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: clamp(1rem, 1.8vw, 1.125rem);
+        line-height: 1.7;
+        margin: 0 0 1.25rem 0;
+
+        strong {
+            color: #fff;
+            font-weight: 600;
+        }
+    }
+
+    .cs-name {
+        color: #fff;
+        font-weight: 700;
+        font-size: 1rem;
+        display: block;
+        margin-bottom: 0.25rem;
+    }
+
+    .cs-job {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.875rem;
+        display: block;
+    }
+
+    // Tablet - 768px - Two column staggered
+    @media only screen and (min-width: @tablet) {
+        .cs-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: start;
+            gap: 2rem;
+        }
+
+        .cs-column {
+            position: relative;
+        }
+
+        // Right column offset down for visual stagger
+        .cs-column-right {
+            margin-top: 7.5rem;
+        }
+
+        .cs-item {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 2rem;
+        }
+    }
+
+    // Desktop - 1024px
+    @media only screen and (min-width: @desktop) {
+        .cs-columns {
+            gap: 3rem;
+        }
+
+        .cs-column-right {
+            margin-top: 11.25rem;
+        }
+
+        .cs-item {
+            margin-bottom: 2.5rem;
+        }
+    }
+}
+                                
+/*-- -------------------------- -->
+<---       Speed Gallery        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #speed-gallery {
+        padding: var(--sectionPadding);
+        background: #fff;
+        overflow: hidden;
+        position: relative;
+        z-index: 2;
+
+        .cs-container {
+            width: 100%;
+            max-width: 80rem;
+            margin: 0 auto;
+        }
+
+        .cs-content {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .cs-topper {
+            color: var(--primaryLight);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .cs-title {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .cs-gallery-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .cs-gallery-track {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 0 1rem;
+        }
+
+        .cs-gallery-item {
+            width: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            transition: none;
+
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            // Hide duplicates on mobile
+            &.cs-duplicate {
+                display: none;
+            }
+
+            // Animated state
+            &.is-visible {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+        }
+    }
+}
+
+/* Tablet/Desktop - 768px */
+@media only screen and (min-width: 48rem) {
+    #speed-gallery {
+        .cs-gallery-wrapper {
+            padding: 1rem 0;
+            -webkit-mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+            mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+        }
+
+        .cs-gallery-track {
+            flex-direction: row;
+            gap: 2.5rem;
+            padding: 0;
+            width: max-content;
+            animation: marquee 45s linear infinite;
+        }
+
+        .cs-gallery-item {
+            flex-shrink: 0;
+            width: 600px;
+            opacity: 1;
+            transform: none;
+
+            // Show duplicates on desktop for seamless loop
+            &.cs-duplicate {
+                display: block;
+            }
+        }
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #speed-gallery {
+            background: var(--dark);
+
+            .cs-title {
+                color: #fff;
+            }
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---        Side By Side        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #sbs-1640 {
+        padding: var(--sectionPadding);
+        background:
+            // Center accent glow
+            radial-gradient(ellipse 60% 40% at 50% 50%, rgba(150, 191, 48, 0.08) 0%, transparent 60%),
+            // Base gradient - seamless with stats bar above
+            linear-gradient(180deg,
+                #0c1307 0%,
+                #0d1408 20%,
+                #111a0c 40%,
+                #0f160a 70%,
+                #0a0f05 100%
+            );
+        overflow: hidden;
+        position: relative;
+        z-index: 3;
+        
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at tablet */
+            max-width: (584/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            max-width: (630/16rem);
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cs-title {
+            color: var(--bodyTextColorWhite);
+            margin: 1rem 0 0 0;;
+        }
+
+        .cs-title-2 {
+            display: none;
+        }
+
+        .cs-topper-2 {
+            display: none;
+        }
+
+        .cs-text {
+            margin: 0;
+            color: var(--bodyTextColorWhite);
+            opacity: .8;
+
+            &:last-of-type {
+                margin-bottom: (32/16rem);
+            }
+        }
+
+        .cs-button-solid {
+            max-width: 15rem;
+            margin: auto;
+        }
+
+        .cs-picture-2 {
+            width: 100%;
+            height: auto;
+            min-height: (420/16rem);
+            display: block;
+            position: relative;
+            z-index: 1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 20px;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        .cs-picture {
+            display: none;
+        }
+
+        .cs-stats-group {
+            width: 100%;
+            max-width: (570/16rem);
+            display: flex;
+            flex-direction: column;
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+        }
+
+        .cs-stats {
+            width: 100%;
+            max-width: (630/16rem);
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            row-gap: (24/16rem);
+            column-gap: (18/16rem);
+        }
+        
+        .cs-stat {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            grid-column: span 4;
+            flex-direction: column;
+            align-self: stretch;
+            align-content: space-between;
+        }
+    
+        .cs-number {
+            /* 39px - 61px */
+            font-size: clamp(2.4375rem, 5vw, 3.8125rem);
+            line-height: 1.2em;
+            font-weight: 900;
+            text-align: left;
+            color: var(--secondary);
+            display: block;
+            margin: 0 0 (4/16rem) 0;
+        }
+    
+        .cs-desc {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            font-weight: 700;
+            text-align: left;
+            /* auto margin top will push text to bottom if there's only one line */
+            margin: 0;
+            color: var(--bodyTextColorWhite);
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #sbs-1640 {
+        .cs-container {
+            max-width: (1280/16rem);
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+
+        .content {
+            order: 1;
+        }
+
+        .cs-stats-group {
+            /* 52px - 90px */
+            margin-bottom: clamp(3.25rem, 7vw, 5.625rem);
+            /* 60px - 80px */
+            padding-bottom: clamp(3.75rem, 8vw, 5rem);
+            gap: clamp(1.2rem, 2vw, 1.4rem);
+            position: relative;
+            z-index: 1;
+            order: 2;
+
+            &:before {
+                content: '';
+                width: 200vw;
+                height: 100%;
+                background: #fff;
+                opacity: 1;
+                position: absolute;
+                display: block;
+                top: 100%;
+                left: -100%;
+                z-index: -1;
+                transform: translateX(-50%);
+            }
+        }
+
+        .cs-stats {
+            margin-bottom: 0;
+        }
+
+        .cs-picture {
+            width: 100%;
+            height: 100%;
+            min-height: (420/16rem);
+            display: block;
+            position: relative;
+            z-index: 1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 20px;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        .cs-picture-2 {
+            display: none;
+        }
+
+        .cs-title-2 {
+            display: block;
+            color: var(--bodyTextColorWhite);
+        }
+
+        .cs-title {
+            display: block;
+        }
+
+        .cs-topper {
+            display: block;
+        }
+
+        .cs-topper-2 {
+            display: block;
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #sbs-1640 {
+            background-color: #061521;
+            .cs-stats-group {
+                &:before {
+                    background-color: var(--dark);
+                }
+            }
+        }
+    }
+}

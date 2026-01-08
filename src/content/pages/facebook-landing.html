@@ -1,0 +1,920 @@
+---
+title: 'Get a Professional Website for Your Business | Esker Designs'
+description: 'Custom hand-coded websites starting at $175/month. No upfront costs, unlimited edits, and 24/7 support. See real results from real Vermont businesses.'
+preloadImg: '/assets/images/logo.webp'
+permalink: '/get-started/'
+eleventyNavigation:
+  key: Get Started
+  order: 999
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/assets/css/facebook-landing.css">
+<link rel="preload" as="image" href="https://img.youtube.com/vi/280sn8hNj0c/sddefault.jpg" fetchpriority="high">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script defer src="/assets/js/reviews.js"></script>
+<script defer src="/assets/js/text-animations.js"></script>
+
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                 Hero Video                   -->
+<!-- ============================================ -->
+
+<section id="fb-hero">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title"><em><span class="cs-accent">We</span></em> Build Websites That Bring <em><span class="cs-accent">You</span></em> <span class="cs-squiggle">Customers</span></h1>
+            <h2> <span class="cs-accent">$0 Down</span>, Money-Back <span class="cs-accent">Gaurantee</span></h2>
+            <p class="cs-text">
+                Hand-coded from scratch. Loads in under a second. Built to turn visitors into customers—guaranteed.
+            </p>
+        </div>
+        <div class="cs-video-wrapper">
+            <div class="cs-video-glow" aria-hidden="true"></div>
+            <div class="cs-video-container" id="fb-yt-player-container" data-video-id="280sn8hNj0c">
+                <img class="cs-thumbnail" decoding="async" src="https://img.youtube.com/vi/280sn8hNj0c/sddefault.jpg" alt="Video thumbnail - Watch how we build websites" width="640" height="480">
+                <button class="cs-play-button" aria-label="Play video">
+                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <form class="cs-form" name="Facebook Landing" method="post" netlify>
+            <h3 class="cs-form-title">Get Started Today</h3>
+            <div class="cs-form-group">
+                <input class="cs-input" type="text" name="name" placeholder="Your Name" required>
+                <input class="cs-input" type="email" name="email" placeholder="Your Email" required>
+                <input class="cs-input" type="tel" name="phone" placeholder="Your Phone" required>
+            </div>
+            <div class="cs-checkbox-group">
+                <label class="cs-checkbox-label">
+                    <input type="checkbox" name="sms-consent" value="yes" required>
+                    <span class="cs-checkbox-text">I consent to receive text messages from Esker Designs. Message & data rates may apply. Reply STOP to opt-out. <span class="cs-required">*</span></span>
+                </label>
+            </div>
+            <button class="cs-submit" type="submit">Start Today</button>
+            <p class="cs-form-note">I'll text or call you within 24 hours.</p>
+        </form>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                Trust Badges                  -->
+<!-- ============================================ -->
+
+<section id="fb-trust">
+    <div class="cs-container">
+        <ul class="cs-stat-group">
+            <li class="cs-stat">
+                <span class="cs-number">$0</span>
+                <span class="cs-desc">Down</span>
+            </li>
+            <li class="cs-stat">
+                <span class="cs-number">0.8s</span>
+                <span class="cs-desc">Load Time</span>
+            </li>
+            <li class="cs-stat">
+                <span class="cs-number">150+</span>
+                <span class="cs-desc">Leads Generated (One Site)</span>
+            </li>
+            <li class="cs-stat">
+                <span class="cs-number">100%</span>
+                <span class="cs-desc">Client Retention</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                Side By Side                  -->
+<!-- ============================================ -->
+
+<section id="sbs-1640">
+    <div class="cs-container">
+        <div class="cs-stats-group">
+            <picture class="cs-picture-2">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-test.png' | resize({width: 686, height: 812}) | avif %}">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-test.png' | resize({width: 1260, height: 1006}) | avif %}">
+                <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/speed-test.png' | resize({width: 1260, height: 1006}) | avif %}" alt="PageSpeed score showing 100/100" width="1260" height="1006">
+            </picture>
+            <h2 class="cs-title">
+                Your Website Is Bleeding Customers (And You Don't Even Know It)
+            </h2>
+            <p class="cs-text">
+                Here's the thing: 53% of visitors leave if your site takes longer than 3 seconds to load. Most Squarespace and Wix sites? 4-6 seconds. That's half your traffic gone before they see a single word.
+            </p>
+            <p class="cs-text">
+                Google knows this too. They rank fast sites higher. So while your competitors fight for page 2, you're sitting pretty on page 1—because your site loads in under a second.
+            </p>
+            <p class="cs-text">
+                We don't use WordPress. We don't use templates. Every site is hand-coded from scratch, which is why every single one scores 90+ on Google PageSpeed. Not most. All of them.
+            </p>
+            <a href="/contact/" data-umami-event="Stats SBS" class="cs-button-solid">Start Today</a>
+        </div>
+        <div class="cs-content">
+            <h2 class="cs-title-2">If your website is built using <em>Page Builders.</em></h2>
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-test.png' | resize({width: 686, height: 812}) | avif %}">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-test.png' | resize({width: 1260, height: 1006}) | avif %}">
+                <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/speed-test.png' | resize({width: 1260, height: 1006}) | avif %}" alt="PageSpeed score showing 100/100" width="1260" height="1006">
+            </picture>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================ -->
+<!--              Speed Gallery                   -->
+<!-- ============================================ -->
+
+<section id="speed-gallery">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Proof</span>
+            <h2 class="cs-title">Every. Single. Site.</h2>
+        </div>
+        <div class="cs-gallery-wrapper">
+            <div class="cs-gallery-track">
+                <!-- First set -->
+                <div class="cs-gallery-item">
+                    <img src="/assets/images/speed-1.png" alt="Speed test result" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item">
+                    <img src="/assets/images/speed-2.png" alt="Speed test result" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item">
+                    <img src="/assets/images/speed-3.png" alt="Speed test result" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item">
+                    <img src="/assets/images/speed-4.png" alt="Speed test result" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item">
+                    <img src="/assets/images/speed-5.png" alt="Speed test result" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item">
+                    <img src="/assets/images/speed-6.png" alt="Speed test result" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item">
+                    <img src="/assets/images/speed-7.png" alt="Speed test result" loading="lazy" decoding="async">
+                </div>
+                <!-- Duplicate set for seamless loop (desktop only) -->
+                <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
+                    <img src="/assets/images/speed-1.png" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
+                    <img src="/assets/images/speed-2.png" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
+                    <img src="/assets/images/speed-3.png" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
+                    <img src="/assets/images/speed-4.png" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
+                    <img src="/assets/images/speed-5.png" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
+                    <img src="/assets/images/speed-6.png" alt="" loading="lazy" decoding="async">
+                </div>
+                <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
+                    <img src="/assets/images/speed-7.png" alt="" loading="lazy" decoding="async">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                    Proof                     -->
+<!-- ============================================ -->
+
+<section id="fb-proof">
+    <div class="cs-container">
+        <div class="cs-content">
+        <div class="cs-content">
+            <span class="cs-topper">Results</span>
+            <h2 class="cs-title">One Website. 150+ Customer Inquiries.</h2>
+            <p class="cs-text">
+                Not impressions. Not clicks. Real people filling out forms, ready to buy. From one site. Here's the proof.
+            </p>
+            <p class="cs-text">We threw in a few other sites' proof too, just for fun.</p>
+        </div>
+        </div>
+        <div class="cs-featured-carousel">
+            <div class="cs-carousel-progress">
+                <div class="cs-progress-bar"></div>
+            </div>
+            <picture class="cs-picture-featured active">
+                <img src="/assets/images/150-form-subs.png" alt="150+ form submissions generated" decoding="async">
+            </picture>
+            <picture class="cs-picture-featured">
+                <img src="/assets/images/form-submissions-1.png" alt="Form submissions proof" decoding="async">
+            </picture>
+            <picture class="cs-picture-featured">
+                <img src="/assets/images/form-submissions-2.png" alt="Form submissions proof" decoding="async">
+            </picture>
+            <picture class="cs-picture-featured">
+                <img src="/assets/images/form-submission-dashboard.png" alt="Form submission dashboard" decoding="async">
+            </picture>
+            <picture class="cs-picture-featured">
+                <img src="/assets/images/subs-1-blurred.png" alt="Form submissions proof" decoding="async">
+            </picture>
+            <picture class="cs-picture-featured">
+                <img src="/assets/images/subs-2-blurred.png" alt="Form submissions proof" decoding="async">
+            </picture>
+            <div class="cs-carousel-dots">
+                <button class="cs-dot active" data-index="0" aria-label="Show image 1"></button>
+                <button class="cs-dot" data-index="1" aria-label="Show image 2"></button>
+                <button class="cs-dot" data-index="2" aria-label="Show image 3"></button>
+                <button class="cs-dot" data-index="3" aria-label="Show image 4"></button>
+                <button class="cs-dot" data-index="4" aria-label="Show image 5"></button>
+                <button class="cs-dot" data-index="5" aria-label="Show image 6"></button>
+            </div>
+        </div>
+        <div class="cs-proof-grid">
+            <div class="cs-column">
+                <picture class="cs-picture">
+                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-1.png' | resize({width: 600}) | webp %}" alt="Website project example" loading="lazy" decoding="async">
+                </picture>
+                <picture class="cs-picture">
+                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-3.png' | resize({width: 600}) | webp %}" alt="Website project example" loading="lazy" decoding="async">
+                </picture>
+                <picture class="cs-picture">
+                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-5.png' | resize({width: 600}) | webp %}" alt="Website project example" loading="lazy" decoding="async">
+                </picture>
+            </div>
+            <div class="cs-column">
+                <picture class="cs-picture">
+                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-2.png' | resize({width: 600}) | webp %}" alt="Website project example" loading="lazy" decoding="async">
+                </picture>
+                <picture class="cs-picture">
+                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-4.png' | resize({width: 600}) | webp %}" alt="Website project example" loading="lazy" decoding="async">
+                </picture>
+                <picture class="cs-picture">
+                    <img src="{% getUrl '/assets/images/photos to blur/blurred-job-6.png' | resize({width: 600}) | webp %}" alt="Website project example" loading="lazy" decoding="async">
+                </picture>
+            </div>
+        </div>
+        <!-- Lightbox for tap-to-zoom -->
+        <div class="cs-lightbox" id="proof-lightbox">
+            <button class="cs-lightbox-close" aria-label="Close">&times;</button>
+            <img class="cs-lightbox-img" src="" alt="Zoomed image">
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                   Reviews                    -->
+<!-- ============================================ -->
+
+
+<section id="reviews-355">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Testimonials</span>
+                <h2 class="cs-title">What Our <span class="cs-highlight">Clients</span> Say</h2>
+                <p class="cs-text">Here's what some of our clients have said about working with us.</p>
+            </div>
+            <div class="cs-columns">
+                <!-- Left Column -->
+                <div class="cs-column cs-column-left">
+                    <div class="cs-item">
+                        <div class="cs-stars">
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                        </div>
+                        <p class="cs-review">Esker Designs knows what they're doing. They build <strong>fast, reliable, custom websites</strong> that actually work the way small businesses need them to. They're easy to work with, responsive, and honest about what will and won't serve your business long term. If you want a web designer who values clarity, craftsmanship, and <strong>real results</strong>, Esker Designs delivers.</p>
+                        <span class="cs-name">Courtney Jarecki</span>
+                        <span class="cs-job">Google Review</span>
+                    </div>
+                    <div class="cs-item">
+                        <div class="cs-stars">
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                        </div>
+                        <p class="cs-review">Esker Designs created my website a year ago and I have been so impressed by the site's performance. I've received <strong>an increase in business referrals</strong> through the website and Sam has been responsive and timely with site updates I've requested. Sam made the site-building process <strong>easy and streamlined</strong>. I really appreciated how easy and communicative he has been, not just at the beginning of the process, but for the entire past year.</p>
+                        <span class="cs-name">Amber Banta</span>
+                        <span class="cs-job">Google Review</span>
+                    </div>
+                    <div class="cs-item">
+                        <div class="cs-stars">
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                        </div>
+                        <p class="cs-review">Sam is <strong>excellent at what he does</strong>. If you're looking to improve your online presence, <strong>he's the one to call</strong>.</p>
+                        <span class="cs-name">Jackson Wood</span>
+                        <span class="cs-job">Google Review</span>
+                    </div>
+                    <div class="cs-item">
+                        <div class="cs-stars">
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                        </div>
+                        <p class="cs-review">Sam has been a wonderful partner in building my website! He is creative, thoughtful and responsive. <strong>I cannot recommend him enough!</strong></p>
+                        <span class="cs-name">Lisa Elowson</span>
+                        <span class="cs-job">Gather Mediation LLC</span>
+                    </div>
+                    <div class="cs-item">
+                        <div class="cs-stars">
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                        </div>
+                        <p class="cs-review">Fantastic job and professional services. I highly recommend it!</p>
+                        <span class="cs-name">Tatiana R</span>
+                        <span class="cs-job">Google Review</span>
+                    </div>
+                    <div class="cs-item">
+                        <div class="cs-stars">
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                        </div>
+                        <p class="cs-review">I hired Sam from Esker Designs to create my new website for my business in Waitsfield, Early Literacy Labs, and <strong>I couldn't be happier with the outcome!</strong> Not only does it look exactly how I hoped, but the process of getting here was seamless. Sam responded quickly to emails, was open to feedback, and worked collaboratively to make sure the final product truly reflected my vision. <strong>Highly recommend!</strong></p>
+                        <span class="cs-name">Nicole Chick</span>
+                        <span class="cs-job">Early Literacy Labs</span>
+                    </div>
+                    <div class="cs-item">
+                        <div class="cs-stars">
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                        </div>
+                        <p class="cs-review">Sam did a great job helping us build our company website. He was creative, responsive to our needs, and managed the project well. He was able to take input from multiple people and quickly turn out the product.</p>
+                        <span class="cs-name">Natalie Dawe</span>
+                        <span class="cs-job">Google Review</span>
+                    </div>
+                    <div class="cs-item">
+                        <div class="cs-stars">
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                        </div>
+                        <p class="cs-review">Esker Designs amazed me with how little input they needed to create not only a beautiful, but also an informative website. I'd recommend Esker Designs to <strong>any small business owner</strong> who doesn't want to spend their valuable time building a site themselves. Their process is quick, easy, and straightforward—just a quick conversation leads to a <strong>mind-blowing outcome!</strong></p>
+                        <span class="cs-name">Anna-Lena</span>
+                        <span class="cs-job">Vermont Nature Art</span>
+                    </div>
+                </div>
+                <!-- Right Column (Staggered) -->
+                <div class="cs-column cs-column-right">
+                    <div class="cs-item">
+                        <div class="cs-stars">
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                        </div>
+                        <p class="cs-review">Sam is a great partner to work with. He's both curious and excited about the latest technology, yet remains <strong>focused on what will serve your business long term</strong>.</p>
+                        <span class="cs-name">Macon Phillips</span>
+                        <span class="cs-job">Google Review</span>
+                    </div>
+                    <div class="cs-item">
+                        <div class="cs-stars">
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                        </div>
+                        <p class="cs-review">Sam did a great job helping us build the Blueberry Lake website from the ground up. He was responsive to feedback and always available when we needed a change or update.</p>
+                        <span class="cs-name">Anna Sanborn</span>
+                        <span class="cs-job">Google Review</span>
+                    </div>
+                    <div class="cs-item">
+                        <div class="cs-stars">
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                        </div>
+                        <p class="cs-review">Sam worked diligently to code my website and is a pleasure to work with. The site looks great and there was <strong>zero stress on my end</strong>. I feel so comfortable knowing I can reach out to Sam anytime. He always responds timely and <strong>goes above and beyond</strong> the scope of our agreement. Thanks, Sam!</p>
+                        <span class="cs-name">Shelly Bogue</span>
+                        <span class="cs-job">Google Review</span>
+                    </div>
+                    <div class="cs-item">
+                        <div class="cs-stars">
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                        </div>
+                        <p class="cs-review">Sam is great to work with! I've funneled a couple clients his way and he's a pro. His work is providing <strong>a steady stream of leads</strong>. Highly recommend!</p>
+                        <span class="cs-name">Timothy Smith</span>
+                        <span class="cs-job">Google Review</span>
+                    </div>
+                    <div class="cs-item">
+                        <div class="cs-stars">
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                        </div>
+                        <p class="cs-review">Sam did an awesome job on my website. <strong>Super easy to work with</strong> and made the whole process stress-free. I'm really happy with how everything turned out!</p>
+                        <span class="cs-name">Jamie Engelhard</span>
+                        <span class="cs-job">Google Review</span>
+                    </div>
+                    <div class="cs-item">
+                        <div class="cs-stars">
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                        </div>
+                        <p class="cs-review">Esker Designs built a beautiful and user-friendly website for us, and Sam has been such a pleasure to work with. We could not recommend them enough. In addition to the attention to detail, frequent communication and excellent customer service we've received, we have seen <strong>a real bump in traffic and sales</strong> as well. Thank you Sam and Esker Designs!</p>
+                        <span class="cs-name">Barre Social Club</span>
+                        <span class="cs-job">Google Review</span>
+                    </div>
+                    <div class="cs-item">
+                        <div class="cs-stars">
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                            <span class="cs-star">★</span>
+                        </div>
+                        <p class="cs-review">Sam with Esker Designs helped us with our website and <strong>we couldn't be happier with the results!</strong> He is so friendly, easy to work with, and very responsive. I highly recommend his services, and <strong>if I could leave 6 stars, I would!</strong></p>
+                        <span class="cs-name">Megumi Sommer</span>
+                        <span class="cs-job">Google Review</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+                                
+
+<!-- ============================================ -->
+<!--                 What You Get                 -->
+<!-- ============================================ -->
+
+<section id="fb-benefits">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">What's Included</span>
+            <h2 class="cs-title">Everything You Need for Just $175/Month</h2>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <img class="cs-icon" src="/assets/svgs/design.svg" alt="Custom design icon" width="48" height="48" loading="lazy" decoding="async">
+                <h3 class="cs-h3">Custom Design</h3>
+                <p class="cs-item-text">No templates. No themes. Built for your business, not "businesses like yours."</p>
+            </li>
+            <li class="cs-item">
+                <img class="cs-icon" src="/assets/svgs/lightning.svg" alt="Lightning fast icon" width="48" height="48" loading="lazy" decoding="async">
+                <h3 class="cs-h3">Sub-Second Load Times</h3>
+                <p class="cs-item-text">100/100 PageSpeed scores. Every site. No exceptions.</p>
+            </li>
+            <li class="cs-item">
+                <img class="cs-icon" src="/assets/svgs/mobile.svg" alt="Mobile first icon" width="48" height="48" loading="lazy" decoding="async">
+                <h3 class="cs-h3">Mobile First</h3>
+                <p class="cs-item-text">60% of your traffic is on phones. We design for that first, desktop second.</p>
+            </li>
+            <li class="cs-item">
+                <img class="cs-icon" src="/assets/svgs/web-management.svg" alt="Unlimited edits icon" width="48" height="48" loading="lazy" decoding="async">
+                <h3 class="cs-h3">Unlimited Edits</h3>
+                <p class="cs-item-text">Text me. Get changes within 24 hours. No tickets, no extra fees.</p>
+            </li>
+            <li class="cs-item">
+                <img class="cs-icon" src="/assets/svgs/seo.svg" alt="SEO icon" width="48" height="48" loading="lazy" decoding="async">
+                <h3 class="cs-h3">SEO Built In</h3>
+                <p class="cs-item-text">Clean code, fast loads, proper structure. Google rewards all three.</p>
+            </li>
+            <li class="cs-item">
+                <img class="cs-icon" src="/assets/svgs/vermont.svg" alt="24/7 support icon" width="48" height="48" loading="lazy" decoding="async">
+                <h3 class="cs-h3">Actual Support</h3>
+                <p class="cs-item-text">A real person answers. Usually me. Usually within a few hours.</p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Final CTA                   -->
+<!-- ============================================ -->
+
+<section id="fb-cta">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Ready to Get Started?</span>
+            <h2 class="cs-title">Get Your Professional Website Today</h2>
+            <p class="cs-text">
+                Join dozens of small business owners who've transformed their online presence with Esker Designs. No upfront costs, no long-term contracts — just results.
+            </p>
+        </div>
+        <form class="cs-form" name="Facebook Landing CTA" method="post" netlify>
+            <div class="cs-form-group">
+                <input class="cs-input" type="text" name="name" placeholder="Your Name" required>
+                <input class="cs-input" type="email" name="email" placeholder="Your Email" required>
+                <input class="cs-input" type="tel" name="phone" placeholder="Your Phone" required>
+            </div>
+            <div class="cs-checkbox-group">
+                <label class="cs-checkbox-label">
+                    <input type="checkbox" name="sms-consent" value="yes" required>
+                    <span class="cs-checkbox-text">I consent to receive text messages from Esker Designs. Message & data rates may apply. Reply STOP to opt-out. <span class="cs-required">*</span></span>
+                </label>
+            </div>
+            <button class="cs-submit" type="submit">Get My Free Quote</button>
+        </form>
+    </div>
+</section>
+
+<script>
+    // YouTube Player API with GA4 Tracking for Facebook Landing
+    (function() {
+        var player;
+        var videoStarted = false;
+        var progressMilestones = { 10: false, 25: false, 50: false, 75: false, 90: false };
+        var videoTitle = 'Facebook Landing Promo Video';
+        var checkInterval;
+
+        var container = document.getElementById('fb-yt-player-container');
+        if (container) {
+            container.addEventListener('click', function initPlayer() {
+                container.removeEventListener('click', initPlayer);
+                container.classList.add('cs-playing');
+
+                var tag = document.createElement('script');
+                tag.src = 'https://www.youtube.com/iframe_api';
+                var firstScript = document.getElementsByTagName('script')[0];
+                firstScript.parentNode.insertBefore(tag, firstScript);
+            });
+        }
+
+        window.onYouTubeIframeAPIReady = function() {
+            var videoId = container.dataset.videoId;
+            container.innerHTML = '<div id="fb-yt-player"></div>';
+
+            player = new YT.Player('fb-yt-player', {
+                videoId: videoId,
+                width: '100%',
+                height: '100%',
+                playerVars: {
+                    autoplay: 1,
+                    rel: 0,
+                    modestbranding: 1
+                },
+                events: {
+                    onReady: function(event) { event.target.playVideo(); },
+                    onStateChange: function(event) {
+                        if (event.data === YT.PlayerState.PLAYING && !videoStarted) {
+                            videoStarted = true;
+                            if (typeof gtag === 'function') {
+                                gtag('event', 'video_start', {
+                                    video_title: videoTitle,
+                                    video_provider: 'youtube'
+                                });
+                            }
+                            if (typeof fbq === 'function') {
+                                fbq('track', 'ViewContent', { content_name: 'Video Started' });
+                            }
+                        }
+                        if (event.data === YT.PlayerState.ENDED) {
+                            if (typeof gtag === 'function') {
+                                gtag('event', 'video_complete', {
+                                    video_title: videoTitle,
+                                    video_provider: 'youtube'
+                                });
+                            }
+                        }
+                    }
+                }
+            });
+        };
+    })();
+</script>
+
+<script>
+// Proof Carousel - Desktop: Scroll Triggered, Mobile: Touch Swipe
+(function() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const carousel = document.querySelector('#fb-proof .cs-featured-carousel');
+    if (!carousel) return;
+
+    const slides = Array.from(carousel.querySelectorAll('.cs-picture-featured'));
+    const dots = Array.from(carousel.querySelectorAll('.cs-dot'));
+    const progressBar = carousel.querySelector('.cs-progress-bar');
+
+    if (slides.length <= 1) return;
+
+    const isDesktop = () => window.innerWidth >= 768;
+    let currentIndex = 0;
+    let scrollTriggerInstance = null;
+    let timeline = null;
+
+    // Set initial state
+    function setInitialState() {
+        slides.forEach((slide, i) => {
+            gsap.set(slide, {
+                opacity: i === 0 ? 1 : 0,
+                zIndex: slides.length - i,
+                x: 0
+            });
+        });
+        currentIndex = 0;
+        updateDots(0);
+    }
+
+    function updateDots(index) {
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+
+    // Mobile: Scroll-triggered transitions (no pinning, natural scroll)
+    function initMobile() {
+        setInitialState();
+
+        // As you scroll past the carousel, images transition
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: carousel,
+                start: 'top 80%',
+                end: 'bottom 20%',
+                scrub: 0.5,
+                onUpdate: (self) => {
+                    const index = Math.round(self.progress * (slides.length - 1));
+                    updateDots(index);
+                    // Update progress bar on mobile too
+                    if (progressBar) {
+                        progressBar.style.width = `${self.progress * 100}%`;
+                    }
+                }
+            }
+        });
+
+        // Animate through all slides as you scroll past
+        slides.forEach((slide, i) => {
+            if (i < slides.length - 1) {
+                tl.to(slide, { opacity: 0, duration: 1 });
+                tl.to(slides[i + 1], { opacity: 1, duration: 1 }, '<');
+            }
+        });
+    }
+
+    // Desktop: Scroll-triggered pinning
+    function initDesktop() {
+        setInitialState();
+
+        timeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: carousel,
+                start: 'top 15%',
+                end: () => `+=${slides.length * 120}%`,
+                pin: true,
+                pinSpacing: true,
+                scrub: 0.5,
+                snap: 1 / (slides.length - 1),
+                onUpdate: (self) => {
+                    const index = Math.round(self.progress * (slides.length - 1));
+                    updateDots(index);
+                    // Update progress bar
+                    if (progressBar) {
+                        progressBar.style.width = `${self.progress * 100}%`;
+                    }
+                }
+            }
+        });
+
+        scrollTriggerInstance = timeline.scrollTrigger;
+
+        // Animate each slide transition
+        slides.forEach((slide, i) => {
+            if (i < slides.length - 1) {
+                timeline.to(slide, { opacity: 0, duration: 1 });
+                timeline.to(slides[i + 1], { opacity: 1, duration: 1 }, '<');
+            }
+        });
+
+        // Dot click handlers
+        dots.forEach((dot, i) => {
+            dot.onclick = () => {
+                const progress = i / (slides.length - 1);
+                const scrollTo = scrollTriggerInstance.start +
+                    (scrollTriggerInstance.end - scrollTriggerInstance.start) * progress;
+                gsap.to(window, {
+                    scrollTo: scrollTo,
+                    duration: 0.8,
+                    ease: 'power2.inOut'
+                });
+            };
+        });
+    }
+
+    // Initialize based on screen size
+    function init() {
+        // Kill existing ScrollTrigger if any
+        if (scrollTriggerInstance) {
+            scrollTriggerInstance.kill();
+            scrollTriggerInstance = null;
+        }
+        if (timeline) {
+            timeline.kill();
+            timeline = null;
+        }
+
+        // Clear inline styles
+        slides.forEach(slide => {
+            gsap.set(slide, { clearProps: 'all' });
+        });
+        gsap.set(carousel, { clearProps: 'all' });
+
+        if (isDesktop()) {
+            initDesktop();
+        } else {
+            initMobile();
+        }
+
+        ScrollTrigger.refresh();
+    }
+
+    // Initialize
+    init();
+
+    // Reinitialize on resize (debounced)
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(init, 300);
+    });
+})();
+</script>
+
+<script>
+// Lightbox for tap-to-zoom on proof images
+(function() {
+    const lightbox = document.getElementById('proof-lightbox');
+    if (!lightbox) return;
+
+    const lightboxImg = lightbox.querySelector('.cs-lightbox-img');
+    const closeBtn = lightbox.querySelector('.cs-lightbox-close');
+
+    // Get all proof images (carousel + grid)
+    const proofImages = document.querySelectorAll('#fb-proof .cs-picture-featured img, #fb-proof .cs-picture img');
+
+    // Open lightbox on image tap
+    proofImages.forEach(img => {
+        img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Use the original src (not resized version for grid images)
+            let src = img.src;
+            // For webp processed images, try to get a larger version
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Close lightbox
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+})();
+</script>
+
+<script>
+// Speed Gallery - Mobile stagger animation
+(function() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+    const isMobile = () => window.innerWidth < 768;
+    const gallery = document.querySelector('#speed-gallery');
+    if (!gallery) return;
+
+    const items = gallery.querySelectorAll('.cs-gallery-item:not(.cs-duplicate)');
+    if (items.length === 0) return;
+
+    function initMobileAnimation() {
+        if (!isMobile()) {
+            // On desktop, make sure items are visible (CSS handles animation)
+            items.forEach(item => {
+                item.classList.remove('is-visible');
+                gsap.set(item, { clearProps: 'all' });
+            });
+            return;
+        }
+
+        // Mobile: Staggered reveal on scroll
+        items.forEach((item, i) => {
+            gsap.fromTo(item,
+                {
+                    opacity: 0,
+                    y: 40,
+                    scale: 0.95
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.6,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: item,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none'
+                    },
+                    delay: i * 0.05 // Slight stagger
+                }
+            );
+        });
+    }
+
+    initMobileAnimation();
+
+    // Reinit on resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            ScrollTrigger.getAll().forEach(st => {
+                if (st.vars.trigger && st.vars.trigger.closest('#speed-gallery')) {
+                    st.kill();
+                }
+            });
+            initMobileAnimation();
+        }, 300);
+    });
+})();
+</script>
+
+<script>
+// Proof Grid - Mobile stagger animation
+(function() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+    const isMobile = () => window.innerWidth < 768;
+    if (!isMobile()) return; // Only run on mobile
+
+    const proofGrid = document.querySelector('#fb-proof .cs-proof-grid');
+    if (!proofGrid) return;
+
+    const items = proofGrid.querySelectorAll('.cs-picture');
+    if (items.length === 0) return;
+
+    // Mobile: Staggered reveal on scroll
+    items.forEach((item) => {
+        gsap.from(item, {
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+            duration: 0.6,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: item,
+                start: 'top 85%',
+                toggleActions: 'play none none none'
+            }
+        });
+    });
+})();
+</script>
+
+{% endblock %}

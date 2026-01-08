@@ -43,6 +43,46 @@
     src: url('../fonts/inter-v18-latin-900.woff2') format('woff2');
     /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
+  /* noto-sans-mono-regular - latin */
+  @font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Noto Sans Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/noto-sans-mono-v37-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* noto-sans-mono-700 - latin */
+  @font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Noto Sans Mono';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/noto-sans-mono-v37-latin-700.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* inter-regular - latin */
+  @font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/inter-v20-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* inter-700 - latin */
+  @font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/inter-v20-latin-700.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
   :root {
     --primary: #243010;
     --primaryLight: #96bf30;
@@ -85,7 +125,7 @@
   label,
   input,
   .cs-link {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
   .emphasis {
     color: var(--secondary);
@@ -98,7 +138,7 @@
     line-height: 1.5em;
     color: var(--bodyTextColor);
     text-align: inherit;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
   .cs-color {
     color: var(--primaryLight);
@@ -174,7 +214,7 @@
     margin: 0;
     overflow-x: hidden;
     padding: 0;
-    font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 100%;
     color: var(--bodyTextColor);
   }
@@ -200,7 +240,7 @@
   h5,
   h6 {
     margin: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Noto Sans Mono', sans-serif;
     font-weight: 900;
     color: var(--headerColor);
   }
