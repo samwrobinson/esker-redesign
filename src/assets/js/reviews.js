@@ -19,16 +19,20 @@
             return;
         }
 
-        cards.forEach((card) => {
-            gsap.from(card, {
-                opacity: 0,
-                y: 40,
-                duration: 0.6,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: card,
-                    start: 'top 85%',
-                    toggleActions: 'play none none reverse'
+        cards.forEach((card, index) => {
+            gsap.set(card, { opacity: 0, y: 40 });
+
+            ScrollTrigger.create({
+                trigger: card,
+                start: 'top 90%',
+                once: true,
+                onEnter: () => {
+                    gsap.to(card, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.6,
+                        ease: 'power2.out'
+                    });
                 }
             });
         });
