@@ -1,13 +1,15 @@
 /**
- * Reviews - Simple Fade In Animation
+ * Scroll Animations - Simple Fade In
  * Uses Intersection Observer + CSS transitions (no GSAP required)
  */
 
 (function() {
     function init() {
-        const cards = document.querySelectorAll('#reviews-355 .cs-item');
+        // Review cards
+        const reviewCards = document.querySelectorAll('#reviews-355 .cs-item');
 
-        if (cards.length === 0) return;
+        // Speed gallery text
+        const speedGalleryText = document.querySelectorAll('#speed-gallery .cs-topper, #speed-gallery .cs-title');
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -20,10 +22,10 @@
             threshold: 0.1
         });
 
-        // Wait for next frame to ensure layout is complete
-        // Then observe all cards - observer will immediately fire for any already in viewport
+        // Wait for layout to complete
         setTimeout(() => {
-            cards.forEach(card => observer.observe(card));
+            reviewCards.forEach(card => observer.observe(card));
+            speedGalleryText.forEach(el => observer.observe(el));
         }, 100);
     }
 

@@ -1360,6 +1360,16 @@
             letter-spacing: 2px;
             display: block;
             margin-bottom: 0.5rem;
+
+            // Fade-in animation
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+            &.is-visible {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .cs-title {
@@ -1367,6 +1377,16 @@
             font-weight: 700;
             color: var(--primary);
             margin: 0;
+
+            // Fade-in animation
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out 0.15s, transform 0.6s ease-out 0.15s;
+
+            &.is-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .cs-gallery-wrapper {

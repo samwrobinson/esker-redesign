@@ -186,43 +186,11 @@
     }
 
     // ========================================
-    // Speed Gallery Header - Word by word reveal
+    // Speed Gallery Header - No animation (handled by CSS)
     // ========================================
 
     function animateSpeedGalleryHeader() {
-        const section = document.querySelector('#speed-gallery');
-        if (!section) return;
-
-        const topper = section.querySelector('.cs-topper');
-        const title = section.querySelector('.cs-title');
-
-        if (topper) {
-            gsap.from(topper, {
-                opacity: 0, x: -30, duration: 0.6, ease: 'power2.out',
-                scrollTrigger: { trigger: topper, start: 'top 85%', toggleActions: 'play none none none' }
-            });
-        }
-
-        // Word by word reveal for "Every. Single. Site."
-        if (title) {
-            const words = splitTextIntoSpans(title, 'words');
-            gsap.set(words, { opacity: 0, y: 30, rotateX: -45 });
-
-            ScrollTrigger.create({
-                trigger: title,
-                start: 'top 85%',
-                onEnter: () => {
-                    gsap.to(words, {
-                        opacity: 1,
-                        y: 0,
-                        rotateX: 0,
-                        duration: 0.6,
-                        stagger: 0.15,
-                        ease: 'back.out(1.7)'
-                    });
-                }
-            });
-        }
+        // Animations handled by CSS + Intersection Observer in reviews.js
     }
 
     // ========================================
