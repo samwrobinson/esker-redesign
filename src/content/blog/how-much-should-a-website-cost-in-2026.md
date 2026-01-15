@@ -308,7 +308,7 @@ I'm not trying to be the right fit for everyone. If you genuinely enjoy working 
 
 After all of this, you might be wondering which option actually makes sense for your situation. Here's how I'd think about it:
 
-**\[INSERT: decision-framework-2026.png]**
+![Decision Framework Chart](/assets/images/blog/decision-framework-2026.png "Decision Framework Chart")
 
 **If you have more time than money and are comfortable with technology:** Squarespace or Wix could work well. You'll invest time learning the platform and building your site, but the ongoing costs are relatively low.
 
