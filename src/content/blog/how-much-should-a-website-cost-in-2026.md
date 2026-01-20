@@ -13,6 +13,7 @@ tags:
   - post
 image: /assets/images/blog/youtube-thumbnail-website-cost.png
 imageAlt: Website cost thumbnail
+videoId: opRZwM2Z4Hc
 ---
 # How Much Does a Website Cost in 2026?
 

@@ -31,6 +31,20 @@
             {% if tags %}"articleSection": "{{ tags }}"{% endif %}
         }
     </script>
+    {% if videoId %}
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            "name": "{{ videoTitle | default(title) }}",
+            "description": "{{ videoDescription | default(description) }}",
+            "thumbnailUrl": "https://i.ytimg.com/vi/{{ videoId }}/maxresdefault.jpg",
+            "uploadDate": "{{ videoUploadDate | default(date) | postDate }}",
+            "contentUrl": "https://www.youtube.com/watch?v={{ videoId }}",
+            "embedUrl": "https://www.youtube.com/embed/{{ videoId }}"
+        }
+    </script>
+    {% endif %}
 {% endblock %}
 
 {% block body %}
