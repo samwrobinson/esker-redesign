@@ -61,7 +61,7 @@ eleventyNavigation:
                 </label>
                 <label>
                     Phone
-                    <input required type="text" id="phone" name="phone" placeholder="Phone">
+                    <input type="text" id="phone" name="phone" placeholder="Phone">
                 </label>
                 <label>
                     How Did You Find Us
@@ -72,11 +72,11 @@ eleventyNavigation:
                     <textarea required name="Message" id="message" placeholder="Write message..."></textarea>
                 </label>
 
-                <!-- SMS Consent Checkbox (Required) -->
+                <!-- SMS Consent Checkbox (Optional) -->
                 <div class="cs-checkbox-group">
                     <label class="cs-checkbox-label">
-                        <input type="checkbox" name="sms-consent" id="sms-consent" value="yes" required>
-                        <span class="cs-checkbox-text">I consent to receive transactional text messages from Esker Designs at the phone number provided (appointment confirmations, follow-ups, and service updates). Message frequency may vary. Message & data rates may apply. Reply HELP for help or STOP to opt-out. <span class="cs-required">*</span></span>
+                        <input type="checkbox" name="sms-consent" id="sms-consent" value="yes">
+                        <span class="cs-checkbox-text">I consent to receive transactional text messages from Esker Designs at the phone number provided (appointment confirmations, follow-ups, and service updates). Message frequency may vary. Message & data rates may apply. Reply HELP for help or STOP to opt-out.</span>
                     </label>
                 </div>
 
@@ -88,7 +88,10 @@ eleventyNavigation:
                     </label>
                 </div>
 
-                <a href="/privacy-policy/" class="cs-privacy-link" target="_blank">Privacy Policy</a>
+                <div class="cs-policy-links">
+                    <a href="/privacy-policy/" class="cs-privacy-link" target="_blank">Privacy Policy</a>
+                    <a href="/terms-of-service/" class="cs-privacy-link" target="_blank">Terms of Service</a>
+                </div>
 
                 <button class="cs-button-solid" type="submit">Submit Message</button>
             </form>

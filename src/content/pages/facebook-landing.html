@@ -51,13 +51,17 @@ eleventyNavigation:
             <div class="cs-form-group">
                 <input class="cs-input" type="text" name="name" placeholder="Your Name" required>
                 <input class="cs-input" type="email" name="email" placeholder="Your Email" required>
-                <input class="cs-input" type="tel" name="phone" placeholder="Your Phone" required>
+                <input class="cs-input" type="tel" name="phone" placeholder="Your Phone">
             </div>
             <div class="cs-checkbox-group">
                 <label class="cs-checkbox-label">
-                    <input type="checkbox" name="sms-consent" value="yes" required>
-                    <span class="cs-checkbox-text">I consent to receive text messages from Esker Designs. Message & data rates may apply. Reply STOP to opt-out. <span class="cs-required">*</span></span>
+                    <input type="checkbox" name="sms-consent" value="yes">
+                    <span class="cs-checkbox-text">I consent to receive text messages from Esker Designs at the phone number provided. Message frequency may vary. Message & data rates may apply. Reply HELP for help or STOP to opt-out.</span>
                 </label>
+            </div>
+            <div class="cs-policy-links">
+                <a href="/privacy-policy/" class="cs-privacy-link" target="_blank">Privacy Policy</a>
+                <a href="/terms-of-service/" class="cs-privacy-link" target="_blank">Terms of Service</a>
             </div>
             <button class="cs-submit" type="submit">Start Today</button>
             <p class="cs-form-note">I'll text or call you within 24 hours.</p>
