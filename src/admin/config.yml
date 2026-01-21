@@ -29,4 +29,50 @@ collections:
           - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
           - { label: "Featured Image", name: "image", widget: "image" }
           - { label: "Image Caption", name: "imageAlt", widget: "string" }
+          - {
+                label: "Layout",
+                name: "layout",
+                widget: "select",
+                options:
+                    - { label: "Standard Blog Post", value: "layouts/post.html" }
+                    - { label: "Video Blog Post", value: "layouts/post-video.html" }
+                default: "layouts/post.html",
+                hint: "Choose 'Video Blog Post' if this post has a featured YouTube video",
+            }
+          # Video Fields (only needed for Video Blog Post layout)
+          - {
+                label: "YouTube Video ID",
+                name: "videoId",
+                widget: "string",
+                required: false,
+                hint: "The ID from the YouTube URL (e.g., 'iV_TyH6DW7k' from youtube.com/watch?v=iV_TyH6DW7k)",
+            }
+          - {
+                label: "Video Title",
+                name: "videoTitle",
+                widget: "string",
+                required: false,
+                hint: "Leave blank to use the post title",
+            }
+          - {
+                label: "Video Description",
+                name: "videoDescription",
+                widget: "string",
+                required: false,
+                hint: "Leave blank to use the post description",
+            }
+          - {
+                label: "Video Duration",
+                name: "videoDuration",
+                widget: "string",
+                required: false,
+                hint: "ISO 8601 format: PT#M#S (e.g., PT13M8S for 13 min 8 sec)",
+            }
+          - {
+                label: "Video Upload Date",
+                name: "videoUploadDate",
+                widget: "datetime",
+                required: false,
+                hint: "When the video was published on YouTube",
+            }
           - { label: "Body", name: "body", widget: "markdown" }

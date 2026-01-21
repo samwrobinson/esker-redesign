@@ -1,0 +1,180 @@
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/blog-video.css">
+
+    <!-- Video-specific Open Graph tags -->
+    <meta property="og:type" content="video.other"/>
+    <meta property="og:video" content="https://www.youtube.com/embed/{{ videoId }}"/>
+    <meta property="og:video:secure_url" content="https://www.youtube.com/embed/{{ videoId }}"/>
+    <meta property="og:video:type" content="text/html"/>
+    <meta property="og:video:width" content="1280"/>
+    <meta property="og:video:height" content="720"/>
+    <meta property="og:image" content="https://i.ytimg.com/vi/{{ videoId }}/maxresdefault.jpg"/>
+    <meta property="og:image:secure_url" content="https://i.ytimg.com/vi/{{ videoId }}/maxresdefault.jpg"/>
+
+    <!-- Twitter Player Card for video -->
+    <meta name="twitter:card" content="player"/>
+    <meta name="twitter:title" content="{{ videoTitle | default(title) }}"/>
+    <meta name="twitter:description" content="{{ videoDescription | default(description) }}"/>
+    <meta name="twitter:player" content="https://www.youtube.com/embed/{{ videoId }}"/>
+    <meta name="twitter:player:width" content="1280"/>
+    <meta name="twitter:player:height" content="720"/>
+    <meta name="twitter:image" content="https://i.ytimg.com/vi/{{ videoId }}/maxresdefault.jpg"/>
+
+    <!-- Combined Article + VideoObject Schema for maximum indexability -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            {% if title %}"headline": "{{ title }}",{% endif %}
+            {% if image %}
+                "image": ["{{ image }}"],
+            {% endif %}
+            {% if date %}"datePublished": "{{ date | postDate }}",{% endif %}
+            {% if client.name %}
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "{{ client.name }}"
+                },
+            {% endif %}
+            {% if author %}
+                "author": [
+                    {
+                        "@type": "Person",
+                        "name": "{{ author }}"
+                    }
+                ],
+            {% endif %}
+            {% if description %}"description": "{{ description | safe }}",{% endif %}
+            {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
+            {% if tags %}"articleSection": "{{ tags }}",{% endif %}
+            "video": {
+                "@type": "VideoObject",
+                "name": "{{ videoTitle | default(title) }}",
+                "description": "{{ videoDescription | default(description) }}",
+                "thumbnailUrl": "https://i.ytimg.com/vi/{{ videoId }}/maxresdefault.jpg",
+                "uploadDate": "{{ videoUploadDate | default(date) | postDate }}",
+                "duration": "{{ videoDuration }}",
+                "contentUrl": "https://www.youtube.com/watch?v={{ videoId }}",
+                "embedUrl": "https://www.youtube.com/embed/{{ videoId }}",
+                {% if client.name %}
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "{{ client.name }}"
+                }
+                {% endif %}
+            }
+        }
+    </script>
+
+    <!-- Standalone VideoObject Schema for dedicated video indexing -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            "name": "{{ videoTitle | default(title) }}",
+            "description": "{{ videoDescription | default(description) }}",
+            "thumbnailUrl": [
+                "https://i.ytimg.com/vi/{{ videoId }}/maxresdefault.jpg",
+                "https://i.ytimg.com/vi/{{ videoId }}/sddefault.jpg",
+                "https://i.ytimg.com/vi/{{ videoId }}/hqdefault.jpg"
+            ],
+            "uploadDate": "{{ videoUploadDate | default(date) | postDate }}",
+            "duration": "{{ videoDuration }}",
+            "contentUrl": "https://www.youtube.com/watch?v={{ videoId }}",
+            "embedUrl": "https://www.youtube.com/embed/{{ videoId }}",
+            {% if client.domain and page.url %}"mainEntityOfPage": "{{ client.domain }}{{ page.url }}",{% endif %}
+            {% if client.name %}
+            "publisher": {
+                "@type": "Organization",
+                "name": "{{ client.name }}"
+            },
+            {% endif %}
+            "potentialAction": {
+                "@type": "WatchAction",
+                "target": "https://www.youtube.com/watch?v={{ videoId }}"
+            }
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+<!-- ============================================ -->
+<!--                 Video Hero                   -->
+<!-- ============================================ -->
+
+<section id="video-hero">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Video Guide</span>
+            <h1 class="cs-title">{{ videoTitle | default(title) }}</h1>
+            <p class="cs-text">{{ videoDescription | default(description) }}</p>
+        </div>
+        <div class="cs-video-wrapper">
+            <iframe
+                src="https://www.youtube.com/embed/{{ videoId }}?rel=0&modestbranding=1&enablejsapi=1"
+                title="{{ videoTitle | default(title) }}"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy">
+            </iframe>
+        </div>
+        <!-- ============================================ -->
+        <!--           CTA After Video (moveable)        -->
+        <!-- ============================================ -->
+        <div class="cs-cta-wrapper">
+            <a href="/booking/" class="cs-button-solid">Book a Free Consultation</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--              Main Blog Content               -->
+<!-- ============================================ -->
+
+<div class="blog-container main-content-wrapper">
+    <!--Main content -->
+    <div class="main-content">
+        <!-- ============================================ -->
+        <!--                  Blog Article                -->
+        <!-- ============================================ -->
+
+        <article class="blog-article">
+            <!--Article Info-->
+            <div class="article-group">
+                <div class="blog-authorGroup">
+                    <!--Author Image-->
+                    <picture class="blog-author-img">
+                        <img
+                        src="/assets/svgs/profile.svg"
+                        alt="house"
+                        width="32"
+                        height="32"
+                        decoding="async">
+                    </picture>
+                    <span class="blog-author">{{ author }}</span>
+                    <span aria-hidden="true" class="blog-dot"></span>
+                    <!--Blog Date-->
+                    <span class="blog-date">{{ date | postDate }}</span>
+                </div>
+            </div>
+            <section id="blog-content">
+                {{ content | safe }}
+            </section>
+            <!-- ============================================ -->
+            <!--        CTA End of Article (moveable)        -->
+            <!-- ============================================ -->
+            <div class="cs-cta-wrapper cs-cta-bottom">
+                <p class="cs-cta-text">Ready to discuss your website?</p>
+                <a href="/booking/" class="cs-button-solid">Let's Talk About Your Website</a>
+            </div>
+        </article>
+    </div>
+    <!-- End .main-content -->
+
+    {% include 'components/featured-post.html' %}
+</div>
+{% endblock %}
