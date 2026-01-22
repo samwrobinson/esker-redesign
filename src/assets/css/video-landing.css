@@ -1,0 +1,194 @@
+/* PAGE-SPECIFIC STYLES FOR VIDEO LANDING PAGES */
+/*-- -------------------------- -->
+<---     Video Landing Hero     -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #video-landing-hero {
+    padding: clamp(9rem, 15vw, 12rem) 1rem clamp(3rem, 6vw, 4rem);
+    background-color: var(--primary);
+    position: relative;
+  }
+  #video-landing-hero .cs-container {
+    width: 100%;
+    max-width: 62.5rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+  #video-landing-hero .cs-video-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 1.875rem 3.75rem rgba(0, 0, 0, 0.4);
+    background-color: #000;
+  }
+  #video-landing-hero .cs-video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+  #video-landing-hero .cs-content {
+    text-align: center;
+    width: 100%;
+    max-width: 43.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #video-landing-hero .cs-title {
+    color: var(--bodyTextColorWhite);
+    margin: 0 0 1rem 0;
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    line-height: 1.3em;
+  }
+  #video-landing-hero .cs-text {
+    color: var(--bodyTextColorWhite);
+    opacity: 0.9;
+    margin: 0;
+    max-width: 37.5rem;
+    font-size: 1rem;
+    line-height: 1.6em;
+  }
+  #video-landing-hero .cs-read-more {
+    display: inline-block;
+    margin-top: 1.25rem;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primaryLight);
+    text-decoration: none;
+    border: 1px solid var(--primaryLight);
+    border-radius: 0.25rem;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  #video-landing-hero .cs-read-more:hover {
+    background-color: var(--primaryLight);
+    color: var(--primary);
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #video-landing-hero {
+    padding: clamp(10rem, 16vw, 13rem) 1rem clamp(4rem, 7vw, 5rem);
+  }
+  #video-landing-hero .cs-video-wrapper {
+    border-radius: 1rem;
+  }
+  #video-landing-hero .cs-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #video-landing-hero {
+    padding: 12.5rem 1rem 5rem;
+  }
+  #video-landing-hero .cs-video-wrapper {
+    border-radius: 1.25rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  #video-landing-hero .cs-video-wrapper:hover {
+    transform: translateY(-4/16rem);
+    box-shadow: 0 2.5rem 5rem rgba(0, 0, 0, 0.5);
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #video-landing-hero {
+    background-color: var(--dark);
+    background-image: linear-gradient(135deg, rgba(150, 191, 48, 0.1) 0%, transparent 50%);
+  }
+  body.dark-mode #video-landing-hero .cs-read-more {
+    border-color: var(--primaryLight);
+    color: var(--primaryLight);
+  }
+  body.dark-mode #video-landing-hero .cs-read-more:hover {
+    background-color: var(--primaryLight);
+    color: var(--dark);
+  }
+}
+/*-- -------------------------- -->
+<---      Video Landing CTA     -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #video-landing-cta {
+    padding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+    background-color: #fff;
+  }
+  #video-landing-cta .cs-container {
+    width: 100%;
+    max-width: 50rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+  #video-landing-cta .cs-cta-content {
+    text-align: center;
+    width: 100%;
+    max-width: 37.5rem;
+  }
+  #video-landing-cta .cs-title {
+    color: var(--primary);
+    margin: 0 0 0.75rem 0;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    line-height: 1.3em;
+  }
+  #video-landing-cta .cs-text {
+    color: var(--bodyTextColor);
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6em;
+  }
+  #video-landing-cta .cs-form-wrapper {
+    width: 100%;
+    max-width: 37.5rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 0.625rem 2.5rem rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  #video-landing-cta .cs-form-wrapper iframe {
+    width: 100%;
+    min-height: 37.5rem;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #video-landing-cta .cs-form-wrapper {
+    border-radius: 1rem;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #video-landing-cta {
+    padding: clamp(5rem, 10vw, 8rem) 1rem;
+  }
+  #video-landing-cta .cs-container {
+    max-width: 56.25rem;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #video-landing-cta {
+    background-color: var(--dark);
+  }
+  body.dark-mode #video-landing-cta .cs-title {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #video-landing-cta .cs-text {
+    color: var(--bodyTextColorWhite);
+    opacity: 0.8;
+  }
+  body.dark-mode #video-landing-cta .cs-form-wrapper {
+    box-shadow: 0 0.625rem 2.5rem rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
