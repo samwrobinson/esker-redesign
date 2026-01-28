@@ -12,6 +12,7 @@ const configServer = require("./src/config/server");
 
 // Other
 const filterPostDate = require("./src/config/postDate");
+const filterIsoDate = require("./src/config/postDate").isoDate;
 const isProduction = configServer.isProduction;
 
 
@@ -104,6 +105,12 @@ module.exports = function (eleventyConfig) {
      *  https://moment.github.io/luxon/api-docs/index.html#datetime
      */
     eleventyConfig.addFilter("postDate", filterPostDate);
+
+    /**
+     *  ISO 8601 date format with timezone for structured data (VideoObject uploadDate, etc.)
+     *  Use - {{ "DATE GOES HERE" | isoDate }}
+     */
+    eleventyConfig.addFilter("isoDate", filterIsoDate);
     /**=====================================================================
                                     END FILTERS
     =======================================================================*/

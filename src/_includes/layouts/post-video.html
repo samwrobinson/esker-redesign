@@ -54,7 +54,7 @@
                 "name": "{{ videoTitle | default(title) }}",
                 "description": "{{ videoDescription | default(description) }}",
                 "thumbnailUrl": "https://i.ytimg.com/vi/{{ videoId }}/maxresdefault.jpg",
-                "uploadDate": "{{ videoUploadDate | default(date) | postDate }}",
+                "uploadDate": "{{ videoUploadDate | default(date) | isoDate }}",
                 "duration": "{{ videoDuration }}",
                 "contentUrl": "https://www.youtube.com/watch?v={{ videoId }}",
                 "embedUrl": "https://www.youtube.com/embed/{{ videoId }}",
@@ -80,7 +80,7 @@
                 "https://i.ytimg.com/vi/{{ videoId }}/sddefault.jpg",
                 "https://i.ytimg.com/vi/{{ videoId }}/hqdefault.jpg"
             ],
-            "uploadDate": "{{ videoUploadDate | default(date) | postDate }}",
+            "uploadDate": "{{ videoUploadDate | default(date) | isoDate }}",
             "duration": "{{ videoDuration }}",
             "contentUrl": "https://www.youtube.com/watch?v={{ videoId }}",
             "embedUrl": "https://www.youtube.com/embed/{{ videoId }}",
