@@ -66,7 +66,7 @@ It was mechanical, simple, and it worked really well... until it didn't.
 
 AI changed everything. Suddenly, anyone could mass-produce the kind of content that search engines favored at a scale never before seen, which resulted in lots of pages that all looked and sounded nearly identical. And you know what happens when Google is flooded with thousands of blogs, pages and other content that is virtually identical? It stops rewarding that kind of content.
 
-According to [Originality.ai's ongoing study](https://originality.ai/ai-content-in-google-search-results), AI-generated content now makes up nearly 17-19% of Google's search results, which has steadily climbed for the last 79 months, and shows no signs of stopping.
+According to [Originality.ai's ongoing study](https://originality.ai/ai-content-in-google-search-results), [AI content](https://bestlifetimedeals.com/shop/deals/ai-content-writers/) now makes up nearly 17-19% of Google's search results, which has steadily climbed for the last 79 months, and shows no signs of stopping.
 
 And as I previously mentioned, the risk here is that when everyone's doing the same thing, and writing the exact same AI generated content, Google stops rewarding it. Google's [March 2024 core update](https://searchengineland.com/library/platforms/google/google-algorithm-updates/helpful-content-update) was specifically targeted towards handling this type of low-quality and AI-generated spam.
 
