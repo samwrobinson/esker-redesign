@@ -33,9 +33,7 @@ collections:
                 label: "Layout",
                 name: "layout",
                 widget: "select",
-                options:
-                    - { label: "Standard Blog Post", value: "layouts/post.html" }
-                    - { label: "Video Blog Post", value: "layouts/post-video.html" }
+                options: [{ label: "Standard Blog Post", value: "layouts/post.html" }, { label: "Video Blog Post", value: "layouts/post-video.html" }],
                 default: "layouts/post.html",
                 hint: "Choose 'Video Blog Post' if this post has a featured YouTube video",
             }
