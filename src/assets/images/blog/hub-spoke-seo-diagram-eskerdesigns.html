@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hub & Spoke SEO Architecture — Newcomb Builders Case Study</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,700;1,300&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f14;
+    --surface: #161922;
+    --border: #242832;
+    --accent: #c8f060;
+    --accent2: #60a8f0;
+    --accent3: #f0a060;
+    --text: #e8eaf0;
+    --muted: #6b7180;
+    --hub: #1e2330;
+    --pillar: #171e2a;
+    --leaf: #141a24;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    min-height: 100vh;
+    padding: 48px 24px 64px;
+  }
+
+  .wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .subtitle {
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 56px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .stat {
+    flex: 1;
+    padding: 20px 24px;
+    border-right: 1px solid var(--border);
+    text-align: center;
+    background: var(--surface);
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-val {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent);
+    display: block;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* Architecture diagram */
+  .diagram {
+    position: relative;
+  }
+
+  /* Center hub */
+  .hub-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hub {
+    background: var(--accent);
+    color: #0d0f14;
+    border-radius: 12px;
+    padding: 18px 36px;
+    text-align: center;
+    position: relative;
+  }
+
+  .hub-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 4px;
+  }
+
+  .hub-title {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .hub-url {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    opacity: 0.7;
+    margin-top: 3px;
+  }
+
+  /* Connector lines SVG */
+  .connectors {
+    width: 100%;
+    overflow: visible;
+    display: block;
+    margin: 0;
+  }
+
+  /* Pillars row */
+  .pillars-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .pillar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .pillar {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 13px 10px;
+    text-align: center;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+
+  .pillar:hover { border-color: var(--accent2); }
+
+  .pillar.highlight {
+    border-color: var(--accent3);
+    background: #1e1a0f;
+  }
+
+  .pillar-icon {
+    font-size: 18px;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  .pillar-name {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .pillar-url {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  .pillar-badge {
+    position: absolute;
+    top: -8px;
+    right: -4px;
+    background: var(--accent3);
+    color: #0d0f14;
+    font-family: 'DM Mono', monospace;
+    font-size: 8px;
+    font-weight: 500;
+    padding: 2px 6px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+  }
+
+  /* Sub pages */
+  .sub-page {
+    width: 100%;
+    background: var(--leaf);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 9px 10px;
+    text-align: center;
+  }
+
+  .sub-page-name {
+    font-size: 10.5px;
+    color: var(--muted);
+    line-height: 1.3;
+  }
+
+  .sub-page-url {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    color: #3d4455;
+    margin-top: 2px;
+  }
+
+  /* Location row */
+  .locations-section {
+    margin-top: 28px;
+  }
+
+  .section-label {
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .locations-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .location {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent2);
+    border-radius: 8px;
+    padding: 12px 14px;
+    text-align: center;
+  }
+
+  .location-icon { font-size: 16px; margin-bottom: 4px; display: block; }
+
+  .location-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .location-url {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* Key insights */
+  .insights {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .insight {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .insight-num {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .insight-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .insight-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .insight-desc strong {
+    color: var(--accent3);
+    font-weight: 500;
+  }
+
+  /* Top keyword callout */
+  .keyword-callout {
+    margin-top: 14px;
+    background: #0f1a0f;
+    border: 1px solid #2a3a1a;
+    border-left: 3px solid var(--accent);
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .kw-group {
+    flex: 1;
+  }
+
+  .kw-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+
+  .kw-term {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+  }
+
+  .kw-stat {
+    text-align: right;
+  }
+
+  .kw-num {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    display: block;
+    line-height: 1;
+  }
+
+  .kw-unit {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  /* SVG connector */
+  .connector-wrap {
+    height: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  .connector-wrap svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  /* Footer credit */
+  .credit {
+    margin-top: 40px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .credit-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  .credit-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+  }
+
+  .credit-link:hover { text-decoration: underline; }
+
+  .credit-dot {
+    width: 4px;
+    height: 4px;
+    background: var(--border);
+    border-radius: 50%;
+  }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    .pillars-row { grid-template-columns: repeat(3, 1fr); }
+    .stats-bar { flex-wrap: wrap; }
+    .stat { border-right: none; border-bottom: 1px solid var(--border); }
+    .insights { grid-template-columns: 1fr; }
+    .locations-row { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <span class="eyebrow">SEO Case Study · Content Architecture</span>
+    <h1>Hub & Spoke SEO:<br><em>How 15 Pages Generated<br>41,400 Impressions</em></h1>
+    <p class="subtitle">A real content architecture built for a Central Maine general contractor — from zero to 409 clicks and 41K impressions in 6 months.</p>
+  </div>
+
+  <!-- Stats bar -->
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-val">41.4K</span>
+      <span class="stat-label">Impressions / 6 mo</span>
+    </div>
+    <div class="stat">
+      <span class="stat-val">409</span>
+      <span class="stat-label">Total Clicks</span>
+    </div>
+    <div class="stat">
+      <span class="stat-val">29.5</span>
+      <span class="stat-label">Avg Position</span>
+    </div>
+    <div class="stat">
+      <span class="stat-val">15</span>
+      <span class="stat-label">Pages Built</span>
+    </div>
+    <div class="stat">
+      <span class="stat-val">~6mo</span>
+      <span class="stat-label">Time to Traction</span>
+    </div>
+  </div>
+
+  <!-- Diagram -->
+  <div class="diagram">
+
+    <!-- Hub -->
+    <div class="hub-row">
+      <div class="hub">
+        <div class="hub-label">Homepage · Hub</div>
+        <div class="hub-title">newcombbuildersme.com</div>
+        <div class="hub-url">General Contractor · Central Maine</div>
+      </div>
+    </div>
+
+    <!-- Connector hub → pillars (drawn with CSS border trick) -->
+    <div style="height:32px; display:flex; justify-content:center;">
+      <div style="width:2px; background: linear-gradient(to bottom, var(--accent), var(--border)); height:100%;"></div>
+    </div>
+
+    <!-- Service Pillar Pages -->
+    <div style="text-align:center; margin-bottom:12px;">
+      <span class="eyebrow" style="margin:0;">Service Pillar Pages</span>
+    </div>
+
+    <div class="pillars-row">
+
+      <!-- New Construction -->
+      <div class="pillar-col">
+        <div class="pillar">
+          <span class="pillar-icon">🏗️</span>
+          <div class="pillar-name">New Construction</div>
+          <div class="pillar-url">/new-construction/</div>
+        </div>
+      </div>
+
+      <!-- Renovations pillar with sub-pages -->
+      <div class="pillar-col">
+        <div class="pillar">
+          <span class="pillar-icon">🔨</span>
+          <div class="pillar-name">Renovations</div>
+          <div class="pillar-url">/renovations/</div>
+        </div>
+        <div style="width:2px; height:10px; background:var(--border); margin:0 auto;"></div>
+        <div class="sub-page">
+          <div class="sub-page-name">Kitchen Remodeling</div>
+          <div class="sub-page-url">/renovations/kitchen/</div>
+        </div>
+        <div style="width:2px; height:6px; background:var(--border); margin:0 auto;"></div>
+        <div class="sub-page">
+          <div class="sub-page-name">Bathroom Remodeling</div>
+          <div class="sub-page-url">/renovations/bathroom/</div>
+        </div>
+      </div>
+
+      <!-- ADUs — highlighted as breakout -->
+      <div class="pillar-col">
+        <div class="pillar highlight">
+          <span class="pillar-badge">★ 2,500+ impressions</span>
+          <span class="pillar-icon">🏠</span>
+          <div class="pillar-name">ADUs</div>
+          <div class="pillar-url">/adus/</div>
+        </div>
+      </div>
+
+      <!-- Decks -->
+      <div class="pillar-col">
+        <div class="pillar">
+          <span class="pillar-icon">🌲</span>
+          <div class="pillar-name">Decks & Porches</div>
+          <div class="pillar-url">/decks/</div>
+        </div>
+      </div>
+
+      <!-- More services col -->
+      <div class="pillar-col">
+        <div class="pillar">
+          <span class="pillar-icon">🏠</span>
+          <div class="pillar-name">Home Additions</div>
+          <div class="pillar-url">/home-additions/</div>
+        </div>
+        <div style="width:2px; height:6px; background:var(--border); margin:0 auto;"></div>
+        <div class="sub-page">
+          <div class="sub-page-name">Roofing</div>
+          <div class="sub-page-url">/roofing/</div>
+        </div>
+        <div style="width:2px; height:6px; background:var(--border); margin:0 auto;"></div>
+        <div class="sub-page">
+          <div class="sub-page-name">Concrete</div>
+          <div class="sub-page-url">/concrete/</div>
+        </div>
+        <div style="width:2px; height:6px; background:var(--border); margin:0 auto;"></div>
+        <div class="sub-page">
+          <div class="sub-page-name">Foundations</div>
+          <div class="sub-page-url">/foundations/</div>
+        </div>
+        <div style="width:2px; height:6px; background:var(--border); margin:0 auto;"></div>
+        <div class="sub-page">
+          <div class="sub-page-name">Patios</div>
+          <div class="sub-page-url">/patios/</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Location Pages -->
+    <div class="locations-section">
+      <div style="height:24px; display:flex; justify-content:center;">
+        <div style="width:2px; background: linear-gradient(to bottom, var(--border), var(--accent2)); height:100%;"></div>
+      </div>
+      <div class="section-label">Location / City Pages</div>
+      <div class="locations-row">
+        <div class="location">
+          <span class="location-icon">📍</span>
+          <div class="location-name">Portland</div>
+          <div class="location-url">/portland/</div>
+        </div>
+        <div class="location">
+          <span class="location-icon">📍</span>
+          <div class="location-name">Lewiston</div>
+          <div class="location-url">/lewiston/</div>
+        </div>
+        <div class="location">
+          <span class="location-icon">📍</span>
+          <div class="location-name">Auburn</div>
+          <div class="location-url">/auburn/</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top keyword callout -->
+    <div style="margin-top:28px; margin-bottom:0;">
+      <div class="section-label" style="margin-bottom:10px;">Breakout keyword — single dedicated page</div>
+      <div class="keyword-callout">
+        <div class="kw-group">
+          <div class="kw-label">Top performing query</div>
+          <div class="kw-term">"adu builders near me"</div>
+        </div>
+        <div style="width:1px; height:36px; background:var(--border);"></div>
+        <div class="kw-stat">
+          <span class="kw-num">1,638</span>
+          <span class="kw-unit">IMPRESSIONS</span>
+        </div>
+        <div style="width:1px; height:36px; background:var(--border);"></div>
+        <div class="kw-stat">
+          <span class="kw-num">8</span>
+          <span class="kw-unit">CLICKS</span>
+        </div>
+        <div style="width:1px; height:36px; background:var(--border);"></div>
+        <div class="kw-stat">
+          <span class="kw-num" style="color:var(--accent3);">~2,500+</span>
+          <span class="kw-unit">ADU CLUSTER TOTAL</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Insights -->
+  <div class="insights">
+    <div class="insight">
+      <div class="insight-num">01</div>
+      <div class="insight-title">One page per service, not one page for all</div>
+      <div class="insight-desc">Each service gets its own URL with dedicated copy, keywords, and FAQ schema. <strong>Google can't rank a page for 10 different services</strong> — it needs clear, singular intent.</div>
+    </div>
+    <div class="insight">
+      <div class="insight-num">02</div>
+      <div class="insight-title">Location pages capture city-level searches</div>
+      <div class="insight-desc">Pages for Portland, Lewiston, and Auburn each target <strong>city + service keyword combinations</strong> that the homepage and service pages can't rank for alone.</div>
+    </div>
+    <div class="insight">
+      <div class="insight-num">03</div>
+      <div class="insight-title">The ADU page found a gap nobody was filling</div>
+      <div class="insight-desc">No competitor had a dedicated ADU page in Maine. <strong>One well-structured page for an underserved niche</strong> became the single biggest traffic driver on the site.</div>
+    </div>
+  </div>
+
+  <!-- Credit -->
+  <div class="credit">
+    <span class="credit-text">DIAGRAM BY</span>
+    <div class="credit-dot"></div>
+    <a href="https://eskerdesigns.com" class="credit-link" target="_blank">ESKERDESIGNS.COM</a>
+    <div class="credit-dot"></div>
+    <span class="credit-text">SAM ROBINSON · 2026</span>
+    <div class="credit-dot"></div>
+    <span class="credit-text">SHARE WITH CREDIT</span>
+  </div>
+
+</div>
+</body>
+</html>
