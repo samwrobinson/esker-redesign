@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metal Vista Roofing — Growth Chart</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: transparent; }
+  .chart-shell {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 28px 24px 20px;
+    max-width: 780px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #ddeebb;
+    border-radius: 10px;
+  }
+  .chart-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .chart-title {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    color: #1c3010;
+    font-weight: 700;
+  }
+  .chart-note {
+    font-size: 11px;
+    color: #8aaa6a;
+    letter-spacing: 0.04em;
+  }
+  .chart-legend {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 16px;
+    margin-top: 8px;
+  }
+  .leg-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #5a7a3a;
+  }
+  .leg-swatch { width: 12px; height: 12px; border-radius: 2px; }
+  .chart-footer {
+    font-size: 11px;
+    color: #9ab07a;
+    text-align: center;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid #eef5e4;
+  }
+</style>
+</head>
+<body>
+<div class="chart-shell">
+  <div class="chart-top">
+    <div class="chart-title">Impressions &amp; Clicks Over Time</div>
+    <div class="chart-note">* Sept &amp; Mar = partial months</div>
+  </div>
+  <div class="chart-legend">
+    <div class="leg-item">
+      <div class="leg-swatch" style="background:#3b6d11;"></div>
+      Monthly impressions
+    </div>
+    <div class="leg-item">
+      <div class="leg-swatch" style="background:#c49a3c; border-radius:50%;"></div>
+      Monthly clicks
+    </div>
+  </div>
+  <div style="position:relative; width:100%; height:300px;">
+    <canvas id="growthChart"></canvas>
+  </div>
+  <div class="chart-footer">
+    Real data from Google Search Console &nbsp;·&nbsp; metalvistaroofing.com &nbsp;·&nbsp; Sept 2025 – Mar 2026
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+  const labels = ['Sep*', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar*'];
+  const impr   = [601, 1375, 1828, 1954, 2057, 2332, 1777];
+  const clicks = [6, 34, 37, 25, 29, 33, 26];
+  const partial = [true, false, false, false, false, false, true];
+
+  new Chart(document.getElementById('growthChart'), {
+    data: {
+      labels,
+      datasets: [
+        {
+          type: 'bar',
+          label: 'Impressions',
+          data: impr,
+          backgroundColor: impr.map((v, i) => partial[i] ? '#a8d080' : '#3b6d11'),
+          borderRadius: 4,
+          yAxisID: 'yImpr',
+          order: 2
+        },
+        {
+          type: 'line',
+          label: 'Clicks',
+          data: clicks,
+          borderColor: '#c49a3c',
+          backgroundColor: '#c49a3c',
+          pointBackgroundColor: clicks.map((v, i) => partial[i] ? '#e8c878' : '#c49a3c'),
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          borderWidth: 2.5,
+          tension: 0.35,
+          yAxisID: 'yClicks',
+          order: 1
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => {
+              if (ctx.datasetIndex === 0) return ' Impressions: ' + ctx.parsed.y.toLocaleString();
+              return ' Clicks: ' + ctx.parsed.y;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { color: '#5a7a3a', font: { size: 12 } },
+          border: { color: '#d4e6b8' }
+        },
+        yImpr: {
+          position: 'left',
+          grid: { color: '#f0f7e6' },
+          ticks: {
+            color: '#5a7a3a',
+            font: { size: 11 },
+            callback: v => v >= 1000 ? (v / 1000).toFixed(1) + 'K' : v
+          },
+          border: { display: false },
+          title: { display: true, text: 'Impressions', color: '#3b6d11', font: { size: 11 } }
+        },
+        yClicks: {
+          position: 'right',
+          grid: { display: false },
+          ticks: { color: '#c49a3c', font: { size: 11 } },
+          border: { display: false },
+          title: { display: true, text: 'Clicks', color: '#c49a3c', font: { size: 11 } },
+          max: 60
+        }
+      }
+    }
+  });
+</script>
+</body>
+</html>

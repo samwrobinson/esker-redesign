@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metal Vista Roofing — Top Pages</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: transparent; }
+  .pages-shell {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 28px 24px 20px;
+    max-width: 780px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #ddeebb;
+    border-radius: 10px;
+  }
+  .pages-title {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    color: #1c3010;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .pages-sub {
+    font-size: 12px;
+    color: #8aaa6a;
+    margin-bottom: 20px;
+  }
+  .pg-legend {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .pg-leg {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: #5a7a3a;
+  }
+  .pg-swatch { width: 10px; height: 10px; border-radius: 2px; }
+  .pg-row { margin-bottom: 16px; }
+  .pg-label {
+    font-size: 13px;
+    color: #2c4c1a;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .pg-label span {
+    font-size: 11px;
+    color: #8aaa6a;
+    font-weight: 400;
+  }
+  .pg-bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 3px;
+  }
+  .pg-bar-track {
+    flex: 1;
+    height: 10px;
+    background: #eef5e4;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .pg-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+  }
+  .pg-bar-val {
+    font-size: 11px;
+    width: 58px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .pages-footer {
+    font-size: 11px;
+    color: #9ab07a;
+    text-align: center;
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px solid #eef5e4;
+  }
+</style>
+</head>
+<body>
+<div class="pages-shell">
+  <div class="pages-title">Top Pages by Performance</div>
+  <div class="pages-sub">6-month totals — clicks &amp; impressions per page &nbsp;·&nbsp; Sept 2025 – Mar 2026</div>
+  <div class="pg-legend">
+    <div class="pg-leg"><div class="pg-swatch" style="background:#3b6d11;"></div>Impressions</div>
+    <div class="pg-leg"><div class="pg-swatch" style="background:#c49a3c;"></div>Clicks</div>
+  </div>
+  <div id="pages-list"></div>
+  <div class="pages-footer">
+    Source: Google Search Console &nbsp;·&nbsp; metalvistaroofing.com
+  </div>
+</div>
+<script>
+  const pages = [
+    { label: 'Homepage', clicks: 152, impr: 6636 },
+    { label: 'Roof Repair & Maintenance', clicks: 8, impr: 1476 },
+    { label: 'Malone, NY — location page', clicks: 3, impr: 1033 },
+    { label: 'Peru, NY — location page', clicks: 7, impr: 874 },
+    { label: 'Contact page', clicks: 6, impr: 904 },
+    { label: 'Plattsburgh, NY — location page', clicks: 8, impr: 660 },
+    { label: 'Standing Seam Metal Roofing', clicks: 2, impr: 748 },
+    { label: 'Asphalt Shingle Roofing', clicks: 1, impr: 596 },
+  ];
+
+  const maxImpr   = Math.max(...pages.map(p => p.impr));
+  const maxClicks = Math.max(...pages.map(p => p.clicks));
+  const container = document.getElementById('pages-list');
+
+  pages.forEach(p => {
+    const iw = Math.round((p.impr / maxImpr) * 100);
+    const cw = Math.round((p.clicks / maxClicks) * 100);
+    const row = document.createElement('div');
+    row.className = 'pg-row';
+    row.innerHTML = `
+      <div class="pg-label">
+        ${p.label}
+        <span>${p.impr.toLocaleString()} impressions &nbsp;·&nbsp; ${p.clicks} clicks</span>
+      </div>
+      <div class="pg-bar-wrap">
+        <div class="pg-bar-track">
+          <div class="pg-bar-fill" style="width:${iw}%; background:#3b6d11;"></div>
+        </div>
+        <div class="pg-bar-val" style="color:#3b6d11;">${p.impr.toLocaleString()}</div>
+      </div>
+      <div class="pg-bar-wrap">
+        <div class="pg-bar-track">
+          <div class="pg-bar-fill" style="width:${cw}%; background:#c49a3c;"></div>
+        </div>
+        <div class="pg-bar-val" style="color:#c49a3c;">${p.clicks} clicks</div>
+      </div>`;
+    container.appendChild(row);
+  });
+</script>
+</body>
+</html>
