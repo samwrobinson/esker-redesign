@@ -328,7 +328,7 @@
     font-size: clamp(1rem, 2vw, 1.125rem);
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.9);
-    margin: 0 0 1rem;
+    margin: 0;
   }
   #fb-hero h2 {
     font-size: clamp(1.25rem, 3vw, 1.75rem);
@@ -1028,6 +1028,16 @@
   #fb-hero .cs-container {
     max-width: 60rem;
   }
+  #fb-hero .cs-content {
+    max-width: 80rem;
+  }
+  #fb-hero .cs-content .cs-text {
+    max-width: none;
+    margin-bottom: 1rem;
+  }
+  #fb-hero .cs-content .cs-text:last-of-type {
+    margin-bottom: none;
+  }
   #fb-hero .cs-video-wrapper {
     max-width: 55rem;
   }
@@ -1471,7 +1481,7 @@
     margin-bottom: 2rem;
   }
   #sbs-1640 .cs-button-solid {
-    max-width: none;
+    max-width: 15rem;
     margin: auto;
   }
   #sbs-1640 .cs-picture-2 {
