@@ -6,6 +6,10 @@
 /* Mobile - 0px */
 @media only screen and (min-width: 0rem) {
 
+    #cs-navigation {
+        display: none;
+    }
+
     // Base font styles for this landing page
     #fb-hero,
     #fb-trust,
@@ -42,7 +46,7 @@
     <--- -------------------------- -*/
 
     #fb-hero {
-        padding: clamp(9rem, 20vw, 12rem) 1rem clamp(3.75rem, 7.82vw, 6.25rem);
+        padding: clamp(5rem, 13vw, 8rem) 1rem clamp(3.75rem, 7.82vw, 6.25rem);
         background:
             // Subtle top glow
             radial-gradient(ellipse 80% 50% at 50% 0%, rgba(150, 191, 48, 0.15) 0%, transparent 50%),
@@ -982,7 +986,6 @@
 @media only screen and (min-width: 64rem) {
 
     #fb-hero {
-        padding: clamp(10rem, 15vw, 14rem) 1rem clamp(5rem, 10vw, 8rem);
 
         .cs-container {
             max-width: 60rem;

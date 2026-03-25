@@ -3,6 +3,9 @@
 <--- -------------------------- -*/
 /* Mobile - 0px */
 @media only screen and (min-width: 0rem) {
+  #cs-navigation {
+    display: none;
+  }
   #fb-hero,
   #fb-trust,
   #sbs-1640,
@@ -268,7 +271,7 @@
     <---          Hero Video          -->
     <--- -------------------------- -*/
   #fb-hero {
-    padding: clamp(9rem, 20vw, 12rem) 1rem clamp(3.75rem, 7.82vw, 6.25rem);
+    padding: clamp(5rem, 13vw, 8rem) 1rem clamp(3.75rem, 7.82vw, 6.25rem);
     background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(150, 191, 48, 0.15) 0%, transparent 50%), radial-gradient(ellipse 60% 30% at 50% 35%, rgba(150, 191, 48, 0.08) 0%, transparent 60%), linear-gradient(180deg, #0a0f05 0%, #0d1408 20%, #111a0c 40%, #0d1408 70%, #0a0f05 100%);
     position: relative;
     overflow: hidden;
@@ -325,7 +328,7 @@
     font-size: clamp(1rem, 2vw, 1.125rem);
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.9);
-    margin: 0;
+    margin: 0 0 1rem;
   }
   #fb-hero h2 {
     font-size: clamp(1.25rem, 3vw, 1.75rem);
@@ -1022,9 +1025,6 @@
 }
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-  #fb-hero {
-    padding: clamp(10rem, 15vw, 14rem) 1rem clamp(5rem, 10vw, 8rem);
-  }
   #fb-hero .cs-container {
     max-width: 60rem;
   }
@@ -1471,7 +1471,7 @@
     margin-bottom: 2rem;
   }
   #sbs-1640 .cs-button-solid {
-    max-width: 15rem;
+    max-width: none;
     margin: auto;
   }
   #sbs-1640 .cs-picture-2 {
