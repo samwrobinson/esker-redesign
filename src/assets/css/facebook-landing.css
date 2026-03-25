@@ -335,9 +335,12 @@
     font-weight: 700;
     color: #fff;
     margin: 0 0 1rem;
+    overflow-wrap: normal;
+    word-break: keep-all;
   }
   #fb-hero .cs-accent {
     color: var(--primaryLight);
+    white-space: nowrap;
   }
   #fb-hero .cs-squiggle {
     position: relative;
