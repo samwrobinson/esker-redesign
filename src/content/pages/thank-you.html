@@ -1,0 +1,42 @@
+---
+title: 'Thank You | Esker Designs'
+description: 'Thanks for reaching out. I will be in touch within 24 hours.'
+preloadImg: '/assets/images/logo.webp'
+permalink: '/thank-you/'
+eleventyExcludeFromCollections: true
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/assets/css/facebook-landing.css">
+<style>
+  #cs-navigation { display: none !important; }
+  body { padding-top: 0 !important; }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<script>
+  if (document.referrer === '' || !document.referrer.includes('eskerdesigns.com')) {
+    window.location.href = '/';
+  }
+  if (typeof fbq === 'function') {
+    fbq('track', 'Lead', { content_name: 'Facebook Landing' });
+  }
+</script>
+
+<section id="fb-hero" style="min-height:80vh;display:flex;align-items:center;justify-content:center;">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Thanks for Reaching Out!</h1>
+            <p class="cs-text">
+                I'll be in touch within 24 hours. In the meantime, feel free to check out some of the work I've done for other small businesses.
+            </p>
+            <a href="/" class="cs-button-solid">Back to Homepage</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
