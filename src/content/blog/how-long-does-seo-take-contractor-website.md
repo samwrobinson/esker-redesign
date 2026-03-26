@@ -112,7 +112,7 @@ A slow or poorly coded site. A template that looks fine visually but loads in ei
 
 No GBP, or one that's been set up and left incomplete. An incomplete profile sends the same signal as a half-finished business card.
 
-Thin content. A five-page brochure site with 100 words per page gives Google almost nothing to work with. There's no topical depth, no geographic specificity, no reason to rank it above someone who put in the effort.
+Thin content. A five-page brochure site with 100 words per page gives Google almost nothing to work with. There's no topical depth, no geographic specificity, no reason to rank it above someone who put in the effort. If writing copy feels like a roadblock, our [free contractor copy generator](/tools/copy-generator/) can help you get real content on the page fast.
 
 And the biggest one: stopping at month two because "it's not working."
 

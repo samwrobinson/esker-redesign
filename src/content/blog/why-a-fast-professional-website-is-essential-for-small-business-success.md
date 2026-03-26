@@ -43,7 +43,7 @@ Key Takeaway: A fast, professional website boosts your SEO efforts, leading to i
 
 Your website is a direct reflection of your brand. It’s an opportunity to showcase what makes your business unique—your values, products, and services. A professional website can convey your brand’s personality, connect with your target audience, and differentiate you from competitors. Investing in a professional website design ensures your site accurately reflects your business and its offerings, whether you're a farm-to-table restaurant in Waterbury or a local artist in Warren.
 
-Key Takeaway: Your website should tell your brand’s story clearly, engagingly, and professionally to resonate with the Central Vermont community.
+Key Takeaway: Your website should tell your brand’s story clearly, engagingly, and professionally to resonate with the Central Vermont community. Not sure where to start with your website copy? Our [free contractor copy generator](/tools/copy-generator/) can help you draft compelling homepage content in minutes.
 
 **Mobile Optimization Is a Must in Vermont’s Outdoor Culture**
 

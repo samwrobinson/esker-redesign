@@ -46,7 +46,7 @@ In summary, the SEO benefits of hiring a professional copywriter are crucial for
 
 ## 4. Key Strategies for Homepage Content
 
-Your homepage is often the first impression visitors have of your business, making it crucial to get the content right. Start with a strong headline that grabs attention, such as "Transform Your Space with Expert Interior Design". Follow this with a subheading that succinctly clarifies your value proposition, like "Tailored design solutions that reflect your unique style and needs". 
+Your homepage is often the first impression visitors have of your business, making it crucial to get the content right. If you're a contractor and want a head start, try our [free contractor copy generator](/tools/copy-generator/) — it'll give you a solid homepage draft in minutes. Start with a strong headline that grabs attention, such as "Transform Your Space with Expert Interior Design". Follow this with a subheading that succinctly clarifies your value proposition, like "Tailored design solutions that reflect your unique style and needs".
 
 Use bullet points to highlight key benefits for quick readability, for instance, "Personalized consultations, Comprehensive project management, and Budget-friendly options". Finally, incorporate a clear call-to-action (CTA) like "Schedule Your Free Consultation Today" to guide users towards the next step.
 

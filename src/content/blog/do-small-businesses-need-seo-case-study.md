@@ -130,7 +130,7 @@ Here's what went into each service page:
 
 **FAQPage schema markup.** Every service page has a full FAQ section with structured data. This gives the page a chance to show up in the "People Also Ask" boxes in search results — free additional visibility that most contractors never bother with.
 
-**A clear call to action with the phone number.** Every page ends with a direct prompt to call. The goal of all of this is a phone ringing, not a nice-looking website.
+**A clear call to action with the phone number.** Every page ends with a direct prompt to call. The goal of all of this is a phone ringing, not a nice-looking website. Writing this kind of copy doesn't have to be painful, either — if you want a head start, try our [free contractor copy generator](/tools/copy-generator/).
 
 **Internal links between related pages.** The bathroom remodeling page links to the home additions page. The foundations page links to the concrete page. This internal linking structure tells Google how the pages relate to each other, reinforces topical authority, and passes link equity around the site.
 

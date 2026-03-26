@@ -133,7 +133,7 @@ Exploring email marketing campaigns could also nurture leads over time. Sending 
 
 Additionally, there is potential for targeted advertising. By utilizing platforms like Google Ads or Facebook Ads, Peak Painting could reach specific demographics or local areas, ensuring their marketing efforts are more effective.
 
-[Website improvements](https://www.eskerdesigns.com/blog/website-importance/) were also suggested, such as optimizing for mobile devices and enhancing user experience. A smoother, more visually appealing website can lead to higher conversion rates.
+[Website improvements](https://www.eskerdesigns.com/blog/website-importance/) were also suggested, such as optimizing for mobile devices and enhancing user experience. A smoother, more visually appealing website can lead to higher conversion rates. For contractors looking to strengthen their website content, our [free copy generator tool](/tools/copy-generator/) can help you craft compelling homepage copy in just a few clicks.
 
 Establishing a referral program could incentivize satisfied customers to recommend Peak Painting to others. This word-of-mouth marketing is often one of the most powerful tools a business can have.
 

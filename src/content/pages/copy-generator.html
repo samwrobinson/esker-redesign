@@ -1,0 +1,335 @@
+---
+title: 'Free Contractor Homepage Copy Generator | Esker Designs'
+description: 'Get a full homepage copy blueprint for your contractor website in 60 seconds — SEO keywords, page structure, and conversion-focused copy. Free.'
+preloadImg: '/assets/images/logo.webp'
+permalink: 'tools/copy-generator/'
+eleventyExcludeFromCollections: true
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/assets/css/copy-generator.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    LANDING                   -->
+<!-- ============================================ -->
+
+<section id="int-hero">
+    <h1 id="home-h">Free Contractor Copy Generator</h1>
+    <svg class="cs-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,192L120,213.3C240,235,480,277,720,277.3C960,277,1200,235,1320,213.3L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+    <svg class="cs-wave cs-dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#061521" fill-opacity="1" d="M0,192L120,213.3C240,235,480,277,720,277.3C960,277,1200,235,1320,213.3L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+</section>
+
+<!-- ============================================ -->
+<!--              Copy Generator Tool             -->
+<!-- ============================================ -->
+
+<section id="copy-generator">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Get a full homepage blueprint for your contractor website — <span class="emphasis">free.</span></h2>
+            <p class="cs-text">Tell us about your business and we'll generate SEO keywords, page structure, and conversion-focused copy for every section of your homepage.</p>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div class="cg-progress" id="cg-progress">
+            <div class="cg-progress-step active" data-step="1">
+                <span class="cg-progress-dot">1</span>
+                <span>About You</span>
+            </div>
+            <div class="cg-progress-divider"></div>
+            <div class="cg-progress-step" data-step="2">
+                <span class="cg-progress-dot">2</span>
+                <span>What Sets You Apart</span>
+            </div>
+            <div class="cg-progress-divider"></div>
+            <div class="cg-progress-step" data-step="3">
+                <span class="cg-progress-dot">3</span>
+                <span>Your Blueprint</span>
+            </div>
+        </div>
+
+        <!-- Step 1: Who are you? -->
+        <div class="cg-step active" id="cg-step-1">
+            <h3>Who are you?</h3>
+            <div class="cg-field">
+                <label for="cg-trade">Your trade</label>
+                <select id="cg-trade">
+                    <option value="" disabled selected>Select your trade</option>
+                    <option value="Plumber">Plumber</option>
+                    <option value="Electrician">Electrician</option>
+                    <option value="Roofer">Roofer</option>
+                    <option value="Painter">Painter</option>
+                    <option value="Landscaper">Landscaper</option>
+                    <option value="HVAC">HVAC</option>
+                    <option value="Carpenter">Carpenter</option>
+                    <option value="General Contractor">General Contractor</option>
+                    <option value="Other">Other</option>
+                </select>
+                <div id="cg-other-trade-field">
+                    <input type="text" id="cg-other-trade" placeholder="What's your trade?">
+                </div>
+            </div>
+            <div class="cg-field">
+                <label for="cg-city">City / Region</label>
+                <input type="text" id="cg-city" placeholder="e.g. Burlington, VT">
+            </div>
+            <div class="cg-btn-row">
+                <button class="cg-btn cg-btn-primary" onclick="cgNextStep(2)">Next</button>
+            </div>
+        </div>
+
+        <!-- Step 2: What sets you apart? -->
+        <div class="cg-step" id="cg-step-2">
+            <h3>What sets you apart?</h3>
+            <div class="cg-field">
+                <label for="cg-compliment">What do customers always compliment you on?</label>
+                <textarea id="cg-compliment" placeholder="e.g. we always clean up after ourselves, same-day responses"></textarea>
+            </div>
+            <div class="cg-field">
+                <label for="cg-problem">What problem do you solve better than anyone?</label>
+                <textarea id="cg-problem" placeholder="e.g. we actually show up when we say we will"></textarea>
+            </div>
+            <div class="cg-field">
+                <label for="cg-experience">How long have you been doing this?</label>
+                <input type="text" id="cg-experience" placeholder="e.g. 12 years, family business since 1998">
+            </div>
+            <div class="cg-btn-row">
+                <button class="cg-btn cg-btn-secondary" onclick="cgNextStep(1)">Back</button>
+                <button class="cg-btn cg-btn-primary" onclick="cgGenerate()">Generate My Blueprint</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Results -->
+        <div class="cg-step" id="cg-step-3">
+            <!-- Loading state -->
+            <div id="cg-loading" class="cg-loading">
+                <div class="cg-spinner"></div>
+                <p>Building your homepage blueprint...</p>
+                <p class="cg-loading-sub">This takes about 15-20 seconds — we're doing real keyword research and writing copy for every section.</p>
+            </div>
+
+            <!-- Error state -->
+            <div id="cg-error" class="cg-error" style="display:none;">
+                <p>Something went wrong — try again in a sec.</p>
+                <button class="cg-btn cg-btn-primary" onclick="cgGenerate()">Try Again</button>
+            </div>
+
+            <!-- Results Preview -->
+            <div id="cg-results" style="display:none;">
+                <div class="cg-results-card">
+                    <div class="cg-results-card-header">
+                        <span>Homepage Blueprint Preview</span>
+                    </div>
+                    <div class="cg-preview-section">
+                        <span class="cg-tag-label">Title Tag</span>
+                        <p id="cg-preview-title" class="cg-preview-title"></p>
+                    </div>
+                    <div class="cg-preview-section">
+                        <span class="cg-tag-label">H1</span>
+                        <h2 id="cg-preview-h1"></h2>
+                    </div>
+                    <div id="cg-blurred-content" class="cg-blurred">
+                        <div class="cg-preview-section">
+                            <span class="cg-tag-label">Meta Description</span>
+                            <p id="cg-preview-meta"></p>
+                        </div>
+                        <div class="cg-preview-section">
+                            <span class="cg-tag-label">H2 — Services</span>
+                            <p id="cg-preview-services"></p>
+                        </div>
+                        <div class="cg-preview-section">
+                            <span class="cg-tag-label">+ 5 more sections</span>
+                            <p class="cg-preview-teaser">Keywords, social proof, about section, service area, CTA...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="cg-email-gate" id="cg-email-gate" name="copy-generator-leads" method="POST" netlify netlify-honeypot="bot-field" onsubmit="return cgSubmitEmail(event)">
+                    <input type="hidden" name="form-name" value="copy-generator-leads">
+                    <input type="hidden" name="trade" id="cg-lead-trade">
+                    <input type="hidden" name="city" id="cg-lead-city">
+                    <p class="cg-hidden" style="display:none;"><input name="bot-field"></p>
+                    <label for="cg-email">Where should we send the full blueprint? No drip sequences, no pitches — just your copy.</label>
+                    <div class="cg-email-row">
+                        <input type="email" name="email" id="cg-email" placeholder="you@company.com" required>
+                        <button type="submit" class="cg-btn cg-btn-primary">Send my blueprint</button>
+                    </div>
+                    <p class="cg-small-print">No spam. Unsubscribe any time.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    /* ============================================
+       State
+       ============================================ */
+    var cgData = null;
+
+    /* ============================================
+       Step Navigation
+       ============================================ */
+    function cgNextStep(step) {
+        // Validate step 1
+        if (step === 2) {
+            var trade = document.getElementById('cg-trade').value;
+            var city = document.getElementById('cg-city').value.trim();
+            var otherTrade = document.getElementById('cg-other-trade').value.trim();
+            if (!trade || (trade === 'Other' && !otherTrade) || !city) {
+                alert('Please fill out all fields.');
+                return;
+            }
+        }
+
+        // Hide all steps
+        document.querySelectorAll('.cg-step').forEach(function(s) {
+            s.classList.remove('active');
+        });
+
+        // Show target step
+        document.getElementById('cg-step-' + step).classList.add('active');
+
+        // Update progress
+        document.querySelectorAll('.cg-progress-step').forEach(function(el) {
+            var s = parseInt(el.getAttribute('data-step'));
+            el.classList.remove('active', 'completed');
+            if (s === step) el.classList.add('active');
+            else if (s < step) el.classList.add('completed');
+        });
+    }
+
+    /* ============================================
+       Show/Hide Other Trade
+       ============================================ */
+    document.getElementById('cg-trade').addEventListener('change', function() {
+        document.getElementById('cg-other-trade-field').style.display =
+            this.value === 'Other' ? 'block' : 'none';
+    });
+
+    /* ============================================
+       Generate Copy via Netlify Function
+       ============================================ */
+    async function cgGenerate() {
+        var tradeSelect = document.getElementById('cg-trade').value;
+        var trade = tradeSelect === 'Other'
+            ? document.getElementById('cg-other-trade').value.trim()
+            : tradeSelect;
+        var city = document.getElementById('cg-city').value.trim();
+        var compliment = document.getElementById('cg-compliment').value.trim();
+        var problem = document.getElementById('cg-problem').value.trim();
+        var experience = document.getElementById('cg-experience').value.trim();
+
+        if (!compliment || !problem || !experience) {
+            alert('Please fill out all fields.');
+            return;
+        }
+
+        // Move to step 3 and show loading
+        cgNextStep(3);
+        document.getElementById('cg-loading').style.display = 'block';
+        document.getElementById('cg-error').style.display = 'none';
+        document.getElementById('cg-results').style.display = 'none';
+
+        try {
+            var response = await fetch('/.netlify/functions/generate-copy', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    trade: trade,
+                    city: city,
+                    compliment: compliment,
+                    problem: problem,
+                    experience: experience
+                })
+            });
+
+            if (!response.ok) {
+                var errBody = await response.json().catch(function() { return {}; });
+                console.error('API error', response.status, errBody);
+                throw new Error('API error');
+            }
+
+            var data = await response.json();
+            var text = data.content[0].text;
+
+            // Parse JSON from response
+            var jsonMatch = text.match(/\{[\s\S]*\}/);
+            if (!jsonMatch) throw new Error('Bad response format');
+
+            cgData = JSON.parse(jsonMatch[0]);
+
+            // Store in sessionStorage for the thank-you page
+            sessionStorage.setItem('esker_copy_data', JSON.stringify(cgData));
+            sessionStorage.setItem('esker_copy_trade', trade);
+            sessionStorage.setItem('esker_copy_city', city);
+
+            // Display preview
+            document.getElementById('cg-preview-title').textContent = cgData.seo.title_tag;
+            document.getElementById('cg-preview-h1').textContent = cgData.sections[0].heading;
+            document.getElementById('cg-preview-meta').textContent = cgData.seo.meta_description;
+            if (cgData.sections[1]) {
+                document.getElementById('cg-preview-services').textContent = cgData.sections[1].heading + ' — ' + cgData.sections[1].copy.substring(0, 80) + '...';
+            }
+
+            document.getElementById('cg-loading').style.display = 'none';
+            document.getElementById('cg-results').style.display = 'block';
+
+        } catch (e) {
+            console.error('Generate error:', e);
+            document.getElementById('cg-loading').style.display = 'none';
+            document.getElementById('cg-error').style.display = 'block';
+        }
+    }
+
+    /* ============================================
+       Email Submit
+       ============================================ */
+    function cgSubmitEmail(e) {
+        e.preventDefault();
+
+        var email = document.getElementById('cg-email').value.trim();
+        if (!email || !email.includes('@')) {
+            alert('Please enter a valid email address.');
+            return false;
+        }
+
+        var tradeSelect = document.getElementById('cg-trade').value;
+        var trade = tradeSelect === 'Other'
+            ? document.getElementById('cg-other-trade').value.trim()
+            : tradeSelect;
+        var city = document.getElementById('cg-city').value.trim();
+
+        // Set hidden fields for Netlify Forms
+        document.getElementById('cg-lead-trade').value = trade;
+        document.getElementById('cg-lead-city').value = city;
+
+        // Submit to Netlify Forms
+        var formData = new FormData(document.getElementById('cg-email-gate'));
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+        }).catch(function(err) {
+            console.error('Form submission error:', err);
+        });
+
+        // Reveal the blurred content
+        document.getElementById('cg-blurred-content').classList.add('cg-revealed');
+        document.getElementById('cg-email-gate').style.display = 'none';
+
+        // Redirect after 1.5 seconds
+        setTimeout(function() {
+            window.location.href = '/tools/copy-generator/thank-you/';
+        }, 1500);
+
+        return false;
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,348 @@
+---
+title: 'Your Homepage Blueprint | Esker Designs'
+description: 'Your custom contractor homepage blueprint is ready — SEO keywords, page structure, and copy for every section.'
+preloadImg: '/assets/images/logo.webp'
+permalink: 'tools/copy-generator/thank-you/'
+eleventyExcludeFromCollections: true
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/assets/css/copy-generator-thank-you.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    LANDING                   -->
+<!-- ============================================ -->
+
+<section id="int-hero">
+    <h1 id="home-h">Your Homepage Blueprint</h1>
+        <svg class="cs-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,192L120,213.3C240,235,480,277,720,277.3C960,277,1200,235,1320,213.3L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+        <svg class="cs-wave cs-dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#061521" fill-opacity="1" d="M0,192L120,213.3C240,235,480,277,720,277.3C960,277,1200,235,1320,213.3L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+</section>
+
+<!-- ============================================ -->
+<!--              Thank You Content               -->
+<!-- ============================================ -->
+
+<section id="cg-thankyou">
+    <div class="cs-container">
+
+        <!-- Empty State -->
+        <div id="cg-empty" class="cg-empty" style="display:none;">
+            <p>Head back to the tool to generate your blueprint.</p>
+            <a href="/tools/copy-generator/" class="cs-button-solid">Generate Blueprint</a>
+        </div>
+
+        <!-- Content -->
+        <div id="cg-content" style="display:none;">
+
+            <!-- Top Banner: Video + CTA side by side -->
+            <div class="cg-top-banner">
+                <!-- Video Section -->
+                <div class="cg-banner-card cg-video-card">
+                    <h3>If you're a contractor tired of slow seasons, this is worth 3 minutes.</h3>
+                    <div class="cg-video-embed">
+                        <iframe src="https://www.loom.com/embed/f7e566ceca4242c5a878968912b108dd?hide_share=true&hideEmbedTopBar=true&subtitle=en" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- CTA Card -->
+                <div class="cg-banner-card cg-cta-card">
+                    <h3>Want this built into a real website?</h3>
+                    <p>Copy only works when it's backed by design, speed, and SEO. Free 20-minute call, no pitch.</p>
+                    <a href="https://eskerdesigns.com/get-started/" class="cs-button-solid">Book a free call &rarr;</a>
+                    <span class="cg-cta-small">Typically respond within one business day.</span>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="cg-main">
+
+                <!-- Keyword Research Panel -->
+                <div class="cg-panel cg-keywords-panel">
+                    <div class="cg-panel-header">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        Keyword Research
+                    </div>
+                    <div class="cg-keyword-group">
+                        <span class="cg-keyword-group-label">Primary</span>
+                        <span class="cg-keyword-pill cg-keyword-primary" id="cg-kw-primary"></span>
+                    </div>
+                    <div class="cg-keyword-group">
+                        <span class="cg-keyword-group-label">Secondary</span>
+                        <div id="cg-kw-secondary" class="cg-keyword-pills"></div>
+                    </div>
+                    <div class="cg-keyword-group">
+                        <span class="cg-keyword-group-label">Long-Tail</span>
+                        <div id="cg-kw-longtail" class="cg-keyword-pills"></div>
+                    </div>
+                    <p class="cg-search-intent" id="cg-search-intent"></p>
+                </div>
+
+                <!-- SEO Meta Panel -->
+                <div class="cg-panel cg-seo-panel">
+                    <div class="cg-panel-header">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                        SEO Meta Tags
+                    </div>
+                    <div class="cg-meta-item">
+                        <div class="cg-meta-label-row">
+                            <span class="cg-meta-label">Title Tag</span>
+                            <button class="cg-copy-btn" onclick="cgCopyText(this, 'cg-title-tag')">Copy</button>
+                        </div>
+                        <div class="cg-meta-value" id="cg-title-tag"></div>
+                    </div>
+                    <div class="cg-meta-item">
+                        <div class="cg-meta-label-row">
+                            <span class="cg-meta-label">Meta Description</span>
+                            <button class="cg-copy-btn" onclick="cgCopyText(this, 'cg-meta-desc')">Copy</button>
+                        </div>
+                        <div class="cg-meta-value" id="cg-meta-desc"></div>
+                    </div>
+                </div>
+
+                <!-- Page Sections -->
+                <div id="cg-sections"></div>
+
+                <!-- View Full File -->
+                <div class="cg-full-file-toggle">
+                    <button class="cg-btn-toggle" id="cg-toggle-file" onclick="cgToggleFullFile()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        View as full text file
+                    </button>
+                </div>
+
+                <!-- Full File View -->
+                <div id="cg-full-file" class="cg-full-file" style="display:none;">
+                    <div class="cg-full-file-header">
+                        <span>homepage-copy.txt</span>
+                        <button class="cg-copy-btn" onclick="cgCopyFullFile(this)">Copy all</button>
+                    </div>
+                    <pre id="cg-full-file-content"></pre>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    (function() {
+        var raw = sessionStorage.getItem('esker_copy_data');
+        if (!raw) {
+            document.getElementById('cg-empty').style.display = 'block';
+            return;
+        }
+
+        var data;
+        try {
+            data = JSON.parse(raw);
+        } catch (e) {
+            document.getElementById('cg-empty').style.display = 'block';
+            return;
+        }
+
+        var trade = sessionStorage.getItem('esker_copy_trade') || '';
+        var city = sessionStorage.getItem('esker_copy_city') || '';
+
+        // Render keywords
+        if (data.keywords) {
+            document.getElementById('cg-kw-primary').textContent = data.keywords.primary || '';
+
+            var secondaryEl = document.getElementById('cg-kw-secondary');
+            (data.keywords.secondary || []).forEach(function(kw) {
+                var pill = document.createElement('span');
+                pill.className = 'cg-keyword-pill';
+                pill.textContent = kw;
+                secondaryEl.appendChild(pill);
+            });
+
+            var longtailEl = document.getElementById('cg-kw-longtail');
+            (data.keywords.long_tail || []).forEach(function(kw) {
+                var pill = document.createElement('span');
+                pill.className = 'cg-keyword-pill';
+                pill.textContent = kw;
+                longtailEl.appendChild(pill);
+            });
+
+            if (data.keywords.search_intent) {
+                document.getElementById('cg-search-intent').textContent = data.keywords.search_intent;
+            }
+        }
+
+        // Render SEO meta
+        if (data.seo) {
+            document.getElementById('cg-title-tag').textContent = data.seo.title_tag || '';
+            document.getElementById('cg-meta-desc').textContent = data.seo.meta_description || '';
+        }
+
+        // Render page sections
+        var sectionsContainer = document.getElementById('cg-sections');
+        (data.sections || []).forEach(function(section, i) {
+            var card = document.createElement('div');
+            card.className = 'cg-section-card';
+
+            var header = document.createElement('div');
+            header.className = 'cg-section-header';
+
+            var labelRow = document.createElement('div');
+            labelRow.className = 'cg-section-label-row';
+
+            var tag = document.createElement('span');
+            tag.className = 'cg-tag-badge';
+            tag.textContent = section.tag.toUpperCase();
+            labelRow.appendChild(tag);
+
+            var label = document.createElement('span');
+            label.className = 'cg-section-label';
+            label.textContent = section.label;
+            labelRow.appendChild(label);
+
+            header.appendChild(labelRow);
+
+            var copyBtn = document.createElement('button');
+            copyBtn.className = 'cg-copy-btn';
+            copyBtn.textContent = 'Copy';
+            copyBtn.setAttribute('data-section-index', i);
+            copyBtn.onclick = function() { cgCopySection(this, i); };
+            header.appendChild(copyBtn);
+
+            card.appendChild(header);
+
+            var heading = document.createElement('h3');
+            heading.className = 'cg-section-heading';
+            heading.textContent = section.heading;
+            card.appendChild(heading);
+
+            var copy = document.createElement('p');
+            copy.className = 'cg-section-copy';
+            copy.textContent = section.copy;
+            card.appendChild(copy);
+
+            if (section.callout) {
+                var callout = document.createElement('div');
+                callout.className = 'cg-callout';
+                var calloutText = document.createElement('span');
+                calloutText.textContent = section.callout;
+                callout.appendChild(calloutText);
+                card.appendChild(callout);
+            }
+
+            sectionsContainer.appendChild(card);
+        });
+
+        // Build full file text
+        window.cgFullFileText = buildFullFileText(data, trade, city);
+        document.getElementById('cg-full-file-content').textContent = window.cgFullFileText;
+
+        document.getElementById('cg-content').style.display = 'block';
+    })();
+
+    function buildFullFileText(data, trade, city) {
+        var lines = [];
+        lines.push('HOMEPAGE COPY BLUEPRINT');
+        lines.push(trade + ' — ' + city);
+        lines.push('Generated by Esker Designs');
+        lines.push('========================================\n');
+
+        if (data.keywords) {
+            lines.push('KEYWORD RESEARCH');
+            lines.push('----------------');
+            lines.push('Primary: ' + (data.keywords.primary || ''));
+            lines.push('Secondary: ' + (data.keywords.secondary || []).join(', '));
+            lines.push('Long-tail: ' + (data.keywords.long_tail || []).join(', '));
+            if (data.keywords.search_intent) {
+                lines.push('Search intent: ' + data.keywords.search_intent);
+            }
+            lines.push('');
+        }
+
+        if (data.seo) {
+            lines.push('SEO META TAGS');
+            lines.push('-------------');
+            lines.push('Title: ' + (data.seo.title_tag || ''));
+            lines.push('Description: ' + (data.seo.meta_description || ''));
+            lines.push('');
+        }
+
+        lines.push('PAGE SECTIONS');
+        lines.push('=============\n');
+
+        (data.sections || []).forEach(function(section) {
+            lines.push('[' + section.tag.toUpperCase() + '] ' + section.label);
+            lines.push('Heading: ' + section.heading);
+            lines.push('Copy: ' + section.copy);
+            if (section.callout) {
+                lines.push('> TIP: ' + section.callout);
+            }
+            lines.push('');
+        });
+
+        return lines.join('\n');
+    }
+
+    /* ============================================
+       Copy Helpers
+       ============================================ */
+    function cgCopyText(btn, elementId) {
+        var text = document.getElementById(elementId).textContent;
+        navigator.clipboard.writeText(text).then(function() {
+            var original = btn.textContent;
+            btn.textContent = 'Copied!';
+            btn.classList.add('cg-copied');
+            setTimeout(function() {
+                btn.textContent = original;
+                btn.classList.remove('cg-copied');
+            }, 2000);
+        });
+    }
+
+    function cgCopySection(btn, index) {
+        var raw = sessionStorage.getItem('esker_copy_data');
+        if (!raw) return;
+        var data = JSON.parse(raw);
+        var section = data.sections[index];
+        if (!section) return;
+
+        var text = section.heading + '\n\n' + section.copy;
+        if (section.callout) text += '\n\n[Note: ' + section.callout + ']';
+
+        navigator.clipboard.writeText(text).then(function() {
+            btn.textContent = 'Copied!';
+            btn.classList.add('cg-copied');
+            setTimeout(function() {
+                btn.textContent = 'Copy';
+                btn.classList.remove('cg-copied');
+            }, 2000);
+        });
+    }
+
+    function cgCopyFullFile(btn) {
+        navigator.clipboard.writeText(window.cgFullFileText).then(function() {
+            btn.textContent = 'Copied!';
+            btn.classList.add('cg-copied');
+            setTimeout(function() {
+                btn.textContent = 'Copy all';
+                btn.classList.remove('cg-copied');
+            }, 2000);
+        });
+    }
+
+    function cgToggleFullFile() {
+        var el = document.getElementById('cg-full-file');
+        var btn = document.getElementById('cg-toggle-file');
+        if (el.style.display === 'none') {
+            el.style.display = 'block';
+            btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> Hide full text file';
+        } else {
+            el.style.display = 'none';
+            btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg> View as full text file';
+        }
+    }
+</script>
+
+{% endblock %}

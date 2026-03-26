@@ -166,7 +166,7 @@ Once logged in, enter your business name. If your business appears in the drop-d
 
 After selecting your category, you'll be prompted to provide your business location. If you serve customers at a physical location, enter your address. If you operate from home or prefer to keep your address private, you can specify the service areas instead.
 
-Next, you’ll need to input your contact information, including your phone number and website URL. This information is crucial for customers trying to reach you.
+Next, you’ll need to input your contact information, including your phone number and website URL. This information is crucial for customers trying to reach you. If you don’t have a website yet or need better copy for your homepage, check out our [free contractor copy generator](/tools/copy-generator/) to get started.
 
 Once you've filled out the basic information, you’ll be asked to verify your business. Google typically sends a postcard to your business address with a verification code. Follow the instructions on the postcard to complete the verification process.
 

@@ -188,7 +188,7 @@ For a standard small business website (5-7 pages), most quotes will include:
 
 These items are often not included in the base quote, so it's worth asking about upfront:
 
-* **Copywriting:** $100-500 per page
+* **Copywriting:** $100-500 per page (if you're a contractor, you can get a head start with our [free copy generator](/tools/copy-generator/) before hiring a pro)
 * **Photography:** $500-3,000
 * **Logo design:** $200-1,500
 * **Premium plugins or tools:** $50-500+

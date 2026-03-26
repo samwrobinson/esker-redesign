@@ -152,7 +152,7 @@ Here's what you actually need.
 
 **And you need a simple way to contact you.** A phone number, a basic contact form, or both. Don't make people jump through hoops.
 
-That's really it for most contractors. You don't need a blog, you don't need fancy animations, you don't need twenty pages of content. A fast, clean, mobile-friendly site with your phone number and photos of your work will outperform 80% of contractor websites out there.
+That's really it for most contractors. You don't need a blog, you don't need fancy animations, you don't need twenty pages of content. A fast, clean, mobile-friendly site with your phone number and photos of your work will outperform 80% of contractor websites out there. Not sure what to write? Our [free contractor copy generator](/tools/copy-generator/) will draft homepage copy for your trade in a couple of minutes.
 
 With that said, there are other ways to really move the needle like have 20+ 5-star reviews on your Google Business Profile, a content strategy and blog content on your website to capture informational search queries if your budget allows, and potentially some paid lead generation through Facebook or Google Ads.
 

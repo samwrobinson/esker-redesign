@@ -65,7 +65,7 @@ Heading tags are essential for structuring your content in a way that is both us
 
 Creating quality content is at the heart of effective SEO. Search engines prioritize content that is not only relevant but also engaging and informative for users. This means you should focus on understanding your audience's needs and crafting content that meets those needs. For instance, if you run a travel blog, writing detailed guides on popular destinations or tips for budget travel can attract more visitors.
 
-To enhance your SEO, incorporate relevant keywords naturally within your content. This doesn't mean stuffing your writing with keywords; rather, they should fit seamlessly into the text. For example, if your target keyword is 'best hiking trails in Colorado,' consider using it in the introduction, headings, and throughout the body without compromising the flow of the writing.
+To enhance your SEO, incorporate relevant keywords naturally within your content. If you're a contractor and aren't sure where to start with your website copy, our [free copy generator tool](/tools/copy-generator/) can help you get a keyword-rich first draft together. This doesn't mean stuffing your writing with keywords; rather, they should fit seamlessly into the text. For example, if your target keyword is 'best hiking trails in Colorado,' consider using it in the introduction, headings, and throughout the body without compromising the flow of the writing.
 
 Additionally, aim for depth in your articles. Longer content tends to rank better because it can cover a topic comprehensively. Use subheadings to break up text and make it easier to read. Including images, videos, or infographics can also enrich your content and keep readers engaged.
 

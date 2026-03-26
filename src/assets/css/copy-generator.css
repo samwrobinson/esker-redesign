@@ -1,0 +1,340 @@
+/* ============================================
+   Copy Generator Tool Styles
+   ============================================ */
+#copy-generator {
+  padding: var(--sectionPadding);
+  padding-bottom: 16.25rem;
+}
+#copy-generator .cs-container {
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+#copy-generator .cs-content {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+#copy-generator .cs-title {
+  max-width: 100%;
+}
+/* Progress Indicator */
+.cg-progress {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.cg-progress-step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--bodyTextColor);
+  opacity: 0.4;
+  transition: opacity 0.3s;
+}
+.cg-progress-step.active {
+  opacity: 1;
+  font-weight: 700;
+}
+.cg-progress-step.completed {
+  opacity: 0.7;
+}
+.cg-progress-step.completed .cg-progress-dot {
+  background: var(--primary);
+}
+.cg-progress-step:not(.active):not(.completed) .cg-progress-dot {
+  background: #ccc;
+}
+.cg-progress-dot {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--primaryLight);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8125rem;
+}
+.cg-progress-divider {
+  width: 2rem;
+  height: 2px;
+  background: #ccc;
+  align-self: center;
+}
+/* Form Steps */
+.cg-step {
+  display: none;
+}
+.cg-step.active {
+  display: block;
+}
+.cg-step h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--primary);
+}
+.cg-field {
+  margin-bottom: 1.25rem;
+}
+.cg-field label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 0.375rem;
+  color: var(--bodyTextColor);
+}
+.cg-field input,
+.cg-field select,
+.cg-field textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fff;
+  color: var(--bodyTextColor);
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.cg-field input:focus,
+.cg-field select:focus,
+.cg-field textarea:focus {
+  outline: none;
+  border-color: var(--primaryLight);
+}
+.cg-field textarea {
+  resize: vertical;
+  min-height: 4.5rem;
+}
+#cg-other-trade-field {
+  display: none;
+  margin-top: 0.5rem;
+}
+/* Buttons */
+.cg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  border-radius: 3.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: inherit;
+}
+.cg-btn-primary {
+  background: var(--primaryLight);
+  color: #fff;
+}
+.cg-btn-primary:hover {
+  background: var(--primary);
+}
+.cg-btn-secondary {
+  background: transparent;
+  color: var(--bodyTextColor);
+  border: 1px solid #d1d5db;
+}
+.cg-btn-secondary:hover {
+  background: #f3f4f6;
+}
+.cg-btn-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.cg-btn-row .cg-btn {
+  flex: 1;
+  text-align: center;
+}
+/* Loading State */
+.cg-loading {
+  text-align: center;
+  padding: 3rem 0;
+}
+.cg-loading p {
+  font-size: 1.125rem;
+  color: var(--bodyTextColor);
+}
+.cg-loading-sub {
+  font-size: 0.875rem !important;
+  color: #9ca3af !important;
+  margin-top: 0.5rem;
+}
+.cg-spinner {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 3px solid #e5e7eb;
+  border-top-color: var(--primaryLight);
+  border-radius: 50%;
+  animation: cg-spin 0.8s linear infinite;
+  margin-bottom: 1rem;
+}
+@keyframes cg-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Results Preview */
+.cg-results-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.cg-results-card-header {
+  margin-bottom: 1.5rem;
+}
+.cg-results-card-header span {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primaryLight);
+}
+.cg-preview-section {
+  margin-bottom: 1.25rem;
+}
+.cg-preview-section:last-child {
+  margin-bottom: 0;
+}
+.cg-preview-section h2 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin: 0.25rem 0 0;
+}
+.cg-preview-section p {
+  font-size: 1rem;
+  color: var(--bodyTextColor);
+  line-height: 1.6;
+  margin: 0.25rem 0 0;
+}
+.cg-tag-label {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primaryLight);
+  background: rgba(34, 197, 94, 0.1);
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+}
+.cg-preview-title {
+  font-weight: 600;
+}
+.cg-preview-teaser {
+  color: #9ca3af !important;
+  font-style: italic;
+}
+.cg-blurred {
+  filter: blur(6px);
+  user-select: none;
+  pointer-events: none;
+  transition: filter 0.5s;
+}
+.cg-blurred.cg-revealed {
+  filter: blur(0);
+  user-select: auto;
+  pointer-events: auto;
+}
+/* Email gate */
+.cg-email-gate {
+  text-align: center;
+  margin-top: 2rem;
+}
+.cg-email-gate label {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--bodyTextColor);
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cg-email-row {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 28rem;
+  margin: 0 auto;
+}
+.cg-email-row input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+}
+.cg-email-row input:focus {
+  outline: none;
+  border-color: var(--primaryLight);
+}
+.cg-email-row .cg-btn {
+  white-space: nowrap;
+}
+.cg-small-print {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 0.5rem;
+}
+/* Error state */
+.cg-error {
+  text-align: center;
+  padding: 2rem 0;
+}
+.cg-error p {
+  font-size: 1.0625rem;
+  color: var(--bodyTextColor);
+  margin-bottom: 1rem;
+}
+/* Dark mode */
+body.dark-mode #copy-generator .cg-field input,
+body.dark-mode #copy-generator .cg-field select,
+body.dark-mode #copy-generator .cg-field textarea,
+body.dark-mode #copy-generator .cg-email-row input {
+  background: var(--dark);
+  border-color: #374151;
+  color: var(--bodyTextColorWhite);
+}
+body.dark-mode .cg-results-card {
+  background: var(--dark);
+  border-color: #374151;
+}
+body.dark-mode .cg-results-card h2 {
+  color: var(--primaryLight);
+}
+body.dark-mode .cg-results-card p {
+  color: var(--bodyTextColorWhite);
+}
+body.dark-mode .cg-step h3 {
+  color: var(--primaryLight);
+}
+body.dark-mode .cg-field label,
+body.dark-mode .cg-email-gate label {
+  color: var(--bodyTextColorWhite);
+}
+body.dark-mode .cg-btn-secondary {
+  color: var(--bodyTextColorWhite);
+  border-color: #374151;
+}
+body.dark-mode .cg-btn-secondary:hover {
+  background: #1f2937;
+}
+body.dark-mode .cg-progress-step {
+  color: var(--bodyTextColorWhite);
+}
+body.dark-mode .cg-loading p {
+  color: var(--bodyTextColorWhite);
+}

@@ -59,7 +59,7 @@ This is definitely something you can bootstrap as a beginning to get your busin
 
 With limited real estate, every section needs to earn its place. Start by identifying your core message; what's the ***one*** thing you want visitors to understand or do? Build outward from there, organizing content into distinct sections that flow logically.
 
-Keep your copy concise and focused on delivering value. Use headings and visual breaks to improve scannability, but resist the urge to cram everything in. A single page website works best when it's focused, not when it tries to do everything a full site would do. Give people as much information as they *need* without overwhelming them or providing too much fluff or keyword stuffing. The last thing you want to do is sacrifice the user-experience to get a few more keywords into your content.
+If you're a contractor and aren't sure where to begin with your website copy, our [free copy generator](/tools/copy-generator/) can give you a solid starting point. Keep your copy concise and focused on delivering value. Use headings and visual breaks to improve scannability, but resist the urge to cram everything in. A single page website works best when it's focused, not when it tries to do everything a full site would do. Give people as much information as they *need* without overwhelming them or providing too much fluff or keyword stuffing. The last thing you want to do is sacrifice the user-experience to get a few more keywords into your content.
 
 ### **Design for Visual Impact**
 

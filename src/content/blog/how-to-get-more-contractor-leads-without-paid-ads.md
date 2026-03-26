@@ -90,7 +90,7 @@ The bar for a contractor website is actually pretty low. You need:
 - A handful of testimonials
 - A simple way to contact you
 
-That's it. Fast, clean, mobile-friendly. Nothing fancy. I break down exactly what it costs to build one — DIY, freelancer, agency, and the subscription model I offer — [in this article here](/blog/small-business-website-cost-2026/).
+That's it. Fast, clean, mobile-friendly. Nothing fancy. If you're not sure what to put on your homepage, our [free contractor copy generator](/tools/copy-generator/) can give you a solid starting point in a couple of minutes. I break down exactly what it costs to build one — DIY, freelancer, agency, and the subscription model I offer — [in this article here](/blog/small-business-website-cost-2026/).
 
 ## Referrals: From Accidental to Systematic
 

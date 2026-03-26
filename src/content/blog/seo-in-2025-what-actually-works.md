@@ -148,7 +148,7 @@ Google isn't punishing AI content wholesale. They're punishing lazy content, reg
 
 I use AI constantly — for brainstorming angles, drafting outlines, analyzing what's ranking, speeding up research. The difference is that I'm guiding the AI based on what I know about SEO and what I've learned about the audience. The AI executes. I direct.
 
-If you don't understand SEO fundamentals, AI will just help you create mediocre content faster. But if you know what good looks like, AI becomes a multiplier.
+If you don't understand SEO fundamentals, AI will just help you create mediocre content faster. But if you know what good looks like, AI becomes a multiplier. That's the thinking behind our [free contractor copy generator](/tools/copy-generator/) — it gives you a solid, SEO-aware first draft that you can then layer your own experience and voice on top of.
 
 ## How to Increase Organic Traffic: The Bottom Line
 

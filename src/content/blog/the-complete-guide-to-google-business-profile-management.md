@@ -45,7 +45,7 @@ Professional management incorporates visual elements like photos and videos stra
 
 The Q&A section management alone requires understanding which questions to prioritize, how to craft responses that convert visitors into customers, and when to proactively add questions that address common customer concerns. Professional managers analyze insights from your profile to identify patterns in customer behavior that you can leverage for business growth.
 
-Most importantly, professional management ensures your profile integrates seamlessly with your website and overall digital marketing strategy. This isn't just about having a presence online - it's about creating a comprehensive system that works 24/7 to bring you more customers.
+Most importantly, professional management ensures your profile integrates seamlessly with your website and overall digital marketing strategy. If you're a contractor who needs help getting your website copy dialed in, try our [free copy generator tool](/tools/copy-generator/) to build a strong homepage foundation. This isn't just about having a presence online - it's about creating a comprehensive system that works 24/7 to bring you more customers.
 
 ## **Core Value Propositions for Local Businesses**
 

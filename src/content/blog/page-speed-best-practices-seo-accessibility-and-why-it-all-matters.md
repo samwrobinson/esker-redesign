@@ -50,4 +50,6 @@ At Esker Designs, our focus on these elements ensures that your online presence 
 
 
 
+If you're a contractor and need a little help figuring out what your website should say, give our [free copy generator](/tools/copy-generator/) a try — it's a quick way to get solid homepage content without the guesswork.
+
 [Reach out today to get started on your brand new website!](/contact/)

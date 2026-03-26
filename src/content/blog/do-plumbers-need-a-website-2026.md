@@ -171,7 +171,7 @@ Here's what you actually need.
 
 **A simple way to contact you.** Phone number, basic contact form, or both. Don't make people jump through hoops. If you offer 24/7 emergency service, make that obvious.
 
-That's really it. You don't need a blog. You don't need fancy animations. You don't need twenty pages of content. A fast, clean, mobile-friendly site with your phone number and photos of your work will outperform 80% of plumber websites out there.
+That's really it. You don't need a blog. You don't need fancy animations. You don't need twenty pages of content. A fast, clean, mobile-friendly site with your phone number and photos of your work will outperform 80% of plumber websites out there. If writing the homepage copy feels like the hard part, our [free contractor copy generator](/tools/copy-generator/) can give you a solid first draft in minutes.
 
 ![Plumber website essentials checklist](/assets/images/blog/plumber-website-checklist.webp "What your plumber website needs")
 

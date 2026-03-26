@@ -91,7 +91,7 @@ You've probably heard "content is king" a million times, and yes, it's true — 
 
 Think about it: if you're a plumber in Burlington, VT, you could write a blog post about "How to Winterize Your Pipes in Vermont" or "Common Plumbing Issues in Older Burlington Homes." This kind of content does two things — it shows Google that you're relevant to that specific area, AND it provides real value to people who live there. Win-win.
 
-I'll be honest, this is where a lot of small businesses drop the ball. They either don't create content at all, or they publish generic stuff that could apply to anyone, anywhere. Take the time to make it specific to your area, and you'll stand out from competitors who aren't putting in that effort.
+I'll be honest, this is where a lot of small businesses drop the ball. They either don't create content at all, or they publish generic stuff that could apply to anyone, anywhere. If you're a contractor struggling to come up with the right words for your site, our [free copy generator](/tools/copy-generator/) can give you a location-specific starting point in seconds. Take the time to make it specific to your area, and you'll stand out from competitors who aren't putting in that effort.
 
 ### **Build Local Backlinks**
 

@@ -142,7 +142,7 @@ You don't need 20 pages. Five or six dedicated service pages covering your core 
 - Relevant certifications (Generac certification on your generator page, etc.)
 - A clear call to action (phone number, quote request)
 
-Answer the questions you get on every phone call. That pre-qualifies leads and saves you time.
+Answer the questions you get on every phone call. That pre-qualifies leads and saves you time. If writing all that copy sounds daunting, our [free contractor copy generator](/tools/copy-generator/) can help you get a first draft together quickly.
 
 ## Photos That Build Trust (Not Generic Stock)
 
