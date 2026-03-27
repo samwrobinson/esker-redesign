@@ -125,7 +125,7 @@
   label,
   input,
   .cs-link {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Noto Sans Mono', sans-serif;
   }
   .emphasis {
     color: var(--secondary);
@@ -138,7 +138,7 @@
     line-height: 1.5em;
     color: var(--bodyTextColor);
     text-align: inherit;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Noto Sans Mono', sans-serif;
   }
   .cs-color {
     color: var(--primaryLight);
@@ -605,7 +605,7 @@
     transition-delay: 0.65s;
   }
   #cs-navigation .cs-li .cs-li-link {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Noto Sans Mono', sans-serif;
     font-weight: 900;
     text-transform: uppercase;
   }
@@ -719,8 +719,9 @@
     display: inline-block;
   }
   #cs-navigation .cs-li .cs-li-link {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Noto Sans Mono', sans-serif;
     font-weight: 900;
+    text-transform: uppercase;
   }
   #cs-navigation .cs-drop-ul {
     min-width: 12.5rem;
