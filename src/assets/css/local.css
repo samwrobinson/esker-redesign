@@ -462,6 +462,7 @@
     line-height: 1.5;
   }
   #video-548 .cs-submit {
+    align-self: center;
     padding: 0.875rem 2rem;
     font-size: 1rem;
     font-weight: 700;

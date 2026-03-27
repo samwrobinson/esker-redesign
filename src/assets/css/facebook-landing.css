@@ -514,8 +514,9 @@
     color: #e53935;
   }
   #fb-hero .cs-submit {
-    width: 100%;
+    display: block;
     padding: 1rem 2rem;
+    margin: 1rem auto;
     background: var(--primaryLight);
     border: none;
     border-radius: 3rem;
@@ -905,8 +906,9 @@
     color: #e53935;
   }
   #fb-cta .cs-submit {
-    width: 100%;
+    display: block;
     padding: 1rem 2rem;
+    margin: 1rem auto;
     background: var(--primaryLight);
     border: none;
     border-radius: 3rem;
