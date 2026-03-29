@@ -21,6 +21,7 @@
     font-family: 'Inter', sans-serif;
   }
   #fb-hero h1,
+  #fb-testimonials h1,
   #fb-trust h1,
   #sbs-1640 h1,
   #speed-gallery h1,
@@ -32,6 +33,7 @@
   #fb-faq h1,
   #fb-cta h1,
   #fb-hero h2,
+  #fb-testimonials h2,
   #fb-trust h2,
   #sbs-1640 h2,
   #speed-gallery h2,
@@ -43,6 +45,7 @@
   #fb-faq h2,
   #fb-cta h2,
   #fb-hero h3,
+  #fb-testimonials h3,
   #fb-trust h3,
   #sbs-1640 h3,
   #speed-gallery h3,
@@ -54,6 +57,7 @@
   #fb-faq h3,
   #fb-cta h3,
   #fb-hero .cs-title,
+  #fb-testimonials .cs-title,
   #fb-trust .cs-title,
   #sbs-1640 .cs-title,
   #speed-gallery .cs-title,
@@ -65,6 +69,7 @@
   #fb-faq .cs-title,
   #fb-cta .cs-title,
   #fb-hero .cs-title-2,
+  #fb-testimonials .cs-title-2,
   #fb-trust .cs-title-2,
   #sbs-1640 .cs-title-2,
   #speed-gallery .cs-title-2,
@@ -76,6 +81,7 @@
   #fb-faq .cs-title-2,
   #fb-cta .cs-title-2,
   #fb-hero .cs-topper,
+  #fb-testimonials .cs-topper,
   #fb-trust .cs-topper,
   #sbs-1640 .cs-topper,
   #speed-gallery .cs-topper,
@@ -87,6 +93,7 @@
   #fb-faq .cs-topper,
   #fb-cta .cs-topper,
   #fb-hero .cs-topper-2,
+  #fb-testimonials .cs-topper-2,
   #fb-trust .cs-topper-2,
   #sbs-1640 .cs-topper-2,
   #speed-gallery .cs-topper-2,
@@ -98,6 +105,7 @@
   #fb-faq .cs-topper-2,
   #fb-cta .cs-topper-2,
   #fb-hero .cs-h3,
+  #fb-testimonials .cs-h3,
   #fb-trust .cs-h3,
   #sbs-1640 .cs-h3,
   #speed-gallery .cs-h3,
@@ -111,6 +119,7 @@
     font-family: 'Noto Sans Mono', sans-serif;
   }
   #fb-hero p,
+  #fb-testimonials p,
   #fb-trust p,
   #sbs-1640 p,
   #speed-gallery p,
@@ -122,6 +131,7 @@
   #fb-faq p,
   #fb-cta p,
   #fb-hero .cs-text,
+  #fb-testimonials .cs-text,
   #fb-trust .cs-text,
   #sbs-1640 .cs-text,
   #speed-gallery .cs-text,
@@ -133,6 +143,7 @@
   #fb-faq .cs-text,
   #fb-cta .cs-text,
   #fb-hero .cs-desc,
+  #fb-testimonials .cs-desc,
   #fb-trust .cs-desc,
   #sbs-1640 .cs-desc,
   #speed-gallery .cs-desc,
@@ -144,6 +155,7 @@
   #fb-faq .cs-desc,
   #fb-cta .cs-desc,
   #fb-hero .cs-review,
+  #fb-testimonials .cs-review,
   #fb-trust .cs-review,
   #sbs-1640 .cs-review,
   #speed-gallery .cs-review,
@@ -155,6 +167,7 @@
   #fb-faq .cs-review,
   #fb-cta .cs-review,
   #fb-hero .cs-item-text,
+  #fb-testimonials .cs-item-text,
   #fb-trust .cs-item-text,
   #sbs-1640 .cs-item-text,
   #speed-gallery .cs-item-text,
@@ -166,6 +179,7 @@
   #fb-faq .cs-item-text,
   #fb-cta .cs-item-text,
   #fb-hero .cs-form-title,
+  #fb-testimonials .cs-form-title,
   #fb-trust .cs-form-title,
   #sbs-1640 .cs-form-title,
   #speed-gallery .cs-form-title,
@@ -177,6 +191,7 @@
   #fb-faq .cs-form-title,
   #fb-cta .cs-form-title,
   #fb-hero .cs-checkbox-text,
+  #fb-testimonials .cs-checkbox-text,
   #fb-trust .cs-checkbox-text,
   #sbs-1640 .cs-checkbox-text,
   #speed-gallery .cs-checkbox-text,
@@ -188,6 +203,7 @@
   #fb-faq .cs-checkbox-text,
   #fb-cta .cs-checkbox-text,
   #fb-hero .cs-form-note,
+  #fb-testimonials .cs-form-note,
   #fb-trust .cs-form-note,
   #sbs-1640 .cs-form-note,
   #speed-gallery .cs-form-note,
@@ -199,6 +215,7 @@
   #fb-faq .cs-form-note,
   #fb-cta .cs-form-note,
   #fb-hero .cs-name,
+  #fb-testimonials .cs-name,
   #fb-trust .cs-name,
   #sbs-1640 .cs-name,
   #speed-gallery .cs-name,
@@ -210,6 +227,7 @@
   #fb-faq .cs-name,
   #fb-cta .cs-name,
   #fb-hero .cs-job,
+  #fb-testimonials .cs-job,
   #fb-trust .cs-job,
   #sbs-1640 .cs-job,
   #speed-gallery .cs-job,
@@ -221,6 +239,7 @@
   #fb-faq .cs-job,
   #fb-cta .cs-job,
   #fb-hero label,
+  #fb-testimonials label,
   #fb-trust label,
   #sbs-1640 label,
   #speed-gallery label,
@@ -232,6 +251,7 @@
   #fb-faq label,
   #fb-cta label,
   #fb-hero input,
+  #fb-testimonials input,
   #fb-trust input,
   #sbs-1640 input,
   #speed-gallery input,
@@ -243,6 +263,7 @@
   #fb-faq input,
   #fb-cta input,
   #fb-hero button,
+  #fb-testimonials button,
   #fb-trust button,
   #sbs-1640 button,
   #speed-gallery button,
@@ -256,6 +277,7 @@
     font-family: 'Inter', sans-serif;
   }
   #fb-hero .cs-number,
+  #fb-testimonials .cs-number,
   #fb-trust .cs-number,
   #sbs-1640 .cs-number,
   #speed-gallery .cs-number,
@@ -706,6 +728,13 @@
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     cursor: pointer;
   }
+  #fb-testimonials .cs-testimonial-card:hover .cs-play-button {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: var(--secondary);
+  }
+  #fb-testimonials .cs-testimonial-card.cs-playing .cs-play-button {
+    display: none;
+  }
   #fb-testimonials .cs-testimonial-video {
     width: 100%;
     display: block;
@@ -733,13 +762,6 @@
     height: 2rem;
     margin-left: 0.25rem;
     color: #000;
-  }
-  #fb-testimonials .cs-testimonial-card:hover .cs-play-button {
-    transform: translate(-50%, -50%) scale(1.1);
-    background: var(--secondary);
-  }
-  #fb-testimonials .cs-testimonial-card.cs-playing .cs-play-button {
-    display: none;
   }
   /*-- -------------------------- -->
     <---        Trust Badges          -->

@@ -12,6 +12,7 @@
 
     // Base font styles for this landing page
     #fb-hero,
+    #fb-testimonials,
     #fb-trust,
     #sbs-1640,
     #speed-gallery,
@@ -500,6 +501,110 @@
             font-size: 1.125rem;
             padding: 1rem;
             margin: 0;
+        }
+    }
+
+    /*-- -------------------------- -->
+    <---     Video Testimonials       -->
+    <--- -------------------------- -*/
+
+    #fb-testimonials {
+        padding: 3rem 1rem;
+        background:
+            radial-gradient(ellipse 80% 80% at 50% 0%, rgba(150, 191, 48, 0.06) 0%, transparent 50%),
+            linear-gradient(180deg, #0c1307 0%, #0a0f05 100%);
+
+        .cs-container {
+            width: 100%;
+            max-width: 80rem;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cs-content {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .cs-topper {
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--primaryLight);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .cs-title {
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            font-weight: 700;
+            color: var(--bodyTextColorWhite);
+            margin: 0;
+            font-family: 'Noto Sans Mono', sans-serif;
+        }
+
+        .cs-video-grid {
+            width: 100%;
+            max-width: 50rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .cs-testimonial-card {
+            position: relative;
+            width: 100%;
+            max-width: 25rem;
+            border-radius: 1rem;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+
+            &:hover .cs-play-button {
+                transform: translate(-50%, -50%) scale(1.1);
+                background: var(--secondary);
+            }
+
+            &.cs-playing .cs-play-button {
+                display: none;
+            }
+        }
+
+        .cs-testimonial-video {
+            width: 100%;
+            display: block;
+        }
+
+        .cs-play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 5rem;
+            height: 5rem;
+            background: var(--primaryLight);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s, background 0.3s;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .cs-play-icon {
+            width: 2rem;
+            height: 2rem;
+            margin-left: 0.25rem;
+            color: #000;
         }
     }
 
