@@ -71,6 +71,37 @@ eleventyNavigation:
 </section>
 
 <!-- ============================================ -->
+<!--            Video Testimonials                -->
+<!-- ============================================ -->
+
+<section id="fb-testimonials">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Don't Just Take Our Word For it</span>
+            <h2 class="cs-title">Do Your Research - Hear What Our Clients Say</h2>
+        </div>
+        <div class="cs-video-grid">
+            <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                <video
+                    class="cs-testimonial-video"
+                    preload="metadata"
+                    playsinline
+                >
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/shelly-testimonial.mov" type="video/quicktime">
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/shelly-testimonial.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button class="cs-play-button" aria-label="Play testimonial video">
+                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
 <!--                Trust Badges                  -->
 <!-- ============================================ -->
 
