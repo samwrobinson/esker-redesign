@@ -34,34 +34,37 @@ eleventyNavigation:
                 <strong><u>Step 1:</u></strong> Watch this <a href="#fb-yt-player-container">6 minute video</a>
             </p>
             <p class="cs-text">
-                <strong><u>Step 2:</u></strong> Drop your info below so we can reach out
+                <strong><u>Step 2:</u></strong> Wait for us to give you a call
             </p>
         </div>
-        <div class="cs-hero-row">
-            <div class="cs-video-wrapper">
-                <div class="cs-video-glow" aria-hidden="true"></div>
-                <div class="cs-video-container" id="fb-yt-player-container" data-video-id="280sn8hNj0c">
-                    <img class="cs-thumbnail" decoding="async" src="https://img.youtube.com/vi/280sn8hNj0c/sddefault.jpg" alt="Video thumbnail - Watch how we build websites" width="640" height="480">
-                    <button class="cs-play-button" aria-label="Play video">
-                        <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <div class="cs-form-wrapper">
-                <h3 class="cs-form-heading">Interested? Drop Your Info and We'll Reach Out</h3>
-                <form class="cs-form" id="fb-landing-form" name="Facebook Landing" method="post" action="/thank-you/" netlify>
+        <!-- Video Gate Modal -->
+        <div class="cs-video-modal" id="video-gate-modal">
+            <div class="cs-modal-overlay"></div>
+            <div class="cs-modal-content">
+                <button class="cs-modal-close" aria-label="Close">&times;</button>
+                <h3 class="cs-form-title">We Help Small Businesses Get More Customers With Fast Websites, AI Systems, and 5 Star Reviews for Just <span style="color: var(--primaryLight);">$175/mo</span> 👇</h3>
+                <form class="cs-form" id="video-gate-form" name="Facebook Landing" method="post" netlify>
                     <div class="cs-form-group">
-                        <label class="cs-label" for="fb-name">Your Name *</label>
-                        <input class="cs-input" type="text" id="fb-name" name="name" placeholder="My Name is..." required>
-                        <label class="cs-label" for="fb-phone">Your Mobile Phone *</label>
-                        <input class="cs-input" type="tel" id="fb-phone" name="phone" placeholder="(555) 123-4567" required>
-                        <label class="cs-label" for="fb-email">Your Email *</label>
-                        <input class="cs-input" type="email" id="fb-email" name="email" placeholder="you@example.com" required>
+                        <label class="cs-label" for="gate-name">Your Name *</label>
+                        <input class="cs-input" type="text" id="gate-name" name="name" placeholder="My Name is..." required>
+                        <label class="cs-label" for="gate-phone">Your Mobile Phone *</label>
+                        <input class="cs-input" type="tel" id="gate-phone" name="phone" placeholder="(555) 123-4567" required>
+                        <label class="cs-label" for="gate-email">Your Email *</label>
+                        <input class="cs-input" type="email" id="gate-email" name="email" placeholder="you@example.com" required>
                     </div>
-                    <button class="cs-submit" type="submit">Get Started — It's Free</button>
+                    <button class="cs-submit" type="submit">Click to See How it Works</button>
                 </form>
+            </div>
+        </div>
+        <div class="cs-video-wrapper">
+            <div class="cs-video-glow" aria-hidden="true"></div>
+            <div class="cs-video-container" id="fb-yt-player-container" data-video-id="280sn8hNj0c">
+                <img class="cs-thumbnail" decoding="async" src="https://img.youtube.com/vi/280sn8hNj0c/sddefault.jpg" alt="Video thumbnail - Watch how we build websites" width="640" height="480">
+                <button class="cs-play-button" aria-label="Play video">
+                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </div>
@@ -570,12 +573,26 @@ eleventyNavigation:
 </section>
 
 <script>
-    // YouTube Player API - Direct play on click
+    // YouTube Player API with Video Gate + FB Pixel Lead Tracking
     (function() {
         var player;
         var videoStarted = false;
         var videoTitle = 'Facebook Landing Promo Video';
         var container = document.getElementById('fb-yt-player-container');
+        var modal = document.getElementById('video-gate-modal');
+        var form = document.getElementById('video-gate-form');
+        var overlay = modal.querySelector('.cs-modal-overlay');
+        var closeBtn = modal.querySelector('.cs-modal-close');
+
+        function openModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
 
         function startVideo() {
             container.classList.add('cs-playing');
@@ -585,14 +602,54 @@ eleventyNavigation:
             firstScript.parentNode.insertBefore(tag, firstScript);
         }
 
-        // Click play button → play video directly
+        // Click play button → show modal
         if (container) {
-            container.addEventListener('click', function handler(e) {
+            container.addEventListener('click', function(e) {
                 e.preventDefault();
-                startVideo();
-                container.removeEventListener('click', handler);
+                openModal();
             });
         }
+
+        // Close modal
+        overlay.addEventListener('click', closeModal);
+        closeBtn.addEventListener('click', closeModal);
+
+        // Form submit → fire pixel, submit to Netlify, close modal, play video
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Fire Facebook Pixel Lead event
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead');
+            }
+
+            // Fire GA4 event
+            if (typeof gtag === 'function') {
+                gtag('event', 'generate_lead', {
+                    event_category: 'form',
+                    event_label: 'Video Gate Form'
+                });
+            }
+
+            // Submit form data to Netlify via fetch
+            var formData = new FormData(form);
+            formData.append('form-name', 'Facebook Landing');
+
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString()
+            }).catch(function(err) {
+                console.error('Form submission error:', err);
+            });
+
+            // Close modal and start video immediately
+            closeModal();
+            startVideo();
+
+            // Remove click gate so they can replay without resubmitting
+            container.removeEventListener('click', arguments.callee);
+        });
 
         window.onYouTubeIframeAPIReady = function() {
             var videoId = container.dataset.videoId;

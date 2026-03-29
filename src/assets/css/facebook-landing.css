@@ -543,62 +543,113 @@
     margin: 1rem 0 0;
   }
   /*-- -------------------------- -->
-    <---       Inline Form            -->
+    <---       Video Gate Modal       -->
     <--- -------------------------- -*/
-  #fb-hero .cs-hero-row {
-    display: flex;
-    flex-direction: column;
+  .cs-video-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
     align-items: center;
-    width: 100%;
-    gap: 2rem;
+    justify-content: center;
+    padding: 1rem;
   }
-  #fb-hero .cs-form-wrapper {
-    width: 100%;
-    max-width: 28rem;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  .cs-video-modal.active {
+    display: flex;
+  }
+  .cs-video-modal .cs-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .cs-video-modal .cs-modal-content {
+    position: relative;
+    background: #fff;
     border-radius: 1rem;
     padding: 2rem;
+    max-width: 28rem;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   }
-  #fb-hero .cs-form-heading {
-    font-size: 1.25rem;
+  .cs-video-modal .cs-modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+  }
+  .cs-video-modal .cs-modal-close:hover {
+    color: #333;
+  }
+  .cs-video-modal .cs-form-title {
+    font-size: 1.1rem;
     line-height: 1.4;
     text-align: center;
     margin-bottom: 1.5rem;
-    color: #fff;
+    color: #000;
   }
-  #fb-hero .cs-form-wrapper .cs-form {
-    background: transparent;
+  .cs-video-modal .cs-form {
     box-shadow: none;
     padding: 0;
     max-width: none;
   }
-  #fb-hero .cs-form-wrapper .cs-label {
+  .cs-video-modal .cs-label {
     display: block;
     font-size: 0.875rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.8);
+    color: #333;
     margin-bottom: 0.25rem;
   }
-  #fb-hero .cs-form-wrapper .cs-input {
+  .cs-video-modal .cs-input {
+    margin-bottom: 0.5rem;
+  }
+  .cs-video-modal .cs-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+  }
+  .cs-video-modal .cs-fieldset legend {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #333;
     margin-bottom: 0.75rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
+  }
+  .cs-video-modal .cs-radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1rem;
+    border: 1px solid #e5e5e5;
     border-radius: 0.5rem;
-    padding: 0.75rem 1rem;
-    width: 100%;
-    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9375rem;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.2s;
   }
-  #fb-hero .cs-form-wrapper .cs-input::placeholder {
-    color: rgba(255, 255, 255, 0.4);
+  .cs-video-modal .cs-radio-label:hover {
+    border-color: var(--primaryLight);
   }
-  #fb-hero .cs-form-wrapper .cs-submit {
+  .cs-video-modal .cs-radio-label input[type="radio"] {
+    accent-color: var(--primaryLight);
+  }
+  .cs-video-modal .cs-submit {
     width: 100%;
     font-size: 1.125rem;
     padding: 1rem;
-    margin: 0.5rem 0 0;
+    margin: 0;
   }
   /*-- -------------------------- -->
     <---        Trust Badges          -->
@@ -1012,16 +1063,6 @@
   #fb-hero .cs-form-group .cs-input:last-child {
     flex: 1 1 100%;
   }
-  #fb-hero .cs-form-wrapper .cs-form-group {
-    flex-direction: column;
-    flex-wrap: nowrap;
-  }
-  #fb-hero .cs-form-wrapper .cs-form-group .cs-input,
-  #fb-hero .cs-form-wrapper .cs-form-group .cs-input:last-child {
-    flex: none;
-    width: 100%;
-    min-width: 0;
-  }
   #fb-trust .cs-stat-group {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -1104,7 +1145,7 @@
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
   #fb-hero .cs-container {
-    max-width: 70rem;
+    max-width: 60rem;
   }
   #fb-hero .cs-content {
     max-width: 80rem;
@@ -1116,22 +1157,17 @@
   #fb-hero .cs-content .cs-text:last-of-type {
     margin-bottom: none;
   }
-  #fb-hero .cs-hero-row {
-    flex-direction: row;
-    align-items: stretch;
-  }
   #fb-hero .cs-video-wrapper {
-    flex: 1 1 60%;
-    max-width: none;
+    max-width: 55rem;
   }
-  #fb-hero .cs-form-wrapper {
-    flex: 0 0 auto;
-    width: 20rem;
-    max-width: none;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  #fb-hero .cs-form {
+    max-width: 40rem;
+  }
+  #fb-hero .cs-form-group .cs-input {
+    flex: 1 1 calc(33.333% - 0.667rem);
+  }
+  #fb-hero .cs-form-group .cs-input:last-child {
+    flex: 1 1 calc(33.333% - 0.667rem);
   }
   #fb-reviews .cs-card-group {
     flex-wrap: nowrap;
@@ -1153,10 +1189,13 @@
 /* Large Desktop - 1300px */
 @media only screen and (min-width: 81.25rem) {
   #fb-hero .cs-container {
-    max-width: 80rem;
+    max-width: 70rem;
   }
-  #fb-hero .cs-form-wrapper {
-    width: 22rem;
+  #fb-hero .cs-video-wrapper {
+    max-width: 60rem;
+  }
+  #fb-hero .cs-form {
+    max-width: 45rem;
   }
 }
 /* Dark Mode */
