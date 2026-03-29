@@ -29,37 +29,33 @@ eleventyNavigation:
 <section id="fb-hero">
     <div class="cs-container">
         <div class="cs-content">
-            <h1 class="cs-title">A Professional Website, Google Business Profile Management & Automations — <em><span class="cs-squiggle">$0 Down, $175/mo</span></em></h1>
-            <h2>Everything Your Business Needs to <span class="cs-accent">Show Up on Google</span> and <span class="cs-accent">Convert Visitors Into Customers</span>.</h2>
+            <h1 class="cs-title">We Help Small Businesses Get More Customers With Fast Websites, AI Systems, and 5 Star Reviews for Just <em><span class="cs-squiggle">$175/mo</span></em> 👇</h1>
             <p class="cs-text">
-                Here's what you get: a hand-coded website that loads in under a second and ranks on page one, full Google Business Profile management, and automations that respond to new leads and request reviews — all handled for you.
+                <strong><u>Step 1:</u></strong> Watch this <a href="#fb-yt-player-container">6 minute video</a>
             </p>
             <p class="cs-text">
-                <strong>No upfront cost. No long-term contract. $175/month — that's it.</strong>
-            </p>
-            <p class="cs-text">
-                <strong>A landscaping client got 24 new leads this month</strong> — all from organic Google traffic. No paid ads. Just a fast website showing up first on Google.
-            </p>
-            <p class="cs-text">
-                <em>Schedule a free consultation — I'll learn about your business and put together a custom design, no commitment required.</em>
+                <strong><u>Step 2:</u></strong> Wait for us to give you a call
             </p>
         </div>
-        <form class="cs-form" name="Facebook Landing" method="post" action="/thank-you/" netlify>
-            <h3 class="cs-form-title">Schedule Your Free Consultation</h3>
-            <p class="cs-text">Tell me about your business and I'll reach out within 24 hours.</p>
-            <div class="cs-form-group">
-                <input class="cs-input" type="text" name="name" placeholder="Your Name" required>
-                <input class="cs-input" type="email" name="email" placeholder="Your Email" required>
-                <input class="cs-input" type="tel" name="phone" placeholder="Your Phone (optional)">
+        <!-- Video Gate Modal -->
+        <div class="cs-video-modal" id="video-gate-modal">
+            <div class="cs-modal-overlay"></div>
+            <div class="cs-modal-content">
+                <button class="cs-modal-close" aria-label="Close">&times;</button>
+                <h3 class="cs-form-title">We Help Small Businesses Get More Customers With Fast Websites, AI Systems, and 5 Star Reviews for Just <span style="color: var(--primaryLight);">$175/mo</span> 👇</h3>
+                <form class="cs-form" id="video-gate-form" name="Facebook Landing" method="post" netlify>
+                    <div class="cs-form-group">
+                        <label class="cs-label" for="gate-name">Your Name *</label>
+                        <input class="cs-input" type="text" id="gate-name" name="name" placeholder="My Name is..." required>
+                        <label class="cs-label" for="gate-phone">Your Mobile Phone *</label>
+                        <input class="cs-input" type="tel" id="gate-phone" name="phone" placeholder="(555) 123-4567" required>
+                        <label class="cs-label" for="gate-email">Your Email *</label>
+                        <input class="cs-input" type="email" id="gate-email" name="email" placeholder="you@example.com" required>
+                    </div>
+                    <button class="cs-submit" type="submit">Click to See How it Works</button>
+                </form>
             </div>
-            <div class="cs-policy-links">
-                <a href="/privacy-policy/" class="cs-privacy-link" target="_blank">Privacy Policy</a>
-                <a href="/terms-of-service/" class="cs-privacy-link" target="_blank">Terms of Service</a>
-            </div>
-            <button class="cs-submit" type="submit">Get My Free Consultation →</button>
-            <p class="cs-form-note">No pressure, no pitch — just an honest conversation about your website.</p>
-            <p class="cs-form-note">✓ If you don't love the design, you don't pay a thing.</p>
-        </form>
+        </div>
         <div class="cs-video-wrapper">
             <div class="cs-video-glow" aria-hidden="true"></div>
             <div class="cs-video-container" id="fb-yt-player-container" data-video-id="280sn8hNj0c">
@@ -577,26 +573,83 @@ eleventyNavigation:
 </section>
 
 <script>
-    // YouTube Player API with GA4 Tracking for Facebook Landing
+    // YouTube Player API with Video Gate + FB Pixel Lead Tracking
     (function() {
         var player;
         var videoStarted = false;
-        var progressMilestones = { 10: false, 25: false, 50: false, 75: false, 90: false };
         var videoTitle = 'Facebook Landing Promo Video';
-        var checkInterval;
-
         var container = document.getElementById('fb-yt-player-container');
-        if (container) {
-            container.addEventListener('click', function initPlayer() {
-                container.removeEventListener('click', initPlayer);
-                container.classList.add('cs-playing');
+        var modal = document.getElementById('video-gate-modal');
+        var form = document.getElementById('video-gate-form');
+        var overlay = modal.querySelector('.cs-modal-overlay');
+        var closeBtn = modal.querySelector('.cs-modal-close');
 
-                var tag = document.createElement('script');
-                tag.src = 'https://www.youtube.com/iframe_api';
-                var firstScript = document.getElementsByTagName('script')[0];
-                firstScript.parentNode.insertBefore(tag, firstScript);
+        function openModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function startVideo() {
+            container.classList.add('cs-playing');
+            var tag = document.createElement('script');
+            tag.src = 'https://www.youtube.com/iframe_api';
+            var firstScript = document.getElementsByTagName('script')[0];
+            firstScript.parentNode.insertBefore(tag, firstScript);
+        }
+
+        // Click play button → show modal
+        if (container) {
+            container.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal();
             });
         }
+
+        // Close modal
+        overlay.addEventListener('click', closeModal);
+        closeBtn.addEventListener('click', closeModal);
+
+        // Form submit → fire pixel, submit to Netlify, close modal, play video
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Fire Facebook Pixel Lead event
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead');
+            }
+
+            // Fire GA4 event
+            if (typeof gtag === 'function') {
+                gtag('event', 'generate_lead', {
+                    event_category: 'form',
+                    event_label: 'Video Gate Form'
+                });
+            }
+
+            // Submit form data to Netlify via fetch
+            var formData = new FormData(form);
+            formData.append('form-name', 'Facebook Landing');
+
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString()
+            }).catch(function(err) {
+                console.error('Form submission error:', err);
+            });
+
+            // Close modal and start video immediately
+            closeModal();
+            startVideo();
+
+            // Remove click gate so they can replay without resubmitting
+            container.removeEventListener('click', arguments.callee);
+        });
 
         window.onYouTubeIframeAPIReady = function() {
             var videoId = container.dataset.videoId;
@@ -621,9 +674,6 @@ eleventyNavigation:
                                     video_title: videoTitle,
                                     video_provider: 'youtube'
                                 });
-                            }
-                            if (typeof fbq === 'function') {
-                                fbq('track', 'ViewContent', { content_name: 'Video Started' });
                             }
                         }
                         if (event.data === YT.PlayerState.ENDED) {

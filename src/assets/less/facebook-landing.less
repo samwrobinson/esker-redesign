@@ -99,7 +99,7 @@
 
         .cs-content {
             text-align: center;
-            max-width: 45rem;
+            max-width: 90rem;
         }
 
         .cs-topper {
@@ -121,6 +121,7 @@
             line-height: 1.2;
             color: #fff;
             margin: 0 0 1rem;
+            max-width: none;
         }
 
         .cs-text {
@@ -128,7 +129,13 @@
             line-height: 1.6;
             color: rgba(255, 255, 255, 0.9);
             margin: 0;
+
+            a,
+            a:visited {
+                color: var(--secondary);
+            }
         }
+
 
         h2 {
             font-size: clamp(1.25rem, 3vw, 1.75rem);
@@ -367,6 +374,132 @@
             color: #999;
             text-align: center;
             margin: 1rem 0 0;
+        }
+    }
+
+    /*-- -------------------------- -->
+    <---       Video Gate Modal       -->
+    <--- -------------------------- -*/
+
+    .cs-video-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10000;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+
+        &.active {
+            display: flex;
+        }
+
+        .cs-modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .cs-modal-content {
+            position: relative;
+            background: #fff;
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 28rem;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .cs-modal-close {
+            position: absolute;
+            top: 0.75rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.75rem;
+            color: #999;
+            cursor: pointer;
+            line-height: 1;
+
+            &:hover {
+                color: #333;
+            }
+        }
+
+        .cs-form-title {
+            font-size: 1.1rem;
+            line-height: 1.4;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #000;
+        }
+
+        .cs-form {
+            box-shadow: none;
+            padding: 0;
+            max-width: none;
+        }
+
+        .cs-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.25rem;
+        }
+
+        .cs-input {
+            margin-bottom: 0.5rem;
+        }
+
+        .cs-fieldset {
+            border: none;
+            padding: 0;
+            margin: 0 0 1.5rem;
+
+            legend {
+                font-size: 0.875rem;
+                font-weight: 600;
+                color: #333;
+                margin-bottom: 0.75rem;
+            }
+        }
+
+        .cs-radio-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1rem;
+            border: 1px solid #e5e5e5;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9375rem;
+            color: #333;
+            cursor: pointer;
+            transition: border-color 0.2s;
+
+            &:hover {
+                border-color: var(--primaryLight);
+            }
+
+            input[type="radio"] {
+                accent-color: var(--primaryLight);
+            }
+        }
+
+        .cs-submit {
+            width: 100%;
+            font-size: 1.125rem;
+            padding: 1rem;
+            margin: 0;
         }
     }
 
@@ -1576,7 +1709,7 @@
         }
 
         .cs-button-solid {
-            max-width: 15rem;
+            max-width: none;
             margin: auto;
         }
 
