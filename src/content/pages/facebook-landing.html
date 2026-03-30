@@ -663,16 +663,7 @@ eleventyNavigation:
         form.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            if (typeof fbq === 'function') {
-                fbq('track', 'Lead');
-            }
-
-            if (typeof gtag === 'function') {
-                gtag('event', 'generate_lead', {
-                    event_category: 'form',
-                    event_label: 'Facebook Landing Hero Form'
-                });
-            }
+            // Pixel + GA4 lead events fire on /thank-you/ page to avoid double counting
 
             var formData = new FormData(form);
             formData.append('form-name', 'Facebook Landing');
