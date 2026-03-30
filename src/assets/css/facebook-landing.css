@@ -731,9 +731,10 @@
   }
   #fb-testimonials .cs-video-grid {
     width: 100%;
-    max-width: 50rem;
+    max-width: 60rem;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     gap: 1.5rem;
     flex-wrap: wrap;
   }
