@@ -8,26 +8,13 @@ eleventyExcludeFromCollections: true
 
 {% extends "layouts/base.html" %}
 
-{% block head %}
-<link rel="stylesheet" href="/assets/css/facebook-landing.css">
-<style>
-  #cs-navigation { display: none !important; }
-  body { padding-top: 0 !important; }
-</style>
-{% endblock %}
-
 {% block body %}
 
 <script>
-  if (document.referrer === '' || !document.referrer.includes('eskerdesigns.com')) {
-    window.location.href = '/';
-  }
-  if (typeof fbq === 'function') {
-    fbq('track', 'Lead', { content_name: 'Facebook Landing' });
-  }
+  gtag('event', 'ads_conversion_Contact_Us_1', {});
 </script>
 
-<section id="fb-hero" style="min-height:80vh;display:flex;align-items:center;justify-content:center;">
+<section id="fb-hero" style="min-height:80vh;display:flex;align-items:center;justify-content:center;padding-bottom:6.25rem;">
     <div class="cs-container">
         <div class="cs-content">
             <h1 class="cs-title">Thanks for Reaching Out!</h1>
