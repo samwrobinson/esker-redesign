@@ -11,7 +11,14 @@ eleventyExcludeFromCollections: true
 {% block body %}
 
 <script>
+  // Load gtag.js immediately on this page (don't wait for scroll)
+  var head = document.getElementsByTagName('head')[0];
+  var script = document.createElement('script');
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-PL4NL9XE9Y';
+  head.appendChild(script);
+
   gtag('event', 'ads_conversion_Contact_Us_1', {});
+  gtag('event', 'conversion', {'send_to': 'AW-16834089922/QPM8CJaky5IcEMKnj9s-'});
 </script>
 
 <section id="fb-hero" style="min-height:80vh;display:flex;align-items:center;justify-content:center;padding-bottom:6.25rem;">
