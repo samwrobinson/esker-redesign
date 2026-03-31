@@ -1,0 +1,223 @@
+/*-- -------------------------- -->
+<---   Contractor Landing Page   -->
+<--- -------------------------- -*/
+/*-- -------------------------- -->
+<---   Video Testimonials        -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #video-testimonials {
+    padding: var(--sectionPadding);
+    background-color: #fff;
+    padding-top: 3rem;
+  }
+  #video-testimonials .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #video-testimonials .cs-title {
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: center;
+    max-width: 90rem;
+    margin: 0 0 clamp(2rem, 4vw, 3rem);
+    color: var(--primary);
+  }
+  #video-testimonials .cs-carousel-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+  }
+  #video-testimonials .cs-arrow {
+    flex: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    background: transparent;
+    color: var(--secondary);
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: color 0.3s;
+  }
+  #video-testimonials .cs-arrow svg {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  #video-testimonials .cs-arrow:hover {
+    color: var(--primary);
+  }
+  #video-testimonials .cs-card-group {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  #video-testimonials .cs-card-group::-webkit-scrollbar {
+    display: none;
+  }
+  #video-testimonials .cs-item {
+    width: 85%;
+    min-width: 85%;
+    flex: none;
+    background-color: #f7f7f7;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+  }
+  #video-testimonials .cs-arrow {
+    display: flex;
+  }
+  #video-testimonials .cs-video-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: #000;
+    flex: none;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  #video-testimonials .cs-video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #video-testimonials .cs-video-wrapper.cs-playing .cs-play-button {
+    opacity: 0;
+    pointer-events: none;
+  }
+  #video-testimonials .cs-play-button {
+    width: clamp(2.5rem, 5vw, 3.5rem);
+    height: clamp(2.5rem, 5vw, 3.5rem);
+    border: none;
+    border-radius: 50%;
+    background-color: var(--primaryLight);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 10;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+  }
+  #video-testimonials .cs-play-icon {
+    width: clamp(1rem, 2vw, 1.25rem);
+    height: clamp(1rem, 2vw, 1.25rem);
+    color: var(--primary);
+    margin-left: 2px;
+  }
+  #video-testimonials .cs-info {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+  }
+  #video-testimonials .cs-stars {
+    width: 6rem;
+    height: auto;
+    margin: 0 0 0.75rem;
+  }
+  #video-testimonials .cs-quote {
+    font-size: 0.875rem;
+    line-height: 1.5em;
+    color: var(--bodyTextColor);
+    margin: 0 0 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  #video-testimonials .cs-name {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 0.5rem;
+  }
+  #video-testimonials .cs-see-all {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--secondary);
+    text-decoration: none;
+    margin-top: auto;
+    transition: color 0.3s;
+  }
+  #video-testimonials .cs-see-all:hover {
+    color: var(--primary);
+  }
+}
+/* Tablet - 600px */
+@media only screen and (min-width: 37.5rem) {
+  #video-testimonials .cs-item {
+    width: calc(50% - 1.25rem / 2);
+    min-width: calc(50% - 1.25rem / 2);
+    flex-direction: row;
+  }
+  #video-testimonials .cs-video-wrapper {
+    width: 45%;
+    aspect-ratio: auto;
+    align-self: stretch;
+  }
+  #video-testimonials .cs-info {
+    width: 55%;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #video-testimonials .cs-item {
+    width: calc(50% - 1.25rem / 2);
+    min-width: calc(50% - 1.25rem / 2);
+  }
+  #video-testimonials .cs-info {
+    padding: 1.5rem;
+  }
+  #video-testimonials .cs-quote {
+    font-size: 0.9375rem;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #video-testimonials {
+    background-color: var(--dark);
+  }
+  body.dark-mode #video-testimonials .cs-title {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #video-testimonials .cs-item {
+    background-color: var(--medium);
+  }
+  body.dark-mode #video-testimonials .cs-quote {
+    color: var(--bodyTextColorWhite);
+    opacity: 0.8;
+  }
+  body.dark-mode #video-testimonials .cs-name {
+    color: var(--bodyTextColorWhite);
+  }
+}

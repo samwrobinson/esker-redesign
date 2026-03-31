@@ -303,7 +303,7 @@
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #video-548 {
-    padding: var(--sectionPadding);
+    padding: clamp(2rem, 4vw, 3rem) 1rem clamp(3.75rem, 7.82vw, 6.25rem);
     overflow: hidden;
   }
   #video-548 .cs-container {
@@ -421,12 +421,37 @@
     /* Nudge the play icon slightly right to center it visually */
     margin-left: 4px;
   }
+  #video-548 .cs-video-form-row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
   #video-548 .cs-inline-form {
     width: 100%;
     max-width: 56.25rem;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    background-color: #f7f7f7;
+    border: 1px solid #e0e0e0;
+    border-radius: 1rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+  }
+  #video-548 .cs-form-title {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 900;
+    line-height: 1.3em;
+    color: var(--primary);
+    margin: 0;
+    text-align: center;
+  }
+  #video-548 .cs-form-subtitle {
+    font-size: 0.875rem;
+    line-height: 1.5em;
+    color: var(--bodyTextColor);
+    margin: 0 0 0.25rem;
+    text-align: center;
   }
   #video-548 .cs-form-row {
     width: 100%;
@@ -437,6 +462,7 @@
   #video-548 .cs-input,
   #video-548 .cs-message {
     flex: 1;
+    width: 100%;
     min-width: 0;
     padding: 0.875rem 1.25rem;
     border: 1px solid #e0e0e0;
@@ -490,6 +516,29 @@
     border-radius: 1.875rem;
   }
 }
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #video-548 .cs-video-form-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  #video-548 .cs-video-wrapper {
+    flex: 1;
+    min-width: 0;
+    padding: clamp(1.5rem, 2vw, 2rem);
+  }
+  #video-548 .cs-inline-form {
+    flex: 0 0 26.25rem;
+    max-width: 26.25rem;
+    align-self: center;
+  }
+  #video-548 .cs-form-row {
+    flex-direction: column;
+  }
+}
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
   body.dark-mode #video-548 .cs-title,
@@ -502,9 +551,20 @@
   body.dark-mode #video-548 .cs-video-glow {
     background: radial-gradient(ellipse at center, rgba(95, 250, 178, 0.6) 0%, rgba(95, 250, 178, 0.4) 25%, rgba(95, 250, 178, 0.2) 45%, rgba(95, 250, 178, 0) 70%);
   }
+  body.dark-mode #video-548 .cs-inline-form {
+    background-color: var(--medium);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  body.dark-mode #video-548 .cs-form-title {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #video-548 .cs-form-subtitle {
+    color: var(--bodyTextColorWhite);
+    opacity: 0.8;
+  }
   body.dark-mode #video-548 .cs-input,
   body.dark-mode #video-548 .cs-message {
-    background-color: var(--medium);
+    background-color: var(--dark);
     border-color: rgba(255, 255, 255, 0.1);
     color: var(--bodyTextColorWhite);
   }
@@ -1068,13 +1128,12 @@
   }
   #projects-604 .cs-container {
     width: 100%;
-    max-width: 80rem;
+    max-width: 100rem;
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* 48px - 64px */
-    gap: clamp(3rem, 6vw, 4rem);
+    gap: 1.5rem;
   }
   #projects-604 .cs-content {
     /* set text align to left if content needs to be left aligned */
@@ -1104,7 +1163,7 @@
   }
   #projects-604 .cs-info {
     width: 100%;
-    min-height: clamp(21.875rem, 34vw, 28.125rem);
+    min-height: clamp(21.875rem, 45vw, 31.25rem);
     display: flex;
     flex-direction: column;
     align-items: flex-start;

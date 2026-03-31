@@ -15,6 +15,7 @@ eleventyNavigation:
 
 <!-- Critical Resources -->
 <link rel="stylesheet" href="/assets/css/critical.css">
+<link rel="stylesheet" href="/assets/css/contractor-landing.css">
 <link rel="stylesheet" href="/assets/css/local.css"
     media="print" onload="this.media='all'; this.onload=null;">
 <noscript>
@@ -132,6 +133,108 @@ eleventyNavigation:
 </section>
 
 <!-- ============================================ -->
+<!--              Video Testimonials              -->
+<!-- ============================================ -->
+
+<section id="video-testimonials">
+    <div class="cs-container">
+        <h2 class="cs-title">The proof is in the pudding...<br>Let's see what our clients have to say</h2>
+        <div class="cs-carousel-wrapper">
+            <button class="cs-arrow cs-arrow-left" aria-label="Previous testimonial">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <ul class="cs-card-group">
+                <!-- Testimonial 1 - Tim -->
+                <li class="cs-item">
+                    <div class="cs-video-wrapper" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video playsinline preload="metadata">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/tim-testimonial.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play testimonial video">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="5 stars" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">
+                            "Sam created a beautiful website for me. I thought it was stunning — I really didn't expect a website for a construction company to be that beautiful."
+                        </p>
+                        <span class="cs-name">–Tim Smith, Hoplite Builders</span>
+                        <a href="/reviews/" class="cs-see-all">See All →</a>
+                    </div>
+                </li>
+                <!-- Testimonial 2 - Moxie -->
+                <li class="cs-item">
+                    <div class="cs-video-wrapper" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video playsinline preload="metadata">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/IMG_4106.mov" type="video/quicktime">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/IMG_4106.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play testimonial video">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="5 stars" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">
+                            "Both my businesses' websites are managed by Esker Designs — I couldn't just have one, I had to have two! Sam makes the process so seamless, and not only does the site look great, but he will also help you get Google reviews. We received 13 reviews within the first month of being in business."
+                        </p>
+                        <span class="cs-name">–Moxie, Upland Coffee</span>
+                        <a href="/reviews/" class="cs-see-all">See All →</a>
+                    </div>
+                </li>
+                <!-- Testimonial 3 - Shelly -->
+                <li class="cs-item">
+                    <div class="cs-video-wrapper" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video playsinline preload="metadata">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/shelly-testimonial.mov" type="video/quicktime">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/shelly-testimonial.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play testimonial video">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="5 stars" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">
+                            "Before working with Sam, my website didn't truly reflect my business. It wasn't bringing in the kinds of leads I needed, but Sam completely changed that. He didn't just build a website — he built something that actually worked for my business."
+                        </p>
+                        <span class="cs-name">–Shelly Bogue, Five Star Cleaning Services</span>
+                        <a href="/reviews/" class="cs-see-all">See All →</a>
+                    </div>
+                </li>
+            </ul>
+            <button class="cs-arrow cs-arrow-right" aria-label="Next testimonial">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Testimonial carousel
+    (function() {
+        const wrapper = document.querySelector('#video-testimonials .cs-card-group');
+        const items = wrapper.querySelectorAll('.cs-item');
+        const leftArrow = document.querySelector('#video-testimonials .cs-arrow-left');
+        const rightArrow = document.querySelector('#video-testimonials .cs-arrow-right');
+
+        rightArrow.addEventListener('click', function() {
+            const itemWidth = items[0].offsetWidth + parseInt(getComputedStyle(wrapper).gap);
+            wrapper.scrollBy({ left: itemWidth, behavior: 'smooth' });
+        });
+
+        leftArrow.addEventListener('click', function() {
+            const itemWidth = items[0].offsetWidth + parseInt(getComputedStyle(wrapper).gap);
+            wrapper.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+        });
+    })();
+</script>
+
+<!-- ============================================ -->
 <!--                   Video                      -->
 <!-- ============================================ -->
 
@@ -144,35 +247,39 @@ eleventyNavigation:
                 See the difference a hand-coded website can make for your business. No page builders, no templates – just clean, efficient code built to convert.
             </p>
         </div>
-        <div class="cs-video-wrapper">
-            <div class="cs-video-glow" aria-hidden="true"></div>
-            <div class="cs-video-container" id="yt-player-container" data-video-id="280sn8hNj0c">
-                <!--YouTube Thumbnail-->
-                <img class="cs-thumbnail" decoding="async" src="https://img.youtube.com/vi/280sn8hNj0c/sddefault.jpg" alt="Video thumbnail - Watch how we build websites" width="640" height="480">
-                <!--Play Button-->
-                <button class="cs-play-button" aria-label="Play video">
-                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
-                        <path d="M8 5v14l11-7z"/>
-                    </svg>
-                </button>
+        <div class="cs-video-form-row">
+            <div class="cs-video-wrapper">
+                <div class="cs-video-glow" aria-hidden="true"></div>
+                <div class="cs-video-container" id="yt-player-container" data-video-id="280sn8hNj0c">
+                    <!--YouTube Thumbnail-->
+                    <img class="cs-thumbnail" decoding="async" src="https://img.youtube.com/vi/280sn8hNj0c/sddefault.jpg" alt="Video thumbnail - Watch how we build websites" width="640" height="480">
+                    <!--Play Button-->
+                    <button class="cs-play-button" aria-label="Play video">
+                        <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
+            <!--Inline Contact Form-->
+            <form class="cs-inline-form" name="Homepage Contact" method="post" action="/thank-you/" netlify>
+                <h3 class="cs-form-title">Get Your Free Quote</h3>
+                <p class="cs-form-subtitle">No upfront costs. No commitment. Just results.</p>
+                <div class="cs-form-row">
+                    <input class="cs-input" type="text" name="name" placeholder="Name" required>
+                    <input class="cs-input" type="email" name="email" placeholder="Email" required>
+                    <input class="cs-input" type="tel" name="phone" placeholder="Phone">
+                </div>
+                <div class="cs-form-row">
+                    <textarea class="cs-message" name="message" placeholder="What can we help you with?" rows="3"></textarea>
+                </div>
+                <button class="cs-submit" type="submit">Start Today</button>
+                <div class="cs-policy-links">
+                    <a href="/privacy-policy/" class="cs-privacy-link" target="_blank">Privacy Policy</a>
+                    <a href="/terms-of-service/" class="cs-privacy-link" target="_blank">Terms of Service</a>
+                </div>
+            </form>
         </div>
-        <!--Inline Contact Form-->
-        <form class="cs-inline-form" name="Homepage Contact" method="post" action="/thank-you/" netlify>
-            <div class="cs-form-row">
-                <input class="cs-input" type="text" name="name" placeholder="Name" required>
-                <input class="cs-input" type="email" name="email" placeholder="Email" required>
-                <input class="cs-input" type="tel" name="phone" placeholder="Phone">
-            </div>
-            <div class="cs-form-row">
-                <textarea class="cs-message" name="message" placeholder="What can we help you with?" rows="2"></textarea>
-            </div>
-            <div class="cs-policy-links">
-                <a href="/privacy-policy/" class="cs-privacy-link" target="_blank">Privacy Policy</a>
-                <a href="/terms-of-service/" class="cs-privacy-link" target="_blank">Terms of Service</a>
-            </div>
-            <button class="cs-submit" type="submit">Start Today</button>
-        </form>
     </div>
     <script>
         // YouTube Player API with GA4 Tracking
@@ -294,6 +401,130 @@ eleventyNavigation:
     </script>
 </section>
 
+
+<!-- ============================================ -->
+<!--                  Projects                    -->
+<!-- ============================================ -->
+
+<section id="projects-604">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex-group">
+                <span class="cs-topper">Featured Work</span>
+                <h2 id="first" class="cs-title">Custom Websites Built From Scratch</h2>
+            </div>
+            <p class="cs-text">
+                No templates. No page builders. Just clean, efficient code that delivers blazing-fast websites for contractors and small businesses. Each site is built from the ground up with perfect Google speed scores.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <a class="cs-link" data-umami-event="Portfolio 1" href="https://northwoodpaintingcompany.com/" target="_blank" rel="noopener">
+                    <div class="cs-info">
+                        <picture class="cs-background">
+                            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/northwood-painting-company.png' | webp %}">
+                            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/northwood-painting-company.png' | webp %}">
+                            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/northwood-painting-company.png' | webp %}" alt="NorthWood Painting Company website preview" width="413" height="450">
+                        </picture>
+                        <span class="cs-header">NorthWood Painting Company</span>
+                        <p class="cs-item-text">
+                            Custom website for a Burlington, VT painting contractor built around their philosophy of "Clarity Over Urgency. Craft Over Compromise." Designed to showcase their meticulous prep work and long-lasting finishes.
+                        </p>
+                        <span class="cs-number">01</span>
+                    </div>
+                    <h3 class="cs-h3">NorthWood Painting Company</h3>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a class="cs-link" data-umami-event="Portfolio 2" href="https://peakpainting.co/" target="_blank" rel="noopener">
+                    <div class="cs-info">
+                        <picture class="cs-background">
+                            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/peak-painting.png' | webp %}">
+                            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/peak-painting.png' | webp %}">
+                            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/peak-painting.png' | webp %}" alt="Peak Painting website preview" width="413" height="450">
+                        </picture>
+                        <span class="cs-header">Peak Painting</span>
+                        <p class="cs-item-text">
+                            Hand-coded site for a family-owned painting company in Woodstock, VT run by brothers Jackson and Christian. Built to reflect their reliable, quality-first approach to handling Vermont's demanding climate.
+                        </p>
+                        <span class="cs-number">02</span>
+                    </div>
+                    <h3 class="cs-h3">Peak Painting</h3>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a class="cs-link" data-umami-event="Portfolio 3" href="https://summitpropainting.co/" target="_blank" rel="noopener">
+                    <div class="cs-info">
+                        <picture class="cs-background">
+                            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/summit-pro-painting.png' | webp %}">
+                            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/summit-pro-painting.png' | webp %}">
+                            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/summit-pro-painting.png' | webp %}" alt="Summit Pro Painting website preview" width="413" height="450">
+                        </picture>
+                        <span class="cs-header">Summit Pro Painting</span>
+                        <p class="cs-item-text">
+                            Custom website for a licensed painting contractor in Burlington, VT serving Chittenden County. Designed to highlight their transparent pricing and meticulous preparation process.
+                        </p>
+                        <span class="cs-number">03</span>
+                    </div>
+                    <h3 class="cs-h3">Summit Pro Painting</h3>
+                </a>
+            </li>
+        </ul>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <a class="cs-link" data-umami-event="Portfolio 4" href="https://rutlandbuild.com/" target="_blank" rel="noopener">
+                    <div class="cs-info">
+                        <picture class="cs-background">
+                            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/rutland-build.png' | webp %}">
+                            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/rutland-build.png' | webp %}">
+                            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/rutland-build.png' | webp %}" alt="Rutland Build website preview" width="413" height="450">
+                        </picture>
+                        <span class="cs-header">Rutland Build</span>
+                        <p class="cs-item-text">
+                            Full custom website for a Vermont construction company specializing in ADUs, custom homes, and green renovations. Features their design-first system with transparent, fixed-price contracts.
+                        </p>
+                        <span class="cs-number">04</span>
+                    </div>
+                    <h3 class="cs-h3">Rutland Build</h3>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a class="cs-link" data-umami-event="Portfolio 5" href="https://metalvistaroofing.com/" target="_blank" rel="noopener">
+                    <div class="cs-info">
+                        <picture class="cs-background">
+                            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/metal-vista.png' | webp %}">
+                            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/metal-vista.png' | webp %}">
+                            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/metal-vista.png' | webp %}" alt="Metal Vista Roofing website preview" width="413" height="450">
+                        </picture>
+                        <span class="cs-header">Metal Vista Roofing</span>
+                        <p class="cs-item-text">
+                            Custom site for a family-owned roofing contractor in Vergennes, VT specializing in premium metal roofing systems. Built to showcase their expertise in solving Central Vermont's harsh climate challenges.
+                        </p>
+                        <span class="cs-number">05</span>
+                    </div>
+                    <h3 class="cs-h3">Metal Vista Roofing</h3>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a class="cs-link" data-umami-event="Portfolio 6" href="https://lotuswoodflooring.com/" target="_blank" rel="noopener">
+                    <div class="cs-info">
+                        <picture class="cs-background">
+                            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/lotus-wood-flooring.png' | webp %}">
+                            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/lotus-wood-flooring.png' | webp %}">
+                            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/lotus-wood-flooring.png' | webp %}" alt="Lotus Wood Flooring website preview" width="413" height="450">
+                        </picture>
+                        <span class="cs-header">Lotus Wood Flooring</span>
+                        <p class="cs-item-text">
+                            Design-focused website for a hardwood flooring company in Fairfield County, CT with 15+ years experience and a perfect 5/5 Google rating. Built to convert visitors into estimate requests.
+                        </p>
+                        <span class="cs-number">06</span>
+                    </div>
+                    <h3 class="cs-h3">Lotus Wood Flooring</h3>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
 
 <!-- ============================================ -->
 <!--                  Services                    -->
@@ -558,129 +789,6 @@ eleventyNavigation:
     </div>
 </section>
 
-<!-- ============================================ -->
-<!--                  Projects                    -->
-<!-- ============================================ -->
-
-<section id="projects-604">
-    <div class="cs-container">
-        <div class="cs-content">
-            <div class="cs-flex-group">
-                <span class="cs-topper">Featured Work</span>
-                <h2 id="first" class="cs-title">Custom Vermont Websites Built From Scratch</h2>
-            </div>
-            <p class="cs-text">
-                No templates. No page builders. Just clean, efficient code that delivers blazing-fast websites for Vermont businesses. Each site is built from the ground up with perfect Google speed scores, ensuring your business stands out in both design and performance.
-            </p>
-        </div>
-        <ul class="cs-card-group">
-            <li class="cs-item">
-                <a class="cs-link" data-umami-event="Portfolio 2" href="https://peakpainting.netlify.app/">
-                    <div class="cs-info">
-                        <picture class="cs-background">
-                            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/peakpainting.png'| webp %}">
-                            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/peakpainting.png'| webp %}">
-                            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/peakpainting.png' | webp %}" alt="Peak Painting website preview" width="413" height="450">
-                        </picture>
-                        <span class="cs-header">Peak Painting Vermont</span>
-                        <p class="cs-item-text">
-                            Hand-coded website for Vermont painters that perfectly captures their attention to detail. Features smooth animations, instant load times, and strong local SEO optimization.
-                        </p>
-                        <span class="cs-number">01</span>
-                    </div>
-                    <h3 class="cs-h3">Peak Painting Vermont</h3>
-                </a>
-            </li>
-            <li class="cs-item">
-                <a class="cs-link" data-umami-event="Portfolio 3" href="https://rutlandbuild.com/">
-                    <div class="cs-info">
-                        <picture class="cs-background">
-                            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/rutlandbuild.webp' | webp %}">
-                            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/rutlandbuild.webp' | webp %}">
-                            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/rutlandbuild.webp' | webp %}" alt="Alpenglow Counseling website preview" width="413" height="450">
-                        </picture>
-                        <span class="cs-header">Rutland Build</span>
-                        <p class="cs-item-text">
-                            We built this fully custom website for Rutland Build, a full-service design and construction firm rooted in transparency, quality, and client first delivery. Be sure to check out the custom form we built for them!
-                        </p>
-                        <span class="cs-number">02</span>
-                    </div>
-                    <h3 class="cs-h3">Rutland Build</h3>
-                </a>
-            </li>
-            <li class="cs-item">
-                <a class="cs-link" data-umami-event="Portfolio 3" href="https://barresocialclub.com/">
-                    <div class="cs-info">
-                        <picture class="cs-background">
-                            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/bsc-mockup.png' | webp %}">
-                            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/bsc-mockup.png' | webp %}">
-                            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/bsc-mockup.png' | webp %}" alt="Barre Social Club website preview" width="413" height="450">
-                        </picture>
-                        <span class="cs-header">Barre Social Club</span>
-                        <p class="cs-item-text">
-                            Barre Social Club blends comfortable workspaces with genuine community connections. Whether you need a quiet corner to crush deadlines or a beautiful Vermont venue for your next celebration, they've created a space that feels like yours from day one.
-                        </p>
-                        <span class="cs-number">03</span>
-                    </div>
-                    <h3 class="cs-h3">Barre Social Club</h3>
-                </a>
-            </li>
-        </ul>
-        <ul class="cs-card-group">
-            <li class="cs-item">
-                <a class="cs-link" data-umami-event="Portfolio 4" href="https://barerootscounseling.org/">
-                    <div class="cs-info">
-                        <picture class="cs-background">
-                            <source media="(max-width: 600px)" srcset="/assets/images/bareroots-v2.webp">
-                            <source media="(min-width: 601px)" srcset="/assets/images/bareroots-v2.webp">
-                            <img loading="lazy" decoding="async" src="/assets/images/bareroots-v2.webp" alt="Bareroots Counseling website preview" width="413" height="450">
-                        </picture>
-                        <span class="cs-header">Bareroots Counseling</span>
-                        <p class="cs-item-text">
-                            Clean, professional website for a Vermont therapist focusing on accessibility and user experience. Built with perfect Google speed scores and modern design principles.
-                        </p>
-                        <span class="cs-number">04</span>
-                    </div>
-                    <h3 class="cs-h3">Bareroots Counseling</h3>
-                </a>
-            </li>
-            <li class="cs-item">
-                <a class="cs-link" data-umami-event="Portfolio 5" href="https://peak-pressurewash.com/">
-                    <div class="cs-info">
-                        <picture class="cs-background">
-                            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/peakpressure.png' | webp %}">
-                            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/peakpressure.png' | webp %}">
-                            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/peakpressure.png' | webp %}" alt="Peak Pressure Wash website preview" width="413" height="450">
-                        </picture>
-                        <span class="cs-header">Peak Pressure Wash</span>
-                        <p class="cs-item-text">
-                            A lightning-fast website built for a premium pressure washing service in Mississippi. Custom-coded with clean design and perfect speed scores to help them stand out in their local market.
-                        </p>
-                        <span class="cs-number">05</span>
-                    </div>
-                    <h3 class="cs-h3">Peak Pressure Wash</h3>
-                </a>
-            </li>
-            <li class="cs-item">
-                <a class="cs-link" data-umami-event="Portfolio 6" href="https://blueberrylakexc.com/">
-                    <div class="cs-info">
-                        <picture class="cs-background">
-                            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/blueberry-portfolio.webp'| webp %}">
-                            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/blueberry-portfolio.webp'| webp %}">
-                            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/blueberry-portfolio.webp' | webp %}" alt="Blueberry Lake Cross Country website preview" width="413" height="450">
-                        </picture>
-                        <span class="cs-header">Blueberry Lake Cross Country</span>
-                        <p class="cs-item-text">
-                            Custom website for a historic Vermont ski center featuring 35 kilometers of trails. Built to showcase their 44-year legacy, trail conditions, and easy online booking for passes. Perfect for families and outdoor enthusiasts exploring the Mad River Valley.
-                        </p>
-                        <span class="cs-number">06</span>
-                    </div>
-                    <h3 class="cs-h3">Blueberry Lake Cross Country</h3>
-                </a>
-            </li>
-        </ul>
-    </div>
-</section>
 <!-- ============================================ -->
 <!--                   Pricing                    -->
 <!-- ============================================ -->
