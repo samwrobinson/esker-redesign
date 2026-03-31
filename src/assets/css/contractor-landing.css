@@ -195,6 +195,11 @@
     width: calc(50% - 1.25rem / 2);
     min-width: calc(50% - 1.25rem / 2);
   }
+  #video-testimonials .cs-item-featured {
+    width: calc(55% - 1.25rem / 2);
+    min-width: calc(55% - 1.25rem / 2);
+    border: 2px solid var(--primary);
+  }
   #video-testimonials .cs-info {
     padding: 1.5rem;
   }

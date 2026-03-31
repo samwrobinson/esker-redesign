@@ -209,6 +209,7 @@
             flex-direction: row;
         }
 
+
         .cs-video-wrapper {
             width: 45%;
             aspect-ratio: auto;
@@ -228,6 +229,13 @@
             @card-gap: (20/16rem);
             width: ~"calc(50% - @{card-gap} / 2)";
             min-width: ~"calc(50% - @{card-gap} / 2)";
+        }
+
+        .cs-item-featured {
+            @card-gap: (20/16rem);
+            width: ~"calc(55% - @{card-gap} / 2)";
+            min-width: ~"calc(55% - @{card-gap} / 2)";
+            border: 2px solid var(--primary);
         }
 
         .cs-info {

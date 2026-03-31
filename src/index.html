@@ -144,6 +144,27 @@ eleventyNavigation:
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
             </button>
             <ul class="cs-card-group">
+                <!-- Featured Testimonial - Jules -->
+                <li class="cs-item cs-item-featured">
+                    <div class="cs-video-wrapper" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video playsinline preload="metadata">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/quicktime">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play testimonial video">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="5 stars" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">
+                            "Working with Sam was super easy from start to finish. When he showed me the website I was blown away. I've definitely noticed more leads since launching the site and a higher closing rate because my clients can trust me right away. I had to have Sam set up a spreadsheet to track all my inquiries since I was getting too many leads."
+                        </p>
+                        <span class="cs-name">–Jules Butler, Butler Yardcare</span>
+
+                    </div>
+                </li>
                 <!-- Testimonial 1 - Tim -->
                 <li class="cs-item">
                     <div class="cs-video-wrapper" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
@@ -161,7 +182,7 @@ eleventyNavigation:
                             "Sam created a beautiful website for me. I thought it was stunning — I really didn't expect a website for a construction company to be that beautiful."
                         </p>
                         <span class="cs-name">–Tim Smith, Hoplite Builders</span>
-                        <a href="/reviews/" class="cs-see-all">See All →</a>
+
                     </div>
                 </li>
                 <!-- Testimonial 2 - Moxie -->
@@ -182,7 +203,7 @@ eleventyNavigation:
                             "Both my businesses' websites are managed by Esker Designs — I couldn't just have one, I had to have two! Sam makes the process so seamless, and not only does the site look great, but he will also help you get Google reviews. We received 13 reviews within the first month of being in business."
                         </p>
                         <span class="cs-name">–Moxie, Upland Coffee</span>
-                        <a href="/reviews/" class="cs-see-all">See All →</a>
+
                     </div>
                 </li>
                 <!-- Testimonial 3 - Shelly -->
@@ -203,7 +224,7 @@ eleventyNavigation:
                             "Before working with Sam, my website didn't truly reflect my business. It wasn't bringing in the kinds of leads I needed, but Sam completely changed that. He didn't just build a website — he built something that actually worked for my business."
                         </p>
                         <span class="cs-name">–Shelly Bogue, Five Star Cleaning Services</span>
-                        <a href="/reviews/" class="cs-see-all">See All →</a>
+
                     </div>
                 </li>
             </ul>
@@ -215,20 +236,20 @@ eleventyNavigation:
 </section>
 
 <script>
-    // Testimonial carousel
     (function() {
-        const wrapper = document.querySelector('#video-testimonials .cs-card-group');
-        const items = wrapper.querySelectorAll('.cs-item');
-        const leftArrow = document.querySelector('#video-testimonials .cs-arrow-left');
-        const rightArrow = document.querySelector('#video-testimonials .cs-arrow-right');
+        var wrapper = document.querySelector('#video-testimonials .cs-card-group');
+        if (!wrapper) return;
+        var items = wrapper.querySelectorAll('.cs-item');
+        var leftArrow = document.querySelector('#video-testimonials .cs-arrow-left');
+        var rightArrow = document.querySelector('#video-testimonials .cs-arrow-right');
 
         rightArrow.addEventListener('click', function() {
-            const itemWidth = items[0].offsetWidth + parseInt(getComputedStyle(wrapper).gap);
+            var itemWidth = items[0].offsetWidth + parseInt(getComputedStyle(wrapper).gap);
             wrapper.scrollBy({ left: itemWidth, behavior: 'smooth' });
         });
 
         leftArrow.addEventListener('click', function() {
-            const itemWidth = items[0].offsetWidth + parseInt(getComputedStyle(wrapper).gap);
+            var itemWidth = items[0].offsetWidth + parseInt(getComputedStyle(wrapper).gap);
             wrapper.scrollBy({ left: -itemWidth, behavior: 'smooth' });
         });
     })();
