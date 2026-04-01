@@ -207,6 +207,115 @@
     font-size: 0.9375rem;
   }
 }
+/*-- -------------------------- -->
+<---     Testimonial Popup       -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  .cs-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+  }
+  .cs-popup.cs-active {
+    display: flex;
+  }
+  .cs-popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+  }
+  .cs-popup-content {
+    position: relative;
+    width: 90%;
+    max-width: 27.5rem;
+    background: #fff;
+    border-radius: 1rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    text-align: center;
+    box-shadow: 0 1.25rem 3.75rem rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+  .cs-popup-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    color: var(--bodyTextColor);
+    cursor: pointer;
+    line-height: 1;
+    padding: 0.25rem;
+    transition: color 0.3s;
+  }
+  .cs-popup-close:hover {
+    color: var(--primary);
+  }
+  .cs-popup-title {
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-weight: 900;
+    line-height: 1.3em;
+    color: var(--primary);
+    margin: 0 0 0.75rem;
+  }
+  .cs-popup-text {
+    font-size: 0.9375rem;
+    line-height: 1.5em;
+    color: var(--bodyTextColor);
+    margin: 0 0 1.25rem;
+  }
+  .cs-popup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+  .cs-popup-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    font-size: 0.9375rem;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  .cs-popup-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(95, 250, 178, 0.2);
+  }
+  .cs-popup-input::placeholder {
+    color: #999;
+  }
+  .cs-popup-submit {
+    margin-top: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: inherit;
+    color: #000;
+    background-color: var(--primaryLight);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .cs-popup-submit:hover {
+    background-color: var(--primary);
+    color: var(--bodyTextColorWhite);
+  }
+}
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
   body.dark-mode #video-testimonials {
@@ -223,6 +332,30 @@
     opacity: 0.8;
   }
   body.dark-mode #video-testimonials .cs-name {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode .cs-popup-content {
+    background: var(--medium);
+  }
+  body.dark-mode .cs-popup-title {
+    color: var(--primaryLight);
+  }
+  body.dark-mode .cs-popup-text {
+    color: var(--bodyTextColorWhite);
+    opacity: 0.8;
+  }
+  body.dark-mode .cs-popup-input {
+    background-color: var(--dark);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode .cs-popup-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  body.dark-mode .cs-popup-input:focus {
+    border-color: var(--primaryLight);
+  }
+  body.dark-mode .cs-popup-close {
     color: var(--bodyTextColorWhite);
   }
 }

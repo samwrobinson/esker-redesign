@@ -146,7 +146,7 @@ eleventyNavigation:
             <ul class="cs-card-group">
                 <!-- Featured Testimonial - Jules -->
                 <li class="cs-item cs-item-featured">
-                    <div class="cs-video-wrapper" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                    <div class="cs-video-wrapper" data-testimonial="Jules Butler - Butler Yardcare">
                         <video playsinline preload="metadata">
                             <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/quicktime">
                             <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/mp4">
@@ -167,7 +167,7 @@ eleventyNavigation:
                 </li>
                 <!-- Testimonial 1 - Tim -->
                 <li class="cs-item">
-                    <div class="cs-video-wrapper" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                    <div class="cs-video-wrapper" data-testimonial="Tim Smith - Hoplite Builders">
                         <video playsinline preload="metadata">
                             <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/tim-testimonial.mp4" type="video/mp4">
                             Your browser does not support the video tag.
@@ -187,7 +187,7 @@ eleventyNavigation:
                 </li>
                 <!-- Testimonial 2 - Moxie -->
                 <li class="cs-item">
-                    <div class="cs-video-wrapper" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                    <div class="cs-video-wrapper" data-testimonial="Moxie - Upland Coffee">
                         <video playsinline preload="metadata">
                             <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/IMG_4106.mov" type="video/quicktime">
                             <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/IMG_4106.mov" type="video/mp4">
@@ -208,7 +208,7 @@ eleventyNavigation:
                 </li>
                 <!-- Testimonial 3 - Shelly -->
                 <li class="cs-item">
-                    <div class="cs-video-wrapper" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                    <div class="cs-video-wrapper" data-testimonial="Shelly Bogue - Five Star Cleaning">
                         <video playsinline preload="metadata">
                             <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/shelly-testimonial.mov" type="video/quicktime">
                             <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/shelly-testimonial.mov" type="video/mp4">
@@ -235,6 +235,23 @@ eleventyNavigation:
     </div>
 </section>
 
+<!-- Testimonial Popup -->
+<div id="testimonial-popup" class="cs-popup" aria-hidden="true">
+    <div class="cs-popup-overlay"></div>
+    <div class="cs-popup-content">
+        <button class="cs-popup-close" aria-label="Close popup">&times;</button>
+        <h3 class="cs-popup-title">OK, you've heard it from 3 clients...</h3>
+        <p class="cs-popup-text">Why not hop on a call and hear it from us? No pressure, no pitch — just a conversation about what we can do for your business.</p>
+        <form class="cs-popup-form" name="Testimonial Popup" method="post" action="/thank-you/" netlify>
+            <input type="hidden" name="form-source" value="testimonial-popup">
+            <input class="cs-popup-input" type="text" name="name" placeholder="Name" required>
+            <input class="cs-popup-input" type="email" name="email" placeholder="Email" required>
+            <input class="cs-popup-input" type="tel" name="phone" placeholder="Phone">
+            <button class="cs-popup-submit" type="submit">Let's Talk</button>
+        </form>
+    </div>
+</div>
+
 <script>
     (function() {
         var wrapper = document.querySelector('#video-testimonials .cs-card-group');
@@ -242,7 +259,63 @@ eleventyNavigation:
         var items = wrapper.querySelectorAll('.cs-item');
         var leftArrow = document.querySelector('#video-testimonials .cs-arrow-left');
         var rightArrow = document.querySelector('#video-testimonials .cs-arrow-right');
+        var playedVideos = {};
+        var popupShown = false;
 
+        // Click-to-play + GA4 tracking on all video wrappers
+        var videoWrappers = wrapper.querySelectorAll('.cs-video-wrapper');
+        videoWrappers.forEach(function(vw) {
+            vw.addEventListener('click', function() {
+                var video = vw.querySelector('video');
+                var name = vw.getAttribute('data-testimonial') || 'Unknown';
+
+                if (video.paused) {
+                    video.play();
+                    vw.classList.add('cs-playing');
+
+                    // Track unique plays in GA4
+                    if (!playedVideos[name]) {
+                        playedVideos[name] = true;
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'testimonial_play', {
+                                testimonial_name: name,
+                                testimonial_count: Object.keys(playedVideos).length
+                            });
+                        }
+
+                        // Show popup after 3 unique videos played
+                        if (Object.keys(playedVideos).length >= 3 && !popupShown) {
+                            popupShown = true;
+                            setTimeout(function() {
+                                var popup = document.getElementById('testimonial-popup');
+                                popup.setAttribute('aria-hidden', 'false');
+                                popup.classList.add('cs-active');
+                                if (typeof gtag === 'function') {
+                                    gtag('event', 'testimonial_popup_shown');
+                                }
+                            }, 1500);
+                        }
+                    }
+                } else {
+                    video.pause();
+                    vw.classList.remove('cs-playing');
+                }
+            });
+        });
+
+        // Popup close handlers
+        var popup = document.getElementById('testimonial-popup');
+        var closeBtn = popup.querySelector('.cs-popup-close');
+        var overlay = popup.querySelector('.cs-popup-overlay');
+
+        function closePopup() {
+            popup.setAttribute('aria-hidden', 'true');
+            popup.classList.remove('cs-active');
+        }
+        closeBtn.addEventListener('click', closePopup);
+        overlay.addEventListener('click', closePopup);
+
+        // Carousel arrows
         rightArrow.addEventListener('click', function() {
             var itemWidth = items[0].offsetWidth + parseInt(getComputedStyle(wrapper).gap);
             wrapper.scrollBy({ left: itemWidth, behavior: 'smooth' });
