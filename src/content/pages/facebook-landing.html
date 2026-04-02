@@ -18,6 +18,25 @@ eleventyNavigation:
 <script defer src="/assets/js/reviews.js"></script>
 <script defer src="/assets/js/text-animations.js"></script>
 
+<!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3889075514559305');
+    fbq('track', 'PageView');
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=3889075514559305&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+
 {% endblock %}
 
 {% block body %}
@@ -71,6 +90,40 @@ eleventyNavigation:
             <h2 class="cs-title">Do Your Research - Hear What Our Clients Say</h2>
         </div>
         <div class="cs-video-grid">
+            <!-- Jules (Featured) -->
+            <div class="cs-testimonial-card cs-featured-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                <video
+                    class="cs-testimonial-video"
+                    preload="metadata"
+                    playsinline
+                >
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/quicktime">
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button class="cs-play-button" aria-label="Play Jules testimonial">
+                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+            </div>
+            <!-- Tim -->
+            <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                <video
+                    class="cs-testimonial-video"
+                    preload="metadata"
+                    playsinline
+                >
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/tim-testimonial.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button class="cs-play-button" aria-label="Play Tim testimonial">
+                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+            </div>
+            <!-- Moxie -->
             <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
                 <video
                     class="cs-testimonial-video"
@@ -81,12 +134,13 @@ eleventyNavigation:
                     <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/IMG_4106.mov" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <button class="cs-play-button" aria-label="Play testimonial video">
+                <button class="cs-play-button" aria-label="Play Moxie testimonial">
                     <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
                         <path d="M8 5v14l11-7z"/>
                     </svg>
                 </button>
             </div>
+            <!-- Shelley -->
             <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
                 <video
                     class="cs-testimonial-video"
@@ -97,7 +151,24 @@ eleventyNavigation:
                     <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/shelly-testimonial.mov" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <button class="cs-play-button" aria-label="Play testimonial video">
+                <button class="cs-play-button" aria-label="Play Shelley testimonial">
+                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+            </div>
+            <!-- Amber Banta -->
+            <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                <video
+                    class="cs-testimonial-video"
+                    preload="metadata"
+                    playsinline
+                >
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/amber-testimonial.MOV" type="video/quicktime">
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/amber-testimonial.MOV" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button class="cs-play-button" aria-label="Play Amber testimonial">
                     <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
                         <path d="M8 5v14l11-7z"/>
                     </svg>

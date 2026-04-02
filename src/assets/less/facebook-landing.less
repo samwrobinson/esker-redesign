@@ -572,11 +572,10 @@
         .cs-video-grid {
             width: 100%;
             max-width: 60rem;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 1.5rem;
-            flex-wrap: wrap;
+            justify-items: center;
         }
 
         .cs-testimonial-card {
@@ -630,7 +629,7 @@
             color: #000;
         }
 
-        // Featured card (Jules) - full width
+        // Featured card (Jules) - full width on mobile too
         .cs-featured-card {
             max-width: 100%;
             width: 100%;
@@ -1159,6 +1158,18 @@
     #fb-hero {
         .cs-hero-row {
             align-items: center;
+        }
+    }
+
+    #fb-testimonials {
+        .cs-video-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .cs-featured-card {
+            grid-column: 1 / -1;
+            max-width: 50rem;
+            justify-self: center;
         }
     }
 

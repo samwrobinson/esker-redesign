@@ -732,11 +732,10 @@
   #fb-testimonials .cs-video-grid {
     width: 100%;
     max-width: 60rem;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1.5rem;
-    flex-wrap: wrap;
+    justify-items: center;
   }
   #fb-testimonials .cs-testimonial-card {
     position: relative;
@@ -1211,6 +1210,14 @@
   }
   #fb-hero .cs-hero-row {
     align-items: center;
+  }
+  #fb-testimonials .cs-video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #fb-testimonials .cs-featured-card {
+    grid-column: 1 / -1;
+    max-width: 50rem;
+    justify-self: center;
   }
   #fb-trust .cs-stat-group {
     grid-template-columns: repeat(4, 1fr);
