@@ -697,7 +697,7 @@
     <---     Video Testimonials       -->
     <--- -------------------------- -*/
   #fb-testimonials {
-    padding: 3rem 1rem;
+    padding: 3rem 1rem 10rem;
     background: radial-gradient(ellipse 80% 80% at 50% 0%, rgba(150, 191, 48, 0.06) 0%, transparent 50%), linear-gradient(180deg, #0c1307 0%, #0a0f05 100%);
   }
   #fb-testimonials .cs-container {
@@ -782,6 +782,31 @@
     height: 2rem;
     margin-left: 0.25rem;
     color: #000;
+  }
+  #fb-testimonials .cs-featured-card {
+    max-width: 100%;
+    width: 100%;
+  }
+  #fb-testimonials .cs-scroll-row {
+    width: 100%;
+    max-width: 60rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-top: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+  #fb-testimonials .cs-scroll-row::-webkit-scrollbar {
+    display: none;
+  }
+  #fb-testimonials .cs-scroll-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+  }
+  #fb-testimonials .cs-scroll-track .cs-testimonial-card {
+    flex: 0 0 20rem;
+    max-width: 20rem;
   }
   /*-- -------------------------- -->
     <---        Trust Badges          -->

@@ -1,0 +1,247 @@
+---
+title: 'Contractor Website Design That Gets You More Leads | Esker Designs'
+description: 'Custom hand-coded websites for contractors starting at $175/month. No upfront costs, unlimited edits, and 24/7 support. See real results from real contractors.'
+preloadImg: '/assets/images/logo.webp'
+permalink: '/fb/'
+eleventyExcludeFromCollections: true
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/assets/css/facebook-landing.css">
+<link rel="preload" as="image" href="https://img.youtube.com/vi/280sn8hNj0c/sddefault.jpg" fetchpriority="high">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                 Hero Video                   -->
+<!-- ============================================ -->
+
+<section id="fb-hero">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">We Help Contractors Get More Leads With Fast Websites, AI Systems, and 5 Star Reviews for Just <em><span class="cs-squiggle">$175/mo</span></em></h1>
+        </div>
+        <div class="cs-hero-row">
+            <div class="cs-video-wrapper">
+                <div class="cs-video-container" id="fb-yt-player-container" data-video-id="280sn8hNj0c">
+                    <img class="cs-thumbnail" decoding="async" src="https://img.youtube.com/vi/280sn8hNj0c/sddefault.jpg" alt="Video thumbnail - Watch how we build websites for contractors" width="640" height="480">
+                    <button class="cs-play-button" aria-label="Play video">
+                        <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="cs-form-wrapper">
+                <form class="cs-form" id="hero-form" name="FB Contractor Landing" method="post" action="/fb/thank-you/" netlify>
+                    <h3 class="cs-form-title">Watch the Video & We'll Be in Touch</h3>
+                    <div class="cs-form-group">
+                        <label class="cs-label" for="hero-name">Your Name</label>
+                        <input class="cs-input" type="text" id="hero-name" name="name" placeholder="Your name" required>
+                        <label class="cs-label" for="hero-phone">Phone Number</label>
+                        <input class="cs-input" type="tel" id="hero-phone" name="phone" placeholder="(555) 123-4567" required>
+                        <label class="cs-label" for="hero-email">Email</label>
+                        <input class="cs-input" type="email" id="hero-email" name="email" placeholder="you@example.com">
+                    </div>
+                    <button class="cs-submit" type="submit">Get Started</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--            Video Testimonials                -->
+<!-- ============================================ -->
+
+<section id="fb-testimonials">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Don't Just Take Our Word For It</span>
+            <h2 class="cs-title">Hear From Real Contractors We've Worked With</h2>
+        </div>
+        <div class="cs-video-grid">
+            <!-- Jules - Featured / Most Prominent -->
+            <div class="cs-testimonial-card cs-featured-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                <video
+                    class="cs-testimonial-video"
+                    preload="metadata"
+                    playsinline
+                >
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/quicktime">
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button class="cs-play-button" aria-label="Play Jules testimonial">
+                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+            </div>
+            <!-- Tim -->
+            <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                <video
+                    class="cs-testimonial-video"
+                    preload="metadata"
+                    playsinline
+                >
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/tim-testimonial.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button class="cs-play-button" aria-label="Play Tim testimonial">
+                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+            </div>
+            <!-- Shelley -->
+            <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                <video
+                    class="cs-testimonial-video"
+                    preload="metadata"
+                    playsinline
+                >
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/shelly-testimonial.mov" type="video/quicktime">
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/shelly-testimonial.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button class="cs-play-button" aria-label="Play Shelley testimonial">
+                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Side-scroll testimonials: Moxie & Amber -->
+        <div class="cs-scroll-row">
+            <div class="cs-scroll-track">
+                <!-- Moxie -->
+                <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                    <video
+                        class="cs-testimonial-video"
+                        preload="metadata"
+                        playsinline
+                    >
+                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/IMG_4106.mov" type="video/quicktime">
+                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/IMG_4106.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button class="cs-play-button" aria-label="Play Moxie testimonial">
+                        <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Amber Banta -->
+                <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                    <video
+                        class="cs-testimonial-video"
+                        preload="metadata"
+                        playsinline
+                    >
+                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/amber-testimonial.MOV" type="video/quicktime">
+                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/amber-testimonial.MOV" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button class="cs-play-button" aria-label="Play Amber testimonial">
+                        <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // YouTube Player — click to play directly (no gate)
+    (function() {
+        var player;
+        var videoStarted = false;
+        var videoTitle = 'FB Contractor Landing Promo Video';
+        var container = document.getElementById('fb-yt-player-container');
+
+        function startVideo() {
+            container.classList.add('cs-playing');
+            var tag = document.createElement('script');
+            tag.src = 'https://www.youtube.com/iframe_api';
+            var firstScript = document.getElementsByTagName('script')[0];
+            firstScript.parentNode.insertBefore(tag, firstScript);
+        }
+
+        if (container) {
+            container.addEventListener('click', function() {
+                startVideo();
+            });
+        }
+
+        window.onYouTubeIframeAPIReady = function() {
+            var videoId = container.dataset.videoId;
+            container.innerHTML = '<div id="fb-yt-player"></div>';
+
+            player = new YT.Player('fb-yt-player', {
+                videoId: videoId,
+                width: '100%',
+                height: '100%',
+                playerVars: {
+                    autoplay: 1,
+                    rel: 0,
+                    modestbranding: 1
+                },
+                events: {
+                    onReady: function(event) { event.target.playVideo(); },
+                    onStateChange: function(event) {
+                        if (event.data === YT.PlayerState.PLAYING && !videoStarted) {
+                            videoStarted = true;
+                            if (typeof gtag === 'function') {
+                                gtag('event', 'video_start', {
+                                    video_title: videoTitle,
+                                    video_provider: 'youtube'
+                                });
+                            }
+                        }
+                        if (event.data === YT.PlayerState.ENDED) {
+                            if (typeof gtag === 'function') {
+                                gtag('event', 'video_complete', {
+                                    video_title: videoTitle,
+                                    video_provider: 'youtube'
+                                });
+                            }
+                        }
+                    }
+                }
+            });
+        };
+    })();
+
+    // Hero form — submit to Netlify, redirect to FB thank you
+    (function() {
+        var form = document.getElementById('hero-form');
+        if (!form) return;
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var formData = new FormData(form);
+            formData.append('form-name', 'FB Contractor Landing');
+
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString()
+            }).then(function() {
+                window.location.href = '/fb/thank-you/';
+            }).catch(function(err) {
+                console.error('Form submission error:', err);
+                window.location.href = '/fb/thank-you/';
+            });
+        });
+    })();
+</script>
+
+{% endblock %}

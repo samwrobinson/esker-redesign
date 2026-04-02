@@ -1,0 +1,61 @@
+---
+title: 'Thank You | Esker Designs'
+description: 'Thanks for reaching out. I will be in touch within 24 hours.'
+preloadImg: '/assets/images/logo.webp'
+permalink: '/fb/thank-you/'
+eleventyExcludeFromCollections: true
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/assets/css/facebook-landing.css">
+
+<!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3889075514559305');
+    fbq('track', 'PageView');
+    fbq('track', 'Lead');
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=3889075514559305&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+{% endblock %}
+
+{% block body %}
+
+<script>
+    // Load gtag.js immediately on this page (don't wait for scroll)
+    var head = document.getElementsByTagName('head')[0];
+    var script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-PL4NL9XE9Y';
+    head.appendChild(script);
+
+    gtag('event', 'ads_conversion_Contact_Us_1', {});
+    gtag('event', 'conversion', {'send_to': 'AW-16834089922/QPM8CJaky5IcEMKnj9s-'});
+</script>
+
+<section id="fb-hero" style="min-height:80vh;display:flex;align-items:center;justify-content:center;padding-bottom:6.25rem;">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Thanks for Reaching Out!</h1>
+            <p class="cs-text">
+                I'll be in touch within 24 hours. In the meantime, feel free to check out some of the work I've done for other small businesses.
+            </p>
+            <a href="/" class="cs-submit" style="display:inline-block;text-decoration:none;text-align:center;max-width:16rem;">Back to Homepage</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
