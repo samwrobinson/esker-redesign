@@ -114,7 +114,7 @@
         .cs-form-wrapper {
             width: 100%;
             max-width: 25rem;
-            order: -1; // Form on top for mobile
+            order: 0; // Video first on mobile
         }
 
         .cs-topper {
@@ -210,13 +210,15 @@
                 }
             }
 
-            iframe {
+            iframe,
+            .cs-vsl-video {
                 position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100%;
                 border: none;
+                object-fit: cover;
             }
         }
 
