@@ -12,7 +12,7 @@ eleventyNavigation:
 
 {% block head %}
 <link rel="stylesheet" href="/assets/css/facebook-landing.css">
-<link rel="preload" as="image" href="https://img.youtube.com/vi/280sn8hNj0c/sddefault.jpg" fetchpriority="high">
+<link rel="preload" as="video" href="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/informal-vsl.mov" fetchpriority="high">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script defer src="/assets/js/reviews.js"></script>
@@ -48,12 +48,21 @@ eleventyNavigation:
 <section id="fb-hero">
     <div class="cs-container">
         <div class="cs-content">
-            <h1 class="cs-title">We Help Small Businesses Get More Customers With Fast Websites, AI Systems, and 5 Star Reviews for Just <em><span class="cs-squiggle">$175/mo</span></em></h1>
+            <h1 class="cs-title">I Help Contractors Get More Leads With Fast Websites, AI Systems, and 5 Star Reviews for Just <br> <em><span style="margin-top: 1rem;" class="cs-squiggle">$175/mo</span></em></h1>
         </div>
         <div class="cs-hero-row">
             <div class="cs-video-wrapper">
-                <div class="cs-video-container" id="fb-yt-player-container" data-video-id="280sn8hNj0c">
-                    <img class="cs-thumbnail" decoding="async" src="https://img.youtube.com/vi/280sn8hNj0c/sddefault.jpg" alt="Video thumbnail - Watch how we build websites" width="640" height="480">
+                <div class="cs-video-container" id="fb-vsl-player-container">
+                    <video
+                        class="cs-vsl-video"
+                        preload="metadata"
+                        playsinline
+                        controls
+                    >
+                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/informal-vsl.mov" type="video/quicktime">
+                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/informal-vsl.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                     <button class="cs-play-button" aria-label="Play video">
                         <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
                             <path d="M8 5v14l11-7z"/>
@@ -681,65 +690,41 @@ eleventyNavigation:
 </section>
 
 <script>
-    // YouTube Player — click to play directly (no gate)
+    // VSL Player — click to play
     (function() {
-        var player;
         var videoStarted = false;
-        var videoTitle = 'Facebook Landing Promo Video';
-        var container = document.getElementById('fb-yt-player-container');
+        var videoTitle = 'Facebook Landing VSL';
+        var container = document.getElementById('fb-vsl-player-container');
+        var video = container ? container.querySelector('.cs-vsl-video') : null;
+        var playBtn = container ? container.querySelector('.cs-play-button') : null;
 
-        function startVideo() {
-            container.classList.add('cs-playing');
-            var tag = document.createElement('script');
-            tag.src = 'https://www.youtube.com/iframe_api';
-            var firstScript = document.getElementsByTagName('script')[0];
-            firstScript.parentNode.insertBefore(tag, firstScript);
-        }
-
-        // Click play button → start video immediately
-        if (container) {
-            container.addEventListener('click', function() {
-                startVideo();
+        if (container && video && playBtn) {
+            playBtn.addEventListener('click', function() {
+                container.classList.add('cs-playing');
+                video.play();
             });
-        }
 
-        window.onYouTubeIframeAPIReady = function() {
-            var videoId = container.dataset.videoId;
-            container.innerHTML = '<div id="fb-yt-player"></div>';
-
-            player = new YT.Player('fb-yt-player', {
-                videoId: videoId,
-                width: '100%',
-                height: '100%',
-                playerVars: {
-                    autoplay: 1,
-                    rel: 0,
-                    modestbranding: 1
-                },
-                events: {
-                    onReady: function(event) { event.target.playVideo(); },
-                    onStateChange: function(event) {
-                        if (event.data === YT.PlayerState.PLAYING && !videoStarted) {
-                            videoStarted = true;
-                            if (typeof gtag === 'function') {
-                                gtag('event', 'video_start', {
-                                    video_title: videoTitle,
-                                    video_provider: 'youtube'
-                                });
-                            }
-                        }
-                        if (event.data === YT.PlayerState.ENDED) {
-                            if (typeof gtag === 'function') {
-                                gtag('event', 'video_complete', {
-                                    video_title: videoTitle,
-                                    video_provider: 'youtube'
-                                });
-                            }
-                        }
+            video.addEventListener('play', function() {
+                if (!videoStarted) {
+                    videoStarted = true;
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'video_start', {
+                            video_title: videoTitle,
+                            video_provider: 'self-hosted'
+                        });
                     }
                 }
             });
-        };
+
+            video.addEventListener('ended', function() {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'video_complete', {
+                        video_title: videoTitle,
+                        video_provider: 'self-hosted'
+                    });
+                }
+            });
+        }
     })();
 
     // Hero form — fire pixels, submit to Netlify, redirect to thank you

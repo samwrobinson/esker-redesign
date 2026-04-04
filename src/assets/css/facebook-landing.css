@@ -338,7 +338,6 @@
   #fb-hero .cs-form-wrapper {
     width: 100%;
     max-width: 25rem;
-    order: -1;
   }
   #fb-hero .cs-topper {
     display: inline-block;
@@ -419,13 +418,15 @@
   #fb-hero .cs-video-container.cs-playing .cs-play-button {
     display: none;
   }
-  #fb-hero .cs-video-container iframe {
+  #fb-hero .cs-video-container iframe,
+  #fb-hero .cs-video-container .cs-vsl-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     border: none;
+    object-fit: cover;
   }
   #fb-hero .cs-thumbnail {
     width: 100%;
