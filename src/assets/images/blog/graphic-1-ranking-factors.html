@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body { margin: 0; padding: 24px; font-family: system-ui, -apple-system, sans-serif; background: #fff; }
+  .wrap { max-width: 680px; margin: 0 auto; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .card { border-radius: 12px; padding: 20px; border: 0.5px solid; }
+  .card.teal { background: #E1F5EE; border-color: #5DCAA5; }
+  .card.gray { background: #F1EFE8; border-color: #B4B2A9; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 10px; font-size: 11px; font-weight: 500; margin-bottom: 12px; }
+  .badge.yes { background: #1D9E75; color: #fff; }
+  .badge.no  { background: #888780; color: #fff; }
+  .card-title { font-size: 17px; font-weight: 500; color: #2C2C2A; margin: 0 0 4px; }
+  .card-sub { font-size: 12px; color: #5F5E5A; margin: 0 0 16px; }
+  .factor { display: flex; flex-direction: column; gap: 6px; margin-bottom: 8px; }
+  .factor-label { font-size: 12px; color: #444441; }
+  .bar-track { height: 6px; background: rgba(0,0,0,0.08); border-radius: 3px; }
+  .bar-fill { height: 6px; border-radius: 3px; }
+  .items { margin-top: 14px; display: flex; flex-direction: column; gap: 6px; }
+  .item { font-size: 12px; color: #444441; display: flex; align-items: center; gap: 7px; }
+  .item-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+  .footer-note { margin-top: 16px; text-align: center; font-size: 11px; color: #888780; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="grid">
+
+    <div class="card teal">
+      <span class="badge yes">you control this</span>
+      <p class="card-title">Relevance</p>
+      <p class="card-sub">Does Google understand what you do?</p>
+      <div class="factor">
+        <span class="factor-label">Improvement potential</span>
+        <div class="bar-track"><div class="bar-fill" style="width:90%;background:#1D9E75;"></div></div>
+      </div>
+      <div class="items">
+        <div class="item"><div class="item-dot" style="background:#1D9E75;"></div>GBP categories (up to 10)</div>
+        <div class="item"><div class="item-dot" style="background:#1D9E75;"></div>Services listed in detail</div>
+        <div class="item"><div class="item-dot" style="background:#1D9E75;"></div>Website content depth</div>
+        <div class="item"><div class="item-dot" style="background:#1D9E75;"></div>Profile completeness</div>
+      </div>
+    </div>
+
+    <div class="card gray">
+      <span class="badge no">fixed by location</span>
+      <p class="card-title">Distance</p>
+      <p class="card-sub">How close are you to the searcher?</p>
+      <div class="factor">
+        <span class="factor-label">Improvement potential</span>
+        <div class="bar-track"><div class="bar-fill" style="width:15%;background:#888780;"></div></div>
+      </div>
+      <div class="items">
+        <div class="item"><div class="item-dot" style="background:#888780;"></div>Physical business address</div>
+        <div class="item"><div class="item-dot" style="background:#888780;"></div>Proximity to searcher</div>
+        <div class="item"><div class="item-dot" style="background:#888780;"></div>Geographic service radius</div>
+        <div class="item" style="color:#888780;font-style:italic;"><div class="item-dot" style="background:#D3D1C7;"></div>Cannot be faked or moved</div>
+      </div>
+    </div>
+
+    <div class="card teal">
+      <span class="badge yes">you control this</span>
+      <p class="card-title">Prominence</p>
+      <p class="card-sub">Does the internet vouch for you?</p>
+      <div class="factor">
+        <span class="factor-label">Improvement potential</span>
+        <div class="bar-track"><div class="bar-fill" style="width:85%;background:#1D9E75;"></div></div>
+      </div>
+      <div class="items">
+        <div class="item"><div class="item-dot" style="background:#1D9E75;"></div>Google reviews + responses</div>
+        <div class="item"><div class="item-dot" style="background:#1D9E75;"></div>Directory citations</div>
+        <div class="item"><div class="item-dot" style="background:#1D9E75;"></div>Local backlinks</div>
+        <div class="item"><div class="item-dot" style="background:#1D9E75;"></div>NAP consistency</div>
+      </div>
+    </div>
+
+  </div>
+  <p class="footer-note">Distance is the only factor you can't move — put everything into relevance and prominence</p>
+</div>
+</body>
+</html>

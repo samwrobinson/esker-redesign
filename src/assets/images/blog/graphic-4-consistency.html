@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body { margin: 0; padding: 24px; font-family: system-ui, -apple-system, sans-serif; background: #fff; }
+  .wrap { max-width: 680px; margin: 0 auto; }
+  .top { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center; margin-bottom: 20px; }
+  .source { border-radius: 12px; padding: 16px; }
+  .source.gbp { background: #E6F1FB; border: 0.5px solid #85B7EB; }
+  .source.site { background: #E1F5EE; border: 0.5px solid #5DCAA5; }
+  .source-title { font-size: 13px; font-weight: 500; margin: 0 0 10px; }
+  .source-title.gbp { color: #0C447C; }
+  .source-title.site { color: #085041; }
+  .signal { font-size: 12px; padding: 5px 0; border-bottom: 0.5px solid rgba(0,0,0,0.06); color: #444441; }
+  .signal:last-child { border-bottom: none; }
+  .google-box { text-align: center; }
+  .google-icon { width: 48px; height: 48px; background: #F1EFE8; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 6px; border: 0.5px solid #B4B2A9; font-size: 18px; font-weight: 700; color: #444441; }
+  .google-label { font-size: 11px; color: #888780; }
+  .arrow { font-size: 20px; color: #B4B2A9; display: flex; justify-content: center; align-items: center; }
+  .result-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .result { border-radius: 8px; padding: 12px 14px; font-size: 12px; }
+  .result.good { background: #E1F5EE; border: 0.5px solid #5DCAA5; color: #085041; }
+  .result.bad  { background: #FCEBEB; border: 0.5px solid #F09595; color: #791F1F; }
+  .result strong { font-weight: 500; display: block; margin-bottom: 3px; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <div class="source gbp">
+      <p class="source-title gbp">Google Business Profile</p>
+      <div class="signal">Business name</div>
+      <div class="signal">Address + phone (NAP)</div>
+      <div class="signal">Primary category</div>
+      <div class="signal">Service area</div>
+      <div class="signal">Services + descriptions</div>
+    </div>
+
+    <div>
+      <div class="arrow" style="margin-bottom:6px;">→</div>
+      <div class="google-box">
+        <div class="google-icon">G</div>
+        <div class="google-label">cross-checks<br>both sources</div>
+      </div>
+      <div class="arrow" style="margin-top:6px;">←</div>
+    </div>
+
+    <div class="source site">
+      <p class="source-title site">Your website</p>
+      <div class="signal">Same business name</div>
+      <div class="signal">Identical NAP in footer</div>
+      <div class="signal">Trade + city in H1 tag</div>
+      <div class="signal">Location/service area pages</div>
+      <div class="signal">Detailed service pages</div>
+    </div>
+  </div>
+
+  <div class="result-row">
+    <div class="result good">
+      <strong>Consistent signals</strong>
+      Google trusts both sources confirm the same business — ranks you confidently in your market
+    </div>
+    <div class="result bad">
+      <strong>Conflicting signals</strong>
+      Google hedges — indexes both versions, splits authority, ranks you lower than you deserve
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

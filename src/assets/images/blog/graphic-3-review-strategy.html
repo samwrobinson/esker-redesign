@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body { margin: 0; padding: 24px; font-family: system-ui, -apple-system, sans-serif; background: #fff; }
+  .wrap { max-width: 680px; margin: 0 auto; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
+  .stat { background: #F1EFE8; border-radius: 8px; padding: 12px; }
+  .stat .label { font-size: 11px; color: #888780; margin: 0 0 4px; }
+  .stat .value { font-size: 22px; font-weight: 500; color: #2C2C2A; margin: 0; }
+  .stat .sub { font-size: 11px; color: #5F5E5A; margin: 2px 0 0; }
+  .stat.highlight { background: #E1F5EE; }
+  .stat.highlight .value { color: #0F6E56; }
+  .chart-label { font-size: 11px; color: #888780; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="stats">
+    <div class="stat highlight">
+      <p class="label">ask same day</p>
+      <p class="value">~65%</p>
+      <p class="sub">estimated response rate</p>
+    </div>
+    <div class="stat">
+      <p class="label">ask after 3 days</p>
+      <p class="value">~30%</p>
+      <p class="sub">response rate drops fast</p>
+    </div>
+    <div class="stat">
+      <p class="label">ask after 1 week</p>
+      <p class="value">~10%</p>
+      <p class="sub">most customers have moved on</p>
+    </div>
+  </div>
+
+  <div class="chart-label">Review response rate by days since job completion</div>
+  <div style="position:relative;width:100%;height:240px;">
+    <canvas id="chart"></canvas>
+  </div>
+
+  <div style="margin-top:14px;background:#E1F5EE;border-radius:8px;padding:12px 14px;font-size:12px;color:#085041;border:0.5px solid #5DCAA5;">
+    <strong style="font-weight:500;">The strategy:</strong> text goes out within 24 hours of job completion — a direct link to the Google review page, nothing else standing between the customer and leaving feedback.
+  </div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+new Chart(document.getElementById('chart'), {
+  type: 'line',
+  data: {
+    labels: ['Same day','Day 1','Day 2','Day 3','Day 4','Day 5','Day 6','Day 7+'],
+    datasets: [{
+      data: [65, 52, 40, 30, 22, 16, 12, 8],
+      borderColor: '#1D9E75',
+      backgroundColor: 'rgba(29,158,117,0.08)',
+      fill: true,
+      tension: 0.4,
+      pointBackgroundColor: (ctx) => ctx.dataIndex === 0 ? '#1D9E75' : '#9FE1CB',
+      pointRadius: (ctx) => ctx.dataIndex === 0 ? 6 : 4,
+      borderWidth: 2
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: { label: ctx => ctx.parsed.y + '% response rate' }
+      }
+    },
+    scales: {
+      x: {
+        grid: { display: false },
+        border: { display: false },
+        ticks: { font: { size: 11 }, color: '#888780' }
+      },
+      y: {
+        min: 0,
+        max: 80,
+        grid: { color: 'rgba(0,0,0,0.05)' },
+        border: { display: false },
+        ticks: {
+          font: { size: 11 },
+          color: '#888780',
+          callback: v => v + '%'
+        }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>

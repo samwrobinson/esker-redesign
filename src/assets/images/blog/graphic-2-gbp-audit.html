@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body { margin: 0; padding: 24px; font-family: system-ui, -apple-system, sans-serif; background: #fff; }
+  .wrap { max-width: 680px; margin: 0 auto; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .col-header { border-radius: 8px; padding: 10px 14px; margin-bottom: 12px; font-size: 13px; font-weight: 500; text-align: center; }
+  .col-header.before { background: #FCEBEB; color: #A32D2D; }
+  .col-header.after  { background: #E1F5EE; color: #0F6E56; }
+  .row-label { font-size: 10px; font-weight: 500; color: #888780; text-transform: uppercase; letter-spacing: 0.05em; margin: 12px 0 5px; }
+  .cell { border-radius: 8px; padding: 10px 12px; font-size: 13px; display: flex; align-items: center; gap: 8px; }
+  .cell.bad  { background: #FFF5F5; color: #791F1F; border: 0.5px solid #F09595; }
+  .cell.good { background: #F0FBF5; color: #085041; border: 0.5px solid #5DCAA5; }
+  .cell-icon { font-size: 14px; flex-shrink: 0; }
+  .score-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .score-card { border-radius: 10px; padding: 14px; text-align: center; }
+  .score-card.bad  { background: #FCEBEB; }
+  .score-card.good { background: #E1F5EE; }
+  .score-num { font-size: 32px; font-weight: 500; margin: 0; }
+  .score-num.bad  { color: #A32D2D; }
+  .score-num.good { color: #0F6E56; }
+  .score-label { font-size: 11px; color: #5F5E5A; margin: 2px 0 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="score-row">
+    <div class="score-card bad">
+      <p class="score-num bad">2/10</p>
+      <p class="score-label">typical contractor GBP — what I found when I took over</p>
+    </div>
+    <div class="score-card good">
+      <p class="score-num good">9/10</p>
+      <p class="score-label">after optimization — what it looks like today</p>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <div class="col-header before">before — typical contractor</div>
+
+      <div class="row-label">Categories</div>
+      <div class="cell bad"><span class="cell-icon">✕</span>1 category: "roofing contractor"</div>
+
+      <div class="row-label">Services listed</div>
+      <div class="cell bad"><span class="cell-icon">✕</span>4 services, vaguely described</div>
+
+      <div class="row-label">Business description</div>
+      <div class="cell bad"><span class="cell-icon">✕</span>2 sentences, no service area</div>
+
+      <div class="row-label">Photos</div>
+      <div class="cell bad"><span class="cell-icon">✕</span>Logo + 2 stock images</div>
+
+      <div class="row-label">Posts</div>
+      <div class="cell bad"><span class="cell-icon">✕</span>Last post: 7 months ago</div>
+
+      <div class="row-label">Review responses</div>
+      <div class="cell bad"><span class="cell-icon">✕</span>0 of 8 reviews responded to</div>
+    </div>
+
+    <div>
+      <div class="col-header after">after — optimized profile</div>
+
+      <div class="row-label">Categories</div>
+      <div class="cell good"><span class="cell-icon">✓</span>8 categories covering all services</div>
+
+      <div class="row-label">Services listed</div>
+      <div class="cell good"><span class="cell-icon">✓</span>32 services across all categories</div>
+
+      <div class="row-label">Business description</div>
+      <div class="cell good"><span class="cell-icon">✓</span>750 chars — trade, area, differentiators</div>
+
+      <div class="row-label">Photos</div>
+      <div class="cell good"><span class="cell-icon">✓</span>40+ real job photos, added weekly</div>
+
+      <div class="row-label">Posts</div>
+      <div class="cell good"><span class="cell-icon">✓</span>Weekly posts, consistent cadence</div>
+
+      <div class="row-label">Review responses</div>
+      <div class="cell good"><span class="cell-icon">✓</span>Every review responded to within 24hr</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
