@@ -116,7 +116,7 @@ Profiles get suspended all the time, sometimes for reasons that make sense and s
 
 Reviews are another vulnerability. Yes, they can be very powerful — a strong review profile can absolutely drive business. But one or two bad reviews from unreasonable customers can tank your visibility overnight. And Google's review system is a black box. Legitimate reviews get removed for no apparent reason. Fake reviews from competitors sometimes stick around. You have very little recourse either way.
 
-The point isn't that Google Business Profile is bad. It's actually genuinely useful, and one of the top recommendations that I give to all my clients (you should absolutely have one). But building your entire online presence on a platform you don't control is risky. Your GBP listing is Google's property. A website is yours.
+The point isn't that Google Business Profile is bad. It's actually genuinely useful, and one of the top recommendations that I give to all my clients (you should absolutely have one). But building your entire online presence on a platform you don't control is risky. Your GBP listing is Google's property. A website is yours. If you want to see how a GBP and a website work together in practice, I wrote a [local SEO case study for contractors](/blog/local-seo-for-contractors/) that shows exactly what happened when we optimized both for a roofing client.
 
 Think of it this way: **a Google Business Profile is like a business card. A website is like a showroom.** Both serve a purpose, but they do very different jobs. And only one of them can't be taken away from you without warning.
 

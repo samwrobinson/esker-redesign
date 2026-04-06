@@ -208,6 +208,7 @@ If you want to go deeper on any of this, I've got a few other resources that pic
 
 - [Do Contractors Actually Need a Website in 2026?](/blog/do-contractors-need-a-website-2026/) — a more honest take on the website question than most articles you'll find
 - [How Much Should a Website Cost?](/blog/small-business-website-cost-2026/) — a breakdown of every option from DIY to agency, with real numbers
+- [Local SEO for Contractors](/blog/local-seo-for-contractors/) — a step-by-step case study with real data showing what GBP optimization actually did for a roofing contractor
 - [Local SEO Tips for Small Businesses](/blog/local-seo-for-small-businesses/) — a deeper dive on Google Business Profile and ranking in local search
 
 And if you want to talk through your specific situation — whether that's your online presence, your lead follow-up process, or just where to start — feel free to reach out. No pitch, no pressure. Just an honest conversation about what might actually move the needle.

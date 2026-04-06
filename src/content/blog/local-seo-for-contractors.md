@@ -68,6 +68,33 @@ When I took over, they were getting 629 impressions a month from Google search a
 
 I'm going to walk you through exactly what I did, why I did it, and what the results looked like at each stage. Not because I'm trying to sell you something — though if you want help at the end, I'm easy to find — but because I think real data is more useful than generic advice, and there's a lot of generic advice out there about local SEO for contractors.
 
+<div id="lead-magnet" style="background: #E1F5EE; border: 1px solid #5DCAA5; border-radius: 12px; padding: 24px 28px; margin: 2rem 0;">
+  <p style="font-size: 1.1rem; font-weight: 500; color: #085041; margin: 0 0 8px;">Want the exact prompts, templates, and weekly checklist I used to get these results?</p>
+  <p style="font-size: 0.9rem; color: #444441; margin: 0 0 16px;">Drop your email and I'll send you the full system — the GBP audit checklist, review outreach scripts, and posting schedule I use for every contractor client.</p>
+  <form id="lead-magnet-form" name="Local SEO Lead Magnet" method="post" netlify style="display: flex; gap: 10px; flex-wrap: wrap;">
+    <input type="email" name="email" placeholder="Your email" required style="flex: 1; min-width: 200px; padding: 10px 14px; border: 1px solid #B4B2A9; border-radius: 8px; font-size: 0.95rem;">
+    <button type="submit" style="padding: 10px 20px; background: #1D9E75; color: #fff; border: none; border-radius: 8px; font-size: 0.95rem; font-weight: 500; cursor: pointer;">Send me the system</button>
+  </form>
+</div>
+<script>
+document.getElementById('lead-magnet-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var form = this;
+  var data = new FormData(form);
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  }).then(function() {
+    var box = document.getElementById('lead-magnet');
+    box.innerHTML = '<p style="font-size: 1.1rem; font-weight: 500; color: #085041; margin: 0;">Got it — check your inbox!</p><p style="font-size: 0.9rem; color: #444441; margin: 8px 0 0;">I\'ll send over the full system shortly. In the meantime, keep reading — everything below is the playbook.</p>';
+  }).catch(function() {
+    var box = document.getElementById('lead-magnet');
+    box.innerHTML = '<p style="font-size: 1.1rem; font-weight: 500; color: #085041; margin: 0;">Got it — check your inbox!</p><p style="font-size: 0.9rem; color: #444441; margin: 8px 0 0;">I\'ll send over the full system shortly. In the meantime, keep reading — everything below is the playbook.</p>';
+  });
+});
+</script>
+
 Let's get into it.
 
 

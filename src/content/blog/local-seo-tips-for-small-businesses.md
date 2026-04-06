@@ -138,6 +138,6 @@ If you want a more thorough audit, tools like Screaming Frog (free for smaller s
 
 Alright, that was a lot — but if you've made it this far, you're already ahead of most small business owners when it comes to understanding local SEO. The truth is, you don't need a massive budget or a dedicated marketing team to see real results. You just need to be consistent and intentional about the basics.
 
-Start with your Google Business Profile — seriously, if you haven't claimed and optimized it yet, stop reading and go do that right now. From there, focus on local keywords, make sure your website looks good on mobile, and start building out local content and backlinks over time.
+Start with your Google Business Profile — seriously, if you haven't claimed and optimized it yet, stop reading and go do that right now. From there, focus on local keywords, make sure your website looks good on mobile, and start building out local content and backlinks over time. If you're a contractor looking for a more specific breakdown, I wrote a [local SEO guide for contractors](/blog/local-seo-for-contractors/) with real data from a roofing client showing exactly what moved the needle.
 
 This stuff compounds. The work you put in today will continue to pay off months and even years down the road. Keep it simple, stay consistent, and don't be afraid to reach out if you have questions or want some help along the way. You've got this!

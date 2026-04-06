@@ -100,7 +100,7 @@ Contractors understand cause and effect better than most. So let's talk about th
 
 A fast, mobile-friendly, well-built site matters more than most people think. Technical performance isn't glamorous, but Google cares about it. A site that loads in under two seconds signals quality. A site that takes six seconds to load signals the opposite.
 
-Having your Google Business Profile active and optimized from day one is probably the single highest-leverage thing you can do in the first 30 days. It doesn't replace the website — but it works alongside it to tell Google who you are and where you operate.
+Having your Google Business Profile active and optimized from day one is probably the single highest-leverage thing you can do in the first 30 days. It doesn't replace the website — but it works alongside it to tell Google who you are and where you operate. I go into exactly what GBP optimization looks like step-by-step in my [local SEO guide for contractors](/blog/local-seo-for-contractors/).
 
 Publishing location-specific content consistently, even one or two pages a month, keeps the site active and gives Google more material to index and test.
 

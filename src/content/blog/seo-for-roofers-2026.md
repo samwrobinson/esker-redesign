@@ -53,7 +53,7 @@ When someone searches "roofing contractor near me" or "roof repair Burlington," 
 
 **Reputation** — Do you have reviews? Are people actually engaging with your listing?
 
-Pretty much every tactic in local SEO for roofing companies is just strengthening one of those three signals. Keep that framing in mind as you read the rest of this — it'll help you cut through the noise and figure out what's actually worth your time.
+Pretty much every tactic in local SEO for roofing companies is just strengthening one of those three signals. Keep that framing in mind as you read the rest of this — it'll help you cut through the noise and figure out what's actually worth your time. If you want to see what this looks like in practice with real Search Console data, I wrote a detailed [local SEO case study for contractors](/blog/local-seo-for-contractors/) that walks through the full process.
 
 
 ## What You Can Do for Free (Seriously)
