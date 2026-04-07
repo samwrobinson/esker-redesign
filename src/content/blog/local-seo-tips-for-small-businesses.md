@@ -126,7 +126,7 @@ For most small businesses, these two free tools are more than enough to get acti
 
 ### **Stay Informed on SEO Trends**
 
-SEO best practices evolve, and what worked a few years ago might not work today. I'd recommend following a few trusted SEO blogs or YouTube channels to stay in the loop. Some of my favorites are Moz, Search Engine Journal, and Neil Patel's content. You don't need to become an SEO expert, but having a general awareness of major updates (like Google's helpful content updates or changes to how they handle AI-generated content) will help you stay ahead of the curve.
+SEO best practices evolve, and what worked a few years ago might not work today. I'd recommend following a few trusted SEO blogs or YouTube channels to stay in the loop. Some of my favorites are Moz, Search Engine Journal, and Neil Patel's content. Attending events like the [SEO Summit](https://www.ukseosummit.com/) can also be valuable for keeping up with changes in local search and connecting with other marketers. You don't need to become an SEO expert, but having a general awareness of major updates (like Google's helpful content updates or changes to how they handle AI-generated content) will help you stay ahead of the curve.
 
 ### **Implement Regular SEO Audits**
 
