@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  body { margin: 0; padding: 24px; font-family: system-ui, -apple-system, sans-serif; background: #fff; }
+  .wrap { max-width: 680px; margin: 0 auto; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+  .header-badge { border-radius: 12px; padding: 10px 14px; text-align: center; margin-bottom: 1rem; }
+  .header-badge.bad { background: #FDF0EF; border: 0.5px solid #E8A09B; }
+  .header-badge.bad span { font-size: 13px; font-weight: 500; color: #C04A40; }
+  .header-badge.good { background: #E1F5EE; border: 0.5px solid #5DCAA5; }
+  .header-badge.good span { font-size: 13px; font-weight: 500; color: #1D9E75; }
+
+  .page-box { border-radius: 12px; padding: 14px; text-align: center; margin-bottom: 1rem; background: #F4F3EF; border: 0.5px solid #D4D3CF; }
+  .page-box .title { font-size: 13px; font-weight: 500; color: #2C2C2A; margin-bottom: 4px; }
+  .page-box .sub { font-size: 12px; color: #5F5E5A; }
+
+  .split-boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 1rem; }
+  .split-box { border-radius: 12px; padding: 12px; text-align: center; }
+  .split-box.blue { background: #E8F0FE; border: 0.5px solid #7BAAF7; }
+  .split-box.blue .title { font-size: 13px; font-weight: 500; color: #3B78DB; margin-bottom: 3px; }
+  .split-box.blue .sub { font-size: 11px; color: #3B78DB; }
+  .split-box.green { background: #E1F5EE; border: 0.5px solid #5DCAA5; }
+  .split-box.green .title { font-size: 13px; font-weight: 500; color: #1D9E75; margin-bottom: 3px; }
+  .split-box.green .sub { font-size: 11px; color: #1D9E75; }
+
+  .caption { font-size: 12px; color: #888780; text-align: center; margin-bottom: 8px; }
+
+  .pills { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1rem; }
+  .pill { border-radius: 20px; padding: 6px 12px; font-size: 12px; text-align: center; background: #F4F3EF; border: 0.5px solid #D4D3CF; color: #5F5E5A; }
+
+  .split-pills { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 1rem; }
+  .split-pill { border-radius: 20px; padding: 6px 10px; font-size: 11px; text-align: center; }
+  .split-pill.blue { background: #E8F0FE; border: 0.5px solid #7BAAF7; color: #3B78DB; }
+  .split-pill.green { background: #E1F5EE; border: 0.5px solid #5DCAA5; color: #1D9E75; }
+
+  .result-box { border-radius: 12px; padding: 12px 14px; }
+  .result-box.bad { background: #FDF0EF; border: 0.5px solid #E8A09B; }
+  .result-box.bad p { font-size: 12px; color: #C04A40; line-height: 1.6; margin: 0; }
+  .result-box.good { background: #E1F5EE; border: 0.5px solid #5DCAA5; }
+  .result-box.good p { font-size: 12px; color: #1D9E75; line-height: 1.6; margin: 0; }
+
+  .footer { margin-top: 1.25rem; padding-top: 1rem; border-top: 0.5px solid #D4D3CF; font-size: 12px; color: #888780; text-align: center; line-height: 1.6; }
+
+  @media (max-width: 500px) {
+    body { padding: 16px; }
+    .grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="grid">
+
+    <!-- LEFT COLUMN -->
+    <div>
+      <div class="header-badge bad"><span>One services page</span></div>
+
+      <div class="page-box">
+        <div class="title">Services</div>
+        <div class="sub">heating + cooling + repairs + maintenance</div>
+      </div>
+
+      <div class="caption">competing for all queries from one page</div>
+
+      <div class="pills">
+        <div class="pill">furnace repair near me</div>
+        <div class="pill">AC repair near me</div>
+        <div class="pill">hvac company near me</div>
+      </div>
+
+      <div class="result-box bad">
+        <p>Diluted signals. Google can't tell what each page is specifically about — so it hedges and ranks you lower for everything.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div>
+      <div class="header-badge good"><span>Two dedicated pages</span></div>
+
+      <div class="split-boxes">
+        <div class="split-box blue">
+          <div class="title">Heating</div>
+          <div class="sub">furnaces · boilers · heat pumps</div>
+        </div>
+        <div class="split-box green">
+          <div class="title">Cooling</div>
+          <div class="sub">AC · mini-splits · ductwork</div>
+        </div>
+      </div>
+
+      <div class="caption">each page targets its own queries</div>
+
+      <div class="split-pills">
+        <div class="split-pill blue">furnace repair near me</div>
+        <div class="split-pill green">AC repair near me</div>
+        <div class="split-pill blue">furnace install [city]</div>
+        <div class="split-pill green">AC install [city]</div>
+      </div>
+
+      <div class="result-box good">
+        <p>Clear signals. Google knows exactly what each page covers — and ranks you for those queries independently.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Add a third page for maintenance agreements and you capture a fourth query cluster — the highest lifetime-value customer in HVAC.
+  </div>
+</div>
+</body>
+</html>
