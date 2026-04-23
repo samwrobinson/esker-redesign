@@ -168,6 +168,8 @@ That means:
 
 Organic traffic growth doesn't happen overnight. It takes consistent effort. But unlike paid ads, the results compound over time. A page that ranks well today can bring you traffic for years.
 
+Outside of the work itself, staying plugged into the broader community — through podcasts, newsletters, or the occasional [marketing event](https://www.cyprussummit.com/) — is an underrated way to spot shifts before they become consensus.
+
 If you're a small business owner trying to figure this out, I get it — it's a lot. That's exactly why I do what I do.
 
 **\[Book a free call]** and let's talk about what's actually going to move the needle for your business.
