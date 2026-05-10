@@ -1,0 +1,129 @@
+/* ============================================
+   YouTube Web Scraper Lead Magnet
+   ============================================ */
+
+#web-scraper {
+    padding: var(--sectionPadding);
+    padding-bottom: clamp(16.25rem, 17vw, 26rem);
+
+    .cs-container {
+        width: 100%;
+        max-width: (640/16rem);
+        margin: 0 auto;
+    }
+
+    .cs-content {
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+
+    .cs-title {
+        max-width: 100%;
+    }
+}
+
+.ws-card {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 2rem;
+}
+
+.ws-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.5rem 0;
+        font-size: 1rem;
+        color: var(--bodyTextColor);
+
+        svg {
+            flex-shrink: 0;
+            color: var(--primaryLight);
+        }
+    }
+}
+
+.ws-form {
+    label {
+        display: block;
+        font-size: (14/16rem);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--bodyTextColor);
+    }
+}
+
+.ws-form-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+
+    input[type="email"] {
+        flex: 1;
+        min-width: (200/16rem);
+        padding: 0.75rem 1rem;
+        border: 1px solid #d1d5db;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        font-family: inherit;
+        background: #fff;
+        color: var(--bodyTextColor);
+        transition: border-color 0.2s;
+        box-sizing: border-box;
+
+        &:focus {
+            outline: none;
+            border-color: var(--primaryLight);
+        }
+    }
+}
+
+.ws-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 3.75rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    background: var(--primaryLight);
+    color: #fff;
+    transition: background-color 0.3s;
+    font-family: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+        background: var(--primary);
+    }
+}
+
+.ws-small-print {
+    font-size: (13/16rem);
+    color: #9ca3af;
+    margin-top: 0.75rem;
+    text-align: center;
+}
+
+/* Dark mode */
+body.dark-mode {
+    .ws-card {
+        background: rgba(255, 255, 255, 0.03);
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .ws-form-row input[type="email"] {
+        background: rgba(0, 0, 0, 0.2);
+        border-color: rgba(255, 255, 255, 0.15);
+        color: var(--bodyTextColorWhite);
+    }
+}
