@@ -1,0 +1,100 @@
+---
+title: 'Free Claude Prompt + Repo | Esker Designs'
+description: 'Download the Claude prompt and GitHub repo from the YouTube video for landing web design leads in Facebook groups. Free and ready to use.'
+preloadImg: '/assets/images/logo.webp'
+permalink: 'yt/fb-prompt/'
+eleventyExcludeFromCollections: true
+noindex: true
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/assets/css/fb-prompt.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    LANDING                   -->
+<!-- ============================================ -->
+
+<section id="int-hero">
+    <h1 id="home-h">Free Facebook Leads Prompt + Repo</h1>
+    <svg class="cs-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,192L120,213.3C240,235,480,277,720,277.3C960,277,1200,235,1320,213.3L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+    <svg class="cs-wave cs-dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#061521" fill-opacity="1" d="M0,192L120,213.3C240,235,480,277,720,277.3C960,277,1200,235,1320,213.3L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+</section>
+
+<!-- ============================================ -->
+<!--           Claude Prompt + Repo Download      -->
+<!-- ============================================ -->
+
+<section id="fb-prompt">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Drop your email and we'll send the <span class="emphasis">prompt &amp; repo</span> straight to your inbox.</h2>
+            <p class="cs-text">The exact Claude prompt and GitHub repo from the video — the same setup I use to turn Facebook group posts into web design leads. Free, yours to modify, no spam.</p>
+        </div>
+
+        <div class="fb-card">
+            <ul class="fb-list">
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    The full Claude prompt — copy, paste, go
+                </li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    Companion GitHub repo with setup instructions
+                </li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    My exact workflow for finding leads in Facebook groups
+                </li>
+            </ul>
+
+            <form class="fb-form" id="fb-form" name="yt-fb-prompt-leads" method="POST" netlify netlify-honeypot="bot-field" onsubmit="return fbSubmitEmail(event)">
+                <input type="hidden" name="form-name" value="yt-fb-prompt-leads">
+                <input type="hidden" name="source" value="youtube">
+                <p class="fb-hidden" style="display:none;"><input name="bot-field"></p>
+                <label for="fb-email">Where should we send it?</label>
+                <div class="fb-form-row">
+                    <input type="email" name="email" id="fb-email" placeholder="you@example.com" required>
+                    <button type="submit" class="fb-btn">Send me the prompt</button>
+                </div>
+                <p class="fb-small-print">No spam. Unsubscribe any time.</p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+    function fbSubmitEmail(e) {
+        e.preventDefault();
+
+        var emailEl = document.getElementById('fb-email');
+        var email = emailEl.value.trim();
+        if (!email || !email.includes('@')) {
+            alert('Please enter a valid email address.');
+            return false;
+        }
+
+        var formData = new FormData(document.getElementById('fb-form'));
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+        }).catch(function(err) {
+            console.error('Form submission error:', err);
+        });
+
+        sessionStorage.setItem('esker_fb_email', email);
+
+        setTimeout(function() {
+            window.location.href = '/yt/fb-prompt/thank-you/';
+        }, 400);
+
+        return false;
+    }
+</script>
+
+{% endblock %}
