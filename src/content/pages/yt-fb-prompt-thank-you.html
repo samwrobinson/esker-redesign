@@ -32,15 +32,77 @@ noindex: true
 <section id="fb-thankyou">
     <div class="cs-container">
 
+        <!-- The Prompt -->
+        <div class="fb-prompt-card">
+            <div class="fb-prompt-head">
+                <h2>The prompt</h2>
+                <button type="button" class="fb-copy-btn" id="fb-copy-btn" onclick="fbCopyPrompt()">Copy prompt</button>
+            </div>
+            <pre class="fb-prompt-box"><code id="fb-prompt-text"># Repurpose CodeStitch Astro Template for a New Client
+
+## Context
+I run Esker Designs. I build websites for small local businesses by repurposing a
+CodeStitch Astro template I already own. I have a working version of this template
+(components, CSS using CodeStitch variables, and JS already wired up). For each new
+client I keep the structure and styling intact and swap in their content, branding,
+and photos so the result feels custom — not templated.
+
+I'm giving you a new client's info and photos below. Produce their version of the site.
+
+## The Client
+- Business name: [NAME]
+- Industry / what they do: [e.g. roofing contractor, therapist, café]
+- Location(s) they serve: [CITY, STATE / service area]
+- Services to feature: [list 3–6]
+- Phone / email / address: [CONTACT INFO]
+- Hours (if relevant): [HOURS]
+- Brand vibe: [e.g. rugged & bold / warm & trustworthy / modern & minimal]
+- Brand colors (if they have them): [HEX or "use template defaults / pick to match logo"]
+- Anything to emphasize: [reviews, awards, "family-owned since X", guarantees, etc.]
+- Photos: attached / in the uploads folder. [Note any "this one is the hero," "these
+  are gallery," "this is the logo," etc. — otherwise sort them by what makes sense.]
+
+## What to do
+1. Work from my existing template structure. Keep every component, the CSS
+   architecture, the CodeStitch CSS variables, the JS, and all responsive behavior
+   intact. This is a content + branding swap, not a rebuild.
+2. Replace all copy: headlines, subheads, body text, CTAs, nav labels, footer.
+   Write it in the client's voice and tone for their [brand vibe]. No lorem ipsum,
+   no leftover placeholder text from the template or a previous client.
+3. Update branding: set the brand color variables to the client's colors (or pick
+   ones that suit their logo/industry if none given). Swap the logo and business name
+   everywhere it appears.
+4. Sort and place the photos sensibly: best wide shot → hero, service/work shots →
+   relevant sections and gallery, headshot/team → about. Add descriptive alt text
+   for every image (good for SEO and accessibility).
+5. Update contact info, map/address, phone links (tel:), email, hours, and the
+   contact form labels to match the client.
+6. SEO: rewrite the &lt;title&gt; and meta description per page around the client's
+   business, location, and services. Update any schema/structured data with the
+   client's name, address, and phone.
+7. Scrub for leftovers: no old client names, old phone numbers, old alt text, or
+   template demo content anywhere.
+
+## What NOT to touch
+Don't restructure the CSS, rename classes, rip out the JS, or change the layout/
+component system unless I explicitly ask. If something genuinely needs a structural
+change to fit this client, flag it and ask first rather than improvising.
+
+## Output
+Give me the updated files. If you change multiple files, tell me which ones and
+summarize what changed in each so I can review before I build and deploy.</code></pre>
+        </div>
+
+        <!-- Example Repo -->
         <div class="fb-repo-card">
             <div class="fb-repo-header">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                <span>Esker-FB-Lead-Prompt</span>
+                <span>precision-seamless-gutters</span>
             </div>
-            <p class="fb-repo-desc">The repo holds the full Claude prompt plus the README walking you through the whole Facebook-group lead workflow.</p>
+            <p class="fb-repo-desc">A real client site I built with this exact prompt. Clone it to see the finished result, or use it as your starting template.</p>
             <div class="fb-repo-actions">
-                <a href="https://github.com/samwrobinson/Esker-FB-Lead-Prompt" target="_blank" rel="noopener" class="fb-btn fb-btn-primary">Open on GitHub &rarr;</a>
-                <a href="https://github.com/samwrobinson/Esker-FB-Lead-Prompt/archive/refs/heads/main.zip" class="fb-btn fb-btn-secondary">Download .zip</a>
+                <a href="https://github.com/samwrobinson/precision-seamless-gutters" target="_blank" rel="noopener" class="fb-btn fb-btn-primary">Open on GitHub &rarr;</a>
+                <a href="https://github.com/samwrobinson/precision-seamless-gutters/archive/refs/heads/main.zip" class="fb-btn fb-btn-secondary">Download .zip</a>
             </div>
         </div>
 
@@ -48,16 +110,16 @@ noindex: true
             <h2>Quick start</h2>
             <ol>
                 <li>
-                    <strong>Grab the prompt</strong>
-                    <p>Open the repo and copy the prompt from <code>PROMPT.md</code> — it's ready to paste straight into Claude.</p>
+                    <strong>Copy the prompt</strong>
+                    <p>Hit the copy button above and paste it into Claude.</p>
                 </li>
                 <li>
-                    <strong>Paste it into Claude</strong>
-                    <p>Drop in a Facebook group post (or a batch of them) and let Claude draft your reply and qualify the lead.</p>
+                    <strong>Fill in the client</strong>
+                    <p>Swap the bracketed fields for your client's details and attach their photos and logo.</p>
                 </li>
                 <li>
-                    <strong>Follow the workflow</strong>
-                    <p>The README walks through finding the right groups, what to post, and how to turn replies into booked calls.</p>
+                    <strong>Review, build, deploy</strong>
+                    <p>Claude returns the updated files with a summary of what changed. Build it, deploy it, send the client their custom site.</p>
                 </li>
             </ol>
             <p class="fb-help">Stuck? Reply to the email we just sent you and I'll help you get it dialed in.</p>
@@ -72,5 +134,42 @@ noindex: true
 
     </div>
 </section>
+
+<script>
+    function fbCopyPrompt() {
+        var text = document.getElementById('fb-prompt-text').innerText;
+        var btn = document.getElementById('fb-copy-btn');
+
+        function done() {
+            var original = 'Copy prompt';
+            btn.textContent = 'Copied!';
+            btn.classList.add('is-copied');
+            setTimeout(function() {
+                btn.textContent = original;
+                btn.classList.remove('is-copied');
+            }, 2000);
+        }
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done).catch(function() {
+                fbFallbackCopy(text, done);
+            });
+        } else {
+            fbFallbackCopy(text, done);
+        }
+    }
+
+    function fbFallbackCopy(text, cb) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+        cb();
+    }
+</script>
 
 {% endblock %}
