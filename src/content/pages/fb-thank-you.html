@@ -23,7 +23,11 @@ eleventyExcludeFromCollections: true
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '3889075514559305');
     fbq('track', 'PageView');
-    fbq('track', 'Lead');
+    // Only count a Lead when the visitor actually just submitted the form.
+    // Prevents reloads, direct visits, and bots from inflating conversions.
+    if (new URLSearchParams(window.location.search).get('submitted') === '1') {
+        fbq('track', 'Lead');
+    }
 </script>
 <noscript>
     <img height="1" width="1" style="display:none"
@@ -42,8 +46,11 @@ eleventyExcludeFromCollections: true
     script.src = 'https://www.googletagmanager.com/gtag/js?id=G-PL4NL9XE9Y';
     head.appendChild(script);
 
-    gtag('event', 'ads_conversion_Contact_Us_1', {});
-    gtag('event', 'conversion', {'send_to': 'AW-16834089922/QPM8CJaky5IcEMKnj9s-'});
+    // Only fire the Google Ads conversion on a real submission (same guard as the FB Lead).
+    if (new URLSearchParams(window.location.search).get('submitted') === '1') {
+        gtag('event', 'ads_conversion_Contact_Us_1', {});
+        gtag('event', 'conversion', {'send_to': 'AW-16834089922/QPM8CJaky5IcEMKnj9s-'});
+    }
 </script>
 
 <section id="fb-hero" style="min-height:80vh;display:flex;align-items:center;justify-content:center;padding-bottom:6.25rem;">

@@ -10,7 +10,26 @@ eleventyExcludeFromCollections: true
 
 {% block head %}
 <link rel="stylesheet" href="/assets/css/facebook-landing.css">
-<link rel="preload" as="video" href="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/informal-vsl.mov" fetchpriority="high">
+<link rel="preload" as="video" href="https://local-lift.nyc3.cdn.digitaloceanspaces.com/Generating%20More%20Leads%20for%20Home%20Services.mp4" fetchpriority="high">
+<style>
+    /* Landing-page-only overrides (this <style> ships only on /fb/) */
+
+    /* Strip footer links that navigate users off this page (keep contact info) */
+    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(2), /* Quick Links column */
+    #cs-footer-842 .cs-bottom-links { /* Privacy / Terms */
+        display: none;
+    }
+    /* Logo no longer links anywhere off-page */
+    #cs-footer-842 .cs-logo-group .cs-logo {
+        pointer-events: none;
+        cursor: default;
+    }
+
+    /* Extra space below the second CTA so the footer trees don't overlap it */
+    #fb-cta {
+        padding-bottom: max(10rem, 14vw);
+    }
+</style>
 {% endblock %}
 
 {% block body %}
@@ -35,8 +54,7 @@ eleventyExcludeFromCollections: true
                         muted
                         controls
                     >
-                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/informal-vsl.mov" type="video/quicktime">
-                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/informal-vsl.mov" type="video/mp4">
+                        <source src="https://local-lift.nyc3.cdn.digitaloceanspaces.com/Generating%20More%20Leads%20for%20Home%20Services.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                     <button class="cs-mute-button" aria-label="Unmute video">
@@ -48,7 +66,7 @@ eleventyExcludeFromCollections: true
                 </div>
             </div>
             <div class="cs-form-wrapper">
-                <form class="cs-form" id="hero-form" name="FB Contractor Landing" method="post" action="/fb/thank-you/" netlify>
+                <form class="cs-form" id="hero-form" name="FB Contractor Landing" method="post" action="/fb/thank-you/?submitted=1" netlify>
                     <h3 class="cs-form-title">Watch the Video & We'll Be in Touch</h3>
                     <div class="cs-form-group">
                         <label class="cs-label" for="hero-name">Your Name</label>
@@ -203,6 +221,35 @@ eleventyExcludeFromCollections: true
     </div>
 </section>
 
+<!-- ============================================ -->
+<!--               Second CTA Form                -->
+<!-- ============================================ -->
+
+<section id="fb-cta">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Ready to Get More Leads?</span>
+            <h2 class="cs-title">Let's Build You a Website That Actually Brings in Work</h2>
+            <p class="cs-text">
+                Fast websites, AI systems, and 5 star reviews for just $175/mo — $0 down. Drop your info below and we'll be in touch.
+            </p>
+        </div>
+        <div class="cs-form-wrapper">
+            <form class="cs-form" id="cta-form" name="FB Contractor Landing" method="post" action="/fb/thank-you/?submitted=1" netlify>
+                <div class="cs-form-group">
+                    <label class="cs-label" for="cta-name">Your Name</label>
+                    <input class="cs-input" type="text" id="cta-name" name="name" placeholder="Your name" required>
+                    <label class="cs-label" for="cta-phone">Phone Number</label>
+                    <input class="cs-input" type="tel" id="cta-phone" name="phone" placeholder="(555) 123-4567" required>
+                    <label class="cs-label" for="cta-email">Email</label>
+                    <input class="cs-input" type="email" id="cta-email" name="email" placeholder="you@example.com">
+                </div>
+                <button class="cs-submit" type="submit">Get Started</button>
+            </form>
+        </div>
+    </div>
+</section>
+
 <script>
     // VSL Player — autoplay muted, click to unmute
     (function() {
@@ -256,26 +303,27 @@ eleventyExcludeFromCollections: true
         }
     })();
 
-    // Hero form — submit to Netlify, redirect to FB thank you
+    // Lead forms (hero + second CTA) — submit to Netlify, redirect to FB thank you
     (function() {
-        var form = document.getElementById('hero-form');
-        if (!form) return;
+        var forms = document.querySelectorAll('#hero-form, #cta-form');
 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
+        forms.forEach(function(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
 
-            var formData = new FormData(form);
-            formData.append('form-name', 'FB Contractor Landing');
+                var formData = new FormData(form);
+                formData.append('form-name', 'FB Contractor Landing');
 
-            fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(formData).toString()
-            }).then(function() {
-                window.location.href = '/fb/thank-you/';
-            }).catch(function(err) {
-                console.error('Form submission error:', err);
-                window.location.href = '/fb/thank-you/';
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                }).then(function() {
+                    window.location.href = '/fb/thank-you/?submitted=1';
+                }).catch(function(err) {
+                    console.error('Form submission error:', err);
+                    window.location.href = '/fb/thank-you/?submitted=1';
+                });
             });
         });
     })();

@@ -92,10 +92,12 @@
             gtag('config', 'AW-16834089922');
         </script>
 
+        {% if page.url != '/fb/' %}
         <script defer
-            src="https://widgets.leadconnectorhq.com/loader.js"  
-            data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
-            data-widget-id="69c65957bf76e306427df7f8"   > 
+            src="https://widgets.leadconnectorhq.com/loader.js"
+            data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+            data-widget-id="69c65957bf76e306427df7f8"   >
         </script>
+        {% endif %}
     </body>
 </html>
