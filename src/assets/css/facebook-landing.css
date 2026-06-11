@@ -634,6 +634,29 @@
     margin: 1rem 0 0;
   }
   /*-- -------------------------- -->
+    <---   FB Alt — Gated, Centered   -->
+    <--- -------------------------- -*/
+  #fb-hero.cs-gated .cs-content {
+    margin-bottom: 1rem;
+  }
+  #fb-hero.cs-gated .cs-subhead {
+    margin: 1.5rem 0 0;
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    color: var(--secondary);
+  }
+  #fb-hero.cs-gated .cs-hero-row {
+    justify-content: center;
+  }
+  #fb-hero.cs-gated .cs-video-wrapper {
+    width: 100%;
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+  #fb-hero.cs-gated .cs-video-container:not(.cs-playing) .cs-play-button {
+    display: flex;
+  }
+  /*-- -------------------------- -->
     <---       Video Gate Modal       -->
     <--- -------------------------- -*/
   .cs-video-modal {
@@ -704,7 +727,21 @@
     margin-bottom: 0.25rem;
   }
   .cs-video-modal .cs-input {
-    margin-bottom: 0.5rem;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.3s;
+  }
+  .cs-video-modal .cs-input:focus {
+    outline: none;
+    border-color: var(--primaryLight);
+  }
+  .cs-video-modal .cs-input::placeholder {
+    color: #999;
   }
   .cs-video-modal .cs-fieldset {
     border: none;
@@ -737,10 +774,23 @@
     accent-color: var(--primaryLight);
   }
   .cs-video-modal .cs-submit {
+    display: block;
     width: 100%;
-    font-size: 1.125rem;
+    margin: 1rem 0 0;
     padding: 1rem;
-    margin: 0;
+    background: var(--primaryLight);
+    border: none;
+    border-radius: 3rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .cs-video-modal .cs-submit:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
   }
   /*-- -------------------------- -->
     <---     Video Testimonials       -->
@@ -1373,6 +1423,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+  #fb-hero.cs-gated .cs-video-wrapper {
+    flex: 0 1 56rem;
+    max-width: 56rem;
   }
   #fb-reviews .cs-card-group {
     flex-wrap: nowrap;

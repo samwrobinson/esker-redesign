@@ -451,6 +451,43 @@
     }
 
     /*-- -------------------------- -->
+    <---   FB Alt — Gated, Centered   -->
+    <--- -------------------------- -*/
+
+    // Centered single-column video (no side form). The video is gated:
+    // clicking it opens the form modal, and the video only plays after submit.
+    #fb-hero.cs-gated {
+        .cs-content {
+            margin-bottom: 1rem;
+        }
+
+        // Subheading that nudges them to press play (no hint of the form)
+        .cs-subhead {
+            margin: 1.5rem 0 0;
+            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .cs-hero-row {
+            justify-content: center;
+        }
+
+        .cs-video-wrapper {
+            width: 100%;
+            max-width: 56rem;
+            margin: 0 auto;
+        }
+
+        // Play button stays visible until the gate is passed
+        .cs-video-container:not(.cs-playing) {
+            .cs-play-button {
+                display: flex;
+            }
+        }
+    }
+
+    /*-- -------------------------- -->
     <---       Video Gate Modal       -->
     <--- -------------------------- -*/
 
@@ -530,7 +567,23 @@
         }
 
         .cs-input {
-            margin-bottom: 0.5rem;
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            border: 1px solid #e5e5e5;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+
+            &:focus {
+                outline: none;
+                border-color: var(--primaryLight);
+            }
+
+            &::placeholder {
+                color: #999;
+            }
         }
 
         .cs-fieldset {
@@ -569,10 +622,24 @@
         }
 
         .cs-submit {
+            display: block;
             width: 100%;
-            font-size: 1.125rem;
+            margin: 1rem 0 0;
             padding: 1rem;
-            margin: 0;
+            background: var(--primaryLight);
+            border: none;
+            border-radius: 3rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #000;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+
+            &:hover {
+                background: var(--secondary);
+                transform: translateY(-2px);
+            }
         }
     }
 
@@ -1365,6 +1432,12 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+        }
+
+        // Alt page: keep the gated video centered instead of the 60% column
+        &.cs-gated .cs-video-wrapper {
+            flex: 0 1 56rem;
+            max-width: 56rem;
         }
     }
 

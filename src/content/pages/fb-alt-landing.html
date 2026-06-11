@@ -1,0 +1,340 @@
+---
+title: 'Contractor Website Design That Gets You More Leads | Esker Designs'
+description: 'Custom hand-coded websites for contractors starting at $175/month. No upfront costs, unlimited edits, and 24/7 support. See real results from real contractors.'
+preloadImg: '/assets/images/logo.webp'
+permalink: '/fb-alt/'
+eleventyExcludeFromCollections: true
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/assets/css/facebook-landing.css">
+<link rel="preload" as="video" href="https://local-lift.nyc3.cdn.digitaloceanspaces.com/Generating%20More%20Leads%20for%20Home%20Services.mp4" fetchpriority="high">
+
+<!-- Facebook Pixel Code -->
+<!-- This page has no thank-you redirect, so the Lead event is fired from the
+     gate form's submit handler below (see fbq('track','Lead') in the script). -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3889075514559305');
+    fbq('track', 'PageView');
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=3889075514559305&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+<style>
+    /* Landing-page-only overrides (this <style> ships only on /fb-alt/) */
+
+    /* Strip footer links that navigate users off this page (keep contact info) */
+    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(2), /* Quick Links column */
+    #cs-footer-842 .cs-bottom-links { /* Privacy / Terms */
+        display: none;
+    }
+    /* Logo no longer links anywhere off-page */
+    #cs-footer-842 .cs-logo-group .cs-logo {
+        pointer-events: none;
+        cursor: default;
+    }
+
+    /* Extra space below the last section so the footer trees don't overlap it */
+    #fb-testimonials {
+        padding-bottom: max(10rem, 14vw);
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--            Hero Video (Gated)                -->
+<!-- ============================================ -->
+
+<section id="fb-hero" class="cs-gated">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">I Will Build You a <em><span class="cs-squiggle">FREE</span></em> Website and Get You More Leads With AI Systems and 5 Star Google Reviews</h1>
+            <p class="cs-subhead">👇 Watch this 2 minute video to see the proof...</p>
+        </div>
+        <div class="cs-hero-row">
+            <div class="cs-video-wrapper">
+                <div class="cs-video-container" id="fba-vsl-player-container">
+                    <video
+                        class="cs-vsl-video"
+                        preload="metadata"
+                        playsinline
+                    >
+                        <source src="https://local-lift.nyc3.cdn.digitaloceanspaces.com/Generating%20More%20Leads%20for%20Home%20Services.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button class="cs-play-button" aria-label="Play video">
+                        <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--               Video Gate Modal               -->
+<!-- ============================================ -->
+
+<div class="cs-video-modal" id="fba-gate-modal" aria-hidden="true">
+    <div class="cs-modal-overlay"></div>
+    <div class="cs-modal-content">
+        <button class="cs-modal-close" type="button" aria-label="Close">&times;</button>
+        <h3 class="cs-form-title">Enter Your Info to Watch the Video</h3>
+        <form class="cs-form" id="gate-form" name="FB Alt Contractor Landing" method="post" netlify>
+            <label class="cs-label" for="gate-name">Your Name</label>
+            <input class="cs-input" type="text" id="gate-name" name="name" placeholder="Your name" required>
+            <label class="cs-label" for="gate-phone">Phone Number</label>
+            <input class="cs-input" type="tel" id="gate-phone" name="phone" placeholder="(555) 123-4567" required>
+            <label class="cs-label" for="gate-email">Email</label>
+            <input class="cs-input" type="email" id="gate-email" name="email" placeholder="you@example.com">
+            <button class="cs-submit" type="submit">Watch the Video</button>
+        </form>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!--            Video Testimonials                -->
+<!-- ============================================ -->
+
+<section id="fb-testimonials">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Don't Just Take Our Word For It</span>
+            <h2 class="cs-title">Hear From Real Contractors We've Worked With</h2>
+        </div>
+        <div class="cs-video-grid">
+            <!-- Jules - Featured / Most Prominent -->
+            <div class="cs-testimonial-card cs-featured-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                <video
+                    class="cs-testimonial-video"
+                    preload="metadata"
+                    playsinline
+                >
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/quicktime">
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button class="cs-play-button" aria-label="Play Jules testimonial">
+                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+            </div>
+            <!-- Jackson -->
+            <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                <video
+                    class="cs-testimonial-video"
+                    preload="metadata"
+                    playsinline
+                >
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jackson.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button class="cs-play-button" aria-label="Play Jackson testimonial">
+                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+            </div>
+            <!-- Tim -->
+            <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                <video
+                    class="cs-testimonial-video"
+                    preload="metadata"
+                    playsinline
+                >
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/tim-testimonial.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button class="cs-play-button" aria-label="Play Tim testimonial">
+                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+            </div>
+            <!-- Shelley -->
+            <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                <video
+                    class="cs-testimonial-video"
+                    preload="metadata"
+                    playsinline
+                >
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/shelly-testimonial.mov" type="video/quicktime">
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/shelly-testimonial.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button class="cs-play-button" aria-label="Play Shelley testimonial">
+                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Side-scroll testimonials: Moxie & Amber -->
+        <div class="cs-scroll-row">
+            <div class="cs-scroll-track">
+                <!-- Moxie -->
+                <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                    <video
+                        class="cs-testimonial-video"
+                        preload="metadata"
+                        playsinline
+                    >
+                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/IMG_4106.mov" type="video/quicktime">
+                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/IMG_4106.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button class="cs-play-button" aria-label="Play Moxie testimonial">
+                        <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Amber Banta -->
+                <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                    <video
+                        class="cs-testimonial-video"
+                        preload="metadata"
+                        playsinline
+                    >
+                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/amber-testimonial.MOV" type="video/quicktime">
+                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/amber-testimonial.MOV" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button class="cs-play-button" aria-label="Play Amber testimonial">
+                        <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Nick -->
+                <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                    <video
+                        class="cs-testimonial-video"
+                        preload="metadata"
+                        playsinline
+                    >
+                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/nick.MOV" type="video/quicktime">
+                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/nick.MOV" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button class="cs-play-button" aria-label="Play Nick testimonial">
+                        <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Gated VSL Player — click video opens form modal; submit unlocks + plays with sound
+    (function() {
+        var videoStarted = false;
+        var videoTitle = 'FB Alt Contractor Landing VSL';
+        var container = document.getElementById('fba-vsl-player-container');
+        var video = container ? container.querySelector('.cs-vsl-video') : null;
+        var modal = document.getElementById('fba-gate-modal');
+        var gateForm = document.getElementById('gate-form');
+        var unlocked = false;
+
+        if (container && video && modal && gateForm) {
+            var overlay = modal.querySelector('.cs-modal-overlay');
+            var closeBtn = modal.querySelector('.cs-modal-close');
+
+            function openModal() {
+                // Once unlocked, native controls handle play/pause — don't re-gate
+                if (unlocked) return;
+                modal.classList.add('active');
+                modal.setAttribute('aria-hidden', 'false');
+            }
+
+            function closeModal() {
+                modal.classList.remove('active');
+                modal.setAttribute('aria-hidden', 'true');
+            }
+
+            container.addEventListener('click', openModal);
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+            if (overlay) overlay.addEventListener('click', closeModal);
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeModal();
+            });
+
+            gateForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Capture the lead (fire-and-forget so playback isn't blocked)
+                var formData = new FormData(gateForm);
+                formData.append('form-name', 'FB Alt Contractor Landing');
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                }).catch(function(err) {
+                    console.error('Form submission error:', err);
+                });
+
+                // Unlock + start the video WITHIN the user gesture so audio is allowed
+                unlocked = true;
+                closeModal();
+                container.classList.add('cs-playing');
+                video.muted = false;
+                video.controls = true;
+                var p = video.play();
+                if (p && p.catch) { p.catch(function() {}); }
+
+                // Conversion tracking — fired the moment they submit, since this
+                // page never redirects to a thank-you page.
+                if (typeof fbq === 'function') {
+                    fbq('track', 'Lead');
+                }
+                if (typeof gtag === 'function') {
+                    gtag('event', 'generate_lead', { form_name: 'FB Alt Contractor Landing' });
+                }
+            });
+
+            video.addEventListener('play', function() {
+                if (!videoStarted) {
+                    videoStarted = true;
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'video_start', {
+                            video_title: videoTitle,
+                            video_provider: 'self-hosted'
+                        });
+                    }
+                }
+            });
+
+            video.addEventListener('ended', function() {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'video_complete', {
+                        video_title: videoTitle,
+                        video_provider: 'self-hosted'
+                    });
+                }
+            });
+        }
+    })();
+</script>
+
+{% endblock %}
