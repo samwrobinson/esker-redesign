@@ -360,6 +360,12 @@
     margin: 0 0 1rem;
     max-width: none;
   }
+  #fb-hero .cs-subhead {
+    margin: 1.5rem 0 0;
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    color: var(--secondary);
+  }
   #fb-hero .cs-text {
     font-size: clamp(1rem, 2vw, 1.125rem);
     line-height: 1.6;
@@ -638,12 +644,6 @@
     <--- -------------------------- -*/
   #fb-hero.cs-gated .cs-content {
     margin-bottom: 1rem;
-  }
-  #fb-hero.cs-gated .cs-subhead {
-    margin: 1.5rem 0 0;
-    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-    font-weight: 700;
-    color: var(--secondary);
   }
   #fb-hero.cs-gated .cs-hero-row {
     justify-content: center;
