@@ -92,6 +92,12 @@
             gtag('config', 'AW-16834089922');
         </script>
 
+        {# TEMPORARY: A2P verification widget for GHL master sending sub account — home page only. See WIDGET_REVERT.md to undo. #}
+        {% if page.url == '/' %}
+        <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a2c236d95a221ced53c199d" data-source="WEB_USER"></script>
+        {% endif %}
+
+        {# ORIGINAL widget — commented out temporarily, swap back in after A2P verification. See WIDGET_REVERT.md.
         {% if page.url != '/fb/' and page.url != '/fb-alt/' %}
         <script defer
             src="https://widgets.leadconnectorhq.com/loader.js"
@@ -99,5 +105,6 @@
             data-widget-id="69c65957bf76e306427df7f8"   >
         </script>
         {% endif %}
+        #}
     </body>
 </html>
