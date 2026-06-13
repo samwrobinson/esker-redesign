@@ -23,11 +23,8 @@ eleventyExcludeFromCollections: true
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '3889075514559305');
     fbq('track', 'PageView');
-    // Only count a Lead when the visitor actually just submitted the form.
-    // Prevents reloads, direct visits, and bots from inflating conversions.
-    if (new URLSearchParams(window.location.search).get('submitted') === '1') {
-        fbq('track', 'Lead');
-    }
+    // 'Lead' is now sent server-side via the submission-created Netlify Function
+    // (deduped by email) — no browser Lead here, to avoid double-counting.
 </script>
 <noscript>
     <img height="1" width="1" style="display:none"

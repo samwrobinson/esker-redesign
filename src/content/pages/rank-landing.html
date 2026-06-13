@@ -10,6 +10,7 @@ eleventyExcludeFromCollections: true
 
 {% block head %}
 <link rel="stylesheet" href="/assets/css/rank-landing.css">
+<script defer src="/assets/js/fb-capi.js"></script>
 
 <!-- Facebook Pixel Code -->
 <script>
@@ -240,8 +241,12 @@ eleventyExcludeFromCollections: true
         <button class="cs-modal-close" type="button" aria-label="Close">&times;</button>
         <h3 class="cs-modal-title">Book Your Free Strategy Call</h3>
         <p class="cs-modal-text">Drop your details and we'll reach out to lock in a time — usually the same day.</p>
-        <form class="cs-modal-form" name="Contractor Offer Landing" method="post" action="/thank-you/" data-netlify="true" netlify>
+        <form class="cs-modal-form" name="Contractor Offer Landing" method="post" action="/thank-you/" data-netlify="true" netlify data-fb-lead>
             <input type="hidden" name="form-name" value="Contractor Offer Landing">
+            <input type="hidden" name="fbp">
+            <input type="hidden" name="fbc">
+            <input type="hidden" name="ua">
+            <input type="hidden" name="page_url">
             <input class="cs-input" type="text" name="name" placeholder="Your name" required>
             <input class="cs-input" type="tel" name="phone" placeholder="Phone number" required>
             <input class="cs-input" type="email" name="email" placeholder="Email" required>

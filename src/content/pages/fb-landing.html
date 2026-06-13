@@ -10,6 +10,7 @@ eleventyExcludeFromCollections: true
 
 {% block head %}
 <link rel="stylesheet" href="/assets/css/facebook-landing.css">
+<script defer src="/assets/js/fb-capi.js"></script>
 <link rel="preload" as="video" href="https://local-lift.nyc3.cdn.digitaloceanspaces.com/Generating%20More%20Leads%20for%20Home%20Services.mp4" fetchpriority="high">
 <style>
     /* Landing-page-only overrides (this <style> ships only on /fb/) */
@@ -67,7 +68,11 @@ eleventyExcludeFromCollections: true
                 </div>
             </div>
             <div class="cs-form-wrapper">
-                <form class="cs-form" id="hero-form" name="FB Contractor Landing" method="post" action="/fb/thank-you/?submitted=1" netlify>
+                <form class="cs-form" id="hero-form" name="FB Contractor Landing" method="post" action="/fb/thank-you/?submitted=1" netlify data-fb-lead>
+                    <input type="hidden" name="fbp">
+                    <input type="hidden" name="fbc">
+                    <input type="hidden" name="ua">
+                    <input type="hidden" name="page_url">
                     <h3 class="cs-form-title">Watch the Video & We'll Be in Touch</h3>
                     <div class="cs-form-group">
                         <label class="cs-label" for="hero-name">Your Name</label>
@@ -236,7 +241,11 @@ eleventyExcludeFromCollections: true
             </p>
         </div>
         <div class="cs-form-wrapper">
-            <form class="cs-form" id="cta-form" name="FB Contractor Landing - 2" method="post" action="/fb/thank-you/?submitted=1" netlify>
+            <form class="cs-form" id="cta-form" name="FB Contractor Landing - 2" method="post" action="/fb/thank-you/?submitted=1" netlify data-fb-lead>
+                <input type="hidden" name="fbp">
+                <input type="hidden" name="fbc">
+                <input type="hidden" name="ua">
+                <input type="hidden" name="page_url">
                 <div class="cs-form-group">
                     <label class="cs-label" for="cta-name">Your Name</label>
                     <input class="cs-input" type="text" id="cta-name" name="name" placeholder="Your name" required>

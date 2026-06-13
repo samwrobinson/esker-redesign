@@ -97,6 +97,10 @@ eleventyExcludeFromCollections: true
         <button class="cs-modal-close" type="button" aria-label="Close">&times;</button>
         <h3 class="cs-form-title">Enter Your Info to Watch the Video</h3>
         <form class="cs-form" id="gate-form" name="FB Alt Contractor Landing" method="post" netlify>
+            <input type="hidden" name="fbp">
+            <input type="hidden" name="fbc">
+            <input type="hidden" name="ua">
+            <input type="hidden" name="page_url">
             <label class="cs-label" for="gate-name">Your Name</label>
             <input class="cs-input" type="text" id="gate-name" name="name" placeholder="Your name" required>
             <label class="cs-label" for="gate-phone">Phone Number</label>
@@ -283,9 +287,24 @@ eleventyExcludeFromCollections: true
             gateForm.addEventListener('submit', function(e) {
                 e.preventDefault();
 
+                // Enrich for the server-side Conversions API match
+                function gateCookie(n) {
+                    var m = document.cookie.match('(?:^|; )' + n + '=([^;]*)');
+                    return m ? decodeURIComponent(m[1]) : '';
+                }
+                var gateFbc = gateCookie('_fbc');
+                if (!gateFbc) {
+                    var fbclidMatch = location.search.match(/[?&]fbclid=([^&]+)/);
+                    if (fbclidMatch) gateFbc = 'fb.1.' + Date.now() + '.' + decodeURIComponent(fbclidMatch[1]);
+                }
+
                 // Capture the lead (fire-and-forget so playback isn't blocked)
                 var formData = new FormData(gateForm);
                 formData.append('form-name', 'FB Alt Contractor Landing');
+                formData.set('fbp', gateCookie('_fbp'));
+                formData.set('fbc', gateFbc);
+                formData.set('ua', navigator.userAgent);
+                formData.set('page_url', location.href);
                 fetch('/', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -303,11 +322,9 @@ eleventyExcludeFromCollections: true
                 var p = video.play();
                 if (p && p.catch) { p.catch(function() {}); }
 
-                // Conversion tracking — fired the moment they submit, since this
-                // page never redirects to a thank-you page.
-                if (typeof fbq === 'function') {
-                    fbq('track', 'Lead');
-                }
+                // The Meta 'Lead' conversion is now sent server-side via the
+                // submission-created Netlify Function (deduped by email), so we
+                // no longer fire fbq('track','Lead') here. GA stays client-side.
                 if (typeof gtag === 'function') {
                     gtag('event', 'generate_lead', { form_name: 'FB Alt Contractor Landing' });
                 }
