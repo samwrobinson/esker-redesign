@@ -59,6 +59,173 @@ eleventyNavigation:
     </section>
 
 <!-- ============================================ -->
+<!--                   Video                      -->
+<!-- ============================================ -->
+
+<section id="video-548">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">See It In Action</span>
+            <h2 class="cs-title">Watch How We Build Websites That Work</h2>
+            <p class="cs-text">
+                See the difference a hand-coded website can make for your business. No page builders, no templates – just clean, efficient code built to convert.
+            </p>
+        </div>
+        <div class="cs-video-form-row">
+            <div class="cs-video-wrapper">
+                <div class="cs-video-glow" aria-hidden="true"></div>
+                <div class="cs-video-container" id="yt-player-container" data-video-id="280sn8hNj0c">
+                    <!--YouTube Thumbnail-->
+                    <img class="cs-thumbnail" decoding="async" src="https://img.youtube.com/vi/280sn8hNj0c/sddefault.jpg" alt="Video thumbnail - Watch how we build websites" width="640" height="480">
+                    <!--Play Button-->
+                    <button class="cs-play-button" aria-label="Play video">
+                        <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!--Inline Contact Form-->
+            <form class="cs-inline-form" name="About Contact" method="post" action="/thank-you/" netlify>
+                <h3 class="cs-form-title">Get Your Free Quote</h3>
+                <p class="cs-form-subtitle">No upfront costs. No commitment. Just results.</p>
+                <div class="cs-form-row">
+                    <input class="cs-input" type="text" name="name" placeholder="Name" required>
+                    <input class="cs-input" type="email" name="email" placeholder="Email" required>
+                    <input class="cs-input" type="tel" name="phone" placeholder="Phone">
+                </div>
+                <div class="cs-form-row">
+                    <textarea class="cs-message" name="message" placeholder="What can we help you with?" rows="3"></textarea>
+                </div>
+                <button class="cs-submit" type="submit">Start Today</button>
+                <div class="cs-policy-links">
+                    <a href="/privacy-policy/" class="cs-privacy-link" target="_blank">Privacy Policy</a>
+                    <a href="/terms-of-service/" class="cs-privacy-link" target="_blank">Terms of Service</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        // YouTube Player API with GA4 Tracking
+        (function() {
+            var player;
+            var videoStarted = false;
+            var progressMilestones = { 10: false, 25: false, 50: false, 75: false, 90: false };
+            var videoTitle = 'About Page Promo Video';
+            var checkInterval;
+
+            // Load YouTube API when user clicks
+            var container = document.getElementById('yt-player-container');
+            if (container) {
+                container.addEventListener('click', function initPlayer() {
+                    container.removeEventListener('click', initPlayer);
+                    container.classList.add('cs-playing');
+
+                    // Load YouTube iframe API
+                    var tag = document.createElement('script');
+                    tag.src = 'https://www.youtube.com/iframe_api';
+                    var firstScript = document.getElementsByTagName('script')[0];
+                    firstScript.parentNode.insertBefore(tag, firstScript);
+                });
+            }
+
+            // YouTube API callback
+            window.onYouTubeIframeAPIReady = function() {
+                var videoId = container.dataset.videoId;
+                container.innerHTML = '<div id="yt-player"></div>';
+
+                player = new YT.Player('yt-player', {
+                    videoId: videoId,
+                    width: '100%',
+                    height: '100%',
+                    playerVars: {
+                        autoplay: 1,
+                        rel: 0,
+                        modestbranding: 1
+                    },
+                    events: {
+                        onReady: onPlayerReady,
+                        onStateChange: onPlayerStateChange
+                    }
+                });
+            };
+
+            function onPlayerReady(event) {
+                event.target.playVideo();
+            }
+
+            function onPlayerStateChange(event) {
+                // Playing
+                if (event.data === YT.PlayerState.PLAYING) {
+                    if (!videoStarted) {
+                        videoStarted = true;
+                        console.log('🎬 GA4 Event: video_start');
+                        gtag('event', 'video_start', {
+                            video_title: videoTitle,
+                            video_provider: 'youtube'
+                        });
+                    }
+                    // Start progress tracking
+                    startProgressTracking();
+                }
+
+                // Paused
+                if (event.data === YT.PlayerState.PAUSED) {
+                    stopProgressTracking();
+                    var currentTime = player.getCurrentTime();
+                    var duration = player.getDuration();
+                    gtag('event', 'video_pause', {
+                        video_title: videoTitle,
+                        video_provider: 'youtube',
+                        video_percent: Math.round((currentTime / duration) * 100),
+                        video_current_time: Math.round(currentTime)
+                    });
+                }
+
+                // Ended
+                if (event.data === YT.PlayerState.ENDED) {
+                    stopProgressTracking();
+                    gtag('event', 'video_complete', {
+                        video_title: videoTitle,
+                        video_provider: 'youtube',
+                        video_duration: Math.round(player.getDuration())
+                    });
+                }
+            }
+
+            function startProgressTracking() {
+                if (checkInterval) return;
+                checkInterval = setInterval(function() {
+                    if (!player || !player.getCurrentTime) return;
+                    var currentTime = player.getCurrentTime();
+                    var duration = player.getDuration();
+                    var percent = (currentTime / duration) * 100;
+
+                    for (var milestone in progressMilestones) {
+                        if (!progressMilestones[milestone] && percent >= milestone) {
+                            progressMilestones[milestone] = true;
+                            var eventName = 'video_' + milestone + '_percent';
+                            console.log('🎬 GA4 Event: ' + eventName);
+                            gtag('event', eventName, {
+                                video_title: videoTitle,
+                                video_provider: 'youtube'
+                            });
+                        }
+                    }
+                }, 1000);
+            }
+
+            function stopProgressTracking() {
+                if (checkInterval) {
+                    clearInterval(checkInterval);
+                    checkInterval = null;
+                }
+            }
+        })();
+    </script>
+</section>
+
+<!-- ============================================ -->
 <!--                   Steps                      -->
 <!-- ============================================ -->
 
