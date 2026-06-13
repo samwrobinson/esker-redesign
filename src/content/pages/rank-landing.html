@@ -1,0 +1,312 @@
+---
+title: 'Become the #1 Contractor in Your City | Rank Top 3 on Google | Esker Designs'
+description: 'Rank in the top 3 of Google for the contractor jobs you want and turn "near me" searches into booked work in 90 days — no ad spend, no paying per click. Book your free strategy call.'
+preloadImg: '/assets/images/logo.webp'
+permalink: '/offer/'
+eleventyExcludeFromCollections: true
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/assets/css/rank-landing.css">
+
+<!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3889075514559305');
+    fbq('track', 'PageView');
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=3889075514559305&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+<style>
+    /* Landing-page-only chrome strip (ships only on /offer/) — clean white funnel look */
+    #cs-navigation,            /* main site nav */
+    #cta-1612,                 /* newsletter CTA */
+    #newsletter-popup-overlay, /* newsletter popup */
+    #cs-footer-842 {           /* sitewide footer (we render our own minimal one) */
+        display: none !important;
+    }
+    /* Force this page to stay clean & light regardless of dark-mode preference */
+    body.dark-mode { background-color: #fff; }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="rank-hero">
+    <!-- Floating social proof — gutters, wide screens only (decorative) -->
+    <div class="cs-proof-float" aria-hidden="true">
+        <img class="cs-proof-card cs-proof-1" src="/assets/images/proof/proof-forms-146.png" alt="" loading="lazy" decoding="async">
+        <img class="cs-proof-card cs-proof-2" src="/assets/images/proof/proof-lead-townhouse.png" alt="" loading="lazy" decoding="async">
+        <img class="cs-proof-card cs-proof-3" src="/assets/images/proof/proof-lead-roof.png" alt="" loading="lazy" decoding="async">
+        <img class="cs-proof-card cs-proof-4" src="/assets/images/proof/proof-forms-227.png" alt="" loading="lazy" decoding="async">
+        <img class="cs-proof-card cs-proof-5" src="/assets/images/proof/proof-lead-metalroof.png" alt="" loading="lazy" decoding="async">
+        <img class="cs-proof-card cs-proof-6" src="/assets/images/proof/proof-lead-barn.png" alt="" loading="lazy" decoding="async">
+    </div>
+
+    <div class="cs-container">
+        <span class="cs-topper">For Contractors &amp; Home Service Pros</span>
+        <h1 class="cs-title">Attract <span class="cs-accent">High-Value</span> Jobs From Google Maps in 90 Days <span class="cs-accent">Without</span> Paying Per Click</h1>
+
+        <button type="button" class="cs-cta js-open-form" data-umami-event="Offer Hero CTA">
+            Book Your Free Strategy Call
+            <svg class="cs-cta-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+
+        <!-- Risk-reversal reassurance under the CTA (CRO) -->
+        <ul class="cs-cta-trust">
+            <li>
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                No long-term contracts
+            </li>
+            <li>
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                No ad spend required
+            </li>
+            <li>
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                Free, no-obligation call
+            </li>
+        </ul>
+
+        <!-- Featured interactive search field -->
+        <div class="cs-search-hero">
+            <svg class="cs-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <span>general contractor near me</span>
+            <svg class="cs-mic-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"></path><path d="M17 11a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+        </div>
+
+        <!-- Form-count proof, right under the search (mobile / tablet) -->
+        <div class="cs-proof-strip">
+            <p class="cs-proof-headline">Get <span class="cs-accent">200+</span> Leads With <span class="cs-accent">ZERO</span> Ad Spend</p>
+            <div class="cs-proof-strip-imgs">
+                <img class="cs-proof-card" src="/assets/images/proof/proof-forms-146.png" alt="146 form submissions on a contractor website we built" loading="lazy" decoding="async">
+                <img class="cs-proof-card" src="/assets/images/proof/proof-forms-227.png" alt="227 form submissions on a contractor website we built" loading="lazy" decoding="async">
+            </div>
+        </div>
+
+        <div class="cs-keyword-row">
+        <!-- Land Consistent Jobs -->
+        <div class="cs-keyword-group">
+            <span class="cs-keyword-label">Land Consistent Jobs</span>
+            <div class="cs-search-list">
+                <div class="cs-search-pill">
+                    <svg class="cs-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <span>handyman near me</span>
+                    <svg class="cs-mic-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"></path><path d="M17 11a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+                </div>
+                <div class="cs-search-pill">
+                    <svg class="cs-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <span>deck repair near me</span>
+                    <svg class="cs-mic-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"></path><path d="M17 11a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+                </div>
+                <div class="cs-search-pill">
+                    <svg class="cs-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <span>bathroom remodel near me</span>
+                    <svg class="cs-mic-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"></path><path d="M17 11a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+                </div>
+                <div class="cs-search-pill">
+                    <svg class="cs-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <span>fence installation near me</span>
+                    <svg class="cs-mic-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"></path><path d="M17 11a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Land High-Value Jobs -->
+        <div class="cs-keyword-group">
+            <span class="cs-keyword-label">Land High-Value Jobs</span>
+            <div class="cs-search-list">
+                <div class="cs-search-pill">
+                    <svg class="cs-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <span>home addition contractor near me</span>
+                    <svg class="cs-mic-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"></path><path d="M17 11a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+                </div>
+                <div class="cs-search-pill">
+                    <svg class="cs-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <span>kitchen remodeling near me</span>
+                    <svg class="cs-mic-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"></path><path d="M17 11a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+                </div>
+                <div class="cs-search-pill">
+                    <svg class="cs-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <span>custom home builder near me</span>
+                    <svg class="cs-mic-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"></path><path d="M17 11a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+                </div>
+                <div class="cs-search-pill">
+                    <svg class="cs-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <span>whole home renovation near me</span>
+                    <svg class="cs-mic-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"></path><path d="M17 11a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--        More Social Proof (mobile/tablet)     -->
+<!-- ============================================ -->
+
+<section id="rank-proof">
+    <div class="cs-container">
+        <span class="cs-topper">Straight From the Inbox</span>
+        <h2 class="cs-title">Real Leads Landing for Contractors We Work With</h2>
+        <div class="cs-proof-grid">
+            <img class="cs-proof-card" src="/assets/images/proof/proof-lead-townhouse.png" alt="Lead inquiry: 12-unit townhouse development project in Auburn, Maine" loading="lazy" decoding="async">
+            <img class="cs-proof-card" src="/assets/images/proof/proof-lead-metalroof.png" alt="Lead inquiry: estimate for a standing seam metal roof" loading="lazy" decoding="async">
+            <img class="cs-proof-card" src="/assets/images/proof/proof-lead-roof.png" alt="Lead inquiry: estimate to replace a large roof" loading="lazy" decoding="async">
+            <img class="cs-proof-card" src="/assets/images/proof/proof-lead-barn.png" alt="Lead inquiry: replace standing seam roof on a barn" loading="lazy" decoding="async">
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--               Testimonials                   -->
+<!-- ============================================ -->
+
+<section id="rank-testimonials">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Don't Just Take Our Word For It</span>
+            <h2 class="cs-title">Hear From Real Contractors We've Worked With</h2>
+        </div>
+        <div class="cs-video-grid">
+            <!-- Tim -->
+            <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                <video class="cs-testimonial-video" preload="metadata" playsinline>
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/tim-testimonial.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button class="cs-play-button" aria-label="Play Tim testimonial">
+                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+            </div>
+            <!-- Jules -->
+            <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                <video class="cs-testimonial-video" preload="metadata" playsinline>
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/quicktime">
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button class="cs-play-button" aria-label="Play Jules testimonial">
+                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+            </div>
+            <!-- Jackson -->
+            <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                <video class="cs-testimonial-video" preload="metadata" playsinline>
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jackson.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <button class="cs-play-button" aria-label="Play Jackson testimonial">
+                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <button type="button" class="cs-cta js-open-form" data-umami-event="Offer Testimonials CTA">Book Your Free Strategy Call</button>
+        <p class="cs-cta-note">Free 15-minute call · No obligation · Limited spots each month</p>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--              Lead Form Modal                 -->
+<!-- ============================================ -->
+
+<div class="cs-form-modal" id="offer-form-modal" aria-hidden="true">
+    <div class="cs-modal-overlay"></div>
+    <div class="cs-modal-content">
+        <button class="cs-modal-close" type="button" aria-label="Close">&times;</button>
+        <h3 class="cs-modal-title">Book Your Free Strategy Call</h3>
+        <p class="cs-modal-text">Drop your details and we'll reach out to lock in a time — usually the same day.</p>
+        <form class="cs-modal-form" name="Contractor Offer Landing" method="post" action="/thank-you/" data-netlify="true" netlify>
+            <input type="hidden" name="form-name" value="Contractor Offer Landing">
+            <input class="cs-input" type="text" name="name" placeholder="Your name" required>
+            <input class="cs-input" type="tel" name="phone" placeholder="Phone number" required>
+            <input class="cs-input" type="email" name="email" placeholder="Email" required>
+            <input class="cs-input" type="text" name="business" placeholder="Business &amp; city (optional)">
+            <button class="cs-modal-submit" type="submit">Get My Free Strategy Call</button>
+        </form>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!--              Minimal Footer                  -->
+<!-- ============================================ -->
+
+<footer id="rank-footer">
+    <div class="cs-container">
+        <p class="cs-disclaimer">
+            This site is not a part of the Facebook website or Meta Platforms, Inc. Additionally,
+            this site is NOT endorsed by Facebook in any way. Results vary and are not guaranteed.
+            All content is for informational purposes only.
+        </p>
+        <div class="cs-footer-links">
+            <a href="/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>
+            <span aria-hidden="true">·</span>
+            <a href="/terms-of-service/" target="_blank" rel="noopener">Terms of Service</a>
+        </div>
+        <p class="cs-copyright">© 2026 Esker Designs. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Popup lead form — CTAs open the modal; submit posts to Netlify and
+    // redirects to /thank-you/, where the FB 'Lead' event fires.
+    (function() {
+        var modal = document.getElementById('offer-form-modal');
+        if (!modal) return;
+        var overlay = modal.querySelector('.cs-modal-overlay');
+        var closeBtn = modal.querySelector('.cs-modal-close');
+        var openers = document.querySelectorAll('.js-open-form');
+
+        function openModal() {
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            var first = modal.querySelector('input:not([type=hidden])');
+            if (first) first.focus();
+            // Intent tracking the moment they open the form
+            if (typeof fbq === 'function') { fbq('track', 'InitiateCheckout'); }
+            if (typeof gtag === 'function') {
+                gtag('event', 'book_call_click', { form_name: 'Contractor Offer Landing' });
+            }
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        openers.forEach(function(btn) { btn.addEventListener('click', openModal); });
+        if (overlay) overlay.addEventListener('click', closeModal);
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    })();
+</script>
+
+{% endblock %}
