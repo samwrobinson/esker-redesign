@@ -25,6 +25,7 @@ const API_VERSION = 'v21.0';
 // Forms that represent a real lead (everything else — newsletter, lead magnets — is ignored)
 const LEAD_FORMS = new Set([
     'Contractor Offer Landing',
+    'Contractor Reviews Offer Landing',
     'FB Alt Contractor Landing',
     'FB Contractor Landing',
     'FB Contractor Landing - 2',

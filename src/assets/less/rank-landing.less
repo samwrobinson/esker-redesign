@@ -116,6 +116,26 @@
                 color: @accent;
             }
         }
+
+        /* Small attention line above the H1 (mirrors the ad's pain hook) */
+        .cs-leadin {
+            margin: clamp(1rem, 2.5vw, 1.5rem) 0 0;
+            max-width: (620/16rem);
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            font-weight: 700;
+            line-height: 1.4em;
+            color: @accent;
+        }
+
+        /* Supporting subhead under the H1 */
+        .cs-subhead {
+            margin: clamp(0.85rem, 2vw, 1.15rem) 0 0;
+            max-width: (620/16rem);
+            font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+            font-weight: 500;
+            line-height: 1.45em;
+            color: var(--bodyTextColor);
+        }
     }
 
     /* Risk-reversal reassurance under the CTA */

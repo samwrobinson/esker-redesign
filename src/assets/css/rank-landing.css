@@ -59,6 +59,8 @@
     background-color: #fff;
     overflow: hidden;
     /* Pill-badge topper (echoes the reference) */
+    /* Small attention line above the H1 (mirrors the ad's pain hook) */
+    /* Supporting subhead under the H1 */
   }
   #rank-hero .cs-container {
     position: relative;
@@ -102,6 +104,22 @@
   }
   #rank-hero .cs-title .cs-accent {
     color: #3f7d14;
+  }
+  #rank-hero .cs-leadin {
+    margin: clamp(1rem, 2.5vw, 1.5rem) 0 0;
+    max-width: 38.75rem;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    font-weight: 700;
+    line-height: 1.4em;
+    color: #3f7d14;
+  }
+  #rank-hero .cs-subhead {
+    margin: clamp(0.85rem, 2vw, 1.15rem) 0 0;
+    max-width: 38.75rem;
+    font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+    font-weight: 500;
+    line-height: 1.45em;
+    color: var(--bodyTextColor);
   }
   /* Risk-reversal reassurance under the CTA */
   #rank-hero .cs-cta-trust {

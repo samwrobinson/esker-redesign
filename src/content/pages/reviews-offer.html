@@ -1,8 +1,8 @@
 ---
-title: 'Become the #1 Contractor in Your City | Rank Top 3 on Google | Esker Designs'
-description: 'Rank in the top 3 of Google for the contractor jobs you want and turn "near me" searches into booked work in 90 days — no ad spend, no paying per click. Book your free strategy call.'
+title: 'Get More 5-Star Google Reviews & Rank Top 3 | Esker Designs'
+description: 'More 5-star Google reviews push contractors up the map so homeowners find you first and call you for the high-value jobs. $0 down, then $175/month. Book your free strategy call.'
 preloadImg: '/assets/images/logo.webp'
-permalink: '/offer/'
+permalink: '/reviews-offer/'
 eleventyExcludeFromCollections: true
 ---
 
@@ -32,7 +32,7 @@ eleventyExcludeFromCollections: true
 <!-- End Facebook Pixel Code -->
 
 <style>
-    /* Landing-page-only chrome strip (ships only on /offer/) — clean white funnel look */
+    /* Landing-page-only chrome strip (ships only on /reviews-offer/) — clean white funnel look */
     #cs-navigation,            /* main site nav */
     #cta-1612,                 /* newsletter CTA */
     #newsletter-popup-overlay, /* newsletter popup */
@@ -41,6 +41,84 @@ eleventyExcludeFromCollections: true
     }
     /* Force this page to stay clean & light regardless of dark-mode preference */
     body.dark-mode { background-color: #fff; }
+
+    /* This page's proof IS the reviews section — keep it visible on desktop
+       (the base /offer CSS hides #rank-proof at >=80rem in favour of the
+       decorative form-submission float, which we don't render here). */
+    #rank-proof { display: block !important; }
+
+    /* Reviews band: subtle highlighted strip below the hero */
+    #rank-organic {
+        background-color: #fff;
+        padding: 0 1rem clamp(2rem, 5vw, 3.25rem);
+    }
+    #rank-organic .cs-container {
+        max-width: 46rem;
+        margin: auto;
+    }
+    .cs-organic-band {
+        margin: 0;
+        padding: clamp(1.1rem, 3vw, 1.6rem) clamp(1.25rem, 3.5vw, 2rem);
+        border: 1px solid rgba(63, 125, 20, 0.25);
+        border-left: 5px solid #3f7d14;
+        border-radius: 14px;
+        background-color: rgba(63, 125, 20, 0.06);
+        color: #1d2b13;
+        font-size: clamp(1rem, 2.1vw, 1.18rem);
+        font-weight: 600;
+        line-height: 1.5em;
+        text-align: center;
+    }
+
+    /* Single hero proof image (the 85-review "after" screenshot) reads better
+       a bit larger than the two-up form-screenshot layout it inherits. */
+    #rank-hero .cs-proof-strip-imgs .cs-proof-card {
+        width: 100%;
+        max-width: 20rem;
+    }
+
+    /* Before / after proof pair */
+    #rank-proof .cs-ba-item {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+    }
+    #rank-proof .cs-ba-label {
+        display: inline-block;
+        padding: 0.3rem 0.9rem;
+        border-radius: 40px;
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #6b7280;
+        background-color: rgba(107, 114, 128, 0.12);
+    }
+    #rank-proof .cs-ba-label.cs-ba-after {
+        color: #3f7d14;
+        background-color: rgba(63, 125, 20, 0.12);
+    }
+
+    /* Caption under the reviews proof images */
+    #rank-proof .cs-proof-caption {
+        margin: clamp(1rem, 2.5vw, 1.5rem) auto 0;
+        max-width: 36ch;
+        font-size: clamp(0.95rem, 2vw, 1.1rem);
+        font-weight: 600;
+        color: #3f7d14;
+    }
+
+    /* Offer line near the testimonials CTA */
+    #rank-testimonials .cs-cta-offer {
+        margin: clamp(0.9rem, 2vw, 1.25rem) auto 0;
+        max-width: 40ch;
+        font-size: clamp(0.95rem, 1.9vw, 1.08rem);
+        font-weight: 700;
+        line-height: 1.45em;
+        color: #243010;
+    }
 </style>
 {% endblock %}
 
@@ -51,23 +129,14 @@ eleventyExcludeFromCollections: true
 <!-- ============================================ -->
 
 <section id="rank-hero">
-    <!-- Floating social proof — gutters, wide screens only (decorative) -->
-    <div class="cs-proof-float" aria-hidden="true">
-        <img class="cs-proof-card cs-proof-1" src="/assets/images/proof/proof-forms-146.png" alt="" loading="lazy" decoding="async">
-        <img class="cs-proof-card cs-proof-2" src="/assets/images/proof/proof-lead-townhouse.png" alt="" loading="lazy" decoding="async">
-        <img class="cs-proof-card cs-proof-3" src="/assets/images/proof/proof-lead-roof.png" alt="" loading="lazy" decoding="async">
-        <img class="cs-proof-card cs-proof-4" src="/assets/images/proof/proof-forms-227.png" alt="" loading="lazy" decoding="async">
-        <img class="cs-proof-card cs-proof-5" src="/assets/images/proof/proof-lead-metalroof.png" alt="" loading="lazy" decoding="async">
-        <img class="cs-proof-card cs-proof-6" src="/assets/images/proof/proof-lead-barn.png" alt="" loading="lazy" decoding="async">
-    </div>
-
     <div class="cs-container">
         <span class="cs-topper">For Contractors &amp; Home Service Pros</span>
-        <p class="cs-leadin">Still paying $50+ a click for tire-kickers who never book? There's a better way.</p>
-        <h1 class="cs-title">Become the <span class="cs-accent">#1 Contractor</span> in Your City</h1>
-        <p class="cs-subhead">Rank in the top 3 of Google and turn "near me" searches into booked work in 90 days — without paying per click.</p>
+        <h1 class="cs-title">Triple Your <span class="cs-accent">Google Reviews</span> and Take Over the <span class="cs-accent">Top 3</span> on Google</h1>
+                <p class="cs-leadin">The contractor with the most reviews almost always gets the call.</p>
 
-        <button type="button" class="cs-cta js-open-form" data-umami-event="Offer Hero CTA">
+        <p class="cs-subhead">More 5-star reviews push you up the map, so homeowners find you first and call you for the high-value jobs.</p>
+
+        <button type="button" class="cs-cta js-open-form" data-umami-event="Reviews Offer Hero CTA">
             Book Your Free Strategy Call
             <svg class="cs-cta-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </button>
@@ -76,7 +145,7 @@ eleventyExcludeFromCollections: true
         <ul class="cs-cta-trust">
             <li>
                 <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
-                No long-term contracts
+                Done-for-you reviews
             </li>
             <li>
                 <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
@@ -95,14 +164,28 @@ eleventyExcludeFromCollections: true
             <svg class="cs-mic-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"></path><path d="M17 11a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"></path></svg>
         </div>
 
-        <!-- Form-count proof, right under the search (mobile / tablet) -->
-        <div class="cs-proof-strip">
-            <p class="cs-proof-headline">Get <span class="cs-accent">200+</span> Leads With <span class="cs-accent">ZERO</span> Ad Spend</p>
-            <div class="cs-proof-strip-imgs">
-                <img class="cs-proof-card" src="/assets/images/proof/proof-forms-146.png" alt="146 form submissions on a contractor website we built" loading="lazy" decoding="async">
-                <img class="cs-proof-card" src="/assets/images/proof/proof-forms-227.png" alt="227 form submissions on a contractor website we built" loading="lazy" decoding="async">
+
+        <!-- ============================================ -->
+        <!--            Reviews Proof Section             -->
+        <!-- ============================================ -->
+
+        <section id="rank-proof">
+            <div class="cs-container">
+                <span class="cs-topper">The Proof</span>
+                <h2 class="cs-title">Real Results From a Contractor We Work With</h2>
+                <div class="cs-proof-grid cs-beforeafter">
+                    <figure class="cs-ba-item">
+                        <span class="cs-ba-label">Before</span>
+                        <img class="cs-proof-card" src="/assets/images/proof/proof-reviews-before.png" alt="Google listing for a client we work with showing 15 reviews before working with Esker Designs" loading="lazy" decoding="async">
+                    </figure>
+                    <figure class="cs-ba-item">
+                        <span class="cs-ba-label cs-ba-after">After</span>
+                        <img class="cs-proof-card" src="/assets/images/proof/proof-reviews-after.png" alt="Google listing for the same client showing a 5.0 rating with 85 reviews after working with Esker Designs" loading="lazy" decoding="async">
+                    </figure>
+                </div>
+                <p class="cs-proof-caption">We grew this client from 15 to 85 five-star Google reviews in SIX DAYS.</p>
             </div>
-        </div>
+        </section>
 
         <div class="cs-keyword-row">
         <!-- Land Consistent Jobs -->
@@ -163,73 +246,15 @@ eleventyExcludeFromCollections: true
 </section>
 
 <!-- ============================================ -->
-<!--        More Social Proof (mobile/tablet)     -->
+<!--   Why organic beats paid ads (callout band)  -->
 <!-- ============================================ -->
 
-<section id="rank-proof">
+<section id="rank-organic">
     <div class="cs-container">
-        <span class="cs-topper">Straight From the Inbox</span>
-        <h2 class="cs-title">Real Leads Landing for Contractors We Work With</h2>
-        <div class="cs-proof-grid">
-            <img class="cs-proof-card" src="/assets/images/proof/proof-lead-townhouse.png" alt="Lead inquiry: 12-unit townhouse development project in Auburn, Maine" loading="lazy" decoding="async">
-            <img class="cs-proof-card" src="/assets/images/proof/proof-lead-metalroof.png" alt="Lead inquiry: estimate for a standing seam metal roof" loading="lazy" decoding="async">
-            <img class="cs-proof-card" src="/assets/images/proof/proof-lead-roof.png" alt="Lead inquiry: estimate to replace a large roof" loading="lazy" decoding="async">
-            <img class="cs-proof-card" src="/assets/images/proof/proof-lead-barn.png" alt="Lead inquiry: replace standing seam roof on a barn" loading="lazy" decoding="async">
-        </div>
-    </div>
-</section>
-
-<!-- ============================================ -->
-<!--               Testimonials                   -->
-<!-- ============================================ -->
-
-<section id="rank-testimonials">
-    <div class="cs-container">
-        <div class="cs-content">
-            <span class="cs-topper">Don't Just Take Our Word For It</span>
-            <h2 class="cs-title">Hear From Real Contractors We've Worked With</h2>
-        </div>
-        <div class="cs-video-grid">
-            <!-- Tim -->
-            <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
-                <video class="cs-testimonial-video" preload="metadata" playsinline>
-                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/tim-testimonial.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <button class="cs-play-button" aria-label="Play Tim testimonial">
-                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
-                        <path d="M8 5v14l11-7z"/>
-                    </svg>
-                </button>
-            </div>
-            <!-- Jules -->
-            <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
-                <video class="cs-testimonial-video" preload="metadata" playsinline>
-                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/quicktime">
-                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <button class="cs-play-button" aria-label="Play Jules testimonial">
-                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
-                        <path d="M8 5v14l11-7z"/>
-                    </svg>
-                </button>
-            </div>
-            <!-- Jackson -->
-            <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
-                <video class="cs-testimonial-video" preload="metadata" playsinline>
-                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jackson.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <button class="cs-play-button" aria-label="Play Jackson testimonial">
-                    <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
-                        <path d="M8 5v14l11-7z"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <button type="button" class="cs-cta js-open-form" data-umami-event="Offer Testimonials CTA">Book Your Free Strategy Call</button>
-        <p class="cs-cta-note">Free 15-minute call · No obligation · Limited spots each month</p>
+        <p class="cs-organic-band">
+            These aren't paid clicks. When a homeowner Googles "near me," they're already ready to hire —
+            so you get motivated buyers, not tire-kickers asking "how much?" and ghosting.
+        </p>
     </div>
 </section>
 
@@ -243,8 +268,8 @@ eleventyExcludeFromCollections: true
         <button class="cs-modal-close" type="button" aria-label="Close">&times;</button>
         <h3 class="cs-modal-title">Book Your Free Strategy Call</h3>
         <p class="cs-modal-text">Drop your details and we'll reach out to lock in a time — usually the same day.</p>
-        <form class="cs-modal-form" name="Contractor Offer Landing" method="post" action="/thank-you/" data-netlify="true" netlify data-fb-lead>
-            <input type="hidden" name="form-name" value="Contractor Offer Landing">
+        <form class="cs-modal-form" name="Contractor Reviews Offer Landing" method="post" action="/thank-you/" data-netlify="true" netlify data-fb-lead>
+            <input type="hidden" name="form-name" value="Contractor Reviews Offer Landing">
             <input type="hidden" name="fbp">
             <input type="hidden" name="fbc">
             <input type="hidden" name="ua">
@@ -297,7 +322,7 @@ eleventyExcludeFromCollections: true
             // Intent tracking the moment they open the form
             if (typeof fbq === 'function') { fbq('track', 'InitiateCheckout'); }
             if (typeof gtag === 'function') {
-                gtag('event', 'book_call_click', { form_name: 'Contractor Offer Landing' });
+                gtag('event', 'book_call_click', { form_name: 'Contractor Reviews Offer Landing' });
             }
         }
 
