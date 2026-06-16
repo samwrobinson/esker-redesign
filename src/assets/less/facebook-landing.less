@@ -488,6 +488,29 @@
     }
 
     /*-- -------------------------- -->
+    <---  Centered Hero + CTA Button  -->
+    <--- -------------------------- -*/
+
+    // The lead form lives in a modal; the hero shows a centered video plus a
+    // button that opens it. Video stays centered on mobile, tablet and desktop.
+    #fb-hero.cs-centered {
+        .cs-hero-row {
+            justify-content: center;
+        }
+
+        .cs-video-wrapper {
+            max-width: 56rem;
+            margin: 0 auto;
+        }
+
+        .cs-hero-cta {
+            font-size: clamp(1rem, 2.2vw, 1.25rem);
+            padding: 1.15rem 2.75rem;
+            margin-top: 2rem;
+        }
+    }
+
+    /*-- -------------------------- -->
     <---       Video Gate Modal       -->
     <--- -------------------------- -*/
 
@@ -548,8 +571,15 @@
             font-size: 1.1rem;
             line-height: 1.4;
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             color: #000;
+        }
+
+        .cs-form-note {
+            font-size: 0.8rem;
+            color: #777;
+            text-align: center;
+            margin: 0 0 1.5rem;
         }
 
         .cs-form {
@@ -695,10 +725,20 @@
             justify-items: center;
         }
 
+        .cs-testimonial-item {
+            width: 100%;
+            max-width: 25rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cs-featured-item {
+            max-width: 100%;
+        }
+
         .cs-testimonial-card {
             position: relative;
             width: 100%;
-            max-width: 25rem;
             border-radius: 1rem;
             overflow: hidden;
             background: #000;
@@ -713,6 +753,32 @@
             &.cs-playing .cs-play-button {
                 display: none;
             }
+        }
+
+        .cs-info {
+            text-align: center;
+            padding: 1.25rem 0.5rem 0;
+        }
+
+        .cs-stars {
+            height: 1rem;
+            width: auto;
+            margin-bottom: 0.75rem;
+        }
+
+        .cs-quote {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+            margin: 0 0 0.75rem;
+            font-style: italic;
+        }
+
+        .cs-name {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--secondary);
         }
 
         .cs-testimonial-video {
@@ -772,7 +838,7 @@
             gap: 1.5rem;
             width: max-content;
 
-            .cs-testimonial-card {
+            .cs-testimonial-item {
                 flex: 0 0 20rem;
                 max-width: 20rem;
             }
@@ -1281,9 +1347,14 @@
     #fb-testimonials {
         .cs-video-grid {
             grid-template-columns: repeat(2, 1fr);
+            align-items: start;
         }
 
-        .cs-featured-card {
+        .cs-testimonial-item {
+            max-width: 100%;
+        }
+
+        .cs-featured-item {
             grid-column: 1 / -1;
             max-width: 50rem;
             justify-self: center;
@@ -1438,6 +1509,19 @@
         &.cs-gated .cs-video-wrapper {
             flex: 0 1 56rem;
             max-width: 56rem;
+        }
+
+        // Centered hero: keep the lone video centered instead of the 60% column
+        &.cs-centered {
+            .cs-hero-row {
+                flex-direction: column;
+            }
+
+            .cs-video-wrapper {
+                flex: 0 1 auto;
+                width: 100%;
+                max-width: 56rem;
+            }
         }
     }
 

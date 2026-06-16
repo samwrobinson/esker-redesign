@@ -657,6 +657,21 @@
     display: flex;
   }
   /*-- -------------------------- -->
+    <---  Centered Hero + CTA Button  -->
+    <--- -------------------------- -*/
+  #fb-hero.cs-centered .cs-hero-row {
+    justify-content: center;
+  }
+  #fb-hero.cs-centered .cs-video-wrapper {
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+  #fb-hero.cs-centered .cs-hero-cta {
+    font-size: clamp(1rem, 2.2vw, 1.25rem);
+    padding: 1.15rem 2.75rem;
+    margin-top: 2rem;
+  }
+  /*-- -------------------------- -->
     <---       Video Gate Modal       -->
     <--- -------------------------- -*/
   .cs-video-modal {
@@ -711,8 +726,14 @@
     font-size: 1.1rem;
     line-height: 1.4;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     color: #000;
+  }
+  .cs-video-modal .cs-form-note {
+    font-size: 0.8rem;
+    color: #777;
+    text-align: center;
+    margin: 0 0 1.5rem;
   }
   .cs-video-modal .cs-form {
     box-shadow: none;
@@ -836,10 +857,18 @@
     gap: 1.5rem;
     justify-items: center;
   }
+  #fb-testimonials .cs-testimonial-item {
+    width: 100%;
+    max-width: 25rem;
+    display: flex;
+    flex-direction: column;
+  }
+  #fb-testimonials .cs-featured-item {
+    max-width: 100%;
+  }
   #fb-testimonials .cs-testimonial-card {
     position: relative;
     width: 100%;
-    max-width: 25rem;
     border-radius: 1rem;
     overflow: hidden;
     background: #000;
@@ -852,6 +881,28 @@
   }
   #fb-testimonials .cs-testimonial-card.cs-playing .cs-play-button {
     display: none;
+  }
+  #fb-testimonials .cs-info {
+    text-align: center;
+    padding: 1.25rem 0.5rem 0;
+  }
+  #fb-testimonials .cs-stars {
+    height: 1rem;
+    width: auto;
+    margin-bottom: 0.75rem;
+  }
+  #fb-testimonials .cs-quote {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 0.75rem;
+    font-style: italic;
+  }
+  #fb-testimonials .cs-name {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--secondary);
   }
   #fb-testimonials .cs-testimonial-video {
     width: 100%;
@@ -902,7 +953,7 @@
     gap: 1.5rem;
     width: max-content;
   }
-  #fb-testimonials .cs-scroll-track .cs-testimonial-card {
+  #fb-testimonials .cs-scroll-track .cs-testimonial-item {
     flex: 0 0 20rem;
     max-width: 20rem;
   }
@@ -1312,8 +1363,12 @@
   }
   #fb-testimonials .cs-video-grid {
     grid-template-columns: repeat(2, 1fr);
+    align-items: start;
   }
-  #fb-testimonials .cs-featured-card {
+  #fb-testimonials .cs-testimonial-item {
+    max-width: 100%;
+  }
+  #fb-testimonials .cs-featured-item {
     grid-column: 1 / -1;
     max-width: 50rem;
     justify-self: center;
@@ -1426,6 +1481,14 @@
   }
   #fb-hero.cs-gated .cs-video-wrapper {
     flex: 0 1 56rem;
+    max-width: 56rem;
+  }
+  #fb-hero.cs-centered .cs-hero-row {
+    flex-direction: column;
+  }
+  #fb-hero.cs-centered .cs-video-wrapper {
+    flex: 0 1 auto;
+    width: 100%;
     max-width: 56rem;
   }
   #fb-reviews .cs-card-group {
