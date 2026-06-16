@@ -12,6 +12,28 @@ eleventyExcludeFromCollections: true
 <link rel="stylesheet" href="/assets/css/facebook-landing.css">
 <script defer src="/assets/js/fb-capi.js"></script>
 <link rel="preload" as="video" href="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/chill-vsl.mp4" fetchpriority="high">
+
+<!-- Facebook Pixel Code -->
+<!-- Base PageView pixel only: sets _fbp and captures _fbc from ad clicks so the
+     server-side Conversions API can match leads. The Lead event itself is sent
+     server-side via the Netlify Function (no browser Lead pixel here). -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3889075514559305');
+    fbq('track', 'PageView');
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=3889075514559305&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
 <style>
     /* Landing-page-only overrides (this <style> ships only on /fb/) */
 
@@ -341,6 +363,19 @@ eleventyExcludeFromCollections: true
 
     // Lead forms (hero + second CTA): submit to Netlify, redirect to FB thank you
     (function() {
+        // Read Meta cookies directly so we don't depend on fb-capi.js's submit
+        // listener firing before this handler serializes the form.
+        function leadCookie(name) {
+            var m = document.cookie.match('(?:^|; )' + name + '=([^;]*)');
+            return m ? decodeURIComponent(m[1]) : '';
+        }
+        function leadFbc() {
+            var c = leadCookie('_fbc');
+            if (c) return c;
+            var m = location.search.match(/[?&]fbclid=([^&]+)/);
+            return m ? 'fb.1.' + Date.now() + '.' + decodeURIComponent(m[1]) : '';
+        }
+
         var forms = document.querySelectorAll('#hero-form, #cta-form');
 
         forms.forEach(function(form) {
@@ -349,6 +384,11 @@ eleventyExcludeFromCollections: true
 
                 var formData = new FormData(form);
                 formData.append('form-name', 'FB Contractor Landing');
+                // Enrich the payload for the server-side Conversions API match
+                formData.set('fbp', leadCookie('_fbp'));
+                formData.set('fbc', leadFbc());
+                formData.set('ua', navigator.userAgent);
+                formData.set('page_url', location.href);
 
                 fetch('/', {
                     method: 'POST',
