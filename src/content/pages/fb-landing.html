@@ -64,34 +64,69 @@ eleventyExcludeFromCollections: true
 <section id="fb-hero" class="cs-centered">
     <div class="cs-container">
         <div class="cs-content">
-            <span class="cs-topper">CONTRACTORS</span>
-            <h1 class="cs-title">I Help Contractors Like You Get More Leads & Make More Money for Just $175 a Month</h1>
-            <p class="cs-subhead">Step 1: Watch this short video (turn your sound on).<br>Next: I'll personally follow up with you. No need to book a call.</p>
+            <h1 class="cs-title">I Help Contractors Like You Get <span class="cs-hl">More Leads</span> & Make <span class="cs-hl">More Money</span> for Just $175 a Month</h1>
+            <!-- Social proof #1: Google rating (kept high so it's above the fold on every screen) -->
+            <div class="cs-rating">
+                <img class="cs-rating-stars" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="5 out of 5 stars" width="110" height="22" loading="lazy" decoding="async">
+                <span class="cs-rating-text">5-Star Google Rating from 30+ contractors</span>
+            </div>
+                    <button type="button" class="cs-submit cs-hero-cta" id="open-lead-modal">Click to See How It Works</button>
+        <p class="cs-cta-note">
+            <svg class="cs-cta-note-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            <span>No contract &middot; 30-day Money-Back guarantee</span>
+        </p>
         </div>
         <div class="cs-hero-row">
-            <div class="cs-video-wrapper">
-                <div class="cs-video-container cs-playing" id="fb-vsl-player-container">
-                    <video
-                        class="cs-vsl-video"
-                        preload="metadata"
-                        playsinline
-                        autoplay
-                        muted
-                        controls
-                    >
-                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/chill-vsl.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <button class="cs-mute-button" aria-label="Unmute video">
-                        <svg class="cs-mute-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
-                            <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
-                        </svg>
-                        <span class="cs-mute-text">Tap to unmute</span>
-                    </button>
+            <!-- The VSL: how the service works -->
+            <div class="cs-media cs-media-vsl">
+                <span class="cs-media-label">Here's What I Do</span>
+                <div class="cs-video-wrapper">
+                    <div class="cs-video-container" id="fb-vsl-player-container">
+                        <video
+                            class="cs-vsl-video"
+                            preload="metadata"
+                            playsinline
+                            controls
+                        >
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/chill-vsl.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play video">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arrow: points right on tablet/desktop, rotates to point down on mobile -->
+            <div class="cs-hero-arrow" aria-hidden="true">
+                <svg class="cs-arrow-icon" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="20" y2="12"></line>
+                    <polyline points="13 5 20 12 13 19"></polyline>
+                </svg>
+            </div>
+
+            <!-- Social proof: combined customer testimonials (several contractors, ~50s) -->
+            <div class="cs-media cs-media-proof">
+                <span class="cs-media-label">Here are the Results</span>
+                <div class="cs-proof-wrapper">
+                    <div class="cs-proof-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-proof-video" preload="metadata" playsinline>
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/testimonial-ad.mov" type="video/quicktime">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/testimonial-ad.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play customer testimonials">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-        <button type="button" class="cs-submit cs-hero-cta" id="open-lead-modal">Click to See How It Works</button>
     </div>
 </section>
 
@@ -128,8 +163,8 @@ eleventyExcludeFromCollections: true
 <section id="fb-testimonials">
     <div class="cs-container">
         <div class="cs-content">
-            <span class="cs-topper">Don't Just Take Our Word For It</span>
-            <h2 class="cs-title">Hear From Real Contractors We've Worked With</h2>
+            <span class="cs-topper">Real Contractors Real Results</span>
+            <h2 class="cs-title">Join Contractors Like Jules, Who Received 147 Leads in 3 Months</h2>
         </div>
         <div class="cs-video-grid">
             <!-- Jules - Featured / Most Prominent -->
@@ -226,13 +261,9 @@ eleventyExcludeFromCollections: true
                     <span class="cs-name">Shelly Bogue, Five Star Cleaning Services</span>
                 </div>
             </div>
-        </div>
 
-        <!-- Side-scroll testimonials: Moxie, Amber & Nick -->
-        <div class="cs-scroll-row">
-            <div class="cs-scroll-track">
-                <!-- Moxie -->
-                <div class="cs-testimonial-item">
+            <!-- Moxie -->
+            <div class="cs-testimonial-item">
                     <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
                         <video
                             class="cs-testimonial-video"
@@ -303,39 +334,27 @@ eleventyExcludeFromCollections: true
                         <span class="cs-name">Nick, Barre Social Club</span>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 </section>
 
 <script>
-    // VSL Player: autoplay muted, click to unmute
+    // VSL Player: click to play with sound, always from the start (no autoplay)
     (function() {
         var videoStarted = false;
         var videoTitle = 'FB Contractor Landing VSL';
         var container = document.getElementById('fb-vsl-player-container');
         var video = container ? container.querySelector('.cs-vsl-video') : null;
-        var muteBtn = container ? container.querySelector('.cs-mute-button') : null;
 
-        if (container && video && muteBtn) {
-            // Autoplay muted, fallback in case autoplay attribute doesn't work
-            video.muted = true;
-            video.play().catch(function() {});
-
-            muteBtn.addEventListener('click', function() {
-                if (video.muted) {
-                    video.muted = false;
-                    muteBtn.classList.add('cs-unmuted');
-                    muteBtn.setAttribute('aria-label', 'Mute video');
-                    muteBtn.querySelector('.cs-mute-icon').innerHTML = '<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>';
-                    muteBtn.querySelector('.cs-mute-text').textContent = '';
-                } else {
-                    video.muted = true;
-                    muteBtn.classList.remove('cs-unmuted');
-                    muteBtn.setAttribute('aria-label', 'Unmute video');
-                    muteBtn.querySelector('.cs-mute-icon').innerHTML = '<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>';
-                    muteBtn.querySelector('.cs-mute-text').textContent = 'Tap to unmute';
-                }
+        if (container && video) {
+            container.addEventListener('click', function() {
+                // Once it's playing, let the native controls handle pause/seek
+                if (container.classList.contains('cs-playing')) return;
+                container.classList.add('cs-playing');
+                video.currentTime = 0;
+                video.muted = false;
+                var p = video.play();
+                if (p && p.catch) { p.catch(function() {}); }
             });
 
             video.addEventListener('play', function() {

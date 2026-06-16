@@ -47,7 +47,7 @@
     <--- -------------------------- -*/
 
     #fb-hero {
-        padding: clamp(5rem, 13vw, 8rem) 1rem clamp(3.75rem, 7.82vw, 6.25rem);
+        padding: clamp(4rem, 10vw, 6rem) 1rem clamp(3.75rem, 7.82vw, 6.25rem);
         background:
             // Subtle top glow
             radial-gradient(ellipse 80% 50% at 50% 0%, rgba(150, 191, 48, 0.15) 0%, transparent 50%),
@@ -491,23 +491,170 @@
     <---  Centered Hero + CTA Button  -->
     <--- -------------------------- -*/
 
-    // The lead form lives in a modal; the hero shows a centered video plus a
-    // button that opens it. Video stays centered on mobile, tablet and desktop.
+    // The lead form lives in a modal. The hero is compressed so social proof
+    // (Google rating + Jules' story) sits above the fold on every screen size.
     #fb-hero.cs-centered {
         .cs-hero-row {
             justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
         }
 
+        // Smaller VSL on mobile so the proof + CTA fit higher up
         .cs-video-wrapper {
-            max-width: 56rem;
+            max-width: 26rem;
             margin: 0 auto;
         }
 
+        // Orange CTA so it pops off the page
         .cs-hero-cta {
             font-size: clamp(1rem, 2.2vw, 1.25rem);
             padding: 1.15rem 2.75rem;
-            margin-top: 2rem;
+            margin: 1.5rem auto 0.5rem;
+            background: var(--secondary);
+            color: #000;
+
+            &:hover {
+                background: var(--secondaryLight);
+            }
         }
+    }
+
+    // Highlight key benefit words in the headline
+    #fb-hero .cs-title .cs-hl {
+        color: var(--secondary);
+    }
+
+    // Each video sits in a .cs-media column with a label above it
+    #fb-hero .cs-media {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.85rem;
+        width: 100%;
+    }
+
+    #fb-hero .cs-media-label {
+        font-family: 'Noto Sans Mono', sans-serif;
+        font-size: clamp(1rem, 4.5vw, 1.25rem);
+        font-weight: 700;
+        color: #fff;
+        text-align: center;
+    }
+
+    // Arrow between the two videos (down on mobile, right on tablet/desktop)
+    #fb-hero .cs-hero-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--secondary);
+    }
+
+    #fb-hero .cs-arrow-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        transform: rotate(90deg); // points down on mobile
+        animation: arrow-nudge-y 1.6s ease-in-out infinite;
+    }
+
+    @keyframes arrow-nudge-y {
+        0%, 100% { transform: rotate(90deg) translateX(0); }
+        50%      { transform: rotate(90deg) translateX(0.3rem); }
+    }
+
+    @keyframes arrow-nudge-x {
+        0%, 100% { transform: translateX(0); }
+        50%      { transform: translateX(0.3rem); }
+    }
+
+    // Social proof #1: Google star rating bar (always above the fold)
+    #fb-hero .cs-rating {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1.25rem;
+    }
+
+    #fb-hero .cs-rating-stars {
+        height: 1.15rem;
+        width: auto;
+    }
+
+    #fb-hero .cs-rating-text {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    // Social proof #2: Jules' testimonial video + named result
+    #fb-hero .cs-proof-wrapper {
+        width: 100%;
+        max-width: 15rem;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #fb-hero .cs-proof-card {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 9 / 16;
+        border-radius: 1rem;
+        overflow: hidden;
+        background: #000;
+        cursor: pointer;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+        .cs-proof-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        &.cs-playing .cs-play-button {
+            display: none;
+        }
+
+        &:hover .cs-play-button {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: var(--secondary);
+        }
+    }
+
+    #fb-hero .cs-proof-caption {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        color: rgba(255, 255, 255, 0.85);
+        margin: 0.6rem 0 0;
+
+        strong {
+            color: var(--secondary);
+        }
+    }
+
+    // FUD reducer under the CTA — styled as a prominent guarantee badge
+    #fb-hero .cs-cta-note {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0.85rem auto 0;
+        padding: 0.6rem 1.1rem;
+        border: 1px solid rgba(241, 157, 22, 0.55);
+        border-radius: 2rem;
+        background: rgba(241, 157, 22, 0.14);
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.3;
+    }
+
+    #fb-hero .cs-cta-note-icon {
+        width: 1.2rem;
+        height: 1.2rem;
+        flex-shrink: 0;
+        color: var(--secondary);
     }
 
     /*-- -------------------------- -->
@@ -1342,6 +1489,51 @@
         .cs-hero-row {
             align-items: center;
         }
+
+        // Tablet and up: both videos side by side with the arrow between them.
+        // Columns get fixed widths (chosen in a 16:9 / 9:16 ratio) so the two
+        // videos end up the same height and the row can't overflow the viewport.
+        &.cs-centered {
+            .cs-hero-row {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 1.25rem;
+            }
+
+            .cs-media {
+                flex: 0 0 auto;
+            }
+
+            .cs-media-vsl {
+                width: 26rem;
+            }
+
+            .cs-media-proof {
+                width: 8.2rem;
+            }
+
+            // Label wraps within its column instead of stretching the row
+            .cs-media-label {
+                width: 100%;
+                min-height: 3.2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .cs-arrow-icon {
+                transform: rotate(0); // points right
+                animation-name: arrow-nudge-x;
+            }
+
+            .cs-video-wrapper,
+            .cs-proof-wrapper {
+                width: 100%;
+                max-width: none;
+                margin: 0;
+            }
+        }
     }
 
     #fb-testimonials {
@@ -1511,16 +1703,24 @@
             max-width: 56rem;
         }
 
-        // Centered hero: keep the lone video centered instead of the 60% column
+        // Centered hero: both videos side by side, same height, arrow between.
         &.cs-centered {
-            .cs-hero-row {
-                flex-direction: column;
+            // Keep the headline/subhead from stretching the full width
+            .cs-content {
+                max-width: 48rem;
             }
 
-            .cs-video-wrapper {
-                flex: 0 1 auto;
-                width: 100%;
-                max-width: 56rem;
+            .cs-hero-row {
+                gap: 2rem;
+            }
+
+            // Bigger columns on desktop (kept in ratio so heights match + no overflow)
+            .cs-media-vsl {
+                width: 36rem;
+            }
+
+            .cs-media-proof {
+                width: 11.4rem;
             }
         }
     }
@@ -1561,6 +1761,20 @@
     #fb-hero {
         .cs-container {
             max-width: 80rem;
+        }
+    }
+}
+
+/* Wide Desktop - 1440px: enlarge the hero videos a bit (kept in ratio so heights match) */
+@media only screen and (min-width: 90rem) {
+
+    #fb-hero.cs-centered {
+        .cs-media-vsl {
+            width: 44rem;
+        }
+
+        .cs-media-proof {
+            width: 13.9rem;
         }
     }
 }

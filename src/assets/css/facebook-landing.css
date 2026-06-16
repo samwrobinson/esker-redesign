@@ -294,7 +294,7 @@
     <---          Hero Video          -->
     <--- -------------------------- -*/
   #fb-hero {
-    padding: clamp(5rem, 13vw, 8rem) 1rem clamp(3.75rem, 7.82vw, 6.25rem);
+    padding: clamp(4rem, 10vw, 6rem) 1rem clamp(3.75rem, 7.82vw, 6.25rem);
     background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(150, 191, 48, 0.15) 0%, transparent 50%), radial-gradient(ellipse 60% 30% at 50% 35%, rgba(150, 191, 48, 0.08) 0%, transparent 60%), linear-gradient(180deg, #0a0f05 0%, #0d1408 20%, #111a0c 40%, #0d1408 70%, #0a0f05 100%);
     position: relative;
     overflow: hidden;
@@ -661,15 +661,144 @@
     <--- -------------------------- -*/
   #fb-hero.cs-centered .cs-hero-row {
     justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
   }
   #fb-hero.cs-centered .cs-video-wrapper {
-    max-width: 56rem;
+    max-width: 26rem;
     margin: 0 auto;
   }
   #fb-hero.cs-centered .cs-hero-cta {
     font-size: clamp(1rem, 2.2vw, 1.25rem);
     padding: 1.15rem 2.75rem;
-    margin-top: 2rem;
+    margin: 1.5rem auto 0.5rem;
+    background: var(--secondary);
+    color: #000;
+  }
+  #fb-hero.cs-centered .cs-hero-cta:hover {
+    background: var(--secondaryLight);
+  }
+  #fb-hero .cs-title .cs-hl {
+    color: var(--secondary);
+  }
+  #fb-hero .cs-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+    width: 100%;
+  }
+  #fb-hero .cs-media-label {
+    font-family: 'Noto Sans Mono', sans-serif;
+    font-size: clamp(1rem, 4.5vw, 1.25rem);
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+  }
+  #fb-hero .cs-hero-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);
+  }
+  #fb-hero .cs-arrow-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    transform: rotate(90deg);
+    animation: arrow-nudge-y 1.6s ease-in-out infinite;
+  }
+  @keyframes arrow-nudge-y {
+    0%,
+    100% {
+      transform: rotate(90deg) translateX(0);
+    }
+    50% {
+      transform: rotate(90deg) translateX(0.3rem);
+    }
+  }
+  @keyframes arrow-nudge-x {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(0.3rem);
+    }
+  }
+  #fb-hero .cs-rating {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+  }
+  #fb-hero .cs-rating-stars {
+    height: 1.15rem;
+    width: auto;
+  }
+  #fb-hero .cs-rating-text {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  #fb-hero .cs-proof-wrapper {
+    width: 100%;
+    max-width: 15rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #fb-hero .cs-proof-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #000;
+    cursor: pointer;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+  #fb-hero .cs-proof-card .cs-proof-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  #fb-hero .cs-proof-card.cs-playing .cs-play-button {
+    display: none;
+  }
+  #fb-hero .cs-proof-card:hover .cs-play-button {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: var(--secondary);
+  }
+  #fb-hero .cs-proof-caption {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0.6rem 0 0;
+  }
+  #fb-hero .cs-proof-caption strong {
+    color: var(--secondary);
+  }
+  #fb-hero .cs-cta-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.85rem auto 0;
+    padding: 0.6rem 1.1rem;
+    border: 1px solid rgba(241, 157, 22, 0.55);
+    border-radius: 2rem;
+    background: rgba(241, 157, 22, 0.14);
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+  }
+  #fb-hero .cs-cta-note-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    flex-shrink: 0;
+    color: var(--secondary);
   }
   /*-- -------------------------- -->
     <---       Video Gate Modal       -->
@@ -1361,6 +1490,38 @@
   #fb-hero .cs-hero-row {
     align-items: center;
   }
+  #fb-hero.cs-centered .cs-hero-row {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  #fb-hero.cs-centered .cs-media {
+    flex: 0 0 auto;
+  }
+  #fb-hero.cs-centered .cs-media-vsl {
+    width: 26rem;
+  }
+  #fb-hero.cs-centered .cs-media-proof {
+    width: 8.2rem;
+  }
+  #fb-hero.cs-centered .cs-media-label {
+    width: 100%;
+    min-height: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #fb-hero.cs-centered .cs-arrow-icon {
+    transform: rotate(0);
+    animation-name: arrow-nudge-x;
+  }
+  #fb-hero.cs-centered .cs-video-wrapper,
+  #fb-hero.cs-centered .cs-proof-wrapper {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
   #fb-testimonials .cs-video-grid {
     grid-template-columns: repeat(2, 1fr);
     align-items: start;
@@ -1483,13 +1644,17 @@
     flex: 0 1 56rem;
     max-width: 56rem;
   }
-  #fb-hero.cs-centered .cs-hero-row {
-    flex-direction: column;
+  #fb-hero.cs-centered .cs-content {
+    max-width: 48rem;
   }
-  #fb-hero.cs-centered .cs-video-wrapper {
-    flex: 0 1 auto;
-    width: 100%;
-    max-width: 56rem;
+  #fb-hero.cs-centered .cs-hero-row {
+    gap: 2rem;
+  }
+  #fb-hero.cs-centered .cs-media-vsl {
+    width: 36rem;
+  }
+  #fb-hero.cs-centered .cs-media-proof {
+    width: 11.4rem;
   }
   #fb-reviews .cs-card-group {
     flex-wrap: nowrap;
@@ -1512,6 +1677,15 @@
 @media only screen and (min-width: 81.25rem) {
   #fb-hero .cs-container {
     max-width: 80rem;
+  }
+}
+/* Wide Desktop - 1440px: enlarge the hero videos a bit (kept in ratio so heights match) */
+@media only screen and (min-width: 90rem) {
+  #fb-hero.cs-centered .cs-media-vsl {
+    width: 44rem;
+  }
+  #fb-hero.cs-centered .cs-media-proof {
+    width: 13.9rem;
   }
 }
 /* Dark Mode */
