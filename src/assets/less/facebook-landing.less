@@ -2458,3 +2458,227 @@
         }
     }
 }
+
+/*-- -------------------------- -->
+<---     Questionnaire Gate       -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+
+    // The locked VSL: hint that clicking opens the questionnaire
+    #fb-hero .cs-video-container.cs-locked {
+        cursor: pointer;
+    }
+
+    // Modal shell reuses .cs-video-modal (overlay + fixed centering)
+    .cs-quiz-modal {
+        z-index: 10001;
+    }
+
+    .cs-quiz-modal-inner {
+        position: relative;
+        width: 100%;
+        max-width: 32rem;
+        max-height: 92vh;
+        overflow-y: auto;
+        z-index: 1;
+    }
+
+    .cs-quiz-modal .cs-modal-close {
+        position: absolute;
+        top: 0.6rem;
+        right: 0.85rem;
+        z-index: 2;
+        width: 2rem;
+        height: 2rem;
+        line-height: 1;
+        font-size: 1.6rem;
+        background: none;
+        border: none;
+        color: #9aa1ab;
+        cursor: pointer;
+
+        &:hover { color: #1d2b13; }
+    }
+
+    .cs-quiz {
+        width: 100%;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 1.25rem;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+        padding: clamp(1.5rem, 4vw, 2.25rem);
+        text-align: center;
+    }
+
+    .cs-hp { display: none; }
+
+    // --- Progress row (back link + bar) ---
+    .cs-quiz-top {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .cs-quiz-back {
+        background: none;
+        border: none;
+        padding: 0;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #6b7280;
+        cursor: pointer;
+        white-space: nowrap;
+        flex-shrink: 0;
+
+        &:hover { color: #111; }
+        &[hidden] { display: none; }
+    }
+
+    .cs-quiz-progress {
+        flex: 1;
+        height: 1.5rem;
+        background: #e5e7eb;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+    .cs-quiz-bar {
+        height: 100%;
+        width: 50%;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #27ae60;
+        background-image: repeating-linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.18) 0,
+            rgba(255, 255, 255, 0.18) 0.75rem,
+            transparent 0.75rem,
+            transparent 1.5rem
+        );
+        background-size: 2.12rem 2.12rem;
+        animation: cs-quiz-stripes 1s linear infinite;
+        transition: width 0.4s ease;
+    }
+
+    @keyframes cs-quiz-stripes {
+        0%   { background-position: 0 0; }
+        100% { background-position: 2.12rem 0; }
+    }
+
+    .cs-quiz-pct {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1;
+    }
+
+    // --- Steps ---
+    .cs-quiz-step {
+        display: none;
+
+        &.is-active {
+            display: block;
+            animation: cs-quiz-fade 0.25s ease;
+        }
+    }
+
+    @keyframes cs-quiz-fade {
+        from { opacity: 0; transform: translateY(6px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .cs-quiz-headline {
+        font-size: clamp(1.4rem, 5vw, 1.9rem);
+        font-weight: 800;
+        line-height: 1.15;
+        color: var(--secondary);
+        margin: 0 0 1.25rem;
+
+        em {
+            display: block;
+            margin-top: 0.35rem;
+            font-style: italic;
+            font-weight: 800;
+            color: #1d2b13;
+        }
+    }
+
+    .cs-quiz-q {
+        font-size: clamp(1.05rem, 3.5vw, 1.25rem);
+        font-weight: 700;
+        color: #1d2b13;
+        margin: 0 0 1.1rem;
+    }
+
+    .cs-quiz-options {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .cs-quiz-opt {
+        width: 100%;
+        padding: 1rem 1.25rem;
+        border: 1.5px solid #e2e5e9;
+        border-radius: 0.75rem;
+        background: #fff;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #1d2b13;
+        cursor: pointer;
+        transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.05s;
+
+        &:hover {
+            border-color: var(--secondary);
+            background: rgba(241, 157, 22, 0.08);
+        }
+
+        &.is-selected,
+        &:active {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            color: #1d2b13;
+        }
+    }
+
+    // --- Text input steps (name / phone) ---
+    .cs-quiz-input {
+        width: 100%;
+        padding: 1rem 1.1rem;
+        border: 2px solid #e2e5e9;
+        border-radius: 0.75rem;
+        font-size: 1.05rem;
+        color: #1d2b13;
+        background: #fff;
+        margin-bottom: 1rem;
+        transition: border-color 0.15s, box-shadow 0.15s;
+
+        &::placeholder { color: #9aa1ab; }
+
+        &:focus {
+            outline: none;
+            border-color: #27ae60;
+            box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.18);
+        }
+    }
+
+    .cs-quiz-continue {
+        width: 100%;
+        padding: 1.05rem 1.25rem;
+        border: none;
+        border-radius: 0.75rem;
+        background: var(--secondary);
+        color: #1d2b13;
+        font-size: 1.1rem;
+        font-weight: 800;
+        cursor: pointer;
+        transition: background 0.15s, transform 0.05s;
+
+        &:hover { background: var(--secondaryLight); }
+        &:active { transform: translateY(1px); }
+    }
+}

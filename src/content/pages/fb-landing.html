@@ -64,25 +64,21 @@ eleventyExcludeFromCollections: true
 <section id="fb-hero" class="cs-centered">
     <div class="cs-container">
         <div class="cs-content">
-            <h1 class="cs-title">Get More <span class="cs-hl">High-Value</span> Contracting Jobs From Google Maps <span class="cs-hl">In 90 Days</span> Without Spending a Dollar on Ads</h1>
-            <p class="cs-text">I build your website free and run the systems that bring the jobs in.</p>
-            <!-- Social proof #1: Google rating (kept high so it's above the fold on every screen) -->
-            <div class="cs-rating">
-                <img class="cs-rating-stars" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="5 out of 5 stars" width="110" height="22" loading="lazy" decoding="async">
-                <span class="cs-rating-text">5-Star Google Rating from 30+ contractors</span>
-            </div>
-                    <button type="button" class="cs-submit cs-hero-cta" id="open-lead-modal">Click to See How It Works</button>
+            <span class="cs-topper">Contractors</span>
+            <h1 class="cs-title">We Help Contractors <span class="cs-hl">Get More Jobs</span> With Websites, AI, and 5 Star Reviews for Just $175/mo</h1>
+            <p class="cs-text"><strong>Step 1:</strong> watch this <strong><em>short video</em></strong></p>
+            <p class="cs-text"><strong>Step 2:</strong> I will <strong><em>personally</em></strong> call you.</p>
         <p class="cs-cta-note">
             <svg class="cs-cta-note-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
             <span>No contract &middot; 30-day Money-Back guarantee</span>
         </p>
         </div>
         <div class="cs-hero-row">
-            <!-- The VSL: how the service works -->
+            <!-- The VSL: clicking play opens the questionnaire; finishing it unlocks playback -->
             <div class="cs-media cs-media-vsl">
                 <span class="cs-media-label">Here's What I Do</span>
                 <div class="cs-video-wrapper">
-                    <div class="cs-video-container" id="fb-vsl-player-container">
+                    <div class="cs-video-container cs-locked" id="fb-vsl-player-container">
                         <video
                             class="cs-vsl-video"
                             preload="metadata"
@@ -132,28 +128,70 @@ eleventyExcludeFromCollections: true
 </section>
 
 <!-- ============================================ -->
-<!--               Lead Form Modal                -->
+<!--           Questionnaire Gate Modal           -->
 <!-- ============================================ -->
 
-<div class="cs-video-modal" id="fb-lead-modal" aria-hidden="true">
+<div class="cs-video-modal cs-quiz-modal" id="fb-quiz-modal" aria-hidden="true">
     <div class="cs-modal-overlay"></div>
-    <div class="cs-modal-content">
+    <div class="cs-quiz-modal-inner">
         <button class="cs-modal-close" type="button" aria-label="Close">&times;</button>
-        <h3 class="cs-form-title">Get Started, It's Free</h3>
-        <p class="cs-form-note">Free to start, $0 down. I'll reach out within 12 hours.</p>
-        <form class="cs-form" id="hero-form" name="FB Contractor Landing" method="post" action="/fb/thank-you/?submitted=1" netlify data-fb-lead>
-            <input type="hidden" name="fbp">
-            <input type="hidden" name="fbc">
-            <input type="hidden" name="ua">
-            <input type="hidden" name="page_url">
-            <label class="cs-label" for="hero-name">Your Name</label>
-            <input class="cs-input" type="text" id="hero-name" name="name" placeholder="Your name" required>
-            <label class="cs-label" for="hero-phone">Phone Number</label>
-            <input class="cs-input" type="tel" id="hero-phone" name="phone" placeholder="(555) 123-4567" required>
-            <label class="cs-label" for="hero-email">Email</label>
-            <input class="cs-input" type="email" id="hero-email" name="email" placeholder="you@example.com">
-            <button class="cs-submit" type="submit">Get Started</button>
-        </form>
+        <div class="cs-quiz" id="fb-quiz">
+            <form class="cs-quiz-form" id="hero-form" name="FB Contractor Landing" method="post" action="/fb/thank-you/?submitted=1" netlify netlify-honeypot="bot-field" data-fb-lead>
+                <!-- Netlify form plumbing + CAPI enrichment (populated by JS on submit) -->
+                <input type="hidden" name="form-name" value="FB Contractor Landing">
+                <p class="cs-hp" hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+                <input type="hidden" name="fbp">
+                <input type="hidden" name="fbc">
+                <input type="hidden" name="ua">
+                <input type="hidden" name="page_url">
+                <input type="hidden" name="work_type" id="q-work-type">
+                <input type="hidden" name="timeline" id="q-timeline">
+
+                <!-- Progress bar + back -->
+                <div class="cs-quiz-top">
+                    <button type="button" class="cs-quiz-back" id="quiz-back" aria-label="Back" hidden>&larr; Back</button>
+                    <div class="cs-quiz-progress">
+                        <div class="cs-quiz-bar" id="quiz-bar"><span class="cs-quiz-pct" id="quiz-pct">50%</span></div>
+                    </div>
+                </div>
+
+                <!-- Step 1: trade -->
+                <div class="cs-quiz-step is-active" data-step="1" data-progress="50">
+                    <h2 class="cs-quiz-headline">We Help Contractors Get More Leads For Just <em>$175/month</em></h2>
+                    <p class="cs-quiz-q">What Kind of Contracting Work Do You Do? *</p>
+                    <div class="cs-quiz-options">
+                        <button type="button" class="cs-quiz-opt" data-field="work_type" data-value="Residential">Residential</button>
+                        <button type="button" class="cs-quiz-opt" data-field="work_type" data-value="Commercial">Commercial</button>
+                        <button type="button" class="cs-quiz-opt" data-field="work_type" data-value="Both Residential &amp; Commercial">Both Residential &amp; Commercial</button>
+                        <button type="button" class="cs-quiz-opt" data-field="work_type" data-value="Not a Contractor">I Am Not a Contractor</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: urgency -->
+                <div class="cs-quiz-step" data-step="2" data-progress="68">
+                    <p class="cs-quiz-q">How soon do you want more jobs coming in?</p>
+                    <div class="cs-quiz-options">
+                        <button type="button" class="cs-quiz-opt" data-field="timeline" data-value="ASAP / right now">ASAP / right now</button>
+                        <button type="button" class="cs-quiz-opt" data-field="timeline" data-value="Next 1-3 months">Next 1&ndash;3 months</button>
+                        <button type="button" class="cs-quiz-opt" data-field="timeline" data-value="Just researching">Just researching</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: name -->
+                <div class="cs-quiz-step" data-step="3" data-progress="92">
+                    <p class="cs-quiz-q">Your name</p>
+                    <input class="cs-quiz-input" type="text" id="hero-name" name="name" placeholder="First and last name" autocomplete="name" required>
+                    <button type="button" class="cs-quiz-continue" data-next>Continue</button>
+                </div>
+
+                <!-- Step 4: phone -->
+                <div class="cs-quiz-step" data-step="4" data-progress="98">
+                    <p class="cs-quiz-q">Your mobile phone</p>
+                    <input class="cs-quiz-input" type="tel" id="hero-phone" name="phone" placeholder="(555) 123-4567" autocomplete="tel" required>
+                    <button type="submit" class="cs-quiz-continue cs-quiz-submit">Yes, I Want More Jobs</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
@@ -340,116 +378,205 @@ eleventyExcludeFromCollections: true
 </section>
 
 <script>
-    // VSL Player: click to play with sound, always from the start (no autoplay)
+    // ---- Meta cookie helpers (shared) ----
+    function leadCookie(name) {
+        var m = document.cookie.match('(?:^|; )' + name + '=([^;]*)');
+        return m ? decodeURIComponent(m[1]) : '';
+    }
+    function leadFbc() {
+        var c = leadCookie('_fbc');
+        if (c) return c;
+        var m = location.search.match(/[?&]fbclid=([^&]+)/);
+        return m ? 'fb.1.' + Date.now() + '.' + decodeURIComponent(m[1]) : '';
+    }
+
+    // ---- Questionnaire gate ----
+    // The VSL is gated: clicking play opens this modal questionnaire. On the final
+    // step the lead is submitted to Netlify (form-name "FB Contractor Landing"),
+    // which triggers the server-side Meta CAPI Lead event — so tracking does NOT
+    // depend on a /thank-you/ redirect. Finishing the quiz unlocks + plays the video.
+    (function() {
+        var quiz = document.getElementById('fb-quiz');
+        var modal = document.getElementById('fb-quiz-modal');
+        var playerContainer = document.getElementById('fb-vsl-player-container');
+        if (!quiz || !modal) return;
+
+        var form = document.getElementById('hero-form');
+        var steps = Array.prototype.slice.call(quiz.querySelectorAll('.cs-quiz-step'));
+        var bar = document.getElementById('quiz-bar');
+        var pct = document.getElementById('quiz-pct');
+        var backBtn = document.getElementById('quiz-back');
+        var closeBtn = modal.querySelector('.cs-modal-close');
+        var overlay = modal.querySelector('.cs-modal-overlay');
+        var current = 0;
+        var submitting = false;
+        var unlocked = false;
+
+        function render() {
+            steps.forEach(function(step, i) {
+                step.classList.toggle('is-active', i === current);
+            });
+            var progress = steps[current].getAttribute('data-progress') || '0';
+            bar.style.width = progress + '%';
+            pct.textContent = progress + '%';
+            backBtn.hidden = current === 0;
+            // Focus the text input when we land on a name/phone step
+            var input = steps[current].querySelector('.cs-quiz-input');
+            if (input) { try { input.focus(); } catch (e) {} }
+        }
+
+        function goTo(index) {
+            if (index < 0 || index >= steps.length) return;
+            current = index;
+            render();
+        }
+
+        // ---- Modal open/close ----
+        function openModal() {
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            var input = steps[current].querySelector('.cs-quiz-input');
+            if (input) { try { input.focus(); } catch (e) {} }
+            if (typeof fbq === 'function') { try { fbq('track', 'InitiateCheckout'); } catch (e) {} }
+        }
+        function closeModal() {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        // Clicking the (still-locked) video opens the questionnaire instead of playing
+        if (playerContainer) {
+            playerContainer.addEventListener('click', function(e) {
+                if (unlocked) return; // once unlocked, let the player handler play it
+                e.preventDefault();
+                e.stopPropagation();
+                openModal();
+            });
+        }
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+        if (overlay) overlay.addEventListener('click', closeModal);
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+        });
+
+        // Option buttons: store the answer and auto-advance
+        quiz.addEventListener('click', function(e) {
+            var opt = e.target.closest('.cs-quiz-opt');
+            if (opt && quiz.contains(opt)) {
+                var field = document.getElementById('q-' + opt.getAttribute('data-field').replace('_', '-'));
+                if (field) field.value = opt.getAttribute('data-value');
+                // Mark the chosen option, then advance
+                var siblings = opt.parentNode.querySelectorAll('.cs-quiz-opt');
+                Array.prototype.forEach.call(siblings, function(s) { s.classList.remove('is-selected'); });
+                opt.classList.add('is-selected');
+                setTimeout(function() { goTo(current + 1); }, 180);
+                return;
+            }
+            // "Continue" on the name step
+            var next = e.target.closest('[data-next]');
+            if (next && quiz.contains(next)) {
+                var input = steps[current].querySelector('.cs-quiz-input');
+                if (input && !input.reportValidity()) return;
+                goTo(current + 1);
+            }
+        });
+
+        backBtn.addEventListener('click', function() { goTo(current - 1); });
+
+        // ---- Final submit: send the lead, fire conversions, reveal the video ----
+        function fireAdsConversion() {
+            // gtag.js normally loads on scroll; force-load it (mirrors /thank-you/)
+            // so the Google Ads conversion still fires even without the redirect.
+            if (!window._gtagLoaded) {
+                var s = document.createElement('script');
+                s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PL4NL9XE9Y';
+                document.head.appendChild(s);
+                window._gtagLoaded = true;
+            }
+            if (typeof gtag === 'function') {
+                gtag('event', 'ads_conversion_Contact_Us_1', {});
+                gtag('event', 'conversion', { 'send_to': 'AW-16834089922/QPM8CJaky5IcEMKnj9s-' });
+            }
+        }
+
+        function unlockAndPlay() {
+            unlocked = true;
+            closeModal();
+            if (playerContainer) {
+                playerContainer.classList.remove('cs-locked');
+                playerContainer.classList.add('cs-playing');
+                var video = playerContainer.querySelector('.cs-vsl-video');
+                if (video) {
+                    video.currentTime = 0;
+                    video.muted = false;
+                    var p = video.play();
+                    if (p && p.catch) { p.catch(function() { video.muted = true; video.play().catch(function() {}); }); }
+                }
+            }
+        }
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (submitting) return;
+            if (!form.reportValidity()) return;
+            submitting = true;
+
+            var formData = new FormData(form);
+            formData.set('form-name', 'FB Contractor Landing');
+            // Enrich for the server-side Conversions API match
+            formData.set('fbp', leadCookie('_fbp'));
+            formData.set('fbc', leadFbc());
+            formData.set('ua', navigator.userAgent);
+            formData.set('page_url', location.href);
+
+            fireAdsConversion();
+
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString()
+            }).then(unlockAndPlay).catch(function(err) {
+                console.error('Form submission error:', err);
+                unlockAndPlay(); // still reward the user even if the POST hiccups
+            });
+        });
+
+        render();
+    })();
+
+    // ---- VSL Player: gtag video events (plays only once the quiz unlocks it) ----
     (function() {
         var videoStarted = false;
         var videoTitle = 'FB Contractor Landing VSL';
         var container = document.getElementById('fb-vsl-player-container');
         var video = container ? container.querySelector('.cs-vsl-video') : null;
+        if (!container || !video) return;
 
-        if (container && video) {
-            container.addEventListener('click', function() {
-                // Once it's playing, let the native controls handle pause/seek
-                if (container.classList.contains('cs-playing')) return;
-                container.classList.add('cs-playing');
-                video.currentTime = 0;
-                video.muted = false;
-                var p = video.play();
-                if (p && p.catch) { p.catch(function() {}); }
-            });
-
-            video.addEventListener('play', function() {
-                if (!videoStarted) {
-                    videoStarted = true;
-                    if (typeof gtag === 'function') {
-                        gtag('event', 'video_start', {
-                            video_title: videoTitle,
-                            video_provider: 'self-hosted'
-                        });
-                    }
-                }
-            });
-
-            video.addEventListener('ended', function() {
-                if (typeof gtag === 'function') {
-                    gtag('event', 'video_complete', {
-                        video_title: videoTitle,
-                        video_provider: 'self-hosted'
-                    });
-                }
-            });
-        }
-    })();
-
-    // Lead forms (hero + second CTA): submit to Netlify, redirect to FB thank you
-    (function() {
-        // Read Meta cookies directly so we don't depend on fb-capi.js's submit
-        // listener firing before this handler serializes the form.
-        function leadCookie(name) {
-            var m = document.cookie.match('(?:^|; )' + name + '=([^;]*)');
-            return m ? decodeURIComponent(m[1]) : '';
-        }
-        function leadFbc() {
-            var c = leadCookie('_fbc');
-            if (c) return c;
-            var m = location.search.match(/[?&]fbclid=([^&]+)/);
-            return m ? 'fb.1.' + Date.now() + '.' + decodeURIComponent(m[1]) : '';
-        }
-
-        var forms = document.querySelectorAll('#hero-form, #cta-form');
-
-        forms.forEach(function(form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-
-                var formData = new FormData(form);
-                formData.append('form-name', 'FB Contractor Landing');
-                // Enrich the payload for the server-side Conversions API match
-                formData.set('fbp', leadCookie('_fbp'));
-                formData.set('fbc', leadFbc());
-                formData.set('ua', navigator.userAgent);
-                formData.set('page_url', location.href);
-
-                fetch('/', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams(formData).toString()
-                }).then(function() {
-                    window.location.href = '/fb/thank-you/?submitted=1';
-                }).catch(function(err) {
-                    console.error('Form submission error:', err);
-                    window.location.href = '/fb/thank-you/?submitted=1';
-                });
-            });
+        container.addEventListener('click', function() {
+            if (container.classList.contains('cs-locked')) return; // gate handles it
+            if (container.classList.contains('cs-playing')) return;
+            container.classList.add('cs-playing');
+            video.currentTime = 0;
+            video.muted = false;
+            var p = video.play();
+            if (p && p.catch) { p.catch(function() {}); }
         });
-    })();
 
-    // Lead form modal: open via hero CTA, close via overlay / close button / Esc
-    (function() {
-        var modal = document.getElementById('fb-lead-modal');
-        var openBtn = document.getElementById('open-lead-modal');
-        if (!modal || !openBtn) return;
+        video.addEventListener('play', function() {
+            if (!videoStarted) {
+                videoStarted = true;
+                if (typeof gtag === 'function') {
+                    gtag('event', 'video_start', { video_title: videoTitle, video_provider: 'self-hosted' });
+                }
+            }
+        });
 
-        var overlay = modal.querySelector('.cs-modal-overlay');
-        var closeBtn = modal.querySelector('.cs-modal-close');
-
-        function openModal() {
-            modal.classList.add('active');
-            modal.setAttribute('aria-hidden', 'false');
-            var firstInput = modal.querySelector('input:not([type="hidden"])');
-            if (firstInput) firstInput.focus();
-        }
-
-        function closeModal() {
-            modal.classList.remove('active');
-            modal.setAttribute('aria-hidden', 'true');
-        }
-
-        openBtn.addEventListener('click', openModal);
-        if (closeBtn) closeBtn.addEventListener('click', closeModal);
-        if (overlay) overlay.addEventListener('click', closeModal);
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeModal();
+        video.addEventListener('ended', function() {
+            if (typeof gtag === 'function') {
+                gtag('event', 'video_complete', { video_title: videoTitle, video_provider: 'self-hosted' });
+            }
         });
     })();
 </script>
