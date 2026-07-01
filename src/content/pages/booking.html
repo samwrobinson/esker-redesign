@@ -1,6 +1,6 @@
 ---
 title: 'Book a Meeting | Web Design in Vermont | Esker Designs'
-description: "Pick a time to meet with one of our developers!"
+description: "Watch how we get contractors more jobs, more 5-star reviews, and more trust for $175/mo. Then pick a time to meet with us."
 preloadImg: '/assets/images/logo.png'
 permalink: '/booking/'
 eleventyNavigation:
@@ -14,29 +14,209 @@ eleventyNavigation:
 {% block head %}
     <script defer src="https://cloud.umami.is/script.js" data-website-id="ad4f603c-adc2-4df0-8440-601f99120b46"></script>
     <link rel="stylesheet" href="/assets/css/contact.css">
+    <link rel="stylesheet" href="/assets/css/booking.css">
 {% endblock %}
 
 {% block body %}
 
-
-
     <!-- ============================================ -->
-    <!--                    LANDING                   -->
+    <!--                     Hero                     -->
     <!-- ============================================ -->
 
-    <section id="int-hero">
-        <h1 id="home-h">Book a Meeting</h1>
-        <svg class="cs-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,192L120,213.3C240,235,480,277,720,277.3C960,277,1200,235,1320,213.3L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
-        <svg class="cs-wave cs-dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#061521" fill-opacity="1" d="M0,192L120,213.3C240,235,480,277,720,277.3C960,277,1200,235,1320,213.3L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+    <section id="hero-1956">
+        <div class="cs-container">
+            <h2 class="cs-title cs-hero-headline">We Help New England Businesses Get More Jobs, More Reviews, and Make More Money for $175/mo</h2>
+
+            <div class="cs-hero-video">
+                <span class="cs-media-label">Watch How It Works</span>
+                <div class="cs-video-container" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                    <video class="cs-vsl-video" preload="metadata" playsinline controls>
+                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/chill-vsl.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button class="cs-play-button" aria-label="Play video">
+                        <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </button>
+                </div>
+                <a href="#booking-testimonials" class="cs-button-solid" data-umami-event="Booking Hero Reviews CTA">Check Out Our Reviews</a>
+            </div>
+
+            <div class="cs-hero-proof">
+                <ul class="cs-card-group">
+                    <li class="cs-item">
+                        <span class="cs-ba-tag">Before</span>
+                        <picture class="cs-item-background">
+                            <img decoding="async" src="/assets/images/proof/proof-reviews-before.png" alt="Google listing for a contractor showing only a handful of reviews before working with Esker Designs" width="448" height="320">
+                        </picture>
+                    </li>
+                    <li class="cs-item">
+                        <span class="cs-ba-tag cs-ba-after">After</span>
+                        <picture class="cs-item-background">
+                            <img decoding="async" src="/assets/images/proof/proof-reviews-143.png" alt="Google listing for the same contractor showing a 5.0 rating with 143 reviews after working with Esker Designs" width="448" height="320">
+                        </picture>
+                    </li>
+                </ul>
+                <div class="cs-item-content">
+                    <span class="cs-topper">The Proof</span>
+                    <h3 class="cs-h3">From a handful of reviews to 143 five-star reviews.</h3>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- ============================================ -->
-    <!--                Contact Form                  -->
+    <!--                Booking Embed                 -->
     <!-- ============================================ -->
 
     <section id="cs-contact">
         <div class="cs-container" style="display: block;">
-            <iframe src="https://api.leadconnectorhq.com/widget/booking/QBCxRkud4XXiYKHPhPPK" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="QBCxRkud4XXiYKHPhPPK_1767921170304"></iframe><br><script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+            <div class="cs-content">
+                <span class="cs-topper">Book a Meeting</span>
+                <h2 class="cs-title">Pick a Time That Works for You</h2>
+                <p class="cs-text">No contract and a 30-day money-back guarantee. Obligation-free 15-30 minute consulation.</p>
+            </div>
+            <iframe src="https://api.leadconnectorhq.com/widget/booking/s2EeT3fn6lqooJHddJYz" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="s2EeT3fn6lqooJHddJYz_1782467779175"></iframe><br><script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--               Testimonials                   -->
+    <!-- ============================================ -->
+
+    <section id="booking-testimonials">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Real Contractors, Real Results</span>
+                <h2 class="cs-title">Don't Take Our Word For It</h2>
+            </div>
+            <div class="cs-video-grid">
+                <!-- Jules - Featured -->
+                <div class="cs-testimonial-item cs-featured-item">
+                    <div class="cs-testimonial-card cs-featured-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="metadata" playsinline>
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/quicktime">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play Jules testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="5 stars" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">"Working with Sam was super easy from start to finish. When he showed me the website I was blown away. I've definitely noticed more leads since launching the site and a higher closing rate because my clients can trust me right away."</p>
+                        <span class="cs-name">Jules Butler, Butler Yardcare</span>
+                    </div>
+                </div>
+                <!-- Jackson -->
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="metadata" playsinline>
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jackson.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play Jackson testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="5 stars" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">"I've worked with Sam for the better part of two years and I have nothing but good things to say."</p>
+                        <span class="cs-name">Jackson, Summit Pro Painting</span>
+                    </div>
+                </div>
+                <!-- Tim -->
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="metadata" playsinline>
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/tim-testimonial.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play Tim testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="5 stars" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">"Sam created a beautiful website for me. I thought it was stunning. I really didn't expect a website for a construction company to be that beautiful."</p>
+                        <span class="cs-name">Tim Smith, Hoplite Builders</span>
+                    </div>
+                </div>
+                <!-- Shelly -->
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="metadata" playsinline>
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/shelly-testimonial.mov" type="video/quicktime">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/shelly-testimonial.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play Shelley testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="5 stars" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">"Before working with Sam, my website didn't truly reflect my business. It wasn't bringing in the kinds of leads I needed, but Sam completely changed that. He didn't just build a website, he built something that actually worked for my business."</p>
+                        <span class="cs-name">Shelly Bogue, Five Star Cleaning Services</span>
+                    </div>
+                </div>
+                <!-- Moxie -->
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="metadata" playsinline>
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/IMG_4106.mov" type="video/quicktime">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/IMG_4106.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play Moxie testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="5 stars" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">"Both my businesses' websites are managed by Esker Designs. I couldn't just have one, I had to have two! Sam makes the process so seamless, and he will also help you get Google reviews. We received 13 reviews within the first month of being in business."</p>
+                        <span class="cs-name">Moxie, Upland Coffee</span>
+                    </div>
+                </div>
+                <!-- Amber -->
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="metadata" playsinline>
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/amber-testimonial.MOV" type="video/quicktime">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/amber-testimonial.MOV" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play Amber testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="5 stars" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">"The process of working with Sam was easy and super satisfying."</p>
+                        <span class="cs-name">Amber, Alpenglow Counseling</span>
+                    </div>
+                </div>
+                <!-- Nick -->
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="metadata" playsinline>
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/nick.MOV" type="video/quicktime">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/nick.MOV" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play Nick testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="5 stars" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">"I am so glad that we found Esker Designs. Sam has been such a pleasure to work with."</p>
+                        <span class="cs-name">Nick, Barre Social Club</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 {% endblock %}

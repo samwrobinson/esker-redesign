@@ -188,7 +188,7 @@ eleventyExcludeFromCollections: true
                 <!-- Step 4: phone -->
                 <div class="cs-quiz-step" data-step="4" data-progress="98">
                     <p class="cs-quiz-q">Your mobile phone</p>
-                    <input class="cs-quiz-input" type="tel" id="hero-phone" name="phone" placeholder="(555) 123-4567" autocomplete="tel" required>
+                    <input class="cs-quiz-input" type="tel" id="hero-phone" name="phone" placeholder="(555) 123-4567" autocomplete="tel" inputmode="tel" required>
                     <button type="submit" class="cs-quiz-continue cs-quiz-submit">Yes, I Want More Jobs</button>
                 </div>
             </form>
@@ -413,6 +413,23 @@ eleventyExcludeFromCollections: true
         var submitting = false;
         var unlocked = false;
 
+        // ---- Phone validation: require a full US number (10 digits, optional leading 1) ----
+        var phoneInput = document.getElementById('hero-phone');
+        function validatePhone() {
+            if (!phoneInput) return;
+            var digits = phoneInput.value.replace(/\D/g, '');
+            // Allow an optional leading country code "1"
+            if (digits.length === 11 && digits.charAt(0) === '1') digits = digits.slice(1);
+            if (digits.length === 0) {
+                phoneInput.setCustomValidity(''); // let "required" handle the empty case
+            } else if (digits.length !== 10) {
+                phoneInput.setCustomValidity('Please enter your full 10-digit phone number, e.g. (828) 989-1290.');
+            } else {
+                phoneInput.setCustomValidity('');
+            }
+        }
+        if (phoneInput) phoneInput.addEventListener('input', validatePhone);
+
         function render() {
             steps.forEach(function(step, i) {
                 step.classList.toggle('is-active', i === current);
@@ -524,6 +541,7 @@ eleventyExcludeFromCollections: true
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             if (submitting) return;
+            validatePhone();
             if (!form.reportValidity()) return;
             submitting = true;
 

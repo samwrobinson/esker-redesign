@@ -1,0 +1,504 @@
+/* PAGE-SPECIFIC STYLES FOR THE BOOKING PAGE (VSL layout) */
+
+/* Funnel page: hide the main site nav so visitors stay on the booking flow */
+#cs-navigation {
+    display: none !important;
+}
+
+/*-- -------------------------- -->
+<---            Hero            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+/* DOM order is the mobile flow: headline > video > button > proof images > proof text */
+@media only screen and (min-width: 0rem) {
+    #hero-1956 {
+        /* Full-bleed light band (no rounded card floating on white behind it) */
+        background-color: #f7f7f7;
+        padding: var(--sectionPadding);
+        /* Nav is hidden on this page, so only a little top breathing room */
+        padding-top: clamp(2rem, 4vw, 4rem);
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1880/16rem);
+            margin: auto;
+            /* 12px - 80px */
+            padding-left: clamp(.75rem, 3vw, 5rem);
+            padding-right: clamp(.75rem, 3vw, 5rem);
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            /* 24px - 40px */
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+        }
+
+        .cs-hero-headline {
+            /* 39px - 61px */
+            font-size: clamp(2.4375rem, 5vw, 3.8125rem);
+            max-width: none;
+            margin: 0;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        /* ----- Video block ----- */
+        .cs-hero-video {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 16px - 24px */
+            gap: clamp(1rem, 2vw, 1.5rem);
+        }
+
+        .cs-media-label {
+            font-family: 'Noto Sans Mono', 'Montserrat', sans-serif;
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .cs-video-container {
+            position: relative;
+            width: 100%;
+            max-width: (960/16rem);
+            border-radius: (20/16rem);
+            overflow: hidden;
+            background: #000;
+            cursor: pointer;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+
+            &.cs-playing .cs-play-button {
+                display: none;
+            }
+
+            /* Show the FULL video, no cropping */
+            .cs-vsl-video {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+
+        .cs-play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 5rem;
+            height: 5rem;
+            background: var(--secondary);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s, background 0.3s;
+            animation: booking-pulse 2s ease-in-out infinite;
+            z-index: 2;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background: var(--secondary);
+                animation: booking-pulse-ring 2s ease-out infinite;
+                z-index: -1;
+            }
+
+            &:hover {
+                transform: translate(-50%, -50%) scale(1.1);
+                background: var(--primary);
+                animation: none;
+
+                &::before {
+                    animation: none;
+                }
+
+                .cs-play-icon {
+                    color: #fff;
+                }
+            }
+        }
+
+        @keyframes booking-pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.05); }
+        }
+
+        @keyframes booking-pulse-ring {
+            0% { transform: scale(1); opacity: 0.6; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .cs-play-icon {
+            width: 2rem;
+            height: 2rem;
+            margin-left: 0.25rem;
+            color: #000;
+            transition: color 0.3s;
+        }
+
+        .cs-button-solid {
+            font-size: (16/16rem);
+            font-weight: 700;
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-align: center;
+            text-decoration: none;
+            min-width: (146/16rem);
+            margin: 0;
+            box-sizing: border-box;
+            /* 24px - 40px */
+            padding: 0 clamp(1.5rem, 2.5vw, 2.5rem);
+            background-color: var(--primary);
+            color: var(--bodyTextColorWhite);
+            border-radius: (24/16rem);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            transition: background-color 0.3s, color 0.3s;
+
+            &:hover {
+                background-color: var(--secondary);
+                color: #000;
+            }
+        }
+
+        /* ----- Proof block ----- */
+        .cs-hero-proof {
+            display: flex;
+            flex-direction: column;
+            gap: (8/16rem);
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: (8/16rem);
+            align-items: start;
+        }
+
+        .cs-item {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            line-height: 0;
+            border-radius: (20/16rem);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            background-color: #fff;
+        }
+
+        /* Before / After badge on the proof images */
+        .cs-ba-tag {
+            position: absolute;
+            top: (12/16rem);
+            left: (12/16rem);
+            z-index: 2;
+            padding: 0.3rem 0.9rem;
+            border-radius: 40px;
+            font-size: clamp(0.65rem, 2vw, 0.8rem);
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.6);
+
+            &.cs-ba-after {
+                background-color: var(--primary);
+            }
+        }
+
+        .cs-item-background {
+            display: block;
+            width: 100%;
+
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: (20/16rem);
+            }
+        }
+
+        .cs-item-content {
+            text-align: left;
+            width: 100%;
+            box-sizing: border-box;
+            /* 16px - 32px */
+            padding: clamp(1rem, 4vw, 2rem);
+            background-color: #fff;
+            border-radius: (20/16rem);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: (12/16rem);
+        }
+
+        .cs-h3 {
+            /* 23px - 31px */
+            font-size: clamp(1.4375rem, 2.4vw, 1.9375rem);
+            line-height: 1.2em;
+            margin: 0;
+            color: var(--primary);
+        }
+    }
+}
+
+/* Large Desktop 1200px — proof on the left, video on the right */
+@media only screen and (min-width: 75rem) {
+    #hero-1956 {
+        .cs-container {
+            max-width: (1880/16rem);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "headline headline"
+                "proof video";
+            align-items: start;
+            column-gap: clamp(2rem, 4vw, 4rem);
+            row-gap: clamp(1.5rem, 3vw, 2.5rem);
+        }
+
+        .cs-hero-headline {
+            grid-area: headline;
+        }
+
+        .cs-hero-proof {
+            grid-area: proof;
+        }
+
+        .cs-hero-video {
+            grid-area: video;
+            justify-content: flex-start;
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---     Booking Embed Intro     -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+    #cs-contact {
+        /* The shared contact styles add an 8rem bottom margin at >=1300px; on the
+           booking page the reviews section follows, so cancel it here and move that
+           breathing room onto #booking-testimonials so it clears the footer. */
+        margin-bottom: 0;
+
+        .cs-content {
+            margin-bottom: clamp(2rem, 4vw, 3rem);
+            text-align: center;
+        }
+
+        .cs-topper {
+            text-align: center;
+        }
+
+        .cs-title {
+            text-align: center;
+            margin: 0 auto (12/16rem);
+        }
+
+        .cs-text {
+            margin: 0 auto;
+            max-width: (640/16rem);
+            text-align: center;
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---        Testimonials         -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+    #booking-testimonials {
+        padding: var(--sectionPadding);
+        /* Tighten the gap between the booking cal and the reviews */
+        padding-top: clamp(2rem, 4vw, 3.5rem);
+        /* This is the last section before the footer, whose wave (footer-trees.png)
+           overlaps upward and grows taller as the screen widens. Per the footer's
+           own note, clear it with padding-bottom: 14vw (uncapped so it keeps pace
+           with the wave on wide screens like a MacBook Pro). */
+        padding-bottom: max(5rem, 14vw);
+        background-color: #fff;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cs-content {
+            text-align: center;
+            margin-bottom: clamp(2rem, 4vw, 3rem);
+        }
+
+        .cs-topper {
+            font-size: var(--topperFontSize, 1rem);
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--secondary);
+            display: block;
+            margin-bottom: (8/16rem);
+        }
+
+        .cs-title {
+            /* 31px - 49px */
+            font-size: clamp(1.9375rem, 4.5vw, 3.0625rem);
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .cs-video-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: (24/16rem);
+            justify-items: center;
+        }
+
+        .cs-testimonial-item {
+            width: 100%;
+            max-width: (360/16rem);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cs-featured-item {
+            max-width: (420/16rem);
+        }
+
+        .cs-testimonial-card {
+            position: relative;
+            width: 100%;
+            border-radius: (20/16rem);
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+
+            &:hover .cs-play-button {
+                transform: translate(-50%, -50%) scale(1.1);
+                background: var(--primary);
+
+                .cs-play-icon {
+                    color: #fff;
+                }
+            }
+
+            &.cs-playing .cs-play-button {
+                display: none;
+            }
+        }
+
+        .cs-testimonial-video {
+            width: 100%;
+            display: block;
+        }
+
+        .cs-play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 4rem;
+            height: 4rem;
+            background: var(--secondary);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s, background 0.3s;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .cs-play-icon {
+            width: 1.75rem;
+            height: 1.75rem;
+            margin-left: 0.2rem;
+            color: #000;
+            transition: color 0.3s;
+        }
+
+        .cs-info {
+            text-align: center;
+            padding: (20/16rem) (8/16rem) 0;
+        }
+
+        .cs-stars {
+            height: 1rem;
+            width: auto;
+            margin-bottom: (12/16rem);
+        }
+
+        .cs-quote {
+            font-size: (15/16rem);
+            line-height: 1.6em;
+            color: var(--bodyTextColor);
+            margin: 0 0 (12/16rem);
+            font-style: italic;
+        }
+
+        .cs-name {
+            display: block;
+            font-size: (15/16rem);
+            font-weight: 700;
+            color: var(--primary);
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #booking-testimonials {
+        .cs-video-grid {
+            grid-template-columns: repeat(2, 1fr);
+            align-items: start;
+        }
+
+        .cs-testimonial-item {
+            max-width: 100%;
+        }
+
+        .cs-featured-item {
+            grid-column: 1 / -1;
+            max-width: (520/16rem);
+            justify-self: center;
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #booking-testimonials {
+        .cs-video-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .cs-featured-item {
+            grid-column: auto;
+            max-width: 100%;
+        }
+    }
+}
