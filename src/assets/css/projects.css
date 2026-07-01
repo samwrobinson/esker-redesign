@@ -761,6 +761,10 @@
     position: relative;
     z-index: 1;
     transform-style: preserve-3d;
+    /* --- Segmented control (Websites / Reviews / Bundle) --- */
+    /* --- Panels: only the active one is shown --- */
+    /* --- Bundle "why bundle?" value card --- */
+    /* --- Lump-sum note under the Websites panel --- */
   }
   #pricing-1262 .cs-container {
     width: 100%;
@@ -1163,6 +1167,118 @@
   #pricing-1262 .cs-button-transparent:hover:before {
     width: 100%;
   }
+  #pricing-1262 .cs-seg {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin: 0 auto 0 0;
+    padding: 0.375rem;
+    box-sizing: border-box;
+    background-color: #f1f1f4;
+    border-radius: 0.625rem;
+  }
+  #pricing-1262 .cs-seg-btn {
+    font-family: inherit;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    line-height: 1.5em;
+    color: var(--primary);
+    background-color: transparent;
+    border: none;
+    border-radius: 0.4375rem;
+    padding: 0.625rem 1.125rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  #pricing-1262 .cs-seg-btn:hover {
+    color: var(--headerColor);
+  }
+  #pricing-1262 .cs-seg-btn.active {
+    background-color: var(--primary);
+    color: #fff;
+  }
+  #pricing-1262 .cs-panel {
+    display: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /* uniform card styling inside the grid (overrides base flip layout) */
+  }
+  #pricing-1262 .cs-panel.active {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  #pricing-1262 .cs-panel .cs-item {
+    width: 100%;
+    border-radius: 1rem;
+  }
+  #pricing-1262 .cs-panel .cs-item:nth-of-type(2) {
+    border-radius: 1rem;
+  }
+  #pricing-1262 .cs-value-card {
+    justify-content: center;
+    background-color: #f7f7fb;
+    border: 1px solid #dad9e3;
+  }
+  #pricing-1262 .cs-value-math {
+    margin: 0 0 1rem;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  #pricing-1262 .cs-value-math li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    color: var(--bodyTextColor);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #dad9e3;
+  }
+  #pricing-1262 .cs-value-math .cs-value-total {
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--primary);
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  #pricing-1262 .cs-save-tag {
+    display: inline-block;
+    align-self: flex-start;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #0f7b3f;
+    background-color: rgba(15, 123, 63, 0.12);
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    margin-bottom: 1rem;
+  }
+  #pricing-1262 .cs-value-note {
+    margin-bottom: 0;
+    opacity: 0.85;
+  }
+  #pricing-1262 .cs-panel-note {
+    list-style: none;
+    grid-column: 1 / -1;
+    font-size: 0.9375rem;
+    line-height: 1.6em;
+    color: var(--bodyTextColor);
+    background-color: #f7f7fb;
+    border: 1px dashed #dad9e3;
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    text-align: center;
+  }
+  #pricing-1262 .cs-panel-note a {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+  }
   #pricing-1262 .cs-waves-wrapper {
     width: 100vw;
     height: 65%;
@@ -1184,29 +1300,26 @@
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
+  #pricing-1262 {
+    /* multi-column grids per panel */
+  }
   #pricing-1262 .cs-container {
     max-width: 80rem;
-    /* remove the position so the svg waves wrapper can be positioned relative to the section container for tablet so it hugs the right edge of the screen. We set it back to relative at 1024px so it can then be positioned relative to the container again so it hugs the right edge of the container with the pricing cards */
     position: initial;
   }
-  #pricing-1262 .cs-card-group {
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: nowrap;
+  #pricing-1262 .cs-panel.active[data-panel="reviews"] {
+    grid-template-columns: repeat(3, 1fr);
   }
-  #pricing-1262 .cs-option2 .cs-item {
-    border-radius: 1.5rem 0 0 1.5rem;
+  #pricing-1262 .cs-panel.active[data-panel="websites"] {
+    grid-template-columns: repeat(2, 1fr);
   }
-  #pricing-1262 .cs-option2 .cs-item:nth-of-type(2) {
-    border-radius: 0 1.5rem 1.5rem 0;
+  #pricing-1262 .cs-panel.active[data-panel="bundle"] {
+    grid-template-columns: 1.15fr 0.85fr;
+    max-width: 56.25rem;
+    margin-inline: auto;
   }
-  #pricing-1262 .cs-item {
-    width: 50%;
-    border-radius: 1.5rem 0 0 1.5rem;
-  }
-  #pricing-1262 .cs-item:nth-of-type(2) {
-    border-radius: 0 1.5rem 1.5rem 0;
+  #pricing-1262 .cs-panel-note {
+    grid-column: 1 / -1;
   }
   #pricing-1262 .cs-waves-wrapper {
     /* changes to 740px at large desktop */
@@ -1234,15 +1347,12 @@
 }
 /* Large Desktop - 1300px */
 @media only screen and (min-width: 81.25rem) {
-  #pricing-1262 .cs-container {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1.25rem;
+  #pricing-1262 {
+    /* content stacks above the full-width panels; keep the column layout */
   }
-  #pricing-1262 .cs-ul-wrapper {
-    width: 62%;
-    max-width: 46.25rem;
-    flex: none;
+  #pricing-1262 .cs-container {
+    flex-direction: column;
+    gap: clamp(3rem, 6vw, 4rem);
   }
   #pricing-1262 .cs-waves-wrapper {
     max-width: 46.25rem;
@@ -1251,6 +1361,9 @@
 }
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
+  body.dark-mode #pricing-1262 {
+    /* keep the "Why bundle?" value card legible in dark mode */
+  }
   body.dark-mode #pricing-1262 .cs-title,
   body.dark-mode #pricing-1262 .cs-text,
   body.dark-mode #pricing-1262 .cs-package,
@@ -1264,6 +1377,17 @@
   body.dark-mode #pricing-1262 .cs-item-text,
   body.dark-mode #pricing-1262 .cs-li {
     opacity: 0.8;
+  }
+  body.dark-mode #pricing-1262 .cs-value-card {
+    background-color: var(--medium);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  body.dark-mode #pricing-1262 .cs-value-card .cs-value-math li {
+    color: var(--bodyTextColorWhite);
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+  }
+  body.dark-mode #pricing-1262 .cs-value-card .cs-value-total {
+    color: var(--bodyTextColorWhite);
   }
   body.dark-mode #pricing-1262 .cs-button-transparent {
     font-size: 1rem;

@@ -1372,6 +1372,138 @@
             }
         }
 
+        /* --- Segmented control (Websites / Reviews / Bundle) --- */
+        .cs-seg {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: (4/16rem);
+            margin: 0 auto 0 0;
+            padding: (6/16rem);
+            box-sizing: border-box;
+            background-color: #f1f1f4;
+            border-radius: (10/16rem);
+        }
+
+        .cs-seg-btn {
+            font-family: inherit;
+            font-size: (15/16rem);
+            font-weight: 700;
+            line-height: 1.5em;
+            color: var(--primary);
+            background-color: transparent;
+            border: none;
+            border-radius: (7/16rem);
+            padding: (10/16rem) (18/16rem);
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+
+            &:hover {
+                color: var(--headerColor);
+            }
+
+            &.active {
+                background-color: var(--primary);
+                color: #fff;
+            }
+        }
+
+        /* --- Panels: only the active one is shown --- */
+        .cs-panel {
+            display: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            &.active {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: (16/16rem);
+                align-items: stretch;
+            }
+
+            /* uniform card styling inside the grid (overrides base flip layout) */
+            .cs-item {
+                width: 100%;
+                border-radius: (16/16rem);
+
+                &:nth-of-type(2) {
+                    border-radius: (16/16rem);
+                }
+            }
+        }
+
+        /* --- Bundle "why bundle?" value card --- */
+        .cs-value-card {
+            justify-content: center;
+            background-color: #f7f7fb;
+            border: 1px solid #dad9e3;
+        }
+
+        .cs-value-math {
+            margin: 0 0 (16/16rem);
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: (8/16rem);
+
+            li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: (16/16rem);
+                color: var(--bodyTextColor);
+                padding-bottom: (8/16rem);
+                border-bottom: 1px solid #dad9e3;
+            }
+
+            .cs-value-total {
+                font-weight: 800;
+                font-size: (20/16rem);
+                color: var(--primary);
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
+
+        .cs-save-tag {
+            display: inline-block;
+            align-self: flex-start;
+            font-weight: 700;
+            font-size: (16/16rem);
+            color: #0f7b3f;
+            background-color: rgba(15, 123, 63, 0.12);
+            padding: (8/16rem) (16/16rem);
+            border-radius: (6/16rem);
+            margin-bottom: (16/16rem);
+        }
+
+        .cs-value-note {
+            margin-bottom: 0;
+            opacity: 0.85;
+        }
+
+        /* --- Lump-sum note under the Websites panel --- */
+        .cs-panel-note {
+            list-style: none;
+            grid-column: 1 / -1;
+            font-size: (15/16rem);
+            line-height: 1.6em;
+            color: var(--bodyTextColor);
+            background-color: #f7f7fb;
+            border: 1px dashed #dad9e3;
+            border-radius: (12/16rem);
+            padding: (16/16rem) (20/16rem);
+            text-align: center;
+
+            a {
+                color: var(--primary);
+                font-weight: 700;
+                text-decoration: none;
+            }
+        }
+
         .cs-waves-wrapper {
             width: 100vw;
             height: 65%;
@@ -1399,33 +1531,28 @@
     #pricing-1262 {
         .cs-container {
             max-width: (1280/16rem);
-            /* remove the position so the svg waves wrapper can be positioned relative to the section container for tablet so it hugs the right edge of the screen. We set it back to relative at 1024px so it can then be positioned relative to the container again so it hugs the right edge of the container with the pricing cards */
             position: initial;
         }
 
-        .cs-card-group {
-            flex-direction: row;
-            justify-content: center;
-            align-items: stretch;
-            flex-wrap: nowrap;
-        }
+        /* multi-column grids per panel */
+        .cs-panel.active {
+            &[data-panel="reviews"] {
+                grid-template-columns: repeat(3, 1fr);
+            }
 
-        .cs-option2 {
-            .cs-item {
-                border-radius: (24/16rem) 0 0 (24/16rem);
-                &:nth-of-type(2) {
-                    border-radius: 0 (24/16rem) (24/16rem) 0;
-                }
+            &[data-panel="websites"] {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            &[data-panel="bundle"] {
+                grid-template-columns: 1.15fr 0.85fr;
+                max-width: (900/16rem);
+                margin-inline: auto;
             }
         }
 
-        .cs-item {
-            width: 50%;
-            border-radius: (24/16rem) 0 0 (24/16rem);
-
-            &:nth-of-type(2) {
-                border-radius: 0 (24/16rem) (24/16rem) 0;
-            }
+        .cs-panel-note {
+            grid-column: 1 / -1;
         }
 
         .cs-waves-wrapper {
@@ -1461,16 +1588,10 @@
 /* Large Desktop - 1300px */
 @media only screen and (min-width: 81.25rem) {
     #pricing-1262 {
+        /* content stacks above the full-width panels; keep the column layout */
         .cs-container {
-            flex-direction: row;
-            justify-content: space-between;
-            gap: (20/16rem);
-        }
-
-        .cs-ul-wrapper {
-            width: 62%;
-            max-width: (740/16rem);
-            flex: none;
+            flex-direction: column;
+            gap: clamp(3rem, 6vw, 4rem);
         }
 
         .cs-waves-wrapper {
@@ -1498,6 +1619,21 @@
             .cs-item-text,
             .cs-li {
                 opacity: 0.8;
+            }
+
+            /* keep the "Why bundle?" value card legible in dark mode */
+            .cs-value-card {
+                background-color: var(--medium);
+                border-color: rgba(255, 255, 255, 0.2);
+
+                .cs-value-math li {
+                    color: var(--bodyTextColorWhite);
+                    border-bottom-color: rgba(255, 255, 255, 0.2);
+                }
+
+                .cs-value-total {
+                    color: var(--bodyTextColorWhite);
+                }
             }
 
             .cs-button-transparent {
