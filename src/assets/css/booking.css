@@ -348,6 +348,9 @@
   #booking-testimonials .cs-testimonial-card {
     position: relative;
     width: 100%;
+    /* Lock every card to the same 4:3 frame so vertically-filmed phone
+               videos crop to match the landscape ones instead of running tall. */
+    aspect-ratio: 4 / 3;
     border-radius: 1.25rem;
     overflow: hidden;
     background: #000;
@@ -365,7 +368,11 @@
     display: none;
   }
   #booking-testimonials .cs-testimonial-video {
+    position: absolute;
+    inset: 0;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
   }
   #booking-testimonials .cs-play-button {
