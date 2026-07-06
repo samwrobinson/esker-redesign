@@ -18,6 +18,8 @@
     overflow: hidden;
     position: relative;
     z-index: 1;
+    /* Eye-catching primary CTA. Compound selector so it outranks the
+           shared .cs-button-solid rule defined later in this file. */
     /* ----- Video block ----- */
     /* ----- Proof block ----- */
     /* Before / After badge on the proof images */
@@ -43,6 +45,43 @@
     color: var(--primary);
     text-align: center;
   }
+  #hero-1956 .cs-button-solid.cs-hero-cta {
+    align-self: center;
+    position: relative;
+    z-index: 1;
+    /* 17px - 21px */
+    font-size: clamp(1.0625rem, 2.2vw, 1.3125rem);
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    color: #fff;
+    background: linear-gradient(135deg, var(--secondaryLight) 0%, var(--secondary) 100%);
+    /* 16-20px vertical, 32-48px horizontal */
+    padding: clamp(1rem, 2vw, 1.25rem) clamp(2rem, 4vw, 3rem);
+    border-radius: 999px;
+    box-shadow: 0 12px 28px -8px rgba(241, 157, 22, 0.65);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    animation: cta-pulse 2.5s ease-in-out infinite;
+  }
+  #hero-1956 .cs-button-solid.cs-hero-cta:hover {
+    color: #fff;
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--secondaryLight) 100%);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 18px 38px -8px rgba(241, 157, 22, 0.8);
+    animation: none;
+  }
+  #hero-1956 .cs-button-solid.cs-hero-cta:active {
+    transform: translateY(-1px) scale(1.01);
+  }
+  @keyframes cta-pulse {
+    0%,
+    100% {
+      box-shadow: 0 12px 28px -8px rgba(241, 157, 22, 0.5);
+    }
+    50% {
+      box-shadow: 0 14px 34px -6px rgba(241, 157, 22, 0.85);
+    }
+  }
   #hero-1956 .cs-hero-video {
     display: flex;
     flex-direction: column;
@@ -59,21 +98,23 @@
   }
   #hero-1956 .cs-video-container {
     position: relative;
-    width: 100%;
-    max-width: 60rem;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
     border-radius: 1.25rem;
     overflow: hidden;
     background: #000;
     cursor: pointer;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
-    /* Show the FULL video, no cropping */
+    /* Cap by HEIGHT so a vertical video stays short; width follows */
   }
   #hero-1956 .cs-video-container.cs-playing .cs-play-button {
     display: none;
   }
   #hero-1956 .cs-video-container .cs-vsl-video {
-    width: 100%;
-    height: auto;
+    width: auto;
+    max-width: 100%;
+    height: min(45vh, 35rem);
     display: block;
   }
   #hero-1956 .cs-play-button {
@@ -244,13 +285,17 @@
     max-width: 117.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "headline headline" "proof video";
+    grid-template-areas: "headline headline" "cta cta" "proof video";
     align-items: start;
     column-gap: clamp(2rem, 4vw, 4rem);
     row-gap: clamp(1.5rem, 3vw, 2.5rem);
   }
   #hero-1956 .cs-hero-headline {
     grid-area: headline;
+  }
+  #hero-1956 .cs-hero-cta {
+    grid-area: cta;
+    justify-self: center;
   }
   #hero-1956 .cs-hero-proof {
     grid-area: proof;
