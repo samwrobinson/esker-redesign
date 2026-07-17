@@ -1,0 +1,294 @@
+/* ============================================
+   AI Website Prompt Library — Thank You Page
+   ============================================ */
+#pl-thankyou {
+  padding: var(--sectionPadding);
+  padding-bottom: clamp(16.25rem, 17vw, 26rem);
+}
+#pl-thankyou .cs-container {
+  width: 100%;
+  max-width: 45rem;
+  margin: 0 auto;
+}
+.pl-intro {
+  margin-bottom: 2.5rem;
+}
+.pl-intro p {
+  color: var(--bodyTextColor);
+  margin: 0 0 1rem;
+}
+/* the "don't ship the raw output" note — the whole point of the video */
+.pl-warning {
+  background: rgba(234, 179, 8, 0.08);
+  border-left: 3px solid #eab308;
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+  font-size: 0.9375rem;
+}
+.pl-warning strong {
+  color: var(--primary);
+}
+
+/* ---------- prompt cards ---------- */
+.pl-prompt-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+.pl-prompt-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+.pl-prompt-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.pl-prompt-head h2 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin: 0;
+}
+.pl-badge {
+  flex-shrink: 0;
+  background: var(--primaryLight);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.625rem;
+  border-radius: 3.75rem;
+}
+.pl-prompt-desc {
+  font-size: 0.9375rem;
+  color: var(--bodyTextColor);
+  margin: 0 0 1rem;
+}
+.pl-copy-btn {
+  flex-shrink: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 3.75rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  background: var(--primaryLight);
+  color: #fff;
+  font-family: inherit;
+  transition: background-color 0.3s;
+}
+.pl-copy-btn:hover {
+  background: var(--primary);
+}
+.pl-copy-btn.is-copied {
+  background: #16a34a;
+}
+.pl-prompt-box {
+  background: #0d1b27;
+  color: #e6edf3;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  max-height: 30rem;
+  overflow-y: auto;
+  margin: 0;
+}
+.pl-prompt-box code {
+  font-family: 'Noto Sans Mono', monospace;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  white-space: pre;
+}
+
+/* ---------- wiring it up ---------- */
+.pl-steps {
+  margin: 3rem 0;
+}
+.pl-steps h2,
+.pl-checklist h2 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+.pl-steps-lede {
+  color: var(--bodyTextColor);
+  margin: 0 0 1.5rem;
+}
+.pl-steps ol {
+  list-style: none;
+  padding: 0;
+  counter-reset: pl-step;
+}
+.pl-steps ol li {
+  counter-increment: pl-step;
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 1.5rem;
+}
+.pl-steps ol li::before {
+  content: counter(pl-step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--primaryLight);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+.pl-steps ol li strong {
+  display: block;
+  font-size: 1.0625rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+.pl-steps ol li p {
+  margin: 0.5rem 0 0;
+  color: var(--bodyTextColor);
+}
+.pl-steps ol li pre {
+  background: #0d1b27;
+  color: #e6edf3;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 0.5rem 0 0;
+}
+.pl-steps ol li pre code {
+  font-family: 'Noto Sans Mono', monospace;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: 0.8125rem;
+}
+.pl-steps ol li p code,
+.pl-checklist code {
+  font-family: 'Noto Sans Mono', monospace;
+  background: rgba(0, 0, 0, 0.06);
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+/* ---------- the 20% checklist ---------- */
+.pl-checklist {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.pl-checklist ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pl-checklist li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--bodyTextColor);
+  font-size: 0.9375rem;
+}
+.pl-checklist li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  width: 0.875rem;
+  height: 0.875rem;
+  border: 2px solid var(--primaryLight);
+  border-radius: 0.1875rem;
+}
+.pl-checklist li strong {
+  color: var(--primary);
+}
+.pl-help {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin: 0 0 3rem;
+  font-style: italic;
+}
+
+/* ---------- CTA ---------- */
+.pl-cta {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+}
+.pl-cta h3 {
+  color: #fff;
+  font-size: 1.375rem;
+  margin: 0 0 0.5rem;
+}
+.pl-cta p {
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 1.5rem;
+}
+.pl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 3.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.pl-btn-primary {
+  background: var(--primaryLight);
+  color: #fff;
+}
+.pl-btn-primary:hover {
+  background: var(--primary);
+}
+.pl-cta .pl-btn-primary {
+  background: #fff;
+  color: var(--primary);
+}
+.pl-cta .pl-btn-primary:hover {
+  background: #f3f4f6;
+  color: var(--primary);
+}
+
+/* ---------- Dark mode ---------- */
+body.dark-mode .pl-prompt-card,
+body.dark-mode .pl-checklist {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+body.dark-mode .pl-warning {
+  background: rgba(234, 179, 8, 0.1);
+}
+body.dark-mode .pl-warning strong,
+body.dark-mode .pl-checklist li strong,
+body.dark-mode .pl-steps ol li strong {
+  color: var(--bodyTextColorWhite);
+}
+body.dark-mode .pl-steps ol li p code,
+body.dark-mode .pl-checklist code {
+  background: rgba(255, 255, 255, 0.1);
+}

@@ -1,0 +1,304 @@
+---
+title: 'Your Prompt Library | Esker Designs'
+description: 'Your free Claude prompt library — audit, redesign, and build a small business website with AI.'
+preloadImg: '/assets/images/logo.webp'
+permalink: 'yt/prompt-library/thank-you/'
+eleventyExcludeFromCollections: true
+noindex: true
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/assets/css/prompt-library-thank-you.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    LANDING                   -->
+<!-- ============================================ -->
+
+<section id="int-hero">
+    <h1 id="home-h">Here's your prompt library</h1>
+    <svg class="cs-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,192L120,213.3C240,235,480,277,720,277.3C960,277,1200,235,1320,213.3L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+    <svg class="cs-wave cs-dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#061521" fill-opacity="1" d="M0,192L120,213.3C240,235,480,277,720,277.3C960,277,1200,235,1320,213.3L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+</section>
+
+<!-- ============================================ -->
+<!--              Thank You Content               -->
+<!-- ============================================ -->
+
+<section id="pl-thankyou">
+    <div class="cs-container">
+
+        <div class="pl-intro">
+            <p>Three prompts, run in order. Each one's output is the next one's input — that's the
+            whole trick. Don't paste all three at once.</p>
+            <p class="pl-warning">
+                <strong>Read this first:</strong> this is a system for getting to 80% fast, not a
+                one-click website. The last 20% is you — real photos, contrast, fonts, and every
+                claim on the page. Ship the raw output and your clients will churn. The review
+                checklist at the bottom is the part most people skip.
+            </p>
+        </div>
+
+        <!-- ============ PROMPT 1 ============ -->
+        <div class="pl-prompt-card">
+            <div class="pl-prompt-head">
+                <div class="pl-prompt-label"><span class="pl-badge">Step 1</span><h2>Audit their site</h2></div>
+                <button type="button" class="pl-copy-btn" data-target="pl-prompt-1" onclick="plCopy(this)">Copy prompt</button>
+            </div>
+            <p class="pl-prompt-desc">Point this at the client's current site. It reads every page and hands you a written record of what's actually there — which is the thing you're going to build every later decision on.</p>
+            <pre class="pl-prompt-box"><code id="pl-prompt-1"># Audit an existing small business website
+
+## Context
+I'm rebuilding the website for a local business. Before I design anything I need an
+honest picture of what they already have — what's on the site, what's ranking, and
+what's actively working against them.
+
+- Site to audit: [URL]
+- Business: [NAME] — [what they do]
+- Where they work: [CITY, STATE / service area]
+- Their money service (the one that pays best): [SERVICE]
+
+## What to do
+Crawl the site and work through it page by page. Fan out parallel agents — one per
+batch of pages — so this doesn't take all day. For every page, record:
+
+1. URL, page title, meta description, H1.
+2. A plain-language transcription of the actual content on the page.
+3. Word count, and whether the content is genuinely unique or a template with the
+   city/service swapped out.
+4. Structured data / schema markup present (or missing).
+5. Internal links in and out.
+
+Then find the problems. I care about these specifically:
+
+- **Duplicate and templated pages.** How many pages are near-copies of each other with
+  a city or service name swapped? Give me a count and a percentage of the site.
+- **Keyword cannibalization.** Which pages are competing against each other for the
+  same search term? List the offenders and name the single page that should own each
+  term. This is usually the most expensive problem on the site.
+- **Thin content.** Pages under ~300 words with nothing unique to say.
+- **Proof gaps.** Are the photos stock or real work? Are there testimonials or reviews
+  anywhere? Is there a blog that was started and abandoned?
+- **Structure.** Is the URL scheme consistent? Are services and locations organised in
+  a way a human would predict?
+- **Local SEO.** Does the site's location targeting line up with a Google Business
+  Profile and their real service area, or is it a spray of city pages they've never
+  worked in?
+
+## Output
+Write these files:
+- `audit/sitemap.md` — every URL with its title, word count, and a one-line verdict.
+- `audit/pages/<slug>.md` — the transcription of each page.
+- `audit/README.md` — the findings. Lead with the three problems costing them the most
+  money, each with the evidence (page counts, the specific URLs, the exact keywords).
+
+## Rules
+Only report what's actually on the site. Don't estimate traffic, rankings, or revenue
+you can't see — if you don't have the data, say so and tell me where I'd get it. I'd
+rather have five findings I can prove than twenty I can't.</code></pre>
+        </div>
+
+        <!-- ============ PROMPT 2 ============ -->
+        <div class="pl-prompt-card">
+            <div class="pl-prompt-head">
+                <div class="pl-prompt-label"><span class="pl-badge">Step 2</span><h2>Plan the redesign</h2></div>
+                <button type="button" class="pl-copy-btn" data-target="pl-prompt-2" onclick="plCopy(this)">Copy prompt</button>
+            </div>
+            <p class="pl-prompt-desc">Feed the audit back in. This turns "here's what's broken" into a new sitemap and a content brief for every page — so by the time you build, the copy and the SEO are already decided.</p>
+            <pre class="pl-prompt-box"><code id="pl-prompt-2"># Turn the audit into a redesign plan
+
+## Context
+You audited [BUSINESS NAME]'s existing site — the findings are in `audit/README.md`
+and `audit/sitemap.md`. Now plan the rebuild. I'm not designing anything yet; I want
+the structure and the content decided before I open an editor.
+
+- Business: [NAME] — [what they do]
+- Service area: [CITIES they genuinely work in — not a wish list]
+- Money service: [SERVICE]
+- Goal: keep every bit of SEO value they've earned, drop everything that's diluting it.
+
+## What to do
+
+### 1. Propose the new sitemap
+Consolidate. A focused site beats a big one. Specifically:
+- Merge the cannibalizing pages into ONE page per search term. Name which URL wins.
+- Cut spun location pages down to the cities they can actually prove work in — a
+  handful of real ones beats fifty templates, and it lines up with their Google
+  Business Profile.
+- Fold overlapping services together where a searcher wouldn't tell them apart.
+- Give me a consistent URL scheme and explain the rule in one line.
+
+Every consolidation decision has to cite the audit finding it came from. If you can't
+point at the evidence, don't make the cut.
+
+### 2. Map every old URL to a new one
+Produce `redesign/redirect-map.md` — every existing URL with an explicit 301 target.
+Nothing 404s. This is where people lose their rankings, so be exhaustive.
+
+### 3. Write a brief for every new page
+One file per page in `redesign/briefs/<slug>.md` containing:
+- Target keyword (one primary, and it must not be the primary of any other page)
+- Page title and meta description
+- Every heading, in order (H1 → H2s → H3s)
+- The actual body copy — written, not described. Their voice, not marketing mush.
+- The structured data / schema for the page
+- Internal links: which pages this one links to, and why
+- Images needed, with the alt text written out
+- What the page is asking the visitor to do
+
+### 4. Flag the gaps
+List what you could NOT write because it needs a human: real testimonials, real
+project photos, licence numbers, pricing, guarantees. Be specific — that list is what
+I take to the client.
+
+## Output
+`redesign/new-sitemap.md` (the plan + consolidation decisions with their evidence),
+`redesign/redirect-map.md`, and `redesign/briefs/*.md`.
+
+## Rules
+Do not invent proof. No made-up reviews, no fake project counts, no "trusted by 500+
+homeowners" unless the audit found it. Placeholder text is fine — invented credibility
+is not, and it's the fastest way to get a client in trouble.</code></pre>
+        </div>
+
+        <!-- ============ PROMPT 3 ============ -->
+        <div class="pl-prompt-card">
+            <div class="pl-prompt-head">
+                <div class="pl-prompt-label"><span class="pl-badge">Step 3</span><h2>Build the site</h2></div>
+                <button type="button" class="pl-copy-btn" data-target="pl-prompt-3" onclick="plCopy(this)">Copy prompt</button>
+            </div>
+            <p class="pl-prompt-desc">Now it builds. Start from a template repo you already own and trust — a past client site works perfectly — and let it apply the briefs. This is the part you can walk away from.</p>
+            <pre class="pl-prompt-box"><code id="pl-prompt-3"># Build the site from the briefs
+
+## Context
+I've cloned a site I built for a previous client as the starting template. The
+structure, CSS architecture, and JS all work — I want to keep them. Build [NAME]'s
+site by applying the redesign plan to this template.
+
+- Plan: `redesign/new-sitemap.md`
+- Briefs: `redesign/briefs/*.md` — one per page
+- Redirects: `redesign/redirect-map.md`
+- Business: [NAME] — [what they do] in [CITY, STATE]
+- Brand vibe: [e.g. rugged &amp; straightforward / warm &amp; local / clean &amp; modern]
+- Brand colours: [HEX, or "pick to suit the logo"]
+- Photos: [attached / in ./uploads — or "use placeholders, real photos coming"]
+
+## What to do
+1. Build every page in the sitemap using the template's existing components. This is a
+   content and branding swap, not a rebuild — keep the CSS architecture, the variables,
+   the JS, and the responsive behaviour.
+2. Use each brief verbatim: the headings, the body copy, the title and meta, the schema.
+   The briefs are the source of truth — don't rewrite them as you go.
+3. Wire up the internal links and implement the redirect map.
+4. Set the brand colours and swap the logo and business name everywhere.
+5. Images: use the real photos if I gave you any. If not, pull placeholders via the
+   [Freepik / stock API] key in my `.env` and name every file so I can find and replace
+   it later. Write real alt text from the brief either way.
+6. Scrub for leftovers — the previous client's name, phone number, alt text, or demo
+   content anywhere in the build. Search the whole repo, not just the pages you touched.
+
+## What NOT to touch
+Don't restructure the CSS, rename classes, or change the component system unless I ask.
+If a page genuinely doesn't fit the template, stop and flag it rather than improvising
+a new layout.
+
+## Output
+Build it, then give me a review list, because I'm checking all of it:
+- Every page you created, and which brief it came from
+- Every placeholder image that needs a real photo swapped in
+- Anything in the briefs you couldn't implement, and why
+- Anything you had to make a judgement call on</code></pre>
+        </div>
+
+        <!-- ============ WIRING IT UP ============ -->
+        <div class="pl-steps">
+            <h2>Wiring it up as Claude Code skills</h2>
+            <p class="pl-steps-lede">The prompts work pasted into a chat. They work better as skills — you stop hunting for the prompt, and each one knows when it's its turn.</p>
+            <ol>
+                <li>
+                    <strong>Make a skills folder</strong>
+                    <pre><code>mkdir -p .claude/skills/site-audit</code></pre>
+                    <p>One folder per stage: <code>site-audit</code>, <code>redesign-plan</code>, <code>build-site</code>.</p>
+                </li>
+                <li>
+                    <strong>Drop each prompt into a SKILL.md</strong>
+                    <p>Put the prompt body in <code>.claude/skills/site-audit/SKILL.md</code> with frontmatter on top — a <code>name</code>, and a <code>description</code> that says when to use it. The description is what Claude reads to decide whether the skill applies, so write it as a trigger: <em>"Use when auditing an existing website before a redesign."</em></p>
+                </li>
+                <li>
+                    <strong>Run them in order</strong>
+                    <p>Point the audit at the URL and walk away. Read the findings yourself before you run the redesign — this is the checkpoint that catches a bad audit before it poisons everything downstream. Then hand the plan to the build.</p>
+                </li>
+                <li>
+                    <strong>Keep the outputs in the repo</strong>
+                    <p>The <code>audit/</code> and <code>redesign/</code> folders are the paper trail. When the client asks why you killed 50 pages, the evidence is sitting right there.</p>
+                </li>
+            </ol>
+        </div>
+
+        <!-- ============ THE 20% ============ -->
+        <div class="pl-checklist">
+            <h2>The 20% — before you ship</h2>
+            <p class="pl-steps-lede">This is the part that separates a site that works from a site that looks like AI made it. Nothing here is optional.</p>
+            <ul>
+                <li><strong>Swap in real photos.</strong> Stock excavators in a stock field fool nobody. Their trucks, their crew, their jobs. Getting to this stage is also what finally makes a client send you the photos they've been sitting on.</li>
+                <li><strong>Read every claim out loud.</strong> Anything the AI asserted that you can't prove — years in business, jobs completed, "trusted by" — cut it or confirm it with the client.</li>
+                <li><strong>Check contrast.</strong> White text on a light button is the classic tell.</li>
+                <li><strong>Check the fonts.</strong> Headings drift to the body face in the spots nobody looks — FAQ toppers, cards, footers.</li>
+                <li><strong>Click every animation.</strong> They break in ways that don't throw errors.</li>
+                <li><strong>Test the redirect map.</strong> Every old URL should land somewhere sensible. This is where rankings quietly die.</li>
+                <li><strong>Know why you made each decision.</strong> When the client asks why their 86 pages became 30, you need the answer — not "that's what the AI said." That's the whole job.</li>
+            </ul>
+        </div>
+
+        <p class="pl-help">Stuck? Reply to the email we just sent you and I'll help you get it running.</p>
+
+        <!-- CTA -->
+        <div class="pl-cta">
+            <h3>Want this done for you instead?</h3>
+            <p>I build fast, hand-coded sites for contractors and small businesses. Free 20-minute call, no pitch.</p>
+            <a href="https://eskerdesigns.com/get-started/" class="pl-btn pl-btn-primary">Book a free call &rarr;</a>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    function plCopy(btn) {
+        var text = document.getElementById(btn.getAttribute('data-target')).innerText;
+
+        function done() {
+            btn.textContent = 'Copied!';
+            btn.classList.add('is-copied');
+            setTimeout(function() {
+                btn.textContent = 'Copy prompt';
+                btn.classList.remove('is-copied');
+            }, 2000);
+        }
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done).catch(function() {
+                plFallbackCopy(text, done);
+            });
+        } else {
+            plFallbackCopy(text, done);
+        }
+    }
+
+    function plFallbackCopy(text, cb) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+        cb();
+    }
+</script>
+
+{% endblock %}
