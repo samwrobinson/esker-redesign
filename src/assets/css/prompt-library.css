@@ -1,0 +1,150 @@
+/* ============================================
+   YouTube AI Website Prompt Library Lead Magnet
+   ============================================ */
+#prompt-library {
+  padding: var(--sectionPadding);
+  padding-bottom: clamp(16.25rem, 17vw, 26rem);
+}
+#prompt-library .cs-container {
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+#prompt-library .cs-content {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+#prompt-library .cs-title {
+  max-width: 100%;
+}
+.pl-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 2rem;
+}
+/* the three stages — the pitch is that they run in order, so number them */
+.pl-stages {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.pl-stages li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.pl-num {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--primaryLight);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+.pl-stages li strong {
+  display: block;
+  font-size: 1.0625rem;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+.pl-stages li p {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--bodyTextColor);
+}
+.pl-list {
+  list-style: none;
+  padding: 1.5rem 0 0;
+  margin: 0 0 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+.pl-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--bodyTextColor);
+}
+.pl-list li svg {
+  flex-shrink: 0;
+  color: var(--primaryLight);
+}
+.pl-form label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--bodyTextColor);
+}
+.pl-form-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.pl-form-row input[type="email"] {
+  flex: 1;
+  min-width: 12.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fff;
+  color: var(--bodyTextColor);
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.pl-form-row input[type="email"]:focus {
+  outline: none;
+  border-color: var(--primaryLight);
+}
+.pl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 3.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  background: var(--primaryLight);
+  color: #fff;
+  transition: background-color 0.3s;
+  font-family: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.pl-btn:hover {
+  background: var(--primary);
+}
+.pl-small-print {
+  font-size: 0.8125rem;
+  color: #9ca3af;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+/* Dark mode */
+body.dark-mode .pl-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+body.dark-mode .pl-list {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+body.dark-mode .pl-form-row input[type="email"] {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--bodyTextColorWhite);
+}

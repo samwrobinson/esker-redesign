@@ -1,0 +1,124 @@
+---
+title: 'Free AI Website Prompt Library | Esker Designs'
+description: 'The three Claude prompts from the YouTube video — audit, redesign, and build a small business website with AI. Free, copy and paste, ready to run.'
+preloadImg: '/assets/images/logo.webp'
+permalink: 'yt/prompt-library/'
+eleventyExcludeFromCollections: true
+noindex: true
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/assets/css/prompt-library.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    LANDING                   -->
+<!-- ============================================ -->
+
+<section id="int-hero">
+    <h1 id="home-h">Free AI Website Prompt Library</h1>
+    <svg class="cs-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,192L120,213.3C240,235,480,277,720,277.3C960,277,1200,235,1320,213.3L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+    <svg class="cs-wave cs-dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#061521" fill-opacity="1" d="M0,192L120,213.3C240,235,480,277,720,277.3C960,277,1200,235,1320,213.3L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+</section>
+
+<!-- ============================================ -->
+<!--            Prompt Library Download           -->
+<!-- ============================================ -->
+
+<section id="prompt-library">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Drop your email and we'll send the <span class="emphasis">three prompts</span> straight to your inbox.</h2>
+            <p class="cs-text">The exact system from the video — audit an existing site, plan the redesign, then build it. Three prompts you run in order. Free, yours to modify, no spam.</p>
+        </div>
+
+        <div class="pl-card">
+            <ol class="pl-stages">
+                <li>
+                    <span class="pl-num">1</span>
+                    <div>
+                        <strong>Audit</strong>
+                        <p>Point it at their current site. It reads every page and tells you what's broken.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="pl-num">2</span>
+                    <div>
+                        <strong>Redesign</strong>
+                        <p>Turns the audit into a new sitemap and a content brief for every page.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="pl-num">3</span>
+                    <div>
+                        <strong>Build</strong>
+                        <p>Takes the briefs and builds the pages against a template you already own.</p>
+                    </div>
+                </li>
+            </ol>
+
+            <ul class="pl-list">
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    All three prompts — copy, paste, go
+                </li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    How to wire them up as Claude Code skills
+                </li>
+                <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    The review checklist — the 20% AI won't do for you
+                </li>
+            </ul>
+
+            <form class="pl-form" id="pl-form" name="yt-prompt-library-leads" method="POST" netlify netlify-honeypot="bot-field" onsubmit="return plSubmitEmail(event)">
+                <input type="hidden" name="form-name" value="yt-prompt-library-leads">
+                <input type="hidden" name="source" value="youtube">
+                <p class="pl-hidden" style="display:none;"><input name="bot-field"></p>
+                <label for="pl-email">Where should we send it?</label>
+                <div class="pl-form-row">
+                    <input type="email" name="email" id="pl-email" placeholder="you@example.com" required>
+                    <button type="submit" class="pl-btn">Send me the prompts</button>
+                </div>
+                <p class="pl-small-print">No spam. Unsubscribe any time.</p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+    function plSubmitEmail(e) {
+        e.preventDefault();
+
+        var emailEl = document.getElementById('pl-email');
+        var email = emailEl.value.trim();
+        if (!email || !email.includes('@')) {
+            alert('Please enter a valid email address.');
+            return false;
+        }
+
+        var formData = new FormData(document.getElementById('pl-form'));
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+        }).catch(function(err) {
+            console.error('Form submission error:', err);
+        });
+
+        sessionStorage.setItem('esker_pl_email', email);
+
+        setTimeout(function() {
+            window.location.href = '/yt/prompt-library/thank-you/';
+        }, 400);
+
+        return false;
+    }
+</script>
+
+{% endblock %}
