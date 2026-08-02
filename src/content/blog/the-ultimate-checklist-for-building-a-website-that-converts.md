@@ -1,10 +1,7 @@
 ---
 title: The Ultimate Checklist for Building a Website That Converts
 url: conversions
-description: In today’s digital environment, having a well-designed website is
-  essential for small businesses in Vermont. Your site acts like your storefront
-  and always-on salesperson combined. To effectively turn visitors into loyal
-  customers, consider this comprehensive checklist.
+description: 'Your website is your storefront and your always-on salesperson. A practical checklist for turning small business visitors into customers.'
 author: Sam Robinson
 date: 2024-11-20T10:02:00.000Z
 tags:

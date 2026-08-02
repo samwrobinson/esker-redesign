@@ -1,7 +1,7 @@
 ---
 title: "Local SEO for Contractors: What Actually Works in 2026"
 url: local-seo-for-contractors
-description: "Most local SEO advice for contractors is generic. Here's what actually happened when I applied it to a real roofing company in Vermont — with the data to back it up."
+description: 'Most local SEO advice for contractors is generic. Here is what happened when I applied it to a real Vermont roofing company, with the data.'
 author: Sam Robinson
 date: 2026-04-07
 tags:

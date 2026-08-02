@@ -1,10 +1,7 @@
 ---
-title: Why a Fast, Professional Website Is Essential for Small Business Success
+title: 'Why a Fast, Professional Website Matters for Small Business'
 url: /website-importance
-description: Discover why a fast and professional website is crucial for small
-  business growth. Learn how website speed, design, and functionality impact
-  your credibility, customer engagement, and online visibility. A professional
-  site isn't just an option—it's a must-have in today's competitive market.
+description: 'How website speed, design, and functionality shape your credibility, customer engagement, and visibility as a small business.'
 author: Sam Robinson
 date: 2024-10-27T19:54:00.000Z
 tags:

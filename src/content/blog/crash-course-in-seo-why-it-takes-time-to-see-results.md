@@ -1,16 +1,7 @@
 ---
 title: "Crash Course in SEO: Why It Takes Time to See Results"
 url: seo-principles
-description: In digital marketing, Search Engine Optimization (SEO) is vital for
-  boosting a website's visibility. It consists of on-page and off-page SEO.
-  On-page SEO involves strategies that you implement directly on your site, like
-  optimizing title tags and creating quality content. Meanwhile, off-page SEO
-  focuses on factors outside your website, such as building backlinks and
-  engaging on social media. It’s important to note that seeing results from
-  these efforts takes time due to various factors, including keyword
-  competitiveness and the need for ongoing optimization. Consistency in
-  improving both types of SEO will ultimately lead to better rankings and
-  increased traffic over time.
+description: 'A plain English crash course in on-page and off-page SEO, and an honest look at why rankings take months instead of weeks.'
 author: Sam Robinson
 date: 2025-02-07T05:55:00.000Z
 tags:

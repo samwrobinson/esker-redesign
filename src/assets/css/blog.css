@@ -104,7 +104,8 @@
     width: 100%;
     object-fit: cover;
   }
-  #int-hero h1 {
+  #int-hero h1,
+  #int-hero .home-h {
     position: relative;
     margin: 0 auto;
     margin-top: 4.375rem;
@@ -130,7 +131,8 @@
   #int-hero {
     font-size: 100%;
   }
-  #int-hero h1 {
+  #int-hero h1,
+  #int-hero .home-h {
     font-size: 4rem;
   }
 }

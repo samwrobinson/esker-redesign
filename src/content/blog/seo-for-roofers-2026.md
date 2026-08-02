@@ -1,7 +1,7 @@
 ---
 title: "SEO for Roofers: What Actually Gets You to the Top of Google"
 url: seo-for-roofers
-description: "Most SEO advice for roofers is written by agencies trying to sell you a retainer. This is the honest version — what actually moves the needle, what you can do yourself for free, and how long it's really going to take."
+description: 'The honest version of roofing SEO: what actually moves the needle, what you can do yourself for free, and how long it really takes.'
 author: Sam Robinson
 date: 2026-04-01
 tags:
@@ -15,7 +15,7 @@ videoDescription: "Most SEO advice for roofers is written by agencies trying to 
 videoDuration: "PT5M22S"
 ---
 
-# SEO for Roofers: What Actually Gets You to the Top of Google
+## SEO for Roofers: What Actually Gets You to the Top of Google
 
 If you've Googled "SEO for roofers" recently, you already know what's out there.
 

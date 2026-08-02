@@ -1,9 +1,7 @@
 ---
 title: Advantages of Single Page Websites for Businesses
 url: advantages-of-single-page-websites
-description: Single page design is about minimizing clutter and maximizing
-  impact. By putting all the information on one page, it creates a narrative
-  flow that guides the user naturally from one section to the next.
+description: 'Single page websites cut clutter and guide visitors through one clear narrative. Here is when the format works and when it holds you back.'
 author: Sam Robinson
 date: 2025-11-25T13:34:00.000-05:00
 tags:
@@ -11,7 +9,7 @@ tags:
 image: /assets/images/blog/blue-white-and-black-photographic-environment-charity-non-profit-website.png
 imageAlt: Advantages of a single-page website.
 ---
-# **Advantages of Single Page Websites for Businesses**
+## **Advantages of Single Page Websites for Businesses**
 
 ## **What is a single page website?**
 

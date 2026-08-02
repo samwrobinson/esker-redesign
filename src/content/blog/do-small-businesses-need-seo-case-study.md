@@ -1,7 +1,7 @@
 ---
-title: "Do Small Businesses Need SEO? Here's What 6 Months of Real Data Actually Shows"
+title: 'Does SEO Work for Small Business? 6 Months of Real Data'
 url: do-small-businesses-need-seo-case-study
-description: "Wondering if SEO actually works for small businesses? Here's a real case study with real Search Console data showing what 6 months of local SEO built for a contractor from scratch."
+description: 'Real Search Console data from a contractor with no online presence, showing exactly what six months of local SEO built from scratch.'
 author: Sam Robinson
 date: 2026-03-04
 tags:

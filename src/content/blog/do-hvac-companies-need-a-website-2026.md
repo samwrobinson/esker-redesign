@@ -1,7 +1,7 @@
 ---
 title: "Do HVAC Companies Really Need a Website in 2026?"
 url: do-hvac-companies-need-a-website-2026
-description: "Wondering if your HVAC business actually needs a website? Here's the honest answer, including the one thing about HVAC that makes the math different from most trades."
+description: 'Does your HVAC business actually need a website? An honest answer, plus the one thing about HVAC that changes the math.'
 author: Sam Robinson
 date: 2026-03-27
 tags:

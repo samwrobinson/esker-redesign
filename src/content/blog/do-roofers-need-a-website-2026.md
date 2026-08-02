@@ -1,7 +1,7 @@
 ---
 title: "Do Roofers Really Need a Website in 2026?"
 url: do-roofers-need-a-website-2026
-description: "If your roofing business runs on referrals and word of mouth, do you actually need a website? Here's an honest answer, and the one thing about roofing that changes the math."
+description: 'If your roofing business runs on referrals, do you need a website? An honest answer, plus the one thing about roofing that changes the math.'
 author: Sam Robinson
 date: 2026-03-27
 tags:

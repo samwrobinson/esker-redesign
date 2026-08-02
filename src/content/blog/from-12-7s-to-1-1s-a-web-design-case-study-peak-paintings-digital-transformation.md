@@ -1,18 +1,7 @@
 ---
-title: "From 12.7s to 1.1s: A Web Design Case Study - Peak Painting's Digital
-  Transformation"
+title: 'Web Design Case Study: 12.7s to 1.1s Load Time'
 url: case-study-1
-description: Peak Painting underwent a remarkable digital transformation,
-  improving their website's performance score from 55 to an impressive 100. The
-  initial consultation fostered a clear understanding of the client's needs,
-  establishing transparent pricing and expectations. During the research phase,
-  vital information was gathered through focused questionnaires that shaped the
-  design. The Figma mockup process allowed for collaborative refinements based
-  on client feedback, ensuring satisfaction. Parallelly, development began while
-  professional content was created to enhance SEO and engagement. Testing
-  included live previews for client adjustments, resulting in efficient
-  turnaround times. Ultimately, this project showcases how thoughtful processes
-  lead to significant improvements in performance metrics.
+description: 'How we took Peak Painting from a 12.7 second load time to 1.1 seconds and a perfect 100 performance score. The full process, start to finish.'
 author: Sam Robinson
 date: 2025-01-13T17:10:00.000Z
 tags:

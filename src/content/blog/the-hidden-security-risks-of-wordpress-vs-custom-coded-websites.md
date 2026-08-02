@@ -1,11 +1,7 @@
 ---
-title: The Hidden Security Risks of WordPress vs Custom-Coded Websites
+title: 'WordPress Security Risks vs Custom-Coded Websites'
 url: wordpress-security-flaws
-description: WordPress is a popular choice for website design, powering nearly
-  half of all sites worldwide, but this popularity comes with significant
-  security risks. With thousands of new vulnerabilities appearing each year,
-  most found in plugins, it becomes clear that relying heavily on third-party
-  code opens many doors for attackers.
+description: 'WordPress powers half the web, and that makes it a target. Thousands of new plugin vulnerabilities a year, and what custom code avoids.'
 author: Sam Robinson
 date: 2025-05-29T21:25:00.000Z
 tags:

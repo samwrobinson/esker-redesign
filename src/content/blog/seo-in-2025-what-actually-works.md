@@ -1,9 +1,7 @@
 ---
 title: "SEO in 2025: What Actually Works"
 url: how-to-get-organic-traffic
-description: SEO isn't dead. But the lazy version of it is. You can't just copy
-  what's ranking and expect results anymore. You content needs to provide real
-  value to actually be worth finding.
+description: 'SEO is not dead, but the lazy version is. Copying what already ranks no longer works. Your content has to be genuinely worth finding.'
 author: Sam Robinson
 date: 2025-12-22T16:10:00.000-05:00
 tags:
@@ -11,7 +9,7 @@ tags:
 image: /assets/images/blog/search-volume-illustration.png
 imageAlt: Google vs ChatGPT Search Volume
 ---
-# How to Increase Organic Traffic in 2025 (What's Actually Working Now)
+## How to Increase Organic Traffic in 2025 (What's Actually Working Now)
 
 ## TL;DR:
 

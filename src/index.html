@@ -1,6 +1,6 @@
 ---
-title: 'Professional Website Design for Small Businesses | Esker Designs, Warren, Vermont'
-description: 'We are a full-service website design company offering 100% hand-coded websites starting at $175/mo. We specialize in creating custom designs for small businesses across the country.'
+title: 'Small Business Website Design in Vermont | Esker Designs'
+description: 'Hand-coded websites for small businesses from $175/mo with no money down. Custom designs built to attract customers and drive real business.'
 preloadImg: '/assets/images/logo.webp'
 permalink: '/'
 tags: 'sitemap' # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
@@ -19,7 +19,7 @@ eleventyNavigation:
 <link rel="stylesheet" href="/assets/css/local.css"
     media="print" onload="this.media='all'; this.onload=null;">
 <noscript>
-    <link rel="stylesheet" href="/css/local.css">
+    <link rel="stylesheet" href="/assets/css/local.css">
 </noscript>
 
 <!-- Preload Critical Images -->
@@ -95,9 +95,9 @@ eleventyNavigation:
     <div class="cs-container">
         <div class="cs-content">
             <span class="cs-topper">Hand-coded, custom designs</span>
-            <h2 class="cs-title">
+            <h1 class="cs-title">
                 Small Business Website Design That Delivers
-            </h2>
+            </h1>
             <p class="cs-text">
                 Get a website designed to attract customers, drive business, and impress,
                 all without the burden of upfront costs. We offer 100% hand-coded websites, starting at just $175/month.
@@ -996,7 +996,7 @@ eleventyNavigation:
         </div>
         <ul class="cs-card-group">
             {% if collections.post | length == 0 %}
-                <h1>No Recent Posts</h1>
+                <p class="cs-no-posts">No Recent Posts</p>
             {% elif collections.post | length == 1 %}
                 {%- for post in collections.post | reverse -%}
                 <li class="cs-item">

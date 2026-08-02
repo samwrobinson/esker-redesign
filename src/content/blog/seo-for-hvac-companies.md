@@ -1,7 +1,7 @@
 ---
-title: "SEO for HVAC Companies: What Actually Gets You to the Top of Google"
+title: 'SEO for HVAC Companies: What Actually Works'
 url: seo-for-hvac-companies
-description: "Most HVAC SEO advice is written by agencies trying to sell you a retainer. This is the honest version — what actually moves the needle, what you can do yourself for free, and how long it's really going to take."
+description: 'The honest version of HVAC SEO: what actually moves the needle, what you can do yourself for free, and how long it really takes.'
 author: Sam Robinson
 date: 2026-04-08
 tags:
@@ -10,7 +10,7 @@ image: /assets/images/blog/seo-for-hvac-companies.png
 imageAlt: Google search autocomplete results for SEO for HVAC companies
 ---
 
-# SEO for HVAC Companies: What Actually Gets You to the Top of Google
+## SEO for HVAC Companies: What Actually Gets You to the Top of Google
 
 Most of the HVAC contractors I talk to fall into one of two camps.
 

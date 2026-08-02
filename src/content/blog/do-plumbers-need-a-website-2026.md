@@ -1,7 +1,7 @@
 ---
 title: "Do Plumbers Really Need a Website in 2026?"
 url: do-plumbers-need-a-website-2026
-description: "Wondering if your plumbing business actually needs a website? Here's an honest breakdown of when it makes sense, when it doesn't, and what it takes to do it right."
+description: 'Does your plumbing business really need a website? An honest breakdown of when it pays off, when it does not, and what it takes to do right.'
 author: Sam Robinson
 date: 2026-02-02
 tags:

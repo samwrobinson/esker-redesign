@@ -1,7 +1,7 @@
 ---
 title: "How to Get More Contractor Leads Without Paying for Ads"
 url: how-to-get-more-contractor-leads-without-paid-ads
-description: "Most contractors don't have a lead generation problem — they have a lead leakage problem. Here's the free system that fixes both: how leads find you, and what happens after they do."
+description: 'Most contractors do not have a lead generation problem. They have a lead leakage problem. Here is the free system that fixes both.'
 author: Sam Robinson
 date: 2026-03-24
 tags:

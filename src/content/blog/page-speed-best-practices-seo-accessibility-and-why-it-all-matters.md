@@ -1,18 +1,7 @@
 ---
-title: Page Speed, Best Practices, SEO, Accessibility, and Why it All Matters
+title: 'Why Page Speed, SEO, and Accessibility All Matter'
 url: /website-speed
-description: Page speed is super important in today’s digital landscape, as it
-  directly affects user experience, SEO rankings and even accessibility. A
-  slow-loading webpage can frustrate visitors, leading them to leave before they
-  even see what you offer. Best practices for improving page speed include
-  optimizing images, minimizing HTML and CSS files, and leveraging browser
-  caching to enhance performance. Moreover, these practices not only boost your
-  site's visibility on search engines but also make it more accessible for users
-  with disabilities who rely on screen readers or other assistive technologies.
-  Ultimately, prioritizing page speed is crucial because it helps retain users
-  and conveys a sense of professionalism that can set a website apart from its
-  competitors. In the end, keeping all of these elements in check contributes to
-  better overall online presence and success.
+description: 'Slow pages lose visitors and rankings. How image optimization, smaller files, and caching improve speed, SEO, and accessibility at once.'
 author: Sam Robinosn
 date: 2024-11-05T14:19:00.000Z
 tags:

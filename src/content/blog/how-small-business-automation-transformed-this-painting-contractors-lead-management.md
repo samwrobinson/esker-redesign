@@ -1,14 +1,7 @@
 ---
-title: How Small Business Automation Transformed This Painting Contractor's Lead
-  Management
+title: 'Lead Automation Case Study: A Painting Contractor'
 url: lead-gen-automation
-description: Peak Painting, a Vermont painting contractor, struggled with a
-  manual system that created major delays in responding to potential clients.
-  With leads piling up for up to three months in Excel spreadsheets, they were
-  losing valuable opportunities. Esker Designs stepped in and introduced an
-  automation solution using Zapier. This integration allowed their website’s
-  contact forms to connect directly to their Customer Relationship Management
-  (CRM) system, Drip Jobs.
+description: 'Peak Painting had leads sitting in a spreadsheet for months. Here is how we connected their contact forms straight to their CRM with Zapier.'
 author: Sam Robinson
 date: 2025-09-08T08:27:00.000-04:00
 tags:
