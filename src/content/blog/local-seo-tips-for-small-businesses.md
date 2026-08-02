@@ -1,9 +1,7 @@
 ---
 title: Local SEO Tips for Small Businesses
 url: local-seo-for-small-businesses
-description: Boost your small businesses visibility with our guide on maximizing
-  local SEO. Discover key SEO tips and strategies for increasing local search
-  rankings today!
+description: 'Boost your small business visibility with our guide to local SEO. Key tips and strategies for climbing local search rankings today.'
 author: Sam Robinson
 date: 2025-12-17T11:40:00.000-05:00
 tags:
@@ -11,7 +9,7 @@ tags:
 image: /assets/images/blog/local-seo-for-small-business.webp
 imageAlt: Local Search on an Iphone
 ---
-# Maximizing Local SEO for Small Businesses
+## Maximizing Local SEO for Small Businesses
 
 Making sure your customers can find your business online is crucial, especially if you're a small business with a limited marketing budget. In this article, I show you my top [SEO](/small-business-seo-services/) tips for small businesses and offer a few quick videos that will help walk you through some of these concepts. Local search engine optimization (SEO) is a powerful and budget-friendly strategy to help your business stand out in your community and reach more potential customers, but only if it is used and implemented correctly. So - the ***million*** dollar question - how do you navigate the world of SEO without getting lost in technical jargon? Today, we are going to break down exactly that into simple, actionable, steps that you can implement 100% by yourself to boost your local visibility.
 

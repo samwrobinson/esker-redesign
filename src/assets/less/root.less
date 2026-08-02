@@ -1480,7 +1480,8 @@
             }
         }
 
-        h1 {
+        h1,
+        .home-h {
             position: relative;
             margin: 0 auto;
             margin-top: (86/16rem);
@@ -1521,7 +1522,8 @@
     #int-hero {
         font-size: 100%;
 
-        h1 {
+        h1,
+        .home-h {
             margin-top: 7rem;
             font-size: (64/16rem);
         }
@@ -1836,6 +1838,19 @@
             justify-content: space-between;
             flex-wrap: wrap;
             column-gap: (32/16rem);
+
+            .cs-li {
+                width: 44%;
+            }
+        }
+
+        /* Service area links - two columns so the list doesn't stretch the footer */
+        .cs-ul-locations {
+            width: 100%;
+            max-width: (350/16rem);
+            flex-direction: row;
+            flex-wrap: wrap;
+            column-gap: (24/16rem);
 
             .cs-li {
                 width: 44%;

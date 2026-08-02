@@ -1,5 +1,5 @@
 ---
-title: "How Long Does SEO Take for a Contractor Website? (Real Data Inside)"
+title: 'How Long Does SEO Take for a Contractor Website?'
 url: how-long-does-seo-take-contractor-website
 description: "Everyone says SEO takes 3–6 months. But what does that actually look like? Here's real Google Search Console data from a roofing contractor, month by month."
 author: Sam Robinson

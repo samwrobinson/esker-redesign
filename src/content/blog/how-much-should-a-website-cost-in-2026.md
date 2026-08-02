@@ -1,12 +1,7 @@
 ---
 title: How Much Should a Website Cost in 2026?
 url: small-business-website-cost-2026
-description: "One of the most common questions I get asked by small business
-  owners is that they know they need a website for their business, but how
-  much should it cost? In today's blog I will be making a side by side
-  comparison of some of the top website builders in the world right now, their
-  strengths & weaknesses, as well as the million dollar question: how much does
-  it cost to build your small business website."
+description: 'What should a small business website cost in 2026? A side by side look at Squarespace, Wix, WordPress, and hiring a developer.'
 author: Sam Robinson
 date: 2026-01-14T19:43:00.000-05:00
 tags:
@@ -15,7 +10,7 @@ image: /assets/images/blog/youtube-thumbnail-website-cost.png
 imageAlt: Website cost thumbnail
 videoId: opRZwM2Z4Hc
 ---
-# How Much Does a Website Cost in 2026?
+## How Much Does a Website Cost in 2026?
 
 One of the most common questions I get asked by small business owners is that they know they need a website for their business, "but how much should it cost?"
 

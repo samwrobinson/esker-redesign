@@ -15,7 +15,7 @@ videoDescription: "Before you sign with a marketing agency, ask these five quest
 videoDuration: "PT9M50S"
 ---
 
-# 5 Questions to Ask Any Marketing Agency Before You Hire Them
+## 5 Questions to Ask Any Marketing Agency Before You Hire Them
 
 A contractor gets a cold call, a slick pitch, a promise of page one rankings. They sign. Six months later, nothing. This happens constantly — and it's not because contractors are naive, it's because the marketing industry has made it genuinely difficult to tell the good from the bad. These five questions change that. Ask them before you sign anything.
 

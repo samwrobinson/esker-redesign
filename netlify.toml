@@ -3,6 +3,13 @@
   command = "npm run build"
   functions = "netlify/functions"
 
+# Blog chart/graphic fragments are iframe embeds, not standalone pages.
+# Keep them crawlable (so the noindex is actually read) but out of the index.
+[[headers]]
+  for = "/assets/images/blog/*.html"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
 
 [[plugins]]
   # Installs the Lighthouse Build Plugin for all deploy contexts

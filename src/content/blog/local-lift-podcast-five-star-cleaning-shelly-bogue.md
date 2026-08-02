@@ -1,15 +1,7 @@
 ---
-title: "Local Lift Podcast Ep. 1: Shelly Bogue of Five Star Cleaning Services on
-  Building a Trusted Cleaning Business in Hernando, MS"
+title: 'Local Lift Ep. 1: Shelly Bogue, Five Star Cleaning'
 url: local-lift-podcast-five-star-cleaning-shelly-bogue
-description: For the first episode of the Local Lift Podcast, I sat down with
-  Shelly Bogue, owner of Five Star Cleaning Services in Hernando, Mississippi
-  and the 2025 Best of DeSoto cleaner. We talk about leaving a 20-year career in
-  agricultural finance, starting a residential and commercial cleaning company
-  from scratch, why she keeps her crew small, how BNI and word-of-mouth
-  referrals built her client base, and the golden rule she runs the business by.
-  If you're a small business owner in DeSoto County or anywhere else, this
-  conversation is packed with hard-earned, on-the-ground lessons.
+description: 'Shelly Bogue left a 20 year finance career to build Five Star Cleaning Services in Hernando, MS. How BNI, referrals, and a small crew grew it.'
 author: Sam Robinson
 date: 2026-05-10T14:30:00.000-04:00
 tags:

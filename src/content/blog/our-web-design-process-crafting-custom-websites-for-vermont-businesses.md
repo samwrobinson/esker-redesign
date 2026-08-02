@@ -1,10 +1,7 @@
 ---
-title: "Our Web Design Process: Crafting Custom Websites for Vermont Businesses"
+title: 'Our Web Design Process for Vermont Businesses'
 url: /web-design-process
-description: Discover Esker Designs' web design process tailored for Vermont
-  businesses, emphasizing unique branding, professional copywriting, and
-  hand-coded solutions for optimal performance and local SEO, ensuring a custom
-  website that resonates with your audience.
+description: 'How Esker Designs builds a custom site: branding, professional copywriting, hand coding, and local SEO tuned to your Vermont audience.'
 author: Sam Robinson
 date: 2024-12-16T06:08:00.000Z
 tags:

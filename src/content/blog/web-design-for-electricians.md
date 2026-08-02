@@ -1,7 +1,7 @@
 ---
 title: "Web Design for Electricians: What Actually Works in 2026"
 url: web-design-for-electricians
-description: "A tactical guide to electrician websites that actually generate calls. Learn the must-have features, the mistakes killing your leads, and exactly what to prioritize first."
+description: 'A tactical guide to electrician websites that generate calls. The must-have features, the mistakes killing leads, and what to fix first.'
 author: Sam Robinson
 date: 2026-01-28
 tags:

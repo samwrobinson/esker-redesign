@@ -1,12 +1,7 @@
 ---
-title: "Understanding Google Business Profile: A Complete Guide for 2025"
+title: 'Understanding Google Business Profile: 2025 Guide'
 url: google-business-profile-guide
-description: Understanding and optimizing your Google Business Profile is
-  essential for every business aiming to thrive online. Formerly known as Google
-  My Business, GBP is a free tool that helps companies manage their presence on
-  Google Search and Maps. This is vital since customers increasingly rely on
-  local searches for making purchasing decisions—statistics show that 76% of
-  people who search locally visit a store within one day.
+description: 'Google Business Profile is a free tool for managing how you show up on Google Search and Maps. Here is how to set it up and optimize it.'
 author: Sam Robinson
 date: 2025-03-05T14:19:00.000Z
 tags:
