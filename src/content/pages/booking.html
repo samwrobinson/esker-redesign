@@ -48,13 +48,25 @@ eleventyNavigation:
                     <li class="cs-item">
                         <span class="cs-ba-tag">Before</span>
                         <picture class="cs-item-background">
-                            <img decoding="async" src="/assets/images/proof/proof-reviews-before.png" alt="Google listing for a contractor showing only a handful of reviews before working with Esker Designs" width="448" height="320">
+                            <!--Mobile Image-->
+                            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                            <!--Tablet and above Image-->
+                            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 940 }) | avif %}" type="image/avif">
+                            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 940 }) | webp %}" type="image/webp">
+                            <img decoding="async" src="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 940 }) | webp %}" alt="Google listing for a contractor showing only a handful of reviews before working with Esker Designs" width="448" height="320">
                         </picture>
                     </li>
                     <li class="cs-item">
                         <span class="cs-ba-tag cs-ba-after">After</span>
                         <picture class="cs-item-background">
-                            <img decoding="async" src="/assets/images/proof/proof-reviews-143.png" alt="Google listing for the same contractor showing a 5.0 rating with 143 reviews after working with Esker Designs" width="448" height="320">
+                            <!--Mobile Image-->
+                            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-143.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-143.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                            <!--Tablet and above Image-->
+                            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-143.png' | resize({ width: 944 }) | avif %}" type="image/avif">
+                            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-143.png' | resize({ width: 944 }) | webp %}" type="image/webp">
+                            <img decoding="async" src="{% getUrl '/assets/images/proof/proof-reviews-143.png' | resize({ width: 944 }) | webp %}" alt="Google listing for the same contractor showing a 5.0 rating with 143 reviews after working with Esker Designs" width="448" height="320">
                         </picture>
                     </li>
                 </ul>

@@ -96,8 +96,13 @@ eleventyNavigation:
 
                 <!-- Background Image-->
                 <picture class="cs-bg-picture">
-                    <source media="(min-width: 601px)" srcset="/assets/images/contact.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/contact.jpg" alt="building" loading="lazy" width="2500" height="1667">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/contact.jpg' | resize({ width: 600 }) | avif %}" type="image/avif">
+                    <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/contact.jpg' | resize({ width: 600 }) | webp %}" type="image/webp">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/contact.jpg' | resize({ width: 2000 }) | avif %}" type="image/avif">
+                    <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/contact.jpg' | resize({ width: 2000 }) | webp %}" type="image/webp">
+                    <img aria-hidden="true" decoding="async" src="{% getUrl '/assets/images/contact.jpg' | resize({ width: 2000 }) | webp %}" alt="building" loading="lazy" width="2500" height="1667">
                 </picture>
 
             </div>

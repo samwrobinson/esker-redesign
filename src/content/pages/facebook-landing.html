@@ -277,47 +277,159 @@ eleventyNavigation:
         <div class="cs-gallery-wrapper">
             <div class="cs-gallery-track">
                 <div class="cs-gallery-item">
-                    <img src="/assets/images/speed-1.png" alt="Speed test result" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-1.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-1.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-1.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-1.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/speed-1.png' | resize({ width: 1600 }) | webp %}" alt="Speed test result" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item">
-                    <img src="/assets/images/speed-2.png" alt="Speed test result" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-2.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-2.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-2.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-2.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/speed-2.png' | resize({ width: 1600 }) | webp %}" alt="Speed test result" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item">
-                    <img src="/assets/images/speed-3.png" alt="Speed test result" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-3.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-3.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-3.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-3.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/speed-3.png' | resize({ width: 1600 }) | webp %}" alt="Speed test result" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item">
-                    <img src="/assets/images/speed-4.png" alt="Speed test result" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-4.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-4.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-4.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-4.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/speed-4.png' | resize({ width: 1600 }) | webp %}" alt="Speed test result" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item">
-                    <img src="/assets/images/speed-5.png" alt="Speed test result" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-5.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-5.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-5.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-5.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/speed-5.png' | resize({ width: 1600 }) | webp %}" alt="Speed test result" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item">
-                    <img src="/assets/images/speed-6.png" alt="Speed test result" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-6.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-6.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-6.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-6.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/speed-6.png' | resize({ width: 1600 }) | webp %}" alt="Speed test result" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item">
-                    <img src="/assets/images/speed-7.png" alt="Speed test result" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-7.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-7.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-7.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-7.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/speed-7.png' | resize({ width: 1600 }) | webp %}" alt="Speed test result" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <!-- Duplicate set for seamless loop -->
                 <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
-                    <img src="/assets/images/speed-1.png" alt="" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-1.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-1.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-1.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-1.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/speed-1.png' | resize({ width: 1600 }) | webp %}" alt="" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
-                    <img src="/assets/images/speed-2.png" alt="" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-2.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-2.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-2.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-2.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/speed-2.png' | resize({ width: 1600 }) | webp %}" alt="" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
-                    <img src="/assets/images/speed-3.png" alt="" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-3.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-3.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-3.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-3.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/speed-3.png' | resize({ width: 1600 }) | webp %}" alt="" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
-                    <img src="/assets/images/speed-4.png" alt="" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-4.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-4.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-4.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-4.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/speed-4.png' | resize({ width: 1600 }) | webp %}" alt="" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
-                    <img src="/assets/images/speed-5.png" alt="" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-5.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-5.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-5.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-5.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/speed-5.png' | resize({ width: 1600 }) | webp %}" alt="" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
-                    <img src="/assets/images/speed-6.png" alt="" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-6.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-6.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-6.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-6.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/speed-6.png' | resize({ width: 1600 }) | webp %}" alt="" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
-                    <img src="/assets/images/speed-7.png" alt="" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-7.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-7.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-7.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-7.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/speed-7.png' | resize({ width: 1600 }) | webp %}" alt="" loading="lazy" decoding="async">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -341,41 +453,137 @@ eleventyNavigation:
         <div class="cs-gallery-wrapper">
             <div class="cs-gallery-track">
                 <div class="cs-gallery-item">
-                    <img src="/assets/images/150-form-subs.png" alt="150+ form submissions generated" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/150-form-subs.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/150-form-subs.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/150-form-subs.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/150-form-subs.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/150-form-subs.png' | resize({ width: 1600 }) | webp %}" alt="150+ form submissions generated" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item">
-                    <img src="/assets/images/form-submissions-1.png" alt="Form submissions proof" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/form-submissions-1.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/form-submissions-1.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/form-submissions-1.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/form-submissions-1.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/form-submissions-1.png' | resize({ width: 1600 }) | webp %}" alt="Form submissions proof" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item">
-                    <img src="/assets/images/form-submissions-2.png" alt="Form submissions proof" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/form-submissions-2.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/form-submissions-2.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/form-submissions-2.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/form-submissions-2.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/form-submissions-2.png' | resize({ width: 1600 }) | webp %}" alt="Form submissions proof" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item">
-                    <img src="/assets/images/form-submission-dashboard.png" alt="Form submission dashboard" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/form-submission-dashboard.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/form-submission-dashboard.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/form-submission-dashboard.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/form-submission-dashboard.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/form-submission-dashboard.png' | resize({ width: 1600 }) | webp %}" alt="Form submission dashboard" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item">
-                    <img src="/assets/images/subs-1-blurred.png" alt="Form submissions proof" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/subs-1-blurred.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/subs-1-blurred.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/subs-1-blurred.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/subs-1-blurred.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/subs-1-blurred.png' | resize({ width: 1600 }) | webp %}" alt="Form submissions proof" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item">
-                    <img src="/assets/images/subs-2-blurred.png" alt="Form submissions proof" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/subs-2-blurred.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/subs-2-blurred.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/subs-2-blurred.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/subs-2-blurred.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/subs-2-blurred.png' | resize({ width: 1600 }) | webp %}" alt="Form submissions proof" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <!-- Duplicate set for seamless loop -->
                 <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
-                    <img src="/assets/images/150-form-subs.png" alt="" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/150-form-subs.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/150-form-subs.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/150-form-subs.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/150-form-subs.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/150-form-subs.png' | resize({ width: 1600 }) | webp %}" alt="" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
-                    <img src="/assets/images/form-submissions-1.png" alt="" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/form-submissions-1.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/form-submissions-1.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/form-submissions-1.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/form-submissions-1.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/form-submissions-1.png' | resize({ width: 1600 }) | webp %}" alt="" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
-                    <img src="/assets/images/form-submissions-2.png" alt="" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/form-submissions-2.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/form-submissions-2.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/form-submissions-2.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/form-submissions-2.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/form-submissions-2.png' | resize({ width: 1600 }) | webp %}" alt="" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
-                    <img src="/assets/images/form-submission-dashboard.png" alt="" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/form-submission-dashboard.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/form-submission-dashboard.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/form-submission-dashboard.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/form-submission-dashboard.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/form-submission-dashboard.png' | resize({ width: 1600 }) | webp %}" alt="" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
-                    <img src="/assets/images/subs-1-blurred.png" alt="" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/subs-1-blurred.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/subs-1-blurred.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/subs-1-blurred.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/subs-1-blurred.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/subs-1-blurred.png' | resize({ width: 1600 }) | webp %}" alt="" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="cs-gallery-item cs-duplicate" aria-hidden="true">
-                    <img src="/assets/images/subs-2-blurred.png" alt="" loading="lazy" decoding="async">
+                    <picture>
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/subs-2-blurred.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/subs-2-blurred.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/subs-2-blurred.png' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                        <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/subs-2-blurred.png' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                        <img src="{% getUrl '/assets/images/subs-2-blurred.png' | resize({ width: 1600 }) | webp %}" alt="" loading="lazy" decoding="async">
+                    </picture>
                 </div>
             </div>
         </div>
