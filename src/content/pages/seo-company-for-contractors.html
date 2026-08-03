@@ -181,7 +181,7 @@ permalink: 'service-offerings/seo-company-for-contractors/'
 <!--          What Is Included In Our Service     -->
 <!-- ============================================ -->
 
-<section id="lp-included" class="lp-section lp-centered">
+<section id="lp-included" class="lp-section">
     <div class="cs-container">
         <div class="cs-content">
             <h2 class="cs-title">What is Included in Our Service?</h2>
@@ -192,6 +192,15 @@ permalink: 'service-offerings/seo-company-for-contractors/'
                 The only work we require from you is that you can occasionally chat with us about your business so we can make the absolute best content for your website, and that you are available to review our monthly progress reports to show you what our work has generated for your business.
             </p>
         </div>
+        <picture class="cs-picture">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/website-seo-for-contractors.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/website-seo-for-contractors.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/website-seo-for-contractors.png' | resize({ width: 1200 }) | avif %}" type="image/avif">
+            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/website-seo-for-contractors.png' | resize({ width: 1200 }) | webp %}" type="image/webp">
+            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/website-seo-for-contractors.png' | resize({ width: 1200 }) | webp %}" alt="Homepage of V3 Painting, a contractor website built by Esker Designs" width="1529" height="858">
+        </picture>
     </div>
 </section>
 
