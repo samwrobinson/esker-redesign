@@ -23,7 +23,8 @@ eleventyNavigation:
 </noscript>
 
 <!-- Preload Critical Images -->
-<link rel="preload" as="image" href="/assets/images/hero-mockup-v3.webp" fetchpriority="high">
+<link rel="preload" as="image" media="(max-width: 600px)" href="{% getUrl '/assets/images/hero-mockup-v3.webp' | resize({width: 450, height: 281}) | webp %}" fetchpriority="high">
+<link rel="preload" as="image" media="(min-width: 601px)" href="{% getUrl '/assets/images/hero-mockup-v3.webp' | resize({width: 1656, height: 968}) | webp %}" fetchpriority="high">
 <link rel="preload" as="image" href="{% getUrl "/assets/images/dark-hero-v3.png" | resize({width: 1177, height: 366}) | webp %}" fetchpriority="high">
 
 <script defer src="https://cloud.umami.is/script.js" data-website-id="ad4f603c-adc2-4df0-8440-601f99120b46"></script>
@@ -83,6 +84,22 @@ eleventyNavigation:
             {% endif %}
         }
     </script>
+<script>
+    (function () {
+        var toggle = document.querySelector('#pricing-1262 .cs-toggle, .cs-toggle-group .cs-toggle');
+        var wrapper = document.querySelector('.cs-ul-wrapper');
+        if (!toggle || !wrapper) return;
+        function flip() {
+            var on = wrapper.classList.toggle('cs-active');
+            toggle.setAttribute('aria-pressed', on ? 'true' : 'false');
+        }
+        toggle.addEventListener('click', flip);
+        toggle.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
+        });
+    })();
+</script>
+
 {% endblock %}
 
 {% block body %}
@@ -645,7 +662,7 @@ eleventyNavigation:
             </p>
             <div class="cs-toggle-group">
                 <span id="cs-option1-1262" class="cs-plan">Subscription</span>
-                <div class="cs-toggle" data-umami-event="Price Toggle" aria-label="click to switch plans pricing">
+                <div class="cs-toggle" role="button" tabindex="0" aria-pressed="false" data-umami-event="Price Toggle" aria-label="Switch between subscription and lump sum pricing">
                     <span aria-hidden="true" class="cs-toggle-switch"></span>
                 </div>
                 <span id="cs-option2-1262" class="cs-plan">Lump Sum</span>
