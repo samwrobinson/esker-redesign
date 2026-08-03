@@ -1,0 +1,180 @@
+/*-- -------------------------- -->
+<---  SEO Company for Contractors -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  .lp-section {
+    padding: var(--sectionPadding);
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+    /* alternating subtle background so each section reads as its own block */
+    /* dividing line for the sections that share the white background */
+  }
+  .lp-section.lp-alt {
+    background-color: #f6f7f4;
+  }
+  .lp-section.lp-divided {
+    border-top: 1px solid #e8e8e8;
+  }
+  .lp-section .cs-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* 32px - 48px */
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+  .lp-section .cs-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .lp-section .cs-title {
+    margin-bottom: 1rem;
+  }
+  .lp-section .cs-text {
+    /* 16px - 18px */
+    font-size: clamp(1rem, 1.8vw, 1.125rem);
+    line-height: 1.6em;
+    width: 100%;
+    max-width: 46.875rem;
+    margin: 0 0 1rem 0;
+    color: var(--bodyTextColor);
+  }
+  .lp-section .cs-text:last-of-type {
+    margin-bottom: 0;
+  }
+  .lp-section .cs-picture {
+    width: 100%;
+    max-width: 37.5rem;
+    border-radius: 15px;
+    border: 1px solid #e8e8e8;
+    /* keeps the screenshots from looking like they float on the page */
+    box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: block;
+  }
+  .lp-section .cs-picture img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .lp-section .cs-button-solid {
+    /* stops the button stretching in the flex column */
+    flex: none;
+    /* 24px - 32px */
+    margin-top: clamp(1.5rem, 3vw, 2rem);
+  }
+  /* Sections with no image - copy is centred */
+  .lp-section.lp-centered .cs-container {
+    align-items: center;
+    max-width: 50rem;
+  }
+  .lp-section.lp-centered .cs-content {
+    align-items: center;
+    text-align: center;
+  }
+  .lp-section.lp-centered .cs-title {
+    text-align: center;
+  }
+  /* Hero - has to clear the fixed navigation */
+  #lp-hero {
+    /* 120px - 180px */
+    padding-top: clamp(7.5rem, 14vw, 11.25rem);
+  }
+  #lp-hero .cs-title {
+    /* 39px - 61px, a step up from the standard header size */
+    font-size: clamp(2.4375rem, 4.8vw, 3.8125rem);
+  }
+  /* Case study - image sits above the copy on mobile, left of it on desktop */
+  #lp-case-study .cs-container {
+    flex-direction: column;
+  }
+  /* Last section before the footer - clears the footer-trees wave that overlaps upward */
+  .lp-section.cs-clear-footer {
+    padding-bottom: max(5rem, 14vw);
+  }
+  /* Video testimonials are reused from the homepage (contractor-landing.css) -
+       tint the background so it keeps the alternating rhythm of this page */
+  #video-testimonials.lp-alt {
+    background-color: #f6f7f4;
+  }
+  #video-testimonials.lp-alt .lp-text {
+    /* 16px - 18px */
+    font-size: clamp(1rem, 1.8vw, 1.125rem);
+    line-height: 1.6em;
+    width: 100%;
+    max-width: 46.875rem;
+    /* pulled up under the title, which carries its own bottom margin */
+    margin: clamp(-3rem, -4vw, -2rem) auto clamp(2rem, 4vw, 3rem);
+    color: var(--bodyTextColor);
+    text-align: center;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  .lp-section .cs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* 48px - 80px */
+    gap: clamp(3rem, 6vw, 5rem);
+  }
+  .lp-section .cs-content {
+    /* leaves room for the image beside it */
+    width: 55%;
+  }
+  .lp-section .cs-picture {
+    width: 45%;
+    /* stops flexbox squashing the screenshot */
+    flex: none;
+  }
+  /* Centred sections stay a single centred column at every size */
+  .lp-section.lp-centered .cs-container {
+    flex-direction: column;
+    max-width: 50rem;
+  }
+  .lp-section.lp-centered .cs-content {
+    width: 100%;
+  }
+  /* Case study - image on the left, copy on the right */
+  #lp-case-study .cs-container {
+    flex-direction: row-reverse;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode .lp-section {
+    background-color: var(--dark);
+  }
+  body.dark-mode .lp-section.lp-alt {
+    background-color: var(--medium);
+  }
+  body.dark-mode .lp-section.lp-divided {
+    border-top-color: var(--accent);
+  }
+  body.dark-mode .lp-section .cs-title {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode .lp-section .cs-text {
+    color: var(--bodyTextColorWhite);
+    opacity: 0.8;
+  }
+  body.dark-mode .lp-section .cs-picture {
+    border-color: var(--accent);
+  }
+  body.dark-mode #video-testimonials.lp-alt {
+    background-color: var(--medium);
+  }
+  body.dark-mode #video-testimonials.lp-alt .lp-text {
+    color: var(--bodyTextColorWhite);
+    opacity: 0.8;
+  }
+}

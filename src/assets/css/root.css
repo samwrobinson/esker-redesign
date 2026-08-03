@@ -1471,7 +1471,6 @@
     background-color: #000;
     position: relative;
     z-index: 2;
-    /* Service area links - two columns so the list doesn't stretch the footer */
   }
   #cs-footer-842 .cs-wave {
     width: 100%;
@@ -1562,16 +1561,6 @@
     column-gap: 2rem;
   }
   #cs-footer-842 .cs-ul-1 .cs-li {
-    width: 44%;
-  }
-  #cs-footer-842 .cs-ul-locations {
-    width: 100%;
-    max-width: 21.875rem;
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 1.5rem;
-  }
-  #cs-footer-842 .cs-ul-locations .cs-li {
     width: 44%;
   }
   #cs-footer-842 .cs-li {

@@ -1,0 +1,208 @@
+/*-- -------------------------- -->
+<---        Hub Pages          -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #areas-1401,
+  #offerings-1401 {
+    padding: var(--sectionPadding);
+    position: relative;
+    z-index: 1;
+    /* Intro copy under a group heading - keeps the hub from reading as a bare link list */
+  }
+  #areas-1401 .cs-container,
+  #offerings-1401 .cs-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #areas-1401 .cs-content,
+  #offerings-1401 .cs-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  #areas-1401 .cs-text,
+  #offerings-1401 .cs-text {
+    /* 16px - 20px */
+    font-size: clamp(1rem, 1.95vw, 1.25rem);
+    line-height: 1.5em;
+    width: 100%;
+    max-width: 46.875rem;
+    margin: 0 0 1rem 0;
+    color: var(--bodyTextColor);
+  }
+  #areas-1401 .cs-text:last-of-type,
+  #offerings-1401 .cs-text:last-of-type {
+    margin-bottom: 0;
+  }
+  #areas-1401 .cs-group-wrapper,
+  #offerings-1401 .cs-group-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* 40px - 64px */
+    gap: clamp(2.5rem, 5vw, 4rem);
+  }
+  #areas-1401 .cs-group,
+  #offerings-1401 .cs-group {
+    width: 100%;
+  }
+  #areas-1401 .cs-group-name,
+  #offerings-1401 .cs-group-name {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    font-weight: 900;
+    margin: 0 0 1.25rem 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e8e8e8;
+    color: var(--primary);
+    display: block;
+  }
+  #areas-1401 .cs-group-text,
+  #offerings-1401 .cs-group-text {
+    font-size: 1rem;
+    line-height: 1.5em;
+    width: 100%;
+    max-width: 46.875rem;
+    margin: -0.5rem 0 1.5rem 0;
+    color: var(--bodyTextColor);
+  }
+  #areas-1401 .cs-card-group,
+  #offerings-1401 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+  }
+  #areas-1401 .cs-item,
+  #offerings-1401 .cs-item {
+    list-style: none;
+    grid-column: span 12;
+  }
+  #areas-1401 .cs-link,
+  #offerings-1401 .cs-link {
+    height: 100%;
+    box-sizing: border-box;
+    /* 20px - 32px */
+    padding: clamp(1.25rem, 2.6vw, 2rem);
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 15px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  }
+  #areas-1401 .cs-link:hover,
+  #offerings-1401 .cs-link:hover {
+    border-color: var(--primaryLight);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+    transform: translateY(-0.1875rem);
+  }
+  #areas-1401 .cs-link:hover .cs-arrow,
+  #offerings-1401 .cs-link:hover .cs-arrow {
+    color: var(--primaryLight);
+  }
+  #areas-1401 .cs-h3,
+  #offerings-1401 .cs-h3 {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    font-weight: 900;
+    margin: 0 0 0.5rem 0;
+    color: var(--primary);
+  }
+  #areas-1401 .cs-item-text,
+  #offerings-1401 .cs-item-text {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    margin: 0 0 1rem 0;
+    color: var(--bodyTextColor);
+  }
+  #areas-1401 .cs-arrow,
+  #offerings-1401 .cs-arrow {
+    font-size: 0.875rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    /* pushes the arrow to the bottom of the card so they all line up */
+    margin-top: auto;
+    color: var(--primary);
+    transition: color 0.3s;
+  }
+  #areas-1401 .cs-button-solid,
+  #offerings-1401 .cs-button-solid {
+    /* stops the button stretching in the flex container */
+    flex: none;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #areas-1401 .cs-container,
+  #offerings-1401 .cs-container {
+    max-width: 80rem;
+  }
+  #areas-1401 .cs-item,
+  #offerings-1401 .cs-item {
+    grid-column: span 6;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #areas-1401 .cs-item,
+  #offerings-1401 .cs-item {
+    grid-column: span 4;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #areas-1401 .cs-title,
+  body.dark-mode #offerings-1401 .cs-title,
+  body.dark-mode #areas-1401 .cs-text,
+  body.dark-mode #offerings-1401 .cs-text,
+  body.dark-mode #areas-1401 .cs-group-name,
+  body.dark-mode #offerings-1401 .cs-group-name,
+  body.dark-mode #areas-1401 .cs-group-text,
+  body.dark-mode #offerings-1401 .cs-group-text,
+  body.dark-mode #areas-1401 .cs-h3,
+  body.dark-mode #offerings-1401 .cs-h3 {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #areas-1401 .cs-text,
+  body.dark-mode #offerings-1401 .cs-text,
+  body.dark-mode #areas-1401 .cs-group-text,
+  body.dark-mode #offerings-1401 .cs-group-text,
+  body.dark-mode #areas-1401 .cs-item-text,
+  body.dark-mode #offerings-1401 .cs-item-text {
+    color: var(--bodyTextColorWhite);
+    opacity: 0.8;
+  }
+  body.dark-mode #areas-1401 .cs-group-name,
+  body.dark-mode #offerings-1401 .cs-group-name {
+    border-bottom-color: var(--accent);
+  }
+  body.dark-mode #areas-1401 .cs-link,
+  body.dark-mode #offerings-1401 .cs-link {
+    background-color: var(--medium);
+    border-color: var(--accent);
+  }
+  body.dark-mode #areas-1401 .cs-link:hover,
+  body.dark-mode #offerings-1401 .cs-link:hover {
+    border-color: var(--primaryLight);
+  }
+  body.dark-mode #areas-1401 .cs-arrow,
+  body.dark-mode #offerings-1401 .cs-arrow {
+    color: var(--primaryLight);
+  }
+}

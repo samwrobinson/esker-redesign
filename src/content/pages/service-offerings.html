@@ -1,0 +1,191 @@
+---
+title: 'Service Offerings | Web Design, SEO & Google Business Profile'
+description: 'Everything Esker Designs does for small businesses: custom-coded web design, local SEO, and Google Business Profile management. Find the service that fits your business.'
+preloadImg: '/assets/images/logo.png'
+permalink: 'service-offerings/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="ad4f603c-adc2-4df0-8440-601f99120b46"></script>
+    <link rel="stylesheet" href="/assets/css/hub-page.css">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://eskerdesigns.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Service Offerings",
+                        "item": "https://eskerdesigns.com/service-offerings/"
+                    }
+                ]
+            },
+            {
+                "@type": "CollectionPage",
+                "@id": "https://eskerdesigns.com/service-offerings/#page",
+                "name": "Service Offerings",
+                "description": "Web design, local SEO, and Google Business Profile management for small businesses across Vermont and New Hampshire.",
+                "url": "https://eskerdesigns.com/service-offerings/",
+                "mainEntity": {
+                    "@type": "ItemList",
+                    "itemListElement": [
+                        { "@type": "ListItem", "position": 1, "name": "Web Design", "url": "https://eskerdesigns.com/web-design-service/" },
+                        { "@type": "ListItem", "position": 2, "name": "Small Business SEO Services", "url": "https://eskerdesigns.com/small-business-seo-services/" },
+                        { "@type": "ListItem", "position": 3, "name": "SEO Company for Contractors", "url": "https://eskerdesigns.com/service-offerings/seo-company-for-contractors/" },
+                        { "@type": "ListItem", "position": 4, "name": "Google Business Profile Management", "url": "https://eskerdesigns.com/google-business-profile-management/" }
+                    ]
+                }
+            }
+        ]
+    }
+    </script>
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+    <!--                    LANDING                   -->
+    <!-- ============================================ -->
+
+    <section id="int-hero">
+        <h1 id="home-h">Service Offerings</h1>
+        <svg class="cs-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,192L120,213.3C240,235,480,277,720,277.3C960,277,1200,235,1320,213.3L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+        <svg class="cs-wave cs-dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#061521" fill-opacity="1" d="M0,192L120,213.3C240,235,480,277,720,277.3C960,277,1200,235,1320,213.3L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+    </section>
+
+<!-- ============================================ -->
+<!--              Service Offerings               -->
+<!-- ============================================ -->
+
+<!--
+    HUB PAGE — how to add a new bottom-of-funnel landing page:
+    1. Build the landing page under src/content/pages/ with its own permalink.
+    2. Copy one <li class="cs-item"> block below into the matching service group.
+    3. Add a matching entry to the ItemList schema in the head block above.
+    4. Link back to this hub AND to the parent service page from the new landing page.
+-->
+
+<section id="offerings-1401">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">What We Do</span>
+            <h2 class="cs-title">Everything We Do to Get Small Businesses Found and Hired</h2>
+            <p class="cs-text">
+                Three services, one goal: more of the right people finding your business and picking up the phone. Most clients start with a website and add SEO once it's live, but you can start anywhere.
+            </p>
+            <p class="cs-text">
+                Below is every service we offer, plus the specific industries and situations we've built dedicated pages for. Not sure which one you need? <a href="/contact/">Tell us what's going on</a> and we'll point you at the right one — even if it isn't us.
+            </p>
+        </div>
+
+        <div class="cs-group-wrapper">
+
+            <!-- ============ WEB DESIGN ============ -->
+            <div class="cs-group">
+                <span class="cs-group-name">Web Design</span>
+                <p class="cs-group-text">
+                    Hand-coded websites with no page builder and no WordPress bloat. They load fast, they rank, and you own them. $0 down and $175/month, or buy it outright.
+                </p>
+                <ul class="cs-card-group">
+                    <li class="cs-item">
+                        <a href="/web-design-service/" class="cs-link">
+                            <h3 class="cs-h3">Web Design Services</h3>
+                            <p class="cs-item-text">
+                                Our core web design service — custom-coded sites built for speed, search, and turning visitors into customers.
+                            </p>
+                            <span class="cs-arrow">See Web Design &rarr;</span>
+                        </a>
+                    </li>
+                    <li class="cs-item">
+                        <a href="/pricing/" class="cs-link">
+                            <h3 class="cs-h3">Pricing</h3>
+                            <p class="cs-item-text">
+                                What a website actually costs with us, laid out plainly — monthly and one-time options.
+                            </p>
+                            <span class="cs-arrow">See Pricing &rarr;</span>
+                        </a>
+                    </li>
+                    <!-- Add web design bottom-of-funnel landing pages here -->
+                </ul>
+            </div>
+
+            <!-- ============ SEO ============ -->
+            <div class="cs-group">
+                <span class="cs-group-name">SEO</span>
+                <p class="cs-group-text">
+                    Local SEO that puts you in front of people already searching for what you do. No lock-in contracts, no vanity reports — we track calls and form fills.
+                </p>
+                <ul class="cs-card-group">
+                    <li class="cs-item">
+                        <a href="/small-business-seo-services/" class="cs-link">
+                            <h3 class="cs-h3">Small Business SEO Services</h3>
+                            <p class="cs-item-text">
+                                Our core local SEO service for small businesses across Vermont and New Hampshire.
+                            </p>
+                            <span class="cs-arrow">See SEO Services &rarr;</span>
+                        </a>
+                    </li>
+                    <li class="cs-item">
+                        <a href="/service-offerings/seo-company-for-contractors/" class="cs-link">
+                            <h3 class="cs-h3">SEO Company for Contractors</h3>
+                            <p class="cs-item-text">
+                                Full service SEO for contractors who want more booked jobs without paying for ads.
+                            </p>
+                            <span class="cs-arrow">See Contractor SEO &rarr;</span>
+                        </a>
+                    </li>
+                    <!-- Add more SEO bottom-of-funnel landing pages here -->
+                </ul>
+            </div>
+
+            <!-- ============ GOOGLE BUSINESS PROFILE ============ -->
+            <div class="cs-group">
+                <span class="cs-group-name">Google Business Profile</span>
+                <p class="cs-group-text">
+                    Your Google Business Profile is the first thing most local customers see. We optimize it, post to it weekly, and build a steady flow of real reviews.
+                </p>
+                <ul class="cs-card-group">
+                    <li class="cs-item">
+                        <a href="/google-business-profile-management/" class="cs-link">
+                            <h3 class="cs-h3">Google Business Profile Management</h3>
+                            <p class="cs-item-text">
+                                Full profile optimization, weekly posts, and review management so you show up in the map pack.
+                            </p>
+                            <span class="cs-arrow">See GBP Management &rarr;</span>
+                        </a>
+                    </li>
+                    <li class="cs-item">
+                        <a href="/reviews/" class="cs-link">
+                            <h3 class="cs-h3">Review Generation</h3>
+                            <p class="cs-item-text">
+                                How we help you turn happy customers into a steady stream of 5-star Google reviews.
+                            </p>
+                            <span class="cs-arrow">See Reviews &rarr;</span>
+                        </a>
+                    </li>
+                    <!-- Add Google Business Profile bottom-of-funnel landing pages here -->
+                </ul>
+            </div>
+
+        </div>
+
+        <a href="/contact/" data-umami-event="Service Offerings CTA" class="cs-button-solid">Get a Quote</a>
+    </div>
+</section>
+
+{% include 'components/cta.html' %}
+
+{% endblock %}
