@@ -25,7 +25,8 @@ function detectColorScheme() {
 detectColorScheme();
 
 // add event listener to the dark mode button toggle
-document.getElementById('dark-mode-toggle').addEventListener('click', () => {
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+if (darkModeToggle) darkModeToggle.addEventListener('click', () => {
     // on click, check localStorage for the dark mode value, use to apply the opposite of what's saved
     localStorage.getItem('theme') === 'light' ? enableDarkMode() : disableDarkMode();
 });
@@ -47,6 +48,7 @@ const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
 
         constructor() {
             const $filters = document.querySelectorAll(this.filtersSelector)
+            if (!$filters.length) return
             this.$activeFilter = $filters[0]
             this.$images = document.querySelectorAll(this.FAQselector)
 

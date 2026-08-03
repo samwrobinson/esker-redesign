@@ -1,0 +1,256 @@
+/*-- -------------------------- -->
+<---        Hub Pages          -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #areas-1401,
+  #offerings-1401 {
+    padding: var(--sectionPadding);
+    position: relative;
+    z-index: 1;
+    /* Intro copy under a group heading - keeps the hub from reading as a bare link list */
+    /* Simple list rather than cards - keeps rows compact so a group can
+           hold many spoke pages without the hub turning into a wall of boxes */
+  }
+  #areas-1401 .cs-container,
+  #offerings-1401 .cs-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #areas-1401 .cs-content,
+  #offerings-1401 .cs-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  #areas-1401 .cs-text,
+  #offerings-1401 .cs-text {
+    /* 16px - 20px */
+    font-size: clamp(1rem, 1.95vw, 1.25rem);
+    line-height: 1.5em;
+    width: 100%;
+    max-width: 46.875rem;
+    margin: 0 0 1rem 0;
+    color: var(--bodyTextColor);
+    /* inline links in the intro copy - the default blue underline
+               looks unstyled against the rest of the page */
+  }
+  #areas-1401 .cs-text:last-of-type,
+  #offerings-1401 .cs-text:last-of-type {
+    margin-bottom: 0;
+  }
+  #areas-1401 .cs-text a,
+  #offerings-1401 .cs-text a {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+    transition: color 0.3s;
+  }
+  #areas-1401 .cs-text a:hover,
+  #offerings-1401 .cs-text a:hover {
+    color: var(--primaryLight);
+  }
+  #areas-1401 .cs-group-wrapper,
+  #offerings-1401 .cs-group-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* 40px - 64px */
+    gap: clamp(2.5rem, 5vw, 4rem);
+  }
+  #areas-1401 .cs-group,
+  #offerings-1401 .cs-group {
+    width: 100%;
+  }
+  #areas-1401 .cs-group-name,
+  #offerings-1401 .cs-group-name {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    font-weight: 900;
+    margin: 0 0 1.25rem 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e8e8e8;
+    color: var(--primary);
+    display: block;
+  }
+  #areas-1401 .cs-group-text,
+  #offerings-1401 .cs-group-text {
+    font-size: 1rem;
+    line-height: 1.5em;
+    width: 100%;
+    max-width: 46.875rem;
+    margin: -0.5rem 0 1.5rem 0;
+    color: var(--bodyTextColor);
+  }
+  #areas-1401 .cs-card-group,
+  #offerings-1401 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    border-top: 1px solid #e8e8e8;
+  }
+  #areas-1401 .cs-item,
+  #offerings-1401 .cs-item {
+    list-style: none;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  #areas-1401 .cs-link,
+  #offerings-1401 .cs-link {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.875rem 0.25rem;
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.75rem;
+    transition: padding-left 0.2s, background-color 0.2s;
+  }
+  #areas-1401 .cs-link:hover,
+  #offerings-1401 .cs-link:hover {
+    background-color: rgba(150, 191, 48, 0.07);
+    padding-left: 0.75rem;
+  }
+  #areas-1401 .cs-link:hover .cs-h3,
+  #offerings-1401 .cs-link:hover .cs-h3 {
+    color: var(--primaryLight);
+  }
+  #areas-1401 .cs-link:hover .cs-arrow,
+  #offerings-1401 .cs-link:hover .cs-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  #areas-1401 .cs-h3,
+  #offerings-1401 .cs-h3 {
+    font-size: 1.0625rem;
+    line-height: 1.4em;
+    font-weight: 700;
+    margin: 0;
+    flex: none;
+    color: var(--primary);
+    transition: color 0.2s;
+  }
+  #areas-1401 .cs-item-text,
+  #offerings-1401 .cs-item-text {
+    /* 14px - 15px */
+    font-size: clamp(0.875rem, 1.4vw, 0.9375rem);
+    line-height: 1.4em;
+    margin: 0;
+    /* takes the remaining row width, wraps under the title on mobile */
+    flex: 1 1 15rem;
+    color: var(--bodyTextColor);
+    opacity: 0.85;
+  }
+  #areas-1401 .cs-arrow,
+  #offerings-1401 .cs-arrow {
+    font-size: 0.875rem;
+    line-height: 1.4em;
+    font-weight: 700;
+    flex: none;
+    margin-left: auto;
+    color: var(--primaryLight);
+    /* slides in on hover so the row stays quiet at rest */
+    opacity: 0;
+    transform: translateX(-0.375rem);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  #areas-1401 .cs-button-solid,
+  #offerings-1401 .cs-button-solid {
+    /* stops the button stretching in the flex container */
+    flex: none;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #areas-1401 .cs-container,
+  #offerings-1401 .cs-container {
+    max-width: 80rem;
+  }
+  #areas-1401 .cs-link,
+  #offerings-1401 .cs-link {
+    /* no wrap on wider screens - title, description and arrow sit on one row */
+    flex-wrap: nowrap;
+    gap: 1rem;
+    padding: 0.875rem 0.5rem;
+  }
+  #areas-1401 .cs-h3,
+  #offerings-1401 .cs-h3 {
+    /* fixed column so every description starts at the same x */
+    width: 16.25rem;
+    flex: none;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #areas-1401 {
+    /* the locations list is long and its rows are short - run it in two columns */
+  }
+  #areas-1401 .cs-card-group {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+  }
+  #areas-1401 .cs-h3 {
+    width: 10.625rem;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #areas-1401 .cs-title,
+  body.dark-mode #offerings-1401 .cs-title,
+  body.dark-mode #areas-1401 .cs-text,
+  body.dark-mode #offerings-1401 .cs-text,
+  body.dark-mode #areas-1401 .cs-group-name,
+  body.dark-mode #offerings-1401 .cs-group-name,
+  body.dark-mode #areas-1401 .cs-group-text,
+  body.dark-mode #offerings-1401 .cs-group-text,
+  body.dark-mode #areas-1401 .cs-h3,
+  body.dark-mode #offerings-1401 .cs-h3 {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #areas-1401 .cs-text,
+  body.dark-mode #offerings-1401 .cs-text,
+  body.dark-mode #areas-1401 .cs-group-text,
+  body.dark-mode #offerings-1401 .cs-group-text,
+  body.dark-mode #areas-1401 .cs-item-text,
+  body.dark-mode #offerings-1401 .cs-item-text {
+    color: var(--bodyTextColorWhite);
+    opacity: 0.8;
+  }
+  body.dark-mode #areas-1401 .cs-group-name,
+  body.dark-mode #offerings-1401 .cs-group-name {
+    border-bottom-color: var(--accent);
+  }
+  body.dark-mode #areas-1401 .cs-card-group,
+  body.dark-mode #offerings-1401 .cs-card-group {
+    border-top-color: var(--accent);
+  }
+  body.dark-mode #areas-1401 .cs-item,
+  body.dark-mode #offerings-1401 .cs-item {
+    border-bottom-color: var(--accent);
+  }
+  body.dark-mode #areas-1401 .cs-link:hover,
+  body.dark-mode #offerings-1401 .cs-link:hover {
+    background-color: rgba(150, 191, 48, 0.12);
+  }
+  body.dark-mode #areas-1401 .cs-text a,
+  body.dark-mode #offerings-1401 .cs-text a {
+    color: var(--primaryLight);
+  }
+  body.dark-mode #areas-1401 .cs-arrow,
+  body.dark-mode #offerings-1401 .cs-arrow {
+    color: var(--primaryLight);
+  }
+}

@@ -3,46 +3,6 @@
 <--- -------------------------- -*/
 /* CodeStitch Root and Helpers */
 @media only screen and (min-width: 0rem) {
-  /* poppins-regular - latin */
-  @font-face {
-    font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../fonts/poppins-v22-latin-regular.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* poppins-700 - latin */
-  @font-face {
-    font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 700;
-    src: url('../fonts/poppins-v22-latin-700.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* inter-700 - latin */
-  @font-face {
-    font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    src: url('../fonts/inter-v18-latin-700.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* inter-900 - latin */
-  @font-face {
-    font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 900;
-    src: url('../fonts/inter-v18-latin-900.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
   /* noto-sans-mono-regular - latin */
   @font-face {
     font-display: swap;
@@ -1471,7 +1431,6 @@
     background-color: #000;
     position: relative;
     z-index: 2;
-    /* Service area links - two columns so the list doesn't stretch the footer */
   }
   #cs-footer-842 .cs-wave {
     width: 100%;
@@ -1562,16 +1521,6 @@
     column-gap: 2rem;
   }
   #cs-footer-842 .cs-ul-1 .cs-li {
-    width: 44%;
-  }
-  #cs-footer-842 .cs-ul-locations {
-    width: 100%;
-    max-width: 21.875rem;
-    flex-direction: row;
-    flex-wrap: wrap;
-    column-gap: 1.5rem;
-  }
-  #cs-footer-842 .cs-ul-locations .cs-li {
     width: 44%;
   }
   #cs-footer-842 .cs-li {

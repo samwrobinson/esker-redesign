@@ -27,7 +27,7 @@ eleventyExcludeFromCollections: true
 </script>
 <noscript>
     <img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=3889075514559305&ev=PageView&noscript=1"/>
+        src="https://www.facebook.com/tr?id=3889075514559305&ev=PageView&noscript=1" alt="" />
 </noscript>
 <!-- End Facebook Pixel Code -->
 
@@ -180,7 +180,15 @@ eleventyExcludeFromCollections: true
                 <div class="cs-proof-grid cs-beforeafter">
                     <figure class="cs-ba-item">
                         <span class="cs-ba-label">Before</span>
-                        <img class="cs-proof-card" src="/assets/images/proof/proof-reviews-before.png" alt="Google listing for a client we work with showing 15 reviews before working with Esker Designs" loading="lazy" decoding="async">
+                        <picture>
+                            <!--Mobile Image-->
+                            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                            <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                            <!--Tablet and above Image-->
+                            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 940 }) | avif %}" type="image/avif">
+                            <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 940 }) | webp %}" type="image/webp">
+                            <img class="cs-proof-card" src="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 940 }) | webp %}" alt="Google listing for a client we work with showing 15 reviews before working with Esker Designs" loading="lazy" decoding="async">
+                        </picture>
                     </figure>
                     <figure class="cs-ba-item">
                         <span class="cs-ba-label cs-ba-after">After</span>

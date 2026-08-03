@@ -4,13 +4,13 @@
 
 <footer id="cs-footer-842">
     <!--Wave grpahic - On the section above the footer, add padding-bottom: 14vw to the section container ID so it pushes down enough for the wave to not overlap its content and the vw unit will make the padding value grow with the screen width to account for the wave getting taller as it gets wider. Change the path fill color to whatever background color the footer is so it matches-->
-    <img class="cs-wave" src="{% getUrl '/assets/images/footer-trees.png' | webp %}" alt="Forest" loading="lazy">
+    <img class="cs-wave" src="{% getUrl '/assets/images/footer-trees.png' | webp %}" alt="" loading="lazy">
     
     <div class="cs-container">
         <!-- Logo Group -->
         <div class="cs-logo-group">
             <a aria-label="go back to home" class="cs-logo" href="">
-                <img class="cs-logo-img" aria-hidden="true" loading="lazy" decoding="async" src="{% getUrl "/assets/images/logo-white.png" | resize({width: 100, height: 100}) | webp %}" alt="logo" alt="logo" width="240" height="32">
+                <img class="cs-logo-img" aria-hidden="true" loading="lazy" decoding="async" src="{% getUrl "/assets/images/logo-white.png" | resize({width: 100, height: 100}) | webp %}" alt="" width="240" height="32">
             </a>
         </div>
         <!-- Links -->
@@ -21,25 +21,16 @@
                     <a class="cs-link" href="/">Home</a>
                 </li>
                 <li class="cs-li">
-                    <a class="cs-link" href="/web-design-service/">Service</a>
+                    <a class="cs-link" href="/about/">About</a>
                 </li>
                 <li class="cs-li">
                     <a class="cs-link" href="/pricing/">Pricing</a>
                 </li>
                 <li class="cs-li">
-                    <a class="cs-link" href="/about/">About</a>
-                </li>
-                <li class="cs-li">
                     <a class="cs-link" href="/blog/">Blog</a>
                 </li>
                 <li class="cs-li">
-                    <a class="cs-link" href="/contact/">Contact</a>
-                </li>
-                <li class="cs-li">
-                    <a class="cs-link" href="/small-business-seo-services/">SEO Services</a>
-                </li>
-                <li class="cs-li">
-                    <a class="cs-link" href="/google-business-profile-management/">Google Business Profile</a>
+                    <a class="cs-link" href="/service-areas/">Service Areas</a>
                 </li>
                 <li class="cs-li">
                     <a class="cs-link" href="/tools/copy-generator/">Free Copy Generator</a>
@@ -47,47 +38,26 @@
                 <li class="cs-li">
                     <a class="cs-link" href="/faq/">FAQ</a>
                 </li>
+                <li class="cs-li">
+                    <a class="cs-link" href="/contact/">Contact</a>
+                </li>
             </ul>
         </div>
-        <!-- Service Areas -->
+        <!-- Service Offerings - hub page at /service-offerings/ holds every bottom-of-funnel landing page, so this column never has to grow -->
         <div class="cs-ul-wrapper">
-            <span class="cs-header">Areas We Serve</span>
-            <ul class="cs-ul cs-ul-locations">
+            <span class="cs-header">Service Offerings</span>
+            <ul class="cs-ul">
                 <li class="cs-li">
-                    <a class="cs-link" href="/burlington/small-business-web-design/">Burlington, VT</a>
+                    <a class="cs-link" href="/service-offerings/">All Service Offerings</a>
                 </li>
                 <li class="cs-li">
-                    <a class="cs-link" href="/montpelier/small-business-web-design/">Montpelier, VT</a>
+                    <a class="cs-link" href="/web-design-service/">Web Design</a>
                 </li>
                 <li class="cs-li">
-                    <a class="cs-link" href="/waterbury/small-business-web-design/">Waterbury, VT</a>
+                    <a class="cs-link" href="/small-business-seo-services/">SEO Services</a>
                 </li>
                 <li class="cs-li">
-                    <a class="cs-link" href="/essex/small-business-web-design/">Essex, VT</a>
-                </li>
-                <li class="cs-li">
-                    <a class="cs-link" href="/colchester/small-business-web-design/">Colchester, VT</a>
-                </li>
-                <li class="cs-li">
-                    <a class="cs-link" href="/stowe/small-business-web-design/">Stowe, VT</a>
-                </li>
-                <li class="cs-li">
-                    <a class="cs-link" href="/winooski/small-business-web-design/">Winooski, VT</a>
-                </li>
-                <li class="cs-li">
-                    <a class="cs-link" href="/williston/small-business-web-design/">Williston, VT</a>
-                </li>
-                <li class="cs-li">
-                    <a class="cs-link" href="/richmond/small-business-web-design/">Richmond, VT</a>
-                </li>
-                <li class="cs-li">
-                    <a class="cs-link" href="/st-johnsbury/small-business-web-design/">St. Johnsbury, VT</a>
-                </li>
-                <li class="cs-li">
-                    <a class="cs-link" href="/manchester/small-business-web-design/">Manchester, NH</a>
-                </li>
-                <li class="cs-li">
-                    <a class="cs-link" href="/hooksett/small-business-web-design/">Hooksett, NH</a>
+                    <a class="cs-link" href="/google-business-profile-management/">Google Business Profile</a>
                 </li>
             </ul>
         </div>
@@ -98,26 +68,26 @@
                 <li class="cs-li">
                     <!--Make this link go to the google page-->
                     <a class="cs-link" href="" target="_blank">
-                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/clock-grey.svg" alt="clock icon" width="20" height="20">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/clock-grey.svg" alt="" width="20" height="20">
                         M-F 8am – 5:00pm
                     </a>
                 </li>
                 <li class="cs-li">
                     <a class="cs-link" href="tel:828-989-1290">
-                        <img class="cs-contact-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/phone-grey.svg" alt="phone icon" width="20" height="20">
+                        <img class="cs-contact-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/phone-grey.svg" alt="" width="20" height="20">
                         828-989-1290
                     </a>
                 </li>
                 <li class="cs-li">
                     <a class="cs-link" href="mailto:sam@eskerdesigns.com">
-                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/messages-grey.svg" alt="email icon" width="20" height="20">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/messages-grey.svg" alt="" width="20" height="20">
                         sam@eskerdesigns.com
                     </a>
                 </li>
                 <li class="cs-li">
                     <!--Make this link go to the google page-->
                     <a class="cs-link" href="https://g.co/kgs/NYYvznn" target="_blank">
-                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/pin-grey.svg" alt="pin icon" width="20" height="20">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/pin-grey.svg" alt="" width="20" height="20">
                         70 Lenord Lane, Warren VT
                     </a>
                 </li>

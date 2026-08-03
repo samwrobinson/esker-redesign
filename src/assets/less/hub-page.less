@@ -1,0 +1,258 @@
+/*-- -------------------------- -->
+<---        Hub Pages          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #areas-1401, #offerings-1401 {
+        padding: var(--sectionPadding);
+        position: relative;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at tablet */
+            max-width: (550/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .cs-text {
+            /* 16px - 20px */
+            font-size: clamp(1rem, 1.95vw, 1.25rem);
+            line-height: 1.5em;
+            width: 100%;
+            max-width: (750/16rem);
+            margin: 0 0 (16/16rem) 0;
+            color: var(--bodyTextColor);
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            /* inline links in the intro copy - the default blue underline
+               looks unstyled against the rest of the page */
+            a {
+                color: var(--primary);
+                font-weight: 700;
+                text-decoration: underline;
+                text-underline-offset: 0.2em;
+                text-decoration-thickness: 1px;
+                transition: color 0.3s;
+
+                &:hover {
+                    color: var(--primaryLight);
+                }
+            }
+        }
+
+        .cs-group-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* 40px - 64px */
+            gap: clamp(2.5rem, 5vw, 4rem);
+        }
+
+        .cs-group {
+            width: 100%;
+        }
+
+        .cs-group-name {
+            font-size: (20/16rem);
+            line-height: 1.2em;
+            font-weight: 900;
+            margin: 0 0 (20/16rem) 0;
+            padding-bottom: (12/16rem);
+            border-bottom: 1px solid #e8e8e8;
+            color: var(--primary);
+            display: block;
+        }
+
+        /* Intro copy under a group heading - keeps the hub from reading as a bare link list */
+        .cs-group-text {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            width: 100%;
+            max-width: (750/16rem);
+            margin: (-8/16rem) 0 (24/16rem) 0;
+            color: var(--bodyTextColor);
+        }
+
+        /* Simple list rather than cards - keeps rows compact so a group can
+           hold many spoke pages without the hub turning into a wall of boxes */
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            border-top: 1px solid #e8e8e8;
+        }
+
+        .cs-item {
+            list-style: none;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .cs-link {
+            width: 100%;
+            box-sizing: border-box;
+            padding: (14/16rem) (4/16rem);
+            text-decoration: none;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: (4/16rem) (12/16rem);
+            transition: padding-left 0.2s, background-color 0.2s;
+
+            &:hover {
+                background-color: rgba(150, 191, 48, 0.07);
+                padding-left: (12/16rem);
+
+                .cs-h3 {
+                    color: var(--primaryLight);
+                }
+
+                .cs-arrow {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+        }
+
+        .cs-h3 {
+            font-size: (17/16rem);
+            line-height: 1.4em;
+            font-weight: 700;
+            margin: 0;
+            flex: none;
+            color: var(--primary);
+            transition: color 0.2s;
+        }
+
+        .cs-item-text {
+            /* 14px - 15px */
+            font-size: clamp(0.875rem, 1.4vw, 0.9375rem);
+            line-height: 1.4em;
+            margin: 0;
+            /* takes the remaining row width, wraps under the title on mobile */
+            flex: 1 1 (240/16rem);
+            color: var(--bodyTextColor);
+            opacity: 0.85;
+        }
+
+        .cs-arrow {
+            font-size: (14/16rem);
+            line-height: 1.4em;
+            font-weight: 700;
+            flex: none;
+            margin-left: auto;
+            color: var(--primaryLight);
+            /* slides in on hover so the row stays quiet at rest */
+            opacity: 0;
+            transform: translateX(-0.375rem);
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .cs-button-solid {
+            /* stops the button stretching in the flex container */
+            flex: none;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #areas-1401, #offerings-1401 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-link {
+            /* no wrap on wider screens - title, description and arrow sit on one row */
+            flex-wrap: nowrap;
+            gap: (16/16rem);
+            padding: (14/16rem) (8/16rem);
+        }
+
+        .cs-h3 {
+            /* fixed column so every description starts at the same x */
+            width: (260/16rem);
+            flex: none;
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #areas-1401 {
+        /* the locations list is long and its rows are short - run it in two columns */
+        .cs-card-group {
+            grid-template-columns: 1fr 1fr;
+            column-gap: (48/16rem);
+        }
+
+        .cs-h3 {
+            width: (170/16rem);
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #areas-1401, #offerings-1401 {
+            .cs-title,
+            .cs-text,
+            .cs-group-name,
+            .cs-group-text,
+            .cs-h3 {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-text,
+            .cs-group-text,
+            .cs-item-text {
+                color: var(--bodyTextColorWhite);
+                opacity: 0.8;
+            }
+
+            .cs-group-name {
+                border-bottom-color: var(--accent);
+            }
+
+            .cs-card-group {
+                border-top-color: var(--accent);
+            }
+
+            .cs-item {
+                border-bottom-color: var(--accent);
+            }
+
+            .cs-link:hover {
+                background-color: rgba(150, 191, 48, 0.12);
+            }
+
+            .cs-text a {
+                color: var(--primaryLight);
+            }
+
+            .cs-arrow {
+                color: var(--primaryLight);
+            }
+        }
+    }
+}

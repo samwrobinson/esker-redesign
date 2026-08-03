@@ -23,7 +23,8 @@ eleventyNavigation:
 </noscript>
 
 <!-- Preload Critical Images -->
-<link rel="preload" as="image" href="/assets/images/hero-mockup-v3.webp" fetchpriority="high">
+<link rel="preload" as="image" media="(max-width: 600px)" href="{% getUrl '/assets/images/hero-mockup-v3.webp' | resize({width: 450, height: 281}) | webp %}" fetchpriority="high">
+<link rel="preload" as="image" media="(min-width: 601px)" href="{% getUrl '/assets/images/hero-mockup-v3.webp' | resize({width: 1656, height: 968}) | webp %}" fetchpriority="high">
 <link rel="preload" as="image" href="{% getUrl "/assets/images/dark-hero-v3.png" | resize({width: 1177, height: 366}) | webp %}" fetchpriority="high">
 
 <script defer src="https://cloud.umami.is/script.js" data-website-id="ad4f603c-adc2-4df0-8440-601f99120b46"></script>
@@ -83,6 +84,22 @@ eleventyNavigation:
             {% endif %}
         }
     </script>
+<script>
+    (function () {
+        var toggle = document.querySelector('#pricing-1262 .cs-toggle, .cs-toggle-group .cs-toggle');
+        var wrapper = document.querySelector('.cs-ul-wrapper');
+        if (!toggle || !wrapper) return;
+        function flip() {
+            var on = wrapper.classList.toggle('cs-active');
+            toggle.setAttribute('aria-pressed', on ? 'true' : 'false');
+        }
+        toggle.addEventListener('click', flip);
+        toggle.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
+        });
+    })();
+</script>
+
 {% endblock %}
 
 {% block body %}
@@ -110,7 +127,7 @@ eleventyNavigation:
             <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/hero-mockup-v3.webp' | resize({width: 450, height: 281}) | webp %}">
             <!--Tablet-->
             <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/hero-mockup-v3.webp' | resize({width: 1656, height: 968}) | webp %}">
-            <img aria-hidden="true" decoding="async" src="{% getUrl '/assets/images/hero-mockup-v3.webp' | resize({width: 1656, height: 968}) | webp %}" alt="therapy" width="900" height="562">
+            <img aria-hidden="true" decoding="async" src="{% getUrl '/assets/images/hero-mockup-v3.webp' | resize({width: 1656, height: 968}) | webp %}" alt="Preview of a custom-coded contractor website built by Esker Designs" width="900" height="562">
             </picture>
     </div>
     <!--Change the svg path fill color to whatever color the section below is so you can match it and create the illusion it is all one piece-->
@@ -128,7 +145,7 @@ eleventyNavigation:
             </clipPath>
         </defs>
     </svg>
-    <img alt="treeline" decoding="async" height="370" src="{% getUrl "/assets/images/dark-hero-v3.png" | resize({width: 1177, height: 366}) | webp %}" width="1199" aria-hidden="true" id="trees" class="cs-wave cs-dark desktop" loading="lazy">
+    <img alt="" decoding="async" height="370" src="{% getUrl "/assets/images/dark-hero-v3.png" | resize({width: 1177, height: 366}) | webp %}" width="1199" aria-hidden="true" id="trees" class="cs-wave cs-dark desktop" loading="lazy">
     
 </section>
 
@@ -152,7 +169,7 @@ eleventyNavigation:
                     </button>
                 </div>
                 <div class="cs-info">
-                    <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="5 stars" width="120" height="24" aria-hidden="true">
+                    <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
                     <p class="cs-quote">
                         "We started working with Sam and within a week, we sold a masonry job big enough to pay him for a couple years! I would definitely work with him again."
                     </p>
@@ -173,7 +190,7 @@ eleventyNavigation:
                     </button>
                 </div>
                 <div class="cs-info">
-                    <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="5 stars" width="120" height="24" aria-hidden="true">
+                    <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
                     <p class="cs-quote">
                         "Working with Sam was super easy from start to finish. When he showed me the website I was blown away. I've definitely noticed more leads since launching the site and a higher closing rate because my clients can trust me right away. I had to have Sam set up a spreadsheet to track all my inquiries since I was getting too many leads."
                     </p>
@@ -193,7 +210,7 @@ eleventyNavigation:
                     </button>
                 </div>
                 <div class="cs-info">
-                    <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="5 stars" width="120" height="24" aria-hidden="true">
+                    <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
                     <p class="cs-quote">
                         "I've worked with Sam for the better part of two years and I have nothing but good things to say."
                     </p>
@@ -383,7 +400,7 @@ eleventyNavigation:
         <ul class="cs-card-group">
             <li class="cs-item">
                 <picture class="cs-icon-wrapper">
-                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/design.svg" alt="hair cut" width="40" height="40">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/design.svg" alt="" width="40" height="40">
                 </picture>
                 <h3 class="cs-h3">Custom Website Development</h3>
                 <p class="cs-item-text">
@@ -394,12 +411,12 @@ eleventyNavigation:
                 <a href="/web-design-service/" class="cs-link">Read More</a>
                 <!--Background Image-->
                 <picture class="cs-background">
-                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/hero-dark-v2.webp" | resize({width: 1177, height: 366}) | webp %}" alt="hair cut" width="480" height="425">
+                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/hero-dark-v2.webp" | resize({width: 1177, height: 366}) | webp %}" alt="" width="480" height="425">
                 </picture>
             </li>
             <li class="cs-item">
                 <picture class="cs-icon-wrapper">
-                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/seo.svg" alt="hair cut" width="40" height="40">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/seo.svg" alt="" width="40" height="40">
                 </picture>
                 <h3 class="cs-h3">Search Engine Optimization (SEO)</h3>
                 <p class="cs-item-text">
@@ -409,12 +426,12 @@ eleventyNavigation:
                 <a href="/web-design-service/" class="cs-link">Read More</a>
                 <!--Background Image-->
                 <picture class="cs-background">
-                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/hero-dark-v2.webp" | resize({width: 1177, height: 366}) | webp %}" alt="hair cut" width="480" height="425">
+                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/hero-dark-v2.webp" | resize({width: 1177, height: 366}) | webp %}" alt="" width="480" height="425">
                 </picture>
             </li>
             <li class="cs-item">
                 <picture class="cs-icon-wrapper">
-                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/mobile.svg" alt="hair cut" width="40" height="40">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/mobile.svg" alt="" width="40" height="40">
                 </picture>
                 <h3 class="cs-h3">Mobile First Design</h3>
                 <p class="cs-item-text">
@@ -425,14 +442,14 @@ eleventyNavigation:
                 <a href="/web-design-service/" class="cs-link">Read More</a>
                 <!--Background Image-->
                 <picture class="cs-background">
-                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/hero-dark-v2.webp" | resize({width: 1177, height: 366}) | webp %}" alt="hair cut" width="480" height="425">
+                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/hero-dark-v2.webp" | resize({width: 1177, height: 366}) | webp %}" alt="" width="480" height="425">
                 </picture>
             </li>
         </ul>
         <ul class="cs-card-group">
             <li class="cs-item">
                 <picture class="cs-icon-wrapper">
-                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/web-management.svg" alt="hair cut" width="40" height="40">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/web-management.svg" alt="" width="40" height="40">
                 </picture>
                 <h3 class="cs-h3">Website Management</h3>
                 <p class="cs-item-text">
@@ -443,12 +460,12 @@ eleventyNavigation:
                 <a href="/web-design-service/" class="cs-link">Read More</a>
                 <!--Background Image-->
                 <picture class="cs-background">
-                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/hero-dark-v2.webp" | resize({width: 1177, height: 366}) | webp %}" alt="hair cut" width="480" height="425">
+                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/hero-dark-v2.webp" | resize({width: 1177, height: 366}) | webp %}" alt="" width="480" height="425">
                 </picture>
             </li>
             <li class="cs-item">
                 <picture class="cs-icon-wrapper">
-                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/lightning.svg" alt="hair cut" width="40" height="40">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/lightning.svg" alt="" width="40" height="40">
                 </picture>
                 <h3 class="cs-h3">Lightning Fast Page Speeds</h3>
                 <p class="cs-item-text">
@@ -459,12 +476,12 @@ eleventyNavigation:
                 <a href="/web-design-service/" class="cs-link">Read More</a>
                 <!--Background Image-->
                 <picture class="cs-background">
-                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/hero-dark-v2.webp" | resize({width: 1177, height: 366}) | webp %}" alt="hair cut" width="480" height="425">
+                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/hero-dark-v2.webp" | resize({width: 1177, height: 366}) | webp %}" alt="" width="480" height="425">
                 </picture>
             </li>
             <li class="cs-item">
                 <picture class="cs-icon-wrapper">
-                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/vermont.svg" alt="hair cut" width="40" height="40">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/vermont.svg" alt="" width="40" height="40">
                 </picture>
                 <h3 class="cs-h3">Vermont Born & Built</h3>
                 <p class="cs-item-text">
@@ -473,7 +490,7 @@ eleventyNavigation:
                 <a href="/web-design-service/" class="cs-link">Read More</a>
                 <!--Background Image-->
                 <picture class="cs-background">
-                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/hero-dark-v2.webp" | resize({width: 1177, height: 366}) | webp %}" alt="hair cut" width="480" height="425">
+                    <img loading="lazy" decoding="async" src="{% getUrl "/assets/images/hero-dark-v2.webp" | resize({width: 1177, height: 366}) | webp %}" alt="" width="480" height="425">
                 </picture>
             </li>
         </ul>
@@ -489,12 +506,15 @@ eleventyNavigation:
         <div class="cs-image-group">
             <picture class="cs-background">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/sam-portrait-storyworks.jpg">
-                <source media="(min-width: 601px)" srcset="/assets/images/sam-portrait-storyworks.jpg">
-                <img aria-hidden="true" decoding="async" src="/assets/images/sam-portrait-storyworks.jpg" alt="cabinets" loading="lazy" width="400" height="563">
+                <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/sam-portrait-storyworks.jpg' | resize({ width: 600 }) | avif %}" type="image/avif">
+                <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/sam-portrait-storyworks.jpg' | resize({ width: 600 }) | webp %}" type="image/webp">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/sam-portrait-storyworks.jpg' | resize({ width: 1600 }) | avif %}" type="image/avif">
+                <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/sam-portrait-storyworks.jpg' | resize({ width: 1600 }) | webp %}" type="image/webp">
+                <img aria-hidden="true" decoding="async" src="{% getUrl '/assets/images/sam-portrait-storyworks.jpg' | resize({ width: 1600 }) | webp %}" alt="Sam Robinson, owner of Esker Designs, outdoors in Vermont" loading="lazy" width="400" height="563">
             </picture>
             <div class="cs-box">
-                <img class="cs-box-icon" loading="lazy" decoding="async" src="{% getUrl "/assets/images/logo.webp" | resize({ width: 75, height: 75}) | webp %}" alt="people" width="60" height="60">
+                <img class="cs-box-icon" loading="lazy" decoding="async" src="{% getUrl "/assets/images/logo.webp" | resize({ width: 75, height: 75}) | webp %}" alt="" width="60" height="60">
                 <div class="owner">
                     <span class="cs-desc">
                         Sam Robinson
@@ -515,7 +535,7 @@ eleventyNavigation:
             <ul class="cs-card-group">
                 <li class="cs-item">
                     <h3 class="cs-h3">
-                        <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/double-check.svg" alt="icon" width="32" height="32">
+                        <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/double-check.svg" alt="" width="32" height="32">
                         Hosting Fees Included
                     </h3>
                     <p class="cs-item-text">
@@ -524,7 +544,7 @@ eleventyNavigation:
                 </li>
                 <li class="cs-item">
                     <h3 class="cs-h3">
-                        <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/double-check.svg" alt="icon" width="32" height="32">
+                        <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/double-check.svg" alt="" width="32" height="32">
                         24/7 Customer Service
                     </h3>
                     <p class="cs-item-text">
@@ -533,7 +553,7 @@ eleventyNavigation:
                 </li>
                 <li class="cs-item">
                     <h3 class="cs-h3">
-                        <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/double-check.svg" alt="icon" width="32" height="32">
+                        <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/double-check.svg" alt="" width="32" height="32">
                         Unlimited Edits
                     </h3>
                     <p class="cs-item-text">
@@ -542,7 +562,7 @@ eleventyNavigation:
                 </li>
                 <li class="cs-item">
                     <h3 class="cs-h3">
-                        <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/double-check.svg" alt="icon" width="32" height="32">
+                        <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/double-check.svg" alt="" width="32" height="32">
                         Custom Website Development & Design
                     </h3>
                     <p class="cs-item-text">
@@ -551,7 +571,7 @@ eleventyNavigation:
                 </li>
                 <li class="cs-item">
                     <h3 class="cs-h3">
-                        <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/double-check.svg" alt="icon" width="32" height="32">
+                        <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/double-check.svg" alt="" width="32" height="32">
                         Ongoing Website Maintenance
                     </h3>
                     <p class="cs-item-text">
@@ -560,7 +580,7 @@ eleventyNavigation:
                 </li>
                 <li class="cs-item">
                     <h3 class="cs-h3">
-                        <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/double-check.svg" alt="icon" width="32" height="32">
+                        <img class="cs-h3-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/double-check.svg" alt="" width="32" height="32">
                         Better Results
                     </h3>
                     <p class="cs-item-text">
@@ -600,7 +620,7 @@ eleventyNavigation:
                 <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-test.png' | resize({width: 686, height: 812}) | avif %}">
                 <!--Tablet and above Image-->
                 <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-test.png' | resize({width: 1260, height: 1006}) | avif %}">
-                <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/speed-test.png' | resize({width: 1260, height: 1006}) | avif %}" alt="people" width="1260" height="1006">
+                <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/speed-test.png' | resize({width: 1260, height: 1006}) | avif %}" alt="PageSpeed Insights result showing a perfect 100 performance score" width="1260" height="1006">
             </picture>
             <h2 class="cs-title">
                 <span class="cs-topper">Page Speed Matters</span>
@@ -622,7 +642,7 @@ eleventyNavigation:
                 <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/speed-test.png' | resize({width: 686, height: 812}) | avif %}">
                 <!--Tablet and above Image-->
                 <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/speed-test.png' | resize({width: 1260, height: 1006}) | avif %}">
-                <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/speed-test.png' | resize({width: 1260, height: 1006}) | avif %}" alt="people" width="1260" height="1006">
+                <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/speed-test.png' | resize({width: 1260, height: 1006}) | avif %}" alt="PageSpeed Insights result showing a perfect 100 performance score" width="1260" height="1006">
             </picture>
         </div>
     </div>
@@ -642,7 +662,7 @@ eleventyNavigation:
             </p>
             <div class="cs-toggle-group">
                 <span id="cs-option1-1262" class="cs-plan">Subscription</span>
-                <div class="cs-toggle" data-umami-event="Price Toggle" aria-label="click to switch plans pricing">
+                <div class="cs-toggle" role="button" tabindex="0" aria-pressed="false" data-umami-event="Price Toggle" aria-label="Switch between subscription and lump sum pricing">
                     <span aria-hidden="true" class="cs-toggle-switch"></span>
                 </div>
                 <span id="cs-option2-1262" class="cs-plan">Lump Sum</span>
@@ -652,7 +672,7 @@ eleventyNavigation:
             <ul class="cs-card-group cs-option1">
                 <li class="cs-item">
                     <picture class="cs-picture">
-                        <img class="cs-picture-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/starter.svg" alt="checkmark" width="44" height="44">
+                        <img class="cs-picture-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/starter.svg" alt="" width="44" height="44">
                     </picture>
                     <span class="cs-package">Small Business - Starter</span>
                     <span class="cs-price">
@@ -667,49 +687,49 @@ eleventyNavigation:
                             40+ Hours of Design & Development
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             Includes Hosting
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             Up to 5 Pages
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             +$250 To Add A Blog
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             Unlimited Edits
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             24/7 Support
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             $100/page One Time Fee after 5
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             Page Speed Guarantee
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                     </ul>
                     <a href="/contact/" data-umami-event="Monthly Starter" class="cs-button-transparent">Start Building Today</a>
@@ -717,7 +737,7 @@ eleventyNavigation:
                 <li class="cs-item cs-popular">
                     <span class="cs-popular-tag">Recommended</span>
                     <picture class="cs-picture">
-                        <img class="cs-picture-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/growth.svg" alt="checkmark" width="44" height="44">
+                        <img class="cs-picture-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/growth.svg" alt="" width="44" height="44">
                     </picture>
                     <span class="cs-package">Small Business - Growth</span>
                     <span class="cs-price">
@@ -732,49 +752,49 @@ eleventyNavigation:
                             40+ Hours of Design & Development
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             Includes Hosting
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             Up to 10 Pages
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             Includes an Editable Blog
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             Unlimited Edits
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             Local SEO Service Pages
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             24/7 Support
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             Page Speed Guarantee
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                     </ul>
                     <a href="/contact/" data-umami-event="Monthly Growth" class="cs-button-transparent">Start Growing Today</a>
@@ -784,7 +804,7 @@ eleventyNavigation:
                 <li class="cs-item cs-popular">
                     <span class="cs-popular-tag">Recommended</span>
                     <picture class="cs-picture">
-                        <img class="cs-picture-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/starter.svg" alt="checkmark" width="44" height="44">
+                        <img class="cs-picture-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/starter.svg" alt="" width="44" height="44">
                     </picture>
                     <span class="cs-package">Small Business - Starter</span>
                     <span class="cs-price">
@@ -799,49 +819,49 @@ eleventyNavigation:
                             Design & Development
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             $10/mo hosting
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             Up to 5 Pages
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             $100/page One Time Fee after 5
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             +$250 To Add A Blog
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             +$50/mo Unlimited Edits
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check-2.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li cs-disabled">
                             24/7 Support
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/cancel.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li cs-disabled">
                             Lifetime Updates
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/cancel.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                     </ul>
                     <a href="/contact/" data-umami-event="Lump Sum Starter" class="cs-button-transparent">Start Building Today</a>
@@ -849,7 +869,7 @@ eleventyNavigation:
                 <li class="cs-item">
                     <span class="cs-popular-tag">Recommended</span>
                     <picture class="cs-picture">
-                        <img class="cs-picture-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/growth.svg" alt="checkmark" width="44" height="44">
+                        <img class="cs-picture-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/growth.svg" alt="" width="44" height="44">
                     </picture>
                     <span class="cs-package">Small Business - Growth</span>
                     <span class="cs-price">
@@ -864,49 +884,49 @@ eleventyNavigation:
                             Design & Development
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             $10/mo hosting
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             Up to 10 Pages
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             $100/page One Time Fee after 5
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             +$250 To Add A Blog
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li">
                             +$75/mo Unlimited Edits
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/check-2.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li cs-disabled">
                             24/7 Support
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/cancel.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                         <li class="cs-li cs-disabled">
                             Lifetime Updates
                             <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async"
                             src="/assets/svgs/cancel.svg"
-                            alt="checkmark" width="18" height="18">
+                            alt="" width="18" height="18">
                         </li>
                     </ul>
                     <a href="/contact/" data-umami-event="Lump Sum Growth" class="cs-button-transparent">Start Growing Today</a>
@@ -932,7 +952,7 @@ eleventyNavigation:
         <ul class="cs-card-group">
             <!-- Review 1 -->
             <li class="cs-item">
-                <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async" src="{% getUrl "/assets/images/cameron.webp" | resize({ width: 144, height: 144}) %}" loading="lazy" decoding="async" alt="A Photo of a Customer" aria-hidden="true">
+                <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async" src="{% getUrl "/assets/images/cameron.webp" | resize({ width: 144, height: 144}) %}" loading="lazy" decoding="async" alt="" aria-hidden="true">
                 <p class="cs-item-text">
                     “Sam has done a fantastic job with web design and online ranking of my business! His rates were affordable and his customer service is incredible. Very easy to work with and has the heart of a teacher.”
                 </p>
@@ -942,12 +962,12 @@ eleventyNavigation:
                         <span class="cs-desc">Owner, Peak Pressure <br> Wash</span>
                     </span>
                     <span class="cs-rating">5.0</span>
-                    <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars-yellow.svg" alt="stars" width="96" height="16">
+                    <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars-yellow.svg" alt="" width="96" height="16">
                 </div>
             </li>
             <!-- Review 2 -->
             <li class="cs-item">
-                <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async" src="{% getUrl "/assets/images/moxie.webp" | resize({ width: 144, height: 144}) %}" loading="lazy" decoding="async" alt="A Photo of a Customer" aria-hidden="true" alt="profile picture" width="72" height="72">
+                <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async" src="{% getUrl "/assets/images/moxie.webp" | resize({ width: 144, height: 144}) %}" loading="lazy" decoding="async" alt="" aria-hidden="true" width="72" height="72">
                 <p class="cs-item-text">
                     “Esker shows great awareness to detail, works collaboratively, and delivers a website to suit your needs. I highly recommend Esker Designs for small businesses who want to work with a real person, get real time tech support, and work alongside someone to cultivate their brand in the digital world!” 
                 </p>
@@ -957,12 +977,12 @@ eleventyNavigation:
                         <span class="cs-desc">Owner, Bareroots Counseling</span>
                     </span>
                     <span class="cs-rating">5.0</span>
-                    <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars-yellow.svg" alt="stars" width="96" height="16">
+                    <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars-yellow.svg" alt="" width="96" height="16">
                 </div>
             </li>
             <!-- Review 2 -->
             <li class="cs-item">
-                <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async" src="{% getUrl "/assets/images/amber.webp" | resize({ width: 144, height: 144}) %}" loading="lazy" decoding="async" alt="A Photo of a Customer" aria-hidden="true">
+                <img class="cs-item-img" aria-hidden="true" loading="lazy" decoding="async" src="{% getUrl "/assets/images/amber.webp" | resize({ width: 144, height: 144}) %}" loading="lazy" decoding="async" alt="" aria-hidden="true">
                 <p class="cs-item-text">
                     “Sam was fantastic to work with. He has an incredible eye for design and captured exactly what I wanted my website to look like. He has streamlined systems that allow for easy collaboration throughout the process and he was quick to respond throughout the editing stage. I appreciate the option for Sam to make changes to my website as my business grows and shifts. If you're looking for someone to really capture the essence of you and your business, look no further!”
                 </p>
@@ -972,7 +992,7 @@ eleventyNavigation:
                         <span class="cs-desc">Owner, Alpenglow Counseling</span>
                     </span>
                     <span class="cs-rating">5.0</span>
-                    <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars-yellow.svg" alt="stars" width="96" height="16">
+                    <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/stars-yellow.svg" alt="" width="96" height="16">
                 </div>
             </li>
         </ul>
