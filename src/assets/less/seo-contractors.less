@@ -81,6 +81,49 @@
             /* 24px - 32px */
             margin-top: clamp(1.5rem, 3vw, 2rem);
         }
+
+        /* Before/after review proof - two stacked screenshots that sit where a
+           single .cs-picture normally would (used on the Local SEO section) */
+        .cs-review-proof {
+            width: 100%;
+            max-width: (600/16rem);
+            display: flex;
+            flex-direction: column;
+            gap: (16/16rem);
+
+            figure {
+                position: relative;
+                margin: 0;
+                border-radius: 15px;
+                border: 1px solid #e8e8e8;
+                box-shadow: 0 (12/16rem) (32/16rem) rgba(0, 0, 0, 0.08);
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                }
+            }
+
+            .cs-ba-tag {
+                position: absolute;
+                top: (12/16rem);
+                left: (12/16rem);
+                z-index: 2;
+                background-color: rgba(6, 21, 33, 0.85);
+                color: #fff;
+                font-size: (14/16rem);
+                font-weight: 700;
+                line-height: 1;
+                padding: (6/16rem) (14/16rem);
+                border-radius: (8/16rem);
+
+                &.cs-after {
+                    background-color: var(--primary);
+                }
+            }
+        }
     }
 
     /* Sections with no image - copy is centred */
@@ -164,6 +207,11 @@
             /* stops flexbox squashing the screenshot */
             flex: none;
         }
+
+        .cs-review-proof {
+            width: 45%;
+            flex: none;
+        }
     }
 
     /* Centred sections stay a single centred column at every size */
@@ -210,6 +258,10 @@
             }
 
             .cs-picture {
+                border-color: var(--accent);
+            }
+
+            .cs-review-proof figure {
                 border-color: var(--accent);
             }
         }

@@ -10,6 +10,8 @@
     z-index: 1;
     /* alternating subtle background so each section reads as its own block */
     /* dividing line for the sections that share the white background */
+    /* Before/after review proof - two stacked screenshots that sit where a
+           single .cs-picture normally would (used on the Local SEO section) */
   }
   .lp-section.lp-alt {
     background-color: #f6f7f4;
@@ -70,6 +72,42 @@
     flex: none;
     /* 24px - 32px */
     margin-top: clamp(1.5rem, 3vw, 2rem);
+  }
+  .lp-section .cs-review-proof {
+    width: 100%;
+    max-width: 37.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .lp-section .cs-review-proof figure {
+    position: relative;
+    margin: 0;
+    border-radius: 15px;
+    border: 1px solid #e8e8e8;
+    box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
+  .lp-section .cs-review-proof figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .lp-section .cs-review-proof .cs-ba-tag {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 2;
+    background-color: rgba(6, 21, 33, 0.85);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0.375rem 0.875rem;
+    border-radius: 0.5rem;
+  }
+  .lp-section .cs-review-proof .cs-ba-tag.cs-after {
+    background-color: var(--primary);
   }
   /* Sections with no image - copy is centred */
   .lp-section.lp-centered .cs-container {
@@ -136,6 +174,10 @@
     /* stops flexbox squashing the screenshot */
     flex: none;
   }
+  .lp-section .cs-review-proof {
+    width: 45%;
+    flex: none;
+  }
   /* Centred sections stay a single centred column at every size */
   .lp-section.lp-centered .cs-container {
     flex-direction: column;
@@ -168,6 +210,9 @@
     opacity: 0.8;
   }
   body.dark-mode .lp-section .cs-picture {
+    border-color: var(--accent);
+  }
+  body.dark-mode .lp-section .cs-review-proof figure {
     border-color: var(--accent);
   }
   body.dark-mode #video-testimonials.lp-alt {
