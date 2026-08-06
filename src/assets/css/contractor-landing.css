@@ -28,6 +28,9 @@
     margin: 0 0 clamp(2rem, 4vw, 3rem);
     color: var(--primary);
   }
+  #video-testimonials .cs-text.cs-intro {
+    padding-bottom: 1.5rem;
+  }
   #video-testimonials .cs-carousel-wrapper {
     width: 100%;
     display: flex;
