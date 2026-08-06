@@ -56,6 +56,24 @@
             &:last-of-type {
                 margin-bottom: 0;
             }
+
+            /* inline links - the global reset in root.less pins every <a> to 16px,
+               which renders a step smaller than the copy around it once .cs-text
+               scales past 16px. inherit puts them back in line. */
+            a {
+                font-size: inherit;
+                line-height: inherit;
+                color: var(--primary);
+                font-weight: 700;
+                text-decoration: underline;
+                text-underline-offset: 0.2em;
+                text-decoration-thickness: 1px;
+                transition: color 0.3s;
+
+                &:hover {
+                    color: var(--primaryLight);
+                }
+            }
         }
 
         .cs-picture {
@@ -161,9 +179,122 @@
         }
     }
 
-    /* Last section before the footer - clears the footer-trees wave that overlaps upward */
-    .lp-section.cs-clear-footer {
-        padding-bottom: max(5rem, 14vw);
+    /* On-page contact form - the closing section on these landing pages. Keeps
+       the side-by-side shape of .lp-section (copy left, form card right) so it
+       reads as part of the page rather than a bolted-on block. Ported from
+       #contact-1388 on the about page. */
+    #lp-contact {
+        /* the nav is position: fixed, so an anchored jump would land underneath
+           it. hold the section clear of the nav's height plus its top offset. */
+        scroll-margin-top: clamp(5rem, 10vw, 8.5rem);
+
+        .cs-form {
+            width: 100%;
+            /* 24px - 48px top and bottom, 16px - 48px left and right */
+            padding: clamp(1.5rem, 5.18vw, 3rem) clamp(1rem, 4vw, 3rem);
+            /* prevents padding from adding to height and width */
+            box-sizing: border-box;
+            background-color: #fff;
+            border: 1px solid #e8e8e8;
+            border-radius: (16/16rem);
+            box-shadow: 0 (12/16rem) (32/16rem) rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: (12/16rem);
+        }
+
+        .cs-h3 {
+            /* 20px - 32px */
+            font-size: clamp(1.25rem, 2.6vw, 2rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            width: 100%;
+            margin: 0 0 (4/16rem) 0;
+            color: var(--primary);
+        }
+
+        .cs-label {
+            /* 14px - 16px */
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            width: 100%;
+            color: var(--headerColor);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: (4/16rem);
+        }
+
+        .cs-input {
+            font-size: (16/16rem);
+            width: 100%;
+            height: (56/16rem);
+            padding: 0 0 0 (24/16rem);
+            color: var(--headerColor);
+            background-color: #f7f7f7;
+            border: 1px solid transparent;
+            border-radius: (8/16rem);
+            /* prevents padding from adding to height and width */
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+
+            &::placeholder {
+                color: #7d799c;
+                opacity: 0.6;
+            }
+
+            &:focus {
+                outline: none;
+                border-color: var(--primaryLight);
+            }
+        }
+
+        .cs-textarea {
+            min-height: (120/16rem);
+            padding-top: (20/16rem);
+            font-family: inherit;
+        }
+
+        .cs-submit {
+            width: 100%;
+            margin-top: (8/16rem);
+            border: none;
+        }
+
+        /* Netlify honeypot - hidden from people, visible to bots */
+        .cs-hp {
+            display: none;
+        }
+
+        /* NAP details sit under the copy. On a local SEO page the address is
+           worth showing rather than hiding in the footer. */
+        .cs-contact-list {
+            width: 100%;
+            margin: (24/16rem) 0 0 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: (12/16rem);
+        }
+
+        .cs-contact-li {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            list-style: none;
+            color: var(--bodyTextColor);
+
+            a {
+                color: var(--primary);
+                font-weight: 700;
+                text-decoration: underline;
+                text-underline-offset: 0.2em;
+                transition: color 0.3s;
+
+                &:hover {
+                    color: var(--primaryLight);
+                }
+            }
+        }
     }
 
     /* Video testimonials are reused from the homepage (contractor-landing.css) -
@@ -232,6 +363,24 @@
             flex-direction: row-reverse;
         }
     }
+
+    /* Form takes the slot the screenshot occupies in the other sections */
+    #lp-contact {
+        .cs-container {
+            align-items: flex-start;
+        }
+
+        .cs-form {
+            width: 45%;
+            max-width: (578/16rem);
+            /* stops flexbox squashing the fields */
+            flex: none;
+        }
+
+        .cs-submit {
+            width: auto;
+        }
+    }
 }
 
 /* Dark Mode */
@@ -255,6 +404,15 @@
             .cs-text {
                 color: var(--bodyTextColorWhite);
                 opacity: 0.8;
+
+                /* --primary is near-black and disappears on the dark background */
+                a {
+                    color: var(--primaryLight);
+
+                    &:hover {
+                        color: var(--bodyTextColorWhite);
+                    }
+                }
             }
 
             .cs-picture {
@@ -272,6 +430,41 @@
             .lp-text {
                 color: var(--bodyTextColorWhite);
                 opacity: 0.8;
+            }
+        }
+
+        #lp-contact {
+            .cs-form {
+                background-color: var(--medium);
+                border-color: var(--accent);
+            }
+
+            .cs-h3,
+            .cs-label {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-input {
+                color: var(--bodyTextColorWhite);
+                background-color: var(--dark);
+
+                &::placeholder {
+                    color: var(--bodyTextColorWhite);
+                    opacity: 0.5;
+                }
+            }
+
+            .cs-contact-li {
+                color: var(--bodyTextColorWhite);
+                opacity: 0.8;
+
+                a {
+                    color: var(--primaryLight);
+
+                    &:hover {
+                        color: var(--bodyTextColorWhite);
+                    }
+                }
             }
         }
     }

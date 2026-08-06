@@ -340,11 +340,6 @@
     padding: var(--sectionPadding);
     /* Tighten the gap between the booking cal and the reviews */
     padding-top: clamp(2rem, 4vw, 3.5rem);
-    /* This is the last section before the footer, whose wave (footer-trees.png)
-           overlaps upward and grows taller as the screen widens. Per the footer's
-           own note, clear it with padding-bottom: 14vw (uncapped so it keeps pace
-           with the wave on wide screens like a MacBook Pro). */
-    padding-bottom: max(5rem, 14vw);
     background-color: #fff;
   }
   #booking-testimonials .cs-container {

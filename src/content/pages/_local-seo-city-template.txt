@@ -1,0 +1,292 @@
+LOCAL SEO CITY PAGE TEMPLATE
+============================
+
+How to add a new one (about 15 minutes per city):
+
+1. Create src/content/pages/{city}/local-seo.html and paste everything below the
+   line, then find and replace:
+       {{CITY}}        -> Burlington
+       {{CITY-SLUG}}   -> burlington
+       {{STATE}}       -> Vermont
+       {{STATE-ABBR}}  -> VT
+2. Rewrite the copy. Do NOT ship it with only the city name swapped. Every page
+   needs at least these three things unique to that city, or Google treats the
+   set as doorway pages:
+       - the neighborhoods, streets, or landmarks people there actually name
+       - the specific nearby towns you compete against for those customers
+       - something true about that market (size, seasonality, who dominates it)
+3. Add a row to the "Local SEO" group in src/content/pages/service-offerings.html
+   AND a matching entry to the ItemList schema in that page's head block.
+4. Link to the new page from the city's web design page, and link back to it.
+5. If the city has no web design page yet, delete the paragraph in the
+   "What's Included" section that links to /{{CITY-SLUG}}/small-business-web-design/.
+6. Check the form name. Every page needs its OWN Netlify form name, or all the
+   city pages dump into one inbox and you cannot tell which page converted.
+   The {{CITY}} replace handles it, but confirm both spots match:
+       <form name="{{CITY}} Local SEO" ...>
+       <input type="hidden" name="form-name" value="{{CITY}} Local SEO">
+   Each name shows up as a separate form in the Netlify dashboard after deploy.
+7. The in-page CTA buttons scroll to #lp-contact rather than leaving for
+   /contact/. Keep it that way; the form is the whole point of the page.
+
+Images used below are generic proof screenshots that are honest on any city page.
+Swap them if you get city-specific proof.
+
+--------------------------------------------------------------------------------
+
+---
+title: 'Local SEO in {{CITY}}, {{STATE-ABBR}} | Free Site Audit | Esker Designs'
+description: 'Local SEO in {{CITY}}, {{STATE-ABBR}} that gets your business into the map pack and in front of nearby customers. {{STATE}} based, no contracts. Get a free site audit.'
+preloadImg: ''
+permalink: '/{{CITY-SLUG}}/local-seo/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="ad4f603c-adc2-4df0-8440-601f99120b46"></script>
+    <link rel="stylesheet" href="/assets/css/contractor-landing.css">
+    <link rel="stylesheet" href="/assets/css/seo-contractors.css">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://eskerdesigns.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Service Offerings",
+                        "item": "https://eskerdesigns.com/service-offerings/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Local SEO in {{CITY}}, {{STATE-ABBR}}",
+                        "item": "https://eskerdesigns.com/{{CITY-SLUG}}/local-seo/"
+                    }
+                ]
+            },
+            {
+                "@type": "Service",
+                "@id": "https://eskerdesigns.com/{{CITY-SLUG}}/local-seo/#service",
+                "name": "Local SEO in {{CITY}}, {{STATE-ABBR}}",
+                "serviceType": "Local Search Engine Optimization",
+                "description": "Local SEO for {{CITY}}, {{STATE}} businesses: Google Business Profile optimization, map pack rankings, review generation, and location content that brings in nearby customers.",
+                "url": "https://eskerdesigns.com/{{CITY-SLUG}}/local-seo/",
+                "areaServed": {
+                    "@type": "City",
+                    "name": "{{CITY}}",
+                    "containedInPlace": {
+                        "@type": "State",
+                        "name": "{{STATE}}"
+                    }
+                },
+                "provider": {
+                    "@type": "LocalBusiness",
+                    "@id": "https://eskerdesigns.com/#business",
+                    "name": "Esker Designs",
+                    "url": "https://eskerdesigns.com",
+                    "telephone": "828-989-1290",
+                    "email": "sam@eskerdesigns.com",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "70 Lenord Lane",
+                        "addressLocality": "Warren",
+                        "addressRegion": "VT",
+                        "postalCode": "05674",
+                        "addressCountry": "US"
+                    }
+                }
+            }
+        ]
+    }
+    </script>
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    HERO                      -->
+<!-- ============================================ -->
+
+<section id="lp-hero" class="lp-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Local SEO in {{CITY}}, {{STATE-ABBR}}</h1>
+            <p class="cs-text">
+                REWRITE: one sentence on what local SEO does for a business in this specific city.
+            </p>
+            <p class="cs-text">
+                REWRITE: who you are and what you do for them. Name the surrounding towns.
+            </p>
+            <p class="cs-text">
+                No contracts, no vanity reports. You will know how many leads came from organic search every single month.
+            </p>
+            <a href="#lp-contact" data-umami-event="{{CITY}} Local SEO Hero CTA" class="cs-button-solid">Get Your Free Site Audit</a>
+        </div>
+        <picture class="cs-picture">
+            <img loading="eager" decoding="async" src="{% getUrl '/assets/images/contractor-jobs-from-seo.png' | resize({ width: 1200 }) | webp %}" alt="Dashboard of verified form submissions coming in from organic search for a local {{STATE}} business" width="2940" height="1716">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--          What Local SEO Looks Like           -->
+<!-- ============================================ -->
+
+<section id="lp-case-study" class="lp-section lp-alt">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">What Local SEO Actually Looks Like in {{CITY}}</h2>
+            <p class="cs-text">
+                REWRITE: name the neighborhoods, streets, or landmarks people in this city search from. This paragraph is what stops the page reading as a template.
+            </p>
+            <p class="cs-text">
+                Getting into those three results comes down to a handful of things: a fully built out <a href="/google-business-profile-management/">Google Business Profile</a>, a steady flow of recent <a href="/reviews/">reviews</a>, consistent citations across the web, and pages on your site that name the services you offer and the towns you serve.
+            </p>
+            <p class="cs-text">
+                Reviews are usually the fastest lever. We recently took one client from 15 Google reviews to over 140 in two weeks, and made them the number one ranked company in their category in their entire state.
+            </p>
+        </div>
+        <div class="cs-review-proof">
+            <figure>
+                <span class="cs-ba-tag">Before</span>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                    <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                    <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 940 }) | avif %}" type="image/avif">
+                    <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 940 }) | webp %}" type="image/webp">
+                    <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 940 }) | webp %}" alt="Google Business Profile for Scoop Force LLC showing 15 reviews before working with Esker Designs" width="940" height="574">
+                </picture>
+            </figure>
+            <figure>
+                <span class="cs-ba-tag cs-after">After</span>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-143.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                    <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-143.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                    <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-143.png' | resize({ width: 940 }) | avif %}" type="image/avif">
+                    <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-143.png' | resize({ width: 940 }) | webp %}" type="image/webp">
+                    <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/proof/proof-reviews-143.png' | resize({ width: 940 }) | webp %}" alt="Google Business Profile for Scoop Force LLC showing a 5.0 rating with 143 reviews after working with Esker Designs" width="944" height="568">
+                </picture>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--         Why Businesses Get Outranked         -->
+<!-- ============================================ -->
+
+<section id="lp-consists" class="lp-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Why {{CITY}} Businesses Get Outranked</h2>
+            <p class="cs-text">
+                REWRITE: name the specific nearby towns whose businesses compete for the same customers, and say something true about this market.
+            </p>
+            <p class="cs-text">
+                The businesses that lose usually have the same problem: a website with four pages on it. There is nothing on the site that tells Google what services they offer or where they offer them, so Google has nothing to rank.
+            </p>
+            <p class="cs-text">
+                We fix that by building out real pages for the services you want more of and the towns you want them from, then keeping that content growing month after month.
+            </p>
+        </div>
+        <picture class="cs-picture">
+            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/seo-for-contractors-progress.png' | webp %}" alt="Google Search Console graph showing clicks and impressions climbing after a local content strategy was put in place" width="742" height="462">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--            What's Included                   -->
+<!-- ============================================ -->
+
+<section id="lp-included" class="lp-section lp-divided">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">What's Included in Our {{CITY}} Local SEO</h2>
+            <p class="cs-text">
+                Every engagement covers the technical cleanup on your site, on-page optimization, Google Business Profile setup and weekly posting, citation building, review generation, and an ongoing content strategy built around what {{CITY}} customers actually type into Google.
+            </p>
+            <p class="cs-text">
+                If your website is the thing holding you back, we build those too. Our <a href="/{{CITY-SLUG}}/small-business-web-design/">{{CITY}} web design service</a> is hand coded, loads fast, and is built to rank from day one.
+            </p>
+            <p class="cs-text">
+                You get a monthly report with rankings, traffic, and the number most agencies leave out: how many leads came from organic search.
+            </p>
+            <a href="#lp-contact" data-umami-event="{{CITY}} Local SEO Included CTA" class="cs-button-solid">Start Free Today</a>
+        </div>
+        <picture class="cs-picture">
+            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/qualified-leads-for-landscaping-client.png' | webp %}" alt="Qualified leads arriving from organic search for a local {{STATE}} service business" width="694" height="643">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                 Closing CTA                  -->
+<!-- ============================================ -->
+
+<!--
+    The Netlify form name must be UNIQUE per page, otherwise submissions from
+    every city page land in the same inbox with no way to tell them apart.
+    It appears twice: the name attribute and the hidden form-name input.
+    The find/replace on {{CITY}} handles both.
+-->
+<section id="lp-contact" class="lp-section lp-alt">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Ready to Show Up in {{CITY}}?</h2>
+            <p class="cs-text">
+                Send us your website and we will tell you exactly what is keeping you out of the map pack, free. If we are not the right fit, we will tell you that too.
+            </p>
+            <p class="cs-text">
+                Fill out the form and we will get back to you within one business day.
+            </p>
+            <ul class="cs-contact-list">
+                <li class="cs-contact-li">Esker Designs, 70 Lenord Lane, Warren, VT 05674</li>
+                <li class="cs-contact-li">Call <a href="tel:828-989-1290">(828) 989-1290</a></li>
+                <li class="cs-contact-li">Email <a href="mailto:sam@eskerdesigns.com">sam@eskerdesigns.com</a></li>
+            </ul>
+        </div>
+
+        <form class="cs-form" id="lp-form" name="{{CITY}} Local SEO" method="post" action="/thank-you/" netlify netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="{{CITY}} Local SEO">
+            <p class="cs-hp" hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+
+            <h3 class="cs-h3">Start Your Free Trial</h3>
+            <label class="cs-label">
+                Name
+                <input class="cs-input" required type="text" id="lp-name" name="name" placeholder="Name">
+            </label>
+            <label class="cs-label">
+                Email
+                <input class="cs-input" required type="email" id="lp-email" name="email" placeholder="Email">
+            </label>
+            <label class="cs-label">
+                Phone
+                <input class="cs-input" type="tel" id="lp-phone" name="phone" placeholder="Phone">
+            </label>
+            <label class="cs-label">
+                Website
+                <input class="cs-input" type="text" id="lp-website" name="website" placeholder="yourbusiness.com">
+            </label>
+            <label class="cs-label">
+                What are you trying to rank for?
+                <textarea class="cs-input cs-textarea" required name="message" id="lp-message" placeholder="Tell us about your business and the customers you want more of..."></textarea>
+            </label>
+            <button class="cs-button-solid cs-submit" data-umami-event="{{CITY}} Local SEO Form Submit" type="submit">Start Your Free Trial</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

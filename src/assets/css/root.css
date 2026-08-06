@@ -1422,6 +1422,29 @@
 /*-- -------------------------- -->
 <---          Footer            -->
 <--- -------------------------- -*/
+/* Footer wave clearance.
+
+   The footer's tree graphic (footer-trees.png) is absolutely positioned at
+   bottom: 99% of the footer, so it hangs upward over whatever section ends the
+   page. The image is 2000x309, which at width: 100% makes it 15.45vw tall and
+   growing with the viewport, so a fixed padding value never keeps up. Anything
+   sitting low in the last section - buttons especially - ends up behind trees.
+
+   18vw is the wave's height plus breathing room. Reserving it here means every
+   page gets the clearance by default instead of each page remembering to add
+   its own override. #main carries an ID so this outranks the ID-based padding
+   on the individual sections without needing !important. */
+@media only screen and (min-width: 0rem) {
+  #main > :last-child {
+    padding-bottom: max(6rem, 18vw);
+  }
+  /* Several pages close their body block with an inline <script>. That would
+       take :last-child and swallow the padding on a display: none element, so
+       target the last element the visitor can actually see. */
+  #main > :nth-last-child(1 of :not(script)) {
+    padding-bottom: max(6rem, 18vw);
+  }
+}
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #cs-footer-842 {

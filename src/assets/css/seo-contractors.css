@@ -48,9 +48,25 @@
     max-width: 46.875rem;
     margin: 0 0 1rem 0;
     color: var(--bodyTextColor);
+    /* inline links - the global reset in root.less pins every <a> to 16px,
+               which renders a step smaller than the copy around it once .cs-text
+               scales past 16px. inherit puts them back in line. */
   }
   .lp-section .cs-text:last-of-type {
     margin-bottom: 0;
+  }
+  .lp-section .cs-text a {
+    font-size: inherit;
+    line-height: inherit;
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+    transition: color 0.3s;
+  }
+  .lp-section .cs-text a:hover {
+    color: var(--primaryLight);
   }
   .lp-section .cs-picture {
     width: 100%;
@@ -134,9 +150,109 @@
   #lp-case-study .cs-container {
     flex-direction: column;
   }
-  /* Last section before the footer - clears the footer-trees wave that overlaps upward */
-  .lp-section.cs-clear-footer {
-    padding-bottom: max(5rem, 14vw);
+  /* On-page contact form - the closing section on these landing pages. Keeps
+       the side-by-side shape of .lp-section (copy left, form card right) so it
+       reads as part of the page rather than a bolted-on block. Ported from
+       #contact-1388 on the about page. */
+  #lp-contact {
+    /* the nav is position: fixed, so an anchored jump would land underneath
+           it. hold the section clear of the nav's height plus its top offset. */
+    scroll-margin-top: clamp(5rem, 10vw, 8.5rem);
+    /* Netlify honeypot - hidden from people, visible to bots */
+    /* NAP details sit under the copy. On a local SEO page the address is
+           worth showing rather than hiding in the footer. */
+  }
+  #lp-contact .cs-form {
+    width: 100%;
+    /* 24px - 48px top and bottom, 16px - 48px left and right */
+    padding: clamp(1.5rem, 5.18vw, 3rem) clamp(1rem, 4vw, 3rem);
+    /* prevents padding from adding to height and width */
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 1rem;
+    box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  #lp-contact .cs-h3 {
+    /* 20px - 32px */
+    font-size: clamp(1.25rem, 2.6vw, 2rem);
+    line-height: 1.2em;
+    font-weight: 700;
+    width: 100%;
+    margin: 0 0 0.25rem 0;
+    color: var(--primary);
+  }
+  #lp-contact .cs-label {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    width: 100%;
+    color: var(--headerColor);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  #lp-contact .cs-input {
+    font-size: 1rem;
+    width: 100%;
+    height: 3.5rem;
+    padding: 0 0 0 1.5rem;
+    color: var(--headerColor);
+    background-color: #f7f7f7;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    /* prevents padding from adding to height and width */
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  #lp-contact .cs-input::placeholder {
+    color: #7d799c;
+    opacity: 0.6;
+  }
+  #lp-contact .cs-input:focus {
+    outline: none;
+    border-color: var(--primaryLight);
+  }
+  #lp-contact .cs-textarea {
+    min-height: 7.5rem;
+    padding-top: 1.25rem;
+    font-family: inherit;
+  }
+  #lp-contact .cs-submit {
+    width: 100%;
+    margin-top: 0.5rem;
+    border: none;
+  }
+  #lp-contact .cs-hp {
+    display: none;
+  }
+  #lp-contact .cs-contact-list {
+    width: 100%;
+    margin: 1.5rem 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  #lp-contact .cs-contact-li {
+    font-size: 1rem;
+    line-height: 1.5em;
+    list-style: none;
+    color: var(--bodyTextColor);
+  }
+  #lp-contact .cs-contact-li a {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    transition: color 0.3s;
+  }
+  #lp-contact .cs-contact-li a:hover {
+    color: var(--primaryLight);
   }
   /* Video testimonials are reused from the homepage (contractor-landing.css) -
        tint the background so it keeps the alternating rhythm of this page */
@@ -190,6 +306,19 @@
   #lp-case-study .cs-container {
     flex-direction: row-reverse;
   }
+  /* Form takes the slot the screenshot occupies in the other sections */
+  #lp-contact .cs-container {
+    align-items: flex-start;
+  }
+  #lp-contact .cs-form {
+    width: 45%;
+    max-width: 36.125rem;
+    /* stops flexbox squashing the fields */
+    flex: none;
+  }
+  #lp-contact .cs-submit {
+    width: auto;
+  }
 }
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
@@ -208,6 +337,13 @@
   body.dark-mode .lp-section .cs-text {
     color: var(--bodyTextColorWhite);
     opacity: 0.8;
+    /* --primary is near-black and disappears on the dark background */
+  }
+  body.dark-mode .lp-section .cs-text a {
+    color: var(--primaryLight);
+  }
+  body.dark-mode .lp-section .cs-text a:hover {
+    color: var(--bodyTextColorWhite);
   }
   body.dark-mode .lp-section .cs-picture {
     border-color: var(--accent);
@@ -221,5 +357,31 @@
   body.dark-mode #video-testimonials.lp-alt .lp-text {
     color: var(--bodyTextColorWhite);
     opacity: 0.8;
+  }
+  body.dark-mode #lp-contact .cs-form {
+    background-color: var(--medium);
+    border-color: var(--accent);
+  }
+  body.dark-mode #lp-contact .cs-h3,
+  body.dark-mode #lp-contact .cs-label {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #lp-contact .cs-input {
+    color: var(--bodyTextColorWhite);
+    background-color: var(--dark);
+  }
+  body.dark-mode #lp-contact .cs-input::placeholder {
+    color: var(--bodyTextColorWhite);
+    opacity: 0.5;
+  }
+  body.dark-mode #lp-contact .cs-contact-li {
+    color: var(--bodyTextColorWhite);
+    opacity: 0.8;
+  }
+  body.dark-mode #lp-contact .cs-contact-li a {
+    color: var(--primaryLight);
+  }
+  body.dark-mode #lp-contact .cs-contact-li a:hover {
+    color: var(--bodyTextColorWhite);
   }
 }
