@@ -355,7 +355,9 @@
             /* 14px - 16px */
             font-size: clamp(0.875rem, 1.5vw, 1rem);
             width: 100%;
-            color: var(--headerColor);
+            /* NOT --headerColor. That variable is #ffffff site-wide, which is
+               invisible against the light input background. */
+            color: var(--bodyTextColor);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -369,7 +371,8 @@
             height: (56/16rem);
             padding: 0;
             padding-left: (24/16rem);
-            color: var(--headerColor);
+            /* see the note on .cs-label - --headerColor would be white on white */
+            color: var(--bodyTextColor);
             background-color: #f7f7f7;
             border-radius: (8/16rem);
             border: none;
