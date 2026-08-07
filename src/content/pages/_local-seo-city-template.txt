@@ -28,6 +28,11 @@ How to add a new one (about 15 minutes per city):
    Each name shows up as a separate form in the Netlify dashboard after deploy.
 7. The in-page CTA buttons scroll to #lp-contact rather than leaving for
    /contact/. Keep it that way; the form is the whole point of the page.
+8. Image and copy alternate sides down the page. Every other section carries
+   .lp-reverse alongside .lp-section, which flips .cs-container to row-reverse
+   at tablet and up. If you add or remove a section with an image, re-count from
+   the hero and move .lp-reverse so the zig-zag stays intact. Sections with no
+   image (.lp-centered) do not count and never take .lp-reverse.
 
 Images used below are generic proof screenshots that are honest on any city page.
 Swap them if you get city-specific proof.
@@ -144,7 +149,7 @@ permalink: '/{{CITY-SLUG}}/local-seo/'
 <!--          What Local SEO Looks Like           -->
 <!-- ============================================ -->
 
-<section id="lp-case-study" class="lp-section lp-alt">
+<section id="lp-case-study" class="lp-section lp-alt lp-reverse">
     <div class="cs-container">
         <div class="cs-content">
             <h2 class="cs-title">What Local SEO Actually Looks Like in {{CITY}}</h2>
@@ -211,7 +216,7 @@ permalink: '/{{CITY-SLUG}}/local-seo/'
 <!--            What's Included                   -->
 <!-- ============================================ -->
 
-<section id="lp-included" class="lp-section lp-divided">
+<section id="lp-included" class="lp-section lp-divided lp-reverse">
     <div class="cs-container">
         <div class="cs-content">
             <h2 class="cs-title">What's Included in Our {{CITY}} Local SEO</h2>

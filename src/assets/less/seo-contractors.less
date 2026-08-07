@@ -101,8 +101,11 @@
         }
 
         /* Before/after review proof - two stacked screenshots that sit where a
-           single .cs-picture normally would (used on the Local SEO section) */
-        .cs-review-proof {
+           single .cs-picture normally would (used on the Local SEO section).
+           .cs-proof-stack is the same block without the Before/After tags, for
+           sections that just need two pieces of proof side by side. */
+        .cs-review-proof,
+        .cs-proof-stack {
             width: 100%;
             max-width: (600/16rem);
             display: flex;
@@ -172,8 +175,9 @@
         }
     }
 
-    /* Case study - image sits above the copy on mobile, left of it on desktop */
-    #lp-case-study {
+    /* Reversed sections still stack copy-then-image on mobile. row-reverse
+       would otherwise leak in from a wider breakpoint on some browsers. */
+    .lp-section.lp-reverse {
         .cs-container {
             flex-direction: column;
         }
@@ -343,10 +347,20 @@
             flex: none;
         }
 
-        .cs-review-proof {
+        .cs-review-proof,
+        .cs-proof-stack {
             width: 45%;
             flex: none;
         }
+    }
+
+    /* Alternating layout. Drop .lp-reverse on every other .lp-section so the
+       image and the copy trade sides down the page. Without it every section
+       lands copy-left/image-right and the page reads as one long column.
+       Mobile is unaffected - the container is a column there, so the image
+       always follows the copy it belongs to. */
+    .lp-section.lp-reverse .cs-container {
+        flex-direction: row-reverse;
     }
 
     /* Centred sections stay a single centred column at every size */
@@ -358,13 +372,6 @@
 
         .cs-content {
             width: 100%;
-        }
-    }
-
-    /* Case study - image on the left, copy on the right */
-    #lp-case-study {
-        .cs-container {
-            flex-direction: row-reverse;
         }
     }
 

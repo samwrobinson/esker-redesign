@@ -11,7 +11,9 @@
     /* alternating subtle background so each section reads as its own block */
     /* dividing line for the sections that share the white background */
     /* Before/after review proof - two stacked screenshots that sit where a
-           single .cs-picture normally would (used on the Local SEO section) */
+           single .cs-picture normally would (used on the Local SEO section).
+           .cs-proof-stack is the same block without the Before/After tags, for
+           sections that just need two pieces of proof side by side. */
   }
   .lp-section.lp-alt {
     background-color: #f6f7f4;
@@ -89,14 +91,16 @@
     /* 24px - 32px */
     margin-top: clamp(1.5rem, 3vw, 2rem);
   }
-  .lp-section .cs-review-proof {
+  .lp-section .cs-review-proof,
+  .lp-section .cs-proof-stack {
     width: 100%;
     max-width: 37.5rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
-  .lp-section .cs-review-proof figure {
+  .lp-section .cs-review-proof figure,
+  .lp-section .cs-proof-stack figure {
     position: relative;
     margin: 0;
     border-radius: 15px;
@@ -104,12 +108,14 @@
     box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.08);
     overflow: hidden;
   }
-  .lp-section .cs-review-proof figure img {
+  .lp-section .cs-review-proof figure img,
+  .lp-section .cs-proof-stack figure img {
     width: 100%;
     height: auto;
     display: block;
   }
-  .lp-section .cs-review-proof .cs-ba-tag {
+  .lp-section .cs-review-proof .cs-ba-tag,
+  .lp-section .cs-proof-stack .cs-ba-tag {
     position: absolute;
     top: 0.75rem;
     left: 0.75rem;
@@ -122,7 +128,8 @@
     padding: 0.375rem 0.875rem;
     border-radius: 0.5rem;
   }
-  .lp-section .cs-review-proof .cs-ba-tag.cs-after {
+  .lp-section .cs-review-proof .cs-ba-tag.cs-after,
+  .lp-section .cs-proof-stack .cs-ba-tag.cs-after {
     background-color: var(--primary);
   }
   /* Sections with no image - copy is centred */
@@ -146,8 +153,9 @@
     /* 39px - 61px, a step up from the standard header size */
     font-size: clamp(2.4375rem, 4.8vw, 3.8125rem);
   }
-  /* Case study - image sits above the copy on mobile, left of it on desktop */
-  #lp-case-study .cs-container {
+  /* Reversed sections still stack copy-then-image on mobile. row-reverse
+       would otherwise leak in from a wider breakpoint on some browsers. */
+  .lp-section.lp-reverse .cs-container {
     flex-direction: column;
   }
   /* On-page contact form - the closing section on these landing pages. Keeps
@@ -294,9 +302,18 @@
     /* stops flexbox squashing the screenshot */
     flex: none;
   }
-  .lp-section .cs-review-proof {
+  .lp-section .cs-review-proof,
+  .lp-section .cs-proof-stack {
     width: 45%;
     flex: none;
+  }
+  /* Alternating layout. Drop .lp-reverse on every other .lp-section so the
+       image and the copy trade sides down the page. Without it every section
+       lands copy-left/image-right and the page reads as one long column.
+       Mobile is unaffected - the container is a column there, so the image
+       always follows the copy it belongs to. */
+  .lp-section.lp-reverse .cs-container {
+    flex-direction: row-reverse;
   }
   /* Centred sections stay a single centred column at every size */
   .lp-section.lp-centered .cs-container {
@@ -305,10 +322,6 @@
   }
   .lp-section.lp-centered .cs-content {
     width: 100%;
-  }
-  /* Case study - image on the left, copy on the right */
-  #lp-case-study .cs-container {
-    flex-direction: row-reverse;
   }
   /* Form takes the slot the screenshot occupies in the other sections */
   #lp-contact .cs-container {

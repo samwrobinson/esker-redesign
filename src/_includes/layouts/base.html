@@ -13,12 +13,27 @@
         <link rel="canonical" href="{{ client.domain }}{{ page.url }}">
 
         <!--Social Media Display-->
+        <!-- og:image MUST be an absolute URL. Facebook, LinkedIn, Slack and iMessage
+             all silently drop a relative path, which is why previews used to show no
+             image at all. Set `ogImage` in a page's front matter to override the
+             sitewide default with a purpose-built 1200x630 card. -->
+        {% set ogImg = ogImage | default('/assets/images/og/default.jpg') %}
         <meta property="og:title" content="{{ title }}"/>
         <meta property="og:description" content="{{ description }}"/>
         <meta property="og:type" content="website"/>
+        <meta property="og:site_name" content="{{ client.name }}"/>
         <meta property="og:url" content="{{ client.domain }}{{ page.url }}"/>
-        <meta property="og:image" content="/assets/images/logo.webp"/>
-        <meta property="og:image:secure_url" content="/assets/images/logo.webp"/>
+        <meta property="og:image" content="{{ client.domain }}{{ ogImg }}"/>
+        <meta property="og:image:secure_url" content="{{ client.domain }}{{ ogImg }}"/>
+        <meta property="og:image:width" content="1200"/>
+        <meta property="og:image:height" content="630"/>
+        <meta property="og:image:alt" content="{{ ogImageAlt | default(title) }}"/>
+
+        <!--Twitter/X reads its own tags and ignores og:* for the card type-->
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content="{{ title }}"/>
+        <meta name="twitter:description" content="{{ description }}"/>
+        <meta name="twitter:image" content="{{ client.domain }}{{ ogImg }}"/>
 
         <!--Favicons-->
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
