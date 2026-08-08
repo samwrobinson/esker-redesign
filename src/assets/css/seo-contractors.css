@@ -402,3 +402,207 @@
     color: var(--bodyTextColorWhite);
   }
 }
+/*-- -------------------------- -->
+<---    Migration - Signs list   -->
+<--- -------------------------- -*/
+/* Checkmark bullets for the "Signs it's Time to Migrate" list. Scoped to
+   .cs-signs-list so it never collides with the site-wide review/card lists.
+   Lives on a .lp-centered section, so the list itself is left-aligned inside
+   the centred column to stay readable. */
+@media only screen and (min-width: 0rem) {
+  .cs-signs-list {
+    width: 100%;
+    max-width: 38.75rem;
+    margin: 0.5rem 0 1.5rem 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+  }
+  .cs-signs-li {
+    /* 16px - 18px, matches .cs-text */
+    font-size: clamp(1rem, 1.8vw, 1.125rem);
+    line-height: 1.5em;
+    list-style: none;
+    color: var(--bodyTextColor);
+    padding-left: 2.125rem;
+    position: relative;
+  }
+  .cs-signs-li:before {
+    /* brand-green checkmark */
+    content: "";
+    width: 1.25rem;
+    height: 1.25rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2396bf30' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0.1875rem;
+  }
+}
+/*-- -------------------------- -->
+<---     Migration - FAQ         -->
+<--- -------------------------- -*/
+/* Accordion FAQ, matched to the site-wide FAQ style (#faq-2066) but scoped to
+   #lp-faq so it drops into an .lp-section. The .active toggle is driven by the
+   global handler in dark.js. ID specificity keeps the single centred column
+   from being overridden by the tablet row layout on .lp-section. */
+@media only screen and (min-width: 0rem) {
+  #lp-faq .cs-container {
+    max-width: 47.5rem;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+  #lp-faq .cs-content {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  #lp-faq .cs-topper {
+    text-align: center;
+  }
+  #lp-faq .cs-title {
+    text-align: center;
+    margin-bottom: 0;
+  }
+  #lp-faq .cs-faq-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.5rem, 2vw, 1rem);
+  }
+  #lp-faq .cs-faq-item {
+    list-style: none;
+    width: 100%;
+    padding: clamp(1rem, 4vw, 1.5rem);
+    box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 16px;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    border: 1px solid #e8e8e8;
+    background-color: #fff;
+    transition: box-shadow 0.3s;
+  }
+  #lp-faq .cs-faq-item.active .cs-button {
+    color: var(--primary);
+    padding-bottom: 0.75rem;
+  }
+  #lp-faq .cs-faq-item.active .cs-button:before {
+    transform: rotate(315deg);
+  }
+  #lp-faq .cs-faq-item.active .cs-button:after {
+    transform: rotate(-315deg);
+  }
+  #lp-faq .cs-faq-item.active .cs-item-p {
+    height: auto;
+    padding: 0;
+    opacity: 1;
+  }
+  #lp-faq .cs-button {
+    /* 16px - 20px */
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 700;
+    line-height: 1.2em;
+    text-align: left;
+    width: 100%;
+    background-color: transparent;
+    color: var(--primary);
+    border: none;
+    padding: 0;
+    display: block;
+    position: relative;
+    transition: color 0.3s;
+  }
+  #lp-faq .cs-button:hover {
+    cursor: pointer;
+  }
+  #lp-faq .cs-button:before {
+    /* left half of the plus/minus */
+    content: "";
+    width: 0.625rem;
+    height: 0.125rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    transform: rotate(45deg);
+    transition: transform 0.5s;
+    transform-origin: left center;
+  }
+  #lp-faq .cs-button:after {
+    /* right half of the plus/minus */
+    content: "";
+    width: 0.625rem;
+    height: 0.125rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    transform: rotate(-45deg);
+    transition: transform 0.5s;
+    transform-origin: right center;
+  }
+  #lp-faq .cs-button-text {
+    /* leaves room for the plus/minus on the right */
+    width: 90%;
+    display: block;
+  }
+  #lp-faq .cs-item-p {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    width: 100%;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    /* clips the answer until the item is active */
+    overflow: hidden;
+    color: var(--bodyTextColor);
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.3s, padding 0.3s;
+  }
+  /* active answer needs top spacing once revealed - set here so the base
+       (collapsed) state stays at padding 0 */
+  #lp-faq .cs-faq-item.active .cs-item-p {
+    padding-top: 1rem;
+  }
+}
+/* Dark Mode - Migration signs list and FAQ */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode .cs-signs-li {
+    color: var(--bodyTextColorWhite);
+    opacity: 0.8;
+  }
+  body.dark-mode #lp-faq .cs-faq-item {
+    background-color: var(--medium);
+    border-color: var(--accent);
+  }
+  body.dark-mode #lp-faq .cs-button {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #lp-faq .cs-button:before,
+  body.dark-mode #lp-faq .cs-button:after {
+    background-color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #lp-faq .cs-faq-item.active .cs-button {
+    color: var(--primaryLight);
+  }
+  body.dark-mode #lp-faq .cs-faq-item.active .cs-button:before,
+  body.dark-mode #lp-faq .cs-faq-item.active .cs-button:after {
+    background-color: var(--primaryLight);
+  }
+  body.dark-mode #lp-faq .cs-item-p {
+    color: var(--bodyTextColorWhite);
+    opacity: 0.8;
+  }
+}
