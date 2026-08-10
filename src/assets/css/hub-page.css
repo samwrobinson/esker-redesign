@@ -172,6 +172,53 @@
     /* stops the button stretching in the flex container */
     flex: none;
   }
+  /* Offerings hub only - a compact link directory instead of the row cards
+       used on #areas-1401. Plain text links, grouped and optionally sub-labelled,
+       so the SEO group can hold a long "by trade" list without turning into a
+       wall of boxes. */
+  #offerings-1401 {
+    /* small uppercase divider inside a group, e.g. "Core services" / "SEO by trade" */
+  }
+  #offerings-1401 .cs-sublabel {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primaryLight);
+    margin: 1.5rem 0 0.75rem 0;
+    /* the first sub-label sits right under the group copy */
+  }
+  #offerings-1401 .cs-sublabel:first-of-type {
+    margin-top: 1rem;
+  }
+  #offerings-1401 .cs-links {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    /* row gap / column gap */
+    gap: 0.75rem 1.75rem;
+  }
+  #offerings-1401 .cs-link-item {
+    list-style: none;
+  }
+  #offerings-1401 .cs-textlink {
+    font-size: 1.0625rem;
+    line-height: 1.3em;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    padding-bottom: 0.125rem;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  #offerings-1401 .cs-textlink:hover {
+    color: var(--primaryLight);
+    border-bottom-color: var(--primaryLight);
+  }
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
@@ -208,6 +255,9 @@
 }
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
+  body.dark-mode {
+    /* Offerings hub link directory - dark mode */
+  }
   body.dark-mode #areas-1401 .cs-title,
   body.dark-mode #offerings-1401 .cs-title,
   body.dark-mode #areas-1401 .cs-text,
@@ -252,5 +302,12 @@
   body.dark-mode #areas-1401 .cs-arrow,
   body.dark-mode #offerings-1401 .cs-arrow {
     color: var(--primaryLight);
+  }
+  body.dark-mode #offerings-1401 .cs-textlink {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #offerings-1401 .cs-textlink:hover {
+    color: var(--primaryLight);
+    border-bottom-color: var(--primaryLight);
   }
 }

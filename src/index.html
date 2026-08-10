@@ -85,9 +85,12 @@ eleventyNavigation:
         }
     </script>
 <script>
-    (function () {
-        var toggle = document.querySelector('#pricing-1262 .cs-toggle, .cs-toggle-group .cs-toggle');
-        var wrapper = document.querySelector('.cs-ul-wrapper');
+    // Homepage pricing "Subscription / Lump Sum" toggle.
+    // Must wait for the DOM (this script is in <head>) and must scope BOTH
+    // selectors to #pricing-1262 — the nav also uses .cs-ul-wrapper / .cs-toggle.
+    document.addEventListener('DOMContentLoaded', function () {
+        var toggle = document.querySelector('#pricing-1262 .cs-toggle');
+        var wrapper = document.querySelector('#pricing-1262 .cs-ul-wrapper');
         if (!toggle || !wrapper) return;
         function flip() {
             var on = wrapper.classList.toggle('cs-active');
@@ -97,7 +100,7 @@ eleventyNavigation:
         toggle.addEventListener('keydown', function (e) {
             if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
         });
-    })();
+    });
 </script>
 
 {% endblock %}

@@ -172,6 +172,59 @@
             flex: none;
         }
     }
+
+    /* Offerings hub only - a compact link directory instead of the row cards
+       used on #areas-1401. Plain text links, grouped and optionally sub-labelled,
+       so the SEO group can hold a long "by trade" list without turning into a
+       wall of boxes. */
+    #offerings-1401 {
+        /* small uppercase divider inside a group, e.g. "Core services" / "SEO by trade" */
+        .cs-sublabel {
+            display: block;
+            font-size: (13/16rem);
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--primaryLight);
+            margin: (24/16rem) 0 (12/16rem) 0;
+
+            /* the first sub-label sits right under the group copy */
+            &:first-of-type {
+                margin-top: (16/16rem);
+            }
+        }
+
+        .cs-links {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            /* row gap / column gap */
+            gap: (12/16rem) (28/16rem);
+        }
+
+        .cs-link-item {
+            list-style: none;
+        }
+
+        .cs-textlink {
+            font-size: (17/16rem);
+            line-height: 1.3em;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+            padding-bottom: (2/16rem);
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+
+            &:hover {
+                color: var(--primaryLight);
+                border-bottom-color: var(--primaryLight);
+            }
+        }
+    }
 }
 
 /* Tablet - 768px */
@@ -252,6 +305,18 @@
 
             .cs-arrow {
                 color: var(--primaryLight);
+            }
+        }
+
+        /* Offerings hub link directory - dark mode */
+        #offerings-1401 {
+            .cs-textlink {
+                color: var(--bodyTextColorWhite);
+
+                &:hover {
+                    color: var(--primaryLight);
+                    border-bottom-color: var(--primaryLight);
+                }
             }
         }
     }

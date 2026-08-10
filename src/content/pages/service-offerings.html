@@ -78,9 +78,13 @@ permalink: 'service-offerings/'
 <!--
     HUB PAGE — how to add a new bottom-of-funnel landing page:
     1. Build the landing page under src/content/pages/ with its own permalink.
-    2. Copy one <li class="cs-item"> block below into the matching service group.
+    2. Add ONE <li class="cs-link-item"> link into the matching group below.
+       Trade pages (e.g. "SEO for Plumbers") go under the "SEO by trade" list.
+       City pages go under "Local SEO by City".
     3. Add a matching entry to the ItemList schema in the head block above.
     4. Link back to this hub AND to the parent service page from the new landing page.
+    Keep it to a plain link — no tile, description, or arrow. The point of this
+    hub is a clean, scannable directory that scales to many spoke pages.
 -->
 
 <section id="offerings-1401">
@@ -92,7 +96,7 @@ permalink: 'service-offerings/'
                 Three services, one goal: more of the right people finding your business and picking up the phone. Most clients start with a website and add SEO once it's live, but you can start anywhere.
             </p>
             <p class="cs-text">
-                Below is every service we offer, plus the specific industries and situations we've built dedicated pages for. Not sure which one you need? <a href="/contact/">Tell us what's going on</a> and we'll point you at the right one — even if it isn't us.
+                Below is every page we've built, grouped by what you're after. Not sure which one you need? <a href="/contact/">Tell us what's going on</a> and we'll point you at the right one, even if it isn't us.
             </p>
         </div>
 
@@ -100,145 +104,67 @@ permalink: 'service-offerings/'
 
             <!-- ============ WEB DESIGN ============ -->
             <div class="cs-group">
-                <span class="cs-group-name">Web Design</span>
+                <h3 class="cs-group-name">Web Design</h3>
                 <p class="cs-group-text">
-                    Hand-coded websites with no page builder and no WordPress bloat. They load fast, they rank, and you own them. $0 down and $175/month, or buy it outright.
+                    Hand-coded websites with no page builder and no WordPress bloat. They load fast, they rank, and you own them.
                 </p>
-                <ul class="cs-card-group">
-                    <li class="cs-item">
-                        <a href="/web-design-service/" class="cs-link">
-                            <h3 class="cs-h3">Web Design Services</h3>
-                            <p class="cs-item-text">
-                                Our core web design service — custom-coded sites built for speed, search, and turning visitors into customers.
-                            </p>
-                            <span class="cs-arrow">See Web Design &rarr;</span>
-                        </a>
-                    </li>
-                    <li class="cs-item">
-                        <a href="/pricing/" class="cs-link">
-                            <h3 class="cs-h3">Pricing</h3>
-                            <p class="cs-item-text">
-                                What a website actually costs with us, laid out plainly — monthly and one-time options.
-                            </p>
-                            <span class="cs-arrow">See Pricing &rarr;</span>
-                        </a>
-                    </li>
-                    <!-- Add web design bottom-of-funnel landing pages here -->
+                <ul class="cs-links">
+                    <li class="cs-link-item"><a href="/web-design-service/" class="cs-textlink">Web Design Services</a></li>
+                    <li class="cs-link-item"><a href="/pricing/" class="cs-textlink">Pricing</a></li>
+                    <!-- Add web design landing pages here -->
                 </ul>
             </div>
 
             <!-- ============ SEO ============ -->
             <div class="cs-group">
-                <span class="cs-group-name">SEO</span>
+                <h3 class="cs-group-name">SEO</h3>
                 <p class="cs-group-text">
                     Local SEO that puts you in front of people already searching for what you do. No lock-in contracts, no vanity reports — we track calls and form fills.
                 </p>
-                <ul class="cs-card-group">
-                    <li class="cs-item">
-                        <a href="/small-business-seo-services/" class="cs-link">
-                            <h3 class="cs-h3">Small Business SEO Services</h3>
-                            <p class="cs-item-text">
-                                Our core local SEO service for small businesses across Vermont and New Hampshire.
-                            </p>
-                            <span class="cs-arrow">See SEO Services &rarr;</span>
-                        </a>
-                    </li>
-                    <li class="cs-item">
-                        <a href="/seo-services-vermont/" class="cs-link">
-                            <h3 class="cs-h3">Search Engine Optimization in Vermont</h3>
-                            <p class="cs-item-text">
-                                Local SEO for Vermont businesses that want to generate revenue from organic traffic instead of paying for ads.
-                            </p>
-                            <span class="cs-arrow">See Vermont SEO &rarr;</span>
-                        </a>
-                    </li>
-                    <li class="cs-item">
-                        <a href="/service-offerings/seo-company-for-contractors/" class="cs-link">
-                            <h3 class="cs-h3">SEO Company for Contractors</h3>
-                            <p class="cs-item-text">
-                                Full service SEO for contractors who want more booked jobs without paying for ads.
-                            </p>
-                            <span class="cs-arrow">See Contractor SEO &rarr;</span>
-                        </a>
-                    </li>
-                    <li class="cs-item">
-                        <a href="/service-offerings/seo-services-for-painting-companies/" class="cs-link">
-                            <h3 class="cs-h3">SEO Services for Painting Companies</h3>
-                            <p class="cs-item-text">
-                                SEO built for painters who want a predictable stream of interior and exterior painting jobs from Google.
-                            </p>
-                            <span class="cs-arrow">See Painting SEO &rarr;</span>
-                        </a>
-                    </li>
-                    <li class="cs-item">
-                        <a href="/service-offerings/vermont-website-optimization/" class="cs-link">
-                            <h3 class="cs-h3">Vermont Website Optimization</h3>
-                            <p class="cs-item-text">
-                                Speed, technical, and content optimization for a site you already have, built to be read by Google and AI search.
-                            </p>
-                            <span class="cs-arrow">See Website Optimization &rarr;</span>
-                        </a>
-                    </li>
-                    <li class="cs-item">
-                        <a href="/service-offerings/vermont-website-migration-services/" class="cs-link">
-                            <h3 class="cs-h3">Vermont Website Migration Services</h3>
-                            <p class="cs-item-text">
-                                Move to a faster, modern platform without losing the rankings and traffic you've already earned, with zero downtime.
-                            </p>
-                            <span class="cs-arrow">See Website Migration &rarr;</span>
-                        </a>
-                    </li>
-                    <!-- Add more SEO bottom-of-funnel landing pages here -->
+
+                <span class="cs-sublabel">Core services</span>
+                <ul class="cs-links">
+                    <li class="cs-link-item"><a href="/small-business-seo-services/" class="cs-textlink">Small Business SEO</a></li>
+                    <li class="cs-link-item"><a href="/seo-services-vermont/" class="cs-textlink">Vermont SEO</a></li>
+                    <li class="cs-link-item"><a href="/service-offerings/vermont-website-optimization/" class="cs-textlink">Website Optimization</a></li>
+                    <li class="cs-link-item"><a href="/service-offerings/vermont-website-migration-services/" class="cs-textlink">Website Migration</a></li>
+                </ul>
+
+                <span class="cs-sublabel">SEO by trade</span>
+                <ul class="cs-links">
+                    <li class="cs-link-item"><a href="/service-offerings/seo-company-for-contractors/" class="cs-textlink">Contractors</a></li>
+                    <li class="cs-link-item"><a href="/service-offerings/seo-services-for-painting-companies/" class="cs-textlink">Painting Companies</a></li>
+                    <!-- Add trade pages here as they go live, one <li> each, e.g.:
+                         <li class="cs-link-item"><a href="/service-offerings/seo-for-plumbers-vermont/" class="cs-textlink">Plumbers</a></li>
+                         <li class="cs-link-item"><a href="/service-offerings/seo-for-landscapers-vermont/" class="cs-textlink">Landscapers</a></li>
+                         <li class="cs-link-item"><a href="/service-offerings/seo-for-roofers-vermont/" class="cs-textlink">Roofers</a></li>
+                    -->
                 </ul>
             </div>
 
-            <!-- ============ LOCAL SEO ============ -->
+            <!-- ============ LOCAL SEO BY CITY ============ -->
             <div class="cs-group">
-                <span class="cs-group-name">Local SEO</span>
+                <h3 class="cs-group-name">Local SEO by City</h3>
                 <p class="cs-group-text">
-                    City-level SEO for businesses that only care about the customers within driving distance. Map pack rankings, Google Business Profile, reviews, and the location content that tells Google exactly where you work.
+                    City-level SEO for businesses that only care about the customers within driving distance: map pack rankings, Google Business Profile, and the location content that tells Google exactly where you work.
                 </p>
-                <ul class="cs-card-group">
-                    <li class="cs-item">
-                        <a href="/burlington/local-seo-in-burlington-vt/" class="cs-link">
-                            <h3 class="cs-h3">Local SEO in Burlington, VT</h3>
-                            <p class="cs-item-text">
-                                Getting Burlington businesses into the map pack and in front of the customers searching nearby.
-                            </p>
-                            <span class="cs-arrow">See Burlington Local SEO &rarr;</span>
-                        </a>
-                    </li>
-                    <!-- Add more city local SEO pages here. Pattern: /{city}/local-seo/
+                <ul class="cs-links">
+                    <li class="cs-link-item"><a href="/burlington/local-seo-in-burlington-vt/" class="cs-textlink">Burlington</a></li>
+                    <!-- Add city pages here. Pattern: /{city}/local-seo-in-{city}-vt/
                          Copy src/content/pages/_local-seo-city-template.txt to start a new one. -->
                 </ul>
             </div>
 
             <!-- ============ GOOGLE BUSINESS PROFILE ============ -->
             <div class="cs-group">
-                <span class="cs-group-name">Google Business Profile</span>
+                <h3 class="cs-group-name">Google Business Profile</h3>
                 <p class="cs-group-text">
                     Your Google Business Profile is the first thing most local customers see. We optimize it, post to it weekly, and build a steady flow of real reviews.
                 </p>
-                <ul class="cs-card-group">
-                    <li class="cs-item">
-                        <a href="/google-business-profile-management/" class="cs-link">
-                            <h3 class="cs-h3">Google Business Profile Management</h3>
-                            <p class="cs-item-text">
-                                Full profile optimization, weekly posts, and review management so you show up in the map pack.
-                            </p>
-                            <span class="cs-arrow">See GBP Management &rarr;</span>
-                        </a>
-                    </li>
-                    <li class="cs-item">
-                        <a href="/reviews/" class="cs-link">
-                            <h3 class="cs-h3">Review Generation</h3>
-                            <p class="cs-item-text">
-                                How we help you turn happy customers into a steady stream of 5-star Google reviews.
-                            </p>
-                            <span class="cs-arrow">See Reviews &rarr;</span>
-                        </a>
-                    </li>
-                    <!-- Add Google Business Profile bottom-of-funnel landing pages here -->
+                <ul class="cs-links">
+                    <li class="cs-link-item"><a href="/google-business-profile-management/" class="cs-textlink">GBP Management</a></li>
+                    <li class="cs-link-item"><a href="/reviews/" class="cs-textlink">Review Generation</a></li>
+                    <!-- Add Google Business Profile landing pages here -->
                 </ul>
             </div>
 
