@@ -419,7 +419,9 @@ permalink: '/fb/'
             var digits = phoneInput.value.replace(/\D/g, '');
             // Allow an optional leading country code "1"
             if (digits.length === 11 && digits.charAt(0) === '1') digits = digits.slice(1);
-            if (digits.length === 0) {
+            // Branch on the RAW value, not the digit count. A value like "sam"
+            // strips to zero digits but is not empty, so `required` would pass it.
+            if (phoneInput.value.trim() === '') {
                 phoneInput.setCustomValidity(''); // let "required" handle the empty case
             } else if (digits.length !== 10) {
                 phoneInput.setCustomValidity('Please enter your full 10-digit phone number, e.g. (828) 989-1290.');
