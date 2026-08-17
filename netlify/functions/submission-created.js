@@ -30,6 +30,7 @@ const LEAD_FORMS = new Set([
     'FB Contractor Landing',
     'FB Contractor Landing - 2',
     'Facebook Landing',
+    'VT-1 Contractor Landing',
     'About Contact',
     'Contact Form',
 ]);

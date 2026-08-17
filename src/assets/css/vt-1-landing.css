@@ -1,0 +1,136 @@
+/* /vt-1/ landing page.
+   The bulk of this page's styling is inherited from facebook-landing.css, which
+   is loaded first and already owns #fb-hero, the .cs-quiz-* modal and
+   #fb-testimonials. Only the two things that page does NOT have live here:
+   the blurred lock state on the VSL, and the booking calendar section. */
+/*-- -------------------------- -->
+<---     Blurred Locked VSL      -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  /* Until the questionnaire is finished the VSL is blurred out so the play
+       button is the only thing worth clicking. JS removes .cs-locked and turns
+       on native controls once the lead is submitted. */
+  #fb-hero .cs-video-container.cs-locked {
+    cursor: pointer;
+  }
+  #fb-hero .cs-video-container.cs-locked .cs-vsl-video {
+    filter: blur(12px) brightness(0.65);
+    /* Overscale so the blur feathers past the frame instead of
+               showing a soft transparent edge inside the rounded corners */
+    transform: scale(1.12);
+    /* Clicks fall through to the container, which opens the quiz,
+               so the native controls can never start playback early */
+    pointer-events: none;
+  }
+  #fb-hero .cs-video-container.cs-locked .cs-play-button {
+    display: flex;
+  }
+  #fb-hero .cs-video-container.cs-locked .cs-locked-note {
+    position: absolute;
+    left: 50%;
+    bottom: clamp(0.85rem, 3vw, 1.5rem);
+    transform: translateX(-50%);
+    z-index: 3;
+    margin: 0;
+    padding: 0.5rem 1.125rem;
+    border-radius: 6.25rem;
+    background: rgba(0, 0, 0, 0.62);
+    color: #fff;
+    font-size: clamp(0.75rem, 1.7vw, 0.9375rem);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  /* Unlocked: sharp video, no badge */
+  #fb-hero .cs-video-container:not(.cs-locked) .cs-locked-note {
+    display: none;
+  }
+  /* facebook-landing.css sets `flex: 0 1 56rem` on .cs-gated .cs-video-wrapper
+       at the 64rem breakpoint. Its parent .cs-media is flex-direction: column,
+       so that basis lands on the HEIGHT axis and pads the wrapper out to 896px
+       around a 504px 16:9 video. Keep 56rem as a width cap and let the height
+       come from the video. */
+  #fb-hero.cs-gated .cs-media-vsl .cs-video-wrapper {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 56rem;
+  }
+  /* The calendar is "Step 2" and sits directly under the video, so keep the
+       gap tighter than the full section padding without letting them collide. */
+  #fb-hero.cs-gated {
+    padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+  /* Cap the headline at 800px so it breaks over fewer, longer lines */
+  #fb-hero.cs-gated .cs-title {
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Orange CTA so it pops off the dark hero, same treatment
+       #fb-hero.cs-centered gives the /fb/ page. */
+  #fb-hero.cs-gated .cs-hero-cta {
+    font-size: clamp(1rem, 2.2vw, 1.25rem);
+    padding: 1.15rem 2.75rem;
+    margin: 1.5rem auto 0.5rem;
+    background: var(--secondary);
+    color: #000;
+  }
+  #fb-hero.cs-gated .cs-hero-cta:hover {
+    background: var(--secondaryLight);
+  }
+}
+/*-- -------------------------- -->
+<---       Booking Calendar      -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #vt1-booking {
+    padding: var(--sectionPadding);
+    /* Tighten the gap so the calendar reads as part of the hero flow */
+    padding-top: clamp(2rem, 5vw, 3.5rem);
+    background-color: #fff;
+    /* GoHighLevel injects its own height via form_embed.js; min-height
+           keeps the section from collapsing before that script runs. */
+  }
+  #vt1-booking .cs-container {
+    width: 100%;
+    max-width: 62.5rem;
+    margin: auto;
+  }
+  #vt1-booking .cs-content {
+    text-align: center;
+    margin-bottom: clamp(1.25rem, 3vw, 2rem);
+  }
+  #vt1-booking .cs-topper {
+    font-size: var(--topperFontSize, 1rem);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  #vt1-booking .cs-title {
+    /* 31px - 49px */
+    font-size: clamp(1.9375rem, 4.5vw, 3.0625rem);
+    color: var(--primary);
+    /* `auto` sides, not 0. A sitewide rule caps .cs-title at 700px, so
+               zeroing the horizontal margins pins that box to the left of the
+               1000px container instead of centering it. */
+    margin: 0 auto 0.75rem;
+  }
+  #vt1-booking .cs-text {
+    font-size: clamp(1rem, 1.9vw, 1.125rem);
+    color: var(--bodyTextColor);
+    max-width: 38.75rem;
+    margin: 0 auto;
+  }
+  #vt1-booking .cs-calendar {
+    display: block;
+    width: 100%;
+    min-height: 46.875rem;
+    border: none;
+    overflow: hidden;
+  }
+}
