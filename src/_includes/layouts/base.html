@@ -9,7 +9,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="{{ description }}">
         <meta name="keywords" content="">
-        {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+        <!-- Set by src/content/landing/landing.json for every ad and lead-magnet
+             landing page. "follow" rather than "nofollow" so crawlers still walk
+             the links back into the indexable site. These pages must stay
+             crawlable in robots.txt or Google never sees this tag. -->
+        {% if noindex %}<meta name="robots" content="noindex, follow">{% endif %}
         <link rel="canonical" href="{{ client.domain }}{{ page.url }}">
 
         <!--Social Media Display-->

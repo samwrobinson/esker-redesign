@@ -1,0 +1,34 @@
+Landing pages for paid and off-site traffic (Facebook ads, YouTube lead magnets)
+and every post-conversion thank-you page.
+
+landing.json applies noindex: true and eleventyExcludeFromCollections: true to
+every file in this folder, so a new landing page needs neither flag in its own
+front matter. eleventyExcludeFromCollections keeps it out of collections.sitemap,
+which is what generates sitemap.xml, so the page never gets submitted to Google.
+
+Rules for anything in here:
+  - Set an explicit permalink. Source file names in this folder do not map to
+    URLs, so moving a file here never changes a live ad destination.
+  - Do NOT add the page to the header, footer, or any body link. These should be
+    orphan pages that only ad traffic reaches.
+  - Do NOT disallow the path in robots.txt. Blocking the crawl stops Google
+    reading the noindex tag, and the bare URL can still surface in search.
+  - If a page is substantial enough to earn organic traffic on its own, it does
+    not belong here. Put it in ../pages/ and leave it indexable.
+
+---
+title: 'Page title for <title> and OG tags'
+description: 'Description for <meta> description and OG tags'
+preloadImg: '/assets/images/imagename.format'
+permalink: '/campaign-path/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <!-- Page-specific stylesheet, pixel, and any preloads -->
+{% endblock %}
+
+{% block body %}
+    <!-- Page HTML goes here, without a <main> wrapper. The <main> tag is already present in layouts/base.html -->
+{% endblock %}

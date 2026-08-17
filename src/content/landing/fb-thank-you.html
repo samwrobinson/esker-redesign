@@ -2,13 +2,14 @@
 title: 'Thank You | Esker Designs'
 description: 'Thanks for reaching out. I will be in touch within 24 hours.'
 preloadImg: '/assets/images/logo.webp'
-permalink: '/thank-you/'
-eleventyExcludeFromCollections: true
+permalink: '/fb/thank-you/'
 ---
 
 {% extends "layouts/base.html" %}
 
 {% block head %}
+<link rel="stylesheet" href="/assets/css/facebook-landing.css">
+
 <!-- Facebook Pixel Code -->
 <script>
     !function(f,b,e,v,n,t,s)
@@ -29,19 +30,23 @@ eleventyExcludeFromCollections: true
         src="https://www.facebook.com/tr?id=3889075514559305&ev=PageView&noscript=1" alt="" />
 </noscript>
 <!-- End Facebook Pixel Code -->
+
 {% endblock %}
 
 {% block body %}
 
 <script>
-  // Load gtag.js immediately on this page (don't wait for scroll)
-  var head = document.getElementsByTagName('head')[0];
-  var script = document.createElement('script');
-  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-PL4NL9XE9Y';
-  head.appendChild(script);
+    // Load gtag.js immediately on this page (don't wait for scroll)
+    var head = document.getElementsByTagName('head')[0];
+    var script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-PL4NL9XE9Y';
+    head.appendChild(script);
 
-  gtag('event', 'ads_conversion_Contact_Us_1', {});
-  gtag('event', 'conversion', {'send_to': 'AW-16834089922/QPM8CJaky5IcEMKnj9s-'});
+    // Only fire the Google Ads conversion on a real submission (same guard as the FB Lead).
+    if (new URLSearchParams(window.location.search).get('submitted') === '1') {
+        gtag('event', 'ads_conversion_Contact_Us_1', {});
+        gtag('event', 'conversion', {'send_to': 'AW-16834089922/QPM8CJaky5IcEMKnj9s-'});
+    }
 </script>
 
 <section id="fb-hero" style="min-height:80vh;display:flex;align-items:center;justify-content:center;padding-bottom:6.25rem;">
@@ -51,7 +56,7 @@ eleventyExcludeFromCollections: true
             <p class="cs-text">
                 I'll be in touch within 24 hours. In the meantime, feel free to check out some of the work I've done for other small businesses.
             </p>
-            <a href="/" class="cs-button-solid">Back to Homepage</a>
+            <a href="/" class="cs-submit" style="display:inline-block;text-decoration:none;text-align:center;max-width:16rem;">Back to Homepage</a>
         </div>
     </div>
 </section>
