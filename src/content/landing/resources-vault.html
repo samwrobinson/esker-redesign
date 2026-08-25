@@ -1,0 +1,149 @@
+---
+title: 'Your Free Resources | Esker Designs'
+description: 'Every Esker Designs free resource in one place.'
+preloadImg: '/assets/images/logo.webp'
+permalink: '/free-resources/vault/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/assets/css/hub-page.css">
+<link rel="stylesheet" href="/assets/css/prompt-library.css">
+{% endblock %}
+
+{% block body %}
+
+<section id="int-hero">
+    <h1 id="home-h">Your Resources</h1>
+    <svg class="cs-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,192L120,213.3C240,235,480,277,720,277.3C960,277,1200,235,1320,213.3L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+    <svg class="cs-wave cs-dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#061521" fill-opacity="1" d="M0,192L120,213.3C240,235,480,277,720,277.3C960,277,1200,235,1320,213.3L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+</section>
+
+<section id="resources-1401">
+  <div class="cs-container">
+    <div class="cs-content">
+      <span class="cs-topper">You're in</span>
+      <h2 class="cs-title">Everything, unlocked</h2>
+      <p class="cs-text">Bookmark this page. One email got you all of it, and this link keeps working.</p>
+    </div>
+
+    <div class="cs-group-wrapper">
+
+      <div class="cs-group" id="codestitch-prompts">
+        <h3 class="cs-group-name">CodeStitch + Figma Prompt Kit</h3>
+        <p class="cs-group-text">The three prompts I give Claude Code to turn a Figma file into a working CodeStitch site.</p>
+
+        <div class="pl-note">
+          <strong>Before any of these work</strong>
+          <ul><li>Every section in your Figma file ends in its numeric CodeStitch ID - `Navbar - 2318`, `Page banner - 1106`. This is the whole trick; without it Claude has nothing to map components to.</li><li>The Figma MCP server is connected and Claude has the file link.</li><li>You've cloned a CodeStitch starter kit, renamed it, removed the original origin, and pushed to your own repo.</li><li>One page per unique page type is designed - not every page. One homepage, one about, one service-page template.</li></ul>
+        </div>
+
+            <div class="pl-prompt">
+                <div class="pl-prompt-head">
+                    <span class="pl-num">01</span>
+                    <h3>Pull the component list</h3>
+                </div>
+                <p class="pl-when">Run this first, with the Figma link pasted in. Some sections repeat on every page, so you want the UNIQUE list - otherwise you'll pull the same component's code four times.</p>
+                <div class="pl-code-wrap">
+                    <button class="pl-copy" data-target="p1">Copy</button>
+                    <pre id="p1">I'm about to build a CodeStitch [KIT NAME] project, and I'm giving you access to the Figma file I used to design the pages.
+
+Right now there's a homepage, an about page, and a service page template. All of these pages have components that are unique to them, plus components shared across them.
+
+Every section in the Figma file has a numerical code at the end of its name. The navbar is 2318. The page banner is 1106.
+
+Look at all of the different sections in the Figma file and give me a unique list of all the section ID numbers that appear in this design.</pre>
+                </div>
+                <dl class="pl-swaps"><dt>[KIT NAME]</dt><dd>"Astro" or "intermediate LESS" - whichever kit you cloned.</dd><dt>2318 / 1106</dt><dd>Two real IDs from your own file. Two examples is enough to teach it the pattern.</dd></dl>
+            </div>
+
+            <div class="pl-prompt">
+                <div class="pl-prompt-head">
+                    <span class="pl-num">02</span>
+                    <h3>Build the pages</h3>
+                </div>
+                <p class="pl-when">Between step 1 and step 2 you do the boring part by hand: pull each component's HTML, CSS/LESS and JS from CodeStitch into one Google Doc, then download it as Markdown. Attach that file to this prompt.</p>
+                <div class="pl-code-wrap">
+                    <button class="pl-copy" data-target="p2">Copy</button>
+                    <pre id="p2">We're starting to build [CLIENT]'s website.
+
+You have access to the Figma file, and you already told me which CodeStitch components we need. I'm attaching a markdown file with all the HTML, the LESS/CSS, and some JavaScript - mostly for the navigation.
+
+Take that markdown file, look at the section tags with the number IDs we talked about, and correspond those to the existing pages in the Figma file.
+
+For each page, look at what sections it needs based on the Figma file, what photos are in that section, and what SVG elements are in that section. Then take the HTML and CSS components and build them out into the corresponding pages, downloading the assets as you go.
+
+Use the design context from the Figma file - not a screenshot.
+
+There's a bunch of placeholder content in this repository already. You don't have to do anything with the blog, but we want to start from scratch without the pages that are already built into the site, and only build the ones in our Figma file. I'll give you the HTML for the contact page later on.
+
+Just build out the [N] pages that are already in there. Does that make sense?</pre>
+                </div>
+                <dl class="pl-swaps"><dt>[CLIENT]</dt><dd>The business name. Naming the real client keeps its copy and tone consistent.</dd><dt>[N]</dt><dd>How many page types you designed. Three is typical: home, about, service template.</dd><dt>The blog / contact-page lines</dt><dd>Delete if they don't apply. Every kit ships with different placeholder pages - tell it explicitly what to leave alone.</dd></dl>
+            </div>
+
+            <div class="pl-prompt">
+                <div class="pl-prompt-head">
+                    <span class="pl-num">03</span>
+                    <h3>Coach it into shape</h3>
+                </div>
+                <p class="pl-when">The first pass lands around 85-90%, and the gap is always small details - corner radius, hover states, a missing background SVG, dropped bullet points. Go section by section and be specific. Vague notes get vague fixes.</p>
+                <div class="pl-code-wrap">
+                    <button class="pl-copy" data-target="p3">Copy</button>
+                    <pre id="p3">I have a couple of edits - some general, some specific.
+
+GENERAL
+- The hero section on load should be 100vh, like in the Figma file.
+- You didn't adopt the border radius from the design file. On most components the corner radius is actually zero, but you've rounded the images, the cards, and all of the buttons.
+
+SECTION [ID]
+- You didn't include the [N] bullet points before the [BUTTON LABEL] button.
+- The text in that section is off-centre from the button.
+- There's an SVG vector in this section that's a background overlay, position absolute to the right side of the screen. It's missing.
+
+SECTION [ID]
+- The different styling on one card in the Figma file is a HOVER state, not a default. [CARD NAME] should only get that background colour on hover, and so should all the others.
+- You put hover elements on the text, so it disappears when you hover. That shouldn't be the case.
+- On hover, the SVG icon background should turn [COLOUR] and the SVG path should turn white.
+- The bullet point on each of those [N] cards should be the [SHAPE] shape instead of a square.
+
+I'll start with that - does that all make sense? I'll paste the Figma file nodes in for your reference.</pre>
+                </div>
+                <dl class="pl-swaps"><dt>Work one section at a time</dt><dd>Name the section by its CodeStitch ID. It already knows what that maps to.</dd><dt>Say what it did wrong, then what's correct</dt><dd>"You rounded the cards, the radius is zero" beats "fix the cards".</dd><dt>Paste the Figma nodes</dt><dd>Ending with the node reference is what stops it guessing.</dd></dl>
+            </div>
+
+        <div class="pl-note pl-warn">
+          <strong>The one that cost me a rebuild</strong>
+          <p>Claude will sometimes take a screenshot of your Figma file instead of reading it. You get something that looks roughly right and matches none of the real values. Say "use the design context from the Figma file" explicitly, in every build prompt - that's what makes it read the actual CSS.</p>
+        </div>
+      </div>
+
+      <div class="cs-group">
+        <h3 class="cs-group-name">Everything else</h3>
+        <p class="cs-group-text">The rest of the library. Same email, no second form.</p>
+        <ul class="cs-links">
+          <li class="cs-link-item"><a href="/yt/prompt-library/thank-you/" class="cs-textlink">AI Website Prompt Library</a></li>
+          <li class="cs-link-item"><a href="/yt/design-questionnaire/thank-you/" class="cs-textlink">Web Design Questionnaire</a></li>
+          <li class="cs-link-item"><a href="/yt/web-scraper/thank-you/" class="cs-textlink">Web Scraper</a></li>
+          <li class="cs-link-item"><a href="/yt/fb-prompt/thank-you/" class="cs-textlink">Facebook Lead Prompt + Repo</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+document.querySelectorAll(".pl-copy").forEach(function (b) {
+  b.addEventListener("click", function () {
+    var el = document.getElementById(b.dataset.target);
+    navigator.clipboard.writeText(el.innerText).then(function () {
+      b.textContent = "Copied";
+      setTimeout(function () { b.textContent = "Copy"; }, 1600);
+    });
+  });
+});
+</script>
+
+{% endblock %}

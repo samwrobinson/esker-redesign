@@ -2,6 +2,9 @@
 
 {% block head %}
     <link rel="stylesheet" href="/assets/css/blog.css">
+    <!-- Google Preferred Sources library - renders the "Add to preferred sources"
+         badge wherever components/preferred-source.html is included -->
+    <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 
     <script type="application/ld+json">
         {
@@ -104,6 +107,8 @@
                 <section id="blog-content">
                     {{ content | safe }}
                 </section>
+
+                {% include 'components/preferred-source.html' %}
             </article>
         </div>
         <!-- End .main-content -->

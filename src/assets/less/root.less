@@ -209,6 +209,10 @@
     }
 
     body {
+        /* Light mode never set a body background, so the page inherited whatever
+           the host canvas painted. dark.less already sets body.dark-mode, and its
+           higher specificity still wins over this. */
+        background-color: #fff;
         transition: background-color 0.3s;
     }
 
@@ -2250,5 +2254,40 @@
             height: auto;
             display: block;
         }
+    }
+}
+
+/*-- -------------------------- -->
+<---   Google Preferred Source  -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    .cs-preferred-source {
+        margin: (32/16rem) 0;
+        padding: (20/16rem);
+        border: 1px solid #e8e8e8;
+        border-radius: (8/16rem);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: (12/16rem);
+
+        /* Google injects its iframe into this div and sets width: 100% inline,
+           so the flex item has to stretch or the badge collapses to zero width */
+        #preferred-source-btn {
+            width: 100%;
+        }
+
+        .cs-preferred-source-text {
+            margin: 0;
+            font-size: (14/16rem);
+            line-height: 1.5em;
+            color: var(--bodyTextColor);
+        }
+    }
+
+    body.dark-mode .cs-preferred-source {
+        border-color: var(--accent);
     }
 }

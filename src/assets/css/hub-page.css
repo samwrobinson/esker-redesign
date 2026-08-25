@@ -4,7 +4,8 @@
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #areas-1401,
-  #offerings-1401 {
+  #offerings-1401,
+  #resources-1401 {
     padding: var(--sectionPadding);
     position: relative;
     z-index: 1;
@@ -13,7 +14,8 @@
            hold many spoke pages without the hub turning into a wall of boxes */
   }
   #areas-1401 .cs-container,
-  #offerings-1401 .cs-container {
+  #offerings-1401 .cs-container,
+  #resources-1401 .cs-container {
     width: 100%;
     /* changes to 1280px at tablet */
     max-width: 34.375rem;
@@ -25,7 +27,8 @@
     gap: clamp(3rem, 6vw, 4rem);
   }
   #areas-1401 .cs-content,
-  #offerings-1401 .cs-content {
+  #offerings-1401 .cs-content,
+  #resources-1401 .cs-content {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -33,7 +36,8 @@
     text-align: left;
   }
   #areas-1401 .cs-text,
-  #offerings-1401 .cs-text {
+  #offerings-1401 .cs-text,
+  #resources-1401 .cs-text {
     /* 16px - 20px */
     font-size: clamp(1rem, 1.95vw, 1.25rem);
     line-height: 1.5em;
@@ -45,11 +49,13 @@
                looks unstyled against the rest of the page */
   }
   #areas-1401 .cs-text:last-of-type,
-  #offerings-1401 .cs-text:last-of-type {
+  #offerings-1401 .cs-text:last-of-type,
+  #resources-1401 .cs-text:last-of-type {
     margin-bottom: 0;
   }
   #areas-1401 .cs-text a,
-  #offerings-1401 .cs-text a {
+  #offerings-1401 .cs-text a,
+  #resources-1401 .cs-text a {
     color: var(--primary);
     font-weight: 700;
     text-decoration: underline;
@@ -58,11 +64,13 @@
     transition: color 0.3s;
   }
   #areas-1401 .cs-text a:hover,
-  #offerings-1401 .cs-text a:hover {
+  #offerings-1401 .cs-text a:hover,
+  #resources-1401 .cs-text a:hover {
     color: var(--primaryLight);
   }
   #areas-1401 .cs-group-wrapper,
-  #offerings-1401 .cs-group-wrapper {
+  #offerings-1401 .cs-group-wrapper,
+  #resources-1401 .cs-group-wrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -70,11 +78,13 @@
     gap: clamp(2.5rem, 5vw, 4rem);
   }
   #areas-1401 .cs-group,
-  #offerings-1401 .cs-group {
+  #offerings-1401 .cs-group,
+  #resources-1401 .cs-group {
     width: 100%;
   }
   #areas-1401 .cs-group-name,
-  #offerings-1401 .cs-group-name {
+  #offerings-1401 .cs-group-name,
+  #resources-1401 .cs-group-name {
     font-size: 1.25rem;
     line-height: 1.2em;
     font-weight: 900;
@@ -85,7 +95,8 @@
     display: block;
   }
   #areas-1401 .cs-group-text,
-  #offerings-1401 .cs-group-text {
+  #offerings-1401 .cs-group-text,
+  #resources-1401 .cs-group-text {
     font-size: 1rem;
     line-height: 1.5em;
     width: 100%;
@@ -94,7 +105,8 @@
     color: var(--bodyTextColor);
   }
   #areas-1401 .cs-card-group,
-  #offerings-1401 .cs-card-group {
+  #offerings-1401 .cs-card-group,
+  #resources-1401 .cs-card-group {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -103,12 +115,14 @@
     border-top: 1px solid #e8e8e8;
   }
   #areas-1401 .cs-item,
-  #offerings-1401 .cs-item {
+  #offerings-1401 .cs-item,
+  #resources-1401 .cs-item {
     list-style: none;
     border-bottom: 1px solid #e8e8e8;
   }
   #areas-1401 .cs-link,
-  #offerings-1401 .cs-link {
+  #offerings-1401 .cs-link,
+  #resources-1401 .cs-link {
     width: 100%;
     box-sizing: border-box;
     padding: 0.875rem 0.25rem;
@@ -120,21 +134,25 @@
     transition: padding-left 0.2s, background-color 0.2s;
   }
   #areas-1401 .cs-link:hover,
-  #offerings-1401 .cs-link:hover {
+  #offerings-1401 .cs-link:hover,
+  #resources-1401 .cs-link:hover {
     background-color: rgba(150, 191, 48, 0.07);
     padding-left: 0.75rem;
   }
   #areas-1401 .cs-link:hover .cs-h3,
-  #offerings-1401 .cs-link:hover .cs-h3 {
+  #offerings-1401 .cs-link:hover .cs-h3,
+  #resources-1401 .cs-link:hover .cs-h3 {
     color: var(--primaryLight);
   }
   #areas-1401 .cs-link:hover .cs-arrow,
-  #offerings-1401 .cs-link:hover .cs-arrow {
+  #offerings-1401 .cs-link:hover .cs-arrow,
+  #resources-1401 .cs-link:hover .cs-arrow {
     opacity: 1;
     transform: translateX(0);
   }
   #areas-1401 .cs-h3,
-  #offerings-1401 .cs-h3 {
+  #offerings-1401 .cs-h3,
+  #resources-1401 .cs-h3 {
     font-size: 1.0625rem;
     line-height: 1.4em;
     font-weight: 700;
@@ -144,7 +162,8 @@
     transition: color 0.2s;
   }
   #areas-1401 .cs-item-text,
-  #offerings-1401 .cs-item-text {
+  #offerings-1401 .cs-item-text,
+  #resources-1401 .cs-item-text {
     /* 14px - 15px */
     font-size: clamp(0.875rem, 1.4vw, 0.9375rem);
     line-height: 1.4em;
@@ -155,7 +174,8 @@
     opacity: 0.85;
   }
   #areas-1401 .cs-arrow,
-  #offerings-1401 .cs-arrow {
+  #offerings-1401 .cs-arrow,
+  #resources-1401 .cs-arrow {
     font-size: 0.875rem;
     line-height: 1.4em;
     font-weight: 700;
@@ -168,7 +188,8 @@
     transition: opacity 0.2s, transform 0.2s;
   }
   #areas-1401 .cs-button-solid,
-  #offerings-1401 .cs-button-solid {
+  #offerings-1401 .cs-button-solid,
+  #resources-1401 .cs-button-solid {
     /* stops the button stretching in the flex container */
     flex: none;
   }
@@ -176,10 +197,12 @@
        used on #areas-1401. Plain text links, grouped and optionally sub-labelled,
        so the SEO group can hold a long "by trade" list without turning into a
        wall of boxes. */
-  #offerings-1401 {
+  #offerings-1401,
+  #resources-1401 {
     /* small uppercase divider inside a group, e.g. "Core services" / "SEO by trade" */
   }
-  #offerings-1401 .cs-sublabel {
+  #offerings-1401 .cs-sublabel,
+  #resources-1401 .cs-sublabel {
     display: block;
     font-size: 0.8125rem;
     font-weight: 700;
@@ -189,10 +212,12 @@
     margin: 1.5rem 0 0.75rem 0;
     /* the first sub-label sits right under the group copy */
   }
-  #offerings-1401 .cs-sublabel:first-of-type {
+  #offerings-1401 .cs-sublabel:first-of-type,
+  #resources-1401 .cs-sublabel:first-of-type {
     margin-top: 1rem;
   }
-  #offerings-1401 .cs-links {
+  #offerings-1401 .cs-links,
+  #resources-1401 .cs-links {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -202,10 +227,12 @@
     /* row gap / column gap */
     gap: 0.75rem 1.75rem;
   }
-  #offerings-1401 .cs-link-item {
+  #offerings-1401 .cs-link-item,
+  #resources-1401 .cs-link-item {
     list-style: none;
   }
-  #offerings-1401 .cs-textlink {
+  #offerings-1401 .cs-textlink,
+  #resources-1401 .cs-textlink {
     font-size: 1.0625rem;
     line-height: 1.3em;
     font-weight: 600;
@@ -215,7 +242,8 @@
     border-bottom: 1px solid transparent;
     transition: color 0.2s, border-color 0.2s;
   }
-  #offerings-1401 .cs-textlink:hover {
+  #offerings-1401 .cs-textlink:hover,
+  #resources-1401 .cs-textlink:hover {
     color: var(--primaryLight);
     border-bottom-color: var(--primaryLight);
   }
@@ -223,18 +251,21 @@
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
   #areas-1401 .cs-container,
-  #offerings-1401 .cs-container {
+  #offerings-1401 .cs-container,
+  #resources-1401 .cs-container {
     max-width: 80rem;
   }
   #areas-1401 .cs-link,
-  #offerings-1401 .cs-link {
+  #offerings-1401 .cs-link,
+  #resources-1401 .cs-link {
     /* no wrap on wider screens - title, description and arrow sit on one row */
     flex-wrap: nowrap;
     gap: 1rem;
     padding: 0.875rem 0.5rem;
   }
   #areas-1401 .cs-h3,
-  #offerings-1401 .cs-h3 {
+  #offerings-1401 .cs-h3,
+  #resources-1401 .cs-h3 {
     /* fixed column so every description starts at the same x */
     width: 16.25rem;
     flex: none;
@@ -260,54 +291,210 @@
   }
   body.dark-mode #areas-1401 .cs-title,
   body.dark-mode #offerings-1401 .cs-title,
+  body.dark-mode #resources-1401 .cs-title,
   body.dark-mode #areas-1401 .cs-text,
   body.dark-mode #offerings-1401 .cs-text,
+  body.dark-mode #resources-1401 .cs-text,
   body.dark-mode #areas-1401 .cs-group-name,
   body.dark-mode #offerings-1401 .cs-group-name,
+  body.dark-mode #resources-1401 .cs-group-name,
   body.dark-mode #areas-1401 .cs-group-text,
   body.dark-mode #offerings-1401 .cs-group-text,
+  body.dark-mode #resources-1401 .cs-group-text,
   body.dark-mode #areas-1401 .cs-h3,
-  body.dark-mode #offerings-1401 .cs-h3 {
+  body.dark-mode #offerings-1401 .cs-h3,
+  body.dark-mode #resources-1401 .cs-h3 {
     color: var(--bodyTextColorWhite);
   }
   body.dark-mode #areas-1401 .cs-text,
   body.dark-mode #offerings-1401 .cs-text,
+  body.dark-mode #resources-1401 .cs-text,
   body.dark-mode #areas-1401 .cs-group-text,
   body.dark-mode #offerings-1401 .cs-group-text,
+  body.dark-mode #resources-1401 .cs-group-text,
   body.dark-mode #areas-1401 .cs-item-text,
-  body.dark-mode #offerings-1401 .cs-item-text {
+  body.dark-mode #offerings-1401 .cs-item-text,
+  body.dark-mode #resources-1401 .cs-item-text {
     color: var(--bodyTextColorWhite);
     opacity: 0.8;
   }
   body.dark-mode #areas-1401 .cs-group-name,
-  body.dark-mode #offerings-1401 .cs-group-name {
+  body.dark-mode #offerings-1401 .cs-group-name,
+  body.dark-mode #resources-1401 .cs-group-name {
     border-bottom-color: var(--accent);
   }
   body.dark-mode #areas-1401 .cs-card-group,
-  body.dark-mode #offerings-1401 .cs-card-group {
+  body.dark-mode #offerings-1401 .cs-card-group,
+  body.dark-mode #resources-1401 .cs-card-group {
     border-top-color: var(--accent);
   }
   body.dark-mode #areas-1401 .cs-item,
-  body.dark-mode #offerings-1401 .cs-item {
+  body.dark-mode #offerings-1401 .cs-item,
+  body.dark-mode #resources-1401 .cs-item {
     border-bottom-color: var(--accent);
   }
   body.dark-mode #areas-1401 .cs-link:hover,
-  body.dark-mode #offerings-1401 .cs-link:hover {
+  body.dark-mode #offerings-1401 .cs-link:hover,
+  body.dark-mode #resources-1401 .cs-link:hover {
     background-color: rgba(150, 191, 48, 0.12);
   }
   body.dark-mode #areas-1401 .cs-text a,
-  body.dark-mode #offerings-1401 .cs-text a {
+  body.dark-mode #offerings-1401 .cs-text a,
+  body.dark-mode #resources-1401 .cs-text a {
     color: var(--primaryLight);
   }
   body.dark-mode #areas-1401 .cs-arrow,
-  body.dark-mode #offerings-1401 .cs-arrow {
+  body.dark-mode #offerings-1401 .cs-arrow,
+  body.dark-mode #resources-1401 .cs-arrow {
     color: var(--primaryLight);
   }
-  body.dark-mode #offerings-1401 .cs-textlink {
+  body.dark-mode #offerings-1401 .cs-textlink,
+  body.dark-mode #resources-1401 .cs-textlink {
     color: var(--bodyTextColorWhite);
   }
-  body.dark-mode #offerings-1401 .cs-textlink:hover {
+  body.dark-mode #offerings-1401 .cs-textlink:hover,
+  body.dark-mode #resources-1401 .cs-textlink:hover {
     color: var(--primaryLight);
     border-bottom-color: var(--primaryLight);
+  }
+}
+/*-- -------------------------- -->
+<---   Resources vault + gate   -->
+<--- -------------------------- -*/
+@media only screen and (min-width: 0rem) {
+  #resources-gate {
+    padding: 0 1rem 3rem;
+  }
+  #resources-gate .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+  }
+  #resources-gate .pl-form-wrap {
+    width: 100%;
+    max-width: 46.875rem;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    background: #fff;
+    border-radius: 0.5rem;
+    border: 1px solid #e8e8e8;
+  }
+  #resources-1401 .pl-note {
+    margin: 0 0 1.5rem;
+    padding: 1rem 1.25rem;
+    background: #fff;
+    border-left: 3px solid var(--primaryLight);
+    font-size: 0.9375rem;
+    line-height: 1.5em;
+  }
+  #resources-1401 .pl-note strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--headerColor);
+  }
+  #resources-1401 .pl-note ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+  #resources-1401 .pl-note li {
+    margin-bottom: 0.375rem;
+  }
+  #resources-1401 .pl-note p {
+    margin: 0;
+  }
+  #resources-1401 .pl-warn {
+    border-left-color: var(--primary);
+  }
+  #resources-1401 .pl-prompt {
+    margin: 0 0 2.5rem;
+  }
+  #resources-1401 .pl-prompt-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  #resources-1401 .pl-prompt-head h3 {
+    font-size: 1.25rem;
+    margin: 0;
+    color: var(--headerColor);
+  }
+  #resources-1401 .pl-num {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    padding: 0.1875rem 0.5rem;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 0.25rem;
+    flex: none;
+  }
+  #resources-1401 .pl-when {
+    font-size: 0.9375rem;
+    line-height: 1.5em;
+    margin: 0 0 0.75rem;
+    color: var(--bodyTextColor);
+  }
+  #resources-1401 .pl-code-wrap {
+    position: relative;
+  }
+  #resources-1401 .pl-copy {
+    position: absolute;
+    top: 0.625rem;
+    right: 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.375rem 0.75rem;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  #resources-1401 .pl-copy:hover {
+    background: var(--primaryLight);
+  }
+  #resources-1401 pre {
+    margin: 0;
+    padding: 1.25rem;
+    padding-right: 5.625rem;
+    background: #1b2113;
+    color: #e8e9df;
+    border-radius: 0.375rem;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 0.875rem;
+    line-height: 1.7em;
+  }
+  #resources-1401 .pl-swaps {
+    margin: 0.875rem 0 0;
+    font-size: 0.90625rem;
+    line-height: 1.5em;
+  }
+  #resources-1401 .pl-swaps dt {
+    font-weight: 700;
+    color: var(--primary);
+    margin-top: 0.625rem;
+  }
+  #resources-1401 .pl-swaps dd {
+    margin: 0.125rem 0 0;
+    color: var(--bodyTextColor);
+  }
+  body.dark-mode #resources-gate .pl-form-wrap,
+  body.dark-mode #resources-1401 .pl-note {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent);
+  }
+  body.dark-mode #resources-1401 .pl-prompt-head h3,
+  body.dark-mode #resources-1401 .pl-note strong {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #resources-1401 .pl-when,
+  body.dark-mode #resources-1401 .pl-swaps dd,
+  body.dark-mode #resources-1401 .pl-note {
+    color: var(--bodyTextColorWhite);
   }
 }

@@ -4,7 +4,7 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #areas-1401, #offerings-1401 {
+    #areas-1401, #offerings-1401, #resources-1401 {
         padding: var(--sectionPadding);
         position: relative;
         z-index: 1;
@@ -177,7 +177,7 @@
        used on #areas-1401. Plain text links, grouped and optionally sub-labelled,
        so the SEO group can hold a long "by trade" list without turning into a
        wall of boxes. */
-    #offerings-1401 {
+    #offerings-1401, #resources-1401 {
         /* small uppercase divider inside a group, e.g. "Core services" / "SEO by trade" */
         .cs-sublabel {
             display: block;
@@ -229,7 +229,7 @@
 
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-    #areas-1401, #offerings-1401 {
+    #areas-1401, #offerings-1401, #resources-1401 {
         .cs-container {
             max-width: (1280/16rem);
         }
@@ -267,7 +267,7 @@
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
-        #areas-1401, #offerings-1401 {
+        #areas-1401, #offerings-1401, #resources-1401 {
             .cs-title,
             .cs-text,
             .cs-group-name,
@@ -309,7 +309,7 @@
         }
 
         /* Offerings hub link directory - dark mode */
-        #offerings-1401 {
+        #offerings-1401, #resources-1401 {
             .cs-textlink {
                 color: var(--bodyTextColorWhite);
 
@@ -319,5 +319,131 @@
                 }
             }
         }
+    }
+}
+
+/*-- -------------------------- -->
+<---   Resources vault + gate   -->
+<--- -------------------------- -*/
+
+@media only screen and (min-width: 0rem) {
+    #resources-gate {
+        padding: 0 (16/16rem) (48/16rem);
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+        }
+
+        .pl-form-wrap {
+            width: 100%;
+            max-width: (750/16rem);
+            margin: 0 auto;
+            padding: clamp(1.5rem, 4vw, 2.5rem);
+            background: #fff;
+            border-radius: (8/16rem);
+            border: 1px solid #e8e8e8;
+        }
+    }
+
+    #resources-1401 {
+        .pl-note {
+            margin: 0 0 (24/16rem);
+            padding: (16/16rem) (20/16rem);
+            background: #fff;
+            border-left: 3px solid var(--primaryLight);
+            font-size: (15/16rem);
+            line-height: 1.5em;
+
+            strong { display: block; margin-bottom: (8/16rem); color: var(--headerColor); }
+            ul { margin: 0; padding-left: (20/16rem); }
+            li { margin-bottom: (6/16rem); }
+            p { margin: 0; }
+        }
+
+        .pl-warn { border-left-color: var(--primary); }
+
+        .pl-prompt { margin: 0 0 (40/16rem); }
+
+        .pl-prompt-head {
+            display: flex;
+            align-items: center;
+            gap: (12/16rem);
+            margin-bottom: (8/16rem);
+
+            h3 { font-size: (20/16rem); margin: 0; color: var(--headerColor); }
+        }
+
+        .pl-num {
+            font-size: (13/16rem);
+            font-weight: 700;
+            padding: (3/16rem) (8/16rem);
+            background: var(--primary);
+            color: #fff;
+            border-radius: (4/16rem);
+            flex: none;
+        }
+
+        .pl-when {
+            font-size: (15/16rem);
+            line-height: 1.5em;
+            margin: 0 0 (12/16rem);
+            color: var(--bodyTextColor);
+        }
+
+        .pl-code-wrap { position: relative; }
+
+        .pl-copy {
+            position: absolute;
+            top: (10/16rem);
+            right: (10/16rem);
+            font-size: (12/16rem);
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            padding: (6/16rem) (12/16rem);
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: (4/16rem);
+            cursor: pointer;
+            transition: background .2s;
+
+            &:hover { background: var(--primaryLight); }
+        }
+
+        pre {
+            margin: 0;
+            padding: (20/16rem);
+            padding-right: (90/16rem);
+            background: #1b2113;
+            color: #e8e9df;
+            border-radius: (6/16rem);
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: (14/16rem);
+            line-height: 1.7em;
+        }
+
+        .pl-swaps {
+            margin: (14/16rem) 0 0;
+            font-size: (14.5/16rem);
+            line-height: 1.5em;
+
+            dt { font-weight: 700; color: var(--primary); margin-top: (10/16rem); }
+            dd { margin: (2/16rem) 0 0; color: var(--bodyTextColor); }
+        }
+    }
+
+    body.dark-mode {
+        #resources-gate .pl-form-wrap,
+        #resources-1401 .pl-note { background: rgba(255,255,255,.05); border-color: var(--accent); }
+        #resources-1401 .pl-prompt-head h3,
+        #resources-1401 .pl-note strong { color: var(--bodyTextColorWhite); }
+        #resources-1401 .pl-when,
+        #resources-1401 .pl-swaps dd,
+        #resources-1401 .pl-note { color: var(--bodyTextColorWhite); }
     }
 }

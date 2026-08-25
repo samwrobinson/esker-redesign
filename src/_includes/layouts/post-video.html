@@ -2,6 +2,9 @@
 
 {% block head %}
     <link rel="stylesheet" href="/assets/css/blog-video.css">
+    <!-- Google Preferred Sources library - renders the "Add to preferred sources"
+         badge wherever components/preferred-source.html is included -->
+    <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 
     <!-- Video-specific Open Graph tags -->
     <meta property="og:type" content="video.other"/>
@@ -171,6 +174,8 @@
                 <p class="cs-cta-text">Ready to discuss your website?</p>
                 <a href="/booking/" class="cs-button-solid">Let's Talk About Your Website</a>
             </div>
+
+            {% include 'components/preferred-source.html' %}
         </article>
     </div>
     <!-- End .main-content -->

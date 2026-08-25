@@ -12,6 +12,9 @@ eleventyNavigation:
 
 {% block head %}
     <link rel="stylesheet" href="/assets/css/blog.css">
+    <!-- Google Preferred Sources library - renders the "Add to preferred sources"
+         badge wherever components/preferred-source.html is included -->
+    <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="ad4f603c-adc2-4df0-8440-601f99120b46"></script>
 {% endblock %}
 
@@ -36,6 +39,9 @@ eleventyNavigation:
     <div class="blog-container main-content-wrapper">
         <!--Main content -->
         <div class="main-content">
+            {% set preferredSourceText = "Add Esker as a preferred source in Google so new posts reach you first." %}
+            {% include 'components/preferred-source.html' %}
+
             <!-- ============================================ -->
             <!--                 Blog Articles                -->
             <!-- ============================================ -->

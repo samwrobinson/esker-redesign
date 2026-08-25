@@ -1,0 +1,215 @@
+---
+title: 'Free Web Design Resources, Prompts & Templates | Esker Designs'
+description: 'Every free resource from the Esker Designs YouTube channel in one place: the Claude prompt library, the client design questionnaire, the web scraper, and the Facebook lead prompt.'
+preloadImg: ''
+permalink: 'free-resources/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="ad4f603c-adc2-4df0-8440-601f99120b46"></script>
+    <link rel="stylesheet" href="/assets/css/hub-page.css">
+    <link rel="stylesheet" href="/assets/css/prompt-library.css">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.eskerdesigns.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Free Resources",
+                        "item": "https://www.eskerdesigns.com/free-resources/"
+                    }
+                ]
+            },
+            {
+                "@type": "CollectionPage",
+                "@id": "https://www.eskerdesigns.com/free-resources/#page",
+                "name": "Free Resources",
+                "description": "Free prompts, templates and tools for building small business websites, from the Esker Designs YouTube channel.",
+                "url": "https://www.eskerdesigns.com/free-resources/",
+                "mainEntity": {
+                    "@type": "ItemList",
+                    "itemListElement": [
+                        { "@type": "ListItem", "position": 1, "name": "CodeStitch + Figma Prompt Kit", "url": "https://www.eskerdesigns.com/free-resources/" },
+                        { "@type": "ListItem", "position": 2, "name": "AI Website Prompt Library", "url": "https://www.eskerdesigns.com/yt/prompt-library/" },
+                        { "@type": "ListItem", "position": 3, "name": "Web Design Questionnaire", "url": "https://www.eskerdesigns.com/yt/design-questionnaire/" },
+                        { "@type": "ListItem", "position": 4, "name": "Web Scraper", "url": "https://www.eskerdesigns.com/yt/web-scraper/" },
+                        { "@type": "ListItem", "position": 5, "name": "Facebook Lead Prompt + Repo", "url": "https://www.eskerdesigns.com/yt/fb-prompt/" }
+                    ]
+                }
+            }
+        ]
+    }
+    </script>
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+    <!--                    LANDING                   -->
+    <!-- ============================================ -->
+
+    <section id="int-hero">
+        <h1 id="home-h">Free Resources</h1>
+        <svg class="cs-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,192L120,213.3C240,235,480,277,720,277.3C960,277,1200,235,1320,213.3L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+        <svg class="cs-wave cs-dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#061521" fill-opacity="1" d="M0,192L120,213.3C240,235,480,277,720,277.3C960,277,1200,235,1320,213.3L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+    </section>
+
+
+<!-- ============================================ -->
+<!--            ONE gate for everything           -->
+<!-- ============================================ -->
+
+<!--
+    SINGLE OPT-IN. Every resource on this page is unlocked by ONE form posting to
+    the ONE Netlify form "esker-resources". Do NOT add a second form to any
+    resource page - that is how the same person ends up in the list three times.
+    A returning subscriber is recognised from localStorage and sent straight to
+    the vault without re-submitting.
+-->
+
+<section id="resources-gate">
+    <div class="cs-container">
+        <div class="pl-form-wrap">
+            <h2 class="cs-title" id="gate-h">Get all of it with one email</h2>
+            <p class="cs-text" id="gate-p">
+                One address unlocks every resource below - the prompts, the questionnaire, the scraper, all of it. You'll never have to fill this in again.
+            </p>
+            <form class="pl-form" id="pl-form" name="esker-resources" method="POST" netlify netlify-honeypot="bot-field" onsubmit="return resourcesSubmit(event)">
+                <input type="hidden" name="form-name" value="esker-resources">
+                <input type="hidden" name="source" value="free-resources">
+                <p class="pl-hidden" style="display:none;"><input name="bot-field"></p>
+                <label for="pl-email">Where should we send it?</label>
+                <div class="pl-form-row">
+                    <input type="email" name="email" id="pl-email" placeholder="you@example.com" required>
+                    <button type="submit" class="pl-btn">Unlock everything</button>
+                </div>
+                <p class="pl-small-print">No spam. Unsubscribe any time.</p>
+            </form>
+            <p class="pl-small-print" id="gate-return" style="display:none;">
+                You're already on the list. <a href="/free-resources/vault/" class="cs-textlink">Open the vault</a>.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--               Free Resources                 -->
+<!-- ============================================ -->
+
+<!--
+    HUB PAGE — how to add a new lead magnet:
+    1. Build the magnet page under src/content/pages/ with its own permalink.
+       It lives in pages/ (not landing/) so it indexes and earns organic traffic.
+       Its thank-you page stays in src/content/landing/ — thank-you pages are
+       noindex orphans and must never be linked from here.
+    2. Add ONE <li class="cs-link-item"> link into the matching group below.
+    3. Add a matching entry to the ItemList schema in the head block above.
+    4. Link back to this hub from the new magnet page.
+    Keep it to a plain link — no tile, description, or arrow. Same rule as the
+    other hub pages: a clean, scannable directory that scales.
+-->
+
+<section id="resources-1401">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Free Downloads</span>
+            <h2 class="cs-title">Every Free Tool and Template From the YouTube Channel</h2>
+            <p class="cs-text">
+                Everything we give away, in one place. These are the actual prompts, templates and tools we use to build and sell small business websites — not stripped-down demo versions.
+            </p>
+            <p class="cs-text">
+                All of it is free. If something here doesn't work for your setup, <a href="/contact/">tell us what broke</a> and we'll tell you what we'd change.
+            </p>
+        </div>
+
+        <div class="cs-group-wrapper">
+
+            <!-- ============ BUILDING WEBSITES ============ -->
+            <div class="cs-group">
+                <h3 class="cs-group-name">Building Websites</h3>
+                <p class="cs-group-text">
+                    The prompts and files we use to take a design from Figma to a live, hand-coded site.
+                </p>
+                <ul class="cs-links">
+                    <li class="cs-link-item"><a href="/free-resources/vault/#codestitch-prompts" class="cs-textlink">CodeStitch + Figma Prompt Kit</a></li>
+                    <li class="cs-link-item"><a href="/yt/prompt-library/" class="cs-textlink">AI Website Prompt Library</a></li>
+                    <!-- Add build-related magnets here -->
+                </ul>
+            </div>
+
+            <!-- ============ RUNNING THE BUSINESS ============ -->
+            <div class="cs-group">
+                <h3 class="cs-group-name">Running the Business</h3>
+                <p class="cs-group-text">
+                    Client intake and copy. The parts of the job that happen before and after the build.
+                </p>
+                <ul class="cs-links">
+                    <li class="cs-link-item"><a href="/yt/design-questionnaire/" class="cs-textlink">Web Design Questionnaire</a></li>
+                    <!-- Add client-process magnets here -->
+                </ul>
+            </div>
+
+            <!-- ============ FINDING CLIENTS ============ -->
+            <div class="cs-group">
+                <h3 class="cs-group-name">Finding Clients</h3>
+                <p class="cs-group-text">
+                    Tools for finding businesses that need a website and getting in front of them.
+                </p>
+                <ul class="cs-links">
+                    <li class="cs-link-item"><a href="/yt/web-scraper/" class="cs-textlink">Web Scraper</a></li>
+                    <li class="cs-link-item"><a href="/yt/fb-prompt/" class="cs-textlink">Facebook Lead Prompt + Repo</a></li>
+                    <!-- Add lead-gen magnets here -->
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<script>
+(function () {
+    var KEY = "esker_resources_email";
+    var known = null;
+    try { known = localStorage.getItem(KEY); } catch (e) {}
+    if (known) {
+        document.getElementById("pl-form").style.display = "none";
+        document.getElementById("gate-return").style.display = "block";
+        document.getElementById("gate-h").textContent = "You already have these";
+        document.getElementById("gate-p").textContent = "Everything below is unlocked on this browser.";
+    }
+    window.resourcesSubmit = function (e) {
+        e.preventDefault();
+        var email = document.getElementById("pl-email").value.trim();
+        if (!email || email.indexOf("@") === -1) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
+        var data = new FormData(document.getElementById("pl-form"));
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(data).toString()
+        }).catch(function (err) { console.error("Form submission error:", err); });
+        try { localStorage.setItem(KEY, email); } catch (e) {}
+        setTimeout(function () { window.location.href = "/free-resources/vault/"; }, 400);
+        return false;
+    };
+})();
+</script>
+
+{% endblock %}
