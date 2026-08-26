@@ -12,6 +12,8 @@
             <a aria-label="go back to home" class="cs-logo" href="">
                 <img class="cs-logo-img" aria-hidden="true" loading="lazy" decoding="async" src="{% getUrl "/assets/images/logo-white.png" | resize({width: 100, height: 100}) | webp %}" alt="" width="240" height="32">
             </a>
+            {% set preferredSourceLabel = "Make Esker preferred on Google" %}
+            {% include 'components/preferred-source-button.html' %}
         </div>
         <!-- Links -->
         <div class="cs-ul-wrapper">

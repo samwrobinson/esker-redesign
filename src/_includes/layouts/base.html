@@ -65,6 +65,36 @@
 
         {% block head %}{% endblock %}
 
+        <!-- Google Preferred Sources - lets a signed-in reader mark Esker as one
+             of their preferred sources, which lifts our pages in that person's
+             own Google results. "manual" stops Google rendering its own badge so
+             the styled .prefSourceBtn buttons in the footer and on the blog can
+             trigger the same dialog. Skipped on noindex ad landing pages, where
+             the extra request buys nothing.
+             https://developers.google.com/search/docs/appearance/preferred-sources -->
+        {% if not noindex %}
+        <script async preferred-sources-control="manual" src="https://news.google.com/swg/js/v1/publisher.js"></script>
+        <script>
+            (self.PREFERRED_SOURCE = self.PREFERRED_SOURCE || []).push(function (preferredSource) {
+                // Theme only styles Google's own dialog. Read the same key dark.js uses.
+                var theme = 'light';
+                try {
+                    if (localStorage.getItem('theme') === 'dark') theme = 'dark';
+                } catch (e) {}
+                preferredSource.init({ theme: theme, lang: 'en' });
+
+                // Delegated so it works no matter whether the library finishes
+                // loading before or after the buttons are parsed.
+                document.addEventListener('click', function (e) {
+                    var btn = e.target.closest('.prefSourceBtn');
+                    if (!btn) return;
+                    e.preventDefault();
+                    preferredSource.addPreferredSource();
+                });
+            });
+        </script>
+        {% endif %}
+
         <!-- Microsoft Clarity -->
         <script type="text/javascript">
             (function(c,l,a,r,i,t,y){

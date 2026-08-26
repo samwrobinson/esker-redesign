@@ -2,27 +2,10 @@
 <!--          Google Preferred Sources            -->
 <!-- ============================================ -->
 
-<!-- Lets a reader mark Esker as a preferred source in Google Search, which
-     surfaces our posts higher in their Top Stories and search results.
-     Docs: https://developers.google.com/search/docs/appearance/preferred-sources
-     The publisher.js library is loaded in the <head> of every layout that
-     includes this file. Google renders and translates the button itself, so the
-     empty div below is all the markup the badge needs. -->
+<!-- In-article card. Set preferredSourceText before including to change the
+     copy; the button itself lives in preferred-source-button.html so the
+     footer can reuse it without the card wrapper. -->
 <div class="cs-preferred-source">
-    <p class="cs-preferred-source-text">{{ preferredSourceText | default("Like this post? Add Esker as a preferred source so our work shows up in your Google results.") }}</p>
-    <div id="preferred-source-btn" google-add-preferred-source-btn></div>
+    <p class="cs-preferred-source-text">{{ preferredSourceText | default("Like this post? Make Esker one of your preferred sources so our work shows up higher in your Google results.") }}</p>
+    {% include 'components/preferred-source-button.html' %}
 </div>
-
-<script>
-    // Google reads data-theme once, when the library initialises, so the value
-    // has to be on the element before publisher.js runs. This mirrors the same
-    // localStorage key dark.js uses. A dark mode toggle after page load leaves
-    // the badge in its original theme until the next page view.
-    (function () {
-        try {
-            if (localStorage.getItem('theme') === 'dark') {
-                document.getElementById('preferred-source-btn').setAttribute('data-theme', 'dark');
-            }
-        } catch (e) {}
-    })();
-</script>

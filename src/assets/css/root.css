@@ -1910,8 +1910,57 @@
 /*-- -------------------------- -->
 <---   Google Preferred Source  -->
 <--- -------------------------- -*/
+/* Drives the hover animation. Registering the property is what makes an angle
+   animatable at all - without @property the browser treats --cs-preferred-angle
+   as an unanimatable string and the border sits at its 0deg colours. Kept at
+   file scope rather than inside the media query, where support is patchier. */
+@property --cs-preferred-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
+  @keyframes cs-preferred-spin {
+    to {
+      --cs-preferred-angle: 360deg;
+    }
+  }
+  /* Custom trigger for Google's preferred sources dialog. Google's own badge
+       is switched off in base.html so this can carry the site's styling.
+       --cs-preferred-bg has to be an opaque colour matching whatever sits behind
+       the button: the conic gradient is painted across the whole element and the
+       padding-box layer is what masks it back down to a border. */
+  .cs-preferred-btn {
+    --cs-preferred-bg: #fff;
+    padding: 0.625rem 1.125rem;
+    /* The gradient is painted at rest too, hidden under an opaque border.
+           Hover fades that border out, and the colours ease in behind it - a
+           gradient itself cannot be transitioned. */
+    background: linear-gradient(var(--cs-preferred-bg), var(--cs-preferred-bg)) padding-box, conic-gradient(from var(--cs-preferred-angle), #4285f4 0%, #34a853 25%, #fbbc05 50%, #ea4335 75%, #4285f4 100%) border-box;
+    border: 2px solid #dcdcdc;
+    border-radius: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: bold;
+    line-height: 1.2em;
+    color: var(--bodyTextColor);
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.4s ease-in-out;
+  }
+  .cs-preferred-btn:hover,
+  .cs-preferred-btn:focus-visible {
+    border-color: transparent;
+    animation: cs-preferred-spin 2s linear infinite;
+  }
+  .cs-preferred-btn .cs-preferred-icon {
+    flex: none;
+  }
+  /* In-article card */
   .cs-preferred-source {
     margin: 2rem 0;
     padding: 1.25rem;
@@ -1919,13 +1968,8 @@
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: flex-start;
     gap: 0.75rem;
-    /* Google injects its iframe into this div and sets width: 100% inline,
-           so the flex item has to stretch or the badge collapses to zero width */
-  }
-  .cs-preferred-source #preferred-source-btn {
-    width: 100%;
   }
   .cs-preferred-source .cs-preferred-source-text {
     margin: 0;
@@ -1933,7 +1977,41 @@
     line-height: 1.5em;
     color: var(--bodyTextColor);
   }
+  /* Footer sits on a black background, so the button inverts */
+  #cs-footer-842 .cs-preferred-btn {
+    --cs-preferred-bg: #000;
+    margin: 0 0 1.5rem 0;
+    max-width: 15rem;
+    border-color: #484848;
+    color: var(--bodyTextColorWhite);
+    /* This selector's ID beats the plain .cs-preferred-btn:hover above, so
+           the transparent border has to be restated or the solid one stays
+           painted over the gradient and the animation is invisible */
+  }
+  #cs-footer-842 .cs-preferred-btn:hover,
+  #cs-footer-842 .cs-preferred-btn:focus-visible {
+    border-color: transparent;
+  }
+  body.dark-mode .cs-preferred-btn {
+    --cs-preferred-bg: var(--dark);
+    border-color: var(--accent);
+    color: var(--bodyTextColorWhite);
+    /* Same specificity trap as the footer rule */
+  }
+  body.dark-mode .cs-preferred-btn:hover,
+  body.dark-mode .cs-preferred-btn:focus-visible {
+    border-color: transparent;
+  }
   body.dark-mode .cs-preferred-source {
     border-color: var(--accent);
+  }
+  body.dark-mode .cs-preferred-source .cs-preferred-source-text {
+    color: var(--bodyTextColorWhite);
+  }
+}
+@media only screen and (min-width: 0rem) and (prefers-reduced-motion: reduce) {
+  .cs-preferred-btn:hover,
+  .cs-preferred-btn:focus-visible {
+    animation: none;
   }
 }
