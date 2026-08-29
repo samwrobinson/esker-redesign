@@ -40,6 +40,116 @@ function sha256(value) {
     return crypto.createHash('sha256').update(String(value).trim().toLowerCase()).digest('hex');
 }
 
+// ---- Junk-lead screen -------------------------------------------------------
+// Gated landing pages attract people who type "lol" / "b b" / "1555555534" to
+// get past the form. Those are real humans on real ad clicks, so the honeypot
+// never catches them. Sending them to the CAPI as Leads teaches Meta's
+// optimizer to buy more of exactly that traffic, so they are screened here and
+// the Lead event is skipped. Netlify still stores and emails the submission.
+const JUNK_WORDS = /^(lol|lmao|lmfao|idk|idc|test|testing|tester|asd|asdf|asdfg|asdfgh|sdf|dsa|fdsa|qwe|qwer|qwert|qwerty|jkl|hjkl|abc|abcd|abcde|xyz|na|n\/a|none|nothing|blah|bleh|meh|fake|anon|anonymous|guest|user|username|firstname|lastname|first|last|company|business|mycompany|nombre|whatever|nunya)$/i;
+
+function isFillerWord(word) {
+    const w = String(word).replace(/[^a-z0-9'-]/gi, '');
+    if (!w) return true;
+    if (JUNK_WORDS.test(w)) return true;
+    if (/^(.)\1*$/i.test(w)) return true;
+    if (w.length > 3 && !/[aeiouy]/i.test(w)) return true;
+    if (w.length > 3 && /^(..)\1+.?$/i.test(w)) return true;
+    return false;
+}
+
+// North American Numbering Plan rules — no assignable number breaks these.
+function isDialableUsNumber(value) {
+    let d = String(value).replace(/\D/g, '');
+    if (d.length === 11 && d[0] === '1') d = d.slice(1);
+    if (d.length !== 10) return false;
+    const npa = d.slice(0, 3), nxx = d.slice(3, 6), line = d.slice(6);
+    if (!/^[2-9]/.test(npa)) return false;
+    if (/^\d11$/.test(npa)) return false;
+    if (npa === '555') return false;
+    if (!/^[2-9]/.test(nxx)) return false;
+    if (nxx === '555' && line.slice(0, 2) === '01') return false;
+    if (/^(\d)\1{9}$/.test(d)) return false;
+    if ('0123456789'.includes(d) || '9876543210'.includes(d)) return false;
+    return true;
+}
+
+// Returns a reason string when the lead looks like gate-crashing, else null.
+function junkReason(data) {
+    const name = String(data.name || '').replace(/\s+/g, ' ').trim();
+    const company = String(data.company || '').replace(/\s+/g, ' ').trim();
+    const phone = String(data.phone || '').trim();
+
+    if (phone && !isDialableUsNumber(phone)) return 'undialable phone: ' + phone;
+
+    if (name) {
+        const parts = name.split(' ').filter(Boolean);
+        const namedOk = parts.length >= 2 && parts.every(
+            (p) => p.replace(/[^a-z'-]/gi, '').length >= 2 && !isFillerWord(p)
+        );
+        if (!namedOk) return 'filler name: ' + name;
+        if (parts.length === 2 && parts[0].toLowerCase() === parts[1].toLowerCase()) {
+            return 'repeated-word name: ' + name;
+        }
+    }
+
+    if (company) {
+        const real = company.split(' ').filter(
+            (w) => !isFillerWord(w) && w.replace(/[^a-z]/gi, '').length >= 2
+        );
+        if (!real.length) return 'filler company: ' + company;
+    }
+
+    return null;
+}
+
+// Signals too weak to reject a lead on their own. "red" is a plausible company,
+// "lloln llk" is as pronounceable as "Lloyd", and a fast typist is not a liar —
+// so no single one of these blocks anything. They only add up. A real lead
+// almost never trips three at once; a gate-crasher usually trips four.
+function suspicionScore(data) {
+    const name = String(data.name || '').replace(/\s+/g, ' ').trim();
+    const company = String(data.company || '').replace(/\s+/g, ' ').trim();
+    const seconds = parseInt(data.fill_seconds, 10);
+    const hits = [];
+    let score = 0;
+    const flag = (points, why) => { score += points; hits.push(why + ' +' + points); };
+
+    // The quiz is three taps and three typed fields. Under 15s means nobody
+    // read anything; under 8s means they were racing the gate.
+    if (Number.isFinite(seconds)) {
+        if (seconds < 8) flag(40, 'filled in ' + seconds + 's');
+        else if (seconds < 15) flag(25, 'filled in ' + seconds + 's');
+    }
+
+    // iOS autocapitalises name fields, so an all-lowercase name means they
+    // fought the keyboard to type it.
+    if (name && name === name.toLowerCase()) flag(15, 'name never capitalised');
+    if (company && company === company.toLowerCase()) flag(10, 'company never capitalised');
+
+    // "red" — legitimate on its own, weak in combination
+    if (company && company.split(' ').length === 1 && company.length <= 4) {
+        flag(20, 'company is one short word');
+    }
+    if (name && company && name.toLowerCase() === company.toLowerCase()) {
+        flag(25, 'name and company identical');
+    }
+
+    // Vowel-starved words: "lloln", "llk". Real surnames do this (Schmidt),
+    // so it is worth points, never a rejection.
+    const vowelStarved = (name + ' ' + company).split(' ').filter(Boolean).some((w) => {
+        const letters = w.replace(/[^a-z]/gi, '');
+        if (letters.length < 4) return false;
+        const vowels = (letters.match(/[aeiouy]/gi) || []).length;
+        return vowels / letters.length < 0.26;
+    });
+    if (vowelStarved) flag(15, 'vowel-starved word');
+
+    return { score, hits };
+}
+
+const SUSPICION_LIMIT = 45;
+
 function hashPhone(value) {
     if (!value) return undefined;
     let digits = String(value).replace(/\D/g, '');
@@ -73,6 +183,25 @@ exports.handler = async function (event) {
     const email = data.email || payload.email || '';
     const phone = data.phone || '';
     const fullName = data.name || payload.name || '';
+
+    // Gate-crashers: keep the submission, but do not send it to Meta as a Lead.
+    const junk = junkReason(data);
+    if (junk) {
+        console.log('[capi] skipping junk lead (' + formName + '): ' + junk);
+        return { statusCode: 200, body: 'junk lead skipped: ' + junk };
+    }
+
+    const suspicion = suspicionScore(data);
+    if (suspicion.score >= SUSPICION_LIMIT) {
+        console.log(
+            '[capi] skipping suspicious lead (' + formName + ') score ' + suspicion.score +
+            ': ' + suspicion.hits.join(', ') + ' | ' + (data.name || '') + ' / ' + (data.company || '')
+        );
+        return { statusCode: 200, body: 'suspicious lead skipped, score ' + suspicion.score };
+    }
+    if (suspicion.score > 0) {
+        console.log('[capi] lead passed with suspicion ' + suspicion.score + ': ' + suspicion.hits.join(', '));
+    }
 
     // The shared "Contact Form" name is also used by the newsletter popup —
     // a bare email with no name/phone/message is a newsletter signup, not a lead.

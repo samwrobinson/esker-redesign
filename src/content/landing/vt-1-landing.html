@@ -116,6 +116,7 @@ permalink: '/vt-1/'
                 <input type="hidden" name="fbc">
                 <input type="hidden" name="ua">
                 <input type="hidden" name="page_url">
+                <input type="hidden" name="fill_seconds">
                 <input type="hidden" name="timeline" id="q-timeline">
                 <input type="hidden" name="marketing_spend" id="q-marketing-spend">
                 <input type="hidden" name="monthly_revenue" id="q-monthly-revenue">
@@ -178,7 +179,8 @@ permalink: '/vt-1/'
                 <!-- Step 6: phone -->
                 <div class="cs-quiz-step" data-step="6" data-progress="95">
                     <p class="cs-quiz-q">Your mobile phone</p>
-                    <input class="cs-quiz-input" type="tel" id="hero-phone" name="phone" placeholder="(555) 123-4567" autocomplete="tel" inputmode="tel" required>
+                    <p class="cs-quiz-sub">We text you the plan for your business. Real number, or we can't send it.</p>
+                    <input class="cs-quiz-input" type="tel" id="hero-phone" name="phone" placeholder="(802) 489-2210" autocomplete="tel" inputmode="tel" required>
                     <button type="submit" class="cs-quiz-continue cs-quiz-submit">Unlock the Video</button>
                 </div>
             </form>
@@ -321,23 +323,97 @@ permalink: '/vt-1/'
         var submitting = false;
         var unlocked = false;
 
-        // ---- Phone validation: require a full US number (10 digits, optional leading 1) ----
+        // ---- Junk-lead validation ----
+        // The junk that gets through is not automation: real iOS Instagram
+        // in-app browsers, real fbclid, real ad IDs. It is people typing "lol",
+        // "b b" and "1555555534" to unlock the gated VSL. A honeypot or captcha
+        // does nothing to that, so these checks target human filler instead.
+        var companyInput = document.getElementById('hero-company');
+        var nameInput = document.getElementById('hero-name');
         var phoneInput = document.getElementById('hero-phone');
+        var startedAt = Date.now();
+
+        // Filler people type to get past a gate. Kept deliberately short — every
+        // entry here is a string no real contractor types as their own name.
+        var JUNK_WORDS = /^(lol|lmao|lmfao|idk|idc|test|testing|tester|asd|asdf|asdfg|asdfgh|sdf|dsa|fdsa|qwe|qwer|qwert|qwerty|jkl|hjkl|abc|abcd|abcde|xyz|na|n\/a|none|nothing|blah|bleh|meh|fake|anon|anonymous|guest|user|username|firstname|lastname|first|last|company|business|mycompany|nombre|whatever|nunya)$/i;
+
+        // A single word that carries no information
+        function isFillerWord(word) {
+            var w = String(word).replace(/[^a-z0-9'\-]/gi, '');
+            if (!w) return true;
+            if (JUNK_WORDS.test(w)) return true;
+            if (/^(.)\1*$/i.test(w)) return true;                        // "aaa", "zzzz"
+            if (w.length > 3 && !/[aeiouy]/i.test(w)) return true;       // "smsms", "bkjhg"
+            if (w.length > 3 && /^(..)\1+.?$/i.test(w)) return true;     // "abab", "smsms"
+            return false;
+        }
+
+        // Company: needs at least one word that carries information
+        function validateCompany() {
+            if (!companyInput) return;
+            var v = companyInput.value.replace(/\s+/g, ' ').trim();
+            if (v === '') { companyInput.setCustomValidity(''); return; }
+            var real = v.split(' ').filter(function (w) {
+                return !isFillerWord(w) && w.replace(/[^a-z]/gi, '').length >= 2;
+            });
+            companyInput.setCustomValidity(
+                (v.length >= 3 && /[a-z]/i.test(v) && real.length > 0)
+                    ? ''
+                    : 'Please enter your real business name.'
+            );
+        }
+
+        // Name: first AND last, each at least two letters, neither one filler
+        function validateName() {
+            if (!nameInput) return;
+            var v = nameInput.value.replace(/\s+/g, ' ').trim();
+            if (v === '') { nameInput.setCustomValidity(''); return; }
+            var parts = v.split(' ').filter(Boolean);
+            var ok = parts.length >= 2 && parts.every(function (part) {
+                return part.replace(/[^a-z'\-]/gi, '').length >= 2 && !isFillerWord(part);
+            });
+            // "red red" — a repeated word is filler, not a name
+            if (ok && parts.length === 2 && parts[0].toLowerCase() === parts[1].toLowerCase()) ok = false;
+            nameInput.setCustomValidity(ok ? '' : 'Please enter your first and last name.');
+        }
+
+        // North American Numbering Plan rules. No real US/Canada number breaks
+        // any of these, so none of it can reject a legitimate lead.
+        function isDialableUsNumber(d) {
+            var npa = d.slice(0, 3), nxx = d.slice(3, 6), line = d.slice(6);
+            if (!/^[2-9]/.test(npa)) return false;          // area code never starts 0 or 1
+            if (/^\d11$/.test(npa)) return false;           // 211/311/411/911 are service codes
+            if (npa === '555') return false;                // reserved, never assigned
+            if (!/^[2-9]/.test(nxx)) return false;          // exchange never starts 0 or 1
+            if (nxx === '555' && line.slice(0, 2) === '01') return false; // 555-0100..0199 are fictional
+            if (/^(\d)\1{9}$/.test(d)) return false;        // 2222222222
+            if ('0123456789'.indexOf(d) !== -1) return false;            // 1234567890 runs
+            if ('9876543210'.indexOf(d) !== -1) return false;            // descending runs
+            return true;
+        }
+
         function validatePhone() {
             if (!phoneInput) return;
-            var digits = phoneInput.value.replace(/\D/g, '');
-            // Allow an optional leading country code "1"
-            if (digits.length === 11 && digits.charAt(0) === '1') digits = digits.slice(1);
             // Branch on the RAW value, not the digit count. A value like "sam"
             // strips to zero digits but is not empty, so `required` would pass it.
             if (phoneInput.value.trim() === '') {
                 phoneInput.setCustomValidity(''); // let "required" handle the empty case
-            } else if (digits.length !== 10) {
+                return;
+            }
+            var digits = phoneInput.value.replace(/\D/g, '');
+            // Allow an optional leading country code "1"
+            if (digits.length === 11 && digits.charAt(0) === '1') digits = digits.slice(1);
+            if (digits.length !== 10) {
                 phoneInput.setCustomValidity('Please enter your full 10-digit phone number, e.g. (828) 989-1290.');
+            } else if (!isDialableUsNumber(digits)) {
+                phoneInput.setCustomValidity('That is not a working phone number. Enter the mobile number we should text.');
             } else {
                 phoneInput.setCustomValidity('');
             }
         }
+
+        if (companyInput) companyInput.addEventListener('input', validateCompany);
+        if (nameInput) nameInput.addEventListener('input', validateName);
         if (phoneInput) phoneInput.addEventListener('input', validatePhone);
 
         function render() {
@@ -361,6 +437,7 @@ permalink: '/vt-1/'
 
         // ---- Modal open/close ----
         function openModal() {
+            startedAt = Date.now();
             modal.classList.add('active');
             modal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
@@ -410,6 +487,8 @@ permalink: '/vt-1/'
             var next = e.target.closest('[data-next]');
             if (next && quiz.contains(next)) {
                 var input = steps[current].querySelector('.cs-quiz-input');
+                if (input === companyInput) validateCompany();
+                if (input === nameInput) validateName();
                 if (input && !input.reportValidity()) return;
                 goTo(current + 1);
             }
@@ -454,6 +533,8 @@ permalink: '/vt-1/'
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             if (submitting) return;
+            validateCompany();
+            validateName();
             validatePhone();
             if (!form.reportValidity()) return;
             submitting = true;
@@ -465,6 +546,7 @@ permalink: '/vt-1/'
             formData.set('fbc', leadFbc());
             formData.set('ua', navigator.userAgent);
             formData.set('page_url', location.href);
+            formData.set('fill_seconds', String(Math.round((Date.now() - startedAt) / 1000)));
 
             fireAdsConversion();
 
