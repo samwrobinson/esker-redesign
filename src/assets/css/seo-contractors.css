@@ -444,6 +444,9 @@
     color: var(--bodyTextColor);
     padding-left: 2.125rem;
     position: relative;
+    /* inline links - same fix as .cs-text a. The global reset in root.less
+           pins every <a> to 16px, which renders a step smaller than the list
+           copy around it once .cs-signs-li scales past 16px. */
   }
   .cs-signs-li:before {
     /* brand-green checkmark */
@@ -457,6 +460,19 @@
     position: absolute;
     left: 0;
     top: 0.1875rem;
+  }
+  .cs-signs-li a {
+    font-size: inherit;
+    line-height: inherit;
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+    transition: color 0.3s;
+  }
+  .cs-signs-li a:hover {
+    color: var(--primaryLight);
   }
 }
 /*-- -------------------------- -->
