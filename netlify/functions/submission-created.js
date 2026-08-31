@@ -225,6 +225,18 @@ exports.handler = async function (event) {
     if (data.fbc) userData.fbc = data.fbc;
     if (data.ua) userData.client_user_agent = data.ua;
 
+    // Meta values external_id at ~9% more attributed conversions. The hashed
+    // email (or phone) is already a stable per-person id, so this costs nothing.
+    const externalId = emailHash || phoneHash;
+    if (externalId) userData.external_id = [externalId];
+
+    // Visitor IP is worth ~31% more attributed conversions. Netlify does not
+    // put it in payload.data; it has turned up on the submission envelope under
+    // different names depending on form type, so try the known ones. The log
+    // below prints the envelope's keys so we can confirm what is actually there.
+    const clientIp = payload.ip || payload.remote_ip || payload.client_ip || data.ip;
+    if (clientIp) userData.client_ip_address = clientIp;
+
     const eventTime = Math.floor(Date.parse(payload.created_at) / 1000) || Math.floor(Date.now() / 1000);
 
     const body = {
@@ -244,6 +256,15 @@ exports.handler = async function (event) {
     if (process.env.META_TEST_EVENT_CODE) {
         body.test_event_code = process.env.META_TEST_EVENT_CODE;
     }
+
+    // Events Manager reports coverage per parameter but not per lead. This makes
+    // it checkable: for any given lead, the Netlify log shows exactly which match
+    // keys went to Meta, so "0% fbc" can be confirmed or disproved from our side.
+    console.log(
+        '[capi] match keys for "' + formName + '": ' + Object.keys(userData).join(', ') +
+        ' | fbc=' + (userData.fbc ? 'yes' : 'NO') +
+        ' | envelope keys: ' + Object.keys(payload).join(',')
+    );
 
     try {
         const res = await fetch(
