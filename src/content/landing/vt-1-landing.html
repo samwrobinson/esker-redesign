@@ -36,28 +36,171 @@ permalink: '/vt-1/'
 </noscript>
 <!-- End Facebook Pixel Code -->
 <style>
-    /* Landing-page-only overrides (this <style> ships only on /vt-1/) */
+    /* Landing-page-only overrides (this <style> ships only on /vt-1/).
+       PLAIN CSS ONLY -- the .less files use (16/16rem) math, which is invalid
+       here and silently dropped. */
 
-    /* Strip the footer down to the CTA. Every remaining link is either legally
-       required (privacy, terms) or a conversion (tap to call, email). Nothing
-       navigates to another page.
-
-       Privacy Policy is deliberately KEPT: this page collects a name and phone
-       number, and Meta expects an accessible privacy policy on an ad landing
-       page that does. It used to be hidden along with the nav. */
-    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(2), /* Quick Links */
-    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(3) { /* Service Offerings */
-        display: none;
+    /* The questionnaire is the hero. It reuses the modal markup so the working
+       quiz JS is untouched, rendered as a compact card on the dark ground the
+       hero already ends on. A white card needs dark behind it or it has no edges. */
+    #vt1-quiz-modal.cs-quiz-modal {
+        position: static !important;
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        inset: auto !important;
+        z-index: auto !important;
+        background: #0a0f05 !important;
+        padding: 0 1rem 3rem !important;
     }
-    /* Links that go off-page become plain text: the logo, the empty-href hours
-       and copyright links, and the address (which opens Google Maps in a new
-       tab). Phone and email stay live -- those are conversions, not exits. */
+    #vt1-quiz-modal .cs-modal-overlay,
+    #vt1-quiz-modal .cs-modal-close { display: none !important; }
+    #vt1-quiz-modal.is-answered { display: none !important; }
+
+    #vt1-quiz-modal .cs-quiz-modal-inner {
+        position: static !important;
+        transform: none !important;
+        max-width: 25rem !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        background: none !important;
+        border-radius: 0.875rem;
+        box-shadow: 0 1rem 2.75rem rgba(0, 0, 0, 0.5);
+    }
+    #vt1-quiz-modal .cs-quiz { padding: 1.75rem 1.5rem 1.75rem !important; border-radius: 0.875rem; }
+
+    /* The card head now carries the framing, so the old in-card offer headline
+       is a second copy of what the hero says 200px above. */
+    #vt1-quiz-modal .cs-quiz-headline { display: none !important; }
+
+    /* Back button and step count share one row above the track, so the label
+       reads as deliberate rather than stranded. */
+    .cs-quiz-meta {
+        display: flex; align-items: baseline; justify-content: space-between;
+        gap: 0.75rem; margin-bottom: 0.5rem; min-height: 1.25rem;
+    }
+    .cs-quiz-meta .cs-quiz-back { margin: 0 !important; font-size: 0.8125rem !important; }
+    .cs-quiz-meta .cs-quiz-back[hidden] { display: none; }
+    .cs-quiz-meta #quiz-pct { margin-left: auto; }
+    #vt1-quiz-modal .cs-quiz-progress { position: relative; margin: 0 0 1.25rem; }
+
+    /* Card head stays put across steps: the reason to answer never scrolls away. */
+    .cs-quiz-head { text-align: center; margin-bottom: 1.25rem; }
+    .cs-quiz-card-title { font-size: 1.3125rem; font-weight: 700; margin: 0 0 0.5rem; line-height: 1.25; }
+    .cs-quiz-card-sub {
+        font-size: 0.875rem; line-height: 1.5; color: #55605a;
+        margin: 0 auto; max-width: 19rem;   /* stop it running to the card edge */
+    }
+
+    /* The old bar was a fat pill reading "50%" on step one. Hairline + step count. */
+    #vt1-quiz-modal .cs-quiz-progress { height: 0.25rem !important; border-radius: 999px; overflow: visible; }
+    #vt1-quiz-modal .cs-quiz-bar { height: 100% !important; border-radius: 999px; overflow: hidden; transition: width 0.25s ease; }
+    /* position is set above (absolute, pinned over the track) -- do not
+       re-declare it here or the later rule wins and it lands on the bar. */
+    #vt1-quiz-modal .cs-quiz-pct {
+        display: block; text-align: right;
+        font-size: 0.75rem; color: #6a746e; margin: 0 !important;
+        background: none !important; padding: 0 !important; width: auto !important;
+    }
+    #vt1-quiz-modal .cs-quiz-top { display: block; margin-bottom: 1rem; }
+
+    /* Compact options and inputs so the whole card fits on one screen. */
+    #vt1-quiz-modal .cs-quiz-q { font-size: 1.0625rem; line-height: 1.4; margin: 0 0 1rem; text-align: center; }
+    #vt1-quiz-modal .cs-quiz-opt { padding: 0.8rem 1rem !important; font-size: 0.9375rem !important; margin-bottom: 0.625rem !important; }
+    #vt1-quiz-modal .cs-quiz-input { padding: 0.8rem 1rem !important; font-size: 1rem !important; margin-bottom: 0.625rem !important; }
+    #vt1-quiz-modal .cs-quiz-sub { font-size: 0.75rem; line-height: 1.45; margin: 0.5rem 0 1rem; text-align: center; }
+
+    /* Compact hero so the card is visible without scrolling. */
+    #fb-hero { padding-top: 2rem !important; padding-bottom: 1.75rem !important; }
+    #fb-hero .cs-title { font-size: clamp(1.625rem, 6.4vw, 2.25rem); margin-bottom: 0; line-height: 1.22; }
+    #fb-hero .cs-topper { margin-bottom: 0.6rem; }
+
+    /* The VSL sits below the proof, unlocked, for people who want to research
+       before booking. The button under it returns them to the form. */
+    #vt1-vsl { background: #0a0f05; padding: 3.5rem 1rem 4.5rem; }
+    /* This is a new dark section, so it inherits the light-mode text colours --
+       the heading was #243010 on #0a0f05, i.e. invisible. */
+    #vt1-vsl .cs-title { color: #fafbfc !important; }
+    #vt1-vsl .cs-content { text-align: center; }
+    #vt1-vsl .cs-video-container { max-width: 43.75rem; margin: 0 auto; border-radius: 0.75rem; overflow: hidden; }
+    #vt1-vsl .cs-vsl-video { width: 100%; height: auto; display: block; }
+    .cs-vsl-cta { text-align: center; margin-top: 2rem; }
+    html { scroll-behavior: smooth; }
+
+    /* Headings get a readable measure instead of running the full width. */
+    #fb-hero .cs-content,
+    #fb-testimonials .cs-content,
+    #vt1-booking .cs-content,
+    #vt1-vsl .cs-content { max-width: 37.5rem; margin-left: auto; margin-right: auto; }
+
+    /* The seven clips are 9:16, 16:9 and 4:3. Pin every card to one 4:5 box and
+       cover-crop so the grid is even on any screen; centre a little high because
+       faces sit above the middle of the frame. */
+    #fb-testimonials .cs-video-grid {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)) !important;
+        gap: 1.5rem !important;
+        align-items: start;
+    }
+    #fb-testimonials .cs-testimonial-item,
+    #fb-testimonials .cs-featured-item { width: auto !important; max-width: none !important; grid-column: auto !important; }
+    #fb-testimonials .cs-testimonial-card,
+    #fb-testimonials .cs-featured-card {
+        aspect-ratio: 4 / 5;
+        width: 100% !important;
+        height: auto !important;
+        overflow: hidden;
+        border-radius: 0.75rem;
+    }
+    #fb-testimonials .cs-testimonial-video {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+        object-position: center 30%;
+    }
+
+    /* The calendar takes the questionnaire's place, so it gets the same
+       treatment: same dark ground, same white card, same width. Left raw it
+       rendered as a bare full-bleed iframe next to a styled card. */
+    #vt1-booking { display: none; }
+    #vt1-booking.is-revealed { display: block; }
+    #vt1-booking {
+        background: #0a0f05;
+        padding: 2.5rem 1rem 3.5rem;
+    }
+    /* New dark section, so it inherits light-mode text colours otherwise. */
+    #vt1-booking .cs-title { color: #fafbfc !important; font-size: clamp(1.25rem, 4vw, 1.75rem); }
+    #vt1-booking .cs-content { text-align: center; margin-bottom: 1.5rem; }
+    #vt1-booking .cs-calendar {
+        display: block;
+        width: 100%;
+        max-width: 26rem;      /* the form card is 25rem; keep them siblings */
+        margin: 0 auto;
+        min-height: 41rem;
+        border: 0;
+        border-radius: 0.875rem;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 1rem 2.75rem rgba(0, 0, 0, 0.5);
+    }
+
+    /* One CTA below the proof, back up to the card. */
+    #vt1-recheck { background: #0a0f05; padding: 0 1rem 4rem; text-align: center; }
+
+    /* The VSL moves to the bottom, unlocked: for people who want to research
+       before booking, not a gate. */
+    #vt1-vsl { padding: 3.5rem 1rem; }
+    #vt1-vsl .cs-video-container { max-width: 43.75rem; margin: 0 auto; }
+
+    /* Footer: no way off this page except the CTA. */
+    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(2),
+    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(3) { display: none; }
     #cs-footer-842 .cs-logo-group .cs-logo,
     #cs-footer-842 .cs-credit-link,
     #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(4) .cs-li:nth-child(1) .cs-link,
     #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(4) .cs-li:nth-child(4) .cs-link {
-        pointer-events: none;
-        cursor: default;
+        pointer-events: none; cursor: default;
     }
 </style>
 {% endblock %}
@@ -68,44 +211,11 @@ permalink: '/vt-1/'
 <!--                 Hero Video                   -->
 <!-- ============================================ -->
 
-<section id="fb-hero" class="cs-gated">
+<section id="fb-hero">
     <div class="cs-container">
         <div class="cs-content">
             <span class="cs-topper">New England Business Owners</span>
             <h1 class="cs-title">We Get New England Businesses <span class="cs-hl">More Customers</span> With Websites, AI, and 5-Star Reviews for Just $197/mo</h1>
-            <p class="cs-text"><strong>Step 1:</strong> watch this <strong><em>short video</em></strong></p>
-            <p class="cs-text"><strong>Step 2:</strong> pick a time on my calendar below.</p>
-            <p class="cs-cta-note">
-                <svg class="cs-cta-note-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-                <span>No contract &middot; 30-day Money-Back guarantee</span>
-            </p>
-        </div>
-        <div class="cs-hero-row">
-            <!-- The VSL: blurred until the questionnaire is completed, which unlocks playback -->
-            <div class="cs-media cs-media-vsl">
-                <div class="cs-video-wrapper">
-                    <div class="cs-video-container cs-locked" id="vt1-vsl-player-container">
-                        <video
-                            class="cs-vsl-video"
-                            preload="metadata"
-                            playsinline
-                            poster="/assets/images/vt-1-vsl-poster.jpg"
-                        >
-                            <!-- Dual-declared like the testimonial clips: Chrome skips
-                                 video/quicktime but will play the same URL as video/mp4,
-                                 since the container holds H.264/AAC. -->
-                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/VSL.mov" type="video/quicktime">
-                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/VSL.mov" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <button class="cs-play-button" aria-label="Answer a few questions to unlock this video">
-                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -131,6 +241,13 @@ permalink: '/vt-1/'
                 <input type="hidden" name="timeline" id="q-timeline">
                 <input type="hidden" name="marketing_spend" id="q-marketing-spend">
                 <input type="hidden" name="monthly_revenue" id="q-monthly-revenue">
+
+                <!-- Card head: stays put across every step, so the reason to
+                     answer is on screen the whole way through -->
+                <div class="cs-quiz-head">
+                    <p class="cs-quiz-card-title">Check My <span class="cs-hl">Availability</span></p>
+                    <p class="cs-quiz-card-sub">I work with all my clients 1-on-1. Answer a few quick questions to see if we are a good fit.</p>
+                </div>
 
                 <!-- Progress bar + back -->
                 <div class="cs-quiz-top">
@@ -173,26 +290,14 @@ permalink: '/vt-1/'
                     </div>
                 </div>
 
-                <!-- Step 4: company -->
-                <div class="cs-quiz-step" data-step="4" data-progress="84">
-                    <p class="cs-quiz-q">What's your company name?</p>
-                    <input class="cs-quiz-input" type="text" id="hero-company" name="company" placeholder="Smith Roofing" autocomplete="organization" required>
-                    <button type="button" class="cs-quiz-continue" data-next>Continue</button>
-                </div>
-
-                <!-- Step 5: name -->
-                <div class="cs-quiz-step" data-step="5" data-progress="90">
-                    <p class="cs-quiz-q">Your name</p>
+                <!-- Step 4: contact details, all on one screen -->
+                <div class="cs-quiz-step" data-step="4">
+                    <p class="cs-quiz-q">Your contact details</p>
+                    <input class="cs-quiz-input" type="text" id="hero-company" name="company" placeholder="Business name" autocomplete="organization" required>
                     <input class="cs-quiz-input" type="text" id="hero-name" name="name" placeholder="First and last name" autocomplete="name" required>
-                    <button type="button" class="cs-quiz-continue" data-next>Continue</button>
-                </div>
-
-                <!-- Step 6: phone -->
-                <div class="cs-quiz-step" data-step="6" data-progress="95">
-                    <p class="cs-quiz-q">Your mobile phone</p>
-                    <p class="cs-quiz-sub">We text you the plan for your business. Real number, or we can't send it.</p>
-                    <input class="cs-quiz-input" type="tel" id="hero-phone" name="phone" placeholder="(802) 489-2210" autocomplete="tel" inputmode="tel" required>
-                    <button type="submit" class="cs-quiz-continue cs-quiz-submit">Unlock the Video</button>
+                    <input class="cs-quiz-input" type="tel" id="hero-phone" name="phone" placeholder="Mobile number" autocomplete="tel" inputmode="tel" required>
+                    <p class="cs-quiz-sub">I text you the plan for your business, so it has to be a real number.</p>
+                    <button type="submit" class="cs-quiz-continue cs-quiz-submit">Submit and book &rarr;</button>
                 </div>
             </form>
         </div>
@@ -225,78 +330,171 @@ permalink: '/vt-1/'
             <h2 class="cs-title">Join Businesses Like Jules, Who Received 147 Leads in 3 Months</h2>
         </div>
         <div class="cs-video-grid">
-            <!-- Jules - Featured / Most Prominent -->
-            <div class="cs-testimonial-item cs-featured-item">
-                <div class="cs-testimonial-card cs-featured-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
-                    <video class="cs-testimonial-video" preload="metadata" playsinline>
-                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/quicktime">
-                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <button class="cs-play-button" aria-label="Play Jules testimonial">
-                        <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    </button>
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="metadata" playsinline>
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/quicktime">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play the Jules testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">&quot;Working with Sam was super easy from start to finish. When he showed me the website I was blown away. I&rsquo;ve definitely noticed more leads since launching the site and a higher closing rate because my clients can trust me right away.&quot;</p>
+                        <span class="cs-name">Jules Butler, Butler Yardcare</span>
+                    </div>
                 </div>
-                <div class="cs-info">
-                    <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
-                    <p class="cs-quote">"Working with Sam was super easy from start to finish. When he showed me the website I was blown away. I've definitely noticed more leads since launching the site and a higher closing rate because my clients can trust me right away."</p>
-                    <span class="cs-name">Jules Butler, Butler Yardcare</span>
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="metadata" playsinline>
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/righteous-chimney-and-masonry.mp4" type="video/quicktime">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/righteous-chimney-and-masonry.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play the John testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">&quot;We started working with Sam and within a week, we sold a masonry job big enough to pay him for a couple years! I would definitely work with him again.&quot;</p>
+                        <span class="cs-name">John, Righteous Chimney and Masonry</span>
+                    </div>
                 </div>
-            </div>
-            <!-- John -->
-            <div class="cs-testimonial-item">
-                <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
-                    <video class="cs-testimonial-video" preload="metadata" playsinline>
-                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/righteous-chimney-and-masonry.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <button class="cs-play-button" aria-label="Play John testimonial">
-                        <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    </button>
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="metadata" playsinline>
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/IMG_4106.mov" type="video/quicktime">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/IMG_4106.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play the Moxie testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">&quot;Esker had us up and operating the month we opened, and got us 13 Google reviews in a very short amount of time. Because of the SEO I&rsquo;m one of the top searched businesses in my area.&quot;</p>
+                        <span class="cs-name">Moxie, Upland Coffee</span>
+                    </div>
                 </div>
-                <div class="cs-info">
-                    <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
-                    <p class="cs-quote">"We started working with Sam and within a week, we sold a masonry job big enough to pay him for a couple years! I would definitely work with him again."</p>
-                    <span class="cs-name">John, Righteous Chimney and Masonry</span>
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="metadata" playsinline>
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/nick.MOV" type="video/quicktime">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/nick.MOV" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play the Nick testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">&quot;We needed a professional looking website that functioned better than the one we produced ourselves. The new site Sam built for us quickly led to an increase in traffic as well as new memberships and event bookings.&quot;</p>
+                        <span class="cs-name">Nick Allen, Barre Social Club</span>
+                    </div>
                 </div>
-            </div>
-            <!-- Tim -->
-            <div class="cs-testimonial-item">
-                <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
-                    <video class="cs-testimonial-video" preload="metadata" playsinline>
-                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/tim-testimonial.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <button class="cs-play-button" aria-label="Play Tim testimonial">
-                        <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    </button>
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="metadata" playsinline>
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jackson.mp4" type="video/quicktime">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jackson.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play the Jackson testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">&quot;I&rsquo;ve worked with Sam for the better part of two years and I have nothing but good things to say.&quot;</p>
+                        <span class="cs-name">Jackson, Summit Pro Painting</span>
+                    </div>
                 </div>
-                <div class="cs-info">
-                    <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
-                    <p class="cs-quote">"Sam created a beautiful website for me. I thought it was stunning. I really didn't expect a website for a construction company to be that beautiful."</p>
-                    <span class="cs-name">Tim Smith, Hoplite Builders</span>
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="metadata" playsinline>
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/shelly-testimonial.mov" type="video/quicktime">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/shelly-testimonial.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play the Shelly testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">&quot;The website is just wonderful. I told him exactly what I wanted and he had it done in no time at all. Every time I text or call, he&rsquo;s right there.&quot;</p>
+                        <span class="cs-name">Shelly Bogue, Five Star Cleaning Services</span>
+                    </div>
                 </div>
-            </div>
-            <!-- Jackson -->
-            <div class="cs-testimonial-item">
-                <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
-                    <video class="cs-testimonial-video" preload="metadata" playsinline>
-                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jackson.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <button class="cs-play-button" aria-label="Play Jackson testimonial">
-                        <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
-                    </button>
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="metadata" playsinline>
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/amber-testimonial.MOV" type="video/quicktime">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/amber-testimonial.MOV" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play the Amber testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">&quot;The process was simple and straightforward. I&rsquo;ve had my website up a little over a year and I&rsquo;ve definitely seen an increase in referrals and people reaching out directly through it.&quot;</p>
+                        <span class="cs-name">Amber, Alpenglow Counseling</span>
+                    </div>
                 </div>
-                <div class="cs-info">
-                    <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
-                    <p class="cs-quote">"I've worked with Sam for the better part of two years and I have nothing but good things to say."</p>
-                    <span class="cs-name">Jackson, Summit Pro Painting</span>
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="metadata" playsinline>
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/tim-testimonial.mp4" type="video/quicktime">
+                            <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/tim-testimonial.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play the Tim testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">&quot;Sam created a beautiful website for me. I thought it was stunning. I really didn&rsquo;t expect a website for a construction company to be that beautiful.&quot;</p>
+                        <span class="cs-name">Tim Smith, Hoplite Builders</span>
+                    </div>
                 </div>
-            </div>
         </div>
     </div>
 </section>
+
+<!-- ============================================ -->
+<!--        VSL, unlocked, below the proof        -->
+<!-- ============================================ -->
+
+<section id="vt1-vsl">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Want the longer version?</span>
+            <h2 class="cs-title">Watch me walk through exactly how this works</h2>
+        </div>
+        <div class="cs-video-wrapper">
+            <div class="cs-video-container" id="vt1-vsl-player-container">
+                <video class="cs-vsl-video" preload="none" playsinline controls poster="/assets/images/vt-1-vsl-poster.jpg">
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/VSL.mov" type="video/quicktime">
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/VSL.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <div class="cs-vsl-cta">
+            <a class="cs-button-solid" href="#vt1-quiz-modal" id="vt1-vsl-cta">Check my availability &rarr;</a>
+        </div>
+    </div>
+</section>
+
 
 <script>
     // ---- Meta cookie helpers (shared) ----
@@ -328,6 +526,21 @@ permalink: '/vt-1/'
         var bar = document.getElementById('quiz-bar');
         var pct = document.getElementById('quiz-pct');
         var backBtn = document.getElementById('quiz-back');
+
+        // The step label ships INSIDE .cs-quiz-bar, so it is clipped at low
+        // widths and reads as an orphan. Move it into a row of its own with the
+        // back button, which is also where it belongs visually.
+        (function () {
+            var top = quiz.querySelector('.cs-quiz-top');
+            var track = quiz.querySelector('.cs-quiz-progress');
+            var label = document.getElementById('quiz-pct');
+            if (!top || !track || !label) return;
+            var meta = document.createElement('div');
+            meta.className = 'cs-quiz-meta';
+            top.insertBefore(meta, track);
+            meta.appendChild(backBtn);
+            meta.appendChild(label);
+        })();
         var closeBtn = modal.querySelector('.cs-modal-close');
         var overlay = modal.querySelector('.cs-modal-overlay');
         var current = 0;
@@ -431,9 +644,9 @@ permalink: '/vt-1/'
             steps.forEach(function(step, i) {
                 step.classList.toggle('is-active', i === current);
             });
-            var progress = steps[current].getAttribute('data-progress') || '0';
+            var progress = Math.round((current / (steps.length - 1)) * 100);
             bar.style.width = progress + '%';
-            pct.textContent = progress + '%';
+            pct.textContent = 'Step ' + (current + 1) + ' of ' + steps.length;
             backBtn.hidden = current === 0;
             // Focus the text input when we land on a company/name/phone step
             var input = steps[current].querySelector('.cs-quiz-input');
@@ -448,7 +661,7 @@ permalink: '/vt-1/'
 
         // ---- Modal open/close ----
         function openModal() {
-            startedAt = Date.now();
+            startedAt = startedAt || Date.now();
             modal.classList.add('active');
             modal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
@@ -462,15 +675,16 @@ permalink: '/vt-1/'
             document.body.style.overflow = '';
         }
 
-        // Clicking the (still-blurred) video opens the questionnaire instead of playing
-        if (playerContainer) {
-            playerContainer.addEventListener('click', function(e) {
-                if (unlocked) return; // once unlocked, let the player handler play it
-                e.preventDefault();
-                e.stopPropagation();
-                openModal();
-            });
-        }
+        // No gate to open: the card is the hero. Start the fill timer now and
+        // fire InitiateCheckout on the first answer.
+        startedAt = Date.now();
+        // { once: true } removes itself. Doing it by hand needs the same
+        // capture flag on both calls, and without it the listener never detaches
+        // -- every click re-ran openModal(), which focuses the step's first
+        // input, so tapping the 2nd or 3rd contact field bounced back to the 1st.
+        quiz.addEventListener('click', function () {
+            openModal();
+        }, { once: true, capture: true });
         // The hero CTA opens the same questionnaire as clicking the locked video
         var heroCta = document.getElementById('vt1-hero-cta');
         if (heroCta) heroCta.addEventListener('click', openModal);
@@ -523,21 +737,16 @@ permalink: '/vt-1/'
             }
         }
 
-        function unlockAndPlay() {
+        // The quiz gates the calendar, not a video: answering it swaps the card
+        // for the booking widget in place.
+        function revealBooking() {
             unlocked = true;
-            closeModal();
-            if (playerContainer) {
-                // Dropping .cs-locked removes the blur and the "tap to unlock" badge
-                playerContainer.classList.remove('cs-locked');
-                playerContainer.classList.add('cs-playing');
-                var video = playerContainer.querySelector('.cs-vsl-video');
-                if (video) {
-                    video.controls = true; // only scrubbable once the gate is passed
-                    video.currentTime = 0;
-                    video.muted = false;
-                    var p = video.play();
-                    if (p && p.catch) { p.catch(function() { video.muted = true; video.play().catch(function() {}); }); }
-                }
+            var booking = document.getElementById('vt1-booking');
+            if (modal) modal.classList.add('is-answered');
+            if (booking) {
+                booking.classList.add('is-revealed');
+                try { booking.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                catch (e) { booking.scrollIntoView(); }
             }
         }
 
@@ -565,7 +774,7 @@ permalink: '/vt-1/'
             // Calling play() from a fetch .then() loses the user-activation chain
             // and iOS Safari blocks unmuted playback, which is most of the ad
             // traffic. The POST is fire-and-forget; the lead lands either way.
-            unlockAndPlay();
+            revealBooking();
 
             fetch('/', {
                 method: 'POST',
@@ -577,6 +786,28 @@ permalink: '/vt-1/'
         });
 
         render();
+    })();
+
+    // ---- CTA under the VSL -------------------------------------------------
+    // href="#vt1-quiz-modal" alone is not enough: once the questions are
+    // answered that element is display:none, and an anchor cannot scroll to an
+    // unrendered target, so the button silently did nothing. Send people to
+    // whichever of the two is actually on screen, and pause the video first so
+    // the jump is visible.
+    (function () {
+        var cta = document.getElementById('vt1-vsl-cta');
+        if (!cta) return;
+        cta.addEventListener('click', function (e) {
+            e.preventDefault();
+            var vid = document.querySelector('#vt1-vsl video');
+            if (vid && !vid.paused) { try { vid.pause(); } catch (err) {} }
+            var modal = document.getElementById('vt1-quiz-modal');
+            var booking = document.getElementById('vt1-booking');
+            var target = (modal && !modal.classList.contains('is-answered')) ? modal : booking;
+            if (!target) return;
+            try { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            catch (err) { target.scrollIntoView(); }
+        });
     })();
 
     // ---- VSL Player: gtag video events (plays only once the quiz unlocks it) ----
