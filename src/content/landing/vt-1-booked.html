@@ -1,0 +1,211 @@
+---
+title: "You're booked | Esker Designs"
+description: 'Your call is booked. Watch this short video before we talk.'
+permalink: '/vt-1/booked/'
+eleventyExcludeFromCollections: true
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="/assets/css/facebook-landing.css">
+<link rel="stylesheet" href="/assets/css/vt-1-landing.css">
+
+<!-- Facebook Pixel -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3889075514559305');
+    fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3889075514559305&ev=PageView&noscript=1" alt="" /></noscript>
+
+<style>
+    /* Same footer treatment as the landing page: no way off this page except
+       the video and the CTA. */
+    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(2),
+    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(3) {
+        display: none;
+    }
+    #cs-footer-842 .cs-logo-group .cs-logo,
+    #cs-footer-842 .cs-credit-link {
+        pointer-events: none;
+        cursor: default;
+    }
+    #vt1-booked { padding: (60/16rem) (16/16rem) (40/16rem); text-align: center; }
+    #vt1-booked .cs-video-container { max-width: (700/16rem); margin: (32/16rem) auto 0; }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<section id="vt1-booked">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">You're booked</span>
+            <h1 class="cs-title">Your call is confirmed. Watch this before we talk.</h1>
+            <p class="cs-text">It's about three minutes, and it covers most of what people ask me on the call. Watching it means we can spend our time on your business instead of on how this works.</p>
+        </div>
+        <div class="cs-video-wrapper">
+            <div class="cs-video-container">
+                <video class="cs-vsl-video" preload="metadata" playsinline controls
+                       poster="/assets/images/vt-1-vsl-poster.jpg">
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/VSL.mov" type="video/quicktime">
+                    <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/VSL.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="fb-testimonials">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Real Businesses Real Results</span>
+            <h2 class="cs-title">Join Businesses Like Jules, Who Received 147 Leads in 3 Months</h2>
+        </div>
+        <div class="cs-video-grid">
+            <!-- Jules - Featured / Most Prominent -->
+            <div class="cs-testimonial-item cs-featured-item">
+                <div class="cs-testimonial-card cs-featured-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                    <video class="cs-testimonial-video" preload="metadata" playsinline>
+                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/quicktime">
+                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jules-testimonial.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button class="cs-play-button" aria-label="Play Jules testimonial">
+                        <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                </div>
+                <div class="cs-info">
+                    <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                    <p class="cs-quote">"Working with Sam was super easy from start to finish. When he showed me the website I was blown away. I've definitely noticed more leads since launching the site and a higher closing rate because my clients can trust me right away."</p>
+                    <span class="cs-name">Jules Butler, Butler Yardcare</span>
+                </div>
+            </div>
+            <!-- John -->
+            <div class="cs-testimonial-item">
+                <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                    <video class="cs-testimonial-video" preload="metadata" playsinline>
+                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/righteous-chimney-and-masonry.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button class="cs-play-button" aria-label="Play John testimonial">
+                        <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                </div>
+                <div class="cs-info">
+                    <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                    <p class="cs-quote">"We started working with Sam and within a week, we sold a masonry job big enough to pay him for a couple years! I would definitely work with him again."</p>
+                    <span class="cs-name">John, Righteous Chimney and Masonry</span>
+                </div>
+            </div>
+            <!-- Tim -->
+            <div class="cs-testimonial-item">
+                <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                    <video class="cs-testimonial-video" preload="metadata" playsinline>
+                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/tim-testimonial.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button class="cs-play-button" aria-label="Play Tim testimonial">
+                        <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                </div>
+                <div class="cs-info">
+                    <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                    <p class="cs-quote">"Sam created a beautiful website for me. I thought it was stunning. I really didn't expect a website for a construction company to be that beautiful."</p>
+                    <span class="cs-name">Tim Smith, Hoplite Builders</span>
+                </div>
+            </div>
+            <!-- Jackson -->
+            <div class="cs-testimonial-item">
+                <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                    <video class="cs-testimonial-video" preload="metadata" playsinline>
+                        <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/jackson.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <button class="cs-play-button" aria-label="Play Jackson testimonial">
+                        <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                </div>
+                <div class="cs-info">
+                    <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                    <p class="cs-quote">"I've worked with Sam for the better part of two years and I have nothing but good things to say."</p>
+                    <span class="cs-name">Jackson, Summit Pro Painting</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+(function () {
+    // GHL redirects INSIDE the calendar iframe, so this page can land in a
+    // 300px box. Break out to the top window first, and fire the conversion
+    // only once we are the top document -- otherwise it counts twice.
+    if (window.top !== window.self) {
+        try { window.top.location.replace(window.location.href); return; } catch (e) { /* fall through */ }
+    }
+
+    function cookie(name) {
+        var m = document.cookie.match('(?:^|; )' + name + '=([^;]*)');
+        return m ? decodeURIComponent(m[1]) : '';
+    }
+    function fbc() {
+        var c = cookie('_fbc');
+        if (c) return c;
+        var m = location.search.match(/[?&]fbclid=([^&]+)/);
+        return m ? 'fb.1.' + Date.now() + '.' + decodeURIComponent(m[1]) : '';
+    }
+
+    // Guard against a refresh double-counting the same booking.
+    var KEY = 'esker_booked_fired';
+    try { if (sessionStorage.getItem(KEY)) return; sessionStorage.setItem(KEY, '1'); } catch (e) {}
+
+    // One id shared by the browser pixel and the server event so Meta dedupes.
+    var eventId = 'book_' + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
+
+    if (typeof fbq === 'function') {
+        try { fbq('track', 'Schedule', {}, { eventID: eventId }); } catch (e) {}
+    }
+
+    // Google Ads conversion, same as the form path
+    var s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PL4NL9XE9Y';
+    document.head.appendChild(s);
+    s.onload = function () {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-PL4NL9XE9Y');
+        gtag('event', 'ads_conversion_Contact_Us_1', {});
+        gtag('event', 'conversion', { 'send_to': 'AW-16834089922/QPM8CJaky5IcEMKnj9s-' });
+    };
+
+    // Server-side copy, so the booking still registers if the pixel is blocked
+    try {
+        fetch('/.netlify/functions/booking-conversion', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                event_id: eventId,
+                fbp: cookie('_fbp'),
+                fbc: fbc(),
+                ua: navigator.userAgent,
+                page_url: location.href,
+                email: new URLSearchParams(location.search).get('email') || ''
+            })
+        }).catch(function () {});
+    } catch (e) {}
+})();
+</script>
+{% endblock %}
