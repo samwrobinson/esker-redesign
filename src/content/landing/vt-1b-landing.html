@@ -39,57 +39,66 @@ permalink: '/vt-1b/'
 </noscript>
 <!-- End Facebook Pixel Code -->
 <style>
-    /* Landing-page-only overrides (this <style> ships only on /vt-1b/) */
+    /* Landing-page-only overrides (this <style> ships only on /vt-1b/).
+       NOTE: plain CSS only. The .less files use (16/16rem) style math, which is
+       invalid here and is silently dropped by the browser. */
 
-    /* On this variant the questionnaire IS the hero. It reuses the modal markup
+    /* The questionnaire IS the hero on this page. It reuses the modal markup
        from /vt-1/ verbatim so the working quiz JS is untouched, and is simply
-       rendered as a static card instead of an overlay. */
+       rendered as a static card on the same dark ground the hero ends on --
+       a white card needs a dark background or it has no edges. */
     #vt1-quiz-modal.cs-quiz-modal {
         position: static !important;
         display: block !important;
         opacity: 1 !important;
         visibility: visible !important;
-        background: none !important;
         inset: auto !important;
         z-index: auto !important;
-        padding: 0 0 (0/16rem) 0;
+        background: #0a0f05 !important;
+        padding: 0 1rem 3.5rem !important;
     }
     #vt1-quiz-modal .cs-modal-overlay,
     #vt1-quiz-modal .cs-modal-close { display: none !important; }
-    /* Once answered the questionnaire is replaced by the calendar. Needs to be
-       a class, not an inline style: the rule above is !important. */
+    /* Replaced by the calendar once answered. Must be a class: the rule above
+       is !important, so an inline style cannot beat it. */
     #vt1-quiz-modal.is-answered { display: none !important; }
+
     #vt1-quiz-modal .cs-quiz-modal-inner {
         position: static !important;
         transform: none !important;
+        max-width: 26.25rem !important;   /* 420px, close to the reference page */
+        width: 100% !important;
         margin: 0 auto !important;
-        max-width: (620/16rem);
-        width: 100%;
+        padding: 0 !important;
+        background: none !important;
+        box-shadow: 0 1.125rem 3rem rgba(0, 0, 0, 0.45);
+        border-radius: 1.25rem;
     }
+    /* The hero already states the offer and the price. Repeating it inside the
+       card two hundred pixels later just competes with the question. */
+    #vt1-quiz-modal .cs-quiz-headline { display: none !important; }
+    #vt1-quiz-modal .cs-quiz-q { font-size: 1.25rem; }
 
-    /* The calendar replaces the questionnaire once it is answered. */
-    #vt1-booking { display: none; }
-    #vt1-booking.is-revealed { display: block; }
+    /* Pull the card up so it overlaps the hero and reads as one unit. */
+    #fb-hero { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+    #fb-hero .cs-title { font-size: clamp(1.5rem, 4.8vw, 2.5rem); margin-bottom: 0.75rem; }
+    #fb-hero .cs-text { font-size: 1rem; }
 
-    /* The VSL moves to the bottom of the page, unlocked: it is for people who
-       want to research before booking, not a gate. */
-    #vt1-vsl { padding: (60/16rem) (16/16rem); }
-    #vt1-vsl .cs-video-container { max-width: (700/16rem); margin: 0 auto; }
+    /* A second door back to the form, after the proof -- the reference page
+       does this and it is the only CTA below the fold. */
+    #vt1b-recheck { background: #0a0f05; padding: 0 1rem 4rem; text-align: center; }
+    #vt1b-recheck .cs-button-solid { display: inline-block; }
 
-    /* Strip the footer down to the CTA. Every remaining link is either legally
-       required (privacy, terms) or a conversion (tap to call, email). Nothing
-       navigates to another page.
+    /* The VSL moves to the bottom, unlocked: for people who want to research
+       before booking, not a gate. */
+    #vt1-vsl { padding: 3.75rem 1rem; }
+    #vt1-vsl .cs-video-container { max-width: 43.75rem; margin: 0 auto; }
 
-       Privacy Policy is deliberately KEPT: this page collects a name and phone
-       number, and Meta expects an accessible privacy policy on an ad landing
-       page that does. It used to be hidden along with the nav. */
-    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(2), /* Quick Links */
-    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(3) { /* Service Offerings */
+    /* Footer: no way off this page except the CTA. */
+    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(2),
+    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(3) {
         display: none;
     }
-    /* Links that go off-page become plain text: the logo, the empty-href hours
-       and copyright links, and the address (which opens Google Maps in a new
-       tab). Phone and email stay live -- those are conversions, not exits. */
     #cs-footer-842 .cs-logo-group .cs-logo,
     #cs-footer-842 .cs-credit-link,
     #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(4) .cs-li:nth-child(1) .cs-link,
@@ -107,11 +116,7 @@ permalink: '/vt-1b/'
         <div class="cs-content">
             <span class="cs-topper">New England Business Owners</span>
             <h1 class="cs-title">We Get New England Businesses <span class="cs-hl">More Customers</span> With Websites, AI, and 5-Star Reviews for Just $197/mo</h1>
-            <p class="cs-text">I build and run the whole thing myself, so I only take on a handful of new businesses at a time. Answer three quick questions and I&rsquo;ll show you my calendar.</p>
-            <p class="cs-cta-note">
-                <svg class="cs-cta-note-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-                <span>No contract &middot; 30-day Money-Back guarantee</span>
-            </p>
+            <p class="cs-text">I build and run everything myself, so I only take on a few businesses at a time.</p>
         </div>
     </div>
 </section>
@@ -292,6 +297,10 @@ permalink: '/vt-1b/'
     </div>
 </section>
 
+<section id="vt1b-recheck">
+    <a class="cs-button-solid" href="#vt1-quiz-modal" id="vt1b-recheck-btn">See if I have capacity &rarr;</a>
+</section>
+
 <!-- ============================================ -->
 <!--         VSL (unlocked, for researchers)      -->
 <!-- ============================================ -->
@@ -448,9 +457,9 @@ permalink: '/vt-1b/'
             steps.forEach(function(step, i) {
                 step.classList.toggle('is-active', i === current);
             });
-            var progress = steps[current].getAttribute('data-progress') || '0';
+            var progress = Math.round(((current + 1) / steps.length) * 100);
             bar.style.width = progress + '%';
-            pct.textContent = progress + '%';
+            pct.textContent = (current + 1) + ' / ' + steps.length;
             backBtn.hidden = current === 0;
             // Focus the text input when we land on a company/name/phone step
             var input = steps[current].querySelector('.cs-quiz-input');
