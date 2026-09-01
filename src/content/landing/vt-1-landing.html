@@ -38,13 +38,24 @@ permalink: '/vt-1/'
 <style>
     /* Landing-page-only overrides (this <style> ships only on /vt-1/) */
 
-    /* Strip footer links that navigate users off this page (keep contact info) */
-    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(2), /* Quick Links column */
-    #cs-footer-842 .cs-bottom-links { /* Privacy / Terms */
+    /* Strip the footer down to the CTA. Every remaining link is either legally
+       required (privacy, terms) or a conversion (tap to call, email). Nothing
+       navigates to another page.
+
+       Privacy Policy is deliberately KEPT: this page collects a name and phone
+       number, and Meta expects an accessible privacy policy on an ad landing
+       page that does. It used to be hidden along with the nav. */
+    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(2), /* Quick Links */
+    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(3) { /* Service Offerings */
         display: none;
     }
-    /* Logo no longer links anywhere off-page */
-    #cs-footer-842 .cs-logo-group .cs-logo {
+    /* Links that go off-page become plain text: the logo, the empty-href hours
+       and copyright links, and the address (which opens Google Maps in a new
+       tab). Phone and email stay live -- those are conversions, not exits. */
+    #cs-footer-842 .cs-logo-group .cs-logo,
+    #cs-footer-842 .cs-credit-link,
+    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(4) .cs-li:nth-child(1) .cs-link,
+    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(4) .cs-li:nth-child(4) .cs-link {
         pointer-events: none;
         cursor: default;
     }
