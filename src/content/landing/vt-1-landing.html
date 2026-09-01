@@ -107,6 +107,8 @@ permalink: '/vt-1/'
 
     /* Compact options and inputs so the whole card fits on one screen. */
     #vt1-quiz-modal .cs-quiz-q { font-size: 1.0625rem; line-height: 1.4; margin: 0 0 1rem; text-align: center; }
+    .cs-quiz-options-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.625rem; }
+    .cs-quiz-options-2 .cs-quiz-opt { margin-bottom: 0 !important; }
     #vt1-quiz-modal .cs-quiz-opt { padding: 0.8rem 1rem !important; font-size: 0.9375rem !important; margin-bottom: 0.625rem !important; }
     #vt1-quiz-modal .cs-quiz-input { padding: 0.8rem 1rem !important; font-size: 1rem !important; margin-bottom: 0.625rem !important; }
     #vt1-quiz-modal .cs-quiz-sub { font-size: 0.75rem; line-height: 1.45; margin: 0.5rem 0 1rem; text-align: center; }
@@ -238,9 +240,9 @@ permalink: '/vt-1/'
                 <input type="hidden" name="ua">
                 <input type="hidden" name="page_url">
                 <input type="hidden" name="fill_seconds">
-                <input type="hidden" name="timeline" id="q-timeline">
-                <input type="hidden" name="marketing_spend" id="q-marketing-spend">
-                <input type="hidden" name="monthly_revenue" id="q-monthly-revenue">
+                <input type="hidden" name="business_owner" id="q-business-owner">
+                <input type="hidden" name="years_in_business" id="q-years-in-business">
+                <input type="hidden" name="budget_ok" id="q-budget-ok">
 
                 <!-- Card head: stays put across every step, so the reason to
                      answer is on screen the whole way through -->
@@ -257,44 +259,42 @@ permalink: '/vt-1/'
                     </div>
                 </div>
 
-                <!-- Step 1: urgency -->
-                <div class="cs-quiz-step is-active" data-step="1" data-progress="50">
-                    <h2 class="cs-quiz-headline">We Help Businesses Get More Leads For Just <em>$197/month</em></h2>
-                    <p class="cs-quiz-q">How soon do you want more customers coming in?</p>
-                    <div class="cs-quiz-options">
-                        <button type="button" class="cs-quiz-opt" data-field="timeline" data-value="ASAP / right now">ASAP / right now</button>
-                        <button type="button" class="cs-quiz-opt" data-field="timeline" data-value="Next 1-3 months">Next 1&ndash;3 months</button>
-                        <button type="button" class="cs-quiz-opt" data-field="timeline" data-value="Just researching">Just researching</button>
+                <!-- Step 1: the disqualifier -->
+                <div class="cs-quiz-step is-active" data-step="1">
+                    <p class="cs-quiz-q">Are you a business owner?</p>
+                    <div class="cs-quiz-options cs-quiz-options-2">
+                        <button type="button" class="cs-quiz-opt" data-field="business_owner" data-value="Yes">Yes</button>
+                        <button type="button" class="cs-quiz-opt" data-field="business_owner" data-value="No">No</button>
                     </div>
                 </div>
 
-                <!-- Step 2: marketing spend -->
-                <div class="cs-quiz-step" data-step="2" data-progress="62">
-                    <p class="cs-quiz-q">How much do you spend on marketing per month?</p>
-                    <div class="cs-quiz-options">
-                        <button type="button" class="cs-quiz-opt" data-field="marketing_spend" data-value="$0-$100">$0-$100</button>
-                        <button type="button" class="cs-quiz-opt" data-field="marketing_spend" data-value="$100-$500">$100-$500</button>
-                        <button type="button" class="cs-quiz-opt" data-field="marketing_spend" data-value="$500-$1,000">$500-$1,000</button>
-                        <button type="button" class="cs-quiz-opt" data-field="marketing_spend" data-value="$1,000+">$1,000+</button>
+                <!-- Step 2: stage. Review generation needs past customers, so a
+                     business under a year old cannot use a third of the offer. -->
+                <div class="cs-quiz-step" data-step="2">
+                    <p class="cs-quiz-q">How long have you been in business?</p>
+                    <div class="cs-quiz-options cs-quiz-options-2">
+                        <button type="button" class="cs-quiz-opt" data-field="years_in_business" data-value="Less than 1 year">Less than 1 year</button>
+                        <button type="button" class="cs-quiz-opt" data-field="years_in_business" data-value="1-3 years">1&ndash;3 years</button>
+                        <button type="button" class="cs-quiz-opt" data-field="years_in_business" data-value="3-10 years">3&ndash;10 years</button>
+                        <button type="button" class="cs-quiz-opt" data-field="years_in_business" data-value="10+ years">10+ years</button>
                     </div>
                 </div>
 
-                <!-- Step 3: revenue -->
-                <div class="cs-quiz-step" data-step="3" data-progress="74">
-                    <p class="cs-quiz-q">What's your current monthly revenue?</p>
-                    <div class="cs-quiz-options">
-                        <button type="button" class="cs-quiz-opt" data-field="monthly_revenue" data-value="$0-$10,000">$0-$10,000</button>
-                        <button type="button" class="cs-quiz-opt" data-field="monthly_revenue" data-value="$10,000-$25,000">$10,000-$25,000</button>
-                        <button type="button" class="cs-quiz-opt" data-field="monthly_revenue" data-value="$25,000-$100,000">$25,000-$100,000</button>
-                        <button type="button" class="cs-quiz-opt" data-field="monthly_revenue" data-value="$100,000+">$100,000+</button>
+                <!-- Step 3: price, stated before the call rather than on it -->
+                <div class="cs-quiz-step" data-step="3">
+                    <p class="cs-quiz-q">My base package starts at $197 per month. Do you have that to invest in your business?</p>
+                    <div class="cs-quiz-options cs-quiz-options-2">
+                        <button type="button" class="cs-quiz-opt" data-field="budget_ok" data-value="Yes">Yes</button>
+                        <button type="button" class="cs-quiz-opt" data-field="budget_ok" data-value="No">No</button>
                     </div>
                 </div>
 
                 <!-- Step 4: contact details, all on one screen -->
                 <div class="cs-quiz-step" data-step="4">
                     <p class="cs-quiz-q">Your contact details</p>
+                    <input class="cs-quiz-input" type="text" id="hero-name" name="name" placeholder="Your name" autocomplete="name" required>
                     <input class="cs-quiz-input" type="text" id="hero-company" name="company" placeholder="Business name" autocomplete="organization" required>
-                    <input class="cs-quiz-input" type="text" id="hero-name" name="name" placeholder="First and last name" autocomplete="name" required>
+                    <input class="cs-quiz-input" type="email" id="hero-email" name="email" placeholder="Email address" autocomplete="email" inputmode="email" required>
                     <input class="cs-quiz-input" type="tel" id="hero-phone" name="phone" placeholder="Mobile number" autocomplete="tel" inputmode="tel" required>
                     <p class="cs-quiz-sub">I text you the plan for your business, so it has to be a real number.</p>
                     <button type="submit" class="cs-quiz-continue cs-quiz-submit">Submit and book &rarr;</button>

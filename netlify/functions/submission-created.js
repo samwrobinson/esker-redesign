@@ -203,6 +203,26 @@ exports.handler = async function (event) {
         console.log('[capi] lead passed with suspicion ' + suspicion.score + ': ' + suspicion.hits.join(', '));
     }
 
+    // ---- Self-declared disqualifiers -------------------------------------
+    // The VT-1 quiz asks two yes/no gating questions. A "No" to either means
+    // this person cannot buy, so sending it as a Lead would teach Meta's
+    // optimiser to go and find more of them. Keep the submission (Netlify still
+    // stores and emails it) but do not report it as a conversion.
+    //
+    // These are fixed button values, not free text, so an exact match is safe.
+    // Tenure is deliberately NOT a disqualifier -- it is segmentation, and a
+    // newer business is still a real lead.
+    const DISQUALIFIERS = [
+        ['business_owner', 'not a business owner'],
+        ['budget_ok', 'cannot invest $197/mo'],
+    ];
+    for (const [field, why] of DISQUALIFIERS) {
+        if (String(data[field] || '').trim().toLowerCase() === 'no') {
+            console.log('[capi] skipping self-disqualified lead (' + formName + '): ' + why);
+            return { statusCode: 200, body: 'self-disqualified: ' + why };
+        }
+    }
+
     // The shared "Contact Form" name is also used by the newsletter popup —
     // a bare email with no name/phone/message is a newsletter signup, not a lead.
     if (formName === 'Contact Form' && !phone && !fullName && !data.message) {
