@@ -1,0 +1,320 @@
+---
+title: 'SEO Services in Milton, VT | Free Audit | Esker Designs'
+description: 'SEO services in Milton, VT from Esker Designs. We build the pages, Google Business Profile, and reviews that get Milton businesses ranked. Free audit, no contracts.'
+preloadImg: ''
+permalink: 'milton/seo-services-milton-vt/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="ad4f603c-adc2-4df0-8440-601f99120b46"></script>
+    <link rel="stylesheet" href="/assets/css/contractor-landing.css">
+    <link rel="stylesheet" href="/assets/css/seo-contractors.css">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.eskerdesigns.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Service Offerings", "item": "https://www.eskerdesigns.com/service-offerings/" },
+                    { "@type": "ListItem", "position": 3, "name": "SEO Services in Milton, VT", "item": "https://www.eskerdesigns.com/milton/seo-services-milton-vt/" }
+                ]
+            },
+            {
+                "@type": "Service",
+                "@id": "https://www.eskerdesigns.com/milton/seo-services-milton-vt/#service",
+                "name": "SEO Services in Milton, VT",
+                "serviceType": "Local Search Engine Optimization",
+                "description": "SEO services for Milton, Vermont businesses: keyword research, service and location pages, Google Business Profile management, review generation, and monthly reporting on leads from organic search.",
+                "url": "https://www.eskerdesigns.com/milton/seo-services-milton-vt/",
+                "areaServed": { "@type": "City", "name": "Milton", "containedInPlace": { "@type": "State", "name": "Vermont" } },
+                "provider": {
+                    "@type": "LocalBusiness",
+                    "@id": "https://www.eskerdesigns.com/#business",
+                    "name": "Esker Designs",
+                    "url": "https://www.eskerdesigns.com",
+                    "telephone": "828-989-1290",
+                    "email": "sam@eskerdesigns.com",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "70 Lenord Lane",
+                        "addressLocality": "Warren",
+                        "addressRegion": "VT",
+                        "postalCode": "05674",
+                        "addressCountry": "US"
+                    }
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "name": "Free SEO audit",
+                    "price": "0",
+                    "priceCurrency": "USD",
+                    "description": "A short written document showing where your Milton business ranks today, what is holding it back, and what we would fix first. No cost and no obligation."
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://www.eskerdesigns.com/milton/seo-services-milton-vt/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Do you have an office in Milton?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "No. We're in Warren, a little over an hour south. We do the audit and the monthly check-in on a video call, and we'll drive up if you'd rather sit down in person." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How much do SEO services cost in Milton?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Fewer pages if you only want Milton, more if you want Colchester and Burlington too. That's what sets the price. The audit comes back with a number, and our standard rates are on our pricing page." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How long until I see results?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "The Google Business Profile and review work can move the map pack in a few weeks. New pages on the website take longer, usually 3 to 6 months, because Google has to find them, index them, and then decide where they belong." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I rank in Burlington too, not just Milton?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "In the map pack, only so far. Your profile is pinned to your address, so it fades as searchers get further away. Outside Milton you rank through the website instead, with a page for each service and each town you want work in." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can you guarantee a ranking?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "No. Google doesn't sell organic positions, so anyone who guarantees one is guessing. What we can promise is a report every month showing exactly what moved, and no contract holding you there if it doesn't." }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    HERO                      -->
+<!-- ============================================ -->
+
+<section id="lp-hero" class="lp-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">SEO Services in Milton, VT</h1>
+            <p class="cs-text">
+                Esker Designs provides SEO services in Milton, VT. We write the pages, manage the Google Business Profile, and build the reviews that get Milton businesses ranked for the searches their customers are already making.
+            </p>
+            <p class="cs-text">
+                We're based in Warren, a little over an hour south, and work with over 30 Vermont businesses on a monthly basis. The screenshot is the form submission dashboard for one of our clients, all of it from organic search.
+            </p>
+            <a href="#lp-contact" data-umami-event="Milton SEO Hero CTA" class="cs-button-solid">Get a Free Audit</a>
+        </div>
+        <picture class="cs-picture">
+            <img loading="eager" decoding="async" src="{% getUrl '/assets/images/contractor-jobs-from-seo.png' | resize({ width: 1200 }) | webp %}" alt="Dashboard of verified form submissions coming in from organic search for a local Vermont business" width="639" height="524">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                  MAP PACK                    -->
+<!-- ============================================ -->
+
+<section id="lp-mappack" class="lp-section lp-alt lp-reverse">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">A Milton Address Wins the Map Pack in Milton</h2>
+            <p class="cs-text">
+                Google ranks the map pack on relevance, distance, and prominence. Distance is the one nobody controls, and it works in your favor here. Your Google Business Profile is pinned to your address, so a Milton business ranks strongest for people searching in Milton and fades as they get further south.
+            </p>
+            <p class="cs-text">
+                Milton also covers a lot of ground for a town of ten thousand. Someone searching from the village on Route 7, someone out past Arrowhead Mountain Lake, and someone down by the Sandbar causeway are far enough apart to be shown different results.
+            </p>
+            <p class="cs-text">
+                The screenshot is a Burlington search, but the same thing decides Milton. Our client is at the top with 25 reviews, above a competitor with 48. Review count alone doesn't decide it.
+            </p>
+        </div>
+        <picture class="cs-picture">
+            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/pool-contractor-map-pack-vermont.png' | resize({ width: 1200 }) | webp %}" alt="Google map pack for metal roofers in Burlington VT with Metal Vista Roofing, an Esker Designs client, ranked first" width="1788" height="1340">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                  REVIEWS                     -->
+<!-- ============================================ -->
+
+<section id="lp-reviews" class="lp-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Reviews Are the Fastest Lever</h2>
+            <p class="cs-text">
+                Of the three, prominence moves quickest, and prominence is mostly reviews. A profile that hasn't picked up a review in two years looks like a business that's barely operating, whether or not that's true.
+            </p>
+            <p class="cs-text">
+                The before and after here is one of our clients. They went from 15 Google reviews to over 140 in two weeks, and became the number one ranked company in their category in the state.
+            </p>
+            <p class="cs-text">
+                We set that up as a <a href="/reviews/">review request</a> that goes out after every job, so it keeps running without you thinking about it.
+            </p>
+            <a href="#lp-contact" data-umami-event="Milton SEO Reviews CTA" class="cs-button-solid">Get a Free Audit</a>
+        </div>
+        <div class="cs-review-proof">
+            <figure>
+                <span class="cs-ba-tag">Before</span>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                    <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                    <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 940 }) | avif %}" type="image/avif">
+                    <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 940 }) | webp %}" type="image/webp">
+                    <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/proof/proof-reviews-before.png' | resize({ width: 940 }) | webp %}" alt="Google Business Profile for Scoop Force LLC showing 15 reviews before working with Esker Designs" width="940" height="574">
+                </picture>
+            </figure>
+            <figure>
+                <span class="cs-ba-tag cs-after">After</span>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-143.png' | resize({ width: 600 }) | avif %}" type="image/avif">
+                    <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-143.png' | resize({ width: 600 }) | webp %}" type="image/webp">
+                    <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-143.png' | resize({ width: 940 }) | avif %}" type="image/avif">
+                    <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/proof/proof-reviews-143.png' | resize({ width: 940 }) | webp %}" type="image/webp">
+                    <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/proof/proof-reviews-143.png' | resize({ width: 940 }) | webp %}" alt="Google Business Profile for Scoop Force LLC showing a 5.0 rating with 143 reviews after working with Esker Designs" width="944" height="568">
+                </picture>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--           BELOW THE MAP                      -->
+<!-- ============================================ -->
+
+<section id="lp-organic" class="lp-section lp-alt lp-reverse">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Below the Map, Distance Stops Helping</h2>
+            <p class="cs-text">
+                Milton is fifteen minutes up I-89 from Burlington. Companies in Colchester, Winooski, Essex, and Burlington all list Milton in their service area, and St. Albans companies come down Route 7 for the same work. In the regular results, you're on equal footing with all of them.
+            </p>
+            <p class="cs-text">
+                They win because they have pages. A page for each service they want work in, and a page for each town they cover. Most Milton business websites have four or five pages total, so there's nothing on the site that tells Google what the business does or where it does it.
+            </p>
+            <p class="cs-text">
+                The graph is Search Console for a client after we started building out those pages. It's the same work behind our <a href="/seo-services-vermont/">Vermont SEO services</a>, pointed at Milton.
+            </p>
+        </div>
+        <picture class="cs-picture">
+            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/seo-for-contractors-progress.png' | webp %}" alt="Google Search Console graph showing clicks and impressions climbing after a local content strategy was put in place" width="742" height="462">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--             WHAT WE DO EACH MONTH            -->
+<!-- ============================================ -->
+
+<section id="lp-work" class="lp-section lp-divided">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">What's Included in Our Milton SEO Service</h2>
+            <p class="cs-text">
+                The first thing we do is look at what people in Milton actually search for. In a town this size it's usually a short list, and most of it is a service plus "milton vt" or "near me", typed on a phone.
+            </p>
+            <p class="cs-text">
+                From there we write a page for each of those searches, fix anything technical that's slowing your site down, fill out and post to your <a href="/google-business-profile-management/">Google Business Profile</a> every week, and keep the review requests going. Those same pages are what get you named when someone asks ChatGPT for a business in Milton, which we cover on our <a href="/ai-search-optimization-vermont/">AI search optimization</a> page.
+            </p>
+            <p class="cs-text">
+                Every month you get rankings, traffic, and the number of leads that came in from organic search. If your website is the thing holding you back, we build those too, and everything else we do is on our <a href="/service-offerings/">service offerings page</a>.
+            </p>
+            <a href="#lp-contact" data-umami-event="Milton SEO Work CTA" class="cs-button-solid">Get a Free Audit</a>
+        </div>
+        <picture class="cs-picture">
+            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/qualified-leads-for-landscaping-client.png' | webp %}" alt="Qualified leads arriving from organic search for a local Vermont service business" width="694" height="643">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                     FAQ                      -->
+<!-- ============================================ -->
+
+<section id="lp-faq" class="lp-section lp-alt">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">FAQ</span>
+            <h2 class="cs-title">Milton SEO FAQ</h2>
+        </div>
+        <ul class="cs-faq-group">
+            <li class="cs-faq-item active">
+                <button class="cs-button"><span class="cs-button-text">Do you have an office in Milton?</span></button>
+                <p class="cs-item-p">
+                    No. We're in Warren, a little over an hour south. We do the audit and the monthly check-in on a video call, and we'll drive up if you'd rather sit down in person.
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button"><span class="cs-button-text">How much do SEO services cost in Milton?</span></button>
+                <p class="cs-item-p">
+                    Fewer pages if you only want Milton, more if you want Colchester and Burlington too. That's what sets the price. The audit comes back with a number, and our standard rates are on our <a href="/pricing/">pricing page</a>.
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button"><span class="cs-button-text">How long until I see results?</span></button>
+                <p class="cs-item-p">
+                    The Google Business Profile and review work can move the map pack in a few weeks. New pages on the website take longer, usually 3 to 6 months, because Google has to find them, index them, and then decide where they belong.
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button"><span class="cs-button-text">Can I rank in Burlington too, not just Milton?</span></button>
+                <p class="cs-item-p">
+                    In the map pack, only so far. Your profile is pinned to your address, so it fades as searchers get further away. Outside Milton you rank through the website instead, with a page for each service and each town you want work in.
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button"><span class="cs-button-text">Can you guarantee a ranking?</span></button>
+                <p class="cs-item-p">
+                    No. Google doesn't sell organic positions, so anyone who guarantees one is guessing. What we can promise is a report every month showing exactly what moved, and no contract holding you there if it doesn't.
+                </p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--              Closing CTA + Form              -->
+<!-- ============================================ -->
+
+<!--
+    The Netlify form name must be UNIQUE per page, otherwise submissions from
+    every landing page land in the same inbox with no way to tell them apart.
+-->
+<section id="lp-contact" class="lp-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Free SEO Audit, No Commitment</h2>
+            <p class="cs-text">
+                If you're looking for SEO services in Milton, the easiest way to find out whether we're the right fit is the audit.
+            </p>
+            <p class="cs-text">
+                You get back a short document: where you rank today, what's holding you back, and what we'd fix first. It takes about 30 minutes to walk you through on a video call, and there's no cost and no obligation to hire us.
+            </p>
+            <ul class="cs-contact-list">
+                <li class="cs-contact-li">Call <a href="tel:828-989-1290">(828) 989-1290</a></li>
+                <li class="cs-contact-li">Email <a href="mailto:sam@eskerdesigns.com">sam@eskerdesigns.com</a></li>
+            </ul>
+        </div>
+
+        <form class="cs-form" id="lp-form" name="SEO Services Milton" method="post" action="/thank-you/" netlify netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="SEO Services Milton">
+            <p class="cs-hp" hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+
+            <h3 class="cs-h3">Get a Free Audit</h3>
+            <label class="cs-label">Name<input class="cs-input" required type="text" id="lp-name" name="name" placeholder="Name"></label>
+            <label class="cs-label">Email<input class="cs-input" required type="email" id="lp-email" name="email" placeholder="Email"></label>
+            <label class="cs-label">Phone<input class="cs-input" required type="tel" id="lp-phone" name="phone" placeholder="Phone"></label>
+            <label class="cs-label">Website<input class="cs-input" type="text" id="lp-website" name="website" placeholder="yourbusiness.com (optional)"></label>
+            <button class="cs-button-solid cs-submit" data-umami-event="Milton SEO Form Submit" type="submit">Get My Free Audit</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}
