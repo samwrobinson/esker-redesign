@@ -118,4 +118,6 @@ WordPress requires frequent updates for the core software, plugins, and themes t
 
 Yes, WordPress sites are more frequent targets for brute force attacks because of their popularity and predictable login paths. Custom-coded sites often have less known structures, which can make automated attacks less likely or harder to execute.
 
+If you are ready to move off WordPress, our [Vermont website migration services](/service-offerings/vermont-website-migration-services/) page explains how we move a site without losing rankings.
+
 TL;DR WordPress powers a huge portion of the web but also faces constant attacks, mainly due to its reliance on plugins that often have unpatched vulnerabilities. These security risks create a broad attack surface that traditional WordPress setups struggle to secure, especially under modern Zero Trust principles that require strict verification and minimal trust. Breaches can cost millions and damage business reputation for over a year. Custom-coded websites reduce these risks by avoiding unnecessary plugins, using unique code, and building in strong, proactive security controls from the start. Businesses need to assess their data sensitivity and downtime tolerance to decide if investing in custom development makes more sense for long-term protection and stability.

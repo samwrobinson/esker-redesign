@@ -229,7 +229,7 @@ The GBP optimization can be done in an afternoon. Getting a CRM set up with basi
 
 ### Will this work in a competitive market?
 
-Yes — actually, it works *better* in a competitive market. When multiple contractors are vying for the same jobs, the ones who respond instantly and follow up consistently win, regardless of price. That's what the CRM gives you.
+Yes — actually, it works *better* in a competitive market. When multiple contractors are vying for the same jobs, the ones who respond instantly and follow up consistently win, regardless of price. That's what the CRM gives you. It matters most in seasonal trades. See how we apply it in [SEO for pool contractors](/service-offerings/seo-for-pool-contractors-vermont/), where most of the year's revenue is booked in a few months.
 
 ### I'm already busy — do I really need more leads?
 

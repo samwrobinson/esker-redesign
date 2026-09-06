@@ -35,7 +35,7 @@ Each of these factors—speed, best practices, SEO, and accessibility—contribu
 
 We handle all of this at Esker Designs, so you can focus on your business. While optimizing for these metrics is possible with page builders, many small business owners simply don’t have the technical background or the time to do so. Running a business is demanding, and it often makes sense in the short term to prioritize revenue growth or other pressing goals. However, overlooking these "smaller details" can have lasting consequences, potentially limiting your business's success and leaving users with subpar web experiences.
 
-At Esker Designs, our focus on these elements ensures that your online presence remains strong, impactful, and crafted for success. By taking care of the technical and optimization aspects, we allow you to do what you do best—growing your business—while knowing your website is performing at its peak.
+At Esker Designs, our focus on these elements ensures that your online presence remains strong, impactful, and crafted for success. By taking care of the technical and optimization aspects, we allow you to do what you do best—growing your business—while knowing your website is performing at its peak. If your current site is slow, start with our [Vermont website optimization](/service-offerings/vermont-website-optimization/) service.
 
 
 

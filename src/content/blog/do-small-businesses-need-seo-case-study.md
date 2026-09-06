@@ -218,4 +218,4 @@ FAQPage schema is a piece of structured data code that you add to a page to tell
 
 ### What's the difference between a hub and spoke SEO strategy and just having a services page?
 
-A single services page tries to rank for many different things at once. Hub and spoke gives each service its own dedicated URL with focused, specific content. Google rewards specificity — a page that's entirely about bathroom remodeling in Maine will rank better for bathroom remodeling searches than a page that mentions bathroom remodeling among ten other services.
+A single services page tries to rank for many different things at once. Hub and spoke gives each service its own dedicated URL with focused, specific content. Google rewards specificity — a page that's entirely about bathroom remodeling in Maine will rank better for bathroom remodeling searches than a page that mentions bathroom remodeling among ten other services. The same structure works for professional services. Our [Vermont law firm SEO service](/service-offerings/vermont-law-firm-seo-service/) is built on it: one page per practice area.

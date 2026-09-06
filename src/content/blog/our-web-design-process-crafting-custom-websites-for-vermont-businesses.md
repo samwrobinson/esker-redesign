@@ -111,4 +111,6 @@ We fully manage the website post-launch so you can focus on your business! Just 
 
 We use responsive design techniques to ensure that your website looks and functions great on desktops, tablets, and smartphones.
 
+Read more about what that means on our [responsive web designer in Vermont](/service-offerings/responsive-web-designer-vermont/) page.
+
 TL;DR At Esker Designs, we turn your business vision into an impactful website through a refined process: starting with a thorough consultation to understand your unique needs, followed by tailored design and content strategy. Our custom designs, professional copywriting, and hand-coded development ensure fast-loading, secure, and SEO-optimized websites. Before launch, we conduct comprehensive reviews and prepare for a successful go-live. We also offer ongoing support and maintenance, ensuring your website evolves with the digital landscape. Our approach combines professional quality with a local touch, making us the ideal partner for Vermont businesses.

@@ -135,4 +135,6 @@ A fast loading time helps keep visitors on the site longer, reduces bounce rates
 
 Users reported a much better experience with easier navigation and quicker access to information after the redesign.
 
+If you run a painting company and want the same result, our [SEO for painting contractors](/service-offerings/seo-for-painting-contractors-vermont/) page covers what we do after the site is live.
+
 TL;DR Peak Painting underwent a significant digital transformation, drastically improving their website's performance from a score of 55/100 and a load time of 12.7 seconds to a perfect score of 100/100 with a load time of just 1.1 seconds. The process included initial consultations to establish clear goals, detailed research and planning phases with client input, collaborative design using Figma, parallel development and content creation tracks, and thorough testing with rapid adjustments based on feedback. The entire project was typically completed in 3-6 weeks, showcasing the positive impact of an organized approach and client collaboration.

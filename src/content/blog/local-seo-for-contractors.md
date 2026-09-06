@@ -236,7 +236,7 @@ It's where most non-referral leads come from. Studies show 76% of people who sea
 
 ### What's the most important local SEO ranking factor for a contractor?
 
-Your Google Business Profile is the foundation. Specifically: your categories, your services list, your reviews, and how active and complete the profile is. Everything else builds on top of that.
+Your Google Business Profile is the foundation. Specifically: your categories, your services list, your reviews, and how active and complete the profile is. Everything else builds on top of that. If you would rather have someone run it for you, that is what our [SEO company for contractors](/service-offerings/seo-company-for-contractors/) page is about.
 
 ### How do I get my contracting business to show up on Google Maps?
 
