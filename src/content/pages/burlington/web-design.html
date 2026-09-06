@@ -1,0 +1,285 @@
+---
+title: 'Web Design Burlington VT | Hand-Coded Sites From $175/mo, $0 Down | Esker Designs'
+description: 'Web design in Burlington, VT for small businesses. Hand-coded sites that load in under a second, built to rank in the most competitive market in Vermont. $175 a month, $0 down.'
+preloadImg: '/assets/images/metal-vista.png'
+permalink: '/burlington/web-design-burlington-vt/'
+eleventyNavigation:
+    key: Burlington
+    order: 7100
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="ad4f603c-adc2-4df0-8440-601f99120b46"></script>
+    <link rel="stylesheet" href="/assets/css/contractor-landing.css">
+    <link rel="stylesheet" href="/assets/css/seo-contractors.css">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.eskerdesigns.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Service Areas", "item": "https://www.eskerdesigns.com/service-areas/" },
+                    { "@type": "ListItem", "position": 3, "name": "Web Design Burlington VT", "item": "https://www.eskerdesigns.com/burlington/web-design-burlington-vt/" }
+                ]
+            },
+            {
+                "@type": "Service",
+                "@id": "https://www.eskerdesigns.com/burlington/web-design-burlington-vt/#service",
+                "name": "Web Design Burlington VT",
+                "serviceType": "Web Design",
+                "description": "Hand-coded small business websites for Burlington, Vermont businesses. No page builders or plugins, load times under one second, $175 a month with $0 down.",
+                "url": "https://www.eskerdesigns.com/burlington/web-design-burlington-vt/",
+                "areaServed": { "@type": "City", "name": "Burlington", "containedInPlace": { "@type": "State", "name": "Vermont" } },
+                "provider": {
+                    "@type": "LocalBusiness",
+                    "@id": "https://www.eskerdesigns.com/#business",
+                    "name": "Esker Designs",
+                    "url": "https://www.eskerdesigns.com",
+                    "telephone": "828-989-1290",
+                    "email": "sam@eskerdesigns.com",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "70 Lenord Lane",
+                        "addressLocality": "Warren",
+                        "addressRegion": "VT",
+                        "postalCode": "05674",
+                        "addressCountry": "US"
+                    }
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "name": "Website Starter",
+                    "price": "175",
+                    "priceCurrency": "USD",
+                    "description": "Up to 5 pages, hosting, unlimited edits, and 24/7 support for $175 a month with $0 down."
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://www.eskerdesigns.com/burlington/web-design-burlington-vt/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How much does web design cost in Burlington, VT?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Our sites are $175 a month with $0 down for up to 5 pages, hosting, unlimited edits, and support. The Growth site with a blog and local SEO pages is $275. Both are available as a one-time build, $3,800 or $5,000, with $10 a month hosting after." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do you have an office in Burlington?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "No. We are in Warren, about an hour south. Most Burlington clients we have never met in person. The build happens over video calls and email, and if you would rather meet, we drive up." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How long does a website take?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Most sites are live in 2 to 3 weeks. Clients usually spend less than an hour total on the process." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Why not just use WordPress or Squarespace?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "You can, and most of your Burlington competitors do. Those sites carry a theme, a stack of plugins, and a page builder, and they get slower every year. Ours are written by hand, score 95 to 100 on Google PageSpeed, and have nothing to update or patch." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Will the site help me rank in Burlington?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "It is built to. Every site gets a page for each service you want calls for, and fast load times are a ranking factor. If you want us to do the ongoing SEO too, that is our local SEO in Burlington service." }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    HERO                      -->
+<!-- ============================================ -->
+
+<section id="lp-hero" class="lp-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Web Design in Burlington, VT</h1>
+            <p class="cs-text">
+                Web design in Burlington, VT for small businesses that need the site to bring in work, not just look good. Hand-coded, under a second to load, $175 a month with $0 down.
+            </p>
+            <p class="cs-text">
+                The site in the screenshot is Metal Vista Roofing. Search for metal roofers in Burlington and they are at the top of the map.
+            </p>
+            <a href="#lp-contact" data-umami-event="Burlington Web Design Hero CTA" class="cs-button-solid">Start for $0 Down</a>
+        </div>
+        <picture class="cs-picture">
+            <img loading="eager" decoding="async" src="{% getUrl '/assets/images/metal-vista.png' | resize({ width: 1200 }) | webp %}" alt="Web design in Burlington, VT: the Metal Vista Roofing website built by Esker Designs" width="1800" height="760">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--            Hardest market in VT              -->
+<!-- ============================================ -->
+
+<section id="lp-market" class="lp-section lp-alt lp-reverse">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Burlington Is the Hardest Market in Vermont</h2>
+            <p class="cs-text">
+                Burlington is the largest market in the state. You are not just competing with the shop down the street. You are competing with businesses in South Burlington, Winooski, Essex, Colchester, Williston, and Shelburne who all want the same customers.
+            </p>
+            <p class="cs-text">
+                A five page template site does not rank here. The businesses at the top have a page for every service they offer and every town they serve, and the site loads fast enough that Google trusts it. That is what we build.
+            </p>
+        </div>
+        <picture class="cs-picture">
+            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/local-seo-in-burlington-vt.png' | resize({ width: 1200 }) | webp %}" alt="Google map pack for metal roofers in Burlington, VT with an Esker Designs client ranked first" width="1788" height="1340">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--        Designed in Figma first (sbs-311)     -->
+<!-- ============================================ -->
+
+<section id="sbs-311">
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <picture class="cs-picture cs-picture1">
+                <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/figma-website-mockup-vermont.png' | resize({ width: 600 }) | webp %}">
+                <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/figma-website-mockup-vermont.png' | resize({ width: 1044 }) | webp %}">
+                <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/figma-website-mockup-vermont.png' | resize({ width: 1044 }) | webp %}" alt="A Vermont bakery website designed in Figma by Esker Designs before any code was written" width="522" height="581">
+            </picture>
+            <picture class="cs-picture cs-picture2">
+                <source media="(max-width: 600px)" srcset="{% getUrl '/assets/images/website-designed-in-figma-vermont.png' | resize({ width: 600 }) | webp %}">
+                <source media="(min-width: 601px)" srcset="{% getUrl '/assets/images/website-designed-in-figma-vermont.png' | resize({ width: 828 }) | webp %}">
+                <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/website-designed-in-figma-vermont.png' | resize({ width: 828 }) | webp %}" alt="Every page of the same Vermont website laid out in Figma for client review" width="414" height="400">
+            </picture>
+        </div>
+        <div class="cs-content">
+            <span class="cs-topper">Designed in Figma First</span>
+            <h2 class="cs-title">You See the Whole Site Before We Write a Line of Code</h2>
+            <p class="cs-text">
+                Every site starts as a full design in Figma. Every page, laid out, with your photos and your words. You review it, we change what you want changed, and only then does it get built.
+            </p>
+            <p class="cs-text">
+                Then it gets written by hand. No WordPress, no Squarespace, no theme or plugins to patch. Static HTML and CSS that scores 95 to 100 on Google PageSpeed and loads in under a second on a phone. Most Burlington business sites cannot say that, and speed is a ranking factor. More on the build is on our <a href="/web-design-service/">small business website design</a> page.
+            </p>
+            <div class="cs-quote">
+                <span class="cs-quote-text">
+                    Working with Sam was super easy from start to finish. When he showed me the website I was blown away. I've definitely noticed more leads since launching the site and a higher closing rate because my clients can trust me right away.
+                </span>
+                <span class="cs-name">Jules Butler</span>
+                <span class="cs-job">Butler Yardcare</span>
+            </div>
+            <a href="#lp-contact" data-umami-event="Burlington Web Design Figma CTA" class="cs-button-solid">Start for $0 Down</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--            What it costs                     -->
+<!-- ============================================ -->
+
+<section id="lp-cost" class="lp-section lp-divided lp-centered">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">What Web Design in Burlington Costs With Us</h2>
+            <p class="cs-text">
+                $175 a month, $0 down. That covers up to 5 pages, hosting, unlimited edits, 24/7 support, and a page speed guarantee. Need a blog and local SEO pages? The Growth site is $275. Prefer to pay once? $3,800 or $5,000, with $10 a month hosting after.
+            </p>
+            <p class="cs-text">
+                If the site is done and ranking is the job, see <a href="/burlington/local-seo-in-burlington-vt/">local SEO in Burlington</a>. If you are comparing prices, our <a href="/service-offerings/affordable-web-design-vermont/">affordable web design in Vermont</a> page lays out exactly what the number buys. Everything else is on the <a href="/pricing/">pricing page</a>.
+            </p>
+            <a href="#lp-contact" data-umami-event="Burlington Web Design Cost CTA" class="cs-button-solid">Start for $0 Down</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                    FAQ                       -->
+<!-- ============================================ -->
+
+<section id="lp-faq" class="lp-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">FAQ</span>
+            <h2 class="cs-title">Burlington Web Design FAQ</h2>
+        </div>
+        <ul class="cs-faq-group">
+            <li class="cs-faq-item active">
+                <button class="cs-button"><span class="cs-button-text">How much does web design cost in Burlington, VT?</span></button>
+                <p class="cs-item-p">
+                    Our sites are $175 a month with $0 down for up to 5 pages, hosting, unlimited edits, and support. The Growth site with a blog and local SEO pages is $275. Both are available as a one-time build, $3,800 or $5,000, with $10 a month hosting after. See the <a href="/pricing/">pricing page</a>.
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button"><span class="cs-button-text">Do you have an office in Burlington?</span></button>
+                <p class="cs-item-p">
+                    No. We are in Warren, about an hour south. Most Burlington clients we have never met in person. The build happens over video calls and email, and if you would rather meet, we drive up.
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button"><span class="cs-button-text">How long does a website take?</span></button>
+                <p class="cs-item-p">
+                    Most sites are live in 2 to 3 weeks. Clients usually spend less than an hour total on the process.
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button"><span class="cs-button-text">Why not just use WordPress or Squarespace?</span></button>
+                <p class="cs-item-p">
+                    You can, and most of your Burlington competitors do. Those sites carry a theme, a stack of plugins, and a page builder, and they get slower every year. Ours are written by hand, score 95 to 100 on Google PageSpeed, and have nothing to update or patch.
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button"><span class="cs-button-text">Will the site help me rank in Burlington?</span></button>
+                <p class="cs-item-p">
+                    It is built to. Every site gets a page for each service you want calls for, and fast load times are a ranking factor. If you want us to do the ongoing SEO too, that is our <a href="/burlington/local-seo-in-burlington-vt/">local SEO in Burlington</a> service.
+                </p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--              Closing CTA + Form              -->
+<!-- ============================================ -->
+
+<!--
+    The Netlify form name must be UNIQUE per page, otherwise submissions from
+    every landing page land in the same inbox with no way to tell them apart.
+-->
+<section id="lp-contact" class="lp-section lp-alt">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Start for $0 Down</h2>
+            <p class="cs-text">
+                Send us your business name and what you do. On a 30 minute call we will tell you what the site should say, how many pages it needs, and what it will cost.
+            </p>
+            <p class="cs-text">
+                No cost for the call and no obligation to hire us.
+            </p>
+            <ul class="cs-contact-list">
+                <li class="cs-contact-li">Call <a href="tel:828-989-1290">(828) 989-1290</a></li>
+                <li class="cs-contact-li">Email <a href="mailto:sam@eskerdesigns.com">sam@eskerdesigns.com</a></li>
+            </ul>
+        </div>
+
+        <form class="cs-form" id="lp-form" name="Web Design Burlington VT" method="post" action="/thank-you/" netlify netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="Web Design Burlington VT">
+            <p class="cs-hp" hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+
+            <h3 class="cs-h3">Get Your Site Started</h3>
+            <label class="cs-label">Name<input class="cs-input" required type="text" id="lp-name" name="name" placeholder="Name"></label>
+            <label class="cs-label">Email<input class="cs-input" required type="email" id="lp-email" name="email" placeholder="Email"></label>
+            <label class="cs-label">Phone<input class="cs-input" required type="tel" id="lp-phone" name="phone" placeholder="Phone"></label>
+            <label class="cs-label">Business<input class="cs-input" type="text" id="lp-website" name="website" placeholder="Business name or current site (optional)"></label>
+            <button class="cs-button-solid cs-submit" data-umami-event="Burlington Web Design Form Submit" type="submit">Start for $0 Down</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}
