@@ -1107,3 +1107,77 @@
         }
     }
 }
+
+/*-- -------------------------- -->
+<---  Quote inside .lp-section   -->
+<--- -------------------------- -*/
+
+/* The pull quote was only styled inside #sbs-311. Landing pages that use
+   the single-picture .lp-section layout need the same block. */
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    .lp-section {
+        .cs-quote {
+            width: 100%;
+            margin: 0 0 (32/16rem) 0;
+            /* 16px - 32px */
+            padding: clamp(1rem, 3vw, 2rem);
+            background-color: #f7f7f7;
+            border-radius: (16/16rem);
+            position: relative;
+        }
+
+        .cs-quote-text {
+            /* 15px - 17px */
+            font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+            line-height: 1.5em;
+            margin: 0 0 (16/16rem);
+            color: #555;
+            display: block;
+        }
+
+        .cs-name {
+            font-size: (16/16rem);
+            line-height: 1.2em;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 0 0 (4/16rem);
+            /* --headerColor is white on this site; the quote sits on a light card */
+            color: #1a1a1a;
+            display: block;
+        }
+
+        .cs-job {
+            font-size: (14/16rem);
+            line-height: 1.5em;
+            color: #767676;
+            display: block;
+        }
+
+        .cs-topper {
+            margin-bottom: (4/16rem);
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        .lp-section {
+            .cs-quote {
+                background-color: var(--accent);
+            }
+
+            .cs-quote-text,
+            .cs-name {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-job {
+                color: var(--bodyTextColorWhite);
+                opacity: 0.8;
+            }
+        }
+    }
+}

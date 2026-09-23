@@ -1,0 +1,291 @@
+---
+title: 'Web Design for Contractors in Vermont | Hand-Coded, $175/mo, $0 Down | Esker Designs'
+description: 'Web design for contractors in Vermont. Hand-coded sites that show up on Google and turn the visit into a phone call. A page for each service and each town. $175 a month, $0 down, live in 2 to 3 weeks.'
+preloadImg: '/assets/images/peak-painting.png'
+permalink: 'service-offerings/web-design-for-contractors-vermont/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="ad4f603c-adc2-4df0-8440-601f99120b46"></script>
+    <link rel="stylesheet" href="/assets/css/contractor-landing.css">
+    <link rel="stylesheet" href="/assets/css/seo-contractors.css">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.eskerdesigns.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Service Offerings", "item": "https://www.eskerdesigns.com/service-offerings/" },
+                    { "@type": "ListItem", "position": 3, "name": "Web Design for Contractors in Vermont", "item": "https://www.eskerdesigns.com/service-offerings/web-design-for-contractors-vermont/" }
+                ]
+            },
+            {
+                "@type": "Service",
+                "@id": "https://www.eskerdesigns.com/service-offerings/web-design-for-contractors-vermont/#service",
+                "name": "Web Design for Contractors in Vermont",
+                "serviceType": "Web Design",
+                "description": "Hand-coded websites for Vermont contractors. A page for each service and each town served, Google reviews on the page, and a phone number on every screen. Built for Peak Painting, Summit Pro Painting, Hoplite Builders, and Righteous Chimney and Masonry.",
+                "url": "https://www.eskerdesigns.com/service-offerings/web-design-for-contractors-vermont/",
+                "areaServed": { "@type": "State", "name": "Vermont" },
+                "audience": { "@type": "Audience", "audienceType": "Contractors" },
+                "provider": {
+                    "@type": "LocalBusiness",
+                    "@id": "https://www.eskerdesigns.com/#business",
+                    "name": "Esker Designs",
+                    "url": "https://www.eskerdesigns.com",
+                    "telephone": "828-989-1290",
+                    "email": "sam@eskerdesigns.com",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "70 Lenord Lane",
+                        "addressLocality": "Warren",
+                        "addressRegion": "VT",
+                        "postalCode": "05674",
+                        "addressCountry": "US"
+                    }
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "name": "Website Starter",
+                    "price": "175",
+                    "priceCurrency": "USD",
+                    "description": "Up to 5 hand-coded pages with hosting, unlimited edits, and 24/7 support for $175 a month with $0 down."
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://www.eskerdesigns.com/service-offerings/web-design-for-contractors-vermont/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Do contractors need a website?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "If word of mouth keeps you booked, no. If you have capacity, yes. Over 97% of people look up a local service business online before calling, and a Google Business Profile with no site behind it loses those searches to a competitor who has one." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How much does a contractor website cost in Vermont?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Ours is $175 a month with $0 down for up to 5 pages, hosting, unlimited edits, and support. The Growth site with a blog and a page for each town you serve is $275. One-time builds are $3,800 or $5,000." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What should a contractor website have on it?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "One page per service, your towns in writing, your own job photos, your Google reviews, and the phone number on every page. Most contractors do not need a blog." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How long does a contractor website take to build?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Live in 2 to 3 weeks. You spend about an hour: a 30 minute call, a look at the design, a look at the finished site. We do the writing." }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    HERO                      -->
+<!-- ============================================ -->
+
+<section id="lp-hero" class="lp-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Web Design for Contractors in Vermont</h1>
+            <p class="cs-text">
+                We build hand-coded websites for Vermont contractors that show up on Google and turn the visit into a phone call. $175 a month, $0 down, live in 2 to 3 weeks.
+            </p>
+            <a href="#lp-contact" data-umami-event="Contractor Web Design Hero CTA" class="cs-button-solid">Start for $0 Down</a>
+        </div>
+        <picture class="cs-picture cs-picture-transparent">
+            <img loading="eager" decoding="async" src="{% getUrl '/assets/images/peak-painting.png' | resize({ width: 1200 }) | webp %}" alt="Web design for contractors in Vermont: the Peak Painting website built by Esker Designs shown on a desktop, tablet, and phone" width="1800" height="760">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--        Get the call                          -->
+<!-- ============================================ -->
+
+<section id="lp-phone" class="lp-section lp-alt">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Get the Call When a Homeowner Searches Your Trade</h2>
+            <p class="cs-text">
+                When someone searches "house painter in Burlington" or "excavation contractor near me," they are ready to hire. Your site needs to say what you do and where in the first line, show your reviews, and put the phone number where a thumb lands on a phone.
+            </p>
+            <p class="cs-text">
+                That is how we build every contractor site. Your own job photos instead of stock, the towns you work in written on the page, and a tap-to-call button on mobile.
+            </p>
+            <div class="cs-quote">
+                <span class="cs-quote-text">
+                    We started working with Sam and within a week, we sold a masonry job big enough to pay him for a couple years! I would definitely work with him again.
+                </span>
+                <span class="cs-name">John</span>
+                <span class="cs-job">Righteous Chimney and Masonry</span>
+            </div>
+            <a href="#lp-contact" data-umami-event="Contractor Web Design Phone CTA" class="cs-button-solid">Start for $0 Down</a>
+        </div>
+        <picture class="cs-picture cs-picture-transparent">
+            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/summit-pro-painting.png' | resize({ width: 1200 }) | webp %}" alt="Summit Pro Painting, a Burlington, Vermont painting contractor website built by Esker Designs, on a desktop, tablet, and phone" width="1800" height="760">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--        Service and town pages                -->
+<!-- ============================================ -->
+
+<section id="lp-signs" class="lp-section lp-centered">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">A Page for Every Service and Every Town</h2>
+            <p class="cs-text">
+                Google matches a search to a page, not to a business. A homeowner searching "septic system installation" finds the contractor with a page titled that, not the one with a homepage that mentions it once. So each service you want more of gets its own page, and so does each town you work in.
+            </p>
+            <p class="cs-text">
+                Summit Pro Painting in Burlington has separate pages for interior, exterior, and cabinet painting. Peak Painting in Woodstock has the same structure. Both have their 802 number in the header and their Google rating under the headline.
+            </p>
+            <p class="cs-text">
+                Not sure you need a site yet? Read <a href="/blog/do-contractors-need-a-website-2026/">do contractors need a website</a>.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--            Speed and hand code               -->
+<!-- ============================================ -->
+
+<section id="lp-handcoded" class="lp-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Loads in a Second on a Phone</h2>
+            <p class="cs-text">
+                Peak Painting came to us with a site that took 12.7 seconds to load. The rebuild loads in 1.1 seconds. Load time is a Google ranking factor, and a homeowner on one bar of signal will not wait for a slow site.
+            </p>
+            <p class="cs-text">
+                Every site we build is hand-written HTML and CSS. No WordPress, no plugins, nothing to update or get hacked, and PageSpeed scores of 95 to 100. You approve the design in Figma before it is built. The full process is on the <a href="/service-offerings/custom-website-design-vermont/">custom website design</a> page.
+            </p>
+            <a href="#lp-contact" data-umami-event="Contractor Web Design Speed CTA" class="cs-button-solid">Start for $0 Down</a>
+        </div>
+        <picture class="cs-picture">
+            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/speed-test.png' | resize({ width: 1200 }) | webp %}" alt="Google PageSpeed score of 100 for a hand-coded contractor website by Esker Designs" width="1029" height="852">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--            Cost and what comes next          -->
+<!-- ============================================ -->
+
+<section id="lp-cost" class="lp-section lp-alt">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">$175 a Month, $0 Down</h2>
+            <p class="cs-text">
+                That covers up to 5 pages, hosting, unlimited edits, and support. The Growth site with a blog and a page for each town you serve is $275. If you would rather pay once, it is $3,800 or $5,000. Everything is on the <a href="/pricing/">pricing page</a>.
+            </p>
+            <p class="cs-text">
+                When the site is live and you want more calls, we run <a href="/service-offerings/seo-company-for-contractors/">SEO for contractors</a> on it. One painting client got 251 form leads in a year. We also set up <a href="/service-offerings/google-review-automation-for-contractors/">review automation</a> that texts each customer after the job. One client went from 15 Google reviews to 143 in two weeks. Both are month to month and optional.
+            </p>
+            <div class="cs-quote">
+                <span class="cs-quote-text">
+                    Sam created a beautiful website for me. I thought it was stunning. I really didn't expect a website for a construction company to be that beautiful.
+                </span>
+                <span class="cs-name">Tim Smith</span>
+                <span class="cs-job">Hoplite Builders</span>
+            </div>
+            <a href="#lp-contact" data-umami-event="Contractor Web Design Cost CTA" class="cs-button-solid">Start for $0 Down</a>
+        </div>
+        <picture class="cs-picture">
+            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/contractor-jobs-from-seo.png' | resize({ width: 1200 }) | webp %}" alt="251 contact form submissions in one year on a Vermont painting contractor website built by Esker Designs" width="639" height="524">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                    FAQ                       -->
+<!-- ============================================ -->
+
+<section id="lp-faq" class="lp-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">FAQ</span>
+            <h2 class="cs-title">Contractor Website FAQ</h2>
+        </div>
+        <ul class="cs-faq-group">
+            <li class="cs-faq-item active">
+                <button class="cs-button"><span class="cs-button-text">Do contractors need a website?</span></button>
+                <p class="cs-item-p">
+                    If word of mouth keeps you booked, no. If you have capacity, yes. Over 97% of people look up a local service business online before calling, and a Google Business Profile with no site behind it loses those searches to a competitor who has one. <a href="/blog/do-contractors-need-a-website-2026/">Longer answer here.</a>
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button"><span class="cs-button-text">How much does a contractor website cost in Vermont?</span></button>
+                <p class="cs-item-p">
+                    Ours is $175 a month with $0 down for up to 5 pages, hosting, unlimited edits, and support. The Growth site with a blog and a page for each town you serve is $275. One-time builds are $3,800 or $5,000. See the <a href="/pricing/">pricing page</a>.
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button"><span class="cs-button-text">What should a contractor website have on it?</span></button>
+                <p class="cs-item-p">
+                    One page per service, your towns in writing, your own job photos, your Google reviews, and the phone number on every page. Most contractors do not need a blog.
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button"><span class="cs-button-text">How long does a contractor website take to build?</span></button>
+                <p class="cs-item-p">
+                    Live in 2 to 3 weeks. You spend about an hour: a 30 minute call, a look at the design, a look at the finished site. We do the writing.
+                </p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--              Closing CTA + Form              -->
+<!-- ============================================ -->
+
+<!--
+    The Netlify form name must be UNIQUE per page, otherwise submissions from
+    every landing page land in the same inbox with no way to tell them apart.
+-->
+<section id="lp-contact" class="lp-section lp-alt">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Start for $0 Down</h2>
+            <p class="cs-text">
+                Send your business name and trade. On a 30 minute call we pick the service pages, the towns, and the photos. Design starts after that.
+            </p>
+            <p class="cs-text">
+                No cost for the call and no obligation to hire us.
+            </p>
+            <ul class="cs-contact-list">
+                <li class="cs-contact-li">Call <a href="tel:828-989-1290">(828) 989-1290</a></li>
+                <li class="cs-contact-li">Email <a href="mailto:sam@eskerdesigns.com">sam@eskerdesigns.com</a></li>
+            </ul>
+        </div>
+
+        <form class="cs-form" id="lp-form" name="Web Design for Contractors Vermont" method="post" action="/thank-you/" netlify netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="Web Design for Contractors Vermont">
+            <p class="cs-hp" hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+
+            <h3 class="cs-h3">Get Your Site Started</h3>
+            <label class="cs-label">Name<input class="cs-input" required type="text" id="lp-name" name="name" placeholder="Name"></label>
+            <label class="cs-label">Email<input class="cs-input" required type="email" id="lp-email" name="email" placeholder="Email"></label>
+            <label class="cs-label">Phone<input class="cs-input" required type="tel" id="lp-phone" name="phone" placeholder="Phone"></label>
+            <label class="cs-label">Trade<input class="cs-input" type="text" id="lp-website" name="website" placeholder="What kind of work you do (optional)"></label>
+            <button class="cs-button-solid cs-submit" data-umami-event="Contractor Web Design Form Submit" type="submit">Start for $0 Down</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}
