@@ -142,7 +142,7 @@ If you're in Hernando, MS or anywhere in DeSoto County and you need a residentia
 
 The Local Lift Podcast is a new project of mine focused on lifting up local small business owners by giving them a platform to share what's actually working in their corner of the world. No fluff, no guru-speak, just real conversations about how real businesses get built, hire, market, and survive. If you run a local business and have a story worth telling, I'd love to have you on a future episode.
 
-I built Five Star Cleaning's website at [Esker Designs](https://www.eskerdesigns.com/), and if you've been thinking about [investing in a fast, professional website](/blog/case-study-1/) of your own, that's the kind of work I do every day. Feel free to [book a free consultation](/booking/) and we'll talk through it.
+I built Five Star Cleaning's website at [Esker Designs](https://www.eskerdesigns.com/). If you run a cleaning company, [SEO for cleaning companies in Vermont](/service-offerings/seo-for-cleaning-companies-vermont/) covers how we get those sites ranking, and if you've been thinking about [investing in a fast, professional website](/blog/case-study-1/) of your own, that's the kind of work I do every day. Feel free to [book a free consultation](/booking/) and we'll talk through it.
 
 ## **Frequently Asked Questions**
 

@@ -1,0 +1,255 @@
+---
+title: 'SEO for Cleaning Companies in Vermont | Rank for Deep Cleans, Move-Outs, and Office Cleaning | Esker Designs'
+description: 'SEO for cleaning companies in Vermont. We built the site for J|R Cleaning Services in Barre. A page for each cleaning service, a Google Business Profile that ranks in the map pack, and reviews after every job. Free audit, no contract.'
+preloadImg: '/assets/images/jr-cleaning-services-vermont.png'
+permalink: 'service-offerings/seo-for-cleaning-companies-vermont/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="ad4f603c-adc2-4df0-8440-601f99120b46"></script>
+    <link rel="stylesheet" href="/assets/css/contractor-landing.css">
+    <link rel="stylesheet" href="/assets/css/seo-contractors.css">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.eskerdesigns.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Service Offerings", "item": "https://www.eskerdesigns.com/service-offerings/" },
+                    { "@type": "ListItem", "position": 3, "name": "SEO for Cleaning Companies in Vermont", "item": "https://www.eskerdesigns.com/service-offerings/seo-for-cleaning-companies-vermont/" }
+                ]
+            },
+            {
+                "@type": "Service",
+                "@id": "https://www.eskerdesigns.com/service-offerings/seo-for-cleaning-companies-vermont/#service",
+                "name": "SEO for Cleaning Companies in Vermont",
+                "serviceType": "Search Engine Optimization",
+                "description": "Local SEO for residential and commercial cleaning companies in Vermont: a page for each cleaning service, Google Business Profile optimization for the map pack, and automated review requests after every job. Built for J|R Cleaning Services in Barre, VT and Five Star Cleaning Services.",
+                "url": "https://www.eskerdesigns.com/service-offerings/seo-for-cleaning-companies-vermont/",
+                "areaServed": { "@type": "State", "name": "Vermont" },
+                "audience": { "@type": "Audience", "audienceType": "Cleaning companies" },
+                "provider": {
+                    "@type": "LocalBusiness",
+                    "@id": "https://www.eskerdesigns.com/#business",
+                    "name": "Esker Designs",
+                    "url": "https://www.eskerdesigns.com",
+                    "telephone": "828-989-1290",
+                    "email": "sam@eskerdesigns.com",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "70 Lenord Lane",
+                        "addressLocality": "Warren",
+                        "addressRegion": "VT",
+                        "postalCode": "05674",
+                        "addressCountry": "US"
+                    }
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://www.eskerdesigns.com/service-offerings/seo-for-cleaning-companies-vermont/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How long does SEO take for a cleaning company?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Google Business Profile changes and review requests start showing within a few weeks. New service pages usually take 3 to 6 months to rank, and the results build from there. There is no contract, so you can stop whenever you want." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What keywords should a cleaning company rank for?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "The searches that turn into booked jobs: house cleaning, deep cleaning, move-out cleaning, office cleaning, carpet cleaning, and post-construction cleaning, each paired with the Vermont towns you serve. Each one gets its own page." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do I need a new website for cleaning company SEO?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Not always. If your site loads fast and we can add pages to it, we work with what you have. If it is a slow template or a Facebook page, a rebuild is the first step and we handle that too." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How much does SEO for a cleaning company cost?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "It depends on how many towns and services you want to rank for. The free audit comes back with a price, and standard rates are on the pricing page." }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    HERO                      -->
+<!-- ============================================ -->
+
+<section id="lp-hero" class="lp-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">SEO for Cleaning Companies in Vermont</h1>
+            <p class="cs-text">
+                We help Vermont cleaning companies show up first on Google when a business or homeowner nearby searches for office cleaning, a deep clean, or a move-out, so the calls come in without paying for ads. We built the site for J|R Cleaning Services in Barre.
+            </p>
+            <a href="#lp-contact" data-umami-event="Cleaning SEO Hero CTA" class="cs-button-solid">Get a Free Audit</a>
+        </div>
+        <picture class="cs-picture">
+            <img loading="eager" decoding="async" src="{% getUrl '/assets/images/jr-cleaning-services-vermont.png' | resize({ width: 1200 }) | webp %}" alt="SEO for cleaning companies in Vermont: the J|R Cleaning Services homepage for a Barre, VT commercial cleaning company, built by Esker Designs" width="1440" height="900">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--        A page for every cleaning service     -->
+<!-- ============================================ -->
+
+<section id="lp-services" class="lp-section lp-alt">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">A Page for Every Cleaning Service You Offer</h2>
+            <p class="cs-text">
+                Someone searching "move-out cleaning Burlington" is not looking for a cleaning company. They are looking for that job, in that town, this week. Google matches the search to a page, so each service you want more of gets its own page with the towns you serve written on it.
+            </p>
+            <p class="cs-text">
+                J|R Cleaning Services in Barre does commercial work across Central Vermont: office cleaning, retail space cleaning, common areas for property managers, and short-term rental turnovers. Their site names each of those as a service, with Central Vermont on the page. In the last month the quote form brought in three commercial jobs: a new 3,000 square foot location, a Montpelier nonprofit, and a 900 square foot office. The form inbox is in the screenshot, names hidden.
+            </p>
+            <p class="cs-text">
+                Five Star Cleaning Services got the residential version: deep cleaning, move-ins and move-outs, carpet cleaning, and hard floor care, each on its own page. Five Star was named the 2025 Best of DeSoto cleaning company the year after launch.
+            </p>
+            <div class="cs-quote">
+                <span class="cs-quote-text">
+                    Before working with Sam, my website didn't truly reflect my business. It wasn't bringing in the kinds of leads I needed, but Sam completely changed that. He didn't just build a website, he built something that actually worked for my business.
+                </span>
+                <span class="cs-name">Shelly Bogue</span>
+                <span class="cs-job">Five Star Cleaning Services</span>
+            </div>
+            <a href="#lp-contact" data-umami-event="Cleaning SEO Services CTA" class="cs-button-solid">Get a Free Audit</a>
+        </div>
+        <picture class="cs-picture">
+            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/proof/proof-jr-cleaning-leads.png' | resize({ width: 1200 }) | webp %}" alt="Three commercial cleaning quote requests submitted through the J|R Cleaning Services website in one month, names hidden" width="1416" height="840">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--        Map pack and reviews                  -->
+<!-- ============================================ -->
+
+<section id="lp-reviews" class="lp-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Rank in the Map Pack With Reviews That Keep Coming</h2>
+            <p class="cs-text">
+                Most cleaning jobs are booked from the three listings on the map. Getting there takes a Google Business Profile with the right categories and services, and a steady stream of recent reviews. One or two a month is not enough. It has to run after every job.
+            </p>
+            <p class="cs-text">
+                We set up <a href="/service-offerings/google-review-automation-for-contractors/">review automation</a> that texts and emails each customer when the job is done. One home service client went from 15 Google reviews to 143 in two weeks and ranked first in their category in the state. The before and after is in the screenshot.
+            </p>
+            <a href="#lp-contact" data-umami-event="Cleaning SEO Reviews CTA" class="cs-button-solid">Get a Free Audit</a>
+        </div>
+        <picture class="cs-picture">
+            <img loading="lazy" decoding="async" src="{% getUrl '/assets/images/proof/proof-reviews-143.png' | resize({ width: 1200 }) | webp %}" alt="A client Google Business Profile showing a 5.0 rating with 143 reviews after Esker Designs set up review automation" width="944" height="568">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--        Referrals check you on Google         -->
+<!-- ============================================ -->
+
+<section id="lp-referrals" class="lp-section lp-alt lp-centered">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Your Referrals Check You on Google First</h2>
+            <p class="cs-text">
+                Shelly told us on the <a href="/blog/local-lift-podcast-five-star-cleaning-shelly-bogue/">Local Lift Podcast</a> that about 75% of Five Star's work is word of mouth. Those people still search her name before they call. The site and the profile do not have to convince a stranger. They have to confirm the recommendation the customer already got.
+            </p>
+            <p class="cs-text">
+                That is the order we work in: fix what shows up when someone searches your name, then go after the searches from people who have never heard of you. It pairs with our <a href="/seo-services-vermont/">Vermont local SEO</a> service for the towns you serve.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                    FAQ                       -->
+<!-- ============================================ -->
+
+<section id="lp-faq" class="lp-section">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">FAQ</span>
+            <h2 class="cs-title">Cleaning Company SEO FAQ</h2>
+        </div>
+        <ul class="cs-faq-group">
+            <li class="cs-faq-item active">
+                <button class="cs-button"><span class="cs-button-text">How long does SEO take for a cleaning company?</span></button>
+                <p class="cs-item-p">
+                    Google Business Profile changes and review requests start showing within a few weeks. New service pages usually take 3 to 6 months to rank, and the results build from there. There is no contract, so you can stop whenever you want.
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button"><span class="cs-button-text">What keywords should a cleaning company rank for?</span></button>
+                <p class="cs-item-p">
+                    The searches that turn into booked jobs: house cleaning, deep cleaning, move-out cleaning, office cleaning, carpet cleaning, and post-construction cleaning, each paired with the Vermont towns you serve. Each one gets its own page.
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button"><span class="cs-button-text">Do I need a new website for cleaning company SEO?</span></button>
+                <p class="cs-item-p">
+                    Not always. If your site loads fast and we can add pages to it, we work with what you have. If it is a slow template or a Facebook page, a rebuild is the first step and we handle that too. See <a href="/service-offerings/affordable-web-design-vermont/">affordable web design in Vermont</a>.
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button"><span class="cs-button-text">How much does SEO for a cleaning company cost?</span></button>
+                <p class="cs-item-p">
+                    It depends on how many towns and services you want to rank for. The free audit comes back with a price, and standard rates are on the <a href="/pricing/">pricing page</a>.
+                </p>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--              Closing CTA + Form              -->
+<!-- ============================================ -->
+
+<!--
+    The Netlify form name must be UNIQUE per page, otherwise submissions from
+    every landing page land in the same inbox with no way to tell them apart.
+-->
+<section id="lp-contact" class="lp-section lp-alt">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Free Audit, No Commitment</h2>
+            <p class="cs-text">
+                Send your business name and website, or your Google Business Profile if that is all you have. You get back a short document: what is working, what is holding you back, and what we would fix first.
+            </p>
+            <p class="cs-text">
+                It takes about 30 minutes on a video call, and there is no cost and no obligation to hire us.
+            </p>
+            <ul class="cs-contact-list">
+                <li class="cs-contact-li">Call <a href="tel:828-989-1290">(828) 989-1290</a></li>
+                <li class="cs-contact-li">Email <a href="mailto:sam@eskerdesigns.com">sam@eskerdesigns.com</a></li>
+            </ul>
+        </div>
+
+        <form class="cs-form" id="lp-form" name="SEO for Cleaning Companies Vermont" method="post" action="/thank-you/" netlify netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="SEO for Cleaning Companies Vermont">
+            <p class="cs-hp" hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+
+            <h3 class="cs-h3">Get a Free Audit</h3>
+            <label class="cs-label">Name<input class="cs-input" required type="text" id="lp-name" name="name" placeholder="Name"></label>
+            <label class="cs-label">Email<input class="cs-input" required type="email" id="lp-email" name="email" placeholder="Email"></label>
+            <label class="cs-label">Phone<input class="cs-input" required type="tel" id="lp-phone" name="phone" placeholder="Phone"></label>
+            <label class="cs-label">Website<input class="cs-input" type="text" id="lp-website" name="website" placeholder="Website or Google Business Profile (optional)"></label>
+            <button class="cs-button-solid cs-submit" data-umami-event="Cleaning SEO Form Submit" type="submit">Get My Free Audit</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}
