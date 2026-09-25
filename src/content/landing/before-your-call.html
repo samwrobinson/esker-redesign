@@ -1,0 +1,49 @@
+---
+title: 'Before Your Call | Esker Designs'
+description: 'Watch this short video before our call so we can spend the time on your business.'
+preloadImg: '/assets/images/vt-1-vsl-poster.jpg'
+permalink: '/before-your-call/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<!-- Sent to people after they book. noindex + sitemap exclusion come from landing.json. -->
+<style>
+    #byc-vsl { background: #0a0f05; padding: 11rem 1rem 5rem; }
+    #byc-vsl .cs-container { max-width: 50rem; margin: 0 auto; }
+    #byc-vsl .cs-content { max-width: 37.5rem; margin: 0 auto 2rem; text-align: center; }
+    #byc-vsl .cs-topper { display: block; margin-bottom: 0.75rem; }
+    #byc-vsl .cs-title { color: #fafbfc !important; margin-bottom: 1rem; }
+    #byc-vsl .cs-text { color: #d6dbd0; margin: 0 auto; }
+    #byc-vsl .cs-video-container { max-width: 43.75rem; margin: 0 auto; border-radius: 0.75rem; overflow: hidden; }
+    #byc-vsl .cs-vsl-video { width: 100%; height: auto; display: block; }
+    #byc-vsl .cs-note { color: #d6dbd0; text-align: center; margin: 2rem auto 0; max-width: 37.5rem; }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<section id="byc-vsl">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">You're booked</span>
+            <h1 class="cs-title">Watch this before our call</h1>
+            <p class="cs-text">
+                It covers how the websites, AI and reviews work together and what it costs. If you've seen it, we can skip the basics and spend the call on your business.
+            </p>
+        </div>
+        <div class="cs-video-container">
+            <video class="cs-vsl-video" preload="metadata" playsinline controls poster="/assets/images/vt-1-vsl-poster.jpg">
+                <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/VSL.mov" type="video/quicktime">
+                <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/VSL.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <p class="cs-note">
+            Write down any questions that come up and bring them to the call.
+        </p>
+    </div>
+</section>
+
+{% endblock %}
