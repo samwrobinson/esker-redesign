@@ -31,6 +31,7 @@ const LEAD_FORMS = new Set([
     'FB Contractor Landing - 2',
     'Facebook Landing',
     'VT-1 Contractor Landing',
+    'Bundle Contractor Landing',
     'About Contact',
     'Contact Form',
 ]);
@@ -204,7 +205,7 @@ exports.handler = async function (event) {
     }
 
     // ---- Self-declared disqualifiers -------------------------------------
-    // The VT-1 quiz asks two yes/no gating questions. A "No" to either means
+    // The VT-1 and bundle-1 quizzes ask two yes/no gating questions. A "No" to either means
     // this person cannot buy, so sending it as a Lead would teach Meta's
     // optimiser to go and find more of them. Keep the submission (Netlify still
     // stores and emails it) but do not report it as a conversion.
@@ -214,7 +215,7 @@ exports.handler = async function (event) {
     // newer business is still a real lead.
     const DISQUALIFIERS = [
         ['business_owner', 'not a business owner'],
-        ['budget_ok', 'cannot invest $197/mo'],
+        ['budget_ok', 'cannot invest the quoted monthly price'],
     ];
     for (const [field, why] of DISQUALIFIERS) {
         if (String(data[field] || '').trim().toLowerCase() === 'no') {
