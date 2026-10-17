@@ -1,0 +1,289 @@
+---
+title: 'Book Your Call | Esker Designs'
+description: 'Pick a time to talk about a free website and review requests for $197 a month.'
+permalink: '/book-197/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<!-- Where the $197 instant form's "Book a call" button lands (Meta lead ads, Oct 2026).
+     Calendar first, proof below. noindex + sitemap exclusion come from landing.json.
+     Styling reuses vt-1: facebook-landing.css owns #fb-hero and #fb-testimonials. -->
+<link rel="stylesheet" href="/assets/css/facebook-landing.css">
+<link rel="stylesheet" href="/assets/css/vt-1-landing.css">
+
+<!-- Facebook Pixel Code -->
+<!-- Base PageView pixel only: sets _fbp and captures _fbc from ad clicks so the
+     server-side Conversions API can match leads. The Lead event itself is sent
+     server-side via the Netlify Function (no browser Lead pixel here). -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3889075514559305');
+    fbq('track', 'PageView');
+</script>
+<noscript>
+    <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=3889075514559305&ev=PageView&noscript=1" alt="" />
+</noscript>
+<!-- End Facebook Pixel Code -->
+<style>
+    /* PLAIN CSS ONLY -- the .less files use (16/16rem) math, which is invalid here. */
+    html { scroll-behavior: smooth; }
+
+    #fb-hero { padding-top: 2rem !important; padding-bottom: 1.25rem !important; }
+    #fb-hero .cs-title { font-size: clamp(1.625rem, 6.4vw, 2.25rem); margin-bottom: 0.75rem; line-height: 1.22; }
+    #fb-hero .cs-topper { margin-bottom: 0.6rem; }
+    #fb-hero .cs-text { margin: 0 auto; }
+
+    #fb-hero .cs-content,
+    #fb-testimonials .cs-content,
+    #b197-booking .cs-content { max-width: 37.5rem; margin-left: auto; margin-right: auto; }
+
+    /* Same card treatment as the vt-1 calendar, but always visible. */
+    #b197-booking { background: #0a0f05; padding: 0.5rem 1rem 3.5rem; }
+    #b197-booking .cs-calendar {
+        display: block;
+        width: 100%;
+        max-width: 26rem;
+        margin: 0 auto;
+        min-height: 41rem;
+        border: 0;
+        border-radius: 0.875rem;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 1rem 2.75rem rgba(0, 0, 0, 0.5);
+    }
+    #b197-booking .cs-note { color: #d6dbd0; text-align: center; font-size: 0.9375rem; margin: 1.25rem auto 0; max-width: 26rem; }
+
+    /* Testimonial grid, same as vt-1. */
+    #fb-testimonials .cs-video-grid {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)) !important;
+        gap: 1.5rem !important;
+        align-items: start;
+    }
+    #fb-testimonials .cs-testimonial-item,
+    #fb-testimonials .cs-featured-item { width: auto !important; max-width: none !important; grid-column: auto !important; }
+    #fb-testimonials .cs-testimonial-card,
+    #fb-testimonials .cs-featured-card {
+        aspect-ratio: 4 / 5;
+        width: 100% !important;
+        height: auto !important;
+        overflow: hidden;
+        border-radius: 0.75rem;
+    }
+    #fb-testimonials .cs-testimonial-video {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+        object-position: center 30%;
+    }
+
+    /* One CTA below the proof, back up to the calendar. */
+    #b197-recheck { background: #0a0f05; padding: 3rem 1rem 4rem; text-align: center; }
+    #b197-recheck .cs-title { color: #fafbfc !important; font-size: clamp(1.25rem, 4vw, 1.75rem); margin-bottom: 1.5rem; }
+
+        /* Footer: no way off this page except the CTA. */
+    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(2),
+    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(3),
+    #cs-footer-842 .cs-preferred-btn { display: none; }
+    #cs-footer-842 .cs-logo-group .cs-logo,
+    #cs-footer-842 .cs-credit-link,
+    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(4) .cs-li:nth-child(1) .cs-link,
+    #cs-footer-842 .cs-container > .cs-ul-wrapper:nth-of-type(4) .cs-li:nth-child(4) .cs-link {
+        pointer-events: none; cursor: default;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                     Hero                     -->
+<!-- ============================================ -->
+
+<section id="fb-hero">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Last step</span>
+            <h1 class="cs-title">Pick a time to <span class="cs-hl">talk</span></h1>
+            <p class="cs-text">Grab a time on my calendar. On the call I&rsquo;ll show you what a free website and review requests would look like for your business, and what the $197 a month covers.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--               Booking Calendar               -->
+<!-- ============================================ -->
+
+<section id="b197-booking">
+    <div class="cs-container">
+        <iframe class="cs-calendar" src="https://api.leadconnectorhq.com/widget/booking/s2EeT3fn6lqooJHddJYz" allow="payment" scrolling="no" title="Book a call with Sam at Esker Designs" id="s2EeT3fn6lqooJHddJYz_b197"></iframe>
+        <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+        <p class="cs-note">Month-to-month, so you can cancel any time. I&rsquo;m one person in Warren, Vermont, not an agency.</p>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--            Video Testimonials                -->
+<!-- ============================================ -->
+
+<section id="fb-testimonials">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">While you pick a time</span>
+            <h2 class="cs-title">Hear from the businesses I already work with</h2>
+        </div>
+        <div class="cs-video-grid">
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="none" playsinline poster="/assets/images/vt1-poster-jules-testimonial.jpg">
+                            <source src="/assets/videos/jules-testimonial.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play the Jules testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">&quot;Working with Sam was super easy from start to finish. When he showed me the website I was blown away. I&rsquo;ve definitely noticed more leads since launching the site and a higher closing rate because my clients can trust me right away.&quot;</p>
+                        <span class="cs-name">Jules Butler, Butler Yardcare</span>
+                    </div>
+                </div>
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="none" playsinline poster="/assets/images/vt1-poster-righteous-chimney-and-masonry.jpg">
+                            <source src="/assets/videos/righteous-chimney-and-masonry.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play the John testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">&quot;We started working with Sam and within a week, we sold a masonry job big enough to pay him for a couple years! I would definitely work with him again.&quot;</p>
+                        <span class="cs-name">John, Righteous Chimney and Masonry</span>
+                    </div>
+                </div>
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="none" playsinline poster="/assets/images/vt1-poster-img_4106.jpg">
+                            <source src="/assets/videos/img_4106.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play the Moxie testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">&quot;Esker had us up and operating the month we opened, and got us 13 Google reviews in a very short amount of time. Because of the SEO I&rsquo;m one of the top searched businesses in my area.&quot;</p>
+                        <span class="cs-name">Moxie, Upland Coffee</span>
+                    </div>
+                </div>
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="none" playsinline poster="/assets/images/vt1-poster-nick.jpg">
+                            <source src="/assets/videos/nick.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play the Nick testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">&quot;We needed a professional looking website that functioned better than the one we produced ourselves. The new site Sam built for us quickly led to an increase in traffic as well as new memberships and event bookings.&quot;</p>
+                        <span class="cs-name">Nick Allen, Barre Social Club</span>
+                    </div>
+                </div>
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="none" playsinline poster="/assets/images/vt1-poster-jackson.jpg">
+                            <source src="/assets/videos/jackson.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play the Jackson testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">&quot;I&rsquo;ve worked with Sam for the better part of two years and I have nothing but good things to say.&quot;</p>
+                        <span class="cs-name">Jackson, Summit Pro Painting</span>
+                    </div>
+                </div>
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="none" playsinline poster="/assets/images/vt1-poster-shelly-testimonial.jpg">
+                            <source src="/assets/videos/shelly-testimonial.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play the Shelly testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">&quot;The website is just wonderful. I told him exactly what I wanted and he had it done in no time at all. Every time I text or call, he&rsquo;s right there.&quot;</p>
+                        <span class="cs-name">Shelly Bogue, Five Star Cleaning Services</span>
+                    </div>
+                </div>
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="none" playsinline poster="/assets/images/vt1-poster-amber-testimonial.jpg">
+                            <source src="/assets/videos/amber-testimonial.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play the Amber testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">&quot;The process was simple and straightforward. I&rsquo;ve had my website up a little over a year and I&rsquo;ve definitely seen an increase in referrals and people reaching out directly through it.&quot;</p>
+                        <span class="cs-name">Amber, Alpenglow Counseling</span>
+                    </div>
+                </div>
+                <div class="cs-testimonial-item">
+                    <div class="cs-testimonial-card" onclick="var v=this.querySelector('video');if(v.paused){v.play();this.classList.add('cs-playing')}else{v.pause();this.classList.remove('cs-playing')}">
+                        <video class="cs-testimonial-video" preload="none" playsinline poster="/assets/images/vt1-poster-tim-testimonial.jpg">
+                            <source src="/assets/videos/tim-testimonial.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="cs-play-button" aria-label="Play the Tim testimonial">
+                            <svg class="cs-play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                        </button>
+                    </div>
+                    <div class="cs-info">
+                        <img class="cs-stars" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dental-stars.png" alt="" width="120" height="24" aria-hidden="true">
+                        <p class="cs-quote">&quot;Sam created a beautiful website for me. I thought it was stunning. I really didn&rsquo;t expect a website for a construction company to be that beautiful.&quot;</p>
+                        <span class="cs-name">Tim Smith, Hoplite Builders</span>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--            Back up to the calendar           -->
+<!-- ============================================ -->
+
+<section id="b197-recheck">
+    <div class="cs-container">
+        <h2 class="cs-title">Ready to talk?</h2>
+        <a class="cs-button-solid" href="#b197-booking" data-umami-event="Book 197 Back To Calendar">Pick a time &uarr;</a>
+    </div>
+</section>
+
+{% endblock %}
