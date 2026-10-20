@@ -16,8 +16,15 @@ permalink: '/before-your-call/'
     #byc-vsl .cs-topper { display: block; margin-bottom: 0.75rem; }
     #byc-vsl .cs-title { color: #fafbfc !important; margin-bottom: 1rem; }
     #byc-vsl .cs-text { color: #d6dbd0; margin: 0 auto; }
-    #byc-vsl .cs-video-container { max-width: 43.75rem; margin: 0 auto; border-radius: 0.75rem; overflow: hidden; }
+    #byc-vsl .cs-video-container { position: relative; max-width: 43.75rem; margin: 0 auto; border-radius: 0.75rem; overflow: hidden; }
     #byc-vsl .cs-vsl-video { width: 100%; height: auto; display: block; }
+    /* Full-frame play target so a tap anywhere on the poster starts the video */
+    #byc-vsl .cs-play { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; background: rgba(0, 0, 0, 0.15); cursor: pointer; display: flex; align-items: center; justify-content: center; -webkit-tap-highlight-color: transparent; }
+    #byc-vsl .cs-play-icon { width: 5rem; height: 5rem; border-radius: 50%; background: rgba(0, 0, 0, 0.65); display: flex; align-items: center; justify-content: center; transition: transform 0.2s, background-color 0.2s; }
+    #byc-vsl .cs-play-icon svg { width: 2rem; height: 2rem; margin-left: 0.25rem; fill: #fff; }
+    #byc-vsl .cs-play:hover .cs-play-icon,
+    #byc-vsl .cs-play:focus-visible .cs-play-icon { transform: scale(1.08); background: rgba(0, 0, 0, 0.8); }
+    #byc-vsl .cs-play[hidden] { display: none; }
     #byc-vsl .cs-note { color: #d6dbd0; text-align: center; margin: 2rem auto 0; max-width: 37.5rem; }
 </style>
 {% endblock %}
@@ -39,11 +46,36 @@ permalink: '/before-your-call/'
                 <source src="https://esker-testimonials.nyc3.cdn.digitaloceanspaces.com/VSL.mov" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+            <button type="button" class="cs-play" aria-label="Play video" hidden>
+                <span class="cs-play-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+            </button>
         </div>
         <p class="cs-note">
             Write down any questions that come up and bring them to the call.
         </p>
     </div>
 </section>
+
+<script>
+    // Native controls only start playback from the small play icon on mobile, so taps elsewhere
+    // on the poster were dead clicks. Hide controls until first play and cover the frame with a button.
+    (function () {
+        var video = document.querySelector('#byc-vsl .cs-vsl-video');
+        var button = document.querySelector('#byc-vsl .cs-play');
+        if (!video || !button) return;
+        video.removeAttribute('controls');
+        button.hidden = false;
+        function reveal() {
+            button.hidden = true;
+            video.setAttribute('controls', '');
+        }
+        button.addEventListener('click', function () {
+            reveal();
+            var p = video.play();
+            if (p && p.catch) p.catch(function () {});
+        });
+        video.addEventListener('play', reveal);
+    })();
+</script>
 
 {% endblock %}
