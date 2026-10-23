@@ -991,115 +991,6 @@
             }
         }
 
-        .cs-toggle-group {
-            width: 100%;
-            max-width: (414/16rem);
-            margin: 0;
-            padding: (12/16rem);
-            /* prevents padding and border from affecting height and width */
-            box-sizing: border-box;
-            background-color: #f1f1f4;
-            border-radius: (8/16rem);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .cs-plan {
-            font-size: (16/16rem);
-            font-weight: 700;
-            line-height: 1.5em;
-            margin: 0;
-            padding: 0;
-            color: var(--primary);
-            &:hover {
-                cursor: pointer;
-            }
-        }
-
-        .cs-toggle {
-            width: (52/16rem);
-            height: (32/16rem);
-            border-radius: (40/16rem);
-            background-color: var(--primaryLight);
-            margin: 0 (24/16rem);
-            position: relative;
-            /* prevent flexbox from squishing it */
-            flex: none;
-
-            &:hover {
-                cursor: pointer;
-            }
-
-            &.active {
-                &:before {
-                    opacity: 1;
-                }
-                .cs-toggle-switch {
-                    left: (23/16rem);
-                }
-            }
-
-            &:before {
-                /* top right box */
-                content: "";
-                width: 100%;
-                height: 100%;
-                background: var(--primary);
-                opacity: 0;
-                position: absolute;
-                display: block;
-                top: 0;
-                left: 0;
-                border-radius: (40/16rem);
-                transition: opacity 0.3s;
-            }
-        }
-
-        .cs-toggle-switch {
-            width: (26/16rem);
-            height: (26/16rem);
-            display: block;
-            border-radius: 50%;
-            filter: drop-shadow(0px 3px 1px rgba(0, 0, 0, 0.06))
-                drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.15));
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: (3/16rem);
-            transition: left 0.3s;
-            background: #fff;
-        }
-
-        .cs-ul-wrapper {
-            position: relative;
-            z-index: 10;
-            perspective: 1200px;
-
-            &.cs-active .cs-option1 {
-                transform: rotateY(180deg);
-            }
-
-            &.cs-active .cs-option2 {
-                transform: rotateY(360deg);
-            }
-        }
-
-        .cs-option2 {
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transform: rotateY(180deg);
-
-            .cs-item {
-                border-radius: 0 (24/16rem) 0 0;
-
-                &:nth-of-type(2) {
-                    border-radius: 0 0 0 (24/16rem);
-                }
-            }
-        }
 
         .cs-card-group {
             width: 100%;
@@ -1372,42 +1263,7 @@
             }
         }
 
-        /* --- Segmented control (Websites / Reviews / Bundle) --- */
-        .cs-seg {
-            display: inline-flex;
-            flex-wrap: wrap;
-            gap: (4/16rem);
-            margin: 0 auto 0 0;
-            padding: (6/16rem);
-            box-sizing: border-box;
-            background-color: #f1f1f4;
-            border-radius: (10/16rem);
-        }
-
-        .cs-seg-btn {
-            font-family: inherit;
-            font-size: (15/16rem);
-            font-weight: 700;
-            line-height: 1.5em;
-            color: var(--primary);
-            background-color: transparent;
-            border: none;
-            border-radius: (7/16rem);
-            padding: (10/16rem) (18/16rem);
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-
-            &:hover {
-                color: var(--headerColor);
-            }
-
-            &.active {
-                background-color: var(--primary);
-                color: #fff;
-            }
-        }
-
-        /* --- Panels: only the active one is shown --- */
+        /* --- Plan cards grid --- */
         .cs-panel {
             display: none;
             width: 100%;
@@ -1430,77 +1286,6 @@
                 &:nth-of-type(2) {
                     border-radius: (16/16rem);
                 }
-            }
-        }
-
-        /* --- Bundle "why bundle?" value card --- */
-        .cs-value-card {
-            justify-content: center;
-            background-color: #f7f7fb;
-            border: 1px solid #dad9e3;
-        }
-
-        .cs-value-math {
-            margin: 0 0 (16/16rem);
-            padding: 0;
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: (8/16rem);
-
-            li {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                font-size: (16/16rem);
-                color: var(--bodyTextColor);
-                padding-bottom: (8/16rem);
-                border-bottom: 1px solid #dad9e3;
-            }
-
-            .cs-value-total {
-                font-weight: 800;
-                font-size: (20/16rem);
-                color: var(--primary);
-                border-bottom: none;
-                padding-bottom: 0;
-            }
-        }
-
-        .cs-save-tag {
-            display: inline-block;
-            align-self: flex-start;
-            font-weight: 700;
-            font-size: (16/16rem);
-            color: #0f7b3f;
-            background-color: rgba(15, 123, 63, 0.12);
-            padding: (8/16rem) (16/16rem);
-            border-radius: (6/16rem);
-            margin-bottom: (16/16rem);
-        }
-
-        .cs-value-note {
-            margin-bottom: 0;
-            opacity: 0.85;
-        }
-
-        /* --- Lump-sum note under the Websites panel --- */
-        .cs-panel-note {
-            list-style: none;
-            grid-column: 1 / -1;
-            font-size: (15/16rem);
-            line-height: 1.6em;
-            color: var(--bodyTextColor);
-            background-color: #f7f7fb;
-            border: 1px dashed #dad9e3;
-            border-radius: (12/16rem);
-            padding: (16/16rem) (20/16rem);
-            text-align: center;
-
-            a {
-                color: var(--primary);
-                font-weight: 700;
-                text-decoration: none;
             }
         }
 
@@ -1534,25 +1319,9 @@
             position: initial;
         }
 
-        /* multi-column grids per panel */
+        /* three plans side by side */
         .cs-panel.active {
-            &[data-panel="reviews"] {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            &[data-panel="websites"] {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            &[data-panel="bundle"] {
-                grid-template-columns: 1.15fr 0.85fr;
-                max-width: (900/16rem);
-                margin-inline: auto;
-            }
-        }
-
-        .cs-panel-note {
-            grid-column: 1 / -1;
+            grid-template-columns: repeat(3, 1fr);
         }
 
         .cs-waves-wrapper {
@@ -1619,21 +1388,6 @@
             .cs-item-text,
             .cs-li {
                 opacity: 0.8;
-            }
-
-            /* keep the "Why bundle?" value card legible in dark mode */
-            .cs-value-card {
-                background-color: var(--medium);
-                border-color: rgba(255, 255, 255, 0.2);
-
-                .cs-value-math li {
-                    color: var(--bodyTextColorWhite);
-                    border-bottom-color: rgba(255, 255, 255, 0.2);
-                }
-
-                .cs-value-total {
-                    color: var(--bodyTextColorWhite);
-                }
             }
 
             .cs-button-transparent {

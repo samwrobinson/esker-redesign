@@ -1447,99 +1447,10 @@
   #pricing-1262 .cs-button-solid:hover:before {
     width: 100%;
   }
-  #pricing-1262 .cs-toggle-group {
+  #pricing-1262 .cs-plans-wrapper {
     width: 100%;
-    max-width: 25.875rem;
-    margin: 0;
-    padding: 0.75rem;
-    /* prevents padding and border from affecting height and width */
-    box-sizing: border-box;
-    background-color: #f1f1f4;
-    border-radius: 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #pricing-1262 .cs-plan {
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.5em;
-    margin: 0;
-    padding: 0;
-    color: var(--primary);
-  }
-  #pricing-1262 .cs-plan:hover {
-    cursor: pointer;
-  }
-  #pricing-1262 .cs-toggle {
-    width: 3.25rem;
-    height: 2rem;
-    border-radius: 2.5rem;
-    background-color: var(--primaryLight);
-    margin: 0 1.5rem;
-    position: relative;
-    /* prevent flexbox from squishing it */
-    flex: none;
-  }
-  #pricing-1262 .cs-toggle:hover {
-    cursor: pointer;
-  }
-  #pricing-1262 .cs-toggle.active:before {
-    opacity: 1;
-  }
-  #pricing-1262 .cs-toggle.active .cs-toggle-switch {
-    left: 1.4375rem;
-  }
-  #pricing-1262 .cs-toggle:before {
-    /* top right box */
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: var(--primary);
-    opacity: 0;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    border-radius: 2.5rem;
-    transition: opacity 0.3s;
-  }
-  #pricing-1262 .cs-toggle-switch {
-    width: 1.625rem;
-    height: 1.625rem;
-    display: block;
-    border-radius: 50%;
-    filter: drop-shadow(0px 3px 1px rgba(0, 0, 0, 0.06)) drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.15));
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0.1875rem;
-    transition: left 0.3s;
-    background: #fff;
-  }
-  #pricing-1262 .cs-ul-wrapper {
     position: relative;
     z-index: 10;
-    perspective: 1200px;
-  }
-  #pricing-1262 .cs-ul-wrapper.cs-active .cs-option1 {
-    transform: rotateY(180deg);
-  }
-  #pricing-1262 .cs-ul-wrapper.cs-active .cs-option2 {
-    transform: rotateY(360deg);
-  }
-  #pricing-1262 .cs-option2 {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: rotateY(180deg);
-  }
-  #pricing-1262 .cs-option2 .cs-item {
-    border-radius: 0 1.5rem 0 0;
-  }
-  #pricing-1262 .cs-option2 .cs-item:nth-of-type(2) {
-    border-radius: 0 0 0 1.5rem;
   }
   #pricing-1262 .cs-card-group {
     width: 100%;
@@ -1549,13 +1460,9 @@
     border-radius: 1.5rem;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: stretch;
     /* prevents flexbox from squishing it */
     flex: none;
-    -webkit-backface-visibility: hidden;
-    /* Safari */
-    backface-visibility: hidden;
-    transition: transform 0.8s;
   }
   #pricing-1262 .cs-item {
     text-align: left;
@@ -1565,7 +1472,7 @@
     padding: 1.5rem 1.5rem;
     background-color: #fff;
     border: 1px solid #dad9e3;
-    border-radius: 1.5rem 0 0 0;
+    border-radius: 1.5rem;
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
     display: flex;
@@ -1573,9 +1480,6 @@
     align-items: stretch;
     position: relative;
     z-index: 1;
-  }
-  #pricing-1262 .cs-item:nth-of-type(2) {
-    border-radius: 0 0 1.5rem 0;
   }
   #pricing-1262 .cs-item .cs-price,
   #pricing-1262 .cs-item .cs-duration {
@@ -1815,17 +1719,14 @@
     align-items: stretch;
     flex-wrap: nowrap;
   }
-  #pricing-1262 .cs-option2 .cs-item {
-    border-radius: 1.5rem 0 0 1.5rem;
-  }
-  #pricing-1262 .cs-option2 .cs-item:nth-of-type(2) {
-    border-radius: 0 1.5rem 1.5rem 0;
-  }
   #pricing-1262 .cs-item {
-    width: 50%;
+    width: 33.33333333%;
+    border-radius: 0;
+  }
+  #pricing-1262 .cs-item:first-of-type {
     border-radius: 1.5rem 0 0 1.5rem;
   }
-  #pricing-1262 .cs-item:nth-of-type(2) {
+  #pricing-1262 .cs-item:last-of-type {
     border-radius: 0 1.5rem 1.5rem 0;
   }
   #pricing-1262 .cs-waves-wrapper {
@@ -1854,15 +1755,12 @@
 }
 /* Large Desktop - 1300px */
 @media only screen and (min-width: 81.25rem) {
-  #pricing-1262 .cs-container {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1.25rem;
+  #pricing-1262 {
+    /* three plans need the full width, so the copy stays above them */
   }
-  #pricing-1262 .cs-ul-wrapper {
-    width: 62%;
-    max-width: 46.25rem;
-    flex: none;
+  #pricing-1262 .cs-container {
+    flex-direction: column;
+    gap: clamp(3rem, 6vw, 4rem);
   }
   #pricing-1262 .cs-waves-wrapper {
     max-width: 46.25rem;

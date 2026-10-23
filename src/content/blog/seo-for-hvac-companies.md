@@ -158,7 +158,7 @@ HVAC SEO is the process of optimizing your online presence — your Google Busin
 
 ### How much does HVAC SEO cost?
 
-It varies widely. DIY — doing the GBP work, review outreach, and basic website optimization yourself — costs mostly time. Hiring a freelancer or small agency typically runs $500–$1,500 a month for ongoing local SEO management. Larger agencies charge more, sometimes significantly more. My own service runs $175 a month and covers the website, hosting, GBP management, and ongoing SEO work. The right investment depends on how competitive your market is and how much you want to be involved yourself.
+It varies widely. DIY — doing the GBP work, review outreach, and basic website optimization yourself — costs mostly time. Hiring a freelancer or small agency typically runs $500–$1,500 a month for ongoing local SEO management. Larger agencies charge more, sometimes significantly more. My own service starts at $175 a month for the website and hosting, and the plan where I also manage your Google Business Profile, publish the posts, build citations, and report on it monthly is $450. The right investment depends on how competitive your market is and how much you want to be involved yourself.
 
 ### How do I get my HVAC company to rank on Google Maps?
 

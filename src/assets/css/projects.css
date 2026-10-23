@@ -761,10 +761,7 @@
     position: relative;
     z-index: 1;
     transform-style: preserve-3d;
-    /* --- Segmented control (Websites / Reviews / Bundle) --- */
-    /* --- Panels: only the active one is shown --- */
-    /* --- Bundle "why bundle?" value card --- */
-    /* --- Lump-sum note under the Websites panel --- */
+    /* --- Plan cards grid --- */
   }
   #pricing-1262 .cs-container {
     width: 100%;
@@ -830,100 +827,6 @@
   }
   #pricing-1262 .cs-button-solid:hover:before {
     width: 100%;
-  }
-  #pricing-1262 .cs-toggle-group {
-    width: 100%;
-    max-width: 25.875rem;
-    margin: 0;
-    padding: 0.75rem;
-    /* prevents padding and border from affecting height and width */
-    box-sizing: border-box;
-    background-color: #f1f1f4;
-    border-radius: 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #pricing-1262 .cs-plan {
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.5em;
-    margin: 0;
-    padding: 0;
-    color: var(--primary);
-  }
-  #pricing-1262 .cs-plan:hover {
-    cursor: pointer;
-  }
-  #pricing-1262 .cs-toggle {
-    width: 3.25rem;
-    height: 2rem;
-    border-radius: 2.5rem;
-    background-color: var(--primaryLight);
-    margin: 0 1.5rem;
-    position: relative;
-    /* prevent flexbox from squishing it */
-    flex: none;
-  }
-  #pricing-1262 .cs-toggle:hover {
-    cursor: pointer;
-  }
-  #pricing-1262 .cs-toggle.active:before {
-    opacity: 1;
-  }
-  #pricing-1262 .cs-toggle.active .cs-toggle-switch {
-    left: 1.4375rem;
-  }
-  #pricing-1262 .cs-toggle:before {
-    /* top right box */
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: var(--primary);
-    opacity: 0;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    border-radius: 2.5rem;
-    transition: opacity 0.3s;
-  }
-  #pricing-1262 .cs-toggle-switch {
-    width: 1.625rem;
-    height: 1.625rem;
-    display: block;
-    border-radius: 50%;
-    filter: drop-shadow(0px 3px 1px rgba(0, 0, 0, 0.06)) drop-shadow(0px 3px 8px rgba(0, 0, 0, 0.15));
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0.1875rem;
-    transition: left 0.3s;
-    background: #fff;
-  }
-  #pricing-1262 .cs-ul-wrapper {
-    position: relative;
-    z-index: 10;
-    perspective: 1200px;
-  }
-  #pricing-1262 .cs-ul-wrapper.cs-active .cs-option1 {
-    transform: rotateY(180deg);
-  }
-  #pricing-1262 .cs-ul-wrapper.cs-active .cs-option2 {
-    transform: rotateY(360deg);
-  }
-  #pricing-1262 .cs-option2 {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: rotateY(180deg);
-  }
-  #pricing-1262 .cs-option2 .cs-item {
-    border-radius: 0 1.5rem 0 0;
-  }
-  #pricing-1262 .cs-option2 .cs-item:nth-of-type(2) {
-    border-radius: 0 0 0 1.5rem;
   }
   #pricing-1262 .cs-card-group {
     width: 100%;
@@ -1167,36 +1070,6 @@
   #pricing-1262 .cs-button-transparent:hover:before {
     width: 100%;
   }
-  #pricing-1262 .cs-seg {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 0.25rem;
-    margin: 0 auto 0 0;
-    padding: 0.375rem;
-    box-sizing: border-box;
-    background-color: #f1f1f4;
-    border-radius: 0.625rem;
-  }
-  #pricing-1262 .cs-seg-btn {
-    font-family: inherit;
-    font-size: 0.9375rem;
-    font-weight: 700;
-    line-height: 1.5em;
-    color: var(--primary);
-    background-color: transparent;
-    border: none;
-    border-radius: 0.4375rem;
-    padding: 0.625rem 1.125rem;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  #pricing-1262 .cs-seg-btn:hover {
-    color: var(--headerColor);
-  }
-  #pricing-1262 .cs-seg-btn.active {
-    background-color: var(--primary);
-    color: #fff;
-  }
   #pricing-1262 .cs-panel {
     display: none;
     width: 100%;
@@ -1217,67 +1090,6 @@
   }
   #pricing-1262 .cs-panel .cs-item:nth-of-type(2) {
     border-radius: 1rem;
-  }
-  #pricing-1262 .cs-value-card {
-    justify-content: center;
-    background-color: #f7f7fb;
-    border: 1px solid #dad9e3;
-  }
-  #pricing-1262 .cs-value-math {
-    margin: 0 0 1rem;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  #pricing-1262 .cs-value-math li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1rem;
-    color: var(--bodyTextColor);
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #dad9e3;
-  }
-  #pricing-1262 .cs-value-math .cs-value-total {
-    font-weight: 800;
-    font-size: 1.25rem;
-    color: var(--primary);
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-  #pricing-1262 .cs-save-tag {
-    display: inline-block;
-    align-self: flex-start;
-    font-weight: 700;
-    font-size: 1rem;
-    color: #0f7b3f;
-    background-color: rgba(15, 123, 63, 0.12);
-    padding: 0.5rem 1rem;
-    border-radius: 0.375rem;
-    margin-bottom: 1rem;
-  }
-  #pricing-1262 .cs-value-note {
-    margin-bottom: 0;
-    opacity: 0.85;
-  }
-  #pricing-1262 .cs-panel-note {
-    list-style: none;
-    grid-column: 1 / -1;
-    font-size: 0.9375rem;
-    line-height: 1.6em;
-    color: var(--bodyTextColor);
-    background-color: #f7f7fb;
-    border: 1px dashed #dad9e3;
-    border-radius: 0.75rem;
-    padding: 1rem 1.25rem;
-    text-align: center;
-  }
-  #pricing-1262 .cs-panel-note a {
-    color: var(--primary);
-    font-weight: 700;
-    text-decoration: none;
   }
   #pricing-1262 .cs-waves-wrapper {
     width: 100vw;
@@ -1301,25 +1113,14 @@
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
   #pricing-1262 {
-    /* multi-column grids per panel */
+    /* three plans side by side */
   }
   #pricing-1262 .cs-container {
     max-width: 80rem;
     position: initial;
   }
-  #pricing-1262 .cs-panel.active[data-panel="reviews"] {
+  #pricing-1262 .cs-panel.active {
     grid-template-columns: repeat(3, 1fr);
-  }
-  #pricing-1262 .cs-panel.active[data-panel="websites"] {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  #pricing-1262 .cs-panel.active[data-panel="bundle"] {
-    grid-template-columns: 1.15fr 0.85fr;
-    max-width: 56.25rem;
-    margin-inline: auto;
-  }
-  #pricing-1262 .cs-panel-note {
-    grid-column: 1 / -1;
   }
   #pricing-1262 .cs-waves-wrapper {
     /* changes to 740px at large desktop */
@@ -1361,9 +1162,6 @@
 }
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
-  body.dark-mode #pricing-1262 {
-    /* keep the "Why bundle?" value card legible in dark mode */
-  }
   body.dark-mode #pricing-1262 .cs-title,
   body.dark-mode #pricing-1262 .cs-text,
   body.dark-mode #pricing-1262 .cs-package,
@@ -1377,17 +1175,6 @@
   body.dark-mode #pricing-1262 .cs-item-text,
   body.dark-mode #pricing-1262 .cs-li {
     opacity: 0.8;
-  }
-  body.dark-mode #pricing-1262 .cs-value-card {
-    background-color: var(--medium);
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-  body.dark-mode #pricing-1262 .cs-value-card .cs-value-math li {
-    color: var(--bodyTextColorWhite);
-    border-bottom-color: rgba(255, 255, 255, 0.2);
-  }
-  body.dark-mode #pricing-1262 .cs-value-card .cs-value-total {
-    color: var(--bodyTextColorWhite);
   }
   body.dark-mode #pricing-1262 .cs-button-transparent {
     font-size: 1rem;
